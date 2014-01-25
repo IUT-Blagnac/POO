@@ -3,7 +3,7 @@
 <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>POO : TP4</title>
+        <title>POO : TP2</title>
         <meta name="viewport" content="width=1024, user-scalable=no">
         <meta name="author" content="DUT/INFO/M2104" />
         <meta name="generator" content="AsciiDoc 8.6.8" />
@@ -2531,97 +2531,37 @@ This module splits a long slide into multiple slides.
 </head>
 <body class="deck-container">
 <section class="slide" id="title-slide">
-        <h1>POO : TP4</h1>
+        <h1>POO : TP2</h1>
         <h3>DUT/INFO/M2104</h3>
 </section>
-<section class="slide">
-<h2>Preambule</h2>
-<p>Rappel : TAD (<strong>T</strong>ype <strong>A</strong>bstrait de <strong>D</strong>onnée) <strong>Pile</strong></p>
-<div class="dlist"><dl>
-<dt class="hdlist1">
-Opérations
-</dt>
-<dd>
-</dd>
-</dl></div>
-<div class="literalblock">
-<div class="content">
-<pre><tt>        creerPile       -&gt; Pile
-        empiler         Pile x Element -&gt; Pile
-        depiler         Pile -&gt; Pile
-        sommet          Pile -&gt; Element
-        pileVide        Pile -&gt; Booléen</tt></pre>
-</div></div>
-<div class="dlist"><dl>
-<dt class="hdlist1">
-Préconditions
-</dt>
-<dd>
-</dd>
-</dl></div>
-<div class="literalblock">
-<div class="content">
-<pre><tt>        sommet (p) valide &lt;=&gt;  Non pileVide (p)
-        depiler (p) valide &lt;=&gt;  Non pileVide (p)</tt></pre>
-</div></div>
-</section>
-<section class="slide">
-<h2>Préambule (suite)</h2>
-<div class="dlist"><dl>
-<dt class="hdlist1">
-Axiomes
-</dt>
-<dd>
-</dd>
-</dl></div>
-<div class="literalblock">
-<div class="content">
-<pre><tt>        pileVide ( creerPile () )
-        depiler ( empiler (p, e) ) = p
-        NON pile-vide ( empiler (p ,e) )
-        sommet ( empiler (p ,e) ) = e</tt></pre>
-</div></div>
-<p>Nous allons ajouter une opération <strong>spéciale pour le TP</strong> qui sert à afficher une <code>Pile</code> à l’écran (nombre d’élément, éléments contenus, somme de ces éléments) :</p>
-<div class="literalblock">
-<div class="content">
-<pre><tt>                afficher : Pile -&gt; -</tt></pre>
-</div></div>
-<div style="page-break-after:always"></div>
-<p>Nous allons donc implémenter la classe suivante :</p>
-<img src="images/images/Pile.png" alt="images/Pile.png" class=""/>
-</section>
-<section class="slide">
-<h2>Implémentation de la classe <code>Pile</code> pour les entiers</h2>
-<p>On va supposer qu’une <code>Pile</code> a une implantation « dynamique » &#8230; par tableau Java.</p>
-<p>En effet, on peut créer dynamiquement un tableau en Java. Au niveau de la pile, à chaque ajout ou suppression d’élément, le tableau contenu dans la <code>Pile</code> sera agrandi (<code>empiler()</code>) ou rétréci (<code>depiler()</code>) selon le cas.
-Ainsi, une pile de n éléments contiendra toujours un tableau de n éléments (pas de case inutilisée).
-Concrètement, lors des opérations <code>empiler()</code> et <code>depiler()</code>, il s’agira de :</p>
-<ul>
-<li class="">
-créer un nouveau tableau de taille adaptée,
-</li>
-<li class="">
-recopier dans ce tableau les valeurs nécessaires après l’opération,
-</li>
-<li class="">
-ce nouveau tableau devient le tableau de la <code>Pile</code>.
-</li>
-</ul>
-</section>
-<section class="slide">
-<h2>Implémentation de <code>Pile</code> (suite)</h2>
-<p>A réaliser (lire toutes les questions avant de commencer) :</p>
-<ol>
-<li class="">
-<p>
-Donner l’implémentation de la classe <code>Pile</code>.
-</p>
-<ul>
-<li class="">
-Quels attributs sont nécessaires ?
-</li>
-<li class="">
-On réfléchira bien au constructeur.
+<div class="tableblock" id="cartouche">
+<table rules="all"
+style="margin-left:0; margin-right:auto;"
+width="90%"
+frame="border"
+cellspacing="0" cellpadding="4">
+<col width="9%" />
+<col width="90%" />
+<tbody>
+<tr>
+<td align="left" valign="top"><p class="table">PreReq</p></td>
+<td align="left" valign="top"><p class="table">Je connais la syntaxe Java; j&#8217;ai relu mon cours de S1; j&#8217;ai effectué le TP précédent.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">ObjTD</p></td>
+<td align="left" valign="top"><p class="table"><strong>Utiliser des objets en java</strong></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">Durée</p></td>
+<td align="left" valign="top"><p class="table"><strong>2 séances</strong> de 1,5h sur machine</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">À rendre</p></td>
+<td align="left" valign="top"><p class="table">listings + compte-rendu de chaque question</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
@@ -2676,46 +2616,410 @@ uSP3jMwwjKy4G3AXwB0ugAsx5YzMndW//DOy3OFMjGwrxrKs7NX9LBfAneFFUcxec6rU5zqpvCqA
 qTCT16/0nPgLA/i6xjf+Xw3+B2ll/uiqTaJTAAAAAElFTkSuQmCC" />
 </td>
 <td class="content">
-<p>Il est possible de créer un tableau de longueur 0 (zéro) … si ça peut aider …</p>
+<ul>
+<li class=" slide">
+Lien sur le <a href="http://webetud.iut-blagnac.fr/">Support de Cours</a>.
+</li>
+</ul>
 </td>
 </tr></table>
 </div>
-</li>
-<li class="">
-Bien étudier le « cycle de vie » d’une pile pour mettre en œuvre les opérations (pour bien comprendre l'état et l'évolution du tableau).
-</li>
-</ul>
-</li>
-<li class="">
+<section class="slide">
+<h2>Manipulations simples d&#8217;objets</h2>
+<p>Nous allons utiliser une classe <code>Compte</code> qui permet de gérer des comptes simples comptabilisant des débits et des crédits successifs.</p>
+<div class="sect2">
+<h3 id="Partie1">1.1. Classe <code>Compte</code></h3>
+<p>Etudier en détail la documentation de la classe <code>Compte</code>. En particulier, étudiez si les méthodes sont des observateurs/accesseurs ou des modifieurs/transformateurs.</p>
+</div>
+<div class="sect2">
+<h3 id="_premiers_essais">1.2. Premiers essais</h3>
+<ol>
+<li class=" slide">
 <p>
-On écrira un programme de test complet (remplir la pile de 20 élts, la vider, la re-remplir, tester à chaque fois <code>pileVide()</code>, <code>sommet()</code>, .…).
+Déclarer une variable <code>c</code> "de type <code>Compte</code>" : une référence vers un <code>Compte</code>.
 </p>
 </li>
-<li class="">
+<li class=" slide">
 <p>
-Depuis le <code>main()</code>, essayer d’accéder aux attributs d’un objet <code>Pile</code>. Normalement il doit y avoir erreur de compilation … sinon il y a erreur de codage.
+Appliquer la méthode <code>afficher()</code> à <code>c</code>. Que se passe-t-il ?
+</p>
+</li>
+<li class=" slide">
+<p>
+Créer un <code>Compte</code> avec un n° de compte, un propriétaire, un débit de 100 et un crédit de 300 à l&#8217;aide de <code>c</code>.
+</p>
+</li>
+<li class=" slide">
+<p>
+Appliquer la méthode <code>afficher()</code> à c. Que se passe-t-il ?
+</p>
+</li>
+<li class=" slide">
+<p>
+Utiliser les méthodes disponibles sur la classe <code>Compte</code> (modifieurs, observateurs (autres que <code>afficher()</code>).
+</p>
+</li>
+<li class=" slide">
+<p>
+Appliquer la méthode <code>afficher()</code> à <code>c</code>. Que se passe-t-il ?
+</p>
+</li>
+<li class=" slide">
+<p>
+Essayer l&#8217;instruction suivante :
+</p>
+<div class="listingblock">
+<div class="content"><div class="highlight"><pre><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">c</span><span class="o">);</span>
+</pre></div></div></div>
+<p>Quel est le résultat ?</p>
+</li>
+<li class=" slide">
+<p>
+Affecter à <code>c</code> la valeur <code>null</code>.
+</p>
+</li>
+<li class=" slide">
+<p>
+Essayer l&#8217;instruction suivante :
+</p>
+<div class="listingblock">
+<div class="content"><div class="highlight"><pre><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">c</span><span class="o">);</span>
+</pre></div></div></div>
+<p>Quel est le résultat ?</p>
+</li>
+<li class=" slide">
+<p>
+Appliquer la méthode <code>afficher()</code> à <code>c</code>. Que se passe-t-il ? Expliquer.
+</p>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="_références_d_8217_objets">1.3. Références d&#8217;objets</h3>
+<ol>
+<li class=" slide">
+<p>
+Déclarer deux variables <code>n</code> et <code>cDeux</code> "de type <code>Compte</code>" : références vers un <code>Compte</code>.
+</p>
+</li>
+<li class=" slide">
+<p>
+Créer un <code>Compte</code> à l&#8217;aide de <code>cUn</code>. Déposer 1000 € sur <code>cUn</code>. Afficher <code>cUn</code> (méthode <code>afficher()</code>).
+</p>
+</li>
+<li class=" slide">
+<p>
+Affecter <code>cUn</code> à <code>cDeux</code> (<code>cDeux = cUn;</code>).
+</p>
+</li>
+<li class=" slide">
+<p>
+Afficher <code>cDeux</code>. Conclusion …
+</p>
+</li>
+<li class=" slide">
+<p>
+Déposer 2000€ sur <code>cUn</code>.
+</p>
+</li>
+<li class=" slide">
+<p>
+Afficher <code>cUn</code> et <code>cDeux</code>. Conclusion …
+</p>
+</li>
+<li class=" slide">
+<p>
+Déposer 3000€ sur <code>cDeux</code>.
+</p>
+</li>
+<li class=" slide">
+<p>
+Afficher <code>cUn</code> et <code>cDeux</code>. Afficher aussi les références par <code>println()</code> (cf <a href="#Partie1">Partie 1</a>). Conclusion …
+</p>
+</li>
+<li class=" slide">
+<p>
+Déposer 4000€ sur <code>cUn</code> PUIS affecter la valeur <code>null</code> à <code>cUn</code>.
+</p>
+</li>
+<li class=" slide">
+<p>
+Afficher <code>cDeux</code>. Conclusion …
+</p>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="_références_d_8217_objets_suite">1.4. Références d&#8217;objets (suite)</h3>
+<ol>
+<li class=" slide">
+<p>
+Déclarer deux variables <code>cUn</code> et <code>cDeux</code> "de type <code>Compte</code>" : références vers un <code>Compte</code>.
+</p>
+</li>
+<li class=" slide">
+<p>
+Créer un <code>Compte</code> à l&#8217;aide de <code>cUn</code> au nom de "Jean". Créer un autre <code>Compte</code> à l&#8217;aide de <code>cDeux</code> au nom de "Marie".
+</p>
+</li>
+<li class=" slide">
+<p>
+Afficher <code>cUn</code> et <code>cDeux</code>. Afficher aussi les références par <code>println()</code> (cf <a href="#Partie1">Partie 1</a>). Conclusion …
+</p>
+</li>
+<li class=" slide">
+<p>
+Déposer 1€ sur <code>cUn</code>. Déposer 1000€ sur <code>cDeux</code>.
+</p>
+</li>
+<li class=" slide">
+<p>
+Afficher <code>cUn</code> et <code>cDeux</code>. Conclusion …
+</p>
+</li>
+<li class=" slide">
+<p>
+Retirer  1€ de <code>cUn</code>. Retirer 1000€ de <code>cDeux</code>.
+</p>
+</li>
+<li class=" slide">
+<p>
+Afficher <code>cUn</code> et <code>cDeux</code>. Conclusion …
+</p>
+</li>
+<li class=" slide">
+<p>
+Affecter <code>cUn</code> à <code>cDeux</code> (<code>cDeux = cUn;</code>).
+</p>
+</li>
+<li class=" slide">
+<p>
+Afficher <code>cUn</code> et <code>cDeux</code>. Afficher aussi les références par <code>println()</code> (cf <a href="#Partie1">Partie 1</a>). Conclusion …
+</p>
+</li>
+<li class=" slide">
+<p>
+Déposer 1000€ sur <code>cUn</code>. Afficher <code>cUn</code> et <code>cDeux</code>.
+</p>
+</li>
+<li class=" slide">
+<p>
+Déposer 2000€ sur l’objet <code>Compte</code> ayant pour propriétaire "Marie" que vous avez créé au début de cette partie. Conclusion …
+</p>
+</li>
+</ol>
+</div>
+</section>
+<section class="slide">
+<h2>Devinette &#8230; en objet</h2>
+<p>Pour cet exercice, on va rejouer au jeu de devinette, mais en utilisant cette fois des objets <code>Devinette</code>. Un objet <code>Devinette</code>, instance de la classe <code>Devinette</code>, est un objet qui :</p>
+<ul>
+<li class=" slide">
+lors de sa création, détermine des bornes au jeu et choisit la valeur à chercher,
+</li>
+<li class=" slide">
+dispose de méthodes permettant de jouer et d’interroger l’état de la partie (nombre de coups joués, résultat d’un coup, …).
+</li>
+</ul>
+<p>Questions :</p>
+<ol>
+<li class=" slide">
+<p>
+Etudier en détail la documentation de la classe <code>Devinette</code>. En particulier, étudiez si les méthodes sont des observateurs/accesseurs ou des modifieurs/transformateurs.
+</p>
+</li>
+<li class=" slide">
+<p>
+Imaginer comment construire un programme permettant de jouer à un jeu de devinette en utilisant un objet instance de la classe <code>Devinette</code>. Ecrire un programme <code>main</code> permettant de jouer une partie de devinette.
+</p>
+</li>
+<li class=" slide">
+<p>
+Essayer, à la fin du jeu précédent, une fois la partie finie (gagnée), de jouer encore un coup (<code>soumettreCoup()</code>). Que se passe-t-il ? Consulter la documentation pour expliquer le résultat.
+</p>
+</li>
+<li class=" slide">
+<p>
+Modifier le programme pour jouer successivement 3 parties de devinette.
 </p>
 </li>
 </ol>
 </section>
 <section class="slide">
-<h2>Pour aller plus loin …</h2>
-<p>Comment s’y prendrait-on pour développer et tester une pile … d’objets <code>Compte</code> (cf. classe <a href="http://xxx">TPs précédents</a>) ? (indiquer ce qui est à faire pour chaque attribut ou méthode, ne pas écrire la classe).
-Comment s’y prendrait-on pour écrire la classe <code>PileDevinette</code> permettant de créer une pile d’objets <code>Devinette</code> ? (indiquer ce qui est à faire, ne pas écrire la classe).</p>
+<h2>Tableaux d&#8217;objets</h2>
+<ol>
+<li class=" slide">
+<p>
+Déclarer une variable <code>tabCompte</code> de type tableau de <code>Compte</code>. L’utiliser pour créer un tableau de <code>Compte</code> de 10 éléments (pas les comptes eux-mêmes).
+</p>
+</li>
+<li class=" slide">
+<p>
+Essayer la méthode <code>afficher()</code> sur chaque élément du tableau <code>tabCompte</code>. Conclusion …
+</p>
+</li>
+<li class=" slide">
+<p>
+Afficher les références : contenue dans <code>tabCompte</code>, contenue dans chaque élément de <code>tabCompte</code>.
+</p>
+</li>
+<li class=" slide">
+<p>
+Créer un objet <code>Compte</code> différent dans les éléments 0, 1, 2, 3 du tableau <code>tabCompte</code> (noms des propriétaires différents).
+</p>
+</li>
+<li class=" slide">
+<p>
+Appliquez la méthode <code>afficher()</code> aux  éléments 0 à 3 du tableau <code>tabCompte</code>. Conclusion …
+</p>
+</li>
+<li class=" slide">
+<p>
+Déposer 100€ sur le compte <code>tabCompte</code>[0], 1000€ sur <code>tabCompte</code>[1].
+</p>
+</li>
+<li class=" slide">
+<p>
+Appliquez la méthode <code>afficher()</code> aux  éléments 0 à 3 du tableau <code>tabCompte</code>. Conclusion …
+</p>
+</li>
+<li class=" slide">
+<p>
+Créer un <code>Compte</code> à l&#8217;aide d&#8217;une variable auxiliaire c.
+</p>
+</li>
+<li class=" slide">
+<p>
+Affecter c aux éléments 4 à 9 du tableau <code>tabCompte</code>.
+</p>
+</li>
+<li class=" slide">
+<p>
+Appliquez la méthode <code>afficher()</code> aux 10 éléments du tableau <code>tabCompte</code>. Conclusion …
+</p>
+</li>
+<li class=" slide">
+<p>
+Déposer 10 000€ sur c.
+</p>
+</li>
+<li class=" slide">
+<p>
+Appliquez la méthode <code>afficher()</code> aux 10 éléments du tableau <code>tabCompte</code>. Conclusion …
+</p>
+</li>
+<li class=" slide">
+<p>
+Combien d&#8217;objets ont été explicitement créés en mémoire entre les questions 1 et 11 (hors objets <code>String</code>) ? Donner leur type et le nombre de chaque type
+</p>
+</li>
+<li class=" slide">
+<p>
+Afficher les références : contenue dans <code>tabCompte</code>, contenue dans chaque élément de <code>tabCompte</code>.
+</p>
+</li>
+</ol>
 </section>
 <section class="slide">
-<h2>For fun …</h2>
-<p>Reprendre la solution de <code>Pile</code> de l’exercice 1 et essayer d’empiler 1000000 <code>int</code> … puis encore plus … y a-t-il une limite ? est-ce que ca va vite ? (Regarder l’état de la mémoire au niveau système d’exploitation).</p>
+<h2>Chaînes de caractères &#8230; des objets particuliers en java, non mutables.</h2>
+<p>Java propose deux classes de chaînes de caractères :</p>
+<ul>
+<li class=" slide">
+<code>StringBuffer</code> : la classe des chaînes de caractères modifiables (non étudiée ici).
+</li>
+<li class=" slide">
+<code>String</code> : la classe des chaînes de caractères la plus utilisée, mais ces chaînes ne sont pas modifiables (non mutables).
+</li>
+</ul>
+<p>Les <code>String</code> sont très utilisées et très souvent partagées par plusieurs éléments de code (méthodes, objets, …).
+Leur aspect non modifiable permet de partager la « valeur » (chaîne), sans pouvoir la modifier, un peu à la manière d’une valeur de type de base.</p>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Note" src="data:image/png;base64,
+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" />
+</td>
+<td class="content">
+<p>À noter, en Java, écrire un littéral chaîne équivaut à une création implicite d’un objet <code>String</code>.
+<code>"Bonjour"</code> &#8656;&#8658; <code>new String ("Bonjour")</code></p>
+</td>
+</tr></table>
+</div>
+<ol>
+<li class=" slide">
+<p>
+Etudier l’aide de la classe <code>String</code>, en particulier le début de la description de la classe.
+</p>
+</li>
+<li class=" slide">
+<p>
+Chercher comment concaténer deux chaînes de caractères <code>String</code> (2 façons). Tester l’égalité de deux chaînes de caractères (cf. opérateur « <code>==</code> » et méthode <code>equals()</code>).
+</p>
+</li>
+<li class=" slide">
+<p>
+Ecrire un programme permettant de : déclarer une variable <code>s1</code> de type <code>String</code>, de l’initialiser à la valeur "Bonjour", d’afficher la chaîne référencée par <code>s1</code> et sa longueur, d’ajouter à la fin de la chaîne " Madame", d’afficher à nouveau la chaîne et sa longueur, d’afficher la chaîne caractère par caractère, d’extraire et afficher une partie de la chaîne, de la passer en majuscules, en minuscules.
+</p>
+</li>
+<li class=" slide">
+<p>
+Si vous avez le temps, essayer les autres méthodes.
+</p>
+</li>
+</ol>
 </section>
 <section class="slide">
 <h2>Avant de partir</h2>
 <ol>
-<li class="">
+<li class=" slide">
 <p>
 Enregistrer vos programmes sous <strong>webetud</strong>
 </p>
 </li>
-<li class="">
+<li class=" slide">
 <p>
 N&#8217;oubliez-pas de vous déconnecter
 </p>
