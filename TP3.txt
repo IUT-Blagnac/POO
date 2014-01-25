@@ -1,0 +1,134 @@
+= Titre
+:Author:  DUT/INFO/M1204
+:doctitle: POO : TP3
+:lang: fr
+:slideshowlocation: Your computer
+:copyright: {date={localdate}}, {slideshowlocation} *** {author} *** Powered by AsciiDoc and W3C Slidy &#169; 
+:incremental:
+:source-highlighter: pygments
+:numbered:
+
+//----------- définitions --------------
+:sitecours: http://webetud.iut-blagnac.fr/[Support de Cours]
+:pre: PreReq
+:objtd: ObjTD
+:duree: Durée
+:depot: À rendre
+:lien: Lien
+:img: img
+
+//-------------------- Warning si correction -----------
+ifdef::prof[]
+[icon="{iconsdir}/example.png"]
+[IMPORTANT]
+.Version corrigée
+=====
+Cette version comporte des indications pour les
+réponses aux exercices.
+=====
+endif::prof[]
+
+//-------------------- Cartouche d'entête -----------
+[[cartouche]]
+[align="left",cols="1,10",width="90%"]
+|======================
+| {pre}		| J'ai relu mon cours de S1; j'ai effectué le TP et le TD précédent.
+| {objtd}	| *Créer des classes d’objets simples en Java*.  +Compte+, la classe
+| {duree}	| *2 séances* de 1,5h sur machine
+| {depot}	| listings + compte-rendu de chaque question
+|======================
+
+[TIP]
+====
+- Lien sur le {sitecours}.
+====
+
+
+
+== Décortiquer une classe
+
+Récupérer le code de la classe +Devinette+, le lire et répondre aux questions ci-après (« sauter » les instructions inconnues). 
+Remarquez que le code des méthodes est TRES court (quelques lignes).
+
+Questions (répondre en commentaire au début du code) :
+
+.	Que représentent (en POO) les identificateurs +bas+, +haut+, +nbCoups+ ? Que veut dire +private+ ?
+.	Que représente (en POO) l’identificateur +isValeurDansBornes+ ? Que veut dire +public+ dans sa déclaration ? 
+.	Combien y a-t-il de constructeurs dans la classe +Devinette+ ?
+.	Dans la déclaration de +tireAuSortVal()+, que veut dire +private+ ?
+.	Dans la déclaration de +tireAuSortVal()+, que représentent +pBInf+, +pBSup+, +alea+, +res+ ?
+.	Dans la déclaration de +isValeurDansBornes()+, qu’est ce qui est comparé (en POO) dans l'instruction suivante :
+[source,java]
+----
+if (val < this.bas || val > this.haut)
+----
+.	Dans la déclaration de +soumettreCoup()+, que réalisent les lignes :
+[source,java]
+----
+this.nbCoups++; // Incrémente quoi en POO ?
+this.existeDCJ = true; // Affecte true à quoi en POO ?
+this.dernierCoupJoue = valeurJouee; // Affecte quoi en POO à quoi en POO ?
+----
+.	Dans la classe +ParametresDevinette+, que représentent (en POO) les identificateurs +BAS1+ et +BAS2+ ? 
+Que veut dire +static+ dans leur déclaration ? Que veut dire +final+ dans leur déclaration ? Comment ferait-on une déclaration équivalente en langage C ?
+.	Question à part : Dans +Devinette.java+, à quoi ont pu servir tous les commentaires présents contenant aussi des balises html des tags spéciaux (+@author+, +@version+, +@param+, +@return+ … A quoi servent-ils à votre avis ? … et regardez en // le code et la documentation
+
+== Ecrire une classe
+
+Nous allons écrire la classe +Compte+ et reprendre les tests réalisés au http://xxx[TP précédent].
+
+image::{img}/Compte.png[]
+
+[NOTE]
+====
+Nous avons défini une opération spéciale pour le TP qui sert à afficher un +Compte+ à l’écran : +afficher()+.
+====
+
+[[Partie1]]
+=== Ecrire la classe +Compte+
+
+Un objet +Compte+ sera considéré comme contenant quatre attributs :
+
+-	le numéro de compte sous forme d’un objet String,
+-	le nom du propriétaire sous forme d’un objet String,
+-	la somme des débits successifs réalisés (type double),
+-	la somme des crédits successifs réalisés (type double).
+
+A réaliser (lire toutes les questions avant de commencer) :
+
+.	Ecrire la classe +Compte+ répondant à l’interface définie dans la documentation et ne contenant que les attributs définis ci-dessus. 
+On étudiera particulièrement le cas : 
+*	des constructeurs, en limitant au maximum le nombre de lignes à écrire,
+*	des méthodes +getProprietaire()+/+getNumCompte()+ : doivent elles renvoyer l’objet +String+ ou bien une copie ? 
+(on souhaite que le nom du propriétaire et le numéro de compte  ne soit pas modifiable de l’extérieur d’un objet +Compte+, hormis via la méthode +setProprietaire()+).
+.	Tester votre programme de test du TP précédent (utilisation de comptes) qui doit fonctionner avec la classe créée. Vous pouvez aussi compléter les tests par le programme de test fourni (serveur).
+.	Essayer d’accéder aux attributs d’un objet +Compte+. Normalement il doit y avoir erreur de compilation … sinon il y a erreur de codage.
+
+[[Partie2]]
+=== Réutilisation de comportement (à titre de test, non repris par la suite des TPs)
+
+A titre d’exercice, on ajoutera à la classe +Compte+ une méthode +void  afficherAvecSolde()+
+qui permet d’afficher un compte et son solde. Bien réfléchir comment implémenter cette méthode sachant qu’elle fait le même affichage que la méthode +afficher()+ en ajoutant le solde. Si on modifie l’affichage réalisé par +afficher()+ un compte, on souhaite que +afficherAvecSolde()+ « ait » la même modification d’affichage.
+
+=== Encapsulation/Autre implémentation
+
+Dans la <<Partie1,partie 1>>, vous avez constaté les premiers effets de l’encapsulation, l’indépendance entre l’implémentation d’une classe et les programmes qui l’utilisent :
+
+- le programme de test (client) était écrit avant la classe +Compte+, et n’utilise que l’interface de la classe, l’accès aux attributs est interdit,
+- la classe +Compte+ encapsule (cache) son fonctionnement, on peut l’implémenter (la réaliser) comme on veut, mais en respectant toujours l’interface.
+
+Nous allons encore utiliser l’encapsulation pour modifier la classe +Compte+ en modifiant son implémentation, sans modifier son interface, donc sans modification sur le programme de test (client).
+
+A réaliser (lire toutes les questions avant de commencer) :
+
+Un objet Compte sera considéré comme contenant seulement trois attributs : le numéro de compte, le nom du propriétaire + un attribut solde permettant de connaître à tout moment le solde d’un compte. Il est évident que sa valeur est à recalculer chaque fois que le solde est potentiellement modifié.
+
+.	Faire une copie du répertoire de travail de la <<Partie2,partie 2>>. Reprendre la classe +Compte+ réalisée précédemment et, sans changer l’interface (en particulier le 3° constructeur),  mettre en œuvre la nouvelle implémentation en respectant que, à tout moment, l’état de l’objet doit être cohérent.
+La méthode +afficher()+ s’en trouvera modifiée (ne peut pas afficher les mêmes informations exactement).
+.	Tester la classe avec le programme d’utilisation précédent.
+
+== Avant de partir
+
+. Enregistrer vos programmes sous *webetud*
+. N'oubliez-pas de vous déconnecter
+
