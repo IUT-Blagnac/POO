@@ -77,7 +77,7 @@ Que veut dire +static+ dans leur déclaration ? Que veut dire +final+ dans leur 
 
 Nous allons écrire la classe +Compte+ et reprendre les tests réalisés au http://xxx[TP précédent].
 
-image::{img}/Compte.png[]
+image::{img}/Compte.png[width="40%"]
 
 [NOTE]
 ====
