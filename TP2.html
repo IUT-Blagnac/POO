@@ -1,9 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
+<!DOCTYPE html>
+<html lang="fr">
 <head>
-<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
-<meta name="generator" content="AsciiDoc 8.6.8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="AsciiDoc 8.6.8">
 <title>POO : TP2</title>
 <style type="text/css">
 /* Shared CSS for AsciiDoc xhtml11 and html5 backends */
@@ -798,39 +797,37 @@ asciidoc.install();
 <body class="article">
 <div id="header">
 <h1>POO : TP2</h1>
-<span id="author">DUT/INFO/M1204</span><br />
+<span id="author">DUT/INFO/M2104</span><br>
 </div>
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
-<div class="tableblock" id="cartouche">
-<table rules="all"
-style="margin-left:0; margin-right:auto;"
-width="90%"
-frame="border"
-cellspacing="0" cellpadding="4">
-<col width="9%" />
-<col width="90%" />
+<table class="tableblock frame-all grid-all" id="cartouche"
+style="
+margin-left:0; margin-right:auto;
+width:90%;
+">
+<col style="width:9%;">
+<col style="width:90%;">
 <tbody>
 <tr>
-<td align="left" valign="top"><p class="table">PreReq</p></td>
-<td align="left" valign="top"><p class="table">Je connais la syntaxe Java; j&#8217;ai relu mon cours de S1; j&#8217;ai effectué le TP précédent.</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">PreReq</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Je connais la syntaxe Java; j&#8217;ai relu mon cours de S1; j&#8217;ai effectué le TP précédent.</p></td>
 </tr>
 <tr>
-<td align="left" valign="top"><p class="table">ObjTD</p></td>
-<td align="left" valign="top"><p class="table"><strong>Utiliser des objets en java</strong></p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">ObjTD</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><strong>Utiliser des objets en java</strong></p></td>
 </tr>
 <tr>
-<td align="left" valign="top"><p class="table">Durée</p></td>
-<td align="left" valign="top"><p class="table"><strong>2 séances</strong> de 1,5h sur machine</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">Durée</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock"><strong>2 séances</strong> de 1,5h sur machine</p></td>
 </tr>
 <tr>
-<td align="left" valign="top"><p class="table">À rendre</p></td>
-<td align="left" valign="top"><p class="table">listings + compte-rendu de chaque question</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">À rendre</p></td>
+<td class="tableblock halign-left valign-top" ><p class="tableblock">listings + compte-rendu de chaque question</p></td>
 </tr>
 </tbody>
 </table>
-</div>
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
@@ -882,7 +879,7 @@ F11dXdTUL2BO/Xx8/goEUcSxbYSJ2EGS5IlzgnSC/r4PuXzmOEuXLmXlypXU19cTCoUIh8OEQqEr
 7k5/7vOBdDpNMpkkkUiQSCTo7u7m6NGjnD59mv7+fqLRKIZhoCgKoVCI2tpampqaWLRoES0tLfh8
 Pvx+P8FgkGAw+OWfD7gj94RG13U0TSOdTpNOp8lMbmQ0TcvbArrrK1mW8Xg8eL3e7BLB5/N9dSc0
 uSP3jMwwjKy4G3AXwB0ugAsx5YzMndW//DOy3OFMjGwrxrKs7NX9LBfAneFFUcxec6rU5zqpvCqA
-qTCT16/0nPgLA/i6xjf+Xw3+B2ll/uiqTaJTAAAAAElFTkSuQmCC" />
+qTCT16/0nPgLA/i6xjf+Xw3+B2ll/uiqTaJTAAAAAElFTkSuQmCC">
 </td>
 <td class="content">
 <div class="ulist"><ul>
@@ -900,56 +897,42 @@ Lien sur le <a href="http://webetud.iut-blagnac.fr/">Support de Cours</a>.
 <div class="sect1">
 <h2 id="_manipulations_simples_d_8217_objets">1. Manipulations simples d&#8217;objets</h2>
 <div class="sectionbody">
-<div class="paragraph"><p>Nous allons utiliser une classe <code>Compte</code> qui permet de gérer des comptes simples comptabilisant des débits et des crédits successifs.</p></div>
+<div class="paragraph"><p>Nous allons utiliser une classe <span class="monospaced">Compte</span> qui permet de gérer des comptes simples comptabilisant des débits et des crédits successifs.</p></div>
 <div class="sect2">
-<h3 id="Partie1">1.1. Classe <code>Compte</code></h3>
-<div class="paragraph"><p>Etudier en détail la documentation de la classe <code>Compte</code>. En particulier, étudiez si les méthodes sont des observateurs/accesseurs ou des modifieurs/transformateurs.</p></div>
+<h3 id="Partie1">1.1. Classe <span class="monospaced">Compte</span></h3>
+<div class="paragraph"><p>Etudier en détail la documentation de la classe <span class="monospaced">Compte</span>. En particulier, étudiez si les méthodes sont des observateurs/accesseurs ou des modifieurs/transformateurs.</p></div>
 </div>
 <div class="sect2">
 <h3 id="_premiers_essais">1.2. Premiers essais</h3>
 <div class="olist arabic"><ol class="arabic">
 <li>
 <p>
-Déclarer une variable <code>c</code> "de type <code>Compte</code>" : une référence vers un <code>Compte</code>.
+Déclarer une variable <span class="monospaced">c</span> "de type <span class="monospaced">Compte</span>" : une référence vers un <span class="monospaced">Compte</span>.
 </p>
 </li>
 <li>
 <p>
-Appliquer la méthode <code>afficher()</code> à <code>c</code>. Que se passe-t-il ?
+Appliquer la méthode <span class="monospaced">afficher()</span> à <span class="monospaced">c</span>. Que se passe-t-il ?
 </p>
 </li>
 <li>
 <p>
-Créer un <code>Compte</code> avec un n° de compte, un propriétaire, un débit de 100 et un crédit de 300 à l&#8217;aide de <code>c</code>.
+Créer un <span class="monospaced">Compte</span> avec un n° de compte, un propriétaire, un débit de 100 et un crédit de 300 à l&#8217;aide de <span class="monospaced">c</span>.
 </p>
 </li>
 <li>
 <p>
-Appliquer la méthode <code>afficher()</code> à c. Que se passe-t-il ?
+Appliquer la méthode <span class="monospaced">afficher()</span> à c. Que se passe-t-il ?
 </p>
 </li>
 <li>
 <p>
-Utiliser les méthodes disponibles sur la classe <code>Compte</code> (modifieurs, observateurs (autres que <code>afficher()</code>).
+Utiliser les méthodes disponibles sur la classe <span class="monospaced">Compte</span> (modifieurs, observateurs (autres que <span class="monospaced">afficher()</span>).
 </p>
 </li>
 <li>
 <p>
-Appliquer la méthode <code>afficher()</code> à <code>c</code>. Que se passe-t-il ?
-</p>
-</li>
-<li>
-<p>
-Essayer l&#8217;instruction suivante :
-</p>
-<div class="listingblock">
-<div class="content"><div class="highlight"><pre><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">c</span><span class="o">);</span>
-</pre></div></div></div>
-<div class="paragraph"><p>Quel est le résultat ?</p></div>
-</li>
-<li>
-<p>
-Affecter à <code>c</code> la valeur <code>null</code>.
+Appliquer la méthode <span class="monospaced">afficher()</span> à <span class="monospaced">c</span>. Que se passe-t-il ?
 </p>
 </li>
 <li>
@@ -963,7 +946,21 @@ Essayer l&#8217;instruction suivante :
 </li>
 <li>
 <p>
-Appliquer la méthode <code>afficher()</code> à <code>c</code>. Que se passe-t-il ? Expliquer.
+Affecter à <span class="monospaced">c</span> la valeur <span class="monospaced">null</span>.
+</p>
+</li>
+<li>
+<p>
+Essayer l&#8217;instruction suivante :
+</p>
+<div class="listingblock">
+<div class="content"><div class="highlight"><pre><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">c</span><span class="o">);</span>
+</pre></div></div></div>
+<div class="paragraph"><p>Quel est le résultat ?</p></div>
+</li>
+<li>
+<p>
+Appliquer la méthode <span class="monospaced">afficher()</span> à <span class="monospaced">c</span>. Que se passe-t-il ? Expliquer.
 </p>
 </li>
 </ol></div>
@@ -973,52 +970,52 @@ Appliquer la méthode <code>afficher()</code> à <code>c</code>. Que se passe-t-
 <div class="olist arabic"><ol class="arabic">
 <li>
 <p>
-Déclarer deux variables <code>n</code> et <code>cDeux</code> "de type <code>Compte</code>" : références vers un <code>Compte</code>.
+Déclarer deux variables <span class="monospaced">n</span> et <span class="monospaced">cDeux</span> "de type <span class="monospaced">Compte</span>" : références vers un <span class="monospaced">Compte</span>.
 </p>
 </li>
 <li>
 <p>
-Créer un <code>Compte</code> à l&#8217;aide de <code>cUn</code>. Déposer 1000 € sur <code>cUn</code>. Afficher <code>cUn</code> (méthode <code>afficher()</code>).
+Créer un <span class="monospaced">Compte</span> à l&#8217;aide de <span class="monospaced">cUn</span>. Déposer 1000 € sur <span class="monospaced">cUn</span>. Afficher <span class="monospaced">cUn</span> (méthode <span class="monospaced">afficher()</span>).
 </p>
 </li>
 <li>
 <p>
-Affecter <code>cUn</code> à <code>cDeux</code> (<code>cDeux = cUn;</code>).
+Affecter <span class="monospaced">cUn</span> à <span class="monospaced">cDeux</span> (<span class="monospaced">cDeux = cUn;</span>).
 </p>
 </li>
 <li>
 <p>
-Afficher <code>cDeux</code>. Conclusion …
+Afficher <span class="monospaced">cDeux</span>. Conclusion …
 </p>
 </li>
 <li>
 <p>
-Déposer 2000€ sur <code>cUn</code>.
+Déposer 2000€ sur <span class="monospaced">cUn</span>.
 </p>
 </li>
 <li>
 <p>
-Afficher <code>cUn</code> et <code>cDeux</code>. Conclusion …
+Afficher <span class="monospaced">cUn</span> et <span class="monospaced">cDeux</span>. Conclusion …
 </p>
 </li>
 <li>
 <p>
-Déposer 3000€ sur <code>cDeux</code>.
+Déposer 3000€ sur <span class="monospaced">cDeux</span>.
 </p>
 </li>
 <li>
 <p>
-Afficher <code>cUn</code> et <code>cDeux</code>. Afficher aussi les références par <code>println()</code> (cf <a href="#Partie1">Partie 1</a>). Conclusion …
+Afficher <span class="monospaced">cUn</span> et <span class="monospaced">cDeux</span>. Afficher aussi les références par <span class="monospaced">println()</span> (cf <a href="#Partie1">Partie 1</a>). Conclusion …
 </p>
 </li>
 <li>
 <p>
-Déposer 4000€ sur <code>cUn</code> PUIS affecter la valeur <code>null</code> à <code>cUn</code>.
+Déposer 4000€ sur <span class="monospaced">cUn</span> PUIS affecter la valeur <span class="monospaced">null</span> à <span class="monospaced">cUn</span>.
 </p>
 </li>
 <li>
 <p>
-Afficher <code>cDeux</code>. Conclusion …
+Afficher <span class="monospaced">cDeux</span>. Conclusion …
 </p>
 </li>
 </ol></div>
@@ -1028,57 +1025,57 @@ Afficher <code>cDeux</code>. Conclusion …
 <div class="olist arabic"><ol class="arabic">
 <li>
 <p>
-Déclarer deux variables <code>cUn</code> et <code>cDeux</code> "de type <code>Compte</code>" : références vers un <code>Compte</code>.
+Déclarer deux variables <span class="monospaced">cUn</span> et <span class="monospaced">cDeux</span> "de type <span class="monospaced">Compte</span>" : références vers un <span class="monospaced">Compte</span>.
 </p>
 </li>
 <li>
 <p>
-Créer un <code>Compte</code> à l&#8217;aide de <code>cUn</code> au nom de "Jean". Créer un autre <code>Compte</code> à l&#8217;aide de <code>cDeux</code> au nom de "Marie".
+Créer un <span class="monospaced">Compte</span> à l&#8217;aide de <span class="monospaced">cUn</span> au nom de "Jean". Créer un autre <span class="monospaced">Compte</span> à l&#8217;aide de <span class="monospaced">cDeux</span> au nom de "Marie".
 </p>
 </li>
 <li>
 <p>
-Afficher <code>cUn</code> et <code>cDeux</code>. Afficher aussi les références par <code>println()</code> (cf <a href="#Partie1">Partie 1</a>). Conclusion …
+Afficher <span class="monospaced">cUn</span> et <span class="monospaced">cDeux</span>. Afficher aussi les références par <span class="monospaced">println()</span> (cf <a href="#Partie1">Partie 1</a>). Conclusion …
 </p>
 </li>
 <li>
 <p>
-Déposer 1€ sur <code>cUn</code>. Déposer 1000€ sur <code>cDeux</code>.
+Déposer 1€ sur <span class="monospaced">cUn</span>. Déposer 1000€ sur <span class="monospaced">cDeux</span>.
 </p>
 </li>
 <li>
 <p>
-Afficher <code>cUn</code> et <code>cDeux</code>. Conclusion …
+Afficher <span class="monospaced">cUn</span> et <span class="monospaced">cDeux</span>. Conclusion …
 </p>
 </li>
 <li>
 <p>
-Retirer  1€ de <code>cUn</code>. Retirer 1000€ de <code>cDeux</code>.
+Retirer  1€ de <span class="monospaced">cUn</span>. Retirer 1000€ de <span class="monospaced">cDeux</span>.
 </p>
 </li>
 <li>
 <p>
-Afficher <code>cUn</code> et <code>cDeux</code>. Conclusion …
+Afficher <span class="monospaced">cUn</span> et <span class="monospaced">cDeux</span>. Conclusion …
 </p>
 </li>
 <li>
 <p>
-Affecter <code>cUn</code> à <code>cDeux</code> (<code>cDeux = cUn;</code>).
+Affecter <span class="monospaced">cUn</span> à <span class="monospaced">cDeux</span> (<span class="monospaced">cDeux = cUn;</span>).
 </p>
 </li>
 <li>
 <p>
-Afficher <code>cUn</code> et <code>cDeux</code>. Afficher aussi les références par <code>println()</code> (cf <a href="#Partie1">Partie 1</a>). Conclusion …
+Afficher <span class="monospaced">cUn</span> et <span class="monospaced">cDeux</span>. Afficher aussi les références par <span class="monospaced">println()</span> (cf <a href="#Partie1">Partie 1</a>). Conclusion …
 </p>
 </li>
 <li>
 <p>
-Déposer 1000€ sur <code>cUn</code>. Afficher <code>cUn</code> et <code>cDeux</code>.
+Déposer 1000€ sur <span class="monospaced">cUn</span>. Afficher <span class="monospaced">cUn</span> et <span class="monospaced">cDeux</span>.
 </p>
 </li>
 <li>
 <p>
-Déposer 2000€ sur l’objet <code>Compte</code> ayant pour propriétaire "Marie" que vous avez créé au début de cette partie. Conclusion …
+Déposer 2000€ sur l’objet <span class="monospaced">Compte</span> ayant pour propriétaire "Marie" que vous avez créé au début de cette partie. Conclusion …
 </p>
 </li>
 </ol></div>
@@ -1088,7 +1085,7 @@ Déposer 2000€ sur l’objet <code>Compte</code> ayant pour propriétaire "Mar
 <div class="sect1">
 <h2 id="_devinette_8230_en_objet">2. Devinette &#8230; en objet</h2>
 <div class="sectionbody">
-<div class="paragraph"><p>Pour cet exercice, on va rejouer au jeu de devinette, mais en utilisant cette fois des objets <code>Devinette</code>. Un objet <code>Devinette</code>, instance de la classe <code>Devinette</code>, est un objet qui :</p></div>
+<div class="paragraph"><p>Pour cet exercice, on va rejouer au jeu de devinette, mais en utilisant cette fois des objets <span class="monospaced">Devinette</span>. Un objet <span class="monospaced">Devinette</span>, instance de la classe <span class="monospaced">Devinette</span>, est un objet qui :</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
@@ -1105,17 +1102,17 @@ dispose de méthodes permettant de jouer et d’interroger l’état de la parti
 <div class="olist arabic"><ol class="arabic">
 <li>
 <p>
-Etudier en détail la documentation de la classe <code>Devinette</code>. En particulier, étudiez si les méthodes sont des observateurs/accesseurs ou des modifieurs/transformateurs.
+Etudier en détail la documentation de la classe <span class="monospaced">Devinette</span>. En particulier, étudiez si les méthodes sont des observateurs/accesseurs ou des modifieurs/transformateurs.
 </p>
 </li>
 <li>
 <p>
-Imaginer comment construire un programme permettant de jouer à un jeu de devinette en utilisant un objet instance de la classe <code>Devinette</code>. Ecrire un programme <code>main</code> permettant de jouer une partie de devinette.
+Imaginer comment construire un programme permettant de jouer à un jeu de devinette en utilisant un objet instance de la classe <span class="monospaced">Devinette</span>. Ecrire un programme <span class="monospaced">main</span> permettant de jouer une partie de devinette.
 </p>
 </li>
 <li>
 <p>
-Essayer, à la fin du jeu précédent, une fois la partie finie (gagnée), de jouer encore un coup (<code>soumettreCoup()</code>). Que se passe-t-il ? Consulter la documentation pour expliquer le résultat.
+Essayer, à la fin du jeu précédent, une fois la partie finie (gagnée), de jouer encore un coup (<span class="monospaced">soumettreCoup()</span>). Que se passe-t-il ? Consulter la documentation pour expliquer le résultat.
 </p>
 </li>
 <li>
@@ -1132,52 +1129,52 @@ Modifier le programme pour jouer successivement 3 parties de devinette.
 <div class="olist arabic"><ol class="arabic">
 <li>
 <p>
-Déclarer une variable <code>tabCompte</code> de type tableau de <code>Compte</code>. L’utiliser pour créer un tableau de <code>Compte</code> de 10 éléments (pas les comptes eux-mêmes).
+Déclarer une variable <span class="monospaced">tabCompte</span> de type tableau de <span class="monospaced">Compte</span>. L’utiliser pour créer un tableau de <span class="monospaced">Compte</span> de 10 éléments (pas les comptes eux-mêmes).
 </p>
 </li>
 <li>
 <p>
-Essayer la méthode <code>afficher()</code> sur chaque élément du tableau <code>tabCompte</code>. Conclusion …
+Essayer la méthode <span class="monospaced">afficher()</span> sur chaque élément du tableau <span class="monospaced">tabCompte</span>. Conclusion …
 </p>
 </li>
 <li>
 <p>
-Afficher les références : contenue dans <code>tabCompte</code>, contenue dans chaque élément de <code>tabCompte</code>.
+Afficher les références : contenue dans <span class="monospaced">tabCompte</span>, contenue dans chaque élément de <span class="monospaced">tabCompte</span>.
 </p>
 </li>
 <li>
 <p>
-Créer un objet <code>Compte</code> différent dans les éléments 0, 1, 2, 3 du tableau <code>tabCompte</code> (noms des propriétaires différents).
+Créer un objet <span class="monospaced">Compte</span> différent dans les éléments 0, 1, 2, 3 du tableau <span class="monospaced">tabCompte</span> (noms des propriétaires différents).
 </p>
 </li>
 <li>
 <p>
-Appliquez la méthode <code>afficher()</code> aux  éléments 0 à 3 du tableau <code>tabCompte</code>. Conclusion …
+Appliquez la méthode <span class="monospaced">afficher()</span> aux  éléments 0 à 3 du tableau <span class="monospaced">tabCompte</span>. Conclusion …
 </p>
 </li>
 <li>
 <p>
-Déposer 100€ sur le compte <code>tabCompte</code>[0], 1000€ sur <code>tabCompte</code>[1].
+Déposer 100€ sur le compte <span class="monospaced">tabCompte</span>[0], 1000€ sur <span class="monospaced">tabCompte</span>[1].
 </p>
 </li>
 <li>
 <p>
-Appliquez la méthode <code>afficher()</code> aux  éléments 0 à 3 du tableau <code>tabCompte</code>. Conclusion …
+Appliquez la méthode <span class="monospaced">afficher()</span> aux  éléments 0 à 3 du tableau <span class="monospaced">tabCompte</span>. Conclusion …
 </p>
 </li>
 <li>
 <p>
-Créer un <code>Compte</code> à l&#8217;aide d&#8217;une variable auxiliaire c.
+Créer un <span class="monospaced">Compte</span> à l&#8217;aide d&#8217;une variable auxiliaire c.
 </p>
 </li>
 <li>
 <p>
-Affecter c aux éléments 4 à 9 du tableau <code>tabCompte</code>.
+Affecter c aux éléments 4 à 9 du tableau <span class="monospaced">tabCompte</span>.
 </p>
 </li>
 <li>
 <p>
-Appliquez la méthode <code>afficher()</code> aux 10 éléments du tableau <code>tabCompte</code>. Conclusion …
+Appliquez la méthode <span class="monospaced">afficher()</span> aux 10 éléments du tableau <span class="monospaced">tabCompte</span>. Conclusion …
 </p>
 </li>
 <li>
@@ -1187,17 +1184,17 @@ Déposer 10 000€ sur c.
 </li>
 <li>
 <p>
-Appliquez la méthode <code>afficher()</code> aux 10 éléments du tableau <code>tabCompte</code>. Conclusion …
+Appliquez la méthode <span class="monospaced">afficher()</span> aux 10 éléments du tableau <span class="monospaced">tabCompte</span>. Conclusion …
 </p>
 </li>
 <li>
 <p>
-Combien d&#8217;objets ont été explicitement créés en mémoire entre les questions 1 et 11 (hors objets <code>String</code>) ? Donner leur type et le nombre de chaque type
+Combien d&#8217;objets ont été explicitement créés en mémoire entre les questions 1 et 11 (hors objets <span class="monospaced">String</span>) ? Donner leur type et le nombre de chaque type
 </p>
 </li>
 <li>
 <p>
-Afficher les références : contenue dans <code>tabCompte</code>, contenue dans chaque élément de <code>tabCompte</code>.
+Afficher les références : contenue dans <span class="monospaced">tabCompte</span>, contenue dans chaque élément de <span class="monospaced">tabCompte</span>.
 </p>
 </li>
 </ol></div>
@@ -1210,86 +1207,43 @@ Afficher les références : contenue dans <code>tabCompte</code>, contenue dans 
 <div class="ulist"><ul>
 <li>
 <p>
-<code>StringBuffer</code> : la classe des chaînes de caractères modifiables (non étudiée ici).
+<span class="monospaced">StringBuffer</span> : la classe des chaînes de caractères modifiables (non étudiée ici).
 </p>
 </li>
 <li>
 <p>
-<code>String</code> : la classe des chaînes de caractères la plus utilisée, mais ces chaînes ne sont pas modifiables (non mutables).
+<span class="monospaced">String</span> : la classe des chaînes de caractères la plus utilisée, mais ces chaînes ne sont pas modifiables (non mutables).
 </p>
 </li>
 </ul></div>
-<div class="paragraph"><p>Les <code>String</code> sont très utilisées et très souvent partagées par plusieurs éléments de code (méthodes, objets, …).
+<div class="paragraph"><p>Les <span class="monospaced">String</span> sont très utilisées et très souvent partagées par plusieurs éléments de code (méthodes, objets, …).
 Leur aspect non modifiable permet de partager la « valeur » (chaîne), sans pouvoir la modifier, un peu à la manière d’une valeur de type de base.</p></div>
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
 <img alt="Note" src="data:image/png;base64,
-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" />
+">
 </td>
 <td class="content">
-<div class="paragraph"><p>À noter, en Java, écrire un littéral chaîne équivaut à une création implicite d’un objet <code>String</code>.
-<code>"Bonjour"</code> &#8656;&#8658; <code>new String ("Bonjour")</code></p></div>
+<div class="paragraph"><p>À noter, en Java, écrire un littéral chaîne équivaut à une création implicite d’un objet <span class="monospaced">String</span>.
+<span class="monospaced">"Bonjour"</span> &#8656;&#8658; <span class="monospaced">new String ("Bonjour")</span></p></div>
 </td>
 </tr></table>
 </div>
 <div class="olist arabic"><ol class="arabic">
 <li>
 <p>
-Etudier l’aide de la classe <code>String</code>, en particulier le début de la description de la classe.
+Etudier l’aide de la classe <span class="monospaced">String</span>, en particulier le début de la description de la classe.
 </p>
 </li>
 <li>
 <p>
-Chercher comment concaténer deux chaînes de caractères <code>String</code> (2 façons). Tester l’égalité de deux chaînes de caractères (cf. opérateur « <code>==</code> » et méthode <code>equals()</code>).
+Chercher comment concaténer deux chaînes de caractères <span class="monospaced">String</span> (2 façons). Tester l’égalité de deux chaînes de caractères (cf. opérateur « <span class="monospaced">==</span> » et méthode <span class="monospaced">equals()</span>).
 </p>
 </li>
 <li>
 <p>
-Ecrire un programme permettant de : déclarer une variable <code>s1</code> de type <code>String</code>, de l’initialiser à la valeur "Bonjour", d’afficher la chaîne référencée par <code>s1</code> et sa longueur, d’ajouter à la fin de la chaîne " Madame", d’afficher à nouveau la chaîne et sa longueur, d’afficher la chaîne caractère par caractère, d’extraire et afficher une partie de la chaîne, de la passer en majuscules, en minuscules.
+Ecrire un programme permettant de : déclarer une variable <span class="monospaced">s1</span> de type <span class="monospaced">String</span>, de l’initialiser à la valeur "Bonjour", d’afficher la chaîne référencée par <span class="monospaced">s1</span> et sa longueur, d’ajouter à la fin de la chaîne " Madame", d’afficher à nouveau la chaîne et sa longueur, d’afficher la chaîne caractère par caractère, d’extraire et afficher une partie de la chaîne, de la passer en majuscules, en minuscules.
 </p>
 </li>
 <li>
@@ -1318,10 +1272,10 @@ N&#8217;oubliez-pas de vous déconnecter
 </div>
 </div>
 </div>
-<div id="footnotes"><hr /></div>
+<div id="footnotes"><hr></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2014-01-25 12:01:04 CET
+Dernière mise à jour 2014-01-25 17:18:54 CET
 </div>
 </div>
 </body>

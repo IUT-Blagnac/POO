@@ -4,7 +4,7 @@
 :lang: fr
 :slideshowlocation: Your computer
 :copyright: {date={localdate}}, {slideshowlocation} *** {author} *** Powered by AsciiDoc and W3C Slidy &#169; 
-:incremental:
+:incremental!:
 :source-highlighter: pygments
 :numbered:
 
@@ -29,6 +29,8 @@ réponses aux exercices.
 endif::prof[]
 
 //-------------------- Cartouche d'entête -----------
+ifndef::slides[]
+
 [[cartouche]]
 [align="left",cols="1,10",width="90%"]
 |======================
@@ -42,6 +44,9 @@ endif::prof[]
 ====
 - Lien sur le {sitecours}.
 ====
+endif::slides[]
+
+== Preambule
 
 Rappel : TADfootnote::[**T**ype **A**bstrait de **D**onnée] *Pile*
 
@@ -60,6 +65,8 @@ Préconditions::
 	depiler (p) valide <=>  Non pileVide (p)
 ....
 
+ifdef::slides[== Préambule (suite)]
+
 Axiomes::
 ....
 	pileVide ( creerPile () )
@@ -73,6 +80,8 @@ Nous allons ajouter une opération *spéciale pour le TP* qui sert à afficher u
 ....
 		afficher : Pile -> -
 ....
+
+ifdef::slides[<<<<]
 
 Nous allons donc implémenter la classe suivante :
 
@@ -90,6 +99,8 @@ Concrètement, lors des opérations +empiler()+ et +depiler()+, il s’agira de 
 -	créer un nouveau tableau de taille adaptée,
 -	recopier dans ce tableau les valeurs nécessaires après l’opération,
 -	ce nouveau tableau devient le tableau de la +Pile+.
+
+ifdef::slides[== Implémentation de +Pile+ (suite)]
 
 A réaliser (lire toutes les questions avant de commencer) :
 
