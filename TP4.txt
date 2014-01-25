@@ -1,5 +1,5 @@
 = Titre
-:Author:  DUT/INFO/M1204
+:Author:  DUT/INFO/M2104
 :doctitle: POO : TP4
 :lang: fr
 :slideshowlocation: Your computer
