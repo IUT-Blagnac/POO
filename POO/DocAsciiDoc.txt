@@ -1,0 +1,7 @@
+
+
+Courte
+http://www.methods.co.nz/asciidoc/userguide.html
+
+Longue
+http://powerman.name/doc/asciidoc
