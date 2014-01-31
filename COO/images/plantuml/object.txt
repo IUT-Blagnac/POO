@@ -1,0 +1,8 @@
+@startuml
+class "jmb : Clients" {
+nom = "Bruel"
+prenom = "JM"
+solde = "10.000.000"
+}
+hide circle
+@enduml

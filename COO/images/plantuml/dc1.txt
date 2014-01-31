@@ -1,0 +1,16 @@
+@startuml
+Class Xorg{
+brud
+sgoon
+holy()
+}
+Class Schpuntz {
+sbog
+joop()
+snack()
+}
+Xorg "*" -- "1..*" Schpuntz : avidTod
+Xorg "0..1" - "*" Abdol : renTed
+
+hide circle
+@enduml

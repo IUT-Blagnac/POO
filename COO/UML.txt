@@ -1,0 +1,115 @@
+== La notation UML
+
+=== Méthodologie de développement
+
+Nous allons aborder les points suivants :
+
+- Pourquoi l'orienté objet ?
+- Pourquoi UML?
+- Processus de développement
+- Conception logicielle
+
+
+==== Pourquoi l'orienté objet ?
+
+- Prendre en compte tout le système
+- Ce que fait le système + comment il est organisé pour le faire
+- Quelques concepts fondamentaux : 
+* les objets
+* les messages
+* les classes
+* l'héritage et le polymorphisme
+
+==== Pourquoi UML?
+
+- tout le cycle de vie :
+* visualisation
+* spécification
+* construction du système
+* documentation
+- synthèse des meilleurs aspects des méthodes courantes
+- standard mondial
+
+==== Processus de développement
+
+Activités de bases :
+
+- Expression des besoins
+- Identification de l'environnement et du contexte
+- Planification
+- Analyse
+- Conception
+- Implémentation
+- Test
+- Révision
+
+ifdef::backend-slidy2[<<<]
+
+Plusieurs approches :
+
+- Cycle en cascade ("_waterfall_")
+- En spiral (Boehm)
+- Itératif (RUP, openUP)
+* _Inception_ : évaluation initiale (risques, etc.)
+* _Elaboration_ : architecture, principaux éléments
+* _Construction_ : développement incrémentale
+* _Transition_ : déploiement, formation
+- eXtreme Programming
+* ensembles de "principes"
+
+==== Conception logicielle
+
+Qu'est-ce qu'une bonne conception?
+
+- elle est conforme aux besoins fonctionnels / non-fonctionnels
+- elle est modulable et extensible
+- elle est compréhensible et vérifiable
+- elle est aussi simple que possible
+
+Quelques éléments dans ce sens :
+
+- séparations des responsabilités (e.g., 3-tiers)
+- modularité
+- faible dépendance et forte cohésion
+- utilisation de standards (outils, langages et notations)
+
+ifdef::backend-slidy2[<<<]
+
+Notation pour la copnception
+
+- Cas d'utilisation
+- Diagrammes de classe
+- Diagrammes d'état (statechart)
+- Diagrammes d'interaction (scénarios)
+- Diagrammes de séquence
+- Diagrammes de communication (collaboration)
+- Spécification des opérations et méthodes
+- Diagrammes de flux d'écran
+- Tables de décision
+- CRC
+- ...
+
+=== UML en résumé
+
+- Diagrammes
+* 13 dans la version 2.0
+- Principes généraux
+- Mécanismes
+* paquetages
+* stéréotypes
+* étiquettes
+* notes
+* contraintes
+
+==== Diagrammes
+
+Plus tard
+
+==== Principes généraux
+
+Plus tard
+
+==== Mécanismes
+
+Plus tard
+
