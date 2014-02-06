@@ -3735,6 +3735,36 @@ sJBIJBKJRGo9pXyTDLEDAAAAAABNgtgBAAAAAIAmQewAAAAAAECTIHYAAAAAAKBJEDsAAAAAANAg
 h8P/A1MYjptIPeHFAAAAAElFTkSuQmCC" />
 </span></p></div>
 </div>
+<div class="sect2">
+<h3 id="_egalité_d_8217_objet_et_equals">3.6. Egalité d&#8217;objet : "==" et "equals()"</h3>
+<div class="paragraph"><p>Rapportez ce que vous venez de voir avec le TP réalisé en S1 (module M1102-IAP) dans lequel vous faisiez des tests sur l&#8217;utilisation de l&#8217;opérateur == et de la méthode equals().</p></div>
+<div class="paragraph"><p>Voici un extrait du code écrit en S1 :</p></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">EqualOrNotEqual</span> <span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">(</span>String<span style="color: #990000">[]</span> arguments<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="color: #008080">String</span> message1 <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">String</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"IUT 2013-2014"</span><span style="color: #990000">);</span>
+                <span style="color: #008080">String</span> message2 <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">String</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"IUT"</span> <span style="color: #990000">+</span> <span style="color: #FF0000">" 2013-2014"</span><span style="color: #990000">);</span>
+                <span style="color: #008080">String</span> equalOrNot <span style="color: #990000">;</span>
+
+                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>message1 <span style="color: #990000">==</span> message2<span style="color: #990000">)</span> <span style="color: #FF0000">{</span> equalOrNot <span style="color: #990000">=</span> <span style="color: #FF0000">"=="</span><span style="color: #990000">;</span> <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">else</span></span> <span style="color: #FF0000">{</span> equalOrNot <span style="color: #990000">=</span> <span style="color: #FF0000">"!="</span><span style="color: #990000">;</span> <span style="color: #FF0000">}</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"message1 "</span><span style="color: #990000">+</span>equalOrNot<span style="color: #990000">+</span><span style="color: #FF0000">" message2"</span><span style="color: #990000">);</span>
+
+                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>message1<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">equals</span></span><span style="color: #990000">(</span>message2<span style="color: #990000">))</span> <span style="color: #FF0000">{</span> equalOrNot <span style="color: #990000">=</span> <span style="color: #FF0000">"equals"</span><span style="color: #990000">;</span> <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">else</span></span> <span style="color: #FF0000">{</span> equalOrNot <span style="color: #990000">=</span> <span style="color: #FF0000">"not equals"</span><span style="color: #990000">;</span> <span style="color: #FF0000">}</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"message1 "</span><span style="color: #990000">+</span>equalOrNot<span style="color: #990000">+</span><span style="color: #FF0000">" message2"</span><span style="color: #990000">);</span>
+        <span style="color: #FF0000">}</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+<div class="paragraph"><p>Expliquer le résultat d&#8217;exécution ci-dessous :</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>Résultat exécution :
+      message1 != message2       // CAR :
+      message1 equals message2   // CAR :</tt></pre>
+</div></div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -5796,7 +5826,7 @@ qCEAAAAASUVORK5CYII=" />
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2014-01-28 16:00:56 CET
+Dernière mise à jour 2014-02-02 22:19:03 CET
 </div>
 </div>
 </body>
