@@ -1,0 +1,2480 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+<meta name="generator" content="AsciiDoc 8.6.6" />
+<title>BPOO - Sujet TP 1 - Exercices</title>
+<style type="text/css">
+/* Shared CSS for AsciiDoc xhtml11 and html5 backends */
+
+/* Default font. */
+body {
+  font-family: Georgia,serif;
+}
+
+/* Title font. */
+h1, h2, h3, h4, h5, h6,
+div.title, caption.title,
+thead, p.table.header,
+#toctitle,
+#author, #revnumber, #revdate, #revremark,
+#footer {
+  font-family: Arial,Helvetica,sans-serif;
+}
+
+body {
+  margin: 1em 5% 1em 5%;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
+a:visited {
+  color: fuchsia;
+}
+
+em {
+  font-style: italic;
+  color: navy;
+}
+
+strong {
+  font-weight: bold;
+  color: #083194;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #527bbd;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+  line-height: 1.3;
+}
+
+h1, h2, h3 {
+  border-bottom: 2px solid silver;
+}
+h2 {
+  padding-top: 0.5em;
+}
+h3 {
+  float: left;
+}
+h3 + * {
+  clear: left;
+}
+h5 {
+  font-size: 1.0em;
+}
+
+div.sectionbody {
+  margin-left: 0;
+}
+
+hr {
+  border: 1px solid silver;
+}
+
+p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+ul, ol, li > p {
+  margin-top: 0;
+}
+ul > li     { color: #aaa; }
+ul > li > * { color: black; }
+
+pre {
+  padding: 0;
+  margin: 0;
+}
+
+#author {
+  color: #527bbd;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+#email {
+}
+#revnumber, #revdate, #revremark {
+}
+
+#footer {
+  font-size: small;
+  border-top: 2px solid silver;
+  padding-top: 0.5em;
+  margin-top: 4.0em;
+}
+#footer-text {
+  float: left;
+  padding-bottom: 0.5em;
+}
+#footer-badges {
+  float: right;
+  padding-bottom: 0.5em;
+}
+
+#preamble {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+div.imageblock, div.exampleblock, div.verseblock,
+div.quoteblock, div.literalblock, div.listingblock, div.sidebarblock,
+div.admonitionblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.admonitionblock {
+  margin-top: 2.0em;
+  margin-bottom: 2.0em;
+  margin-right: 10%;
+  color: #606060;
+}
+
+div.content { /* Block element content. */
+  padding: 0;
+}
+
+/* Block element titles. */
+div.title, caption.title {
+  color: #527bbd;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 1.0em;
+  margin-bottom: 0.5em;
+}
+div.title + * {
+  margin-top: 0;
+}
+
+td div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content + div.title {
+  margin-top: 0.0em;
+}
+
+div.sidebarblock > div.content {
+  background: #ffffee;
+  border: 1px solid #dddddd;
+  border-left: 4px solid #f0f0f0;
+  padding: 0.5em;
+}
+
+div.listingblock > div.content {
+  border: 1px solid #dddddd;
+  border-left: 5px solid #f0f0f0;
+  background: #f8f8f8;
+  padding: 0.5em;
+}
+
+div.quoteblock, div.verseblock {
+  padding-left: 1.0em;
+  margin-left: 1.0em;
+  margin-right: 10%;
+  border-left: 5px solid #f0f0f0;
+  color: #888;
+}
+
+div.quoteblock > div.attribution {
+  padding-top: 0.5em;
+  text-align: right;
+}
+
+div.verseblock > pre.content {
+  font-family: inherit;
+  font-size: inherit;
+}
+div.verseblock > div.attribution {
+  padding-top: 0.75em;
+  text-align: left;
+}
+/* DEPRECATED: Pre version 8.2.7 verse style literal block. */
+div.verseblock + div.attribution {
+  text-align: left;
+}
+
+div.admonitionblock .icon {
+  vertical-align: top;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #527bbd;
+  padding-right: 0.5em;
+}
+div.admonitionblock td.content {
+  padding-left: 0.5em;
+  border-left: 3px solid #dddddd;
+}
+
+div.exampleblock > div.content {
+  border-left: 3px solid #dddddd;
+  padding-left: 0.5em;
+}
+
+div.imageblock div.content { padding-left: 0; }
+span.image img { border-style: none; }
+a.image:visited { color: white; }
+
+dl {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+dt {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  font-style: normal;
+  color: navy;
+}
+dd > *:first-child {
+  margin-top: 0.1em;
+}
+
+ul, ol {
+    list-style-position: outside;
+}
+ol.arabic {
+  list-style-type: decimal;
+}
+ol.loweralpha {
+  list-style-type: lower-alpha;
+}
+ol.upperalpha {
+  list-style-type: upper-alpha;
+}
+ol.lowerroman {
+  list-style-type: lower-roman;
+}
+ol.upperroman {
+  list-style-type: upper-roman;
+}
+
+div.compact ul, div.compact ol,
+div.compact p, div.compact p,
+div.compact div, div.compact div {
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+}
+
+tfoot {
+  font-weight: bold;
+}
+td > div.verse {
+  white-space: pre;
+}
+
+div.hdlist {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+div.hdlist tr {
+  padding-bottom: 15px;
+}
+dt.hdlist1.strong, td.hdlist1.strong {
+  font-weight: bold;
+}
+td.hdlist1 {
+  vertical-align: top;
+  font-style: normal;
+  padding-right: 0.8em;
+  color: navy;
+}
+td.hdlist2 {
+  vertical-align: top;
+}
+div.hdlist.compact tr {
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.comment {
+  background: yellow;
+}
+
+.footnote, .footnoteref {
+  font-size: 0.8em;
+}
+
+span.footnote, span.footnoteref {
+  vertical-align: super;
+}
+
+#footnotes {
+  margin: 20px 0 20px 0;
+  padding: 7px 0 0 0;
+}
+
+#footnotes div.footnote {
+  margin: 0 0 5px 0;
+}
+
+#footnotes hr {
+  border: none;
+  border-top: 1px solid silver;
+  height: 1px;
+  text-align: left;
+  margin-left: 0;
+  width: 20%;
+  min-width: 100px;
+}
+
+div.colist td {
+  padding-right: 0.5em;
+  padding-bottom: 0.3em;
+  vertical-align: top;
+}
+div.colist td img {
+  margin-top: 0.3em;
+}
+
+@media print {
+  #footer-badges { display: none; }
+}
+
+#toc {
+  margin-bottom: 2.5em;
+}
+
+#toctitle {
+  color: #527bbd;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 1.0em;
+  margin-bottom: 0.1em;
+}
+
+div.toclevel1, div.toclevel2, div.toclevel3, div.toclevel4 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+div.toclevel2 {
+  margin-left: 2em;
+  font-size: 0.9em;
+}
+div.toclevel3 {
+  margin-left: 4em;
+  font-size: 0.9em;
+}
+div.toclevel4 {
+  margin-left: 6em;
+  font-size: 0.9em;
+}
+
+span.aqua { color: aqua; }
+span.black { color: black; }
+span.blue { color: blue; }
+span.fuchsia { color: fuchsia; }
+span.gray { color: gray; }
+span.green { color: green; }
+span.lime { color: lime; }
+span.maroon { color: maroon; }
+span.navy { color: navy; }
+span.olive { color: olive; }
+span.purple { color: purple; }
+span.red { color: red; }
+span.silver { color: silver; }
+span.teal { color: teal; }
+span.white { color: white; }
+span.yellow { color: yellow; }
+
+span.aqua-background { background: aqua; }
+span.black-background { background: black; }
+span.blue-background { background: blue; }
+span.fuchsia-background { background: fuchsia; }
+span.gray-background { background: gray; }
+span.green-background { background: green; }
+span.lime-background { background: lime; }
+span.maroon-background { background: maroon; }
+span.navy-background { background: navy; }
+span.olive-background { background: olive; }
+span.purple-background { background: purple; }
+span.red-background { background: red; }
+span.silver-background { background: silver; }
+span.teal-background { background: teal; }
+span.white-background { background: white; }
+span.yellow-background { background: yellow; }
+
+span.big { font-size: 2em; }
+span.small { font-size: 0.6em; }
+
+span.underline { text-decoration: underline; }
+span.overline { text-decoration: overline; }
+span.line-through { text-decoration: line-through; }
+
+
+/*
+ * xhtml11 specific
+ *
+ * */
+
+tt {
+  font-family: monospace;
+  font-size: inherit;
+  color: navy;
+}
+
+div.tableblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.tableblock > table {
+  border: 3px solid #527bbd;
+}
+thead, p.table.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+p.table {
+  margin-top: 0;
+}
+/* Because the table frame attribute is overriden by CSS in most browsers. */
+div.tableblock > table[frame="void"] {
+  border-style: none;
+}
+div.tableblock > table[frame="hsides"] {
+  border-left-style: none;
+  border-right-style: none;
+}
+div.tableblock > table[frame="vsides"] {
+  border-top-style: none;
+  border-bottom-style: none;
+}
+
+
+/*
+ * html5 specific
+ *
+ * */
+
+.monospaced {
+  font-family: monospace;
+  font-size: inherit;
+  color: navy;
+}
+
+table.tableblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+thead, p.tableblock.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+p.tableblock {
+  margin-top: 0;
+}
+table.tableblock {
+  border-width: 3px;
+  border-spacing: 0px;
+  border-style: solid;
+  border-color: #527bbd;
+  border-collapse: collapse;
+}
+th.tableblock, td.tableblock {
+  border-width: 1px;
+  padding: 4px;
+  border-style: solid;
+  border-color: #527bbd;
+}
+
+table.tableblock.frame-topbot {
+  border-left-style: hidden;
+  border-right-style: hidden;
+}
+table.tableblock.frame-sides {
+  border-top-style: hidden;
+  border-bottom-style: hidden;
+}
+table.tableblock.frame-none {
+  border-style: hidden;
+}
+
+th.tableblock.halign-left, td.tableblock.halign-left {
+  text-align: left;
+}
+th.tableblock.halign-center, td.tableblock.halign-center {
+  text-align: center;
+}
+th.tableblock.halign-right, td.tableblock.halign-right {
+  text-align: right;
+}
+
+th.tableblock.valign-top, td.tableblock.valign-top {
+  vertical-align: top;
+}
+th.tableblock.valign-middle, td.tableblock.valign-middle {
+  vertical-align: middle;
+}
+th.tableblock.valign-bottom, td.tableblock.valign-bottom {
+  vertical-align: bottom;
+}
+
+
+/*
+ * manpage specific
+ *
+ * */
+
+body.manpage h1 {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  border-top: 2px solid silver;
+  border-bottom: 2px solid silver;
+}
+body.manpage h2 {
+  border-style: none;
+}
+body.manpage div.sectionbody {
+  margin-left: 3em;
+}
+
+@media print {
+  body.manpage div#toc { display: none; }
+}
+</style>
+<script type="text/javascript">
+/*<![CDATA[*/
+var asciidoc = {  // Namespace.
+
+/////////////////////////////////////////////////////////////////////
+// Table Of Contents generator
+/////////////////////////////////////////////////////////////////////
+
+/* Author: Mihai Bazon, September 2002
+ * http://students.infoiasi.ro/~mishoo
+ *
+ * Table Of Content generator
+ * Version: 0.4
+ *
+ * Feel free to use this script under the terms of the GNU General Public
+ * License, as long as you do not remove or alter this notice.
+ */
+
+ /* modified by Troy D. Hanson, September 2006. License: GPL */
+ /* modified by Stuart Rackham, 2006, 2009. License: GPL */
+
+// toclevels = 1..4.
+toc: function (toclevels) {
+
+  function getText(el) {
+    var text = "";
+    for (var i = el.firstChild; i != null; i = i.nextSibling) {
+      if (i.nodeType == 3 /* Node.TEXT_NODE */) // IE doesn't speak constants.
+        text += i.data;
+      else if (i.firstChild != null)
+        text += getText(i);
+    }
+    return text;
+  }
+
+  function TocEntry(el, text, toclevel) {
+    this.element = el;
+    this.text = text;
+    this.toclevel = toclevel;
+  }
+
+  function tocEntries(el, toclevels) {
+    var result = new Array;
+    var re = new RegExp('[hH]([2-'+(toclevels+1)+'])');
+    // Function that scans the DOM tree for header elements (the DOM2
+    // nodeIterator API would be a better technique but not supported by all
+    // browsers).
+    var iterate = function (el) {
+      for (var i = el.firstChild; i != null; i = i.nextSibling) {
+        if (i.nodeType == 1 /* Node.ELEMENT_NODE */) {
+          var mo = re.exec(i.tagName);
+          if (mo && (i.getAttribute("class") || i.getAttribute("className")) != "float") {
+            result[result.length] = new TocEntry(i, getText(i), mo[1]-1);
+          }
+          iterate(i);
+        }
+      }
+    }
+    iterate(el);
+    return result;
+  }
+
+  var toc = document.getElementById("toc");
+  if (!toc) {
+    return;
+  }
+
+  // Delete existing TOC entries in case we're reloading the TOC.
+  var tocEntriesToRemove = [];
+  var i;
+  for (i = 0; i < toc.childNodes.length; i++) {
+    var entry = toc.childNodes[i];
+    if (entry.nodeName == 'div'
+     && entry.getAttribute("class")
+     && entry.getAttribute("class").match(/^toclevel/))
+      tocEntriesToRemove.push(entry);
+  }
+  for (i = 0; i < tocEntriesToRemove.length; i++) {
+    toc.removeChild(tocEntriesToRemove[i]);
+  }
+
+  // Rebuild TOC entries.
+  var entries = tocEntries(document.getElementById("content"), toclevels);
+  for (var i = 0; i < entries.length; ++i) {
+    var entry = entries[i];
+    if (entry.element.id == "")
+      entry.element.id = "_toc_" + i;
+    var a = document.createElement("a");
+    a.href = "#" + entry.element.id;
+    a.appendChild(document.createTextNode(entry.text));
+    var div = document.createElement("div");
+    div.appendChild(a);
+    div.className = "toclevel" + entry.toclevel;
+    toc.appendChild(div);
+  }
+  if (entries.length == 0)
+    toc.parentNode.removeChild(toc);
+},
+
+
+/////////////////////////////////////////////////////////////////////
+// Footnotes generator
+/////////////////////////////////////////////////////////////////////
+
+/* Based on footnote generation code from:
+ * http://www.brandspankingnew.net/archive/2005/07/format_footnote.html
+ */
+
+footnotes: function () {
+  // Delete existing footnote entries in case we're reloading the footnodes.
+  var i;
+  var noteholder = document.getElementById("footnotes");
+  if (!noteholder) {
+    return;
+  }
+  var entriesToRemove = [];
+  for (i = 0; i < noteholder.childNodes.length; i++) {
+    var entry = noteholder.childNodes[i];
+    if (entry.nodeName == 'div' && entry.getAttribute("class") == "footnote")
+      entriesToRemove.push(entry);
+  }
+  for (i = 0; i < entriesToRemove.length; i++) {
+    noteholder.removeChild(entriesToRemove[i]);
+  }
+
+  // Rebuild footnote entries.
+  var cont = document.getElementById("content");
+  var spans = cont.getElementsByTagName("span");
+  var refs = {};
+  var n = 0;
+  for (i=0; i<spans.length; i++) {
+    if (spans[i].className == "footnote") {
+      n++;
+      var note = spans[i].getAttribute("data-note");
+      if (!note) {
+        // Use [\s\S] in place of . so multi-line matches work.
+        // Because JavaScript has no s (dotall) regex flag.
+        note = spans[i].innerHTML.match(/\s*\[([\s\S]*)]\s*/)[1];
+        spans[i].innerHTML =
+          "[<a id='_footnoteref_" + n + "' href='#_footnote_" + n +
+          "' title='View footnote' class='footnote'>" + n + "</a>]";
+        spans[i].setAttribute("data-note", note);
+      }
+      noteholder.innerHTML +=
+        "<div class='footnote' id='_footnote_" + n + "'>" +
+        "<a href='#_footnoteref_" + n + "' title='Return to text'>" +
+        n + "</a>. " + note + "</div>";
+      var id =spans[i].getAttribute("id");
+      if (id != null) refs["#"+id] = n;
+    }
+  }
+  if (n == 0)
+    noteholder.parentNode.removeChild(noteholder);
+  else {
+    // Process footnoterefs.
+    for (i=0; i<spans.length; i++) {
+      if (spans[i].className == "footnoteref") {
+        var href = spans[i].getElementsByTagName("a")[0].getAttribute("href");
+        href = href.match(/#.*/)[0];  // Because IE return full URL.
+        n = refs[href];
+        spans[i].innerHTML =
+          "[<a href='#_footnote_" + n +
+          "' title='View footnote' class='footnote'>" + n + "</a>]";
+      }
+    }
+  }
+},
+
+install: function(toclevels) {
+  var timerId;
+
+  function reinstall() {
+    asciidoc.footnotes();
+    if (toclevels) {
+      asciidoc.toc(toclevels);
+    }
+  }
+
+  function reinstallAndRemoveTimer() {
+    clearInterval(timerId);
+    reinstall();
+  }
+
+  timerId = setInterval(reinstall, 500);
+  if (document.addEventListener)
+    document.addEventListener("DOMContentLoaded", reinstallAndRemoveTimer, false);
+  else
+    window.onload = reinstallAndRemoveTimer;
+}
+
+}
+asciidoc.install(2);
+/*]]>*/
+</script>
+</head>
+<body class="article">
+<div id="header">
+<h1>BPOO - Sujet TP 1 - Exercices</h1>
+<span id="author">Dut/Info-S2/M2103</span><br />
+<div id="toc">
+  <div id="toctitle">Table des matières</div>
+  <noscript><p><b>JavaScript must be enabled in your browser to display the table of contents.</b></p></noscript>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_compte_rendu_attendu">1. Compte rendu attendu</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Construire un fichier (txt, word) contenant :</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+les question (copier/coller)
+</p>
+</li>
+<li>
+<p>
+et vos réponses.
+</p>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_programmes_avec_variables_de_type_de_base">2. Programmes avec variables de type de base</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_programme_à_tracer_pas_à_pas">2.1. Programme à tracer pas à pas</h3>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Dans le programme suivant :
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Poser un point d&#8217;arrêt sur la ligne &lt;1&gt;.
+</p>
+</li>
+<li>
+<p>
+Exécuter pas à pas ce programme.
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+Donner la valeur de chaque variable en fin d&#8217;exécution (CR).
+</p>
+</li>
+</ol></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> argv<span style="color: #990000">[])</span> <span style="color: #FF0000">{</span>
+        <span style="color: #009900">int</span> i<span style="color: #990000">,</span> j <span style="color: #990000">;</span>
+        <span style="color: #009900">double</span> d<span style="color: #990000">,</span> e<span style="color: #990000">;</span>
+        i <span style="color: #990000">=</span> <span style="color: #993399">1</span><span style="color: #990000">;</span>  <span style="font-style: italic"><span style="color: #9A1900">//  <img alt="1" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABjSURBVHja
+VY6xDcAwCAS/pPQaLim9QmajdOk2I2SNrMEIlARIoigU8Cek/4e7zdHaWOYOVwaoA6wOCw05Y7FB
+gE0tIWQ+sBcwKM8qoD/wB5wGL8hjfdzWrh01GRp1hInGjDoXwHgsFuzBVLQAAABDdEVYdFNvZnR3
+YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
+dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
+ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
+        j <span style="color: #990000">=</span> i <span style="color: #990000">+</span> <span style="color: #993399">1</span> <span style="color: #990000">;</span>
+        d <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span>
+        e <span style="color: #990000">=</span> <span style="color: #993399">10.5</span><span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>e <span style="color: #990000">&gt;</span> i<span style="color: #990000">)</span>
+                d <span style="color: #990000">=</span> e <span style="color: #990000">;</span>  <span style="font-style: italic"><span style="color: #9A1900">//  <img alt="2" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABvSURBVAgd
+BcGhAcJADADAky8rsZXIyK7AGkgksiu8RNYyAiswAhIbiYwMd7rrsS3LdlS3zuC8EtkqrJ/8vRdR
+Js+PtSZTMHe+L8IAUXeGAZd8DYbArB3C5FbXiBNThSMzcxelM4DI1l0zxtge1f0HVNk1YLFij6sA
+AABDdEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlz
+dGljLmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAODBlYWU1MjljOTRhN2Y0N2Rl
+Y2NmYWRhMjhhY2I5ZGblb7ENAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
+                j <span style="color: #990000">=</span> <span style="color: #990000">(</span><span style="color: #009900">int</span><span style="color: #990000">)</span> <span style="color: #990000">(</span>d <span style="color: #990000">-</span> e<span style="color: #990000">)</span> <span style="color: #990000">;</span>  <span style="font-style: italic"><span style="color: #9A1900">// <img alt="3" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABxSURBVAgd
+BcGhAYNAEEXBJ1duG8gvr5XYSGRaiFyJTAtI2kAisSeRK39msHsbmePXNp4ixgg0TYu8r/tM1BR8
+ZqRXKAS5kF5BBMA+r4AgAMa7VwgEr4LzAFFQj8bzhaJF7t17oMZzgQA0jd2lSG1t/wFRuDVjQOMG
+MAAAAEN0RVh0U29mdHdhcmUAQCgjKUltYWdlTWFnaWNrIDQuMi44IDk5LzA4LzAxIGNyaXN0eUBt
+eXN0aWMuZXMuZHVwb250LmNvbZG6IbgAAAAqdEVYdFNpZ25hdHVyZQA4MGJiZGEyNzI2ZGRhY2U4
+YWI4YTAxZjU5ZGUyZWJkYgj9DnUAAAAOdEVYdFBhZ2UAMTJ4MTIrMCswhG27fQAAAABJRU5ErkJg
+gg==" /></span></span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+</div>
+<div class="sect2">
+<h3 id="_correction_du_programme">2.2. Correction du programme</h3>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Reprendre le programme précédent et remplacer i=1; par i=100 en &lt;1&gt;.
+</p>
+</li>
+<li>
+<p>
+Exécuter pas à pas ce programme.
+</p>
+</li>
+<li>
+<p>
+Donner la valeur de chaque variable en fin d&#8217;exécution (CR).
+</p>
+</li>
+<li>
+<p>
+La valeur de d a t-elle été modifiée en &lt;2&gt; (CR) ?
+</p>
+</li>
+<li>
+<p>
+La valeur de j a t-elle été modifiée en &lt;3&gt; (CR) ?
+</p>
+</li>
+<li>
+<p>
+Modifier le programme pour que d et j ne soient modifiées en &lt;1&gt; et &lt;2&gt; uniquement si la condition (e &gt; i) est vraie (structure du si).
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+d vaudra 0.0 à la fin, et j vaudra 101
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+Noter que l&#8217;indentation du programme était &#8230; trompeuse.
+</p>
+</li>
+</ol></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_programmes_avec_variables_de_type_tableau">3. Programmes avec variables de type tableau</h2>
+<div class="sectionbody">
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Dans le programme suivant :
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Poser un point d&#8217;arrêt sur la ligne &lt;1&gt;.
+</p>
+</li>
+<li>
+<p>
+Exécuter pas à pas ce programme et indiquer ce qui est affiché (CR).
+</p>
+</li>
+<li>
+<p>
+Quelles sont les valeurs de i en &lt;2&gt;, &lt;3&gt;, &lt;4&gt; ?
+</p>
+</li>
+</ul></div>
+</li>
+</ol></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> argv<span style="color: #990000">[])</span> <span style="color: #FF0000">{</span>
+        <span style="color: #009900">int</span> tab <span style="color: #990000">[],</span>  i<span style="color: #990000">,</span> som<span style="color: #990000">;</span>
+        <span style="color: #009900">int</span> tab3 <span style="color: #990000">[]</span> <span style="color: #990000">=</span> <span style="color: #FF0000">{</span><span style="color: #993399">1</span><span style="color: #990000">,</span> <span style="color: #993399">2</span><span style="color: #990000">,</span> <span style="color: #993399">3</span><span style="color: #FF0000">}</span><span style="color: #990000">;</span>  <span style="font-style: italic"><span style="color: #9A1900">// <img alt="1" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABjSURBVHja
+VY6xDcAwCAS/pPQaLim9QmajdOk2I2SNrMEIlARIoigU8Cek/4e7zdHaWOYOVwaoA6wOCw05Y7FB
+gE0tIWQ+sBcwKM8qoD/wB5wGL8hjfdzWrh01GRp1hInGjDoXwHgsFuzBVLQAAABDdEVYdFNvZnR3
+YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
+dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
+ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
+
+        tab <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="color: #009900">int</span> <span style="color: #990000">[</span><span style="color: #993399">5</span><span style="color: #990000">];</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span> i <span style="color: #990000">&lt;</span> tab<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
+                tab<span style="color: #990000">[</span>i<span style="color: #990000">]</span> <span style="color: #990000">=</span> <span style="color: #993399">20</span><span style="color: #990000">+</span>i<span style="color: #990000">;</span>
+        <span style="color: #FF0000">}</span>
+        <span style="font-style: italic"><span style="color: #9A1900">// <img alt="2" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABvSURBVAgd
+BcGhAcJADADAky8rsZXIyK7AGkgksiu8RNYyAiswAhIbiYwMd7rrsS3LdlS3zuC8EtkqrJ/8vRdR
+Js+PtSZTMHe+L8IAUXeGAZd8DYbArB3C5FbXiBNThSMzcxelM4DI1l0zxtge1f0HVNk1YLFij6sA
+AABDdEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlz
+dGljLmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAODBlYWU1MjljOTRhN2Y0N2Rl
+Y2NmYWRhMjhhY2I5ZGblb7ENAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
+        <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span> i <span style="color: #990000">&lt;</span> tab<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span>tab<span style="color: #990000">[</span>i<span style="color: #990000">]);</span>
+        <span style="color: #FF0000">}</span>
+        <span style="font-style: italic"><span style="color: #9A1900">// <img alt="3" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABxSURBVAgd
+BcGhAYNAEEXBJ1duG8gvr5XYSGRaiFyJTAtI2kAisSeRK39msHsbmePXNp4ixgg0TYu8r/tM1BR8
+ZqRXKAS5kF5BBMA+r4AgAMa7VwgEr4LzAFFQj8bzhaJF7t17oMZzgQA0jd2lSG1t/wFRuDVjQOMG
+MAAAAEN0RVh0U29mdHdhcmUAQCgjKUltYWdlTWFnaWNrIDQuMi44IDk5LzA4LzAxIGNyaXN0eUBt
+eXN0aWMuZXMuZHVwb250LmNvbZG6IbgAAAAqdEVYdFNpZ25hdHVyZQA4MGJiZGEyNzI2ZGRhY2U4
+YWI4YTAxZjU5ZGUyZWJkYgj9DnUAAAAOdEVYdFBhZ2UAMTJ4MTIrMCswhG27fQAAAABJRU5ErkJg
+gg==" /></span></span>
+        som <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span> i <span style="color: #990000">&lt;</span> tab3<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
+                som <span style="color: #990000">=</span> som <span style="color: #990000">+</span> tab3<span style="color: #990000">[</span>i<span style="color: #990000">];</span>
+        <span style="color: #FF0000">}</span>
+        <span style="font-style: italic"><span style="color: #9A1900">// <img alt="4" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABsSURBVAgd
+BcERosNAGAbAwWAwWlwM5gqLxerDh3uNYLEazJWqweCPX2ckOZ+t9SOJVEebbVeko2ewlRPzlYG3
+jvO4B1YLr2uugcnicY9W+8Kk+0uSHKwOUAO72uD7Tyu5N6B9I6nPOk/rXskP6gY2ju5T29cAAABD
+dEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGlj
+LmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAOWY4MmZjYWM5ZTAzOWNiZGI3MjM4
+MGE0NTkxMzI0ZjWAu/h2AAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
+        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span>som<span style="color: #990000">);</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Important" src="data:image/png;base64,
+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" />
+</td>
+<td class="content">
+<div class="title">ATTENTION</div>
+<div class="paragraph"><p>A noter : le debugger affiche en face des variables tableaux "(id=..)" : c&#8217;est l&#8217;identifiant d&#8217;objet.
+Noter aussi que la séparation entre la pile et le tas n&#8217;est pas indiquée clairement. Mais les variables du sous-programme qui s&#8217;exécute sont dans la pile, les tableaux sont dans le tas.</p></div>
+</td>
+</tr></table>
+</div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Important" src="data:image/png;base64,
+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" />
+</td>
+<td class="content">
+<div class="title">ATTENTION</div>
+<div class="paragraph"><p>Penser dans le debugger à "dérouler" le tableau. Icône triangle à côté de la variable tableau.</p></div>
+<div class="paragraph"><p>+
+<span class="image">
+<img alt="images/TP1VariablesTableaux.png" src="data:image/png;base64,
+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
+/g8/w8VG9zc/NwAAAABJRU5ErkJggg==" />
+</span></p></div>
+</td>
+</tr></table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_je_compte_tu_comptes_le_for_compte_8230">4. Je compte, tu comptes, le for compte &#8230;</h2>
+<div class="sectionbody">
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Reprendre le programme suivant indenté de façon particulière pour bien comprendre le fonctionnement.
+</p>
+</li>
+<li>
+<p>
+Poser un point d&#8217;arrêt sur la ligne &lt;1&gt;.
+</p>
+</li>
+<li>
+<p>
+Exécuter pas à pas ce programme et à chaque point &lt;2&gt; à &lt;8&gt;, indiquer dans le CR :
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+les valeurs des cases du tableau tab,
+</p>
+</li>
+<li>
+<p>
+la valeur finale de l&#8217;indice utilisé par le for
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Exemple : en 2 : tab : [20, 21, 22, 23, 24], i vaut 5
+</p>
+</li>
+</ul></div>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+Des bugs peuvent être présents : les corriger lorsque de besoin pour que le programme fonctionne.
+</p>
+</li>
+</ol></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> argv<span style="color: #990000">[])</span> <span style="color: #FF0000">{</span>
+        <span style="color: #009900">int</span> tab <span style="color: #990000">[]</span> <span style="color: #990000">;</span>
+        <span style="color: #009900">int</span> i<span style="color: #990000">,</span> j<span style="color: #990000">,</span> k<span style="color: #990000">,</span> l<span style="color: #990000">,</span> m<span style="color: #990000">,</span> n<span style="color: #990000">,</span> o<span style="color: #990000">,</span> p <span style="color: #990000">;</span>  <span style="font-style: italic"><span style="color: #9A1900">// <img alt="1" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABjSURBVHja
+VY6xDcAwCAS/pPQaLim9QmajdOk2I2SNrMEIlARIoigU8Cek/4e7zdHaWOYOVwaoA6wOCw05Y7FB
+gE0tIWQ+sBcwKM8qoD/wB5wGL8hjfdzWrh01GRp1hInGjDoXwHgsFuzBVLQAAABDdEVYdFNvZnR3
+YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
+dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
+ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
+
+        tab <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="color: #009900">int</span> <span style="color: #990000">[</span><span style="color: #993399">5</span><span style="color: #990000">];</span>
+        i <span style="color: #990000">=</span> <span style="color: #993399">1</span><span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span>
+                 i <span style="color: #990000">&lt;</span> tab<span style="color: #990000">.</span>length<span style="color: #990000">;</span>
+                 i<span style="color: #990000">++)</span>
+        <span style="color: #FF0000">{</span>
+                tab<span style="color: #990000">[</span>i<span style="color: #990000">]</span> <span style="color: #990000">=</span> <span style="color: #993399">20</span><span style="color: #990000">+</span>i<span style="color: #990000">;</span>
+        <span style="color: #FF0000">}</span>
+        <span style="font-style: italic"><span style="color: #9A1900">// <img alt="2" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABvSURBVAgd
+BcGhAcJADADAky8rsZXIyK7AGkgksiu8RNYyAiswAhIbiYwMd7rrsS3LdlS3zuC8EtkqrJ/8vRdR
+Js+PtSZTMHe+L8IAUXeGAZd8DYbArB3C5FbXiBNThSMzcxelM4DI1l0zxtge1f0HVNk1YLFij6sA
+AABDdEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlz
+dGljLmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAODBlYWU1MjljOTRhN2Y0N2Rl
+Y2NmYWRhMjhhY2I5ZGblb7ENAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
+        <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>j <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span>
+                 j <span style="color: #990000">&lt;=</span> tab<span style="color: #990000">.</span>length<span style="color: #990000">-</span><span style="color: #993399">1</span><span style="color: #990000">;</span>
+                 j<span style="color: #990000">++)</span>
+        <span style="color: #FF0000">{</span>
+                tab<span style="color: #990000">[</span>j<span style="color: #990000">]</span> <span style="color: #990000">=</span> <span style="color: #993399">50</span><span style="color: #990000">+</span>j<span style="color: #990000">;</span>
+        <span style="color: #FF0000">}</span>
+        <span style="font-style: italic"><span style="color: #9A1900">// <img alt="3" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABxSURBVAgd
+BcGhAYNAEEXBJ1duG8gvr5XYSGRaiFyJTAtI2kAisSeRK39msHsbmePXNp4ixgg0TYu8r/tM1BR8
+ZqRXKAS5kF5BBMA+r4AgAMa7VwgEr4LzAFFQj8bzhaJF7t17oMZzgQA0jd2lSG1t/wFRuDVjQOMG
+MAAAAEN0RVh0U29mdHdhcmUAQCgjKUltYWdlTWFnaWNrIDQuMi44IDk5LzA4LzAxIGNyaXN0eUBt
+eXN0aWMuZXMuZHVwb250LmNvbZG6IbgAAAAqdEVYdFNpZ25hdHVyZQA4MGJiZGEyNzI2ZGRhY2U4
+YWI4YTAxZjU5ZGUyZWJkYgj9DnUAAAAOdEVYdFBhZ2UAMTJ4MTIrMCswhG27fQAAAABJRU5ErkJg
+gg==" /></span></span>
+        <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>k <span style="color: #990000">=</span> <span style="color: #993399">1</span><span style="color: #990000">;</span>
+                 k <span style="color: #990000">&lt;=</span> tab<span style="color: #990000">.</span>length<span style="color: #990000">;</span>
+                 k<span style="color: #990000">++)</span>
+        <span style="color: #FF0000">{</span>
+                tab<span style="color: #990000">[</span>k<span style="color: #990000">-</span><span style="color: #993399">1</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> <span style="color: #993399">100</span><span style="color: #990000">+</span>k<span style="color: #990000">;</span>
+        <span style="color: #FF0000">}</span>
+        <span style="font-style: italic"><span style="color: #9A1900">// <img alt="4" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABsSURBVAgd
+BcERosNAGAbAwWAwWlwM5gqLxerDh3uNYLEazJWqweCPX2ckOZ+t9SOJVEebbVeko2ewlRPzlYG3
+jvO4B1YLr2uugcnicY9W+8Kk+0uSHKwOUAO72uD7Tyu5N6B9I6nPOk/rXskP6gY2ju5T29cAAABD
+dEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGlj
+LmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAOWY4MmZjYWM5ZTAzOWNiZGI3MjM4
+MGE0NTkxMzI0ZjWAu/h2AAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
+        <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>l <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span>
+                 l <span style="color: #990000">&lt;</span> tab<span style="color: #990000">.</span>length<span style="color: #990000">;</span>
+                 j<span style="color: #990000">++)</span>
+        <span style="color: #FF0000">{</span>
+                tab<span style="color: #990000">[</span>l<span style="color: #990000">]</span> <span style="color: #990000">=</span> <span style="color: #993399">200</span><span style="color: #990000">+</span>l<span style="color: #990000">;</span>
+        <span style="color: #FF0000">}</span>
+        <span style="font-style: italic"><span style="color: #9A1900">// <img alt="5" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABwSURBVAgd
+BcGhAQMhEEXBJ1cisUgkclughNSDRCLPItNKSsCeXIn8mUHS4zn5vBIKt1pLtXaEHFdEdOplg8sA
+mHRwfX/DoJHBNfr7gJGhDJgBRof0gfVCY0NTL2fBRA4j7k7Ui8LBDOoRkpabtXmlPyNbNy/5rUKm
+AAAAQ3RFWHRTb2Z0d2FyZQBAKCMpSW1hZ2VNYWdpY2sgNC4yLjggOTkvMDgvMDEgY3Jpc3R5QG15
+c3RpYy5lcy5kdXBvbnQuY29tkbohuAAAACp0RVh0U2lnbmF0dXJlAGZlNjkwNDYzMzc5ZWIyNWU1
+NjJmY2M4Y2M5YjNjN2Uw37I5ngAAAA50RVh0UGFnZQAxMngxMiswKzCEbbt9AAAAAElFTkSuQmCC" /></span></span>
+        <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>m <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span>
+                 m <span style="color: #990000">&lt;=</span> tab<span style="color: #990000">.</span>length<span style="color: #990000">;</span>
+                 m<span style="color: #990000">++)</span>
+        <span style="color: #FF0000">{</span>
+                tab<span style="color: #990000">[</span>m<span style="color: #990000">]</span> <span style="color: #990000">=</span> <span style="color: #993399">400</span><span style="color: #990000">+</span>m<span style="color: #990000">;</span>
+        <span style="color: #FF0000">}</span>
+        <span style="font-style: italic"><span style="color: #9A1900">// <img alt="6" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAAB3SURBVAgd
+BcGhAYMwEIbRT56sjEVGRt4KkV2jkhWQSGRtJCPUIjMCFnny5N/3kHS+a+1DEsoOpYI/Qh1GPJfh
+yQlrlBIOBx2uUd2ARoEn5pwvMArcE4sVjA6/AXODxoBPLEt22EmHI3ODmigczKDeQsqvm7U9pT+z
+czjqM2LYYQAAAEN0RVh0U29mdHdhcmUAQCgjKUltYWdlTWFnaWNrIDQuMi44IDk5LzA4LzAxIGNy
+aXN0eUBteXN0aWMuZXMuZHVwb250LmNvbZG6IbgAAAAqdEVYdFNpZ25hdHVyZQBkMjVkNzE3NmQ2
+N2EwMzhhZmMxYzU2NTU4ZTNkZmIxYf0Q9bUAAAAOdEVYdFBhZ2UAMTJ4MTIrMCswhG27fQAAAABJ
+RU5ErkJggg==" /></span></span>
+        <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>n <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span>
+                 n <span style="color: #990000">&lt;</span> tab<span style="color: #990000">.</span>length<span style="color: #990000">;</span>
+                 n<span style="color: #990000">=</span>n<span style="color: #990000">+</span><span style="color: #993399">2</span><span style="color: #990000">)</span>
+        <span style="color: #FF0000">{</span>
+                tab<span style="color: #990000">[</span>n<span style="color: #990000">]</span> <span style="color: #990000">=</span> <span style="color: #993399">500</span><span style="color: #990000">+</span>n<span style="color: #990000">;</span>
+        <span style="color: #FF0000">}</span>
+        <span style="font-style: italic"><span style="color: #9A1900">// <img alt="7" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABnSURBVAgd
+BcGhAYMwAATAk5FIVoiMxFYiI5kJWdkVKiNZgxWQlZHfO0lGr3X/zkRmX9ZlXZbtiRy+SXJr0wXW
+5+DtAOPCpkGfDUWDe0BxYEuHZuCcBU7ZGQPqlN8LqE8k+Wyl1HMmfz42Mb/cLVK4AAAAQ3RFWHRT
+b2Z0d2FyZQBAKCMpSW1hZ2VNYWdpY2sgNC4yLjggOTkvMDgvMDEgY3Jpc3R5QG15c3RpYy5lcy5k
+dXBvbnQuY29tkbohuAAAACp0RVh0U2lnbmF0dXJlADI5ODM2ODE0MmFjNDNjZWJkMjU4NmQ4ZDEx
+MzdjOGRmJjnpmQAAAA50RVh0UGFnZQAxMngxMiswKzCEbbt9AAAAAElFTkSuQmCC" /></span></span>
+        <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>o <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span>
+                 o <span style="color: #990000">&lt;</span> tab<span style="color: #990000">.</span>length<span style="color: #990000">;</span>
+                 o<span style="color: #990000">=</span>o<span style="color: #990000">+</span><span style="color: #993399">3</span><span style="color: #990000">)</span>
+        <span style="color: #FF0000">{</span>
+                tab<span style="color: #990000">[</span>o<span style="color: #990000">]</span> <span style="color: #990000">=</span> <span style="color: #993399">600</span><span style="color: #990000">+</span>o<span style="color: #990000">;</span>
+        <span style="color: #FF0000">}</span>
+        <span style="font-style: italic"><span style="color: #9A1900">// <img alt="8" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAAB3SURBVAgd
+BcERAsQwEIbRD4PBarAYrAYHi3uFYq+wR8gVBouLvUaxGhwM/vsekq59LbtLQmGQC2xDqIG/z52p
+EwebmXFCx6DNnOKAygL8xvskSCzwmbvFAQkDv+G6oeJwxlrGFzpqpD6iJ+pEYQCwhZDkVkpzSX+j
+nzm6ZQIiVQAAAEN0RVh0U29mdHdhcmUAQCgjKUltYWdlTWFnaWNrIDQuMi44IDk5LzA4LzAxIGNy
+aXN0eUBteXN0aWMuZXMuZHVwb250LmNvbZG6IbgAAAAqdEVYdFNpZ25hdHVyZQA1N2JlMTk1MDVj
+MDNmOTJmMzg0N2Y1MzVlOWIxMTRlOdk0a0MAAAAOdEVYdFBhZ2UAMTJ4MTIrMCswhG27fQAAAABJ
+RU5ErkJggg==" /></span></span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_passage_de_paramètres_variables_de_type_simple">5. Passage de paramètres : variables de type simple</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_exemple_simple">5.1. Exemple simple</h3>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Reprendre le code du début du tp (cf. ci-dessous);
+</p>
+</li>
+</ol></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">double</span> <span style="font-weight: bold"><span style="color: #000000">plusPlus</span></span> <span style="color: #990000">(</span><span style="color: #009900">double</span> a<span style="color: #990000">,</span> <span style="color: #009900">int</span> d<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+        <span style="color: #009900">double</span> res<span style="color: #990000">;</span>
+
+        res <span style="color: #990000">=</span> a <span style="color: #990000">+</span> d <span style="color: #990000">+</span> <span style="color: #993399">1</span><span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> res<span style="color: #990000">;</span>
+<span style="color: #FF0000">}</span>
+<span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> argv<span style="color: #990000">[])</span> <span style="color: #FF0000">{</span>
+        <span style="color: #009900">double</span> ageDebut<span style="color: #990000">;</span>
+        <span style="color: #009900">int</span> anneesEtudes<span style="color: #990000">;</span>
+        <span style="color: #009900">double</span> ageFinEtudes<span style="color: #990000">;</span>
+
+        ageDebut <span style="color: #990000">=</span> <span style="color: #993399">23</span><span style="color: #990000">;</span>
+        anneesEtudes <span style="color: #990000">=</span> <span style="color: #993399">5</span> <span style="color: #990000">;</span>
+        ageFinEtudes <span style="color: #990000">=</span> ClasseEssai<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">plusPlus</span></span> <span style="color: #990000">(</span>ageDebut<span style="color: #990000">,</span> anneesEtudes<span style="color: #990000">);</span> <span style="font-style: italic"><span style="color: #9A1900">// <img alt="1" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABjSURBVHja
+VY6xDcAwCAS/pPQaLim9QmajdOk2I2SNrMEIlARIoigU8Cek/4e7zdHaWOYOVwaoA6wOCw05Y7FB
+gE0tIWQ+sBcwKM8qoD/wB5wGL8hjfdzWrh01GRp1hInGjDoXwHgsFuzBVLQAAABDdEVYdFNvZnR3
+YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
+dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
+ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
+        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"Votre age en fin de parcours d'études : "</span> <span style="color: #990000">+</span> ageFinEtudes<span style="color: #990000">);</span> <span style="font-style: italic"><span style="color: #9A1900">// <img alt="2" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABvSURBVAgd
+BcGhAcJADADAky8rsZXIyK7AGkgksiu8RNYyAiswAhIbiYwMd7rrsS3LdlS3zuC8EtkqrJ/8vRdR
+Js+PtSZTMHe+L8IAUXeGAZd8DYbArB3C5FbXiBNThSMzcxelM4DI1l0zxtge1f0HVNk1YLFij6sA
+AABDdEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlz
+dGljLmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAODBlYWU1MjljOTRhN2Y0N2Rl
+Y2NmYWRhMjhhY2I5ZGblb7ENAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Exécuter pas à pas à partir du début du main jusqu'à &lt;1&gt;
+</p>
+</li>
+<li>
+<p>
+A cet endroit quelles sont les valeurs de ageDebut et anneesEtudes ?
+</p>
+</li>
+<li>
+<p>
+Rentrer dans l&#8217;exécution de ClasseEssai.test() &#8594; "Step Into".
+</p>
+</li>
+<li>
+<p>
+A l&#8217;entrée dans le sous-programme :
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Quelles sont les valeurs de a et d ?
+</p>
+</li>
+<li>
+<p>
+Pourquoi ?
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+Exécuter pas à pas jusqu'à revenir en &lt;1&gt;
+</p>
+</li>
+<li>
+<p>
+Quelle valeur est affectée à ageFinEtudes ?
+</p>
+</li>
+</ol></div>
+</div>
+<div class="sect2">
+<h3 id="_des_variables_de_même_identificateur_dans_des_sous_programmes_différents_portée_des_variables">5.2. Des variables de même identificateur dans des sous-programmes différents - Portée des variables.</h3>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Modifier le programme ci-dessus pour changer dans ClasseEssai.test() :
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+l&#8217;identificateur a par ageDebut
+</p>
+</li>
+<li>
+<p>
+l&#8217;identificateur d par anneesEtudes
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+Ré exécuter pas à pas comme ci-dessus. Cela doit fonctionner.
+</p>
+</li>
+<li>
+<p>
+Pour autant les variables déclarées dans test() et main() sont indépendantes :
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+dans test ajouter les deux lignes suivantes juste avant le return (après le calcul)
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+ageDebut = 0;
+</p>
+</li>
+<li>
+<p>
+anneesEtudes = 0;
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+Ré exécuter pas à pas comme ci-dessus.
+</p>
+</li>
+<li>
+<p>
+Quelles sont les valeurs de ageDebut et anneesEtudes dans le main() après retour du sous-programme test() ? (en &lt;2&gt; par exemple).
+</p>
+</li>
+</ul></div>
+</li>
+</ol></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_passage_de_paramètres_tableaux">6. Passage de paramètres : tableaux</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Reprendre le programme suivant.</p></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">ClasseEssai</span> <span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">afficheTab</span></span> <span style="color: #990000">(</span><span style="color: #009900">int</span><span style="color: #990000">[]</span> t<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="color: #009900">int</span> i<span style="color: #990000">;</span>
+
+                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>t<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
+                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>t<span style="color: #990000">[</span>i<span style="color: #990000">]);</span>
+                <span style="color: #FF0000">}</span>
+        <span style="color: #FF0000">}</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">somTab</span></span> <span style="color: #990000">(</span><span style="color: #009900">int</span><span style="color: #990000">[]</span> t<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="color: #009900">int</span> i<span style="color: #990000">,</span> som<span style="color: #990000">;</span>
+                som <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span>
+
+                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>t<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
+                        som <span style="color: #990000">=</span> som<span style="color: #990000">+</span>t<span style="color: #990000">[</span>i<span style="color: #990000">];</span>
+                <span style="color: #FF0000">}</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> som<span style="color: #990000">;</span>
+        <span style="color: #FF0000">}</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">changeTab</span></span> <span style="color: #990000">(</span><span style="color: #009900">int</span><span style="color: #990000">[]</span> t<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="color: #009900">int</span> i <span style="color: #990000">;</span>
+
+                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>t<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
+                        t<span style="color: #990000">[</span>i<span style="color: #990000">]</span> <span style="color: #990000">=</span> t<span style="color: #990000">[</span>i<span style="color: #990000">]</span> <span style="color: #990000">*</span> <span style="color: #993399">100</span><span style="color: #990000">;</span>
+                <span style="color: #FF0000">}</span>
+        <span style="color: #FF0000">}</span>
+
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> argv<span style="color: #990000">[])</span> <span style="color: #FF0000">{</span>
+                <span style="color: #009900">int</span> tab <span style="color: #990000">[],</span>  i<span style="color: #990000">,</span> som<span style="color: #990000">;</span>
+                <span style="color: #009900">int</span> tab3 <span style="color: #990000">[]</span> <span style="color: #990000">=</span> <span style="color: #FF0000">{</span><span style="color: #993399">1</span><span style="color: #990000">,</span> <span style="color: #993399">2</span><span style="color: #990000">,</span> <span style="color: #993399">3</span><span style="color: #FF0000">}</span><span style="color: #990000">;</span> <span style="font-style: italic"><span style="color: #9A1900">// <img alt="1" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABjSURBVHja
+VY6xDcAwCAS/pPQaLim9QmajdOk2I2SNrMEIlARIoigU8Cek/4e7zdHaWOYOVwaoA6wOCw05Y7FB
+gE0tIWQ+sBcwKM8qoD/wB5wGL8hjfdzWrh01GRp1hInGjDoXwHgsFuzBVLQAAABDdEVYdFNvZnR3
+YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
+dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
+ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
+
+                tab <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="color: #009900">int</span> <span style="color: #990000">[</span><span style="color: #993399">5</span><span style="color: #990000">];</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span> i <span style="color: #990000">&lt;</span> tab<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
+                        tab<span style="color: #990000">[</span>i<span style="color: #990000">]</span> <span style="color: #990000">=</span> <span style="color: #993399">20</span><span style="color: #990000">+</span>i<span style="color: #990000">;</span>
+                <span style="color: #FF0000">}</span>
+                ClasseEssai<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficheTab</span></span><span style="color: #990000">(</span>tab<span style="color: #990000">);</span> <span style="font-style: italic"><span style="color: #9A1900">// <img alt="2" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABvSURBVAgd
+BcGhAcJADADAky8rsZXIyK7AGkgksiu8RNYyAiswAhIbiYwMd7rrsS3LdlS3zuC8EtkqrJ/8vRdR
+Js+PtSZTMHe+L8IAUXeGAZd8DYbArB3C5FbXiBNThSMzcxelM4DI1l0zxtge1f0HVNk1YLFij6sA
+AABDdEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlz
+dGljLmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAODBlYWU1MjljOTRhN2Y0N2Rl
+Y2NmYWRhMjhhY2I5ZGblb7ENAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span> ClasseEssai<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">somTab</span></span><span style="color: #990000">(</span>tab<span style="color: #990000">)</span> <span style="color: #990000">);</span> <span style="font-style: italic"><span style="color: #9A1900">// <img alt="3" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABxSURBVAgd
+BcGhAYNAEEXBJ1duG8gvr5XYSGRaiFyJTAtI2kAisSeRK39msHsbmePXNp4ixgg0TYu8r/tM1BR8
+ZqRXKAS5kF5BBMA+r4AgAMa7VwgEr4LzAFFQj8bzhaJF7t17oMZzgQA0jd2lSG1t/wFRuDVjQOMG
+MAAAAEN0RVh0U29mdHdhcmUAQCgjKUltYWdlTWFnaWNrIDQuMi44IDk5LzA4LzAxIGNyaXN0eUBt
+eXN0aWMuZXMuZHVwb250LmNvbZG6IbgAAAAqdEVYdFNpZ25hdHVyZQA4MGJiZGEyNzI2ZGRhY2U4
+YWI4YTAxZjU5ZGUyZWJkYgj9DnUAAAAOdEVYdFBhZ2UAMTJ4MTIrMCswhG27fQAAAABJRU5ErkJg
+gg==" /></span></span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span> ClasseEssai<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">somTab</span></span><span style="color: #990000">(</span>tab3<span style="color: #990000">)</span> <span style="color: #990000">);</span> <span style="font-style: italic"><span style="color: #9A1900">// <img alt="4" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABsSURBVAgd
+BcERosNAGAbAwWAwWlwM5gqLxerDh3uNYLEazJWqweCPX2ckOZ+t9SOJVEebbVeko2ewlRPzlYG3
+jvO4B1YLr2uugcnicY9W+8Kk+0uSHKwOUAO72uD7Tyu5N6B9I6nPOk/rXskP6gY2ju5T29cAAABD
+dEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGlj
+LmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAOWY4MmZjYWM5ZTAzOWNiZGI3MjM4
+MGE0NTkxMzI0ZjWAu/h2AAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
+                ClasseEssai<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">changeTab</span></span><span style="color: #990000">(</span>tab<span style="color: #990000">);</span> <span style="font-style: italic"><span style="color: #9A1900">// <img alt="5" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABwSURBVAgd
+BcGhAQMhEEXBJ1cisUgkclughNSDRCLPItNKSsCeXIn8mUHS4zn5vBIKt1pLtXaEHFdEdOplg8sA
+mHRwfX/DoJHBNfr7gJGhDJgBRof0gfVCY0NTL2fBRA4j7k7Ui8LBDOoRkpabtXmlPyNbNy/5rUKm
+AAAAQ3RFWHRTb2Z0d2FyZQBAKCMpSW1hZ2VNYWdpY2sgNC4yLjggOTkvMDgvMDEgY3Jpc3R5QG15
+c3RpYy5lcy5kdXBvbnQuY29tkbohuAAAACp0RVh0U2lnbmF0dXJlAGZlNjkwNDYzMzc5ZWIyNWU1
+NjJmY2M4Y2M5YjNjN2Uw37I5ngAAAA50RVh0UGFnZQAxMngxMiswKzCEbbt9AAAAAElFTkSuQmCC" /></span></span>
+                ClasseEssai<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficheTab</span></span><span style="color: #990000">(</span>tab<span style="color: #990000">);</span> <span style="font-style: italic"><span style="color: #9A1900">// <img alt="6" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAAB3SURBVAgd
+BcGhAYMwEIbRT56sjEVGRt4KkV2jkhWQSGRtJCPUIjMCFnny5N/3kHS+a+1DEsoOpYI/Qh1GPJfh
+yQlrlBIOBx2uUd2ARoEn5pwvMArcE4sVjA6/AXODxoBPLEt22EmHI3ODmigczKDeQsqvm7U9pT+z
+czjqM2LYYQAAAEN0RVh0U29mdHdhcmUAQCgjKUltYWdlTWFnaWNrIDQuMi44IDk5LzA4LzAxIGNy
+aXN0eUBteXN0aWMuZXMuZHVwb250LmNvbZG6IbgAAAAqdEVYdFNpZ25hdHVyZQBkMjVkNzE3NmQ2
+N2EwMzhhZmMxYzU2NTU4ZTNkZmIxYf0Q9bUAAAAOdEVYdFBhZ2UAMTJ4MTIrMCswhG27fQAAAABJ
+RU5ErkJggg==" /></span></span>
+        <span style="color: #FF0000">}</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Mettre un point d&#8217;arrêt en &lt;1&gt;
+</p>
+</li>
+<li>
+<p>
+Exécuter pas à pas plusieurs fois si nécessaire et donner les informations suivantes dans le CR :
+</p>
+<div class="olist loweralpha"><ol class="loweralpha">
+<li>
+<p>
+En &lt;2&gt; : quel est l&#8217;identifiant de tableau contenu dans tab ?
+</p>
+</li>
+<li>
+<p>
+Entrer dans l&#8217;exécution de afficheTab(). Quel est l&#8217;identifiant de tableau contenu dans t ?
+</p>
+</li>
+<li>
+<p>
+Quelles valeurs affiche à l'écran afficheTab() ?
+</p>
+</li>
+<li>
+<p>
+Continuer jusqu&#8217;en &lt;3&gt;
+</p>
+</li>
+<li>
+<p>
+En &lt;3&gt; : quel est l&#8217;identifiant de tableau contenu dans tab ?
+</p>
+</li>
+<li>
+<p>
+Entrer dans l&#8217;exécution de somTab(). Quel est l&#8217;identifiant de tableau contenu dans t ?
+</p>
+</li>
+<li>
+<p>
+Qu&#8217;affiche au final la ligne &lt;3&gt; ?
+</p>
+</li>
+<li>
+<p>
+Continuer jusqu&#8217;en &lt;4&gt;
+</p>
+</li>
+<li>
+<p>
+En &lt;4&gt; : quel est l&#8217;identifiant de tableau contenu dans tab3 ?
+</p>
+</li>
+<li>
+<p>
+Entrer dans l&#8217;exécution de somTab(). Quel est l&#8217;identifiant de tableau contenu dans t ?
+</p>
+</li>
+<li>
+<p>
+Qu&#8217;affiche au final la ligne &lt;4&gt; ?
+</p>
+</li>
+<li>
+<p>
+Continuer jusqu&#8217;en &lt;5&gt;
+</p>
+</li>
+<li>
+<p>
+En &lt;5&gt; : quel est l&#8217;identifiant de tableau contenu dans tab ?
+</p>
+</li>
+<li>
+<p>
+Entrer dans l&#8217;exécution de changeTab(). Quel est l&#8217;identifiant de tableau contenu dans t ?
+</p>
+</li>
+<li>
+<p>
+Continuer jusqu&#8217;en &lt;6&gt;
+</p>
+</li>
+<li>
+<p>
+Inspectez les valeurs contenues dans le tableau tab. Est ce normal ?
+</p>
+</li>
+<li>
+<p>
+Que va afficher l&#8217;exécution de la ligne &lt;6&gt; ?
+</p>
+</li>
+</ol></div>
+</li>
+</ol></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_manipulations_d_8217_objets">7. Manipulations d&#8217;objets</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_un_premier_cas_simple">7.1. Un premier cas simple</h3>
+<div class="paragraph"><p>Reprendre le code source suivant complet. Indiquer dans le CR ce que ce programme affiche et prenez le temps de comprendre l&#8217;implantation mémoire.</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Mettre un point d&#8217;arrêt en &lt;1&gt;
+</p>
+</li>
+<li>
+<p>
+Exécuter pas à pas plusieurs fois si nécessaire le programme et indiquer dans le compte rendu ce qu&#8217;affiche ce programme.
+</p>
+</li>
+<li>
+<p>
+Prenez le temps de comprendre la structure créée par les objets et que l&#8217;on visualise par le debugger.
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+En particulier :
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+le lien créé en &lt;2&gt; entre "anakin" et "shmi"
+</p>
+</li>
+<li>
+<p>
+le lien créé en &lt;3&gt; entre "padme" et "anakin"
+</p>
+</li>
+<li>
+<p>
+le lien créé en &lt;4&gt; entre "anakin" et "padme"
+</p>
+</li>
+</ul></div>
+</li>
+</ul></div>
+</li>
+</ol></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Important" src="data:image/png;base64,
+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" />
+</td>
+<td class="content">
+<div class="title">Attention</div>
+<div class="paragraph"><p>Notez que le debugger affiche les objets sous forme "arborescente". De ce fait :</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Un même objet peut se "voir" à plusieurs endroits.
+</p>
+</li>
+<li>
+<p>
+On les reconnaît car ils ont le même id
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Cas de "Shmi" dont l&#8217;id (et la description) se retrouve en descendant de "Anakin"
+</p>
+</li>
+<li>
+<p>
+Cas de "Anakin" dont l&#8217;id (et la description) se retrouve en conjoint de "Padme"
+</p>
+</li>
+<li>
+<p>
+Cas de "Padme" dont l&#8217;id (et la description) se retrouve en conjoint de "Anakin"
+</p>
+</li>
+</ul></div>
+</li>
+</ul></div>
+<div class="paragraph"><p>Notez que les numéros d&#8217;objets affichés sont différents des "id" affichés par le debugger. Ils sont néanmoins équivalent (identifiant unique).</p></div>
+<div class="paragraph"><p>Notez aussi que la valeur null est affichée en 0.</p></div>
+</td>
+</tr></table>
+</div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">ClasseEssai</span> <span style="color: #FF0000">{</span>
+
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">(</span>String<span style="color: #990000">[]</span> arguments<span style="color: #990000">)</span> <span style="font-weight: bold"><span style="color: #0000FF">throws</span></span> Exception <span style="color: #FF0000">{</span>
+
+                <span style="color: #008080">Personne</span> shmi<span style="color: #990000">,</span> anakin<span style="color: #990000">,</span> padme <span style="color: #990000">;</span>
+
+                shmi <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Personne</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Shmi"</span><span style="color: #990000">,</span><span style="color: #FF0000">"Skywalker"</span><span style="color: #990000">,</span><span style="color: #FF0000">"feminin"</span><span style="color: #990000">,</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">,</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">);</span> <span style="font-style: italic"><span style="color: #9A1900">// <img alt="1" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABjSURBVHja
+VY6xDcAwCAS/pPQaLim9QmajdOk2I2SNrMEIlARIoigU8Cek/4e7zdHaWOYOVwaoA6wOCw05Y7FB
+gE0tIWQ+sBcwKM8qoD/wB5wGL8hjfdzWrh01GRp1hInGjDoXwHgsFuzBVLQAAABDdEVYdFNvZnR3
+YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
+dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
+ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
+                anakin <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Personne</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Anakin"</span><span style="color: #990000">,</span><span style="color: #FF0000">"Skywalker"</span><span style="color: #990000">,</span><span style="color: #FF0000">"masculin"</span><span style="color: #990000">,</span>shmi<span style="color: #990000">,</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">);</span> <span style="font-style: italic"><span style="color: #9A1900">// <img alt="2" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABvSURBVAgd
+BcGhAcJADADAky8rsZXIyK7AGkgksiu8RNYyAiswAhIbiYwMd7rrsS3LdlS3zuC8EtkqrJ/8vRdR
+Js+PtSZTMHe+L8IAUXeGAZd8DYbArB3C5FbXiBNThSMzcxelM4DI1l0zxtge1f0HVNk1YLFij6sA
+AABDdEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlz
+dGljLmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAODBlYWU1MjljOTRhN2Y0N2Rl
+Y2NmYWRhMjhhY2I5ZGblb7ENAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
+                padme <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Personne</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Padme"</span><span style="color: #990000">,</span><span style="color: #FF0000">"Amidala"</span><span style="color: #990000">,</span><span style="color: #FF0000">"feminin"</span><span style="color: #990000">,</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">,</span>anakin<span style="color: #990000">);</span>  <span style="font-style: italic"><span style="color: #9A1900">// <img alt="3" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABxSURBVAgd
+BcGhAYNAEEXBJ1duG8gvr5XYSGRaiFyJTAtI2kAisSeRK39msHsbmePXNp4ixgg0TYu8r/tM1BR8
+ZqRXKAS5kF5BBMA+r4AgAMa7VwgEr4LzAFFQj8bzhaJF7t17oMZzgQA0jd2lSG1t/wFRuDVjQOMG
+MAAAAEN0RVh0U29mdHdhcmUAQCgjKUltYWdlTWFnaWNrIDQuMi44IDk5LzA4LzAxIGNyaXN0eUBt
+eXN0aWMuZXMuZHVwb250LmNvbZG6IbgAAAAqdEVYdFNpZ25hdHVyZQA4MGJiZGEyNzI2ZGRhY2U4
+YWI4YTAxZjU5ZGUyZWJkYgj9DnUAAAAOdEVYdFBhZ2UAMTJ4MTIrMCswhG27fQAAAABJRU5ErkJg
+gg==" /></span></span>
+                anakin<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setConjointDe</span></span> <span style="color: #990000">(</span>padme<span style="color: #990000">)</span> <span style="color: #990000">;</span> <span style="font-style: italic"><span style="color: #9A1900">// <img alt="4" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABsSURBVAgd
+BcERosNAGAbAwWAwWlwM5gqLxerDh3uNYLEazJWqweCPX2ckOZ+t9SOJVEebbVeko2ewlRPzlYG3
+jvO4B1YLr2uugcnicY9W+8Kk+0uSHKwOUAO72uD7Tyu5N6B9I6nPOk/rXskP6gY2ju5T29cAAABD
+dEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGlj
+LmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAOWY4MmZjYWM5ZTAzOWNiZGI3MjM4
+MGE0NTkxMzI0ZjWAu/h2AAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
+
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>shmi<span style="color: #990000">);</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>anakin<span style="color: #990000">);</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>padme<span style="color: #990000">);</span>
+        <span style="color: #FF0000">}</span>
+<span style="color: #FF0000">}</span>
+
+<span style="font-style: italic"><span style="color: #9A1900">//Type Personne</span></span>
+<span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">Personne</span> <span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">String</span> nom <span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">String</span> prenom <span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">String</span> sexe <span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">Personne</span> descendantDe <span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">Personne</span> conjointDe <span style="color: #990000">;</span>
+
+        <span style="font-style: italic"><span style="color: #9A1900">// Constructeur</span></span>
+        <span style="font-style: italic"><span style="color: #9A1900">// usage:</span></span>
+        <span style="font-style: italic"><span style="color: #9A1900">// Personne parent, conjoint ;</span></span>
+        <span style="font-style: italic"><span style="color: #9A1900">// Personne p = new Personne("prenom","nom","feminin",parent,conjoint);</span></span>
+        <span style="font-weight: bold"><span style="color: #000000">Personne</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> valeurInitialePrenom<span style="color: #990000">,</span> <span style="color: #008080">String</span> valeurInitialeNom<span style="color: #990000">,</span> <span style="color: #008080">String</span> valeurInitialeSexe<span style="color: #990000">,</span> <span style="color: #008080">Personne</span> valeurInitialeDescendantDe<span style="color: #990000">,</span> <span style="color: #008080">Personne</span> valeurInitialeConjointDe<span style="color: #990000">)</span><span style="color: #FF0000">{</span>
+                nom <span style="color: #990000">=</span> valeurInitialeNom <span style="color: #990000">;</span>
+                prenom <span style="color: #990000">=</span> valeurInitialePrenom <span style="color: #990000">;</span>
+                sexe <span style="color: #990000">=</span> valeurInitialeSexe <span style="color: #990000">;</span>
+                descendantDe <span style="color: #990000">=</span> valeurInitialeDescendantDe <span style="color: #990000">;</span>
+                conjointDe <span style="color: #990000">=</span> valeurInitialeConjointDe <span style="color: #990000">;</span>
+        <span style="color: #FF0000">}</span>
+
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">setConjointDe</span></span> <span style="color: #990000">(</span><span style="color: #008080">Personne</span> p<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>conjointDe <span style="color: #990000">=</span> p<span style="color: #990000">;</span>
+        <span style="color: #FF0000">}</span>
+
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #008080">String</span> <span style="font-weight: bold"><span style="color: #000000">toString</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span> <span style="font-style: italic"><span style="color: #9A1900">// Appelée lorsqu'on fait System.out.println(unePersonne);</span></span>
+                <span style="color: #008080">String</span> resultat <span style="color: #990000">=</span> <span style="color: #FF0000">""</span> <span style="color: #990000">;</span>
+                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">Personne: "</span> <span style="color: #990000">+</span> System<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">identityHashCode</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">)</span> <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span> <span style="color: #990000">;</span>
+                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"  Nom: "</span> <span style="color: #990000">+</span> nom <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span> <span style="color: #990000">;</span>
+                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"  Prenom: "</span> <span style="color: #990000">+</span> prenom <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span> <span style="color: #990000">;</span>
+                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"  Sexe: "</span> <span style="color: #990000">+</span> sexe <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span> <span style="color: #990000">;</span>
+                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"  Conjoint de: "</span> <span style="color: #990000">+</span> System<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">identityHashCode</span></span><span style="color: #990000">(</span>conjointDe<span style="color: #990000">)</span> <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span> <span style="color: #990000">;</span>
+                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"  Descendant de: "</span> <span style="color: #990000">+</span> System<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">identityHashCode</span></span><span style="color: #990000">(</span>descendantDe<span style="color: #990000">)</span> <span style="color: #990000">;</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> resultat <span style="color: #990000">;</span>
+        <span style="color: #FF0000">}</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+</div>
+<div class="sect2">
+<h3 id="_exercice_en_vraie_grandeur_visualiser_un_tp_déjà_fait">7.2. Exercice : en vraie grandeur : visualiser un TP déjà fait</h3>
+<div class="paragraph"><p>Reprendre le code source suivant complet. Indiquer dans le CR ce que ce programme affiche et prenez le temps de comprendre l&#8217;implantation mémoire.</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Mettre un point d&#8217;arrêt en &lt;1&gt;
+</p>
+</li>
+<li>
+<p>
+Exécuter pas à pas plusieurs fois si nécessaire le programme et indiquer dans le compte rendu ce qu&#8217;affiche ce programme.
+</p>
+</li>
+<li>
+<p>
+Prenez le temps de comprendre la structure créée par les objets et le tableau et que l&#8217;on visualise par le debugger.
+</p>
+</li>
+<li>
+<p>
+Comprendre les lignes &lt;2&gt;, &lt;3&gt;, &lt;4&gt;
+</p>
+</li>
+</ol></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">ClasseEssai</span> <span style="color: #FF0000">{</span>
+
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">(</span>String<span style="color: #990000">[]</span> arguments<span style="color: #990000">)</span> <span style="font-weight: bold"><span style="color: #0000FF">throws</span></span> Exception <span style="color: #FF0000">{</span>
+                Personne<span style="color: #990000">[]</span> familleSkywalker <span style="color: #990000">;</span>
+                <span style="color: #009900">int</span> i<span style="color: #990000">;</span>
+
+                familleSkywalker <span style="color: #990000">=</span> ClasseEssai<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">init</span></span><span style="color: #990000">();</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>familleSkywalker<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span>
+                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>familleSkywalker<span style="color: #990000">[</span>i<span style="color: #990000">]);</span>
+        <span style="color: #FF0000">}</span>
+
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> Personne<span style="color: #990000">[]</span> <span style="font-weight: bold"><span style="color: #000000">init</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
+                Personne<span style="color: #990000">[]</span> famille <span style="color: #990000">;</span>
+                famille <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> Personne<span style="color: #990000">[</span><span style="color: #993399">15</span><span style="color: #990000">];</span>
+
+                <span style="color: #008080">Personne</span> shmi <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Personne</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Shmi"</span><span style="color: #990000">,</span><span style="color: #FF0000">"Skywalker"</span><span style="color: #990000">,</span><span style="color: #FF0000">"feminin"</span><span style="color: #990000">,</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">,</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">);</span>
+                famille <span style="color: #990000">[</span><span style="color: #993399">0</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> shmi<span style="color: #990000">;</span>
+                <span style="color: #008080">Personne</span> anakin <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Personne</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Anakin"</span><span style="color: #990000">,</span><span style="color: #FF0000">"Skywalker"</span><span style="color: #990000">,</span><span style="color: #FF0000">"masculin"</span><span style="color: #990000">,</span>shmi<span style="color: #990000">,</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">);</span>
+                famille <span style="color: #990000">[</span><span style="color: #993399">1</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> anakin<span style="color: #990000">;</span>
+                <span style="color: #008080">Personne</span> padme <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Personne</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Padme"</span><span style="color: #990000">,</span><span style="color: #FF0000">"Amidala"</span><span style="color: #990000">,</span><span style="color: #FF0000">"feminin"</span><span style="color: #990000">,</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">,</span>anakin<span style="color: #990000">);</span>
+                anakin<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setConjointDe</span></span> <span style="color: #990000">(</span>padme<span style="color: #990000">)</span> <span style="color: #990000">;</span>
+                famille <span style="color: #990000">[</span><span style="color: #993399">2</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> padme<span style="color: #990000">;</span>
+                <span style="color: #008080">Personne</span> leia <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Personne</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Leia"</span><span style="color: #990000">,</span><span style="color: #FF0000">"Organa"</span><span style="color: #990000">,</span><span style="color: #FF0000">"feminin"</span><span style="color: #990000">,</span>anakin<span style="color: #990000">,</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">);</span>
+                famille <span style="color: #990000">[</span><span style="color: #993399">3</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> leia<span style="color: #990000">;</span>
+                <span style="color: #008080">Personne</span> han <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Personne</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Han"</span><span style="color: #990000">,</span><span style="color: #FF0000">"Solo"</span><span style="color: #990000">,</span><span style="color: #FF0000">"masculin"</span><span style="color: #990000">,</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">,</span>leia<span style="color: #990000">);</span>
+                leia<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setConjointDe</span></span> <span style="color: #990000">(</span>han<span style="color: #990000">)</span> <span style="color: #990000">;</span>
+                famille <span style="color: #990000">[</span><span style="color: #993399">4</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> han<span style="color: #990000">;</span>
+                <span style="color: #008080">Personne</span> luke <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Personne</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Luke"</span><span style="color: #990000">,</span><span style="color: #FF0000">"Skywalker"</span><span style="color: #990000">,</span><span style="color: #FF0000">"masculin"</span><span style="color: #990000">,</span>anakin<span style="color: #990000">,</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">);</span>
+                famille <span style="color: #990000">[</span><span style="color: #993399">5</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> luke<span style="color: #990000">;</span>
+                <span style="color: #008080">Personne</span> mara <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Personne</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Mara"</span><span style="color: #990000">,</span><span style="color: #FF0000">"Jade"</span><span style="color: #990000">,</span><span style="color: #FF0000">"feminin"</span><span style="color: #990000">,</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">,</span>luke<span style="color: #990000">);</span>
+                luke<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setConjointDe</span></span><span style="color: #990000">(</span>mara<span style="color: #990000">);</span>
+                famille <span style="color: #990000">[</span><span style="color: #993399">6</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> mara<span style="color: #990000">;</span>
+                <span style="color: #008080">Personne</span> ben <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Personne</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Ben"</span><span style="color: #990000">,</span><span style="color: #FF0000">"Skywalker"</span><span style="color: #990000">,</span><span style="color: #FF0000">"masculin"</span><span style="color: #990000">,</span>luke<span style="color: #990000">,</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">);</span>
+                famille <span style="color: #990000">[</span><span style="color: #993399">7</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> ben<span style="color: #990000">;</span>
+                <span style="color: #008080">Personne</span> jacen <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Personne</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Jacen"</span><span style="color: #990000">,</span><span style="color: #FF0000">"Solo"</span><span style="color: #990000">,</span><span style="color: #FF0000">"masculin"</span><span style="color: #990000">,</span>leia<span style="color: #990000">,</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">);</span>
+                famille <span style="color: #990000">[</span><span style="color: #993399">8</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> jacen<span style="color: #990000">;</span>
+                <span style="color: #008080">Personne</span> jaina <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Personne</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Jaina"</span><span style="color: #990000">,</span><span style="color: #FF0000">"Solo"</span><span style="color: #990000">,</span><span style="color: #FF0000">"feminin"</span><span style="color: #990000">,</span>leia<span style="color: #990000">,</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">);</span>
+                famille <span style="color: #990000">[</span><span style="color: #993399">9</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> jaina<span style="color: #990000">;</span>
+                <span style="color: #008080">Personne</span> anakinsolo <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Personne</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Anakin"</span><span style="color: #990000">,</span><span style="color: #FF0000">"Solo"</span><span style="color: #990000">,</span><span style="color: #FF0000">"masculin"</span><span style="color: #990000">,</span>leia<span style="color: #990000">,</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">);</span>
+                famille <span style="color: #990000">[</span><span style="color: #993399">10</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> anakinsolo <span style="color: #990000">;</span>
+                <span style="color: #008080">Personne</span> nat <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Personne</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Nat"</span><span style="color: #990000">,</span><span style="color: #FF0000">"Skywalker"</span><span style="color: #990000">,</span><span style="color: #FF0000">"masculin"</span><span style="color: #990000">,</span>ben<span style="color: #990000">,</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">);</span>
+                famille <span style="color: #990000">[</span><span style="color: #993399">11</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> nat<span style="color: #990000">;</span>
+                <span style="color: #008080">Personne</span> kol <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Personne</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Kol"</span><span style="color: #990000">,</span><span style="color: #FF0000">"Skywalker"</span><span style="color: #990000">,</span><span style="color: #FF0000">"masculin"</span><span style="color: #990000">,</span>ben<span style="color: #990000">,</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">);</span>
+                famille <span style="color: #990000">[</span><span style="color: #993399">12</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> kol<span style="color: #990000">;</span>
+
+                famille <span style="color: #990000">[</span><span style="color: #993399">13</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Personne</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Morrigan"</span><span style="color: #990000">,</span><span style="color: #FF0000">"Corde"</span><span style="color: #990000">,</span><span style="color: #FF0000">"feminin"</span><span style="color: #990000">,</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">,</span>kol<span style="color: #990000">);</span> <span style="font-style: italic"><span style="color: #9A1900">// <img alt="2" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABvSURBVAgd
+BcGhAcJADADAky8rsZXIyK7AGkgksiu8RNYyAiswAhIbiYwMd7rrsS3LdlS3zuC8EtkqrJ/8vRdR
+Js+PtSZTMHe+L8IAUXeGAZd8DYbArB3C5FbXiBNThSMzcxelM4DI1l0zxtge1f0HVNk1YLFij6sA
+AABDdEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlz
+dGljLmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAODBlYWU1MjljOTRhN2Y0N2Rl
+Y2NmYWRhMjhhY2I5ZGblb7ENAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
+                kol<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setConjointDe</span></span><span style="color: #990000">(</span>famille<span style="color: #990000">[</span><span style="color: #993399">13</span><span style="color: #990000">]);</span> <span style="font-style: italic"><span style="color: #9A1900">// <img alt="3" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABxSURBVAgd
+BcGhAYNAEEXBJ1duG8gvr5XYSGRaiFyJTAtI2kAisSeRK39msHsbmePXNp4ixgg0TYu8r/tM1BR8
+ZqRXKAS5kF5BBMA+r4AgAMa7VwgEr4LzAFFQj8bzhaJF7t17oMZzgQA0jd2lSG1t/wFRuDVjQOMG
+MAAAAEN0RVh0U29mdHdhcmUAQCgjKUltYWdlTWFnaWNrIDQuMi44IDk5LzA4LzAxIGNyaXN0eUBt
+eXN0aWMuZXMuZHVwb250LmNvbZG6IbgAAAAqdEVYdFNpZ25hdHVyZQA4MGJiZGEyNzI2ZGRhY2U4
+YWI4YTAxZjU5ZGUyZWJkYgj9DnUAAAAOdEVYdFBhZ2UAMTJ4MTIrMCswhG27fQAAAABJRU5ErkJg
+gg==" /></span></span>
+                famille <span style="color: #990000">[</span><span style="color: #993399">14</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Personne</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Cade"</span><span style="color: #990000">,</span><span style="color: #FF0000">"Skywalker"</span><span style="color: #990000">,</span><span style="color: #FF0000">"masculin"</span><span style="color: #990000">,</span>kol<span style="color: #990000">,</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">);</span> <span style="font-style: italic"><span style="color: #9A1900">// <img alt="4" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABsSURBVAgd
+BcERosNAGAbAwWAwWlwM5gqLxerDh3uNYLEazJWqweCPX2ckOZ+t9SOJVEebbVeko2ewlRPzlYG3
+jvO4B1YLr2uugcnicY9W+8Kk+0uSHKwOUAO72uD7Tyu5N6B9I6nPOk/rXskP6gY2ju5T29cAAABD
+dEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGlj
+LmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAOWY4MmZjYWM5ZTAzOWNiZGI3MjM4
+MGE0NTkxMzI0ZjWAu/h2AAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
+
+                <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> famille <span style="color: #990000">;</span>
+        <span style="color: #FF0000">}</span>
+<span style="color: #FF0000">}</span>
+
+<span style="font-style: italic"><span style="color: #9A1900">//Type Personne</span></span>
+<span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">Personne</span> <span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">String</span> nom <span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">String</span> prenom <span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">String</span> sexe <span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">Personne</span> descendantDe <span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">Personne</span> conjointDe <span style="color: #990000">;</span>
+
+        <span style="font-style: italic"><span style="color: #9A1900">// Constructeur</span></span>
+        <span style="font-style: italic"><span style="color: #9A1900">// usage:</span></span>
+        <span style="font-style: italic"><span style="color: #9A1900">// Personne parent, conjoint ;</span></span>
+        <span style="font-style: italic"><span style="color: #9A1900">// Personne p = new Personne("prenom","nom","feminin",parent,conjoint);</span></span>
+        <span style="font-weight: bold"><span style="color: #000000">Personne</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> valeurInitialePrenom<span style="color: #990000">,</span> <span style="color: #008080">String</span> valeurInitialeNom<span style="color: #990000">,</span> <span style="color: #008080">String</span> valeurInitialeSexe<span style="color: #990000">,</span> <span style="color: #008080">Personne</span> valeurInitialeDescendantDe<span style="color: #990000">,</span> <span style="color: #008080">Personne</span> valeurInitialeConjointDe<span style="color: #990000">)</span><span style="color: #FF0000">{</span>
+                nom <span style="color: #990000">=</span> valeurInitialeNom <span style="color: #990000">;</span>
+                prenom <span style="color: #990000">=</span> valeurInitialePrenom <span style="color: #990000">;</span>
+                sexe <span style="color: #990000">=</span> valeurInitialeSexe <span style="color: #990000">;</span>
+                descendantDe <span style="color: #990000">=</span> valeurInitialeDescendantDe <span style="color: #990000">;</span>
+                conjointDe <span style="color: #990000">=</span> valeurInitialeConjointDe <span style="color: #990000">;</span>
+        <span style="color: #FF0000">}</span>
+
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">setConjointDe</span></span> <span style="color: #990000">(</span><span style="color: #008080">Personne</span> p<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>conjointDe <span style="color: #990000">=</span> p<span style="color: #990000">;</span>
+        <span style="color: #FF0000">}</span>
+
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #008080">String</span> <span style="font-weight: bold"><span style="color: #000000">toString</span></span><span style="color: #990000">()</span><span style="color: #FF0000">{</span>
+                <span style="color: #008080">String</span> resultat <span style="color: #990000">=</span> <span style="color: #FF0000">""</span> <span style="color: #990000">;</span>
+                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">Personne: "</span> <span style="color: #990000">+</span> System<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">identityHashCode</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">)</span> <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span> <span style="color: #990000">;</span>
+                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"  Nom: "</span> <span style="color: #990000">+</span> nom <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span> <span style="color: #990000">;</span>
+                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"  Prenom: "</span> <span style="color: #990000">+</span> prenom <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span> <span style="color: #990000">;</span>
+                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"  Sexe: "</span> <span style="color: #990000">+</span> sexe <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span> <span style="color: #990000">;</span>
+                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"  Conjoint de: "</span> <span style="color: #990000">+</span> System<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">identityHashCode</span></span><span style="color: #990000">(</span>conjointDe<span style="color: #990000">)</span> <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span> <span style="color: #990000">;</span>
+                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"  Descendant de: "</span> <span style="color: #990000">+</span> System<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">identityHashCode</span></span><span style="color: #990000">(</span>descendantDe<span style="color: #990000">)</span> <span style="color: #990000">;</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> resultat <span style="color: #990000">;</span>
+        <span style="color: #FF0000">}</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+</div>
+<div class="sect2">
+<h3 id="_objet_et_passage_de_paramètres">7.3. Objet et passage de paramètres</h3>
+<div class="paragraph"><p>Reprendre le code source suivant complet. Indiquer dans le CR ce que ce programme affiche et prenez le temps de comprendre l&#8217;implantation mémoire.</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Mettre un point d&#8217;arrêt en &lt;1&gt;
+</p>
+</li>
+<li>
+<p>
+Exécuter pas à pas plusieurs fois si nécessaire le programme et indiquer dans le compte rendu ce qu&#8217;affiche ce programme.
+</p>
+</li>
+<li>
+<p>
+Prenez le temps de comprendre : relever le numéro d&#8217;objet :
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+de schmi en &lt;2&gt;
+</p>
+</li>
+<li>
+<p>
+de p en &lt;3&gt;
+</p>
+</li>
+<li>
+<p>
+de this en &lt;4&gt;
+</p>
+</li>
+</ul></div>
+</li>
+</ol></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">ClasseEssai</span> <span style="color: #FF0000">{</span>
+
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">(</span>String<span style="color: #990000">[]</span> arguments<span style="color: #990000">)</span> <span style="font-weight: bold"><span style="color: #0000FF">throws</span></span> Exception <span style="color: #FF0000">{</span>
+
+                <span style="color: #008080">Personne</span> shmi<span style="color: #990000">,</span> anakin<span style="color: #990000">,</span> padme <span style="color: #990000">;</span>
+
+                shmi <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Personne</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Shmi"</span><span style="color: #990000">,</span><span style="color: #FF0000">"Skywalker"</span><span style="color: #990000">,</span><span style="color: #FF0000">"feminin"</span><span style="color: #990000">,</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">,</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">);</span> <span style="font-style: italic"><span style="color: #9A1900">// <img alt="1" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABjSURBVHja
+VY6xDcAwCAS/pPQaLim9QmajdOk2I2SNrMEIlARIoigU8Cek/4e7zdHaWOYOVwaoA6wOCw05Y7FB
+gE0tIWQ+sBcwKM8qoD/wB5wGL8hjfdzWrh01GRp1hInGjDoXwHgsFuzBVLQAAABDdEVYdFNvZnR3
+YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
+dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
+ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>shmi<span style="color: #990000">);</span>
+
+                ClasseEssai<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">testChangeObjet</span></span><span style="color: #990000">(</span>shmi<span style="color: #990000">)</span> <span style="color: #990000">;</span> <span style="font-style: italic"><span style="color: #9A1900">// <img alt="2" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABvSURBVAgd
+BcGhAcJADADAky8rsZXIyK7AGkgksiu8RNYyAiswAhIbiYwMd7rrsS3LdlS3zuC8EtkqrJ/8vRdR
+Js+PtSZTMHe+L8IAUXeGAZd8DYbArB3C5FbXiBNThSMzcxelM4DI1l0zxtge1f0HVNk1YLFij6sA
+AABDdEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlz
+dGljLmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAODBlYWU1MjljOTRhN2Y0N2Rl
+Y2NmYWRhMjhhY2I5ZGblb7ENAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>shmi<span style="color: #990000">);</span>
+        <span style="color: #FF0000">}</span>
+
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">testChangeObjet</span></span> <span style="color: #990000">(</span><span style="color: #008080">Personne</span> p<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                p<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setNom</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"Nouveau nom"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Autre prénom"</span><span style="color: #990000">);</span> <span style="font-style: italic"><span style="color: #9A1900">// <img alt="3" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABxSURBVAgd
+BcGhAYNAEEXBJ1duG8gvr5XYSGRaiFyJTAtI2kAisSeRK39msHsbmePXNp4ixgg0TYu8r/tM1BR8
+ZqRXKAS5kF5BBMA+r4AgAMa7VwgEr4LzAFFQj8bzhaJF7t17oMZzgQA0jd2lSG1t/wFRuDVjQOMG
+MAAAAEN0RVh0U29mdHdhcmUAQCgjKUltYWdlTWFnaWNrIDQuMi44IDk5LzA4LzAxIGNyaXN0eUBt
+eXN0aWMuZXMuZHVwb250LmNvbZG6IbgAAAAqdEVYdFNpZ25hdHVyZQA4MGJiZGEyNzI2ZGRhY2U4
+YWI4YTAxZjU5ZGUyZWJkYgj9DnUAAAAOdEVYdFBhZ2UAMTJ4MTIrMCswhG27fQAAAABJRU5ErkJg
+gg==" /></span></span>
+        <span style="color: #FF0000">}</span>
+<span style="color: #FF0000">}</span>
+
+<span style="font-style: italic"><span style="color: #9A1900">//Type Personne</span></span>
+<span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">Personne</span> <span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">String</span> nom <span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">String</span> prenom <span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">String</span> sexe <span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">Personne</span> descendantDe <span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">Personne</span> conjointDe <span style="color: #990000">;</span>
+
+        <span style="font-style: italic"><span style="color: #9A1900">// Constructeur</span></span>
+        <span style="font-style: italic"><span style="color: #9A1900">// usage:</span></span>
+        <span style="font-style: italic"><span style="color: #9A1900">// Personne parent, conjoint ;</span></span>
+        <span style="font-style: italic"><span style="color: #9A1900">// Personne p = new Personne("prenom","nom","feminin",parent,conjoint);</span></span>
+        <span style="font-weight: bold"><span style="color: #000000">Personne</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> valeurInitialePrenom<span style="color: #990000">,</span> <span style="color: #008080">String</span> valeurInitialeNom<span style="color: #990000">,</span> <span style="color: #008080">String</span> valeurInitialeSexe<span style="color: #990000">,</span> <span style="color: #008080">Personne</span> valeurInitialeDescendantDe<span style="color: #990000">,</span> <span style="color: #008080">Personne</span> valeurInitialeConjointDe<span style="color: #990000">)</span><span style="color: #FF0000">{</span>
+                nom <span style="color: #990000">=</span> valeurInitialeNom <span style="color: #990000">;</span>
+                prenom <span style="color: #990000">=</span> valeurInitialePrenom <span style="color: #990000">;</span>
+                sexe <span style="color: #990000">=</span> valeurInitialeSexe <span style="color: #990000">;</span>
+                descendantDe <span style="color: #990000">=</span> valeurInitialeDescendantDe <span style="color: #990000">;</span>
+                conjointDe <span style="color: #990000">=</span> valeurInitialeConjointDe <span style="color: #990000">;</span>
+        <span style="color: #FF0000">}</span>
+
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">setNom</span></span> <span style="color: #990000">(</span><span style="color: #008080">String</span> n<span style="color: #990000">,</span> <span style="color: #008080">String</span> p<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>nom <span style="color: #990000">=</span> n<span style="color: #990000">;</span> <span style="font-style: italic"><span style="color: #9A1900">// <img alt="4" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABsSURBVAgd
+BcERosNAGAbAwWAwWlwM5gqLxerDh3uNYLEazJWqweCPX2ckOZ+t9SOJVEebbVeko2ewlRPzlYG3
+jvO4B1YLr2uugcnicY9W+8Kk+0uSHKwOUAO72uD7Tyu5N6B9I6nPOk/rXskP6gY2ju5T29cAAABD
+dEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGlj
+LmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAOWY4MmZjYWM5ZTAzOWNiZGI3MjM4
+MGE0NTkxMzI0ZjWAu/h2AAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
+                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>prenom <span style="color: #990000">=</span> p<span style="color: #990000">;</span>
+        <span style="color: #FF0000">}</span>
+
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">setConjointDe</span></span> <span style="color: #990000">(</span><span style="color: #008080">Personne</span> p<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>conjointDe <span style="color: #990000">=</span> p<span style="color: #990000">;</span>
+        <span style="color: #FF0000">}</span>
+
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #008080">String</span> <span style="font-weight: bold"><span style="color: #000000">toString</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span> <span style="font-style: italic"><span style="color: #9A1900">// Appelée lorsqu'on fait System.out.println(unePersonne);</span></span>
+                <span style="color: #008080">String</span> resultat <span style="color: #990000">=</span> <span style="color: #FF0000">""</span> <span style="color: #990000">;</span>
+                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"Personne: "</span> <span style="color: #990000">+</span> System<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">identityHashCode</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">)</span> <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span> <span style="color: #990000">;</span>
+                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"  Nom: "</span> <span style="color: #990000">+</span> nom <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span> <span style="color: #990000">;</span>
+                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"  Prenom: "</span> <span style="color: #990000">+</span> prenom <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span> <span style="color: #990000">;</span>
+                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"  Sexe: "</span> <span style="color: #990000">+</span> sexe <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span> <span style="color: #990000">;</span>
+                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"  Conjoint de: "</span> <span style="color: #990000">+</span> System<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">identityHashCode</span></span><span style="color: #990000">(</span>conjointDe<span style="color: #990000">)</span> <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span> <span style="color: #990000">;</span>
+                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"  Descendant de: "</span> <span style="color: #990000">+</span> System<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">identityHashCode</span></span><span style="color: #990000">(</span>descendantDe<span style="color: #990000">)</span> <span style="color: #990000">;</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> resultat <span style="color: #990000">;</span>
+        <span style="color: #FF0000">}</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_algorithmes_à_comprendre">8. Algorithmes à comprendre</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_exercice_algorithme_de_recherche_de_valeur">8.1. Exercice : algorithme de recherche de valeur</h3>
+<div class="paragraph"><p>Reprendre le code source suivant. La fonction estPresent() est censée rechercher si oui (true) ou non (false), la valeur val existe dans le tableau t.</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Mettre un point d&#8217;arrêt en &lt;1&gt;
+</p>
+</li>
+<li>
+<p>
+Exécuter pas à pas plusieurs fois si nécessaire le programme et indiquer dans le compte rendu :
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Dans quel cas (unique) estPresent() renvoie true ?  (valeurs tu tableau et valeur recherchée)
+</p>
+</li>
+<li>
+<p>
+Quel bug se cache dans estPresent() compte tenu de l&#8217;objectif fixé plus haut ?
+</p>
+</li>
+<li>
+<p>
+Corriger la fonction estPresent() pour qu&#8217;elle s&#8217;arrête le "plus tôt possible" (trouver 20 en moins de 10 tours de boucle).
+</p>
+</li>
+</ul></div>
+</li>
+</ol></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">ClasseEssai</span> <span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">boolean</span> <span style="font-weight: bold"><span style="color: #000000">estPresent</span></span> <span style="color: #990000">(</span><span style="color: #009900">int</span><span style="color: #990000">[]</span> t<span style="color: #990000">,</span> <span style="color: #009900">int</span> val<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="color: #009900">int</span> i<span style="color: #990000">;</span>
+                <span style="color: #009900">boolean</span> trouve <span style="color: #990000">;</span>
+
+                trouve <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">false</span></span><span style="color: #990000">;</span>
+
+                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>t<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>t<span style="color: #990000">[</span>i<span style="color: #990000">]</span> <span style="color: #990000">==</span> val<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                                trouve <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">true</span></span><span style="color: #990000">;</span>
+                        <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">else</span></span> <span style="color: #FF0000">{</span>
+                                trouve <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">false</span></span><span style="color: #990000">;</span>
+                        <span style="color: #FF0000">}</span>
+                <span style="color: #FF0000">}</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> trouve<span style="color: #990000">;</span>
+        <span style="color: #FF0000">}</span>
+
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> argv<span style="color: #990000">[])</span> <span style="color: #FF0000">{</span>
+                <span style="color: #009900">int</span> tab <span style="color: #990000">[];</span>
+                <span style="color: #009900">boolean</span> resultat<span style="color: #990000">;</span>
+
+                tab <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="color: #009900">int</span><span style="color: #990000">[</span><span style="color: #993399">10</span><span style="color: #990000">];</span>   <span style="font-style: italic"><span style="color: #9A1900">//  <img alt="1" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABjSURBVHja
+VY6xDcAwCAS/pPQaLim9QmajdOk2I2SNrMEIlARIoigU8Cek/4e7zdHaWOYOVwaoA6wOCw05Y7FB
+gE0tIWQ+sBcwKM8qoD/wB5wGL8hjfdzWrh01GRp1hInGjDoXwHgsFuzBVLQAAABDdEVYdFNvZnR3
+YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
+dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
+ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
+                tab<span style="color: #990000">[</span><span style="color: #993399">0</span><span style="color: #990000">]=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span>    tab<span style="color: #990000">[</span><span style="color: #993399">1</span><span style="color: #990000">]=</span><span style="color: #993399">100</span><span style="color: #990000">;</span>   tab<span style="color: #990000">[</span><span style="color: #993399">2</span><span style="color: #990000">]=</span><span style="color: #993399">20</span><span style="color: #990000">;</span>   tab<span style="color: #990000">[</span><span style="color: #993399">3</span><span style="color: #990000">]=</span><span style="color: #993399">90</span><span style="color: #990000">;</span>   tab<span style="color: #990000">[</span><span style="color: #993399">4</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> <span style="color: #993399">30</span><span style="color: #990000">;</span>
+                tab<span style="color: #990000">[</span><span style="color: #993399">5</span><span style="color: #990000">]=</span> <span style="color: #993399">80</span><span style="color: #990000">;</span>   tab<span style="color: #990000">[</span><span style="color: #993399">6</span><span style="color: #990000">]=</span><span style="color: #993399">40</span><span style="color: #990000">;</span>    tab<span style="color: #990000">[</span><span style="color: #993399">7</span><span style="color: #990000">]=</span><span style="color: #993399">70</span><span style="color: #990000">;</span>   tab<span style="color: #990000">[</span><span style="color: #993399">8</span><span style="color: #990000">]=</span><span style="color: #993399">50</span><span style="color: #990000">;</span>   tab<span style="color: #990000">[</span><span style="color: #993399">9</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> <span style="color: #993399">60</span><span style="color: #990000">;</span>
+
+                resultat <span style="color: #990000">=</span> ClasseEssai<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">estPresent</span></span><span style="color: #990000">(</span>tab<span style="color: #990000">,</span> <span style="color: #990000">-</span><span style="color: #993399">999</span><span style="color: #990000">);</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>resultat<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Bug ..."</span><span style="color: #990000">);</span>
+                <span style="color: #FF0000">}</span><span style="font-weight: bold"><span style="color: #0000FF">else</span></span> <span style="color: #FF0000">{</span>
+                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"-999 n'a pas été trouvé"</span><span style="color: #990000">);</span>
+                <span style="color: #FF0000">}</span>
+
+                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>ClasseEssai<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">estPresent</span></span><span style="color: #990000">(</span>tab<span style="color: #990000">,</span> <span style="color: #993399">20</span><span style="color: #990000">))</span> <span style="color: #FF0000">{</span>
+                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"20 a été trouvé"</span><span style="color: #990000">);</span>
+                <span style="color: #FF0000">}</span><span style="font-weight: bold"><span style="color: #0000FF">else</span></span> <span style="color: #FF0000">{</span>
+                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Bug ..."</span><span style="color: #990000">);</span>
+                <span style="color: #FF0000">}</span>
+        <span style="color: #FF0000">}</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+</div>
+<div class="sect2">
+<h3 id="_exercice_un_cas_connu">8.2. Exercice : un cas connu</h3>
+<div class="paragraph"><p>Par une (ou plusieurs) exécution pas à pas, trouver ce que fait le sous-programme mystère() &#8230; quel serait le nom approprié et l&#8217;algorithme utilisé ?</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Mettre un point d&#8217;arrêt en &lt;1&gt;
+</p>
+</li>
+<li>
+<p>
+Exécuter pas à pas plusieurs fois si nécessaire le programme.
+</p>
+</li>
+</ol></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">ClasseEssai</span> <span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">mystere</span></span> <span style="color: #990000">(</span><span style="color: #009900">int</span><span style="color: #990000">[]</span> tab<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="color: #009900">int</span> a<span style="color: #990000">,</span> i <span style="color: #990000">;</span>
+                <span style="color: #009900">boolean</span> c <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">true</span></span> <span style="color: #990000">;</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">while</span></span> <span style="color: #990000">(</span>c<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                        c <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">false</span></span> <span style="color: #990000">;</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span> i <span style="color: #990000">&lt;</span> <span style="color: #990000">(</span>tab<span style="color: #990000">.</span>length <span style="color: #990000">-</span> <span style="color: #993399">1</span><span style="color: #990000">);</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
+                                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>tab<span style="color: #990000">[</span>i<span style="color: #990000">]</span> <span style="color: #990000">&gt;</span> tab<span style="color: #990000">[</span>i<span style="color: #990000">+</span><span style="color: #993399">1</span><span style="color: #990000">])</span> <span style="color: #FF0000">{</span>
+                                        a <span style="color: #990000">=</span> tab<span style="color: #990000">[</span>i<span style="color: #990000">];</span>
+                                        tab<span style="color: #990000">[</span>i<span style="color: #990000">]</span> <span style="color: #990000">=</span> tab<span style="color: #990000">[</span>i<span style="color: #990000">+</span><span style="color: #993399">1</span><span style="color: #990000">];</span>
+                                        tab<span style="color: #990000">[</span>i<span style="color: #990000">+</span><span style="color: #993399">1</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> a<span style="color: #990000">;</span>
+                                        c <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">true</span></span> <span style="color: #990000">;</span>
+                                <span style="color: #FF0000">}</span>
+                        <span style="color: #FF0000">}</span>
+                <span style="color: #FF0000">}</span>
+        <span style="color: #FF0000">}</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> argv<span style="color: #990000">[])</span> <span style="color: #FF0000">{</span>
+                <span style="color: #009900">int</span> tab <span style="color: #990000">[],</span> i<span style="color: #990000">;</span>
+                <span style="color: #009900">int</span> <span style="color: #990000">[]</span> tab2 <span style="color: #990000">=</span> <span style="color: #FF0000">{</span> <span style="color: #993399">5</span><span style="color: #990000">,</span> <span style="color: #993399">10</span><span style="color: #990000">,</span> <span style="color: #993399">11</span><span style="color: #990000">,</span> <span style="color: #993399">12</span><span style="color: #990000">,</span> <span style="color: #993399">20</span><span style="color: #990000">,</span> <span style="color: #993399">23</span> <span style="color: #FF0000">}</span><span style="color: #990000">;</span>
+
+                tab <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="color: #009900">int</span><span style="color: #990000">[</span><span style="color: #993399">10</span><span style="color: #990000">];</span>   <span style="font-style: italic"><span style="color: #9A1900">//  <img alt="1" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABjSURBVHja
+VY6xDcAwCAS/pPQaLim9QmajdOk2I2SNrMEIlARIoigU8Cek/4e7zdHaWOYOVwaoA6wOCw05Y7FB
+gE0tIWQ+sBcwKM8qoD/wB5wGL8hjfdzWrh01GRp1hInGjDoXwHgsFuzBVLQAAABDdEVYdFNvZnR3
+YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
+dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
+ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
+                tab<span style="color: #990000">[</span><span style="color: #993399">0</span><span style="color: #990000">]=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span>    tab<span style="color: #990000">[</span><span style="color: #993399">1</span><span style="color: #990000">]=</span><span style="color: #993399">100</span><span style="color: #990000">;</span>   tab<span style="color: #990000">[</span><span style="color: #993399">2</span><span style="color: #990000">]=</span><span style="color: #993399">20</span><span style="color: #990000">;</span>   tab<span style="color: #990000">[</span><span style="color: #993399">3</span><span style="color: #990000">]=</span><span style="color: #993399">90</span><span style="color: #990000">;</span>   tab<span style="color: #990000">[</span><span style="color: #993399">4</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> <span style="color: #993399">30</span><span style="color: #990000">;</span>
+                tab<span style="color: #990000">[</span><span style="color: #993399">5</span><span style="color: #990000">]=</span> <span style="color: #993399">80</span><span style="color: #990000">;</span>   tab<span style="color: #990000">[</span><span style="color: #993399">6</span><span style="color: #990000">]=</span><span style="color: #993399">40</span><span style="color: #990000">;</span>    tab<span style="color: #990000">[</span><span style="color: #993399">7</span><span style="color: #990000">]=</span><span style="color: #993399">70</span><span style="color: #990000">;</span>   tab<span style="color: #990000">[</span><span style="color: #993399">8</span><span style="color: #990000">]=</span><span style="color: #993399">50</span><span style="color: #990000">;</span>   tab<span style="color: #990000">[</span><span style="color: #993399">9</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> <span style="color: #993399">60</span><span style="color: #990000">;</span>
+
+                ClasseEssai<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">mystere</span></span> <span style="color: #990000">(</span>tab2<span style="color: #990000">);</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>tab2<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
+                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>tab2<span style="color: #990000">[</span>i<span style="color: #990000">]);</span>
+                <span style="color: #FF0000">}</span>
+                ClasseEssai<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">mystere</span></span> <span style="color: #990000">(</span>tab<span style="color: #990000">);</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>tab<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
+                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>tab<span style="color: #990000">[</span>i<span style="color: #990000">]);</span>
+                <span style="color: #FF0000">}</span>
+        <span style="color: #FF0000">}</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+</div>
+<div class="sect2">
+<h3 id="_exercice_nouveau_mais_simple">8.3. Exercice : nouveau mais simple</h3>
+<div class="paragraph"><p>Par une (ou plusieurs) exécution pas à pas, trouver ce que fait le sous-programme mystère2() ?</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Mettre un point d&#8217;arrêt en &lt;1&gt;
+</p>
+</li>
+<li>
+<p>
+Exécuter pas à pas plusieurs fois si nécessaire le programme.
+</p>
+</li>
+</ol></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">ClasseEssai</span> <span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">int</span>  <span style="font-weight: bold"><span style="color: #000000">mystere2</span></span> <span style="color: #990000">(</span><span style="color: #009900">int</span> x<span style="color: #990000">,</span> <span style="color: #009900">int</span> y<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="color: #009900">int</span> z<span style="color: #990000">;</span>
+                <span style="color: #009900">int</span> s<span style="color: #990000">;</span>
+                <span style="color: #009900">int</span> r<span style="color: #990000">;</span>
+
+                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>x <span style="color: #990000">&lt;</span> y<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                        z<span style="color: #990000">=</span>x<span style="color: #990000">;</span>
+                        x<span style="color: #990000">=</span>y<span style="color: #990000">;</span>
+                        y<span style="color: #990000">=</span>z<span style="color: #990000">;</span>
+                <span style="color: #FF0000">}</span>
+                r <span style="color: #990000">=</span> y<span style="color: #990000">;</span>
+                s<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">while</span></span> <span style="color: #990000">(</span>x<span style="color: #990000">-</span>y <span style="color: #990000">&gt;</span> <span style="color: #993399">0</span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                        s <span style="color: #990000">=</span> x<span style="color: #990000">-</span>y<span style="color: #990000">;</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>s <span style="color: #990000">&lt;</span> y<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                                x <span style="color: #990000">=</span> y<span style="color: #990000">;</span>
+                                y <span style="color: #990000">=</span> s<span style="color: #990000">;</span>
+                                r <span style="color: #990000">=</span> s<span style="color: #990000">;</span>
+                        <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">else</span></span> <span style="color: #FF0000">{</span>
+                                x <span style="color: #990000">=</span> s<span style="color: #990000">;</span>
+                                r <span style="color: #990000">=</span> y<span style="color: #990000">;</span>
+                        <span style="color: #FF0000">}</span>
+                <span style="color: #FF0000">}</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> r<span style="color: #990000">;</span>
+        <span style="color: #FF0000">}</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> argv<span style="color: #990000">[])</span> <span style="color: #FF0000">{</span>
+
+                <span style="color: #009900">int</span> val1<span style="color: #990000">,</span> val2<span style="color: #990000">,</span> res <span style="color: #990000">;</span>
+
+                val1 <span style="color: #990000">=</span> <span style="color: #993399">2</span> <span style="color: #990000">;</span> <span style="font-style: italic"><span style="color: #9A1900">// <img alt="1" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABjSURBVHja
+VY6xDcAwCAS/pPQaLim9QmajdOk2I2SNrMEIlARIoigU8Cek/4e7zdHaWOYOVwaoA6wOCw05Y7FB
+gE0tIWQ+sBcwKM8qoD/wB5wGL8hjfdzWrh01GRp1hInGjDoXwHgsFuzBVLQAAABDdEVYdFNvZnR3
+YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
+dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
+ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
+                val2 <span style="color: #990000">=</span> <span style="color: #993399">5</span> <span style="color: #990000">;</span>
+                res <span style="color: #990000">=</span> ClasseEssai<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">mystere2</span></span> <span style="color: #990000">(</span>val1<span style="color: #990000">,</span> val2<span style="color: #990000">);</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span> <span style="color: #FF0000">"Pour "</span> <span style="color: #990000">+</span> val1 <span style="color: #990000">+</span> <span style="color: #FF0000">" et "</span> <span style="color: #990000">+</span> val2 <span style="color: #990000">+</span> <span style="color: #FF0000">": "</span> <span style="color: #990000">+</span> res <span style="color: #990000">);</span>
+                val1 <span style="color: #990000">=</span> <span style="color: #993399">5</span> <span style="color: #990000">;</span> <span style="font-style: italic"><span style="color: #9A1900">// <img alt="1" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABjSURBVHja
+VY6xDcAwCAS/pPQaLim9QmajdOk2I2SNrMEIlARIoigU8Cek/4e7zdHaWOYOVwaoA6wOCw05Y7FB
+gE0tIWQ+sBcwKM8qoD/wB5wGL8hjfdzWrh01GRp1hInGjDoXwHgsFuzBVLQAAABDdEVYdFNvZnR3
+YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
+dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
+ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
+                val2 <span style="color: #990000">=</span> <span style="color: #993399">2</span> <span style="color: #990000">;</span>
+                res <span style="color: #990000">=</span> ClasseEssai<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">mystere2</span></span> <span style="color: #990000">(</span>val1<span style="color: #990000">,</span> val2<span style="color: #990000">);</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span> <span style="color: #FF0000">"Pour "</span> <span style="color: #990000">+</span> val1 <span style="color: #990000">+</span> <span style="color: #FF0000">" et "</span> <span style="color: #990000">+</span> val2 <span style="color: #990000">+</span> <span style="color: #FF0000">": "</span> <span style="color: #990000">+</span> res <span style="color: #990000">);</span>
+                val1 <span style="color: #990000">=</span> <span style="color: #993399">10</span> <span style="color: #990000">;</span> <span style="font-style: italic"><span style="color: #9A1900">// <img alt="1" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABjSURBVHja
+VY6xDcAwCAS/pPQaLim9QmajdOk2I2SNrMEIlARIoigU8Cek/4e7zdHaWOYOVwaoA6wOCw05Y7FB
+gE0tIWQ+sBcwKM8qoD/wB5wGL8hjfdzWrh01GRp1hInGjDoXwHgsFuzBVLQAAABDdEVYdFNvZnR3
+YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
+dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
+ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
+                val2 <span style="color: #990000">=</span> <span style="color: #993399">5</span> <span style="color: #990000">;</span>
+                res <span style="color: #990000">=</span> ClasseEssai<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">mystere2</span></span> <span style="color: #990000">(</span>val1<span style="color: #990000">,</span> val2<span style="color: #990000">);</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span> <span style="color: #FF0000">"Pour "</span> <span style="color: #990000">+</span> val1 <span style="color: #990000">+</span> <span style="color: #FF0000">" et "</span> <span style="color: #990000">+</span> val2 <span style="color: #990000">+</span> <span style="color: #FF0000">": "</span> <span style="color: #990000">+</span> res <span style="color: #990000">);</span>
+                val1 <span style="color: #990000">=</span> <span style="color: #993399">36</span> <span style="color: #990000">;</span> <span style="font-style: italic"><span style="color: #9A1900">// <img alt="1" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABjSURBVHja
+VY6xDcAwCAS/pPQaLim9QmajdOk2I2SNrMEIlARIoigU8Cek/4e7zdHaWOYOVwaoA6wOCw05Y7FB
+gE0tIWQ+sBcwKM8qoD/wB5wGL8hjfdzWrh01GRp1hInGjDoXwHgsFuzBVLQAAABDdEVYdFNvZnR3
+YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
+dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
+ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
+                val2 <span style="color: #990000">=</span> <span style="color: #993399">24</span> <span style="color: #990000">;</span>
+                res <span style="color: #990000">=</span> ClasseEssai<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">mystere2</span></span> <span style="color: #990000">(</span>val1<span style="color: #990000">,</span> val2<span style="color: #990000">);</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span> <span style="color: #FF0000">"Pour "</span> <span style="color: #990000">+</span> val1 <span style="color: #990000">+</span> <span style="color: #FF0000">" et "</span> <span style="color: #990000">+</span> val2 <span style="color: #990000">+</span> <span style="color: #FF0000">": "</span> <span style="color: #990000">+</span> res <span style="color: #990000">);</span>
+        <span style="color: #FF0000">}</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+</div>
+<div class="sect2">
+<h3 id="_exercice_un_cas_plus_dur">8.4. Exercice : un cas plus dur</h3>
+<div class="paragraph"><p>Par une (ou plusieurs) exécution pas à pas, trouver ce que fait le sous-programme mystère3() ?</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Mettre un point d&#8217;arrêt en &lt;1&gt;
+</p>
+</li>
+<li>
+<p>
+Exécuter pas à pas plusieurs fois si nécessaire le programme.
+</p>
+</li>
+<li>
+<p>
+Regarder le panel "Debug" de Eclipse&#8230;
+</p>
+</li>
+</ol></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">ClasseEssai</span> <span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">int</span>  <span style="font-weight: bold"><span style="color: #000000">mystere3</span></span> <span style="color: #990000">(</span><span style="color: #009900">int</span> x<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="color: #009900">int</span> r<span style="color: #990000">;</span>
+
+                r <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>x <span style="color: #990000">==</span> <span style="color: #993399">0</span> <span style="color: #990000">||</span> x <span style="color: #990000">==</span> <span style="color: #993399">1</span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                        r <span style="color: #990000">=</span> <span style="color: #993399">1</span><span style="color: #990000">;</span>
+                <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">else</span></span> <span style="color: #FF0000">{</span>
+                        r <span style="color: #990000">=</span> x <span style="color: #990000">*</span> <span style="font-weight: bold"><span style="color: #000000">mystere3</span></span> <span style="color: #990000">(</span>x<span style="color: #990000">-</span><span style="color: #993399">1</span><span style="color: #990000">);</span>
+                <span style="color: #FF0000">}</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> r<span style="color: #990000">;</span>
+        <span style="color: #FF0000">}</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> argv<span style="color: #990000">[])</span> <span style="color: #FF0000">{</span>
+
+                <span style="color: #009900">int</span> val<span style="color: #990000">,</span> res <span style="color: #990000">;</span>
+
+                val <span style="color: #990000">=</span> <span style="color: #993399">2</span><span style="color: #990000">;</span> <span style="font-style: italic"><span style="color: #9A1900">// <img alt="1" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABjSURBVHja
+VY6xDcAwCAS/pPQaLim9QmajdOk2I2SNrMEIlARIoigU8Cek/4e7zdHaWOYOVwaoA6wOCw05Y7FB
+gE0tIWQ+sBcwKM8qoD/wB5wGL8hjfdzWrh01GRp1hInGjDoXwHgsFuzBVLQAAABDdEVYdFNvZnR3
+YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
+dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
+ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
+                res <span style="color: #990000">=</span> ClasseEssai<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">mystere3</span></span> <span style="color: #990000">(</span>val<span style="color: #990000">);</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span> <span style="color: #FF0000">"Pour "</span> <span style="color: #990000">+</span> val <span style="color: #990000">+</span> <span style="color: #FF0000">" : "</span> <span style="color: #990000">+</span> res <span style="color: #990000">);</span>
+                val <span style="color: #990000">=</span> <span style="color: #993399">5</span><span style="color: #990000">;</span>
+                res <span style="color: #990000">=</span> ClasseEssai<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">mystere3</span></span> <span style="color: #990000">(</span>val<span style="color: #990000">);</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span> <span style="color: #FF0000">"Pour "</span> <span style="color: #990000">+</span> val <span style="color: #990000">+</span> <span style="color: #FF0000">" : "</span> <span style="color: #990000">+</span> res <span style="color: #990000">);</span>
+                val <span style="color: #990000">=</span> <span style="color: #993399">10</span><span style="color: #990000">;</span>
+                res <span style="color: #990000">=</span> ClasseEssai<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">mystere3</span></span> <span style="color: #990000">(</span>val<span style="color: #990000">);</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span> <span style="color: #FF0000">"Pour "</span> <span style="color: #990000">+</span> val <span style="color: #990000">+</span> <span style="color: #FF0000">" : "</span> <span style="color: #990000">+</span> res <span style="color: #990000">);</span>
+
+
+        <span style="color: #FF0000">}</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_avant_de_partir">9. Avant de partir</h2>
+<div class="sectionbody">
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Déposer le compte rendu
+</p>
+</li>
+<li>
+<p>
+N&#8217;oubliez-pas de vous déconnecter
+</p>
+</li>
+</ol></div>
+</div>
+</div>
+</div>
+<div id="footnotes"><hr /></div>
+<div id="footer">
+<div id="footer-text">
+Dernière mise à jour 2014-02-06 00:38:27 CET
+</div>
+</div>
+</body>
+</html>
