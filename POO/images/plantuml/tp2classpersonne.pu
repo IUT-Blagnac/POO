@@ -1,0 +1,18 @@
+@startuml
+
+class Personne {
+	- String nom
+	- int age
+	
+	+ Personne () 
+	+ Personne (String pNom)
+	+ Personne (String pNom, int pAge)
+		   
+	+ String getNom ()
+	+ int getAge () 
+	+ void setNom (String nouvNom)
+	+ void setAge (int nouvAge)
+	+ String toString()
+}
+
+@enduml

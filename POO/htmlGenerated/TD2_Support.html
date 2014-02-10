@@ -1,0 +1,3258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+<meta name="generator" content="AsciiDoc 8.6.6" />
+<title>BPOO - Support TD 2</title>
+<style type="text/css">
+/* Shared CSS for AsciiDoc xhtml11 and html5 backends */
+
+/* Default font. */
+body {
+  font-family: Georgia,serif;
+}
+
+/* Title font. */
+h1, h2, h3, h4, h5, h6,
+div.title, caption.title,
+thead, p.table.header,
+#toctitle,
+#author, #revnumber, #revdate, #revremark,
+#footer {
+  font-family: Arial,Helvetica,sans-serif;
+}
+
+body {
+  margin: 1em 5% 1em 5%;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
+a:visited {
+  color: fuchsia;
+}
+
+em {
+  font-style: italic;
+  color: navy;
+}
+
+strong {
+  font-weight: bold;
+  color: #083194;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #527bbd;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+  line-height: 1.3;
+}
+
+h1, h2, h3 {
+  border-bottom: 2px solid silver;
+}
+h2 {
+  padding-top: 0.5em;
+}
+h3 {
+  float: left;
+}
+h3 + * {
+  clear: left;
+}
+h5 {
+  font-size: 1.0em;
+}
+
+div.sectionbody {
+  margin-left: 0;
+}
+
+hr {
+  border: 1px solid silver;
+}
+
+p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+ul, ol, li > p {
+  margin-top: 0;
+}
+ul > li     { color: #aaa; }
+ul > li > * { color: black; }
+
+pre {
+  padding: 0;
+  margin: 0;
+}
+
+#author {
+  color: #527bbd;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+#email {
+}
+#revnumber, #revdate, #revremark {
+}
+
+#footer {
+  font-size: small;
+  border-top: 2px solid silver;
+  padding-top: 0.5em;
+  margin-top: 4.0em;
+}
+#footer-text {
+  float: left;
+  padding-bottom: 0.5em;
+}
+#footer-badges {
+  float: right;
+  padding-bottom: 0.5em;
+}
+
+#preamble {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+div.imageblock, div.exampleblock, div.verseblock,
+div.quoteblock, div.literalblock, div.listingblock, div.sidebarblock,
+div.admonitionblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.admonitionblock {
+  margin-top: 2.0em;
+  margin-bottom: 2.0em;
+  margin-right: 10%;
+  color: #606060;
+}
+
+div.content { /* Block element content. */
+  padding: 0;
+}
+
+/* Block element titles. */
+div.title, caption.title {
+  color: #527bbd;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 1.0em;
+  margin-bottom: 0.5em;
+}
+div.title + * {
+  margin-top: 0;
+}
+
+td div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content + div.title {
+  margin-top: 0.0em;
+}
+
+div.sidebarblock > div.content {
+  background: #ffffee;
+  border: 1px solid #dddddd;
+  border-left: 4px solid #f0f0f0;
+  padding: 0.5em;
+}
+
+div.listingblock > div.content {
+  border: 1px solid #dddddd;
+  border-left: 5px solid #f0f0f0;
+  background: #f8f8f8;
+  padding: 0.5em;
+}
+
+div.quoteblock, div.verseblock {
+  padding-left: 1.0em;
+  margin-left: 1.0em;
+  margin-right: 10%;
+  border-left: 5px solid #f0f0f0;
+  color: #888;
+}
+
+div.quoteblock > div.attribution {
+  padding-top: 0.5em;
+  text-align: right;
+}
+
+div.verseblock > pre.content {
+  font-family: inherit;
+  font-size: inherit;
+}
+div.verseblock > div.attribution {
+  padding-top: 0.75em;
+  text-align: left;
+}
+/* DEPRECATED: Pre version 8.2.7 verse style literal block. */
+div.verseblock + div.attribution {
+  text-align: left;
+}
+
+div.admonitionblock .icon {
+  vertical-align: top;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #527bbd;
+  padding-right: 0.5em;
+}
+div.admonitionblock td.content {
+  padding-left: 0.5em;
+  border-left: 3px solid #dddddd;
+}
+
+div.exampleblock > div.content {
+  border-left: 3px solid #dddddd;
+  padding-left: 0.5em;
+}
+
+div.imageblock div.content { padding-left: 0; }
+span.image img { border-style: none; }
+a.image:visited { color: white; }
+
+dl {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+dt {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  font-style: normal;
+  color: navy;
+}
+dd > *:first-child {
+  margin-top: 0.1em;
+}
+
+ul, ol {
+    list-style-position: outside;
+}
+ol.arabic {
+  list-style-type: decimal;
+}
+ol.loweralpha {
+  list-style-type: lower-alpha;
+}
+ol.upperalpha {
+  list-style-type: upper-alpha;
+}
+ol.lowerroman {
+  list-style-type: lower-roman;
+}
+ol.upperroman {
+  list-style-type: upper-roman;
+}
+
+div.compact ul, div.compact ol,
+div.compact p, div.compact p,
+div.compact div, div.compact div {
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+}
+
+tfoot {
+  font-weight: bold;
+}
+td > div.verse {
+  white-space: pre;
+}
+
+div.hdlist {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+div.hdlist tr {
+  padding-bottom: 15px;
+}
+dt.hdlist1.strong, td.hdlist1.strong {
+  font-weight: bold;
+}
+td.hdlist1 {
+  vertical-align: top;
+  font-style: normal;
+  padding-right: 0.8em;
+  color: navy;
+}
+td.hdlist2 {
+  vertical-align: top;
+}
+div.hdlist.compact tr {
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.comment {
+  background: yellow;
+}
+
+.footnote, .footnoteref {
+  font-size: 0.8em;
+}
+
+span.footnote, span.footnoteref {
+  vertical-align: super;
+}
+
+#footnotes {
+  margin: 20px 0 20px 0;
+  padding: 7px 0 0 0;
+}
+
+#footnotes div.footnote {
+  margin: 0 0 5px 0;
+}
+
+#footnotes hr {
+  border: none;
+  border-top: 1px solid silver;
+  height: 1px;
+  text-align: left;
+  margin-left: 0;
+  width: 20%;
+  min-width: 100px;
+}
+
+div.colist td {
+  padding-right: 0.5em;
+  padding-bottom: 0.3em;
+  vertical-align: top;
+}
+div.colist td img {
+  margin-top: 0.3em;
+}
+
+@media print {
+  #footer-badges { display: none; }
+}
+
+#toc {
+  margin-bottom: 2.5em;
+}
+
+#toctitle {
+  color: #527bbd;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 1.0em;
+  margin-bottom: 0.1em;
+}
+
+div.toclevel1, div.toclevel2, div.toclevel3, div.toclevel4 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+div.toclevel2 {
+  margin-left: 2em;
+  font-size: 0.9em;
+}
+div.toclevel3 {
+  margin-left: 4em;
+  font-size: 0.9em;
+}
+div.toclevel4 {
+  margin-left: 6em;
+  font-size: 0.9em;
+}
+
+span.aqua { color: aqua; }
+span.black { color: black; }
+span.blue { color: blue; }
+span.fuchsia { color: fuchsia; }
+span.gray { color: gray; }
+span.green { color: green; }
+span.lime { color: lime; }
+span.maroon { color: maroon; }
+span.navy { color: navy; }
+span.olive { color: olive; }
+span.purple { color: purple; }
+span.red { color: red; }
+span.silver { color: silver; }
+span.teal { color: teal; }
+span.white { color: white; }
+span.yellow { color: yellow; }
+
+span.aqua-background { background: aqua; }
+span.black-background { background: black; }
+span.blue-background { background: blue; }
+span.fuchsia-background { background: fuchsia; }
+span.gray-background { background: gray; }
+span.green-background { background: green; }
+span.lime-background { background: lime; }
+span.maroon-background { background: maroon; }
+span.navy-background { background: navy; }
+span.olive-background { background: olive; }
+span.purple-background { background: purple; }
+span.red-background { background: red; }
+span.silver-background { background: silver; }
+span.teal-background { background: teal; }
+span.white-background { background: white; }
+span.yellow-background { background: yellow; }
+
+span.big { font-size: 2em; }
+span.small { font-size: 0.6em; }
+
+span.underline { text-decoration: underline; }
+span.overline { text-decoration: overline; }
+span.line-through { text-decoration: line-through; }
+
+
+/*
+ * xhtml11 specific
+ *
+ * */
+
+tt {
+  font-family: monospace;
+  font-size: inherit;
+  color: navy;
+}
+
+div.tableblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.tableblock > table {
+  border: 3px solid #527bbd;
+}
+thead, p.table.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+p.table {
+  margin-top: 0;
+}
+/* Because the table frame attribute is overriden by CSS in most browsers. */
+div.tableblock > table[frame="void"] {
+  border-style: none;
+}
+div.tableblock > table[frame="hsides"] {
+  border-left-style: none;
+  border-right-style: none;
+}
+div.tableblock > table[frame="vsides"] {
+  border-top-style: none;
+  border-bottom-style: none;
+}
+
+
+/*
+ * html5 specific
+ *
+ * */
+
+.monospaced {
+  font-family: monospace;
+  font-size: inherit;
+  color: navy;
+}
+
+table.tableblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+thead, p.tableblock.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+p.tableblock {
+  margin-top: 0;
+}
+table.tableblock {
+  border-width: 3px;
+  border-spacing: 0px;
+  border-style: solid;
+  border-color: #527bbd;
+  border-collapse: collapse;
+}
+th.tableblock, td.tableblock {
+  border-width: 1px;
+  padding: 4px;
+  border-style: solid;
+  border-color: #527bbd;
+}
+
+table.tableblock.frame-topbot {
+  border-left-style: hidden;
+  border-right-style: hidden;
+}
+table.tableblock.frame-sides {
+  border-top-style: hidden;
+  border-bottom-style: hidden;
+}
+table.tableblock.frame-none {
+  border-style: hidden;
+}
+
+th.tableblock.halign-left, td.tableblock.halign-left {
+  text-align: left;
+}
+th.tableblock.halign-center, td.tableblock.halign-center {
+  text-align: center;
+}
+th.tableblock.halign-right, td.tableblock.halign-right {
+  text-align: right;
+}
+
+th.tableblock.valign-top, td.tableblock.valign-top {
+  vertical-align: top;
+}
+th.tableblock.valign-middle, td.tableblock.valign-middle {
+  vertical-align: middle;
+}
+th.tableblock.valign-bottom, td.tableblock.valign-bottom {
+  vertical-align: bottom;
+}
+
+
+/*
+ * manpage specific
+ *
+ * */
+
+body.manpage h1 {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  border-top: 2px solid silver;
+  border-bottom: 2px solid silver;
+}
+body.manpage h2 {
+  border-style: none;
+}
+body.manpage div.sectionbody {
+  margin-left: 3em;
+}
+
+@media print {
+  body.manpage div#toc { display: none; }
+}
+</style>
+<script type="text/javascript">
+/*<![CDATA[*/
+var asciidoc = {  // Namespace.
+
+/////////////////////////////////////////////////////////////////////
+// Table Of Contents generator
+/////////////////////////////////////////////////////////////////////
+
+/* Author: Mihai Bazon, September 2002
+ * http://students.infoiasi.ro/~mishoo
+ *
+ * Table Of Content generator
+ * Version: 0.4
+ *
+ * Feel free to use this script under the terms of the GNU General Public
+ * License, as long as you do not remove or alter this notice.
+ */
+
+ /* modified by Troy D. Hanson, September 2006. License: GPL */
+ /* modified by Stuart Rackham, 2006, 2009. License: GPL */
+
+// toclevels = 1..4.
+toc: function (toclevels) {
+
+  function getText(el) {
+    var text = "";
+    for (var i = el.firstChild; i != null; i = i.nextSibling) {
+      if (i.nodeType == 3 /* Node.TEXT_NODE */) // IE doesn't speak constants.
+        text += i.data;
+      else if (i.firstChild != null)
+        text += getText(i);
+    }
+    return text;
+  }
+
+  function TocEntry(el, text, toclevel) {
+    this.element = el;
+    this.text = text;
+    this.toclevel = toclevel;
+  }
+
+  function tocEntries(el, toclevels) {
+    var result = new Array;
+    var re = new RegExp('[hH]([2-'+(toclevels+1)+'])');
+    // Function that scans the DOM tree for header elements (the DOM2
+    // nodeIterator API would be a better technique but not supported by all
+    // browsers).
+    var iterate = function (el) {
+      for (var i = el.firstChild; i != null; i = i.nextSibling) {
+        if (i.nodeType == 1 /* Node.ELEMENT_NODE */) {
+          var mo = re.exec(i.tagName);
+          if (mo && (i.getAttribute("class") || i.getAttribute("className")) != "float") {
+            result[result.length] = new TocEntry(i, getText(i), mo[1]-1);
+          }
+          iterate(i);
+        }
+      }
+    }
+    iterate(el);
+    return result;
+  }
+
+  var toc = document.getElementById("toc");
+  if (!toc) {
+    return;
+  }
+
+  // Delete existing TOC entries in case we're reloading the TOC.
+  var tocEntriesToRemove = [];
+  var i;
+  for (i = 0; i < toc.childNodes.length; i++) {
+    var entry = toc.childNodes[i];
+    if (entry.nodeName == 'div'
+     && entry.getAttribute("class")
+     && entry.getAttribute("class").match(/^toclevel/))
+      tocEntriesToRemove.push(entry);
+  }
+  for (i = 0; i < tocEntriesToRemove.length; i++) {
+    toc.removeChild(tocEntriesToRemove[i]);
+  }
+
+  // Rebuild TOC entries.
+  var entries = tocEntries(document.getElementById("content"), toclevels);
+  for (var i = 0; i < entries.length; ++i) {
+    var entry = entries[i];
+    if (entry.element.id == "")
+      entry.element.id = "_toc_" + i;
+    var a = document.createElement("a");
+    a.href = "#" + entry.element.id;
+    a.appendChild(document.createTextNode(entry.text));
+    var div = document.createElement("div");
+    div.appendChild(a);
+    div.className = "toclevel" + entry.toclevel;
+    toc.appendChild(div);
+  }
+  if (entries.length == 0)
+    toc.parentNode.removeChild(toc);
+},
+
+
+/////////////////////////////////////////////////////////////////////
+// Footnotes generator
+/////////////////////////////////////////////////////////////////////
+
+/* Based on footnote generation code from:
+ * http://www.brandspankingnew.net/archive/2005/07/format_footnote.html
+ */
+
+footnotes: function () {
+  // Delete existing footnote entries in case we're reloading the footnodes.
+  var i;
+  var noteholder = document.getElementById("footnotes");
+  if (!noteholder) {
+    return;
+  }
+  var entriesToRemove = [];
+  for (i = 0; i < noteholder.childNodes.length; i++) {
+    var entry = noteholder.childNodes[i];
+    if (entry.nodeName == 'div' && entry.getAttribute("class") == "footnote")
+      entriesToRemove.push(entry);
+  }
+  for (i = 0; i < entriesToRemove.length; i++) {
+    noteholder.removeChild(entriesToRemove[i]);
+  }
+
+  // Rebuild footnote entries.
+  var cont = document.getElementById("content");
+  var spans = cont.getElementsByTagName("span");
+  var refs = {};
+  var n = 0;
+  for (i=0; i<spans.length; i++) {
+    if (spans[i].className == "footnote") {
+      n++;
+      var note = spans[i].getAttribute("data-note");
+      if (!note) {
+        // Use [\s\S] in place of . so multi-line matches work.
+        // Because JavaScript has no s (dotall) regex flag.
+        note = spans[i].innerHTML.match(/\s*\[([\s\S]*)]\s*/)[1];
+        spans[i].innerHTML =
+          "[<a id='_footnoteref_" + n + "' href='#_footnote_" + n +
+          "' title='View footnote' class='footnote'>" + n + "</a>]";
+        spans[i].setAttribute("data-note", note);
+      }
+      noteholder.innerHTML +=
+        "<div class='footnote' id='_footnote_" + n + "'>" +
+        "<a href='#_footnoteref_" + n + "' title='Return to text'>" +
+        n + "</a>. " + note + "</div>";
+      var id =spans[i].getAttribute("id");
+      if (id != null) refs["#"+id] = n;
+    }
+  }
+  if (n == 0)
+    noteholder.parentNode.removeChild(noteholder);
+  else {
+    // Process footnoterefs.
+    for (i=0; i<spans.length; i++) {
+      if (spans[i].className == "footnoteref") {
+        var href = spans[i].getElementsByTagName("a")[0].getAttribute("href");
+        href = href.match(/#.*/)[0];  // Because IE return full URL.
+        n = refs[href];
+        spans[i].innerHTML =
+          "[<a href='#_footnote_" + n +
+          "' title='View footnote' class='footnote'>" + n + "</a>]";
+      }
+    }
+  }
+},
+
+install: function(toclevels) {
+  var timerId;
+
+  function reinstall() {
+    asciidoc.footnotes();
+    if (toclevels) {
+      asciidoc.toc(toclevels);
+    }
+  }
+
+  function reinstallAndRemoveTimer() {
+    clearInterval(timerId);
+    reinstall();
+  }
+
+  timerId = setInterval(reinstall, 500);
+  if (document.addEventListener)
+    document.addEventListener("DOMContentLoaded", reinstallAndRemoveTimer, false);
+  else
+    window.onload = reinstallAndRemoveTimer;
+}
+
+}
+asciidoc.install(2);
+/*]]>*/
+</script>
+</head>
+<body class="article">
+<div id="header">
+<h1>BPOO - Support TD 2</h1>
+<span id="author">Dut/Info-S2/M2103</span><br />
+<div id="toc">
+  <div id="toctitle">Table des matières</div>
+  <noscript><p><b>JavaScript must be enabled in your browser to display the table of contents.</b></p></noscript>
+</div>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Avertissement" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAIAAADYYG7QAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAACXhJREFU
+WEftmGlQVUcahkXBSTlBS1EzxszEMFNUWSNFNJZb6aASIUEEjCuIcUHcMIhGMOqYGGUXIosECRNH
+LcaFCFhuJWEyLBdBZPGyeGWTRRFB3HA/3Ydx3nMb+7aXy+off8z5daH6fP30+73f193H6OXLl33e
+qgdAb9XT562iUdL1f6AuFHhThRoaGq68evD7zfV+I6CysrLdu3ePf/UsXbr01KlTb8jUe6Dk5OT+
+/fu37xj+/v5vwtRLoMTERBMTk476V0BAQK+ZegOUkJBgZGTEaSw+eu/HYC9HmzEiX1BQUO+Yegx0
+7NgxY2NjPrfTLKvn9Sly3XG5OXvr6hkiU0hISC+YegYUHx/fr18/Putc24+lWym0MoJW7KNloXLN
+IR/3v4lMe/fu7SlTD4AOHz4s0sz/fJzU8CutiKDl++SyUHotmGoC6PW4r1dMEZnCwsJ6xNRdIPim
+b9++fKaFDuMJaCoj5XKtNloa+eoeWrqLVsVsXjZRZNq3b1/3mboFFBcXJ9K4OE6ANnJFJDLV2pzc
+2nRCrj/U2niMXt1NS3bSku20Isrb7RPOhAoIDw/vJlPXQAcOHBBrimUKNNBGro6lT7O8PBds83GL
+DvfesNy6JdeHFvkS9de07AcvVyuRKTIysjtMXQBFR0e/TvMJMiVXRikuLg+lNTG5qn+I2YkPmkPV
+W+iVTbTwK6IJ2rBY1wsQZ//+/V0ydQYUEREh0qxcOFWhYdqUh8llwbQqSvVbtAiUHb+Eqr1JoRcp
+WE/y15BSv/ULR4s6YYWdM3UIhNWIM3m4TKO3U2lllFwRDhdrayqQVoblXTwgzNfnYbanlsaT5q8l
+eavI5ZWk5Lu18yxEppiYmE6YDAOhf4g0a5dYg6ZNG9CUhSg0Gj96zU9z5SAfaf7BIIJMiTS5X5JL
+bqRo25ov/iwywZcdMRkAyszMFGnWuU1XaKANKrw8rE0bjbbCS75tvpnABztYf8RpKLRRaJaQHBeS
+vZCofTycRolM+fn5Bpn0gXCmwSmCv6nQNP67jUbRRpupNpqdtHhH68Ok/iZtO4nv8nHIFM3zUDKV
+u0zRhtFcnEeynKVC71WOf+SRd+3aZfD8pA+UmprK35k6/i8yaJR+E651sTZT6H5XFW2UflO0tbX5
+kPmo99grcd9NJx3RZM6RMuylfM+xFqY8Pg527UXqDKhAlaTVJhyZUnrxtUBZs0cu/V7pfsUKDSpc
+vhFhbzeOzfFbrIOgzWKSvUCrjRNROUiZn0vptlK6zd+X6RLXYyDfNbOUmioPVbS5Bm38qELzLTJF
+irYSpd9sJprt3+9YyIDKTy1gmZJyXCRtpiSVM1Ep2pB0O9BIaTM2zh/ZM4WQV5xI2Tt/GDbw3M8e
+oJGhzVU/rTag0WpTtIWqN1NthRf8uoWNv5+2hOS6kUvMN19IWaCBNvZSBmg+JWnTU8LGmA1sMxyc
+WlhY2HXKMCIwMJAvYtTIwZcTNyguhm9K4Rto8w0t8qFq9OKNoCFKv/FYZGtu8aeBJHcpdzFoJGiT
+aU8y7IiizfS0CMtxFu/yyKGhof/VPnpMBsoeIg0bNoy/+f5w0/8cWiErLt5Bi7+hatBsJlc20oIN
+tGAtVX8l1+yS6wNa8ta+VlOqOUTRBr75FJm6+KPVlDE6Ow8dOrSpqYkB6TEZbowajWbkSF2yhw4e
+cD7WReviNm1AQ/LXkXwPWuZbczVo51b7eU5WSSFT2yocNCpFG07jNHUIX6GpqWlOTg6lVJbl1tZW
+PSbDQBh0/fr1IUN0UQaZ/i45Yi5crGSqcAMFTd5qpabyVx3/50o2mekA46fpjsgUtCGvtLkUa/Wl
+3XBOg6sBOsvz588lSQITgPSYDAAxZIy7cePG6NG6rXHAO8b/CvqMFmq1UfqNO8ldDt80pbsNfFe5
+D61w+FDrm9lcm8s/jfVe8D6nwWEcx86HDx8+fvz42bNnYCKE6DHpA3EajMMK6uvrrax0x5r+Jn0P
+7bGh+atJnju5DBr0YldU+KWfbX7aPrbhnB0yxWoKvqn9ZaKPiy7vODjg2I+Azc3NDx484Ex6OnUI
+hHEvXrx4+vQpdJowYYKwSqPIrZPrzqHlaHeGnEUS2xlUjloXc5pJ/h4f8rfwY9OmTaWlpXACmOBo
+MD169Ai5g0iimV4D4vJgBPSEqpD33r171dXV06ZN49FxJ4vZNqnu7FySvYhkz5cusgqfLWV8JqXP
+Imkz6n6ZGOVtLhzB+7i6uqpUqoKCApQLot26devu3bsI/uTJEyybicRmNwzE5IGqWAdWgzXhGm9t
+bS2ueK/Xx7WnZzNtePdjmTqyw8LEWHeTtLOzO3PmDLyclZXFmGpra2/fvn3//v32InUIBDExGkCN
+jY3IWlVVVUlJib29vcgUuP6vdcmzXrl4lpQ2EzRJfqMHvKO7n0yePPnkyZOnT58+f/58WlpadnZ2
+UVERojGRMAXyIGatMyCmEIBu3ryJEFiZWq12dnZ+zRmLzWsSraUM0CBTk1J/sBRpLC0tjxw5cuLE
+CXwLOHv27IULFzIyMvLy8srLyxET7uYKGU4ZujgreKSMeailpQXrQO+uqalBFIiEDcjFxUVk8nD8
+oDphCio82X/0CDPd9xBzc/PY2FhcvXGn40Dp6ekAggEAxBTqzEMMiDNhKEwHkbAU2AhmRKDi4mJE
+1GMaY/77dU4jhg/WfQ8ZMWIEzvOQB0BJSUnwUEpKCmhyc3NZyrBIREYVsw7Jt5HOGiNSi9FgQjmA
+CVlnOiEi4np6eop3ElEzMzOz4OBg0EAbfEaCe5ApuAcrgcaIAFMiIMKyshebdYdbh5g7rAMvs9yh
+QCoqKljufH19xRstYxo0aBDOC0ePHgUKMw1TBa/gRbEPsWaNFiNuZx1egxgQ8xMWASZ4HIUKjzOp
+EB02P378uLu7u62trY2NzcyZM3HKOXjwIGoKCULjwUkeHJWVleCAKngRr7MOxJPF5OGHkC5urlwn
+MGFBLH2IiOYEVwILk8EZ6DEQA3WEbRwPOCAJDAfbYRhaDsajwcI0bCPTa9Dikajru71ocyjMpEJc
+ZnbWNrF6zA2rQglQ4k/8E2KwbQulilewGCyJ7fPintr1Aa39sVIvfYiIuIgOONQt216YbHfu3MEP
+/MkgOAGDwMOPQchUt+5lBgfxmmRksCHiMm+hNbCOBURGyX7wifnGKR4z9E6JPUsZGy0yiUcUzMcf
+NiWv4favdMLRXVPrCWZwjs7/2eX3F70B/wN27TGv/ABMBwAAAABJRU5ErkJggg==" />
+</td>
+<td class="content">
+<div class="title">Version corrigée</div>
+<div class="paragraph"><p>Cette version comporte des indications pour les
+réponses aux exercices.</p></div>
+</td>
+</tr></table>
+</div>
+<div class="tableblock" id="cartouche">
+<table rules="all"
+style="margin-left:0; margin-right:auto;"
+width="90%"
+frame="border"
+cellspacing="0" cellpadding="4">
+<col width="9%" />
+<col width="90%" />
+<tbody>
+<tr>
+<td align="left" valign="top"><p class="table">PreReq</p></td>
+<td align="left" valign="top"><p class="table">Cours 1 : approche objet. S1.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">ObjTD</p></td>
+<td align="left" valign="top"><p class="table"><strong>Utiliser des objets en Java</strong>.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">Durée</p></td>
+<td align="left" valign="top"><p class="table"><strong>1 séance</strong> de 1,5h</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_préliminaires_et_rappels">1. Préliminaires et rappels</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_déclaration_de_sous_programmes_en_java_principes">1.1. Déclaration de sous-programmes en Java (principes)</h3>
+<div class="sect3">
+<h4 id="_en_tête_de_sous_programme">1.1.1. En-tête de sous-programme</h4>
+<div class="paragraph"><p>Un en-tête de sous-programme définit :</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+une spécification pour le programmeur qui doit développer le sous-programme,
+</p>
+</li>
+<li>
+<p>
+une "mode d&#8217;emploi" pour le programmeur qui doit utiliser ce sous-programme.
+</p>
+</li>
+</ol></div>
+<div class="paragraph"><p>Cet en-tête définit :</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+l&#8217;identificateur du sous-programme,
+</p>
+</li>
+<li>
+<p>
+le nombre ET le type ET l&#8217;ordre des paramètres formels : une suite de couples <tt>type  identificateur</tt> séparés par des virgules,
+</p>
+</li>
+<li>
+<p>
+un éventuel type de valeur retournée, void si rien n&#8217;est retourné.
+</p>
+<div class="paragraph"><p>Notez que "void", du point de vue du compilateur,  ne veut pas dire "rien" mais est un type qui n&#8217;a aucune valeur et veut donc dire "pas de valeur de retour".</p></div>
+</li>
+</ul></div>
+<div class="paragraph"><p>La <strong>signature ou prototype</strong> du sous-programme est ce qui permet de le distinguer ET de le reconnaître. Elle est formé de :</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+l&#8217;identificateur du sous-programme,
+</p>
+</li>
+<li>
+<p>
+le nombre ET le type ET l&#8217;ordre des paramètres formels.
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>Exemple :</p></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-style: italic"><span style="color: #9A1900">/**</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">* Calcul de la puissance puiss de la valeur v (calcul de v puissance puiss).</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">* Ne fonctionne que si puiss &gt;= 0</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">*</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">* </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900">    v      valeur dont on cherche la puissance</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">* </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900">    puiss  puissance à laquelle on va élever v</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">* </span></span><span style="color: #009900">@return</span><span style="font-style: italic"><span style="color: #9A1900">   v élevé à la puissance puiss</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">**/</span></span>
+<span style="color: #009900">double</span>  <span style="font-weight: bold"><span style="color: #000000">puissance</span></span> <span style="color: #990000">(</span><span style="color: #009900">double</span> v<span style="color: #990000">,</span> <span style="color: #009900">int</span> puiss<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+        <span style="color: #009900">double</span> resultat <span style="color: #990000">;</span>
+        <span style="color: #990000">...</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> resultat<span style="color: #990000">;</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+</div>
+<div class="sect3">
+<h4 id="_appel_d_8217_un_sous_programme">1.1.2. Appel d&#8217;un sous-programme</h4>
+<div class="paragraph"><p>L&#8217;appel d&#8217;un sous-programme fait intervenir :</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+l&#8217;identificateur du sous-programme,
+</p>
+</li>
+<li>
+<p>
+des paramètres effectifs en nombre ET ordre ET type correspondant au prototype du sous-programme.
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>Les paramètres effectifs peuvent être toute expression donnant une valeur du type attendu.</p></div>
+<div class="paragraph"><p><strong>Exercice</strong> Pour les  appels suivants,expliquez si : i) l&#8217;appel est correct, ii) les calculs effectués pour réaliser l&#8217;appel. On considérera les appels corrects même si nous reviendrons plus tard sur la syntaxe exacte d&#8217;appel.</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Q : <tt>double  puissance (double v, int puiss)</tt>
+</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="color: #009900">double</span> x<span style="color: #990000">;</span>
+x <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">puissance</span></span> <span style="color: #990000">(</span><span style="color: #993399">10.5</span><span style="color: #990000">,</span> <span style="color: #993399">1</span><span style="color: #990000">+</span><span style="color: #993399">1</span><span style="color: #990000">);</span></tt></pre></div></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Correct ?
+</p>
+</li>
+<li>
+<p>
+Calculs ?
+</p>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Important" src="data:image/png;base64,
+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
+SUVORK5CYII=" />
+</td>
+<td class="content">
+<div class="title">Solution</div>
+<div class="ulist"><ul>
+<li>
+<p>
+Correct - Oui
+</p>
+</li>
+<li>
+<p>
+Calculs - Calcul de 1+1 (=2), appel du sous-programme, retour puis affectation à x.
+</p>
+</li>
+</ul></div>
+</td>
+</tr></table>
+</div>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+Q : <tt>double  puissance (double v, int puiss)</tt>
+</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="color: #009900">double</span> x<span style="color: #990000">;</span>
+x <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">puissance</span></span> <span style="color: #990000">(</span><span style="color: #993399">10.5</span><span style="color: #990000">,</span> <span style="color: #993399">2</span><span style="color: #990000">,</span> <span style="color: #993399">2</span><span style="color: #990000">+</span><span style="color: #993399">2</span><span style="color: #990000">);</span>
+x <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">puissance</span></span> <span style="color: #990000">(</span><span style="color: #993399">10.5</span><span style="color: #990000">);</span></tt></pre></div></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Correct ?
+</p>
+</li>
+<li>
+<p>
+Calculs ?
+</p>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Important" src="data:image/png;base64,
+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
+SUVORK5CYII=" />
+</td>
+<td class="content">
+<div class="title">Solution</div>
+<div class="ulist"><ul>
+<li>
+<p>
+Correct - Aucun des deux, trop ou manque de paramètres.
+</p>
+</li>
+<li>
+<p>
+Calculs -
+</p>
+</li>
+</ul></div>
+</td>
+</tr></table>
+</div>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+Q : <tt>double  puissance (double v, int puiss)</tt>
+</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="color: #009900">double</span> x<span style="color: #990000">;</span>
+x <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">puissance</span></span> <span style="color: #990000">(</span><span style="color: #993399">10</span><span style="color: #990000">,</span> <span style="color: #993399">2</span><span style="color: #990000">);</span></tt></pre></div></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Correct ?
+</p>
+</li>
+<li>
+<p>
+Calculs ?
+</p>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Important" src="data:image/png;base64,
+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
+SUVORK5CYII=" />
+</td>
+<td class="content">
+<div class="title">Solution</div>
+<div class="ulist"><ul>
+<li>
+<p>
+Correct - Oui
+</p>
+</li>
+<li>
+<p>
+Calculs - Conversion de 10 de int en double (stocké localement par le compilateur) puis appel de fonction et calcul.
+</p>
+</li>
+</ul></div>
+</td>
+</tr></table>
+</div>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+Q : <tt>double  puissance (double v, int puiss)</tt>
+</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="color: #009900">double</span> x<span style="color: #990000">;</span>
+x <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">puissance</span></span> <span style="color: #990000">(</span><span style="color: #993399">10.5</span><span style="color: #990000">,</span> <span style="color: #993399">2.5</span><span style="color: #990000">);</span></tt></pre></div></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Correct ?
+</p>
+</li>
+<li>
+<p>
+Calculs ?
+</p>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Important" src="data:image/png;base64,
+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
+SUVORK5CYII=" />
+</td>
+<td class="content">
+<div class="title">Solution</div>
+<div class="ulist"><ul>
+<li>
+<p>
+Correct - Non car 2.5 et un double
+</p>
+</li>
+<li>
+<p>
+Calculs - Correction : x = puissance (10.5, <strong>(int)2.5</strong>); ou x = puissance (10.5, 2);
+</p>
+</li>
+</ul></div>
+</td>
+</tr></table>
+</div>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+Q : <tt>double  puissance (double v, int puiss)</tt>
+</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="color: #009900">int</span> val<span style="color: #990000">;</span>
+val <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">puissance</span></span> <span style="color: #990000">(</span><span style="color: #993399">10</span><span style="color: #990000">,</span> <span style="color: #993399">2</span><span style="color: #990000">);</span></tt></pre></div></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Correct ?
+</p>
+</li>
+<li>
+<p>
+Calculs ?
+</p>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Important" src="data:image/png;base64,
+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
+SUVORK5CYII=" />
+</td>
+<td class="content">
+<div class="title">Solution</div>
+<div class="ulist"><ul>
+<li>
+<p>
+Correct - Non val est de type int donc l&#8217;affectation n&#8217;est pas ok.
+</p>
+<div class="paragraph"><p>Java ne sait faire automatiquement que des promotions byte/char &#8594; int &#8594; long &#8594; float &#8594; double.</p></div>
+<div class="paragraph"><p>Ici on peut écrire : <tt>val = <strong>(int)</strong>  puissance (10, 2);</tt></p></div>
+<div class="paragraph"><p>Mais risque de perte de précision avec des vrais paramètres double (pas dans notre cas).</p></div>
+</li>
+<li>
+<p>
+Calculs (suite à la correction) - <tt>val = (int)  puissance (10, 2);</tt>
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Conversion de 10 de int en double (stocké localement par le compilateur),
+</p>
+</li>
+<li>
+<p>
+puis appel de fonction et calcul,
+</p>
+</li>
+<li>
+<p>
+puis conversion du résultat de double en int (perte de la partie décimale).
+</p>
+</li>
+</ul></div>
+</li>
+</ul></div>
+</td>
+</tr></table>
+</div>
+</li>
+</ul></div>
+</li>
+</ol></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_méthodes_static_en_java">1.2. Méthodes static en Java</h3>
+<div class="paragraph"><p>Il existe des sous-programmes qui existent "en eux-mêmes". Ont peut les décrire et on souhaite pouvoir les programmer pour les appeler. Exemple : sinus, cosinus, calcul de puissance, obtenir l&#8217;heure du système, &#8230;</p></div>
+<div class="paragraph"><p>En java :</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Tout identificateur déclaré ne peut l’être qu’à l’intérieur d’une unité de définition appelée classe.
+</p>
+</li>
+<li>
+<p>
+On peut déclarer un sous-programme rattaché à une classe, appelée méthode <strong>de classe</strong> ou méthode <strong>statique</strong>.
+</p>
+</li>
+<li>
+<p>
+Elle s'écrit précédée du mot-clef <tt><strong>static</strong></tt>
+</p>
+</li>
+<li>
+<p>
+Pour l&#8217;appeler, il faut utiliser le nom de la classe devant l&#8217;appel : <tt>NomDeClasse . identificateurmethode(&#8230;)</tt>
+</p>
+</li>
+</ol></div>
+<div class="paragraph"><p>Exemple :</p></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">ClasseLibrairie</span> <span style="color: #FF0000">{</span>
+        <span style="font-style: italic"><span style="color: #9A1900">/**</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">        * Calcul de la puisssance puiss de la valeur v (calcul de v puissance puiss).</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">        * Ne fonctionne que si puiss &gt;= 0</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">        *</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">        * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900">    v      valeur dont on cherche la puissance</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">        * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900">    puiss  puissance à laquelle on va élever v</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">        * </span></span><span style="color: #009900">@return</span><span style="font-style: italic"><span style="color: #9A1900">   v      elévé à la puissance puiss</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">        **/</span></span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">double</span>  <span style="font-weight: bold"><span style="color: #000000">puissance</span></span> <span style="color: #990000">(</span><span style="color: #009900">double</span> v<span style="color: #990000">,</span> <span style="color: #009900">int</span> puiss<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="color: #009900">double</span> resultat<span style="color: #990000">=</span><span style="color: #993399">0</span> <span style="color: #990000">;</span>
+                <span style="color: #990000">...</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> resultat<span style="color: #990000">;</span>
+        <span style="color: #FF0000">}</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> argv<span style="color: #990000">[])</span> <span style="font-weight: bold"><span style="color: #0000FF">throws</span></span> Exception  <span style="color: #FF0000">{</span>
+                <span style="color: #009900">double</span> x<span style="color: #990000">;</span>
+                x <span style="color: #990000">=</span> ClasseLibrairie<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">puissance</span></span> <span style="color: #990000">(</span><span style="color: #993399">10.5</span><span style="color: #990000">,</span> <span style="color: #993399">2</span><span style="color: #990000">);</span>
+        <span style="color: #FF0000">}</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+<div class="paragraph"><p>Par la suite, lorsque nous écrirons des classes, on séparera clairement :</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+des classes "librairies" qui définissent uniquement des méthodes statiques. Ex Math et System ou une classe contenant une fonction main().
+</p>
+</li>
+<li>
+<p>
+des classes décrivant des objets définissant uniquement des méthodes non statiques.
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>Cette dichotomie que l&#8217;on recherchera ne sera pas tous toujours possible ou souhaitable. Nous l&#8217;appliquerons le plus possible. Exception : les sujets de TD ou TP (pour diminuer le volume des exemples).</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Astuce" src="data:image/png;base64,
+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" />
+</td>
+<td class="content">
+<div class="paragraph"><p>Notons que les librairies Java mélangent souvent les deux type de méthodes et d&#8217;attributs.
+Faire attention en lisant la documentation.</p></div>
+</td>
+</tr></table>
+</div>
+<div class="paragraph"><p>Autre exemple :</p></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> argv<span style="color: #990000">[])</span>  <span style="color: #FF0000">{</span>
+        <span style="color: #009900">double</span> x<span style="color: #990000">,</span> y<span style="color: #990000">,</span> xpowy<span style="color: #990000">;</span>
+        <span style="color: #009900">long</span> debut<span style="color: #990000">,</span> lg<span style="color: #990000">;</span>
+
+        debut <span style="color: #990000">=</span> System<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">currentTimeMillis</span></span><span style="color: #990000">();</span>  <span style="font-style: italic"><span style="color: #9A1900">// instant de démarrage en milisecondes</span></span>
+                                             <span style="font-style: italic"><span style="color: #9A1900">// calculé depuis January 1, 1970 UTC - 0h.)</span></span>
+        x <span style="color: #990000">=</span> <span style="color: #993399">100</span> <span style="color: #990000">*</span> Math<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">random</span></span><span style="color: #990000">();</span>   <span style="font-style: italic"><span style="color: #9A1900">// Tirage au sort d'un nombre entre 0 et 100</span></span>
+        y <span style="color: #990000">=</span> <span style="color: #993399">10</span> <span style="color: #990000">*</span> Math<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">random</span></span><span style="color: #990000">();</span>    <span style="font-style: italic"><span style="color: #9A1900">// Tirage au sort d'un nombre entre 0 et 10</span></span>
+        xpowy <span style="color: #990000">=</span> Math<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">pow</span></span><span style="color: #990000">(</span>x<span style="color: #990000">,</span> y<span style="color: #990000">);</span>    <span style="font-style: italic"><span style="color: #9A1900">// Calcul de x puissance y</span></span>
+        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Résultat : "</span> <span style="color: #990000">+</span> x <span style="color: #990000">+</span> <span style="color: #FF0000">" pow "</span> <span style="color: #990000">+</span> y <span style="color: #990000">+</span> <span style="color: #FF0000">" =&gt; "</span> <span style="color: #990000">+</span> xpowy<span style="color: #990000">);</span>
+        lg <span style="color: #990000">=</span> System<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">currentTimeMillis</span></span><span style="color: #990000">()</span> <span style="color: #990000">-</span> debut<span style="color: #990000">;</span> <span style="font-style: italic"><span style="color: #9A1900">// Calcul durée du programme</span></span>
+        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Durée : "</span> <span style="color: #990000">+</span> lg<span style="color: #990000">);</span>
+<span style="color: #FF0000">}</span>
+
+Exécution <span style="color: #990000">:</span>
+ Résultat <span style="color: #990000">:</span> <span style="color: #993399">80.6991463652636</span> pow <span style="color: #993399">1.7813938064916623</span> <span style="color: #990000">=&gt;</span> <span style="color: #993399">2493.931501272706</span>
+ Durée <span style="color: #990000">:</span> <span style="color: #993399">3</span>
+ <span style="color: #008080">Exit</span> code<span style="color: #990000">:</span> <span style="color: #993399">0</span></tt></pre></div></div>
+</div>
+<div class="sect2">
+<h3 id="_constantes_attributs_static">1.3. Constantes (attributs static)</h3>
+<div class="paragraph"><p>De la même manière, on peut aussi définir des attributs de classe (static) : attributs accessibles à partir de la classe.</p></div>
+<div class="paragraph"><p>Ils sont très souvent déclarés <strong>public</strong> (accessibles), <strong>static</strong> (de classe), <strong>final</strong> (non modifiables).</p></div>
+<div class="paragraph"><p>Exemple : Math.PI &#8594; Valeur de approchée de pi (double) : 3,141592&#8230;</p></div>
+<div class="paragraph"><p>Exemple : Math.E &#8594; Valeur de approchée de e (double) : e = 2,718281&#8230;</p></div>
+</div>
+<div class="sect2">
+<h3 id="_autres_cas_particuliers_attributs_static">1.4. Autres cas particuliers (attributs static)</h3>
+<div class="paragraph"><p>Certaines classes définissent des attributs de classe (static) "modifiables", mais à ne modifier qu&#8217;avec précaution.</p></div>
+<div class="paragraph"><p>Ils donnent accès à des ressources systèmes.</p></div>
+<div class="paragraph"><p>Exemple :</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+System.out &#8594; accès au dispositif de sortie standard par défaut du programme (objet de la classe PrintStream).
+</p>
+</li>
+<li>
+<p>
+System.in &#8594; accès au dispositif d&#8217;entrée standard du programme (objet de la classe BufferedInputStream).
+</p>
+</li>
+<li>
+<p>
+System.err &#8594; accès au dispositif de sortie d&#8217;erreur standard du programme (objet de la classe PrintStream).
+</p>
+</li>
+</ul></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>System.in
+|-----|     Une classe (un indicateur -&gt; majuscule)
+|---------| Un attribut de la classe (indicateur -&gt; pas de parenthèses après le "in").</tt></pre>
+</div></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_utiliser_des_objets_en_java">2. Utiliser des objets en Java</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_rappel_objets">2.1. Rappel objets</h3>
+<div class="paragraph"><p>Objet = identité + état + comportement</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Identité : Un objet forme un tout identifiable
+</p>
+</li>
+<li>
+<p>
+Un état : ensemble de propriétés/caractéristiques (attributs) ayant une valeur
+</p>
+</li>
+<li>
+<p>
+Comportement : ensemble des traitements (méthodes) que peut accomplir l’objet si on le lui « demande »
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p><span class="image">
+<img alt="images/td2objetsencapsules.png" src="data:image/png;base64,
+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
+TkSuQmCC" />
+</span></p></div>
+<div class="paragraph"><p>Par principe :</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Un objet <strong>encapsule</strong> son état
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Etat : accessible que par l’objet lui-même (méthodes)
+</p>
+</li>
+<li>
+<p>
+Principe objet majeur à respecter &#8658; <strong>abstraction</strong>
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+Un objet reçoit des <strong>messages</strong> &#8658; appel de méthode appliqué à l&#8217;objet
+</p>
+</li>
+<li>
+<p>
+Un objet est créé à partir d&#8217;une classe qui fournit sa description.
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>Un objet reçoit des messages &#8658; appel de méthode appliqué à l&#8217;objet</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Idée : c&#8217;est l&#8217;objet qui est "actif" et qui réagit (exécute la méthode)
+</p>
+</li>
+<li>
+<p>
+On peut "penser" objet comme cela &#8230;
+</p>
+</li>
+<li>
+<p>
+&#8230; mais la mise en oeuvre est différente.
+</p>
+</li>
+</ul></div>
+</div>
+<div class="sect2">
+<h3 id="_principe_des_classes_en_java">2.2. Principe des classes en Java</h3>
+<div class="paragraph"><p>Pour décrire une classe d&#8217;objet en Java, on définit une classe qui déclare :</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+des attributs pour les objets (private),
+</p>
+</li>
+<li>
+<p>
+des méthodes pour les objets (public) + éventuellement des méthodes internes (private),
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+des méthodes observateurs (appelées aussi pour certaines getters),
+</p>
+</li>
+<li>
+<p>
+des méthodes transformateurs (appelées aussi pour certaines setters),
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+un/des constructeurs (public) pour construire des objets.
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>Exemple :</p></div>
+<div class="paragraph"><p><span class="image">
+<img alt="images/td2classpersonne.png" src="data:image/png;base64,
+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
+HUrPKP8GdQeRZ8qr0wEAAAAASUVORK5CYII=" />
+</span></p></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">Personne</span>
+<span style="color: #FF0000">{</span>
+                <span style="font-style: italic"><span style="color: #9A1900">// Attributs</span></span>
+                <span style="font-weight: bold"><span style="color: #0000FF">private</span></span>  <span style="color: #008080">String</span> nom<span style="color: #990000">;</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">private</span></span>  <span style="color: #009900">int</span> age<span style="color: #990000">;</span>
+
+        <span style="font-style: italic"><span style="color: #9A1900">// Constructeurs</span></span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span>  <span style="font-weight: bold"><span style="color: #000000">Personne</span></span> <span style="color: #990000">()</span>  <span style="color: #FF0000">{</span> <span style="color: #990000">...</span> <span style="color: #FF0000">}</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span>  <span style="font-weight: bold"><span style="color: #000000">Personne</span></span> <span style="color: #990000">(</span><span style="color: #008080">String</span> pNom<span style="color: #990000">)</span>   <span style="color: #FF0000">{</span> <span style="color: #990000">...</span> <span style="color: #FF0000">}</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span>  <span style="font-weight: bold"><span style="color: #000000">Personne</span></span> <span style="color: #990000">(</span><span style="color: #008080">String</span> pNom<span style="color: #990000">,</span> <span style="color: #009900">int</span> pAge<span style="color: #990000">)</span> <span style="color: #FF0000">{</span> <span style="color: #990000">...</span> <span style="color: #FF0000">}</span>
+
+        <span style="font-style: italic"><span style="color: #9A1900">// Méthodes</span></span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span>  <span style="color: #008080">String</span> <span style="font-weight: bold"><span style="color: #000000">getNom</span></span> <span style="color: #990000">()</span> <span style="color: #FF0000">{</span> <span style="color: #990000">...</span> <span style="color: #FF0000">}</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span>  <span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">getAge</span></span> <span style="color: #990000">()</span>   <span style="color: #FF0000">{</span> <span style="color: #990000">...</span> <span style="color: #FF0000">}</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span>  <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">setNom</span></span> <span style="color: #990000">(</span><span style="color: #008080">String</span> nouvNom<span style="color: #990000">)</span> <span style="color: #FF0000">{</span> <span style="color: #990000">...</span> <span style="color: #FF0000">}</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span>  <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">setAge</span></span> <span style="color: #990000">(</span><span style="color: #009900">int</span> nouvAge<span style="color: #990000">)</span>  <span style="color: #FF0000">{</span> <span style="color: #990000">...</span> <span style="color: #FF0000">}</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span>  <span style="color: #008080">String</span> <span style="font-weight: bold"><span style="color: #000000">toString</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span> <span style="color: #990000">...</span> <span style="color: #FF0000">}</span>
+<span style="color: #FF0000">}</span> <span style="font-style: italic"><span style="color: #9A1900">// Fin Classe Personne</span></span></tt></pre></div></div>
+<div class="paragraph"><p>Principes de syntaxe :</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Attributs : <strong>toujours</strong> déclarés private. Règle à appliquer pour construire des objets (et non des enregistrements).
+</p>
+</li>
+<li>
+<p>
+Constructeur :
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Porte le nom de la classe.
+</p>
+</li>
+<li>
+<p>
+Pas de valeur de retour.
+</p>
+</li>
+<li>
+<p>
+Plusieurs constructeurs possibles (surcharge) : différenciés par leur signature.
+</p>
+</li>
+</ul></div>
+</li>
+</ol></div>
+<div class="paragraph"><p>La classe définit un type :</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+On peut déclarer des variables de ce type.
+</p>
+</li>
+<li>
+<p>
+Ces variables contiennent des <strong>références</strong> vers des objets de ce type (une référence est typée).
+</p>
+</li>
+</ol></div>
+</div>
+<div class="sect2">
+<h3 id="_création_d_8217_objet">2.3. Création d&#8217;objet</h3>
+<div class="paragraph"><p>Utiliser l&#8217;opérateur <strong>new</strong> : Exemple <tt>new Personne ("Jean", 39);</tt></p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+réserve la mémoire nécessaire : environ le nombre d&#8217;octets pour stocker les attributs définis par la classe,
+</p>
+</li>
+<li>
+<p>
+initialise chaque attribut (<tt>0</tt> pour les nombres, <tt>false</tt> pour les booleans, <tt>null</tt> pour les objets et les tableaux),
+</p>
+</li>
+<li>
+<p>
+applique le constructeur spécifié (signature à partir des paramètres),
+</p>
+</li>
+<li>
+<p>
+<strong>renvoie la référence</strong> de l&#8217;objet créé dans le tas.
+</p>
+</li>
+</ul></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt> new  Personne  ("Jean", 39)
+|-------------| ..................&gt; L'objet à créer -&gt; avec les attributs définis par la classe
+
+ new  Personne  ("Jean", 39)
+     |----------------------| ....&gt; Signature du constructeur à appliquer -&gt; Personne (String, int)</tt></pre>
+</div></div>
+<div class="paragraph"><p>Autre façon de créer des objets ? oui, méthode clone() appliquée à un objet &#8230; mais sera vu plus tard.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_identité_d_8217_objet_en_java">2.4. Identité d&#8217;objet en Java</h3>
+<div class="paragraph"><p>L&#8217;identité d&#8217;objet en Java est automatique &#8594; c&#8217;est la référence de l&#8217;objet créé par <strong>new</strong>.</p></div>
+<div class="paragraph"><p>Elle est unique et permet de désigner l&#8217;objet indépendamment des valeurs des attributs.</p></div>
+<div class="paragraph"><p>Les variables objet contiennent la référence vers l&#8217;objet &#8230; donc son identité.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_envoi_de_message">2.5. Envoi de message</h3>
+<div class="paragraph"><p>Syntaxe : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <tt>expressionReferenceObjet <strong>.</strong> identificateurMethode <strong>(</strong> [parametreEffectif1, &#8230;] <strong>)</strong></tt></p></div>
+</div>
+<div class="sect2">
+<h3 id="_exemple">2.6. Exemple</h3>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">ClasseEssai</span>
+<span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span>  <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span> <span style="color: #990000">(</span><span style="color: #008080">String</span>  argv<span style="color: #990000">[])</span> <span style="color: #FF0000">{</span>
+                <span style="color: #009900">int</span> i<span style="color: #990000">;</span>
+                <span style="color: #008080">Personne</span>  p1<span style="color: #990000">,</span> p2<span style="color: #990000">,</span> p3<span style="color: #990000">;</span>
+                <span style="color: #008080">Personne</span> tabPers <span style="color: #990000">[];</span>
+
+                p1 <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Personne</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"Jean"</span><span style="color: #990000">,</span> <span style="color: #993399">39</span><span style="color: #990000">);</span>
+                p2 <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Personne</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"Jean"</span><span style="color: #990000">,</span> <span style="color: #993399">39</span><span style="color: #990000">);</span>
+                p3 <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Personne</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"Pierre"</span><span style="color: #990000">);</span>
+
+                p3<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setAge</span></span> <span style="color: #990000">(</span><span style="color: #993399">45</span><span style="color: #990000">);</span>
+                p3<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setNom</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"Durand"</span><span style="color: #990000">);</span>
+
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span>p1<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">toString</span></span><span style="color: #990000">());</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span>p1<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getNom</span></span> <span style="color: #990000">()</span> <span style="color: #990000">);</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span>p2<span style="color: #990000">);</span>   <span style="font-style: italic"><span style="color: #9A1900">// Implicitement fera appel à p2.toString()</span></span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span>p3<span style="color: #990000">);</span>   <span style="font-style: italic"><span style="color: #9A1900">// Idem</span></span>
+
+                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span>  <span style="color: #990000">(</span>p1 <span style="color: #990000">!=</span> p2<span style="color: #990000">)</span>
+                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"Non Egalité des références"</span><span style="color: #990000">);</span>
+
+                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>p1<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getNom</span></span><span style="color: #990000">().</span><span style="font-weight: bold"><span style="color: #000000">equals</span></span><span style="color: #990000">(</span>p2<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getNom</span></span><span style="color: #990000">()))</span>
+                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"Egalité des noms des Personnes"</span><span style="color: #990000">);</span>
+
+                tabPers <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> Personne <span style="color: #990000">[</span><span style="color: #993399">3</span><span style="color: #990000">];</span>
+                tabPers<span style="color: #990000">[</span><span style="color: #993399">0</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> p1<span style="color: #990000">;</span>
+                tabPers<span style="color: #990000">[</span><span style="color: #993399">1</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> p2<span style="color: #990000">;</span>
+                tabPers<span style="color: #990000">[</span><span style="color: #993399">2</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Personne</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"Albert"</span><span style="color: #990000">,</span> <span style="color: #993399">30</span><span style="color: #990000">);</span>
+
+                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>tabPers<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
+                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span>tabPers<span style="color: #990000">[</span>i<span style="color: #990000">]);</span>
+                <span style="color: #FF0000">}</span>
+        <span style="color: #FF0000">}</span><span style="font-style: italic"><span style="color: #9A1900">// Fin Main</span></span>
+<span style="color: #FF0000">}</span><span style="font-style: italic"><span style="color: #9A1900">// Fin Classe ClasseEssai</span></span></tt></pre></div></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_utilisation_de_classe">3. Utilisation de classe</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="sujetdevinette">3.1. Exercice</h3>
+<div class="paragraph"><p>Nous allons utiliser une classe Devinette pour jouer, <a href="#docdevinette">cf. ci-après</a>.</p></div>
+<div class="paragraph"><p>Au jeu de la "devinette" :</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+On suppose une valeur entière à trouver, tirée au sort par le programme, entre une borne basse (10&lt;&gt;20) et haute (40&lt;&gt;50).
+</p>
+</li>
+<li>
+<p>
+L&#8217;utilisateur chercher la valeur par essais successifs, la machine répondant à chaque coup si le nombre recherché est supérieur ou inférieur au nombre soumis.
+</p>
+</li>
+<li>
+<p>
+Le jeu s&#8217;arrête quand la valeur est trouvée.
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>Exemple d&#8217;exécution :</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>Coup : (13-49) : 33 // <img alt="1" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABjSURBVHja
+VY6xDcAwCAS/pPQaLim9QmajdOk2I2SNrMEIlARIoigU8Cek/4e7zdHaWOYOVwaoA6wOCw05Y7FB
+gE0tIWQ+sBcwKM8qoD/wB5wGL8hjfdzWrh01GRp1hInGjDoXwHgsFuzBVLQAAABDdEVYdFNvZnR3
+YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
+dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
+ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" />
+Plus Haut ... Coup : (13-49) : 40 // <img alt="2" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABvSURBVAgd
+BcGhAcJADADAky8rsZXIyK7AGkgksiu8RNYyAiswAhIbiYwMd7rrsS3LdlS3zuC8EtkqrJ/8vRdR
+Js+PtSZTMHe+L8IAUXeGAZd8DYbArB3C5FbXiBNThSMzcxelM4DI1l0zxtge1f0HVNk1YLFij6sA
+AABDdEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlz
+dGljLmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAODBlYWU1MjljOTRhN2Y0N2Rl
+Y2NmYWRhMjhhY2I5ZGblb7ENAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" />
+Plus Haut ... Coup : (13-49) : 49 // <img alt="3" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABxSURBVAgd
+BcGhAYNAEEXBJ1duG8gvr5XYSGRaiFyJTAtI2kAisSeRK39msHsbmePXNp4ixgg0TYu8r/tM1BR8
+ZqRXKAS5kF5BBMA+r4AgAMa7VwgEr4LzAFFQj8bzhaJF7t17oMZzgQA0jd2lSG1t/wFRuDVjQOMG
+MAAAAEN0RVh0U29mdHdhcmUAQCgjKUltYWdlTWFnaWNrIDQuMi44IDk5LzA4LzAxIGNyaXN0eUBt
+eXN0aWMuZXMuZHVwb250LmNvbZG6IbgAAAAqdEVYdFNpZ25hdHVyZQA4MGJiZGEyNzI2ZGRhY2U4
+YWI4YTAxZjU5ZGUyZWJkYgj9DnUAAAAOdEVYdFBhZ2UAMTJ4MTIrMCswhG27fQAAAABJRU5ErkJg
+gg==" />
+Plus Bas ... Coup : (13-49) : 48
+Plus Bas ... Coup : (13-49) : 41
+Plus Haut ... Coup : (13-49) : 47
+Plus Bas ... Coup : (13-49) : 44
+Plus Haut ... Coup : (13-49) : 46
+Bravo, en 8 coups.</tt></pre>
+</div></div>
+<div class="colist arabic"><table>
+<tr><td><img alt="1" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABjSURBVHja
+VY6xDcAwCAS/pPQaLim9QmajdOk2I2SNrMEIlARIoigU8Cek/4e7zdHaWOYOVwaoA6wOCw05Y7FB
+gE0tIWQ+sBcwKM8qoD/wB5wGL8hjfdzWrh01GRp1hInGjDoXwHgsFuzBVLQAAABDdEVYdFNvZnR3
+YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
+dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
+ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></td><td>
+Saisie utilisateur de 33
+</td></tr>
+<tr><td><img alt="2" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABvSURBVAgd
+BcGhAcJADADAky8rsZXIyK7AGkgksiu8RNYyAiswAhIbiYwMd7rrsS3LdlS3zuC8EtkqrJ/8vRdR
+Js+PtSZTMHe+L8IAUXeGAZd8DYbArB3C5FbXiBNThSMzcxelM4DI1l0zxtge1f0HVNk1YLFij6sA
+AABDdEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlz
+dGljLmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAODBlYWU1MjljOTRhN2Y0N2Rl
+Y2NmYWRhMjhhY2I5ZGblb7ENAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></td><td>
+Saisie utilisateur de 40
+</td></tr>
+<tr><td><img alt="3" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABxSURBVAgd
+BcGhAYNAEEXBJ1duG8gvr5XYSGRaiFyJTAtI2kAisSeRK39msHsbmePXNp4ixgg0TYu8r/tM1BR8
+ZqRXKAS5kF5BBMA+r4AgAMa7VwgEr4LzAFFQj8bzhaJF7t17oMZzgQA0jd2lSG1t/wFRuDVjQOMG
+MAAAAEN0RVh0U29mdHdhcmUAQCgjKUltYWdlTWFnaWNrIDQuMi44IDk5LzA4LzAxIGNyaXN0eUBt
+eXN0aWMuZXMuZHVwb250LmNvbZG6IbgAAAAqdEVYdFNpZ25hdHVyZQA4MGJiZGEyNzI2ZGRhY2U4
+YWI4YTAxZjU5ZGUyZWJkYgj9DnUAAAAOdEVYdFBhZ2UAMTJ4MTIrMCswhG27fQAAAABJRU5ErkJg
+gg==" /></td><td>
+&#8230;
+</td></tr>
+</table></div>
+<div class="paragraph"><p>A faire :</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Étudier la documentation de la classe Devinette (constructeurs/méthodes).
+</p>
+</li>
+<li>
+<p>
+Un objet Devinette, instance de la classe Devinette, est un objet qui :
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+lors de sa création, détermine des bornes min et max au jeu et choisit la valeur à chercher,
+</p>
+</li>
+<li>
+<p>
+dispose de méthodes permettant de jouer et d’interroger l’état de la partie (nombre de coups joués, résultat d’un coup, &#8230;).
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+Écrire un programme main permettant de faire une partie de devinette en utilisant la classe Devinette : tirage au sort des valeurs, demander une valeur comprise entre les deux bornes et répondre à l&#8217;utilisateur sur la validité de son coup, afficher « partie gagnée » à la fin ainsi que le nombre de coups joués (essais).
+</p>
+</li>
+<li>
+<p>
+Écrire un autre programme main permettant de jouer successivement 3 parties de devinette. Écrire d&#8217;abord un sous-programme <tt>void jouer (Devinette d)</tt> permettant de "dérouler" une partie de devinette avec l&#8217;objet d en paramètre. Puis écrire le programme demandé (quelques lignes).
+</p>
+</li>
+</ol></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Important" src="data:image/png;base64,
+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
+SUVORK5CYII=" />
+</td>
+<td class="content">
+<div class="title">Solution</div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #000080">import</span></span> java<span style="color: #990000">.</span>util<span style="color: #990000">.</span>Scanner<span style="color: #990000">;</span>
+<span style="font-weight: bold"><span style="color: #000080">import</span></span> classestps<span style="color: #990000">.*;</span>
+
+<span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">TestDevinette</span>
+<span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">jouer</span></span> <span style="color: #990000">(</span><span style="color: #008080">Devinette</span> d<span style="color: #990000">)</span> <span style="font-weight: bold"><span style="color: #0000FF">throws</span></span> ErreurExecutionDevinette
+        <span style="color: #FF0000">{</span>
+                <span style="color: #009900">int</span> val<span style="color: #990000">;</span>
+                <span style="color: #008080">Scanner</span> in<span style="color: #990000">;</span>
+
+                in <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Scanner</span></span><span style="color: #990000">(</span>System<span style="color: #990000">.</span>in<span style="color: #990000">);</span>
+
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Coup : ("</span><span style="color: #990000">+</span>d<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getBas</span></span><span style="color: #990000">()+</span><span style="color: #FF0000">"-"</span><span style="color: #990000">+</span>d<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getHaut</span></span><span style="color: #990000">()+</span><span style="color: #FF0000">") : "</span><span style="color: #990000">);</span>
+                val <span style="color: #990000">=</span> in<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">nextInt</span></span><span style="color: #990000">();</span>
+                d<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soumettreCoup</span></span> <span style="color: #990000">(</span>val<span style="color: #990000">);</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">while</span></span> <span style="color: #990000">(!</span>d<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">isDernierCoupGagnant</span></span><span style="color: #990000">())</span>
+                <span style="color: #FF0000">{</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>d<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">isDernierCoupTropBas</span></span><span style="color: #990000">())</span>
+                                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Plus Haut ... "</span><span style="color: #990000">);</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">else</span></span>
+                                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Plus Bas ... "</span><span style="color: #990000">);</span>
+
+                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Coup : ("</span><span style="color: #990000">+</span>d<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getBas</span></span><span style="color: #990000">()+</span><span style="color: #FF0000">"-"</span><span style="color: #990000">+</span>d<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getHaut</span></span><span style="color: #990000">()+</span><span style="color: #FF0000">") : "</span><span style="color: #990000">);</span>
+                        val <span style="color: #990000">=</span> in<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">nextInt</span></span><span style="color: #990000">();</span>
+                        d<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soumettreCoup</span></span> <span style="color: #990000">(</span>val<span style="color: #990000">);</span>
+                <span style="color: #FF0000">}</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Bravo, en "</span><span style="color: #990000">+</span>d<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getNbCoupsJoues</span></span><span style="color: #990000">()+</span><span style="color: #FF0000">" coups."</span><span style="color: #990000">);</span>
+        <span style="color: #FF0000">}</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main2</span></span> <span style="color: #990000">()</span> <span style="font-weight: bold"><span style="color: #0000FF">throws</span></span> ErreurExecutionDevinette
+        <span style="color: #FF0000">{</span>
+                <span style="color: #008080">Devinette</span> d<span style="color: #990000">;</span>
+                <span style="color: #009900">int</span> i<span style="color: #990000">;</span>
+
+                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span><span style="color: #993399">3</span><span style="color: #990000">;</span> i<span style="color: #990000">++)</span>
+                <span style="color: #FF0000">{</span>
+                        d <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Devinette</span></span><span style="color: #990000">()</span> <span style="color: #990000">;</span>
+                        TestDevinette<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">jouer</span></span> <span style="color: #990000">(</span>d<span style="color: #990000">);</span>
+                <span style="color: #FF0000">}</span>
+        <span style="color: #FF0000">}</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main1</span></span> <span style="color: #990000">()</span>
+        <span style="color: #FF0000">{</span>
+                <span style="color: #008080">Devinette</span> d<span style="color: #990000">;</span>
+                <span style="color: #009900">int</span> val<span style="color: #990000">;</span>
+                <span style="color: #008080">Scanner</span> in<span style="color: #990000">;</span>
+
+                in <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Scanner</span></span><span style="color: #990000">(</span>System<span style="color: #990000">.</span>in<span style="color: #990000">);</span>
+
+                d <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Devinette</span></span><span style="color: #990000">()</span> <span style="color: #990000">;</span>
+
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Coup : ("</span><span style="color: #990000">+</span>d<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getBas</span></span><span style="color: #990000">()+</span><span style="color: #FF0000">"-"</span><span style="color: #990000">+</span>d<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getHaut</span></span><span style="color: #990000">()+</span><span style="color: #FF0000">") : "</span><span style="color: #990000">);</span>
+                val <span style="color: #990000">=</span> in<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">nextInt</span></span><span style="color: #990000">();</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">try</span></span> <span style="color: #FF0000">{</span>
+                        d<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soumettreCoup</span></span> <span style="color: #990000">(</span>val<span style="color: #990000">);</span>
+                <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">ErreurExecutionDevinette</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>e<span style="color: #990000">);</span>
+                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Bug !!"</span><span style="color: #990000">);</span>
+                <span style="color: #FF0000">}</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">while</span></span> <span style="color: #990000">(!</span>d<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">isDernierCoupGagnant</span></span><span style="color: #990000">())</span>
+                <span style="color: #FF0000">{</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>d<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">isDernierCoupTropBas</span></span><span style="color: #990000">())</span>
+                                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Plus Haut ... "</span><span style="color: #990000">);</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">else</span></span>
+                                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Plus Bas ... "</span><span style="color: #990000">);</span>
+
+                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Coup : ("</span><span style="color: #990000">+</span>d<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getBas</span></span><span style="color: #990000">()+</span><span style="color: #FF0000">"-"</span><span style="color: #990000">+</span>d<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getHaut</span></span><span style="color: #990000">()+</span><span style="color: #FF0000">") : "</span><span style="color: #990000">);</span>
+                        val <span style="color: #990000">=</span> in<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">nextInt</span></span><span style="color: #990000">();</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">try</span></span> <span style="color: #FF0000">{</span>
+                                d<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soumettreCoup</span></span> <span style="color: #990000">(</span>val<span style="color: #990000">);</span>
+                        <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">ErreurExecutionDevinette</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>e<span style="color: #990000">);</span>
+                                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Bug !!"</span><span style="color: #990000">);</span>
+                        <span style="color: #FF0000">}</span>
+                <span style="color: #FF0000">}</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Bravo, en "</span><span style="color: #990000">+</span>d<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getNbCoupsJoues</span></span><span style="color: #990000">()+</span><span style="color: #FF0000">" coups."</span><span style="color: #990000">);</span>
+
+                <span style="font-style: italic"><span style="color: #9A1900">// d.soumettreCoup (20); // Plantage car partie finie ...</span></span>
+        <span style="color: #FF0000">}</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span> <span style="color: #990000">(</span><span style="color: #008080">String</span> argv<span style="color: #990000">[])</span> <span style="font-weight: bold"><span style="color: #0000FF">throws</span></span> ErreurExecutionDevinette
+        <span style="color: #FF0000">{</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Exo 1"</span><span style="color: #990000">);</span>
+                TestDevinette<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">main1</span></span><span style="color: #990000">();</span>
+
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Exo 1"</span><span style="color: #990000">);</span>
+                TestDevinette<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">main2</span></span><span style="color: #990000">();</span>
+        <span style="color: #FF0000">}</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+</td>
+</tr></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="docdevinette">3.2. Documentation classe Devinette</h3>
+<div class="paragraph"><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#sujetdevinette">Retour sujet</a></p></div>
+<HR>
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../classestps/package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/Devinette.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../index-files/index-1.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../classestps/Compte.html" title="class in classestps"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../classestps/ErreurExecutionDevinette.html" title="class in classestps"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../index.html?classestps/Devinette.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="Devinette.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+classestps</FONT>
+<BR>
+Class Devinette</H2>
+<PRE>
+java.lang.Object
+  <IMG SRC="../resources/inherit.gif" ALT="extended by "><B>classestps.Devinette</B>
+</PRE>
+<HR>
+<DL>
+<DT><PRE>public class <B>Devinette</B><DT>extends java.lang.Object</DL>
+</PRE>
+
+<P>
+Classe Devinette permettant de faire des jeux de "devinette de nombres".<BR>
+ A la création, un objet Devinette est configuré avec les 2 bornes du jeu (haute : 40<>50, basse : 10<>20) et la valeur à rechercher. Ces valeurs ne sont pas modifiables par la suite.<BR>
+ On peut soumettre un coup à une Devinette ("jouer")
+ et tester ensuite si le dernier coup joué est gagnant, trop haut ou trop bas. <BR>
+ Lorsque la valeur à chercher a été trouvée, la partie est considérée "terminée" et on ne devra plus soumettre de coup. Les autres opérations de tests restent disponibles.<BR>
+ <BR>
+ <BR><U>Exemple :</U><BR>
+ <code>Devinette d;<BR>
+ d = new Devinette();<BR>
+ d.soumettreCoup(35);<BR>
+ if (d.isDernierCoupGagnant())<BR>
+  System.out.println ("Gagné");<BR>
+<BR></code>
+<P>
+
+<P>
+<DL>
+<DT><B>Version:</B></DT>
+  <DD>2.02</DD>
+<DT><B>Author:</B></DT>
+  <DD>André Péninou</DD>
+</DL>
+<HR>
+
+<P>
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../classestps/Devinette.html#Devinette()">Devinette</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Constructeur de Devinette qui initialise un objet Devinette prêt à être utilisé.</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;int</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../classestps/Devinette.html#getBas()">getBas</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Permet d'obtenir la borne basse du jeu tirée au sort à la création de l'objet.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;int</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../classestps/Devinette.html#getHaut()">getHaut</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Permet d'obtenir la borne haute du jeu tirée au sort à la création de l'objet.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;int</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../classestps/Devinette.html#getNbCoupsJoues()">getNbCoupsJoues</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Permet d'obtenir le nombre de coups déjà joués à une devinette.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../classestps/Devinette.html#isDernierCoupGagnant()">isDernierCoupGagnant</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Permet de tester si le dernier coup joué est gagnant ou pas.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../classestps/Devinette.html#isDernierCoupTropBas()">isDernierCoupTropBas</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Permet de tester si le dernier coup joué est trop bas.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../classestps/Devinette.html#isDernierCoupTropHaut()">isDernierCoupTropHaut</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Permet de tester si le dernier coup joué est trop haut.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../classestps/Devinette.html#isValeurDansBornes(int)">isValeurDansBornes</A></B>(int&nbsp;val)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Permet de tester si une valeur est située entre les bornes du jeu (incluses).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../classestps/Devinette.html#soumettreCoup(int)">soumettreCoup</A></B>(int&nbsp;valeurJouee)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Soumettre un coup ("jouer" une valeur) à une devinette.</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.Object</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>equals, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="Devinette()"><!-- --></A><H3>
+Devinette</H3>
+<PRE>
+public <B>Devinette</B>()</PRE>
+<DL>
+<DD>Constructeur de Devinette qui initialise un objet Devinette prêt à être utilisé.
+ Permet de :<BR>
+ - Tirer au sort la borne supérieure (40<>50) et la borne inférieure (10<>20) du jeu.<BR>
+ - Tirer au sort la valeur à rechercher entre les bornes chosies ci-dessus.<BR>
+ Exemple : borne inf 12, bone sup 47, valeur à chercher 22.<BR>
+<P>
+</DL>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="soumettreCoup(int)"><!-- --></A><H3>
+soumettreCoup</H3>
+<PRE>
+public void <B>soumettreCoup</B>(int&nbsp;valeurJouee)
+                   throws <A HREF="../classestps/ErreurExecutionDevinette.html" title="class in classestps">ErreurExecutionDevinette</A></PRE>
+<DL>
+<DD>Soumettre un coup ("jouer" une valeur) à une devinette.<BR>
+ Permet de soumettre un coup dans le cas où :<BR>
+ - Soit aucun coup n'a encore été joué (début de partie).<BR>
+ - Soit le dernier coup joué n'était pas gagnant (partie en cours, non finie).
+ <BR><BR><B>ATTENTION : </B>Lève une exception si le coup précédent était gagnant.<BR>
+ C'est dire que si <code>isDernierCoupGagnant()</code> vaut <code>true</code>,
+ car la partie est considérée terminée.<BR>
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>valeurJouee</CODE> - coup (valeur) que l'on souhaite soummettre à la devinette.
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="../classestps/ErreurExecutionDevinette.html" title="class in classestps">ErreurExecutionDevinette</A></CODE> - lorsque on joue un coup ET que la partie était terminée (valeur trouvée au soumettreCoup() précédent)<DT><B>See Also:</B><DD><A HREF="../classestps/Devinette.html#isDernierCoupGagnant()"><CODE>isDernierCoupGagnant()</CODE></A>,
+<A HREF="../classestps/Devinette.html#isDernierCoupTropHaut()"><CODE>isDernierCoupTropHaut()</CODE></A>,
+<A HREF="../classestps/Devinette.html#isDernierCoupTropBas()"><CODE>isDernierCoupTropBas()</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="isValeurDansBornes(int)"><!-- --></A><H3>
+isValeurDansBornes</H3>
+<PRE>
+public boolean <B>isValeurDansBornes</B>(int&nbsp;val)</PRE>
+<DL>
+<DD>Permet de tester si une valeur est située entre les bornes du jeu (incluses).<BR>
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>val</CODE> - valeur que l'on souhaite tester.
+<DT><B>Returns:</B><DD><code>true</code> ou <code>false</code> selon le cas.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="isDernierCoupGagnant()"><!-- --></A><H3>
+isDernierCoupGagnant</H3>
+<PRE>
+public boolean <B>isDernierCoupGagnant</B>()</PRE>
+<DL>
+<DD>Permet de tester si le dernier coup joué est gagnant ou pas.<BR>
+ Permet de tester si le dernier coup joué par la méthode <code>soumettreCoup</code> a été gagnant ou pas. <BR>
+ Retourne <code>false</code> si aucun coup n'a encore été joué.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD><code>true</code> ou <code>false</code> selon le cas.<DT><B>See Also:</B><DD><A HREF="../classestps/Devinette.html#soumettreCoup(int)"><CODE>soumettreCoup(int)</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="isDernierCoupTropHaut()"><!-- --></A><H3>
+isDernierCoupTropHaut</H3>
+<PRE>
+public boolean <B>isDernierCoupTropHaut</B>()</PRE>
+<DL>
+<DD>Permet de tester si le dernier coup joué est trop haut.<BR>
+ Permet de savoir si le dernier coup joué par la méthode <code>soumettreCoup</code> a été trop haut  (bonne valeur plus petite).<BR>
+ Retourne <code>false</code> si aucun coup n'a encore été joué.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD><code>true</code> ou <code>false</code> selon le cas.<DT><B>See Also:</B><DD><A HREF="../classestps/Devinette.html#soumettreCoup(int)"><CODE>soumettreCoup(int)</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="isDernierCoupTropBas()"><!-- --></A><H3>
+isDernierCoupTropBas</H3>
+<PRE>
+public boolean <B>isDernierCoupTropBas</B>()</PRE>
+<DL>
+<DD>Permet de tester si le dernier coup joué est trop bas.<BR>
+ Permet de savoir si le dernier coup joué par la méthode <code>soumettreCoup</code> a été trop bas (bonne valeur plus grande).<BR>
+ Retourne <code>false</code> si aucun coup n'a encore été joué.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD><code>true</code> ou <code>false</code> selon le cas.<DT><B>See Also:</B><DD><A HREF="../classestps/Devinette.html#soumettreCoup(int)"><CODE>soumettreCoup(int)</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="getNbCoupsJoues()"><!-- --></A><H3>
+getNbCoupsJoues</H3>
+<PRE>
+public int <B>getNbCoupsJoues</B>()</PRE>
+<DL>
+<DD>Permet d'obtenir le nombre de coups déjà joués à une devinette.<BR>
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>nombre de coups joués.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="getHaut()"><!-- --></A><H3>
+getHaut</H3>
+<PRE>
+public int <B>getHaut</B>()</PRE>
+<DL>
+<DD>Permet d'obtenir la borne haute du jeu tirée au sort à la création de l'objet.<BR>
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>borne haute du jeu.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="getBas()"><!-- --></A><H3>
+getBas</H3>
+<PRE>
+public int <B>getBas</B>()</PRE>
+<DL>
+<DD>Permet d'obtenir la borne basse du jeu tirée au sort à la création de l'objet.<BR>
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>borne basse du jeu.</DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../classestps/package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/Devinette.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../index-files/index-1.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../classestps/Compte.html" title="class in classestps"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../classestps/ErreurExecutionDevinette.html" title="class in classestps"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../index.html?classestps/Devinette.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="Devinette.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes"><hr /></div>
+<div id="footer">
+<div id="footer-text">
+Dernière mise à jour 2014-02-10 01:23:26 CET
+</div>
+</div>
+</body>
+</html>
