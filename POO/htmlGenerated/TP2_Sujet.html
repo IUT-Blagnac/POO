@@ -789,7 +789,14 @@ Pour utiliser ces classes dans vos programmes:
 by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
-<pre><tt><span style="font-weight: bold"><span style="color: #000080">import</span></span>  tps<span style="color: #990000">.</span>banque<span style="color: #990000">.</span>Compte<span style="color: #990000">;</span>
+<pre><tt><span style="font-style: italic"><span style="color: #9A1900">// Imports pour tous les exercices</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">// Tous ne sont pas toujours utiles ...</span></span>
+<span style="font-weight: bold"><span style="color: #000080">import</span></span> tps<span style="color: #990000">.</span>banque<span style="color: #990000">.</span>AgenceBancaire<span style="color: #990000">;</span>
+<span style="font-weight: bold"><span style="color: #000080">import</span></span> tps<span style="color: #990000">.</span>banque<span style="color: #990000">.</span>Compte<span style="color: #990000">;</span>
+<span style="font-weight: bold"><span style="color: #000080">import</span></span> tps<span style="color: #990000">.</span>banque<span style="color: #990000">.</span>exception<span style="color: #990000">.</span>ABCompteDejaExistantException<span style="color: #990000">;</span>
+<span style="font-weight: bold"><span style="color: #000080">import</span></span> tps<span style="color: #990000">.</span>banque<span style="color: #990000">.</span>exception<span style="color: #990000">.</span>ABCompteInexistantException<span style="color: #990000">;</span>
+<span style="font-weight: bold"><span style="color: #000080">import</span></span> tps<span style="color: #990000">.</span>banque<span style="color: #990000">.</span>exception<span style="color: #990000">.</span>ABCompteNullException<span style="color: #990000">;</span>
+<span style="font-weight: bold"><span style="color: #000080">import</span></span> tps<span style="color: #990000">.</span>banque<span style="color: #990000">.</span>exception<span style="color: #990000">.</span>CompteException<span style="color: #990000">;</span>
 
 <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">ClasseEssaiCompte</span>
 <span style="color: #FF0000">{</span>
@@ -993,6 +1000,7 @@ fft2h7BBQkICNkhIwAYJqZPS/wIbJfKW3l0C5gAAAABJRU5ErkJggg==" />
 </div>
 <div class="sect2">
 <h3 id="_essais_classe_compte">2.2. Essais classe Compte</h3>
+<div class="paragraph"><p>Ecrire le programme réalisant les actions suivantes en le testant pas à pas à chaque demande d&#8217;affichage (compilation/run) :</p></div>
 <div class="olist arabic"><ol class="arabic">
 <li>
 <p>
@@ -1001,7 +1009,7 @@ Créer un programme Java <tt>ClasseEssaiCompte.java</tt> comportant une méthode
 </li>
 <li>
 <p>
-Déclarer deux variables <tt>cUn</tt> et <tt>cDeux</tt> "de type <tt>Compte</tt>" : références vers un <tt>Compte</tt>. Si besoin, ajouter l&#8217;import nécessaire pour la classe <tt>Compte</tt> (package <tt>tps.banque</tt>).
+Déclarer deux variables <tt>cUn</tt> et <tt>cDeux</tt> "de type <tt>Compte</tt>" : références vers un <tt>Compte</tt>.
 </p>
 </li>
 <li>
@@ -1040,8 +1048,19 @@ http://www.gnu.org/software/src-highlite -->
 </li>
 <li>
 <p>
-Déposer 1€ sur <tt>cUn</tt>. Déposer 1000€ sur <tt>cDeux</tt>. Pour retirer() et deposer(), ajouter l&#8217;import nécessaire pour la classe <tt>CompteException</tt> (package <tt>tps.banque.exception</tt>).
+Déposer 1€ sur <tt>cUn</tt>. Déposer 1000€ sur <tt>cDeux</tt>. Le code suivant pourra vous aider
 </p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">try</span></span> <span style="color: #FF0000">{</span>
+        cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">deposer</span></span><span style="color: #990000">(</span> <span style="color: #990000">...</span> <span style="color: #990000">);</span>
+        cDeux<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">deposer</span></span><span style="color: #990000">(</span> <span style="color: #990000">...</span> <span style="color: #990000">);</span>
+<span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">CompteException</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>e<span style="color: #990000">);</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
 </li>
 <li>
 <p>
@@ -1085,7 +1104,7 @@ Déposer 1000€ sur <tt>cUn</tt>. Afficher <tt>cUn</tt> et <tt>cDeux</tt>.
 </li>
 <li>
 <p>
-Déposer 2000€ sur l’objet <tt>Compte</tt> <strong>ayant pour propriétaire "Marie"</strong> que vous avez créé au début de cette partie. Y arrivez-vous ?
+Déposer 2000€ sur l’objet <tt>Compte</tt> <strong>ayant pour propriétaire "Marie"</strong> que vous avez créé au début de cet exercice. Y arrivez-vous ?
 </p>
 </li>
 <li>
@@ -1332,6 +1351,7 @@ TExMzSaR6kxMpDoTE1NzSf8PMt0NS3Gp+3kAAAAASUVORK5CYII=" />
 </div>
 <div class="sect2">
 <h3 id="_premiers_essais">3.2. Premiers essais</h3>
+<div class="paragraph"><p>Ecrire le programme réalisant les actions suivantes en le testant pas à pas (compilation/run) :</p></div>
 <div class="olist arabic"><ol class="arabic">
 <li>
 <p>
@@ -1345,12 +1365,7 @@ Déclarer une variable <tt>monAg</tt> de type <tt>AgenceBancaire</tt> : une réf
 </li>
 <li>
 <p>
-Créer un objet <tt>Compte</tt> de numéro "0101" et propriétaire "prop1" à l&#8217;aide d&#8217;une variable de type <tt>Compte</tt>.
-</p>
-</li>
-<li>
-<p>
-Ajouter le compte créé à l&#8217;AgenceBancaire <tt>monAg</tt>.
+Créer un objet <tt>AgenceBancaire</tt> à l&#8217;aide de <tt>monAg</tt>.
 </p>
 </li>
 <li>
@@ -1360,7 +1375,35 @@ Afficher <tt>monAg</tt>.
 </li>
 <li>
 <p>
-Créer deux autres comptes (numéros "0202" et "0303") avec un même propriétaire "prop2" et les ajouter à l&#8217;AgenceBancaire <tt>monAg</tt>.
+Afficher le nombre de comptes de <tt>monAg</tt>.
+</p>
+</li>
+<li>
+<p>
+Créer un objet <tt>Compte</tt> de numéro "0101" et propriétaire "prop1" à l&#8217;aide d&#8217;une variable de type <tt>Compte</tt>. Créer deux autres comptes (numéros "0202" et "0303") avec un même propriétaire "prop2".
+</p>
+</li>
+<li>
+<p>
+Ajouter ces 3 comptes créés à l&#8217;AgenceBancaire <tt>monAg</tt>. Le code suivant pourra vous aider :
+</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">try</span></span> <span style="color: #FF0000">{</span>
+        c <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span> <span style="color: #990000">...</span> <span style="color: #990000">);</span>
+        monAg<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">addCompte</span></span><span style="color: #990000">(</span>  <span style="color: #990000">...</span> <span style="color: #990000">);</span>
+<span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">ABCompteNullException</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span>e<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getMessage</span></span><span style="color: #990000">());</span>
+<span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">ABCompteDejaExistantException</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span>e<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getMessage</span></span><span style="color: #990000">());</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+</li>
+<li>
+<p>
+Afficher <tt>monAg</tt>.
 </p>
 </li>
 <li>
@@ -1375,17 +1418,17 @@ Déposer 1000€ sur ce compte.
 </li>
 <li>
 <p>
-Rechercher à nouveau à partir de <tt>monAg</tt> le compte "0101" et l&#8217;afficher. Bilan ?
+Rechercher à nouveau à partir de <tt>monAg</tt> le compte "0101" et l&#8217;afficher (copier/coller du code précédent). Bilan ?
 </p>
 </li>
 <li>
 <p>
-Rechercher à partir de <tt>monAg</tt> les comptes du propriétaire "prop2".
+Rechercher à partir de <tt>monAg</tt> le compte "9999" et l&#8217;afficher.
 </p>
 </li>
 <li>
 <p>
-Afficher ces comptes.
+Rechercher à partir de <tt>monAg</tt> les comptes du propriétaire "prop2" et les afficher.
 </p>
 </li>
 <li>
@@ -1395,23 +1438,31 @@ Déposer 2000 € sur le compte de numéro "0202" et 3000 € sur le compte "030
 </li>
 <li>
 <p>
-Rechercher à nouveau à partir de <tt>monAg</tt> les comptes du propriétaire "prop2".
+Rechercher à nouveau à partir de <tt>monAg</tt> les comptes du propriétaire "prop2" et les afficher (copier/coller du code précédent). Bilan ??
 </p>
 </li>
 <li>
 <p>
-Afficher ces comptes. Bilan ??
-</p>
-</li>
-<li>
-<p>
-Afficher le nombre de comptes de <tt>monAg</tt>.
+Rechercher à partir de <tt>monAg</tt> les comptes du propriétaire "ABSENT" et les afficher.
 </p>
 </li>
 <li>
 <p>
 Essayer d&#8217;ajouter le compte de référence <tt>null</tt> à <tt>monAg</tt>. Résultat ?
 </p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">try</span></span> <span style="color: #FF0000">{</span>
+        c <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">;</span>
+        monAg<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">addCompte</span></span><span style="color: #990000">(</span>c<span style="color: #990000">);</span>
+<span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">ABCompteNullException</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span>e<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getMessage</span></span><span style="color: #990000">());</span>
+<span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">ABCompteDejaExistantException</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span>e<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getMessage</span></span><span style="color: #990000">());</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
 </li>
 <li>
 <p>
@@ -1425,12 +1476,7 @@ Essayer de supprimer le compte "9999" de <tt>monAg</tt> AG.
 </li>
 <li>
 <p>
-Créer un objet <tt>Compte</tt> de numéro "0101" et propriétaire "prop99" à l&#8217;aide d&#8217;une variable de type <tt>Compte</tt>.
-</p>
-</li>
-<li>
-<p>
-Essayer d&#8217;ajouter le compte créé à l&#8217;AgenceBancaire <tt>monAg</tt>.
+Créer un objet <tt>Compte</tt> de numéro "0101" et propriétaire "prop99" à l&#8217;aide d&#8217;une variable de type <tt>Compte</tt> et l&#8217;ajouter à l&#8217;AgenceBancaire <tt>monAg</tt>.
 </p>
 </li>
 </ol></div>
@@ -1922,7 +1968,7 @@ Modifier le programme pour jouer successivement 3 parties de devinette. A partir
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2014-02-14 16:08:29 CET
+Dernière mise à jour 2014-02-14 19:17:32 CET
 </div>
 </div>
 </body>
