@@ -870,11 +870,11 @@ cellspacing="0" cellpadding="4">
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">Durée</p></td>
-<td align="left" valign="top"><p class="table"><strong>2 séance</strong> de 1,5h sur machine.</p></td>
+<td align="left" valign="top"><p class="table"><strong>2 séances</strong> de 1,5h sur machine.</p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">À rendre</p></td>
-<td align="left" valign="top"><p class="table">Code source à déposer : essais de comptes, essais de AgenceBancaire, application de gestion d&#8217;AgenceBancaire, jeu de Devinette.</p></td>
+<td align="left" valign="top"><p class="table">Code source à déposer : essais de comptes, essais d&#8217;AgenceBancaire, application de gestion d&#8217;AgenceBancaire, jeu de Devinette.</p></td>
 </tr>
 </tbody>
 </table>
@@ -936,13 +936,53 @@ RkWOKkVXIjB5X2ac8f8HA74K8I0SaJkAAAAASUVORK5CYII=" />
 </td>
 <td class="content">
 <div class="paragraph"><p>Pour les profs :</p></div>
-<div class="paragraph"><p>Au départ :</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
 But du TP : Manipuler des objets sans disposer du code source. Lire une documentation (param, return, throws, &#8230;).
 </p>
 </li>
+<li>
+<p>
+Idée de déroulement :
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Séance 1 : les comptes et les tests AgenceBancaire
+</p>
+</li>
+<li>
+<p>
+Séance 2 : l&#8217;appli sur l&#8217;agence.
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+Les try catch ont été vus en S1. Les aider sans doute en leur donnant la structure de base.
+</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>        <span style="font-weight: bold"><span style="color: #0000FF">try</span></span> <span style="color: #FF0000">{</span>
+                cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">deposer</span></span><span style="color: #990000">(</span><span style="color: #993399">1</span><span style="color: #990000">);</span>
+                cDeux<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">deposer</span></span><span style="color: #990000">(</span><span style="color: #993399">1000</span><span style="color: #990000">);</span>
+        <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">CompteException</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>e<span style="color: #990000">);</span> <span style="color: #008080">ou</span> System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>e<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getMesage</span></span><span style="color: #990000">());</span>
+        <span style="color: #FF0000">}</span></tt></pre></div></div>
+</li>
+<li>
+<p>
+Les aider au tableau au début si ca coince.
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>Au départ :</p></div>
+<div class="ulist"><ul>
 <li>
 <p>
 Attention au dézippage du fichier au bon endroit &#8594; dans le répertoire de travail.
@@ -1040,7 +1080,7 @@ Devinette.class
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2014-02-14 02:09:17 CET
+Dernière mise à jour 2014-02-14 12:18:46 CET
 </div>
 </div>
 </body>

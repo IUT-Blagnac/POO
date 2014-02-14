@@ -4156,11 +4156,11 @@ cellspacing="0" cellpadding="4">
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">Durée</p></td>
-<td align="left" valign="top"><p class="table"><strong>2 séance</strong> de 1,5h sur machine.</p></td>
+<td align="left" valign="top"><p class="table"><strong>2 séances</strong> de 1,5h sur machine.</p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">À rendre</p></td>
-<td align="left" valign="top"><p class="table">Code source à déposer : essais de comptes, essais de AgenceBancaire, application de gestion d&#8217;AgenceBancaire, jeu de Devinette.</p></td>
+<td align="left" valign="top"><p class="table">Code source à déposer : essais de comptes, essais d&#8217;AgenceBancaire, application de gestion d&#8217;AgenceBancaire, jeu de Devinette.</p></td>
 </tr>
 </tbody>
 </table>
@@ -4176,6 +4176,9 @@ cellspacing="0" cellpadding="4">
 <h1 id="Preambule">1. Préambule</h1>
 <script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="1. Préambule";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody">
+<div class="paragraph">
+<p>A faire :</p>
+</div>
 <ol class="arabic">
 <li>
 <span>
@@ -4189,16 +4192,8 @@ Le dézipper dans le répertoire où vous comptez travailler.
 </li>
 <li>
 <span>
-Ce zip installera :
+Ce zip contient les packages de travail pour les tps. Il comporte en fait plusieurs packages de classes : <tt>tps.jeux</tt>, <tt>tps.jeux.exception</tt>, <tt>tps.banque</tt>, &#8230;
 </span>
-<ul class="">
-<li>
-<span>
-Le répertoire "tps" comportant plusieurs packages de classes utiles pour ce TP. Pour les utiliser :
-</span>
-<div class="paragraph">
-<p><tt>import  tps.-<em>nomPackage[.nomPackage &#8230;]</em>.<em>NomDeClasse</em>;</tt>. Exemple : <tt>import  tps.jeux.Devinette;</tt></p>
-</div>
 <ul class="">
 <li>
 <span>
@@ -4207,12 +4202,18 @@ Regarder le contenu du répertoire (des fichiers .class structurés en répertoi
 </li>
 </ul>
 </li>
-</ul>
-</li>
 <li>
 <span>
 La documentation des classes se trouve sur le serveur webetud.
 </span>
+</li>
+<li>
+<span>
+Pour utiliser ces classes dans vos programmes:
+</span>
+<div class="paragraph">
+<p><tt>import  tps.-<em>nomPackage[.nomPackage &#8230;]</em>.<em>NomDeClasse</em>;</tt>. Exemple : <tt>import  tps.jeux.Devinette;</tt></p>
+</div>
 </li>
 </ol>
 <div class="paragraph">
@@ -4232,70 +4233,10 @@ http://www.gnu.org/software/src-highlite -->
 <span style="color: #FF0000">{</span>
         <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span> <span style="color: #990000">(</span><span style="color: #008080">String</span> argv<span style="color: #990000">[])</span>
         <span style="color: #FF0000">{</span>
-                <span style="color: #008080">Compte</span> c <span style="color: #990000">;</span>
+                <span style="color: #008080">Compte</span> cUn <span style="color: #990000">;</span>
                 <span style="font-style: italic"><span style="color: #9A1900">// ...</span></span>
         <span style="color: #FF0000">}</span>
 <span style="color: #FF0000">}</span></tt></pre></div></div>
-<div class="admonitionblock">
-<table><tr>
-<td class="icon">
-<img alt="Note" src="data:image/png;base64,
-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" />
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Concernant les entrées sorties : voir aide sur le serveur webetud concernant la classe Scanner.</p>
-</div>
-</td>
-</tr></table>
-</div>
 </div></div>
 <script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
@@ -4365,14 +4306,14 @@ lJga0LT8+uRGJ5P/2OBGpz/mT34Gmsy9nx36v3PoX1H4mIUGLCOSAAAAAElFTkSuQmCC" />
 </tr></table>
 </div>
 <div class="paragraph">
-<p>Nous allons utiliser une classe <tt>Compte</tt> qui permet de gérer des comptes simples comptabilisant des débits et des crédits successifs.</p>
+<p>Nous allons utiliser une classe <tt>tps.banque.Compte</tt> qui permet de gérer des comptes simples comptabilisant des débits et des crédits successifs.</p>
 </div>
 </div></div>
 <script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect2">
-<h1 id="Partie1">2.1. Classe Compte</h1>
+<h1 id="_classe_compte">2.1. Classe Compte</h1>
 <script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect2";nexttitle="2.1. Classe Compte";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody">
 <div class="paragraph">
@@ -4389,8 +4330,8 @@ lJga0LT8+uRGJ5P/2OBGpz/mT34Gmsy9nx36v3PoX1H4mIUGLCOSAAAAAElFTkSuQmCC" />
 </div><div class="slide">
 
 <div class="sect2">
-<h1 id="_premiers_essais">2.2. Premiers essais</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect2";nexttitle="2.2. Premiers essais";slidefootnotes="";/*]]>*/</script>
+<h1 id="_essais_classe_compte">2.2. Essais classe Compte</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect2";nexttitle="2.2. Essais classe Compte";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody">
 <ol class="arabic">
 <li>
@@ -4400,99 +4341,12 @@ Créer un programme Java <tt>ClasseEssaiCompte.java</tt> comportant une méthode
 </li>
 <li>
 <span>
-Déclarer une variable <tt>c</tt> "de type <tt>Compte</tt>" : une référence vers un <tt>Compte</tt>. Ajouter l&#8217;import nécessaire pour la classe <tt>Compte</tt> (package <tt>tps.banque</tt>).
+Déclarer deux variables <tt>cUn</tt> et <tt>cDeux</tt> "de type <tt>Compte</tt>" : références vers un <tt>Compte</tt>. Si besoin, ajouter l&#8217;import nécessaire pour la classe <tt>Compte</tt> (package <tt>tps.banque</tt>).
 </span>
 </li>
 <li>
 <span>
-Appliquer la méthode <tt>afficher()</tt> à <tt>c</tt>. Que se passe-t-il ?
-</span>
-</li>
-<li>
-<span>
-Créer un <tt>Compte</tt> avec un numéro de compte"010101" et un propriétaire "Lepoisson Benoit" à l&#8217;aide de <tt>c</tt>.
-</span>
-</li>
-<li>
-<span>
-Appliquer la méthode <tt>afficher()</tt> à c. Que se passe-t-il ?
-</span>
-</li>
-<li>
-<span>
-Utiliser toutes méthodes disponibles sur la classe <tt>Compte</tt>. Pour retirer() et deposer(), ajouter l&#8217;import nécessaire pour la classe <tt>CompteException</tt> (package <tt>tps.banque.exception</tt>)
-</span>
-</li>
-<li>
-<span>
-Appliquer la méthode <tt>afficher()</tt> à <tt>c</tt>.
-</span>
-</li>
-<li>
-<span>
-Essayer l&#8217;instruction suivante :
-</span>
-<div class="listingblock">
-<div class="content"><!-- Generator: GNU source-highlight 3.1.5
-by Lorenzo Bettini
-http://www.lorenzobettini.it
-http://www.gnu.org/software/src-highlite -->
-<pre><tt>System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>c<span style="color: #990000">);</span></tt></pre></div></div>
-<div class="paragraph">
-<p>Quel est le résultat ? (voir l&#8217;aide sur toString()).</p>
-</div>
-</li>
-<li>
-<span>
-Essayer l&#8217;instruction suivante :
-</span>
-<div class="listingblock">
-<div class="content"><!-- Generator: GNU source-highlight 3.1.5
-by Lorenzo Bettini
-http://www.lorenzobettini.it
-http://www.gnu.org/software/src-highlite -->
-<pre><tt>System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>System<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">identityHashCode</span></span><span style="color: #990000">(</span>c<span style="color: #990000">));</span></tt></pre></div></div>
-<div class="paragraph">
-<p>Quel est le résultat ?</p>
-</div>
-</li>
-<li>
-<span>
-Affecter à <tt>c</tt> la valeur <tt>null</tt>.
-</span>
-</li>
-<li>
-<span>
-Essayer l&#8217;instruction suivante :
-</span>
-<div class="listingblock">
-<div class="content"><!-- Generator: GNU source-highlight 3.1.5
-by Lorenzo Bettini
-http://www.lorenzobettini.it
-http://www.gnu.org/software/src-highlite -->
-<pre><tt>System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>System<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">identityHashCode</span></span><span style="color: #990000">(</span>c<span style="color: #990000">));</span></tt></pre></div></div>
-<div class="paragraph">
-<p>Quel est le résultat ?</p>
-</div>
-</li>
-<li>
-<span>
-Appliquer la méthode <tt>afficher()</tt> à <tt>c</tt>. Que se passe-t-il ? Expliquer.
-</span>
-</li>
-</ol>
-</div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
-</div><div class="slide">
-
-<div class="sect2">
-<h1 id="_références_d_8217_objets">2.3. Références d&#8217;objets</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect2";nexttitle="2.3. Références d&#8217;objets";slidefootnotes="";/*]]>*/</script>
-<div class="sectionbody">
-<ol class="arabic">
-<li>
-<span>
-Déclarer deux variables <tt>cUn</tt> et <tt>cDeux</tt> "de type <tt>Compte</tt>" : références vers un <tt>Compte</tt>.
+Appliquer la méthode <tt>afficher()</tt> à <tt>cUn</tt>. Que se passe-t-il ?
 </span>
 </li>
 <li>
@@ -4502,8 +4356,29 @@ Créer un <tt>Compte</tt> à l&#8217;aide de <tt>cUn</tt> au nom de "Jean". Cré
 </li>
 <li>
 <span>
-Afficher <tt>cUn</tt> et <tt>cDeux</tt>. Afficher aussi les références par <tt>identityHashCode()</tt> (cf <a href="#Partie1">Partie 1</a>). Conclusion …
+Afficher <tt>cUn</tt> et <tt>cDeux</tt>. Afficher aussi les références par <tt>identityHashCode()</tt>. Conclusion …
 </span>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>System<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">identityHashCode</span></span><span style="color: #990000">(</span>cUn<span style="color: #990000">));</span>
+System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>System<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">identityHashCode</span></span><span style="color: #990000">(</span>cDeux<span style="color: #990000">));</span></tt></pre></div></div>
+</li>
+<li>
+<span>
+Essayer la syntaxe suivante :
+</span>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>cUn<span style="color: #990000">);</span></tt></pre></div></div>
+<div class="paragraph">
+<p>Quel est le résultat ? (voir l&#8217;aide sur toString()).</p>
+</div>
 </li>
 <li>
 <span>
@@ -4527,12 +4402,22 @@ Afficher <tt>cUn</tt> et <tt>cDeux</tt> pour voir les soldes.
 </li>
 <li>
 <span>
-Affecter <tt>cUn</tt> à <tt>cDeux</tt> (<tt>cDeux = cUn;</tt>).
+Essayer de retirer <tt>-100</tt> euros du compte <tt>cUn</tt>. Que se passe-t-il ?
 </span>
 </li>
 <li>
 <span>
-Afficher <tt>cUn</tt> et <tt>cDeux</tt>. Afficher aussi les références par <tt>identityHashCode()</tt> (cf <a href="#Partie1">Partie 1</a>). Conclusion …
+Essayer de déposer <tt>-100</tt> euros sur le compte <tt>cDeux</tt>. Que se passe-t-il ?
+</span>
+</li>
+<li>
+<span>
+<strong>Affecter</strong> la variable <tt>cUn</tt> à la variable <tt>cDeux</tt> (<tt>cDeux = cUn;</tt>).
+</span>
+</li>
+<li>
+<span>
+Afficher <tt>cUn</tt> et <tt>cDeux</tt>. Afficher aussi les références par <tt>identityHashCode()</tt>. Conclusion …
 </span>
 </li>
 <li>
@@ -4542,7 +4427,31 @@ Déposer 1000€ sur <tt>cUn</tt>. Afficher <tt>cUn</tt> et <tt>cDeux</tt>.
 </li>
 <li>
 <span>
-Déposer 2000€ sur l’objet <tt>Compte</tt> ayant pour propriétaire "Marie" que vous avez créé au début de cette partie. Y arrivez-vous ?
+Déposer 2000€ sur l’objet <tt>Compte</tt> <strong>ayant pour propriétaire "Marie"</strong> que vous avez créé au début de cette partie. Y arrivez-vous ?
+</span>
+</li>
+<li>
+<span>
+Affecter à <tt>cUn</tt> la valeur <tt>null</tt>.
+</span>
+</li>
+<li>
+<span>
+Essayer l&#8217;instruction suivante :
+</span>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>cUn<span style="color: #990000">);</span></tt></pre></div></div>
+<div class="paragraph">
+<p>Quel est le résultat ?</p>
+</div>
+</li>
+<li>
+<span>
+Appliquer la méthode <tt>afficher()</tt> à <tt>cUn</tt>. Que se passe-t-il ? Expliquer.
 </span>
 </li>
 </ol>
@@ -4623,7 +4532,7 @@ lJga0LT8+uRGJ5P/2OBGpz/mT34Gmsy9nx36v3PoX1H4mIUGLCOSAAAAAElFTkSuQmCC" />
 <script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect2";nexttitle="3.1. Classe AgenceBancaire";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Étudier en détail la documentation de la classe <tt>AgenceBancaire</tt>. En particulier, étudier si les méthodes sont des observateurs/accesseurs/getters ou des modifieurs/transformateurs/setters.</p>
+<p>Étudier en détail la documentation de la classe <tt>tps.banque.AgenceBancaire</tt>. En particulier, étudier si les méthodes sont des observateurs/accesseurs/getters ou des modifieurs/transformateurs/setters.</p>
 </div>
 <div class="paragraph">
 <p>Repérer les méthodes générant des exceptions.</p>
@@ -4633,7 +4542,7 @@ lJga0LT8+uRGJ5P/2OBGpz/mT34Gmsy9nx36v3PoX1H4mIUGLCOSAAAAAElFTkSuQmCC" />
 </div><div class="slide">
 
 <div class="sect2">
-<h1 id="_premiers_essais_2">3.2. Premiers essais</h1>
+<h1 id="_premiers_essais">3.2. Premiers essais</h1>
 <script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect2";nexttitle="3.2. Premiers essais";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody">
 <ol class="arabic">
@@ -4644,32 +4553,32 @@ Créer un programme Java <tt>ClasseEssaiAgenceBancaire.java</tt> comportant une 
 </li>
 <li>
 <span>
-Déclarer une variable <tt>monAg</tt> "de type <tt>AgenceBancaire</tt>" : une référence vers une <tt>AgenceBancaire</tt>.
+Déclarer une variable <tt>monAg</tt> de type <tt>AgenceBancaire</tt> : une référence vers une <tt>AgenceBancaire</tt>.
 </span>
 </li>
 <li>
 <span>
-Créer un objet Compte de numéro "0101" et propriétaire "prop1" à l&#8217;aide d&#8217;une variable Compte.
+Créer un objet <tt>Compte</tt> de numéro "0101" et propriétaire "prop1" à l&#8217;aide d&#8217;une variable de type <tt>Compte</tt>.
 </span>
 </li>
 <li>
 <span>
-Ajouter le compte créé à l&#8217;AgenceBancaire monAg.
+Ajouter le compte créé à l&#8217;AgenceBancaire <tt>monAg</tt>.
 </span>
 </li>
 <li>
 <span>
-Afficher monAg.
+Afficher <tt>monAg</tt>.
 </span>
 </li>
 <li>
 <span>
-Créer deux autres comptes (numéros "0202" et "0303") avec un même propriétaire "prop2" et les ajouter à l&#8217;AgenceBancaire monAg.
+Créer deux autres comptes (numéros "0202" et "0303") avec un même propriétaire "prop2" et les ajouter à l&#8217;AgenceBancaire <tt>monAg</tt>.
 </span>
 </li>
 <li>
 <span>
-Rechercher à partir de monAg le compte "0101" et l&#8217;afficher.
+Rechercher à partir de <tt>monAg</tt> le compte "0101" et l&#8217;afficher.
 </span>
 </li>
 <li>
@@ -4679,12 +4588,12 @@ Déposer 1000€ sur ce compte.
 </li>
 <li>
 <span>
-Rechercher à nouveau à partir de monAg le compte "0101" et l&#8217;afficher. Bilan ?
+Rechercher à nouveau à partir de <tt>monAg</tt> le compte "0101" et l&#8217;afficher. Bilan ?
 </span>
 </li>
 <li>
 <span>
-Rechercher à partir de monAg les comptes du propriétaire "prop2".
+Rechercher à partir de <tt>monAg</tt> les comptes du propriétaire "prop2".
 </span>
 </li>
 <li>
@@ -4699,7 +4608,7 @@ Déposer 2000 € sur le compte de numéro "0202" et 3000 € sur le compte "030
 </li>
 <li>
 <span>
-Rechercher à nouveau à partir de monAg les comptes du propriétaire "prop2".
+Rechercher à nouveau à partir de <tt>monAg</tt> les comptes du propriétaire "prop2".
 </span>
 </li>
 <li>
@@ -4709,32 +4618,32 @@ Afficher ces comptes. Bilan ??
 </li>
 <li>
 <span>
-Afficher le nombre de comptes de monAg.
+Afficher le nombre de comptes de <tt>monAg</tt>.
 </span>
 </li>
 <li>
 <span>
-Essayer d&#8217;ajouter le compte de référence <tt>null</tt> à monAg. Résultat ?
+Essayer d&#8217;ajouter le compte de référence <tt>null</tt> à <tt>monAg</tt>. Résultat ?
 </span>
 </li>
 <li>
 <span>
-Essayer de supprimer le compte "0202" de mon AG.
+Essayer de supprimer le compte "0202" de <tt>monAg</tt> AG.
 </span>
 </li>
 <li>
 <span>
-Essayer de supprimer le compte "9999" de mon AG.
+Essayer de supprimer le compte "9999" de <tt>monAg</tt> AG.
 </span>
 </li>
 <li>
 <span>
-Créer un objet Compte de numéro "0101" et propriétaire "prop99" à l&#8217;aide d&#8217;une variable Compte.
+Créer un objet <tt>Compte</tt> de numéro "0101" et propriétaire "prop99" à l&#8217;aide d&#8217;une variable de type <tt>Compte</tt>.
 </span>
 </li>
 <li>
 <span>
-Essayer d&#8217;ajouter le compte créé à l&#8217;AgenceBancaire monAg.
+Essayer d&#8217;ajouter le compte créé à l&#8217;AgenceBancaire <tt>monAg</tt>.
 </span>
 </li>
 </ol>
@@ -4742,40 +4651,40 @@ Essayer d&#8217;ajouter le compte créé à l&#8217;AgenceBancaire monAg.
 <script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
-<div class="sect2">
-<h1 id="_gérer_une_agence_bancaire">3.3. Gérer une agence bancaire</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect2";nexttitle="3.3. Gérer une agence bancaire";slidefootnotes="";/*]]>*/</script>
+<div class="sect1">
+<h1 id="_programme_utilisateur_pour_une_agence_bancaire">4. Programme utilisateur pour une agence bancaire</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="4. Programme utilisateur pour une agence bancaire";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody">
 </div></div>
 <script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
-<div class="sect3">
-<h1 id="_objectif">3.3.1. Objectif</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect3";nexttitle="3.3.1. Objectif";slidefootnotes="";/*]]>*/</script>
+<div class="sect2">
+<h1 id="_objectif">4.1. Objectif</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect2";nexttitle="4.1. Objectif";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody">
 <div class="paragraph">
-<p>L&#8217;objectif est d'écrire une programme permettant de gérer les comptes d&#8217;une AgenceBancaire. L&#8217;application permettra :</p>
+<p>L&#8217;objectif est d'écrire un programme permettant de gérer les comptes d&#8217;une <tt>AgenceBancaire</tt>. L&#8217;application permettra :</p>
 </div>
 <ul class="">
 <li>
 <span>
-de créer/supprimer des Compte(s) de l&#8217;AgenceBancaire.
+de créer/supprimer des objets Compte(s) de l&#8217;AgenceBancaire,
 </span>
 </li>
 <li>
 <span>
-de voir un compte de l&#8217;AgenceBancaire, de voir les comptes d&#8217;un propriétaire de l&#8217;AgenceBancaire.
+de voir un compte de l&#8217;AgenceBancaire, de voir les comptes d&#8217;un propriétaire de l&#8217;AgenceBancaire,
 </span>
 </li>
 <li>
 <span>
-de débiter/créditer les Compte(s) de l&#8217;AgenceBancaire.
+de débiter/créditer les compte(s) de l&#8217;AgenceBancaire,
 </span>
 </li>
 <li>
 <span>
-de lister tous les comptes de la Banque
+de lister tous les comptes de l&#8217;AgenceBancaire,
 </span>
 </li>
 <li>
@@ -4892,9 +4801,9 @@ http://www.gnu.org/software/src-highlite -->
 <script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
-<div class="sect3">
-<h1 id="_développement_de_l_8217_application">3.3.2. Développement de l&#8217;application</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect3";nexttitle="3.3.2. Développement de l&#8217;application";slidefootnotes="";/*]]>*/</script>
+<div class="sect2">
+<h1 id="_développement_de_l_8217_application">4.2. Développement de l&#8217;application</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect2";nexttitle="4.2. Développement de l&#8217;application";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody">
 <ol class="arabic">
 <li>
@@ -4910,7 +4819,7 @@ Pour l&#8217;option  <tt>"p - voir les comptes d&#8217;un Propriétaire (par son
 <p><tt>public static void comptesDUnPropretaire (AgenceBancaire ag)</tt></p>
 </div>
 <div class="paragraph">
-<p>réalisant le traitement associé</p>
+<p>réalisant le traitement associé.</p>
 </div>
 </li>
 <li>
@@ -4921,7 +4830,7 @@ Pour l&#8217;option  <tt>"d - Déposer de l&#8217;argent sur un compte"</tt>, pr
 <p><tt>public static void deposerSurUnCompte (AgenceBancaire ag, String numeroCompte, double montant)</tt></p>
 </div>
 <div class="paragraph">
-<p>réalisant le traitement associé</p>
+<p>réalisant le traitement associé.</p>
 </div>
 </li>
 <li>
@@ -4932,10 +4841,70 @@ Pour l&#8217;option  <tt>"r - Retirer de l&#8217;argent sur un compte"</tt>, pro
 <p><tt>public static void retirerSurUnCompte (AgenceBancaire ag, String numeroCompte, double montant)</tt></p>
 </div>
 <div class="paragraph">
-<p>réalisant le traitement associé</p>
+<p>réalisant le traitement associé.</p>
 </div>
 </li>
 </ol>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Note" src="data:image/png;base64,
+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" />
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Concernant les entrées sorties : voir aide sur le serveur webetud &#8594; classe Scanner.</p>
+</div>
+</td>
+</tr></table>
+</div>
 <div class="paragraph">
 <p>Exemple d&#8217;exécution possible :</p>
 </div>
@@ -5023,8 +4992,8 @@ Menu de Caisse Ep (Pibrac)
 </div><div class="slide">
 
 <div class="sect1">
-<h1 id="_exercice_je_devine_tu_devines_la_devinette_8230_sait">4. Exercice : Je devine, tu devines, la devinette &#8230; sait</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="4. Exercice : Je devine, tu devines, la devinette &#8230; sait";slidefootnotes="";/*]]>*/</script>
+<h1 id="_exercice_je_devine_tu_devines_la_devinette_8230_sait">5. Exercice : Je devine, tu devines, la devinette &#8230; sait</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="5. Exercice : Je devine, tu devines, la devinette &#8230; sait";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody">
 <div class="admonitionblock">
 <table><tr>
@@ -5091,11 +5060,11 @@ lJga0LT8+uRGJ5P/2OBGpz/mT34Gmsy9nx36v3PoX1H4mIUGLCOSAAAAAElFTkSuQmCC" />
 </div><div class="slide">
 
 <div class="sect2">
-<h1 id="_principe_du_jeu">4.1. Principe du jeu</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect2";nexttitle="4.1. Principe du jeu";slidefootnotes="";/*]]>*/</script>
+<h1 id="_principe_du_jeu">5.1. Principe du jeu</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect2";nexttitle="5.1. Principe du jeu";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Nous allons mettre en oeuvre le jeu de Devinette travaillé en TD. Au jeu de la "devinette" :</p>
+<p>Nous allons développer un programme de jeu de Devinette travaillé en TD. Au jeu de la "devinette" :</p>
 </div>
 <ul class="">
 <li>
@@ -5186,8 +5155,8 @@ gg==" /></object></td><td style="vertical-align: middle;">
 </div><div class="slide">
 
 <div class="sect2">
-<h1 id="_questions">4.2. Questions</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect2";nexttitle="4.2. Questions";slidefootnotes="";/*]]>*/</script>
+<h1 id="_questions">5.2. Questions</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect2";nexttitle="5.2. Questions";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody">
 <ol class="arabic">
 <li>
@@ -5224,8 +5193,8 @@ Modifier le programme pour jouer successivement 3 parties de devinette. A partir
 </div><div class="slide">
 
 <div class="sect1">
-<h1 id="_elements_de_solution">5. Elements de Solution</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="5. Elements de Solution";slidefootnotes="";/*]]>*/</script>
+<h1 id="_éléments_de_solution">6. Éléments de Solution</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="6. Éléments de Solution";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody">
 <div class="admonitionblock">
 <table><tr>
@@ -5326,224 +5295,115 @@ http://www.gnu.org/software/src-highlite -->
 
 <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">ClasseEssaiCompte</span> <span style="color: #FF0000">{</span>
         <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> argv<span style="color: #990000">[])</span> <span style="color: #FF0000">{</span>
-                ClasseEssaiCompte<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">main1TestComptes</span></span><span style="color: #990000">();</span>
-        <span style="color: #FF0000">}</span>
 
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main1TestComptes</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
-                <span style="color: #009900">int</span> i<span style="color: #990000">;</span>
+                <span style="color: #008080">Compte</span> cUn<span style="color: #990000">,</span> cDeux<span style="color: #990000">;</span>
 
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Partie 1"</span><span style="color: #990000">);</span>
+                <span style="font-style: italic"><span style="color: #9A1900">// Déclarer deux variables cUn et cDeux "de type Compte" :</span></span>
+                <span style="font-style: italic"><span style="color: #9A1900">// références vers un Compte.</span></span>
+                <span style="font-style: italic"><span style="color: #9A1900">// cf ci-dessus</span></span>
 
-                <span style="font-style: italic"><span style="color: #9A1900">// Premiers essais</span></span>
+                <span style="font-style: italic"><span style="color: #9A1900">// cUn.afficher(); // Pb d'initialisation</span></span>
 
-                <span style="color: #008080">Compte</span> c<span style="color: #990000">;</span>
+                <span style="font-style: italic"><span style="color: #9A1900">// Créer un Compte à l'aide de cUn au nom de "Jean". Créer un</span></span>
+                <span style="font-style: italic"><span style="color: #9A1900">// autre Compte à l'aide de cDeux au nom de "Marie".</span></span>
+                cUn <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"3001"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Jean"</span><span style="color: #990000">);</span>
+                cDeux <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"9992"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Marie"</span><span style="color: #990000">);</span>
 
-                <span style="font-style: italic"><span style="color: #9A1900">// Appliquer la méthode afficher à c. Que se passe-t-il ?</span></span>
-                <span style="font-style: italic"><span style="color: #9A1900">// c.afficher (); // Erreur, c non initialisée</span></span>
+                <span style="font-style: italic"><span style="color: #9A1900">// Afficher cUn et cDeux.</span></span>
+                cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  Solde : "</span> <span style="color: #990000">+</span> cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soldeCompte</span></span><span style="color: #990000">());</span>
+                cDeux<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  Solde : "</span> <span style="color: #990000">+</span> cDeux<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soldeCompte</span></span><span style="color: #990000">());</span>
 
-                <span style="font-style: italic"><span style="color: #9A1900">// Créer un Compte à l'aide de c.</span></span>
-                c <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"010101"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Lepoisson Benoit"</span><span style="color: #990000">);</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>System<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">identityHashCode</span></span><span style="color: #990000">(</span>cUn<span style="color: #990000">));</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>System<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">identityHashCode</span></span><span style="color: #990000">(</span>cDeux<span style="color: #990000">));</span>
 
-                <span style="font-style: italic"><span style="color: #9A1900">// Utiliser les méthodes disponibles sur la classe Compte</span></span>
-                <span style="font-style: italic"><span style="color: #9A1900">// (Modifieurs, Observateurs).</span></span>
-                c<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  Solde : "</span> <span style="color: #990000">+</span> c<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soldeCompte</span></span><span style="color: #990000">());</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>cUn<span style="color: #990000">);</span>
 
+                <span style="font-style: italic"><span style="color: #9A1900">// Déposer 1€ sur cUn. Déposer 1000€ sur cDeux.</span></span>
                 <span style="font-weight: bold"><span style="color: #0000FF">try</span></span> <span style="color: #FF0000">{</span>
-                        c<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">deposer</span></span><span style="color: #990000">(</span><span style="color: #993399">2000</span><span style="color: #990000">);</span>
-                        c<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">retirer</span></span><span style="color: #990000">(</span><span style="color: #993399">3000</span><span style="color: #990000">);</span>
-                <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">CompteException</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>e<span style="color: #990000">);</span>
-                <span style="color: #FF0000">}</span>
-                c<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setProprietaire</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Test"</span><span style="color: #990000">);</span>
-                c<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  Solde : "</span> <span style="color: #990000">+</span> c<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soldeCompte</span></span><span style="color: #990000">());</span>
-
-                <span style="font-style: italic"><span style="color: #9A1900">// Essayer l'instruction : System.out.println(c); Quel est le</span></span>
-                <span style="font-style: italic"><span style="color: #9A1900">// résultat ?</span></span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>c<span style="color: #990000">);</span> <span style="font-style: italic"><span style="color: #9A1900">// Affiche c.toString()</span></span>
-
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>System<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">identityHashCode</span></span><span style="color: #990000">(</span>c<span style="color: #990000">));</span>
-
-                <span style="font-style: italic"><span style="color: #9A1900">// Affecter à c la valeur null.</span></span>
-                c <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">;</span>
-
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>System<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">identityHashCode</span></span><span style="color: #990000">(</span>c<span style="color: #990000">));</span> <span style="font-style: italic"><span style="color: #9A1900">// Affiche : null</span></span>
-
-                <span style="font-style: italic"><span style="color: #9A1900">// Appliquer la méthode afficher à c. Que se passe-t-il ?</span></span>
-                <span style="font-style: italic"><span style="color: #9A1900">// c.afficher (); //</span></span>
-                <span style="font-style: italic"><span style="color: #9A1900">// "Exception in thread "main" java.lang.NullPointerException"</span></span>
-
-                Keyboard<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">readForWait</span></span><span style="color: #990000">();</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Partie 2"</span><span style="color: #990000">);</span>
-
-                <span style="font-weight: bold"><span style="color: #0000FF">try</span></span> <span style="color: #FF0000">{</span>
-
-                        <span style="font-style: italic"><span style="color: #9A1900">// Références d'objets</span></span>
-
-                        <span style="color: #008080">Compte</span> cUn<span style="color: #990000">,</span> cDeux<span style="color: #990000">;</span>
-
-                        <span style="font-style: italic"><span style="color: #9A1900">// Créer un Compte à l'aide de cUn.</span></span>
-                        cUn <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"1002"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Dede"</span><span style="color: #990000">);</span>
-
-                        <span style="font-style: italic"><span style="color: #9A1900">//  Déposer 1000 € sur cUn.</span></span>
-                        cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">deposer</span></span><span style="color: #990000">(</span><span style="color: #993399">1000</span><span style="color: #990000">);</span>
-
-                        <span style="font-style: italic"><span style="color: #9A1900">// Afficher cUn (méthode afficher).</span></span>
-                        cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  Solde : "</span> <span style="color: #990000">+</span> cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soldeCompte</span></span><span style="color: #990000">());</span>
-
-                        <span style="font-style: italic"><span style="color: #9A1900">// Affecter cUn à cDeux (cDeux = cUn;).</span></span>
-                        cDeux <span style="color: #990000">=</span> cUn<span style="color: #990000">;</span>
-
-                        <span style="font-style: italic"><span style="color: #9A1900">// Afficher cDeux. Conclusion …</span></span>
-                        cDeux<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  Solde : "</span> <span style="color: #990000">+</span> cDeux<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soldeCompte</span></span><span style="color: #990000">());</span> <span style="font-style: italic"><span style="color: #9A1900">// meme</span></span>
-                                                                                                                                        <span style="font-style: italic"><span style="color: #9A1900">// objet, en</span></span>
-                                                                                                                                        <span style="font-style: italic"><span style="color: #9A1900">// fait,</span></span>
-                                                                                                                                        <span style="font-style: italic"><span style="color: #9A1900">// recopie</span></span>
-                                                                                                                                        <span style="font-style: italic"><span style="color: #9A1900">// de</span></span>
-                                                                                                                                        <span style="font-style: italic"><span style="color: #9A1900">// référence</span></span>
-                                                                                                                                        <span style="font-style: italic"><span style="color: #9A1900">// (handle)</span></span>
-                        Keyboard<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">readForWait</span></span><span style="color: #990000">();</span>
-
-                        <span style="font-style: italic"><span style="color: #9A1900">// Déposer 2000€ sur cUn.</span></span>
-                        cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">deposer</span></span><span style="color: #990000">(</span><span style="color: #993399">2000</span><span style="color: #990000">);</span>
-
-                        <span style="font-style: italic"><span style="color: #9A1900">// Afficher cUn et cDeux. Conclusion …</span></span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">();</span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Apres depot cUn de 2000"</span><span style="color: #990000">);</span>
-                        cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  Solde : "</span> <span style="color: #990000">+</span> cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soldeCompte</span></span><span style="color: #990000">());</span>
-                        cDeux<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  Solde : "</span> <span style="color: #990000">+</span> cDeux<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soldeCompte</span></span><span style="color: #990000">());</span> <span style="font-style: italic"><span style="color: #9A1900">// C'est en</span></span>
-                                                                                                                                        <span style="font-style: italic"><span style="color: #9A1900">// fait un</span></span>
-                                                                                                                                        <span style="font-style: italic"><span style="color: #9A1900">// seul</span></span>
-                                                                                                                                        <span style="font-style: italic"><span style="color: #9A1900">// objet</span></span>
-                                                                                                                                        <span style="font-style: italic"><span style="color: #9A1900">// référencé</span></span>
-                                                                                                                                        <span style="font-style: italic"><span style="color: #9A1900">// par les</span></span>
-                                                                                                                                        <span style="font-style: italic"><span style="color: #9A1900">// deux</span></span>
-                                                                                                                                        <span style="font-style: italic"><span style="color: #9A1900">// variables</span></span>
-                        Keyboard<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">readForWait</span></span><span style="color: #990000">();</span>
-
-                        <span style="font-style: italic"><span style="color: #9A1900">// Déposer 3000€ sur cDeux.</span></span>
-                        cDeux<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">deposer</span></span><span style="color: #990000">(</span><span style="color: #993399">3000</span><span style="color: #990000">);</span>
-
-                        <span style="font-style: italic"><span style="color: #9A1900">// Afficher cUn et cDeux. Conclusion …</span></span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">();</span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Apres depot cDeux de 3000"</span><span style="color: #990000">);</span>
-                        cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  Solde : "</span> <span style="color: #990000">+</span> cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soldeCompte</span></span><span style="color: #990000">());</span>
-                        cDeux<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  Solde : "</span> <span style="color: #990000">+</span> cDeux<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soldeCompte</span></span><span style="color: #990000">());</span> <span style="font-style: italic"><span style="color: #9A1900">// C'est en</span></span>
-                                                                                                                                        <span style="font-style: italic"><span style="color: #9A1900">// fait un</span></span>
-                                                                                                                                        <span style="font-style: italic"><span style="color: #9A1900">// seul</span></span>
-                                                                                                                                        <span style="font-style: italic"><span style="color: #9A1900">// objet</span></span>
-                                                                                                                                        <span style="font-style: italic"><span style="color: #9A1900">// référencé</span></span>
-                                                                                                                                        <span style="font-style: italic"><span style="color: #9A1900">// par les</span></span>
-                                                                                                                                        <span style="font-style: italic"><span style="color: #9A1900">// deux</span></span>
-                                                                                                                                        <span style="font-style: italic"><span style="color: #9A1900">// variables</span></span>
-                        Keyboard<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">readForWait</span></span><span style="color: #990000">();</span>
-
-                        <span style="font-style: italic"><span style="color: #9A1900">// 11) Déposer 4000€ sur cUn PUIS affecter la valeur null à cUn.</span></span>
-                        cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">deposer</span></span><span style="color: #990000">(</span><span style="color: #993399">4000</span><span style="color: #990000">);</span>
-                        cUn <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">;</span>
-
-                        <span style="font-style: italic"><span style="color: #9A1900">// 12) Afficher cDeux. Conclusion …</span></span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">();</span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Apres depot cUn de 4000 et effacement"</span><span style="color: #990000">);</span>
-                        cDeux<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  Solde : "</span> <span style="color: #990000">+</span> cDeux<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soldeCompte</span></span><span style="color: #990000">());</span> <span style="font-style: italic"><span style="color: #9A1900">// L'objet</span></span>
-                                                                                                                                        <span style="font-style: italic"><span style="color: #9A1900">// existe</span></span>
-                                                                                                                                        <span style="font-style: italic"><span style="color: #9A1900">// toujours,</span></span>
-                                                                                                                                        <span style="font-style: italic"><span style="color: #9A1900">// seul la</span></span>
-                                                                                                                                        <span style="font-style: italic"><span style="color: #9A1900">// ref dans</span></span>
-                                                                                                                                        <span style="font-style: italic"><span style="color: #9A1900">// cUn est</span></span>
-                                                                                                                                        <span style="font-style: italic"><span style="color: #9A1900">// perdue</span></span>
-
-                <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">CompteException</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>e<span style="color: #990000">);</span>
-                <span style="color: #FF0000">}</span>
-
-                Keyboard<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">readForWait</span></span><span style="color: #990000">();</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Exo 1 : Partie 3"</span><span style="color: #990000">);</span>
-
-                <span style="font-style: italic"><span style="color: #9A1900">// Références d'objets suite</span></span>
-
-                <span style="font-weight: bold"><span style="color: #0000FF">try</span></span> <span style="color: #FF0000">{</span>
-                        <span style="font-style: italic"><span style="color: #9A1900">// 1) 1) Déclarer deux variables cUn et cDeux "de type Compte" :</span></span>
-                        <span style="font-style: italic"><span style="color: #9A1900">// références vers un Compte.</span></span>
-                        <span style="font-style: italic"><span style="color: #9A1900">// cf ci-dessus</span></span>
-
-                        <span style="color: #008080">Compte</span> cUn<span style="color: #990000">,</span> cDeux<span style="color: #990000">;</span>
-
-                        <span style="font-style: italic"><span style="color: #9A1900">// 2) Créer un Compte à l'aide de cUn au nom de "Jean". Créer un</span></span>
-                        <span style="font-style: italic"><span style="color: #9A1900">// autre Compte à l'aide de cDeux au nom de "Marie".</span></span>
-                        cUn <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"3001"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Jean"</span><span style="color: #990000">);</span>
-                        cDeux <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"3002"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Marie"</span><span style="color: #990000">);</span>
-
-                        <span style="font-style: italic"><span style="color: #9A1900">// 3) Afficher cUn et cDeux.</span></span>
-                        cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  Solde : "</span> <span style="color: #990000">+</span> cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soldeCompte</span></span><span style="color: #990000">());</span>
-                        cDeux<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  Solde : "</span> <span style="color: #990000">+</span> cDeux<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soldeCompte</span></span><span style="color: #990000">());</span>
-                        Keyboard<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">readForWait</span></span><span style="color: #990000">();</span>
-
-                        <span style="font-style: italic"><span style="color: #9A1900">// 4) Déposer 1€ sur cUn. Déposer 1000€ sur cDeux.</span></span>
                         cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">deposer</span></span><span style="color: #990000">(</span><span style="color: #993399">1</span><span style="color: #990000">);</span>
                         cDeux<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">deposer</span></span><span style="color: #990000">(</span><span style="color: #993399">1000</span><span style="color: #990000">);</span>
-
-                        <span style="font-style: italic"><span style="color: #9A1900">// 5) Afficher cUn et cDeux. Conclusion …</span></span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">();</span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Apres depot 1 et 1000"</span><span style="color: #990000">);</span>
-                        cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  Solde : "</span> <span style="color: #990000">+</span> cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soldeCompte</span></span><span style="color: #990000">());</span>
-                        cDeux<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  Solde : "</span> <span style="color: #990000">+</span> cDeux<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soldeCompte</span></span><span style="color: #990000">());</span>
-                        Keyboard<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">readForWait</span></span><span style="color: #990000">();</span>
-
-                        <span style="font-style: italic"><span style="color: #9A1900">// 6) Retirer 1€ de cUn. Retirer 1000€ de cDeux.</span></span>
-                        cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">retirer</span></span><span style="color: #990000">(</span><span style="color: #993399">1</span><span style="color: #990000">);</span>
-                        cDeux<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">retirer</span></span><span style="color: #990000">(</span><span style="color: #993399">1000</span><span style="color: #990000">);</span>
-
-                        <span style="font-style: italic"><span style="color: #9A1900">// 7) Afficher cUn et cDeux. Conclusion …</span></span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">();</span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Apres retrait 1 et 1000"</span><span style="color: #990000">);</span>
-                        cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  Solde : "</span> <span style="color: #990000">+</span> cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soldeCompte</span></span><span style="color: #990000">());</span>
-                        cDeux<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  Solde : "</span> <span style="color: #990000">+</span> cDeux<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soldeCompte</span></span><span style="color: #990000">());</span> <span style="font-style: italic"><span style="color: #9A1900">// Deux</span></span>
-                                                                                                                                        <span style="font-style: italic"><span style="color: #9A1900">// objets</span></span>
-                                                                                                                                        <span style="font-style: italic"><span style="color: #9A1900">// vraiement</span></span>
-                                                                                                                                        <span style="font-style: italic"><span style="color: #9A1900">// différents</span></span>
-                        Keyboard<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">readForWait</span></span><span style="color: #990000">();</span>
-
-                        <span style="font-style: italic"><span style="color: #9A1900">// 8) Affecter cUn à cDeux (cDeux = cUn;).</span></span>
-                        cDeux <span style="color: #990000">=</span> cUn<span style="color: #990000">;</span>
-
-                        <span style="font-style: italic"><span style="color: #9A1900">// 9) Afficher cUn et cDeux. Conclusion …</span></span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">();</span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Apres Affectation"</span><span style="color: #990000">);</span>
-                        cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  Solde : "</span> <span style="color: #990000">+</span> cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soldeCompte</span></span><span style="color: #990000">());</span>
-                        cDeux<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  Solde : "</span> <span style="color: #990000">+</span> cDeux<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soldeCompte</span></span><span style="color: #990000">());</span> <span style="font-style: italic"><span style="color: #9A1900">// Ils</span></span>
-                                                                                                                                        <span style="font-style: italic"><span style="color: #9A1900">// référencent</span></span>
-                                                                                                                                        <span style="font-style: italic"><span style="color: #9A1900">// le meme</span></span>
-                                                                                                                                        <span style="font-style: italic"><span style="color: #9A1900">// objet</span></span>
-                        Keyboard<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">readForWait</span></span><span style="color: #990000">();</span>
-
-                        <span style="font-style: italic"><span style="color: #9A1900">// 10) Déposer 2000€ sur le Compte ayant pour propriétaire Marie.</span></span>
-                        <span style="font-style: italic"><span style="color: #9A1900">// Conclusion …</span></span>
-                        <span style="font-style: italic"><span style="color: #9A1900">// Impossible, la référence est perdue ...</span></span>
-
                 <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">CompteException</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
                         System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>e<span style="color: #990000">);</span>
                 <span style="color: #FF0000">}</span>
 
-                Keyboard<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">readForWait</span></span><span style="color: #990000">();</span>
-        <span style="color: #FF0000">}</span>
+                <span style="font-style: italic"><span style="color: #9A1900">// Afficher cUn et cDeux. Conclusion …</span></span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">();</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Apres depot 1 et 1000"</span><span style="color: #990000">);</span>
+                cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  Solde : "</span> <span style="color: #990000">+</span> cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soldeCompte</span></span><span style="color: #990000">());</span>
+                cDeux<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  Solde : "</span> <span style="color: #990000">+</span> cDeux<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soldeCompte</span></span><span style="color: #990000">());</span>
 
+                <span style="font-style: italic"><span style="color: #9A1900">// Retirer 1€ de cUn. Retirer 1000€ de cDeux.</span></span>
+                <span style="font-weight: bold"><span style="color: #0000FF">try</span></span> <span style="color: #FF0000">{</span>
+                        cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">retirer</span></span><span style="color: #990000">(</span><span style="color: #993399">1</span><span style="color: #990000">);</span>
+                        cDeux<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">retirer</span></span><span style="color: #990000">(</span><span style="color: #993399">1000</span><span style="color: #990000">);</span>
+                <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">CompteException</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>e<span style="color: #990000">);</span>
+                <span style="color: #FF0000">}</span>
+
+                <span style="font-style: italic"><span style="color: #9A1900">// Afficher cUn et cDeux. Conclusion …</span></span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">();</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Apres retrait 1 et 1000"</span><span style="color: #990000">);</span>
+                cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  Solde : "</span> <span style="color: #990000">+</span> cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soldeCompte</span></span><span style="color: #990000">());</span>
+                cDeux<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  Solde : "</span> <span style="color: #990000">+</span> cDeux<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soldeCompte</span></span><span style="color: #990000">());</span>
+                <span style="font-style: italic"><span style="color: #9A1900">// Deux objets vraiement différents</span></span>
+
+                <span style="font-style: italic"><span style="color: #9A1900">// Essayer de retirer -100 euros du compte cUn. Que se passe-t-il ?</span></span>
+                <span style="font-style: italic"><span style="color: #9A1900">// -&gt; Exception</span></span>
+                <span style="font-weight: bold"><span style="color: #0000FF">try</span></span> <span style="color: #FF0000">{</span>
+                        cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">retirer</span></span><span style="color: #990000">(-</span><span style="color: #993399">100</span><span style="color: #990000">);</span>
+                <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">CompteException</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>e<span style="color: #990000">);</span>
+                <span style="color: #FF0000">}</span>
+
+                <span style="font-style: italic"><span style="color: #9A1900">// Essayer de déposer -100 euros sur le compte cDeux. Que se passe-t-il ?</span></span>
+                <span style="font-style: italic"><span style="color: #9A1900">// -&gt; Exception</span></span>
+                <span style="font-weight: bold"><span style="color: #0000FF">try</span></span> <span style="color: #FF0000">{</span>
+                        cDeux<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">deposer</span></span><span style="color: #990000">(-</span><span style="color: #993399">100</span><span style="color: #990000">);</span>
+                <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">CompteException</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>e<span style="color: #990000">);</span>
+                <span style="color: #FF0000">}</span>
+
+                <span style="font-style: italic"><span style="color: #9A1900">// Affecter cUn à cDeux (cDeux = cUn;).</span></span>
+                cDeux <span style="color: #990000">=</span> cUn<span style="color: #990000">;</span>
+
+                <span style="font-style: italic"><span style="color: #9A1900">// Afficher cUn et cDeux. Conclusion …</span></span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">();</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Apres Affectation"</span><span style="color: #990000">);</span>
+                cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  Solde : "</span> <span style="color: #990000">+</span> cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soldeCompte</span></span><span style="color: #990000">());</span>
+                cDeux<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  Solde : "</span> <span style="color: #990000">+</span> cDeux<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soldeCompte</span></span><span style="color: #990000">());</span>
+                <span style="font-style: italic"><span style="color: #9A1900">// Ils référencent le meme objet</span></span>
+
+                <span style="font-weight: bold"><span style="color: #0000FF">try</span></span> <span style="color: #FF0000">{</span>
+                        cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">deposer</span></span><span style="color: #990000">(</span><span style="color: #993399">1000</span><span style="color: #990000">);</span>
+                <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">CompteException</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>e<span style="color: #990000">);</span>
+                <span style="color: #FF0000">}</span>
+
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">();</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Apres Affectation"</span><span style="color: #990000">);</span>
+                cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  Solde : "</span> <span style="color: #990000">+</span> cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soldeCompte</span></span><span style="color: #990000">());</span>
+                cDeux<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  Solde : "</span> <span style="color: #990000">+</span> cDeux<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soldeCompte</span></span><span style="color: #990000">());</span>
+                <span style="font-style: italic"><span style="color: #9A1900">// Ils référencent le meme objet</span></span>
+
+                <span style="font-style: italic"><span style="color: #9A1900">// Déposer 2000€ sur le Compte ayant pour propriétaire Marie.</span></span>
+                <span style="font-style: italic"><span style="color: #9A1900">// Conclusion …</span></span>
+                <span style="font-style: italic"><span style="color: #9A1900">// Impossible, la référence est perdue ...</span></span>
+
+                <span style="font-style: italic"><span style="color: #9A1900">// Affecter à cUn la valeur null.</span></span>
+                cUn <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">;</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>cUn<span style="color: #990000">);</span> <span style="font-style: italic"><span style="color: #9A1900">// null</span></span>
+                cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
+        <span style="color: #FF0000">}</span>
 <span style="color: #FF0000">}</span></tt></pre></div></div>
 </td>
 </tr></table>
@@ -6001,7 +5861,7 @@ http://www.gnu.org/software/src-highlite -->
 </div>
 <div id="footer" style="position: absolute; left: 5%; top: 80%; width: 90%;">
 <div id="footer-text">
-Dernière mise à jour 2014-02-14 02:09:17 CET
+Dernière mise à jour 2014-02-14 12:18:46 CET
 </div>
 </div>
 </div></div>
