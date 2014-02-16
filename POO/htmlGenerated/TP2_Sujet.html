@@ -1,0 +1,1975 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+<meta name="generator" content="AsciiDoc 8.6.6" />
+<title>BPOO - Sujet TP 2</title>
+<style type="text/css">
+/* Shared CSS for AsciiDoc xhtml11 and html5 backends */
+
+/* Default font. */
+body {
+  font-family: Georgia,serif;
+}
+
+/* Title font. */
+h1, h2, h3, h4, h5, h6,
+div.title, caption.title,
+thead, p.table.header,
+#toctitle,
+#author, #revnumber, #revdate, #revremark,
+#footer {
+  font-family: Arial,Helvetica,sans-serif;
+}
+
+body {
+  margin: 1em 5% 1em 5%;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
+a:visited {
+  color: fuchsia;
+}
+
+em {
+  font-style: italic;
+  color: navy;
+}
+
+strong {
+  font-weight: bold;
+  color: #083194;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #527bbd;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+  line-height: 1.3;
+}
+
+h1, h2, h3 {
+  border-bottom: 2px solid silver;
+}
+h2 {
+  padding-top: 0.5em;
+}
+h3 {
+  float: left;
+}
+h3 + * {
+  clear: left;
+}
+h5 {
+  font-size: 1.0em;
+}
+
+div.sectionbody {
+  margin-left: 0;
+}
+
+hr {
+  border: 1px solid silver;
+}
+
+p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+ul, ol, li > p {
+  margin-top: 0;
+}
+ul > li     { color: #aaa; }
+ul > li > * { color: black; }
+
+pre {
+  padding: 0;
+  margin: 0;
+}
+
+#author {
+  color: #527bbd;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+#email {
+}
+#revnumber, #revdate, #revremark {
+}
+
+#footer {
+  font-size: small;
+  border-top: 2px solid silver;
+  padding-top: 0.5em;
+  margin-top: 4.0em;
+}
+#footer-text {
+  float: left;
+  padding-bottom: 0.5em;
+}
+#footer-badges {
+  float: right;
+  padding-bottom: 0.5em;
+}
+
+#preamble {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+div.imageblock, div.exampleblock, div.verseblock,
+div.quoteblock, div.literalblock, div.listingblock, div.sidebarblock,
+div.admonitionblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.admonitionblock {
+  margin-top: 2.0em;
+  margin-bottom: 2.0em;
+  margin-right: 10%;
+  color: #606060;
+}
+
+div.content { /* Block element content. */
+  padding: 0;
+}
+
+/* Block element titles. */
+div.title, caption.title {
+  color: #527bbd;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 1.0em;
+  margin-bottom: 0.5em;
+}
+div.title + * {
+  margin-top: 0;
+}
+
+td div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content + div.title {
+  margin-top: 0.0em;
+}
+
+div.sidebarblock > div.content {
+  background: #ffffee;
+  border: 1px solid #dddddd;
+  border-left: 4px solid #f0f0f0;
+  padding: 0.5em;
+}
+
+div.listingblock > div.content {
+  border: 1px solid #dddddd;
+  border-left: 5px solid #f0f0f0;
+  background: #f8f8f8;
+  padding: 0.5em;
+}
+
+div.quoteblock, div.verseblock {
+  padding-left: 1.0em;
+  margin-left: 1.0em;
+  margin-right: 10%;
+  border-left: 5px solid #f0f0f0;
+  color: #888;
+}
+
+div.quoteblock > div.attribution {
+  padding-top: 0.5em;
+  text-align: right;
+}
+
+div.verseblock > pre.content {
+  font-family: inherit;
+  font-size: inherit;
+}
+div.verseblock > div.attribution {
+  padding-top: 0.75em;
+  text-align: left;
+}
+/* DEPRECATED: Pre version 8.2.7 verse style literal block. */
+div.verseblock + div.attribution {
+  text-align: left;
+}
+
+div.admonitionblock .icon {
+  vertical-align: top;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #527bbd;
+  padding-right: 0.5em;
+}
+div.admonitionblock td.content {
+  padding-left: 0.5em;
+  border-left: 3px solid #dddddd;
+}
+
+div.exampleblock > div.content {
+  border-left: 3px solid #dddddd;
+  padding-left: 0.5em;
+}
+
+div.imageblock div.content { padding-left: 0; }
+span.image img { border-style: none; }
+a.image:visited { color: white; }
+
+dl {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+dt {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  font-style: normal;
+  color: navy;
+}
+dd > *:first-child {
+  margin-top: 0.1em;
+}
+
+ul, ol {
+    list-style-position: outside;
+}
+ol.arabic {
+  list-style-type: decimal;
+}
+ol.loweralpha {
+  list-style-type: lower-alpha;
+}
+ol.upperalpha {
+  list-style-type: upper-alpha;
+}
+ol.lowerroman {
+  list-style-type: lower-roman;
+}
+ol.upperroman {
+  list-style-type: upper-roman;
+}
+
+div.compact ul, div.compact ol,
+div.compact p, div.compact p,
+div.compact div, div.compact div {
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+}
+
+tfoot {
+  font-weight: bold;
+}
+td > div.verse {
+  white-space: pre;
+}
+
+div.hdlist {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+div.hdlist tr {
+  padding-bottom: 15px;
+}
+dt.hdlist1.strong, td.hdlist1.strong {
+  font-weight: bold;
+}
+td.hdlist1 {
+  vertical-align: top;
+  font-style: normal;
+  padding-right: 0.8em;
+  color: navy;
+}
+td.hdlist2 {
+  vertical-align: top;
+}
+div.hdlist.compact tr {
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.comment {
+  background: yellow;
+}
+
+.footnote, .footnoteref {
+  font-size: 0.8em;
+}
+
+span.footnote, span.footnoteref {
+  vertical-align: super;
+}
+
+#footnotes {
+  margin: 20px 0 20px 0;
+  padding: 7px 0 0 0;
+}
+
+#footnotes div.footnote {
+  margin: 0 0 5px 0;
+}
+
+#footnotes hr {
+  border: none;
+  border-top: 1px solid silver;
+  height: 1px;
+  text-align: left;
+  margin-left: 0;
+  width: 20%;
+  min-width: 100px;
+}
+
+div.colist td {
+  padding-right: 0.5em;
+  padding-bottom: 0.3em;
+  vertical-align: top;
+}
+div.colist td img {
+  margin-top: 0.3em;
+}
+
+@media print {
+  #footer-badges { display: none; }
+}
+
+#toc {
+  margin-bottom: 2.5em;
+}
+
+#toctitle {
+  color: #527bbd;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 1.0em;
+  margin-bottom: 0.1em;
+}
+
+div.toclevel1, div.toclevel2, div.toclevel3, div.toclevel4 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+div.toclevel2 {
+  margin-left: 2em;
+  font-size: 0.9em;
+}
+div.toclevel3 {
+  margin-left: 4em;
+  font-size: 0.9em;
+}
+div.toclevel4 {
+  margin-left: 6em;
+  font-size: 0.9em;
+}
+
+span.aqua { color: aqua; }
+span.black { color: black; }
+span.blue { color: blue; }
+span.fuchsia { color: fuchsia; }
+span.gray { color: gray; }
+span.green { color: green; }
+span.lime { color: lime; }
+span.maroon { color: maroon; }
+span.navy { color: navy; }
+span.olive { color: olive; }
+span.purple { color: purple; }
+span.red { color: red; }
+span.silver { color: silver; }
+span.teal { color: teal; }
+span.white { color: white; }
+span.yellow { color: yellow; }
+
+span.aqua-background { background: aqua; }
+span.black-background { background: black; }
+span.blue-background { background: blue; }
+span.fuchsia-background { background: fuchsia; }
+span.gray-background { background: gray; }
+span.green-background { background: green; }
+span.lime-background { background: lime; }
+span.maroon-background { background: maroon; }
+span.navy-background { background: navy; }
+span.olive-background { background: olive; }
+span.purple-background { background: purple; }
+span.red-background { background: red; }
+span.silver-background { background: silver; }
+span.teal-background { background: teal; }
+span.white-background { background: white; }
+span.yellow-background { background: yellow; }
+
+span.big { font-size: 2em; }
+span.small { font-size: 0.6em; }
+
+span.underline { text-decoration: underline; }
+span.overline { text-decoration: overline; }
+span.line-through { text-decoration: line-through; }
+
+
+/*
+ * xhtml11 specific
+ *
+ * */
+
+tt {
+  font-family: monospace;
+  font-size: inherit;
+  color: navy;
+}
+
+div.tableblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.tableblock > table {
+  border: 3px solid #527bbd;
+}
+thead, p.table.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+p.table {
+  margin-top: 0;
+}
+/* Because the table frame attribute is overriden by CSS in most browsers. */
+div.tableblock > table[frame="void"] {
+  border-style: none;
+}
+div.tableblock > table[frame="hsides"] {
+  border-left-style: none;
+  border-right-style: none;
+}
+div.tableblock > table[frame="vsides"] {
+  border-top-style: none;
+  border-bottom-style: none;
+}
+
+
+/*
+ * html5 specific
+ *
+ * */
+
+.monospaced {
+  font-family: monospace;
+  font-size: inherit;
+  color: navy;
+}
+
+table.tableblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+thead, p.tableblock.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+p.tableblock {
+  margin-top: 0;
+}
+table.tableblock {
+  border-width: 3px;
+  border-spacing: 0px;
+  border-style: solid;
+  border-color: #527bbd;
+  border-collapse: collapse;
+}
+th.tableblock, td.tableblock {
+  border-width: 1px;
+  padding: 4px;
+  border-style: solid;
+  border-color: #527bbd;
+}
+
+table.tableblock.frame-topbot {
+  border-left-style: hidden;
+  border-right-style: hidden;
+}
+table.tableblock.frame-sides {
+  border-top-style: hidden;
+  border-bottom-style: hidden;
+}
+table.tableblock.frame-none {
+  border-style: hidden;
+}
+
+th.tableblock.halign-left, td.tableblock.halign-left {
+  text-align: left;
+}
+th.tableblock.halign-center, td.tableblock.halign-center {
+  text-align: center;
+}
+th.tableblock.halign-right, td.tableblock.halign-right {
+  text-align: right;
+}
+
+th.tableblock.valign-top, td.tableblock.valign-top {
+  vertical-align: top;
+}
+th.tableblock.valign-middle, td.tableblock.valign-middle {
+  vertical-align: middle;
+}
+th.tableblock.valign-bottom, td.tableblock.valign-bottom {
+  vertical-align: bottom;
+}
+
+
+/*
+ * manpage specific
+ *
+ * */
+
+body.manpage h1 {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  border-top: 2px solid silver;
+  border-bottom: 2px solid silver;
+}
+body.manpage h2 {
+  border-style: none;
+}
+body.manpage div.sectionbody {
+  margin-left: 3em;
+}
+
+@media print {
+  body.manpage div#toc { display: none; }
+}
+</style>
+<script type="text/javascript">
+/*<![CDATA[*/
+var asciidoc = {  // Namespace.
+
+/////////////////////////////////////////////////////////////////////
+// Table Of Contents generator
+/////////////////////////////////////////////////////////////////////
+
+/* Author: Mihai Bazon, September 2002
+ * http://students.infoiasi.ro/~mishoo
+ *
+ * Table Of Content generator
+ * Version: 0.4
+ *
+ * Feel free to use this script under the terms of the GNU General Public
+ * License, as long as you do not remove or alter this notice.
+ */
+
+ /* modified by Troy D. Hanson, September 2006. License: GPL */
+ /* modified by Stuart Rackham, 2006, 2009. License: GPL */
+
+// toclevels = 1..4.
+toc: function (toclevels) {
+
+  function getText(el) {
+    var text = "";
+    for (var i = el.firstChild; i != null; i = i.nextSibling) {
+      if (i.nodeType == 3 /* Node.TEXT_NODE */) // IE doesn't speak constants.
+        text += i.data;
+      else if (i.firstChild != null)
+        text += getText(i);
+    }
+    return text;
+  }
+
+  function TocEntry(el, text, toclevel) {
+    this.element = el;
+    this.text = text;
+    this.toclevel = toclevel;
+  }
+
+  function tocEntries(el, toclevels) {
+    var result = new Array;
+    var re = new RegExp('[hH]([2-'+(toclevels+1)+'])');
+    // Function that scans the DOM tree for header elements (the DOM2
+    // nodeIterator API would be a better technique but not supported by all
+    // browsers).
+    var iterate = function (el) {
+      for (var i = el.firstChild; i != null; i = i.nextSibling) {
+        if (i.nodeType == 1 /* Node.ELEMENT_NODE */) {
+          var mo = re.exec(i.tagName);
+          if (mo && (i.getAttribute("class") || i.getAttribute("className")) != "float") {
+            result[result.length] = new TocEntry(i, getText(i), mo[1]-1);
+          }
+          iterate(i);
+        }
+      }
+    }
+    iterate(el);
+    return result;
+  }
+
+  var toc = document.getElementById("toc");
+  if (!toc) {
+    return;
+  }
+
+  // Delete existing TOC entries in case we're reloading the TOC.
+  var tocEntriesToRemove = [];
+  var i;
+  for (i = 0; i < toc.childNodes.length; i++) {
+    var entry = toc.childNodes[i];
+    if (entry.nodeName == 'div'
+     && entry.getAttribute("class")
+     && entry.getAttribute("class").match(/^toclevel/))
+      tocEntriesToRemove.push(entry);
+  }
+  for (i = 0; i < tocEntriesToRemove.length; i++) {
+    toc.removeChild(tocEntriesToRemove[i]);
+  }
+
+  // Rebuild TOC entries.
+  var entries = tocEntries(document.getElementById("content"), toclevels);
+  for (var i = 0; i < entries.length; ++i) {
+    var entry = entries[i];
+    if (entry.element.id == "")
+      entry.element.id = "_toc_" + i;
+    var a = document.createElement("a");
+    a.href = "#" + entry.element.id;
+    a.appendChild(document.createTextNode(entry.text));
+    var div = document.createElement("div");
+    div.appendChild(a);
+    div.className = "toclevel" + entry.toclevel;
+    toc.appendChild(div);
+  }
+  if (entries.length == 0)
+    toc.parentNode.removeChild(toc);
+},
+
+
+/////////////////////////////////////////////////////////////////////
+// Footnotes generator
+/////////////////////////////////////////////////////////////////////
+
+/* Based on footnote generation code from:
+ * http://www.brandspankingnew.net/archive/2005/07/format_footnote.html
+ */
+
+footnotes: function () {
+  // Delete existing footnote entries in case we're reloading the footnodes.
+  var i;
+  var noteholder = document.getElementById("footnotes");
+  if (!noteholder) {
+    return;
+  }
+  var entriesToRemove = [];
+  for (i = 0; i < noteholder.childNodes.length; i++) {
+    var entry = noteholder.childNodes[i];
+    if (entry.nodeName == 'div' && entry.getAttribute("class") == "footnote")
+      entriesToRemove.push(entry);
+  }
+  for (i = 0; i < entriesToRemove.length; i++) {
+    noteholder.removeChild(entriesToRemove[i]);
+  }
+
+  // Rebuild footnote entries.
+  var cont = document.getElementById("content");
+  var spans = cont.getElementsByTagName("span");
+  var refs = {};
+  var n = 0;
+  for (i=0; i<spans.length; i++) {
+    if (spans[i].className == "footnote") {
+      n++;
+      var note = spans[i].getAttribute("data-note");
+      if (!note) {
+        // Use [\s\S] in place of . so multi-line matches work.
+        // Because JavaScript has no s (dotall) regex flag.
+        note = spans[i].innerHTML.match(/\s*\[([\s\S]*)]\s*/)[1];
+        spans[i].innerHTML =
+          "[<a id='_footnoteref_" + n + "' href='#_footnote_" + n +
+          "' title='View footnote' class='footnote'>" + n + "</a>]";
+        spans[i].setAttribute("data-note", note);
+      }
+      noteholder.innerHTML +=
+        "<div class='footnote' id='_footnote_" + n + "'>" +
+        "<a href='#_footnoteref_" + n + "' title='Return to text'>" +
+        n + "</a>. " + note + "</div>";
+      var id =spans[i].getAttribute("id");
+      if (id != null) refs["#"+id] = n;
+    }
+  }
+  if (n == 0)
+    noteholder.parentNode.removeChild(noteholder);
+  else {
+    // Process footnoterefs.
+    for (i=0; i<spans.length; i++) {
+      if (spans[i].className == "footnoteref") {
+        var href = spans[i].getElementsByTagName("a")[0].getAttribute("href");
+        href = href.match(/#.*/)[0];  // Because IE return full URL.
+        n = refs[href];
+        spans[i].innerHTML =
+          "[<a href='#_footnote_" + n +
+          "' title='View footnote' class='footnote'>" + n + "</a>]";
+      }
+    }
+  }
+},
+
+install: function(toclevels) {
+  var timerId;
+
+  function reinstall() {
+    asciidoc.footnotes();
+    if (toclevels) {
+      asciidoc.toc(toclevels);
+    }
+  }
+
+  function reinstallAndRemoveTimer() {
+    clearInterval(timerId);
+    reinstall();
+  }
+
+  timerId = setInterval(reinstall, 500);
+  if (document.addEventListener)
+    document.addEventListener("DOMContentLoaded", reinstallAndRemoveTimer, false);
+  else
+    window.onload = reinstallAndRemoveTimer;
+}
+
+}
+asciidoc.install(2);
+/*]]>*/
+</script>
+</head>
+<body class="article">
+<div id="header">
+<h1>BPOO - Sujet TP 2</h1>
+<span id="author">Dut/Info-S2/M2103</span><br />
+<div id="toc">
+  <div id="toctitle">Table des matières</div>
+  <noscript><p><b>JavaScript must be enabled in your browser to display the table of contents.</b></p></noscript>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="Preambule">1. Préambule</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>A faire :</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Depuis webetud, récupérer le fichier zip du tp.
+</p>
+</li>
+<li>
+<p>
+Le dézipper dans le répertoire où vous comptez travailler.
+</p>
+</li>
+<li>
+<p>
+Ce zip contient les packages de travail pour les tps. Il comporte en fait plusieurs packages de classes : <tt>tps.jeux</tt>, <tt>tps.jeux.exception</tt>, <tt>tps.banque</tt>, &#8230;
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Regarder le contenu du répertoire (des fichiers .class structurés en répertoires).
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+La documentation des classes se trouve sur le serveur webetud.
+</p>
+</li>
+<li>
+<p>
+Pour utiliser ces classes dans vos programmes:
+</p>
+<div class="paragraph"><p><tt>import  tps.-<em>nomPackage[.nomPackage &#8230;]</em>.<em>NomDeClasse</em>;</tt>. Exemple : <tt>import  tps.jeux.Devinette;</tt></p></div>
+</li>
+</ol></div>
+<div class="paragraph"><p>Pour chaque exercice, créer un programme Java <tt>ClasseEssaiXXXXX.java</tt> comportant une méthode main(). "XXXXX" sera le nom de la classe testée à chaque exercice (Compte, &#8230;).</p></div>
+<div class="paragraph"><p>On utilisera le début de code suivant :</p></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-style: italic"><span style="color: #9A1900">// Imports pour tous les exercices</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">// Tous ne sont pas toujours utiles ...</span></span>
+<span style="font-weight: bold"><span style="color: #000080">import</span></span> tps<span style="color: #990000">.</span>banque<span style="color: #990000">.</span>AgenceBancaire<span style="color: #990000">;</span>
+<span style="font-weight: bold"><span style="color: #000080">import</span></span> tps<span style="color: #990000">.</span>banque<span style="color: #990000">.</span>Compte<span style="color: #990000">;</span>
+<span style="font-weight: bold"><span style="color: #000080">import</span></span> tps<span style="color: #990000">.</span>banque<span style="color: #990000">.</span>exception<span style="color: #990000">.</span>ABCompteDejaExistantException<span style="color: #990000">;</span>
+<span style="font-weight: bold"><span style="color: #000080">import</span></span> tps<span style="color: #990000">.</span>banque<span style="color: #990000">.</span>exception<span style="color: #990000">.</span>ABCompteInexistantException<span style="color: #990000">;</span>
+<span style="font-weight: bold"><span style="color: #000080">import</span></span> tps<span style="color: #990000">.</span>banque<span style="color: #990000">.</span>exception<span style="color: #990000">.</span>ABCompteNullException<span style="color: #990000">;</span>
+<span style="font-weight: bold"><span style="color: #000080">import</span></span> tps<span style="color: #990000">.</span>banque<span style="color: #990000">.</span>exception<span style="color: #990000">.</span>CompteException<span style="color: #990000">;</span>
+
+<span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">ClasseEssaiCompte</span>
+<span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span> <span style="color: #990000">(</span><span style="color: #008080">String</span> argv<span style="color: #990000">[])</span>
+        <span style="color: #FF0000">{</span>
+                <span style="color: #008080">Compte</span> cUn <span style="color: #990000">;</span>
+                <span style="font-style: italic"><span style="color: #9A1900">// ...</span></span>
+        <span style="color: #FF0000">}</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_exercice_les_comptes">2. Exercice : les comptes</h2>
+<div class="sectionbody">
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Note" src="data:image/png;base64,
+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" />
+</td>
+<td class="content">
+<div class="paragraph"><p>Lire chaque section en entier avant de commencer.</p></div>
+</td>
+</tr></table>
+</div>
+<div class="paragraph"><p>Nous allons utiliser une classe <tt>tps.banque.Compte</tt> qui permet de gérer des comptes simples comptabilisant des débits et des crédits successifs.</p></div>
+<div class="sect2">
+<h3 id="_classe_compte">2.1. Classe Compte</h3>
+<div class="paragraph"><p>Étudier en détail la documentation de la classe <tt>Compte</tt> (cf. webetud). En particulier, étudier si les méthodes sont des observateurs/accesseurs/getters ou des modifieurs/transformateurs/setters.</p></div>
+<div class="paragraph"><p>Repérer les méthodes générant des exceptions.</p></div>
+<div class="paragraph"><p>Attention : cette classe <tt>Compte</tt> diffère de celle vue en S1.</p></div>
+<div class="paragraph"><div class="title">Diagramme UML de l&#8217;interface de la classe Compte</div><p><span class="image">
+<img alt="images/classeCompteInterface.png" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAARIAAADoCAIAAACsK/y/AAAANXRFWHRjb3B5bGVmdABHZW5lcmF0
+ZWQgYnkgaHR0cDovL3BsYW50dW1sLnNvdXJjZWZvcmdlLm5ldDpnVRsAAAEYelRYdHBsYW50dW1s
+AAB4nG2QQU7DMBBF1/gUs0wEreqWErWriioIIYIqUmCJnGZaLMWeyJ6EBeLuJGkUSsVu/N/7Hssr
+z8pxZQohdoXyHtZkSkb4EheX/RyEcHJI2Wl7gPKpMsfkCoaIzMZR2eptoY8PyIMbhH9BqzuNrLTr
+WU5VViB4KnI87dSkc/BnjfPFg+iQG+6C/rYyJWPwF+dYkv8HD4La7/XuozFO38t0HJrwW4gV2rz7
+tk2hLL8kj1Cj85osRIt5FGwrhDvMQE5BLpZytpxLWMdbmE7kLBQPqlbBNgkhjeG5sqwNQmxr7cga
+tNxxuCdOS+LOu7ke3WqGFF2zBV4TIcfRePI+l6NMzsSbtjl9eoh+ALxQkqE4eiExAAAY0ElEQVR4
+2u2dC1QVR57GPWIkBI3GEDSGKCIGo0OMia8kjoegsyYBdQhBiI7GMU52jTrxEaNhGDR7uYwP5HFV
+kEWNaEBB5OVzcAgaJxLxneEkjutZ1+PhuA5nzsZMNuu65u7+k8r2ll11m3uhu+l771fnO5ymb3dV
+dVG/W1XdH//u8j9ISEgepi5oAiQkYIOEBGyQkIANEhKwQUICNkhISO3A5s6/f32z4SwE+Y/ufPW3
+jmJDuezpMgaC/Ed/OXZWH2wu5WTdbNgDQb6tS9lZemJDOTqd5yDIt/VvH+8BNhDUHmyOZBedPHny
+/Pnzly9fbmlpuXXrFrCBoDawKV+9oba2tr6+vqmpichpbW0FNrrpuztn/uXQzj/MXVwZnVAW+Dxb
+Te6NiDv0+oI/VW2/+19n0EReis2u9zNLS0urqqqIHBpzaMABNvro8q4t+8JfLhs6de+C5RU7Nu9r
+qtx3sXbfueqK0sLypallTyWUD3jpbNHG775DW3kfNjtX2nfs2EHk0JhDs7WrV68Cm47qv79takh+
+u3zQK3vzc75HxYUqCvPKIuNrp7z5n998hkbzLmzKVmURNsXFxeXl5TTg0DwN2HSUmaMv/bJ8XHLF
+8T0azPyoxn3lE2ZWvTDj9n80oemAjf/qk9cXEjPEQ9vMMJ2rJnL2T5mHpgM2fqp/Lf2nfYPj3Bpn
+7h1zaLb2p+2bLXIVd+/iXgWwMfG+WU1EG+sZjXXO3oEvUQ5tltLYuDMmZlRQUOA778xoaakz4kJG
+jHgCeAAbk3SjrqRy2DQRiT1NFcnzX+8b1i+gW0BYxOPvZC4dG/vcE09FqQ4reyrhn6s/1C6iubli
+wIB+hw5togHh5s36l19+YcuWNN0vpEuXLsAD2Jikswvfq1z0nhqGM5VESBdZUh1ZvjT16MxF2kWk
+pEzetm218uu1a4fnzp3GtomiSZPG3ndft9jY0a2tDQoA+fmpvXr1eOihBysrN9TVFYSF9aVjCDzl
+gNravODgIBrBKAe2hyXa/utfjxGZdPzkyc/RNpgBNvrr8DOvff985l4YUhbMpC7Yq0+vtPzVFedr
+Pjq5h0YeKTYVpYW0LtIuomfP4G++OSn96K23Xv3www9oo7jYNm9egkLFokUpd+6cJmDGjYu22xfS
+MEXMEAnKAXQw7aRz589PUo02tOf69SO0UV2dQ3NCMANs9FdZt3E/PtPk9OiA/tQL07d8wO8cOGSg
+OEnbd66amlG7CKW7i6LxhC3lb98+RcOLAsDXX/9R2SZ+VGDQBlsgqc5iGyEhvZX8+/V7GMwAG/1F
+jSAubLp27SoOLK7UJjbUjxUMmHgqRLr4ndJt7bP4KWVAQFcwA2xMGm2k8zFXD3DaxGb27Hh+bXPu
+3O4hQwawbRor2GhDQwrN5dzH5quvTrDRJjS0j+pTZfyBgI1RqhuVVLOrQAVD75CHqBdm73W0fQ+6
+tLB6SLx2ERculNFk6ciR75/wfPFFZXR0JK342Udz506jxb24tmkTm2XLZtEGrW2WLJmpDDtsEKO1
+zbVrh2lj9+41tDQCM8DGkDtpv1+WqoIhYW4idc2H+4a8v/G3FedraM/m/YXP/90L/cMfE++k/XHO
+4jZLIWZGjHiCenb//o9kZ7+r7L95sz42djTtnzRpLH8nrU1stmxJCwzsPm1aDBt2SImJE2kPbVA+
+kyc/R3kSn0QpmAE2hjy3OfBUgvjQRnoDesyLY1VHVo5MbDm0y+Q64xENsOl8l8CByLijH24SH93M
+XvrLwcMiA7oFkMKjBv3inTfKz1WpXAI1Ea+44xLQV2xUgYBNJ3vSDkRNrfrEY09aZdQUOhcNCGz8
+VI2/WPT7F2dVf+aBA7o6dtanyW+j6YCNX/+/zSfxbxI5NScr3BlniJmPJ86ms9B0wMbfyaExh2Zr
+x3cWVH7ukpmD2zfWPjmNxhkwA2wgbp0TGXdoxKvHVvy2vqyo+kw1m5Id2Lv16G9WHxyVRJ9iPQNs
+gI3k3tqNupKzC9+rG5VU1m0ci1xDtDTNW9pyaJf5980gYANBwAaCgA0EAZu2sflzThblCEG+LfbG
+Ad2wgSD/kX6jTe56vPwE8nn9OWc91jYQhFsCEARsIAjYQBCwATYQsMFzGwjCcxsIwnMbCMJzGwjC
+2gbYQMAG2EAQsIEgYANBfo9Nbu7ysLC+QUGB06bFdPytXZSJxqclJZkssjj9pG30A8grsSkuto0b
+F339+pG7d8+kpr6ZkjK5gxemEdeYmHzyyUEsnD79HD58MN6tB1kRm5KLW4c6ZvTImDJs06y9zTvF
+A5599slTp34MGU7ksDdPXLt2+PnnR9x3Xzf6yd4VQTAQYIGB3R2OFZs2raQN9gJK2n/8+LZevXqM
+HDmUjqT9yqsnW1rqJkx4hjKhIi5frqE9H3ww/3e/+7VSNG3THnQFyFrYFJ7OD1nz83mVyzM+zni7
+ZuWADdNFcqhbs/cZ8Xr55RdstgW0QT8nT36O4VFWtvbKlf3EwIEDDuUFlN+/4i/9LcqBjpwyZQI/
+2iQkvEhH0kZ9fSHx4/zh1eH8Cydom3JDV4CshU14znTGDNPyw6uGb5qlOoaWNCI2NGiwnfSTRcUn
+GNge1Qv06Oft26ecP7xFjLLiD1BGHkqMMdW7LylDdgoEWQib4Iw4hRmm4Az1C8NoMaNM0kiNjTt5
+bEQYRGxcHUmZfPvtZ6qRTYQWXQGyFjYRucn8aJNWZxNHm+bmitjY0bQOod5vty9cvvwN2kkTMzZJ
+o7WHMklzhQ1Nxm7erF+16u8TEyfSnoCArowWmumxpYvyDj2akrGVEhNt07QNXQGyFjYlF7c+sjaB
+kbPsUPrA7GTpXQFatPTr9zANDnPmTGU9njr0mDE/ocFh/Pinr18/oo0NUUHnTpo09saNo7SHNti8
+jk4kWmhbeYceUZSbu5y/8b1ixRx0Bchyd9Kqv/woOn/2A7b4YRvld9KMu90svQFNwwsjk35GRDzG
+mIQg/3IJePoavZKSzPnzk5w/vAaZf1k5BMFcA0HABoKADQQBG2ADARv/cEA3N1fExIwKDOxO5cbG
+jv7883JX53p0s07jjh9vuG5Hnma2kvhszYvaivlCAgK6UnMx46Kn0nDH+7sDOioqnJqGCiWVla0N
+D++v11/dVa2ioyNZ0e0oyMxWEuVdbaUc39BQRDVvRwU03PEmYVN0piAyLyU4Iz7KMdNSDmg65dKl
+KtW9bOVc+kmlUNvxz1VttgXUYyhDVjR14jFjfhIS0puOVP1pVbVie4qK0pctm6V6Vqv6Y7u6TDNb
+SZQV2sqji1XZqfgaSvNRVUDDHW8GNhsbHYoD+h+qVzyelWQdB3RFRVZoaJ9Jk8ba7Qup1UQLAp3L
+m0fp57p1i2mPUnRi4kRWSaqA2BWktRo//mma8GhjI71MM1tJlBXayqOL/fFRe3UOM0/xNZTmo6qA
+hjveFAd09j0O6CUH06zmgKZOkJ39Ln0RskeffOZKrVSeUWUP7zcVu4K0VtQPqDdoYyO9TDNbSapO
+byuPLpYlGu5onqaqjzQfVQU03PFwQP+/qNV69gyWlqLRxbW7gqta0dyDZiCqPKkCqj2qDTNbSVud
+1VYeXazGQk6aj2qPhjveDGyG5L3Ojzb2hjXWcUDTV5EyYaMeSfNa/lx3ukJS0s+okjduHKW5jdgV
+VLVSDqDlJs0c2K9s6v/NNyfpGrWxMbOVJLMGC7SVRxergY00H1UFNNzxZmCzt7m477pXGTlpdbZB
+OSnWcUBTR4yL+yktBKkU6pE0RebPdacrUCemSoaF9aV5s8oaJ9aKP72kJJP9yqbj9OW9ZUuaNjZm
+tpLY86zQVh5drAY20nxUFdBwx5t0J23/pdKRBXMeyIgfvslaDmgdRY3OvoD1fXzRWa3EHlwYVBML
+tpVYAQ13vL87oDsuyocGCqoAzf0uXCjrSK2s1krp6W/pWwErt5VYAQ13PMw1EARPGgQBGwgCNhAE
+bIANBGyADQQBGwgCNhAEbCAI2AAbCNgAGwgCNhAEbCAI2EAQsIEgYANsIAjYQBCwgSB/xMbk+MKi
+lLK8K0yzEsxaI2Ax5K3Y7L9U+mzh3Aczpz6VP0cagsPk+MIaNHpRmGY+mLVGwGLIK7Gp+mLXo+sT
+f1X1XsbHGZnH1kXIAj4ZGl9Y/EgV8lhVlreEaeaDWTtdByyGvBKbKMcMPrxg1okNYnhBQ+MLix+J
+IY9VUba8IkwzH8za6TpgMeSV2KiC2WY22MVgtk4j4wuLH4khj8X4l9YP0ywGs5ZGXoW8EpuB2Un8
+aLNof6o42vDSPb6wFBtVeEGxLOuHaRaDWQMb38FmzSfr+Rd1PJb1mri2MTS+sPiRGPJYLMv6YZr5
+YNZO1wGLIW+9k5b7ad6gnOT7//GViJyU8uZi6Q1o4+ILix+JIY+lZVk8TDMfzNrpOmAxhMedbUuM
+L+zORxZRu4NZawQshoCNS2nEF9b4yGpqdzBrjYDFELCBIGADQcAG2EDAxk+tnJQCArqGhfVlhhcj
+lvgaBk03LxAmTmBjLSsn22hoKKJaWeGOGUyc/uuAHlkw50H71Oj8N6QOaEtZOVWP4fnSpaZM3nwp
+ra1GcY2NO+lE+ig0tE9xsY2/QCUTmDj9ERt3XnlrNSsnqbo6hz1050uXmjJF86WqthrF0aBBO2mD
+vjWIPf4ClUxg4vRHbNx5wbqlrJws0VBG8zRVWVJTpmi+FOvmqrjW1gbiLSVlMvHDD3eqQmHi9HcH
+NEnqgLaalVO6DpGaMl2ZL/m6uSqOviN2715TV1dAEzwVNnyhMHH6HTbh2dP50WbJwTRxtLGglVOK
+jdSUqTJfinXTKI6QoOkZLevnzUtwhQ1MnP6IzcZGB++AfjwrSVzbWNPKKWIjNWWqzJdi3TSKy89P
+DQ4Oogt3OFa4wgYmTj+9k1Z0piAyL+V+W9yQvBnSO2nea+U08y45TJx4buMjVk5PzZd6CSZOYANB
+wAaCgA2wgSBgA0E+h43796a0bxbrWAGNbBG6FtgAG8+yRehaYGMgNtVffhSdP7unfWr0ZrkDmj1G
+7NkzuLY2j3UdqddYfOh5+XLNiBFPKE/NXcV9VXTggIP2BwR0jY6OZJYzVwWJVRKzRehaYGMUNqUX
+tz+yNoG5BJYdSg/PThbJocmJYlpRDCmi11jEJi1tHm3Y7Qv50K+iZZh/zMJ625EjmyMiHtMoSKyS
+mC1C1wIbo7AZnJvCe9JW12eKnjSp21L0GovYSI8RLcOKtmxJCw3ts2DBdBbiWaMgd3zTCF0LbDrT
+AU29hLqOk4sWqxEAlo8oKz1GtAzzonGGvt1pnVBUlK5RkLRKqmwRuhbYGOaAzrnHAb388CpxtElM
+nEjTLZrGhIf3Z11H9BpLI8rSNq0K6Fya1Wg4jhURLWzys23b6pCQ3k7XkWbFKonZInQtsDEKm8LT
++YoD+u2alQM2TBfXNtTzxo9/Oioq/MKFMn5FznuNpRFlabk8fPjgmJhRvPtYtAzzAwIdT72TsmL8
+uIo0K1ZJmi1C1wIbo+6klVzcOtQxI8gWF+WYabQD2ouE0LXABi4Bw93TcD0DGwgCNsAGAjbABoKA
+DQT5JTa6GDe9N9azyWGyKRPeZO1pnh1vXiu7vL17tGlH//DeWM8mh8mmnKOjI1nR7cOmg81rZZe3
+qc9temRMGbZplvS5zciRQ1kM6CtX9vfr9zD1DPeNyRruZl+K9WxomGzp1RUVpS9bNovHwCNzdweb
+18oub6u4BNatW8z6R1bWUmZRcd+YrOFu9qVYz4aGyXblxR4//mnmedWwpbsyd3ewea3s8raKJ419
+EdIGdRc2a3ffmKztbvaxWM8Ghcl25cWmliRyxBzcMXd3sHmt7PK2UAxoAubEie3Kt4v7xmRtd7OP
+xXpWPOD6hsnWuDqap1FjtmlLF7HpYPNa2eVtBjYRucn8aJNWZ5O+cSA/P5XaTnErum9M1nA3+1Ks
+Z0PDZGtcHdWZZlmubOntw8ad5rWyy9sMbEoubuX/u3Og7L872V0j6ls0meH/TdodY7KGu9mXYj0b
+GiZb++pKSjJd2dLbh407zWtll7epsQQesMUP2zjLSx3QnR7rWUeJsbA75eq0K2BllzdcAka5lfWS
+4nruuDRiYXfW1WlUwMoub2ADQcAGgoANBAEbCAI2XuWA5r3P7ViXMxty+0rXxbstdUAbIQSYhgNa
+h3usvA25E7GROqCNEAJMWwUb9u7O4Ix4V5FrdHFAa7iJRe+ztvWY/5S3IZsWq1p0BIsOaE8tydL9
+0jogwHTnY+POm6J1cUBru4nFx9jaByuf8jZk02JVi45gqQPaI0uydL+0DggwbQEHdPY9DuglB9MM
+ckBru4ldBZJ1dbDyKe+nNC1WtStHsMoB7ZElWbpfWgcEmPYjB7S2m1jDNKVxsIiNObGqXTmCVQ7o
+dliSRWykdQA2nYzNkLzX+dHG3rDGIAe0tptYZRbWPpj/lLchmxarWnQESx3Q7bAkqzakdUCA6c7H
+Zm9zcd91rzJy0upsg3JSDHJAa7uJVWZh7YP5T3kbsmmxqkVHsNQB3Q5LsmpDWgcEmLbEnbT9l0pH
+Fsx5ICN++Cbvc0AbZEO2oOHa+tZjPLfxJuloQ7a44dqJANPABoKADQQBGwgCNsAGAjbe7YA2+U4U
+LNLAxhcc0GZiA4s0sDEEm9xP8wblJD9gix+SN6O8udggB7T4kdTarHIWiwW1GUsaFmk/t0ibgc36
+Ext4B3RY1msGOaDFj6TWZpWzWCzIzVjSsEgDGwOxGZidxHvSfr3/NwY5oKX2ZNHarHIWiwW5GUsa
+FmlgY54DOrPBbpADWmpPFq3NqmzFgpyexJKGRRrYGIJNlGMGP9pkndhgkANa/EhqbVY5i8WC3Ikl
+DYu0P1ukzcCm6otdj65P/FXVe98PNcfWRRjmgBY/klqbVc5isSB3YknDIu3PFmnzHNDPFs4NtoAD
+2ogb07BIAxsfdwkY5CyGRRrYwFwDQcAGgoANBAEbCAI2aFYI2AAbCAI2EARsIAjYQBCwgSBgA2wg
+CNhAELCBIGADQcAGgoANsIGADbCBIN/Dpn2hKw8ccAQGdmcBaJRtVye24z+NlTC2CPEKbLw+mK0i
+FiZG3NYFGz6MLUK8AhtDXkL4oH1qdP4b0hAcugSzbWzcSfnQKaGhfYqLbewUlsRt5w9RZtgLPaOi
+wj/9dIfz/wK60q8KYO6HsXX6fYhXYGP2K291CWZLX/z19YW0QQT26tVDHEBUoYwSEl5MTX2TECUC
+6Vy2325fSHs0Qrm6CmPr9PsQr8DG7Bes6xLMtrW1gYhKSZlMDIhRv5yyeJNKQFplv7JHIxyuNIyt
+0+9DvAIbA4PZkgwKZkvg7d69pq6ugCZy7cZGte1+GFsmYANs9MEmPHs6P9osOZhmUDBb6uI0PaOl
++bx5Ce5gM2XKBLYUoQmYMklTHex+GFun34d4BTZ6YrOx0cG/qOPxrCSDgtkSeMHBQbSqcThWuIMN
+ZRUTM4qKoPX96dMl0oPdD2Pr9PsQr8BG5ztpRWcKIvNS7rfFDcmb0bnBbPUVH8YWIV6BDVwCHjzu
+ZGFsEeIV2AAbCAI2EARsIAjYQBCw8VzNzRUxMaMCA7sHBQXGxo5mRoFp02J0MSlL8zG0XNiigY0Z
+2ERFhVP3unv3DKmsbG14eH+nfi8M08jHiHJhiwY2+mBT/eVH0fmze9qnRm+WO6B79erBHND8I3/e
+sKyYjpU9NtsC6uWKVZm52kJCetORfL/n8xFd1UaUC1s0sNEBm9KL2x9Zm8BcAssOpYdnJ4vkVFRk
+hYb2mTRprN2+8PjxbeJDfcV0rHTfdesW81blxMSJzIyTnv6WarhQfhVd1UaUC1s0sNEBm8G5Kbwn
+bXV9ptSTRn2ROm529rv05c2eG/LdV2VMllqVXTmjlV9FV7UR5cIWDWzMc0Arun37VM+ewU7ZK7+d
+wtvA24eN4qo2olzYooGNHg7onHsc0MsPrxJHG1otKBObU6d2jRw5lDYCAroyu5c73Tcp6Wc0Wbpx
+4+iECc+osFHyEV3VRpQLWzSw0QGbwtP5igP67ZqVAzZMF9c2zc0VcXE/pQU6fVXHxo6+cmU/7WT/
+sexm921pqaNZVlhYXxZng89cyUd0VRtRLmzRwEafO2klF7cOdcwIssVFOWYa7YDevXsNGzRMllIu
+bNHAxmtcAvPnJ9HKhL7vaY504UJZ55YLWzSwgbkGgoANBAEbCAI2EORn2FzKzqIcIci3Rf1cT2wg
+yH+kAzZ3vvrbX46dZTqSXVS+esOu9zN3rrRT1hDkm/pwZ0ex4dPJkydra2tLS0t3ICH5eqJ+Tr2d
++vzVq1c7hM358+cJvqqqKsqxGAnJdxP1cOrn1Nupz7e0tHQIGxqtmpqaKC+isBwJyXcT9XDq59Tb
+qc+3trZ2CBvCjnIh/mjkqkdC8t1EPZz6OfV26vO3bt3qEDZ0PpFHGdFs7zISku8m6uHUz6m3U5+/
+fft2h7BBQkICNkhIwAYJqZPS/wIbJfKW3l0C5gAAAABJRU5ErkJggg==" />
+</span></p></div>
+</div>
+<div class="sect2">
+<h3 id="_essais_classe_compte">2.2. Essais classe Compte</h3>
+<div class="paragraph"><p>Ecrire le programme réalisant les actions suivantes en le testant pas à pas à chaque demande d&#8217;affichage (compilation/run) :</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Créer un programme Java <tt>ClasseEssaiCompte.java</tt> comportant une méthode main() sur le modèle décrit en <a href="#Preambule">Préambule</a>.
+</p>
+</li>
+<li>
+<p>
+Déclarer deux variables <tt>cUn</tt> et <tt>cDeux</tt> "de type <tt>Compte</tt>" : références vers un <tt>Compte</tt>.
+</p>
+</li>
+<li>
+<p>
+Appliquer la méthode <tt>afficher()</tt> à <tt>cUn</tt>. Que se passe-t-il ?
+</p>
+</li>
+<li>
+<p>
+Créer un <tt>Compte</tt> à l&#8217;aide de <tt>cUn</tt> au nom de "Jean". Créer un autre <tt>Compte</tt> à l&#8217;aide de <tt>cDeux</tt> au nom de "Marie".
+</p>
+</li>
+<li>
+<p>
+Afficher <tt>cUn</tt> et <tt>cDeux</tt>. Afficher aussi les références par <tt>identityHashCode()</tt>. Conclusion …
+</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>System<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">identityHashCode</span></span><span style="color: #990000">(</span>cUn<span style="color: #990000">));</span>
+System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>System<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">identityHashCode</span></span><span style="color: #990000">(</span>cDeux<span style="color: #990000">));</span></tt></pre></div></div>
+</li>
+<li>
+<p>
+Essayer la syntaxe suivante :
+</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>cUn<span style="color: #990000">);</span></tt></pre></div></div>
+<div class="paragraph"><p>Quel est le résultat ? (voir l&#8217;aide sur toString()).</p></div>
+</li>
+<li>
+<p>
+Déposer 1€ sur <tt>cUn</tt>. Déposer 1000€ sur <tt>cDeux</tt>. Le code suivant pourra vous aider
+</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">try</span></span> <span style="color: #FF0000">{</span>
+        cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">deposer</span></span><span style="color: #990000">(</span> <span style="color: #990000">...</span> <span style="color: #990000">);</span>
+        cDeux<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">deposer</span></span><span style="color: #990000">(</span> <span style="color: #990000">...</span> <span style="color: #990000">);</span>
+<span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">CompteException</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>e<span style="color: #990000">);</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+</li>
+<li>
+<p>
+Afficher <tt>cUn</tt> et <tt>cDeux</tt> pour voir les soldes.
+</p>
+</li>
+<li>
+<p>
+Retirer  1€ de <tt>cUn</tt>. Retirer 1000€ de <tt>cDeux</tt>.
+</p>
+</li>
+<li>
+<p>
+Afficher <tt>cUn</tt> et <tt>cDeux</tt> pour voir les soldes.
+</p>
+</li>
+<li>
+<p>
+Essayer de retirer <tt>-100</tt> euros du compte <tt>cUn</tt>. Que se passe-t-il ?
+</p>
+</li>
+<li>
+<p>
+Essayer de déposer <tt>-100</tt> euros sur le compte <tt>cDeux</tt>. Que se passe-t-il ?
+</p>
+</li>
+<li>
+<p>
+<strong>Affecter</strong> la variable <tt>cUn</tt> à la variable <tt>cDeux</tt> (<tt>cDeux = cUn;</tt>).
+</p>
+</li>
+<li>
+<p>
+Afficher <tt>cUn</tt> et <tt>cDeux</tt>. Afficher aussi les références par <tt>identityHashCode()</tt>. Conclusion …
+</p>
+</li>
+<li>
+<p>
+Déposer 1000€ sur <tt>cUn</tt>. Afficher <tt>cUn</tt> et <tt>cDeux</tt>.
+</p>
+</li>
+<li>
+<p>
+Déposer 2000€ sur l’objet <tt>Compte</tt> <strong>ayant pour propriétaire "Marie"</strong> que vous avez créé au début de cet exercice. Y arrivez-vous ?
+</p>
+</li>
+<li>
+<p>
+Affecter à <tt>cUn</tt> la valeur <tt>null</tt>.
+</p>
+</li>
+<li>
+<p>
+Essayer l&#8217;instruction suivante :
+</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>cUn<span style="color: #990000">);</span></tt></pre></div></div>
+<div class="paragraph"><p>Quel est le résultat ?</p></div>
+</li>
+<li>
+<p>
+Appliquer la méthode <tt>afficher()</tt> à <tt>cUn</tt>. Que se passe-t-il ? Expliquer.
+</p>
+</li>
+</ol></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_exercice_l_8217_agence_bancaire">3. Exercice : l&#8217;agence bancaire</h2>
+<div class="sectionbody">
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Note" src="data:image/png;base64,
+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" />
+</td>
+<td class="content">
+<div class="paragraph"><p>Lire chaque section en entier avant de commencer.</p></div>
+</td>
+</tr></table>
+</div>
+<div class="sect2">
+<h3 id="_classe_agencebancaire">3.1. Classe AgenceBancaire</h3>
+<div class="paragraph"><p>Étudier en détail la documentation de la classe <tt>tps.banque.AgenceBancaire</tt> (cf. webetud). En particulier, étudier si les méthodes sont des observateurs/accesseurs/getters ou des modifieurs/transformateurs/setters.</p></div>
+<div class="paragraph"><p>Repérer les méthodes générant des exceptions.</p></div>
+<div class="paragraph"><div class="title">Diagramme UML de l&#8217;interface de la classe AgenceBancaire</div><p><span class="image">
+<img alt="images/classeAgenceBancaireInterface.png" src="data:image/png;base64,
+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" />
+</span></p></div>
+</div>
+<div class="sect2">
+<h3 id="_premiers_essais">3.2. Premiers essais</h3>
+<div class="paragraph"><p>Ecrire le programme réalisant les actions suivantes en le testant pas à pas (compilation/run) :</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Créer un programme Java <tt>ClasseEssaiAgenceBancaire.java</tt> comportant une méthode main() sur le modèle décrit en <a href="#Preambule">Préambule</a>.
+</p>
+</li>
+<li>
+<p>
+Déclarer une variable <tt>monAg</tt> de type <tt>AgenceBancaire</tt> : une référence vers une <tt>AgenceBancaire</tt>.
+</p>
+</li>
+<li>
+<p>
+Créer un objet <tt>AgenceBancaire</tt> à l&#8217;aide de <tt>monAg</tt>.
+</p>
+</li>
+<li>
+<p>
+Afficher <tt>monAg</tt>.
+</p>
+</li>
+<li>
+<p>
+Afficher le nombre de comptes de <tt>monAg</tt>.
+</p>
+</li>
+<li>
+<p>
+Créer un objet <tt>Compte</tt> de numéro "0101" et propriétaire "prop1" à l&#8217;aide d&#8217;une variable de type <tt>Compte</tt>. Créer deux autres comptes (numéros "0202" et "0303") avec un même propriétaire "prop2".
+</p>
+</li>
+<li>
+<p>
+Ajouter ces 3 comptes créés à l&#8217;AgenceBancaire <tt>monAg</tt>. Le code suivant pourra vous aider :
+</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">try</span></span> <span style="color: #FF0000">{</span>
+        c <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span> <span style="color: #990000">...</span> <span style="color: #990000">);</span>
+        monAg<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">addCompte</span></span><span style="color: #990000">(</span>  <span style="color: #990000">...</span> <span style="color: #990000">);</span>
+<span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">ABCompteNullException</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span>e<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getMessage</span></span><span style="color: #990000">());</span>
+<span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">ABCompteDejaExistantException</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span>e<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getMessage</span></span><span style="color: #990000">());</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+</li>
+<li>
+<p>
+Afficher <tt>monAg</tt>.
+</p>
+</li>
+<li>
+<p>
+Rechercher à partir de <tt>monAg</tt> le compte "0101" et l&#8217;afficher.
+</p>
+</li>
+<li>
+<p>
+Déposer 1000€ sur ce compte.
+</p>
+</li>
+<li>
+<p>
+Rechercher à nouveau à partir de <tt>monAg</tt> le compte "0101" et l&#8217;afficher (copier/coller du code précédent). Bilan ?
+</p>
+</li>
+<li>
+<p>
+Rechercher à partir de <tt>monAg</tt> le compte "9999" et l&#8217;afficher.
+</p>
+</li>
+<li>
+<p>
+Rechercher à partir de <tt>monAg</tt> les comptes du propriétaire "prop2" et les afficher.
+</p>
+</li>
+<li>
+<p>
+Déposer 2000 € sur le compte de numéro "0202" et 3000 € sur le compte "0303".
+</p>
+</li>
+<li>
+<p>
+Rechercher à nouveau à partir de <tt>monAg</tt> les comptes du propriétaire "prop2" et les afficher (copier/coller du code précédent). Bilan ??
+</p>
+</li>
+<li>
+<p>
+Rechercher à partir de <tt>monAg</tt> les comptes du propriétaire "ABSENT" et les afficher.
+</p>
+</li>
+<li>
+<p>
+Essayer d&#8217;ajouter le compte de référence <tt>null</tt> à <tt>monAg</tt>. Résultat ?
+</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">try</span></span> <span style="color: #FF0000">{</span>
+        c <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">;</span>
+        monAg<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">addCompte</span></span><span style="color: #990000">(</span>c<span style="color: #990000">);</span>
+<span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">ABCompteNullException</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span>e<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getMessage</span></span><span style="color: #990000">());</span>
+<span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">ABCompteDejaExistantException</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span>e<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getMessage</span></span><span style="color: #990000">());</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+</li>
+<li>
+<p>
+Essayer de supprimer le compte "0202" de <tt>monAg</tt> AG.
+</p>
+</li>
+<li>
+<p>
+Essayer de supprimer le compte "9999" de <tt>monAg</tt> AG.
+</p>
+</li>
+<li>
+<p>
+Créer un objet <tt>Compte</tt> de numéro "0101" et propriétaire "prop99" à l&#8217;aide d&#8217;une variable de type <tt>Compte</tt> et l&#8217;ajouter à l&#8217;AgenceBancaire <tt>monAg</tt>.
+</p>
+</li>
+</ol></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_programme_utilisateur_pour_une_agence_bancaire">4. Programme utilisateur pour une agence bancaire</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_objectif">4.1. Objectif</h3>
+<div class="paragraph"><p>L&#8217;objectif est d'écrire un programme permettant de gérer les comptes d&#8217;une <tt>AgenceBancaire</tt>. L&#8217;application permettra :</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+de créer/supprimer des objets Compte(s) de l&#8217;AgenceBancaire,
+</p>
+</li>
+<li>
+<p>
+de voir un compte de l&#8217;AgenceBancaire, de voir les comptes d&#8217;un propriétaire de l&#8217;AgenceBancaire,
+</p>
+</li>
+<li>
+<p>
+de débiter/créditer les compte(s) de l&#8217;AgenceBancaire,
+</p>
+</li>
+<li>
+<p>
+de lister tous les comptes de l&#8217;AgenceBancaire,
+</p>
+</li>
+<li>
+<p>
+de quitter l&#8217;application.
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>Pour commencer, vous pouvez reprendre le début de code suivant contenant :</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+la méthode main(),
+</p>
+</li>
+<li>
+<p>
+une méthode pour afficher le menu de l&#8217;application,
+</p>
+</li>
+<li>
+<p>
+une méthode de "temporisation" attendant la frappe de n&#8217;importe quel caractère.
+</p>
+</li>
+</ul></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #000080">import</span></span> java<span style="color: #990000">.</span>util<span style="color: #990000">.</span>Locale<span style="color: #990000">;</span>
+<span style="font-weight: bold"><span style="color: #000080">import</span></span> java<span style="color: #990000">.</span>util<span style="color: #990000">.</span>Scanner<span style="color: #990000">;</span>
+
+<span style="font-weight: bold"><span style="color: #000080">import</span></span> tps<span style="color: #990000">.</span>banque<span style="color: #990000">.</span>Compte<span style="color: #990000">;</span>
+<span style="font-weight: bold"><span style="color: #000080">import</span></span> tps<span style="color: #990000">.</span>banque<span style="color: #990000">.</span>AgenceBancaire<span style="color: #990000">;</span>
+<span style="font-weight: bold"><span style="color: #000080">import</span></span> tps<span style="color: #990000">.</span>banque<span style="color: #990000">.</span>exception<span style="color: #990000">.</span>ABCompteDejaExistantException<span style="color: #990000">;</span>
+<span style="font-weight: bold"><span style="color: #000080">import</span></span> tps<span style="color: #990000">.</span>banque<span style="color: #990000">.</span>exception<span style="color: #990000">.</span>ABCompteInexistantException<span style="color: #990000">;</span>
+<span style="font-weight: bold"><span style="color: #000080">import</span></span> tps<span style="color: #990000">.</span>banque<span style="color: #990000">.</span>exception<span style="color: #990000">.</span>ABCompteNullException<span style="color: #990000">;</span>
+<span style="font-weight: bold"><span style="color: #000080">import</span></span> tps<span style="color: #990000">.</span>banque<span style="color: #990000">.</span>exception<span style="color: #990000">.</span>CompteException<span style="color: #990000">;</span>
+
+<span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">ClasseEssaiAgenceBancaire</span> <span style="color: #FF0000">{</span>
+
+        <span style="font-style: italic"><span style="color: #9A1900">/**</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * Affichage du menu de l'application</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900"> ag    AgenceBancaire pour récupérer le nom et la localisation</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         */</span></span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">afficherMenu</span></span><span style="color: #990000">(</span><span style="color: #008080">AgenceBancaire</span> ag<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Menu de "</span> <span style="color: #990000">+</span> ag<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getNomAgence</span></span><span style="color: #990000">()</span> <span style="color: #990000">+</span> <span style="color: #FF0000">" ("</span> <span style="color: #990000">+</span> ag<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getLocAgence</span></span><span style="color: #990000">()</span> <span style="color: #990000">+</span> <span style="color: #FF0000">")"</span><span style="color: #990000">);</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"c - Créer un nouveau compte dans l'agence"</span><span style="color: #990000">);</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"s - Supprimer un compte de l'agence (par son numéro)"</span><span style="color: #990000">);</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"l - Liste des comptes de l'agence"</span><span style="color: #990000">);</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"v - Voir un compte (par son numéro)"</span><span style="color: #990000">);</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"p - voir les comptes d'un Propriétaire (par son nom)"</span><span style="color: #990000">);</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"d - Déposer de l'argent sur un compte"</span><span style="color: #990000">);</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"r - Retirer de l'argent sur un compte"</span><span style="color: #990000">);</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"q - Quitter"</span><span style="color: #990000">);</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Choix -&gt; "</span><span style="color: #990000">);</span>
+        <span style="color: #FF0000">}</span>
+
+        <span style="font-style: italic"><span style="color: #9A1900">/**</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * Temporisation : Affiche un message et attend la frappe de n'importe quel caractère.</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         */</span></span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">tempo</span></span> <span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
+                <span style="color: #008080">Scanner</span> lect <span style="color: #990000">;</span>
+                <span style="color: #008080">String</span> s<span style="color: #990000">;</span>
+
+                lect <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Scanner</span></span> <span style="color: #990000">(</span>System<span style="color: #990000">.</span>in <span style="color: #990000">);</span>
+
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Tapper un car + return pour continuer ... "</span><span style="color: #990000">);</span>
+                s <span style="color: #990000">=</span> lect<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">next</span></span><span style="color: #990000">();</span> <span style="font-style: italic"><span style="color: #9A1900">// Inutile à stocker mais ...</span></span>
+        <span style="color: #FF0000">}</span>
+
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> argv<span style="color: #990000">[])</span> <span style="color: #FF0000">{</span>
+
+                <span style="color: #008080">String</span> choix<span style="color: #990000">;</span>
+
+                <span style="color: #009900">boolean</span> continuer <span style="color: #990000">;</span>
+                <span style="color: #008080">Scanner</span> lect<span style="color: #990000">;</span>
+                <span style="color: #008080">AgenceBancaire</span> monAg <span style="color: #990000">;</span>
+
+                lect <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Scanner</span></span> <span style="color: #990000">(</span> System<span style="color: #990000">.</span>in <span style="color: #990000">);</span>
+                lect<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">useLocale</span></span><span style="color: #990000">(</span>Locale<span style="color: #990000">.</span>US<span style="color: #990000">);</span>
+
+                monAg <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">AgenceBancaire</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Caisse Ep"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Pibrac"</span><span style="color: #990000">);</span>
+
+                continuer <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">true</span></span><span style="color: #990000">;</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">while</span></span> <span style="color: #990000">(</span>continuer<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                        ClasseEssaiAgenceBancaire<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficherMenu</span></span><span style="color: #990000">(</span>monAg<span style="color: #990000">);</span>
+                        choix <span style="color: #990000">=</span> lect<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">next</span></span><span style="color: #990000">();</span>
+                        choix <span style="color: #990000">=</span> choix<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">toLowerCase</span></span><span style="color: #990000">();</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">switch</span></span> <span style="color: #990000">(</span>choix<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                                <span style="font-weight: bold"><span style="color: #0000FF">case</span></span> <span style="color: #FF0000">"q"</span> <span style="color: #990000">:</span>
+                                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"ByeBye"</span><span style="color: #990000">);</span>
+                                        ClasseEssaiAgenceBancaire<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">tempo</span></span><span style="color: #990000">();</span>
+                                        continuer <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">false</span></span><span style="color: #990000">;</span>
+                                        <span style="font-weight: bold"><span style="color: #0000FF">break</span></span><span style="color: #990000">;</span>
+
+                                <span style="font-style: italic"><span style="color: #9A1900">// A CONTINUER ICI</span></span>
+
+                                <span style="font-weight: bold"><span style="color: #0000FF">default</span></span> <span style="color: #990000">:</span>
+                                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Erreur de saisie ..."</span><span style="color: #990000">);</span>
+                                        ClasseEssaiAgenceBancaire<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">tempo</span></span><span style="color: #990000">();</span>
+                                        <span style="font-weight: bold"><span style="color: #0000FF">break</span></span><span style="color: #990000">;</span>
+                        <span style="color: #FF0000">}</span>
+                <span style="color: #FF0000">}</span>
+
+        <span style="color: #FF0000">}</span>
+
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+</div>
+<div class="sect2">
+<h3 id="_développement_de_l_8217_application">4.2. Développement de l&#8217;application</h3>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+A vous maintenant de rajouter et traiter les <tt>case</tt> qui manquent. Traiter une par une dans l&#8217;ordre chaque option du menu et tester à chaque fois.
+</p>
+</li>
+<li>
+<p>
+Pour l&#8217;option  <tt>"p - voir les comptes d&#8217;un Propriétaire (par son nom)"</tt>, programmer une méthode statique :
+</p>
+<div class="paragraph"><p><tt>public static void comptesDUnPropretaire (AgenceBancaire ag)</tt></p></div>
+<div class="paragraph"><p>réalisant le traitement associé.</p></div>
+</li>
+<li>
+<p>
+Pour l&#8217;option  <tt>"d - Déposer de l&#8217;argent sur un compte"</tt>, programmer une méthode statique :
+</p>
+<div class="paragraph"><p><tt>public static void deposerSurUnCompte (AgenceBancaire ag, String numeroCompte, double montant)</tt></p></div>
+<div class="paragraph"><p>réalisant le traitement associé.</p></div>
+</li>
+<li>
+<p>
+Pour l&#8217;option  <tt>"r - Retirer de l&#8217;argent sur un compte"</tt>, programmer une méthode statique :
+</p>
+<div class="paragraph"><p><tt>public static void retirerSurUnCompte (AgenceBancaire ag, String numeroCompte, double montant)</tt></p></div>
+<div class="paragraph"><p>réalisant le traitement associé.</p></div>
+</li>
+</ol></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Note" src="data:image/png;base64,
+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" />
+</td>
+<td class="content">
+<div class="paragraph"><p>Concernant les entrées sorties : voir aide sur le serveur webetud &#8594; classe Scanner.</p></div>
+</td>
+</tr></table>
+</div>
+<div class="paragraph"><p>Exemple d&#8217;exécution possible :</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>Menu de Caisse Ep (Pibrac)
+c - Créer un nouveau compte dans l'agence
+s - Supprimer un compte de l'agence (par son numéro)
+l - Liste des comptes de l'agence
+v - Voir un compte (par son numéro)
+p - voir les comptes d'un Propriétaire (par son nom)
+d - Déposer de l'argent sur un compte
+r - Retirer de l'argent sur un compte
+q - Quitter
+Choix -&gt; c
+
+Num compte -&gt; 1212
+Propriétaire -&gt; Prop12
+
+Ajout effectué
+Tapper un car + return pour continuer ... .
+
+Menu de Caisse Ep (Pibrac)
+...
+Choix -&gt; c
+
+Num compte -&gt; 1212
+Propriétaire -&gt; PropAutre
+
+Numéro de compte existant
+Erreur ajout Compte déja existant (1212) dans l'agence Caisse Ep(Pibrac)
+
+Tapper un car + return pour continuer ... .
+
+Menu de Caisse Ep (Pibrac)
+...
+Choix -&gt; d
+
+Num compte -&gt; 1212
+Montant à déposer -&gt; 456
+
+Solde avant dépôt: 0.0
+Montant déposé, solde : 456.0
+
+Tapper un car + return pour continuer ... .
+
+Menu de Caisse Ep (Pibrac)
+...
+Choix -&gt; d
+
+Num compte -&gt; 1212
+Montant à déposer -&gt; -89
+
+Solde avant dépôt: 456.0
+Erreur de dépot, solde inchangé : 456.0
+Erreur de somme négative lors d'un dépot sur 1212
+
+Tapper un car + return pour continuer ... .
+
+Menu de Caisse Ep (Pibrac)
+...
+Choix -&gt; s
+
+Num compte -&gt; 4545
+
+Numéro de compte inexistant
+Erreur suppression Compte inexistant (4545) dans l'agence Caisse Ep(Pibrac)
+
+Tapper un car + return pour continuer ... .
+
+Menu de Caisse Ep (Pibrac)
+...
+Choix -&gt; s
+
+Num compte -&gt; 1212
+Suppression effectuée
+
+Tapper un car + return pour continuer ... .
+
+Menu de Caisse Ep (Pibrac)
+...</tt></pre>
+</div></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_exercice_je_devine_tu_devines_la_devinette_8230_sait">5. Exercice : Je devine, tu devines, la devinette &#8230; sait</h2>
+<div class="sectionbody">
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Note" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAIAAADYYG7QAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAACihJREFU
+WEftmAtQU1cax6u1uq2OM1arLlbF9YXKqLuz7UwfttUuS7tt6a7WjrRVa5XtCrooVBRBXvIssAjK
+Q1FQeSUQHgLySAIh4SGElwlJSEKSe5N7b573FRXd7WO7X2BEZ3c7lJSd6c70m//cOfeew7k//uc7
+59yTGd99990TP6kAoJ9UPPGTonEN189AkzgwNYe4XK6vr++zYwEFuJ12g6cAFB4evnv5gsHDu9Uf
+vKb8nXf7K55wCw+nl+mHAoEZ8PqR/b6qd34r27x4aNOzyi2LNC8thYccDmcamX4oEAyQ7POd2j1v
+DHk/q/z1c+oXlmhe+qVum0fv79ZB1T/HYlqwfigQJA0a/JEKUF5con3ZQ7/teWT7CqOPJ35gB1R9
+880340w/HmtyIFjGZ8yY8cwzz+j3vDryiof+9eeRHStMvp74O6st76+1Re6Fqn9b6qH9zJkzn3os
+5s6dC9yLxwIK8+bN+z47JweC3p12+RvbXpC+uQ59cyXmu4p4dwxllxd58CV95MHFixcOdJQgyjrS
+KLxna7/v6HxAdrlE9TzULVeB7v070w96QPcvXLjw+7ycHAj+T4eu7FzcLshfo6+n5U/rbbs3kP4b
+2dA/UMlHwnxf+8WcpyRVn8tbgo3SU3b5GUoZRauiaVXsIw3H05ovmZEsVpcLYnQ5Hh4eMMr/1aTJ
+gZ5++mmHjqvtijng/yowyd/zdgTtYJIPI1EBAb/xCly9cPbsJ4XcQ7cFwYbuMJssEoBIZQyliqfU
+KROitZmMLo81XGGRQriuWrXqq6++chNo/vz5Nh1PJ03q5Ud5rfV44bn5C+bNBb29Zln25iVNLy7d
+usmjpmCftOGI7tYp8yDQxJHKs9Rw0oRoTTq4AhxOpMiJlrBokZeX14MHD9wEWrJkicNQjQ6kyyWJ
+eWn7Z8+eBRCG7ctBUJg1a2ZwwLaS7I8lVUFqSTg+GEOqEklVEqVOozVZE2L0+SzQGDlOI9eJcry9
+vUdHR90EWrFiBYXUYfLzyq60jrrItJjdWzYte2rWzFlPzoTJtf3lNRHBPgUZ/nxuYG/jF/qeaIss
+0a5MoTQZE6JHshl9AYuWOU0VTlOl08TbsmXLvXv33ARavXo1gzXiirzhnswefvzN0uPXLxzISdr9
+rs+mdb96zs/XOyb07auZe5u5R6TNJxXiKKQv0SJPdQxnAseEGMN11ljuNFU7TTVw3bp1q/tA69at
+Y3EBoSrQ9V8cFKe1Vp+uuRZYnP1pVvyu08G/DwvyyUz4sDT3Mz43eEAQqe46a+hNMg2mEkP/CcRz
+YjVOrBaYNm/efPfuXTcd2rBhA0u0WjXFiOyKojOzpzlOwAutKwqqKvgL91JASc7B0tyA6mtB4pqw
+fkGUQhI/0p2Cy88RiguPHDIUM2glY+KzploWq2exWsgh94HWr1/P4iKrpgRXFmn7cmSSlO6mM5Ib
+YS2VIQJeSAvvC1H1yc76iO6GM4r2RGVHsr433XQ7y6LIcwEZisc1BgQooJsMVr9x40b3gZYvX37H
+LLZrSy3qYvT2ZU3POZk4cbAlto8f1ceP7hfG9gvj5OJE9a1UZCATGThvlGVDwtk1hZS+hEKqx0Uj
+PABiMCGLNTOmRpj27gMtW7bsjkVC6rkWdRmhKkQGsnXSdG136nBXiqY7VSf9m7Y7XSvN0Pdnobez
+CcVFRWcGvzKKNFSP65bwwk1eslVXR5sEDN7K4AIGa4K8dB8IHLpr6yINPLu+wqouKb10XNuTUXU1
+pJ4TSwwXm9WlZVfCjwfurC4KwxT5UmHqxXPHQ4/sloryKPRm6tnAimtxnfycpJjDDM6nAYhoZUyC
+tWvXug+0aeP6ew4pbaqjjTV2Lfd8yuepMfuKLp4ouXSSUxDeL87OSgkk1Jz0hCNS0eXW+qzC3IiK
+ogQSvQkKO/aRA6mnjI3X8iJpQsjgYoZoAyxYSqYHyKbhcAvCPvvY16opA52N2Jeb/tdBSa5Zw0WG
+Ss5GHHDoq3pEl6tKk4HGgTYnRh8OOfpJTkY4MlRHE6L/CVBbfWJI0K5xoAupQV8c/UDWkQdABnlx
+zKn9LqDWXE5hNABdy4torEyz6WvFjdnaQd70AMGO8/iQOfS16t6rR//8/jhQxdUISKCY8H0l+eGR
+Jz7pbbsMQP2SS4W5pwDoQtpxSVO2yyrkpkLKGQOSMITkRw2Z2Wx++63XR8lBJ9FMmxootMahKzcM
+5tt1vIeqxFXcAcklTFXuMNSQSC2urrzBSYa8seoar12MzvwyNCPpmKAuh8YggdoZswQK7udQX1/f
+Xn+/UUruJFqdkJUYMFXB95pdW2TTXLdqrtu0JXZ9jV1XbdffINE6Eq0nUWjTRBn5j2QSUlgrjUto
+ooPGOwDI09PTzb0MjjgnQw6O0kqnWeIk2hismUJvkIYKh45j05ZZ1LBallk0HIuGaxupgPEiDS4s
+CpgAyNQyIRqTMIBCdLiuuAQ+0NwESkhISEsKuc8MOy0drFnMYHx4n0NXadeVAwc+XGZSgqBQbtFW
+glUOA5gEDoE9wkcytblQiFuMudt1xTtgYXQTKCDgUHlx2iijdlo6WUJMYwIYFIe+2jbCI4YrjEou
+Iucgcq5RySPUNTZdrcPQQKJNpAuohcLEE6KJTsbSw1r7WEsvY+6CzdUdoJaWljVr1jiI26OMhjV3
+MJiIMvFJpN5huGEdqSbUVaiiwiArB6EKF5B1BIBgPWyC4wdpEk2IwjoYSzdrlrLWfqelD0xyE6io
+qCj8RMAoPcwSXYy5ncJFFCogkUaHoR7MMGtqTKpKZKgCBAW4tenqHAg4xKfQVvCGIaSPC7wBGtbc
+y+BdsNvfuXNnCt9D44emEydOtAkrR2k1Q3RBJlKmVhJtJpEGALLr68APgMDV1SAowK1dXz8G1Owa
+L5OYIjonBMPEmnvAJ5q4RWHtMMucTufUgIBp6dKl9yigcc0LVV/lUHdZ6ZXYzJRjh/a/d3DvO8cO
+fxh96sD1vNMDkoLB9gJABFDAHRsyAWUSwfSeEJC55hfWLpdWcAqTFyxYwLLs1IC+/fbblStX3iWV
++Tkxl86f2em340hgwOmTxxMS4hLiY69cvnjh/LnExNj4szEf7fmj31sv79m549Cn78WeDigriFP0
+lLnS6KHk3eX8utycc+EnQz71/+Ct7a+/mJ+fP+Uhg5MlHIDgzLto0SI/P7+cnJyqqio+ny8QCEQi
+UXNzMxTa2tog8RsaGpqamqA2NDQ0KirK399/zpw5cLzcsMFrXJDCPj4+R48ezczMFAqFMplMo9Hc
+v39/Cg5B06+//hrOcjRNw+6BoqjBYEDGQq/Xj4yM6MZi/CGGYdDGbrdTFAXtYSwYhrFYLI6HAVXQ
+AMfx8ZYkSYI90L87QNC71WolxgIK0Nf4W+GVUAX9QsCXDSwq8B//47GAh7AxjwdUQQPI4onGcI6G
+lJga0LT8+uRGJ5P/2OBGpz/mT34Gmsy9nx36v3PoX1H4mIUGLCOSAAAAAElFTkSuQmCC" />
+</td>
+<td class="content">
+<div class="paragraph"><p>Lire chaque section en entier avant de commencer.</p></div>
+</td>
+</tr></table>
+</div>
+<div class="sect2">
+<h3 id="_principe_du_jeu">5.1. Principe du jeu</h3>
+<div class="paragraph"><p>Nous allons développer un programme de jeu de Devinette travaillé en TD. Au jeu de la "devinette" :</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+On suppose une valeur entière à trouver, tirée au sort par le programme, entre une borne basse (10&lt;&gt;20) et haute (40&lt;&gt;50).
+</p>
+</li>
+<li>
+<p>
+L&#8217;utilisateur chercher la valeur par essais successifs, la machine répondant à chaque coup si le nombre recherché est supérieur ou inférieur au nombre soumis.
+</p>
+</li>
+<li>
+<p>
+Le jeu s&#8217;arrête quand la valeur est trouvée.
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>Exemple d&#8217;exécution :</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>Coup : (13-49) : 33 // <img alt="1" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABjSURBVHja
+VY6xDcAwCAS/pPQaLim9QmajdOk2I2SNrMEIlARIoigU8Cek/4e7zdHaWOYOVwaoA6wOCw05Y7FB
+gE0tIWQ+sBcwKM8qoD/wB5wGL8hjfdzWrh01GRp1hInGjDoXwHgsFuzBVLQAAABDdEVYdFNvZnR3
+YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
+dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
+ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" />
+Plus Haut ... Coup : (13-49) : 40 // <img alt="2" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABvSURBVAgd
+BcGhAcJADADAky8rsZXIyK7AGkgksiu8RNYyAiswAhIbiYwMd7rrsS3LdlS3zuC8EtkqrJ/8vRdR
+Js+PtSZTMHe+L8IAUXeGAZd8DYbArB3C5FbXiBNThSMzcxelM4DI1l0zxtge1f0HVNk1YLFij6sA
+AABDdEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlz
+dGljLmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAODBlYWU1MjljOTRhN2Y0N2Rl
+Y2NmYWRhMjhhY2I5ZGblb7ENAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" />
+Plus Haut ... Coup : (13-49) : 49 // <img alt="3" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABxSURBVAgd
+BcGhAYNAEEXBJ1duG8gvr5XYSGRaiFyJTAtI2kAisSeRK39msHsbmePXNp4ixgg0TYu8r/tM1BR8
+ZqRXKAS5kF5BBMA+r4AgAMa7VwgEr4LzAFFQj8bzhaJF7t17oMZzgQA0jd2lSG1t/wFRuDVjQOMG
+MAAAAEN0RVh0U29mdHdhcmUAQCgjKUltYWdlTWFnaWNrIDQuMi44IDk5LzA4LzAxIGNyaXN0eUBt
+eXN0aWMuZXMuZHVwb250LmNvbZG6IbgAAAAqdEVYdFNpZ25hdHVyZQA4MGJiZGEyNzI2ZGRhY2U4
+YWI4YTAxZjU5ZGUyZWJkYgj9DnUAAAAOdEVYdFBhZ2UAMTJ4MTIrMCswhG27fQAAAABJRU5ErkJg
+gg==" />
+Plus Bas ... Coup : (13-49) : 48
+Plus Bas ... Coup : (13-49) : 41
+Plus Haut ... Coup : (13-49) : 47
+Plus Bas ... Coup : (13-49) : 44
+Plus Haut ... Coup : (13-49) : 46
+Bravo, en 8 coups.</tt></pre>
+</div></div>
+<div class="colist arabic"><table>
+<tr><td><img alt="1" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABjSURBVHja
+VY6xDcAwCAS/pPQaLim9QmajdOk2I2SNrMEIlARIoigU8Cek/4e7zdHaWOYOVwaoA6wOCw05Y7FB
+gE0tIWQ+sBcwKM8qoD/wB5wGL8hjfdzWrh01GRp1hInGjDoXwHgsFuzBVLQAAABDdEVYdFNvZnR3
+YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
+dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
+ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></td><td>
+Saisie utilisateur de 33
+</td></tr>
+<tr><td><img alt="2" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABvSURBVAgd
+BcGhAcJADADAky8rsZXIyK7AGkgksiu8RNYyAiswAhIbiYwMd7rrsS3LdlS3zuC8EtkqrJ/8vRdR
+Js+PtSZTMHe+L8IAUXeGAZd8DYbArB3C5FbXiBNThSMzcxelM4DI1l0zxtge1f0HVNk1YLFij6sA
+AABDdEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlz
+dGljLmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAODBlYWU1MjljOTRhN2Y0N2Rl
+Y2NmYWRhMjhhY2I5ZGblb7ENAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></td><td>
+Saisie utilisateur de 40
+</td></tr>
+<tr><td><img alt="3" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABxSURBVAgd
+BcGhAYNAEEXBJ1duG8gvr5XYSGRaiFyJTAtI2kAisSeRK39msHsbmePXNp4ixgg0TYu8r/tM1BR8
+ZqRXKAS5kF5BBMA+r4AgAMa7VwgEr4LzAFFQj8bzhaJF7t17oMZzgQA0jd2lSG1t/wFRuDVjQOMG
+MAAAAEN0RVh0U29mdHdhcmUAQCgjKUltYWdlTWFnaWNrIDQuMi44IDk5LzA4LzAxIGNyaXN0eUBt
+eXN0aWMuZXMuZHVwb250LmNvbZG6IbgAAAAqdEVYdFNpZ25hdHVyZQA4MGJiZGEyNzI2ZGRhY2U4
+YWI4YTAxZjU5ZGUyZWJkYgj9DnUAAAAOdEVYdFBhZ2UAMTJ4MTIrMCswhG27fQAAAABJRU5ErkJg
+gg==" /></td><td>
+&#8230;
+</td></tr>
+</table></div>
+</div>
+<div class="sect2">
+<h3 id="_questions">5.2. Questions</h3>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Créer un programme Java <tt>ClasseEssaiDevinette.java</tt> comportant une méthode main() sur le modèle décrit en <a href="#Preambule">Préambule</a>.
+</p>
+</li>
+<li>
+<p>
+Étudier en détail la documentation de la classe <tt>tps.jeux.Devinette</tt>. En particulier, étudier si les méthodes sont des observateurs/accesseurs ou des modifieurs/transformateurs. Repérer les méthodes générant des exceptions.
+</p>
+</li>
+<li>
+<p>
+Imaginer comment construire un programme permettant de jouer à un jeu de devinette en utilisant un objet instance de la classe <tt>Devinette</tt>.
+</p>
+</li>
+<li>
+<p>
+Essayer, à la fin du jeu précédent, une fois la partie finie (gagnée), de jouer encore un coup (<tt>soumettreCoup()</tt>). Que se passe-t-il ?
+</p>
+</li>
+<li>
+<p>
+Modifier le programme pour jouer successivement 3 parties de devinette. A partir du code main() déjà écrit, on pourra construire une méthode
+</p>
+<div class="paragraph"><p><tt>static jouerPartie (Devinette d);</tt> permettant de réaliser une partie puis l&#8217;appeler depuis le <tt>main()</tt>.</p></div>
+</li>
+</ol></div>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes"><hr /></div>
+<div id="footer">
+<div id="footer-text">
+Dernière mise à jour 2014-02-14 19:17:32 CET
+</div>
+</div>
+</body>
+</html>

@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
 <meta name="generator" content="AsciiDoc 8.6.6" />
-<title>BPOO - DEROULEMENT SEANCE PROF TP 1 - Exercices</title>
+<title>BPOO - DEROULEMENT SEANCE PROF TP 2</title>
 <style type="text/css">
 /* Shared CSS for AsciiDoc xhtml11 and html5 backends */
 
@@ -735,7 +735,7 @@ asciidoc.install(2);
 </head>
 <body class="article">
 <div id="header">
-<h1>BPOO - DEROULEMENT SEANCE PROF TP 1 - Exercices</h1>
+<h1>BPOO - DEROULEMENT SEANCE PROF TP 2</h1>
 <span id="author">Dut/Info-S2/M2103</span><br />
 <div id="toc">
   <div id="toctitle">Table des matières</div>
@@ -862,19 +862,19 @@ cellspacing="0" cellpadding="4">
 <tbody>
 <tr>
 <td align="left" valign="top"><p class="table">PreReq</p></td>
-<td align="left" valign="top"><p class="table">TD1. S1, notion de type, variables simples, tableaux.</p></td>
+<td align="left" valign="top"><p class="table">CM1 sur les objets, TD2 sur la manipulation d&#8217;objets.</p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">ObjTP</p></td>
-<td align="left" valign="top"><p class="table"><strong>Apprendre à utiliser un debugger - Comprendre le fonctionnement d&#8217;un programme</strong>.</p></td>
+<td align="left" valign="top"><p class="table">Utiliser des objets - Lire une documentation.</p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">Durée</p></td>
-<td align="left" valign="top"><p class="table"><strong>2 séance</strong> de 1,5h sur machine</p></td>
+<td align="left" valign="top"><p class="table"><strong>2 séances</strong> de 1,5h sur machine.</p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">À rendre</p></td>
-<td align="left" valign="top"><p class="table">Construire un fichier (txt, word) contenant les question (copier/coller) et les réponses.</p></td>
+<td align="left" valign="top"><p class="table">Code source à déposer : essais de comptes, essais d&#8217;AgenceBancaire, application de gestion d&#8217;AgenceBancaire, jeu de Devinette.</p></td>
 </tr>
 </tbody>
 </table>
@@ -936,77 +936,137 @@ RkWOKkVXIjB5X2ac8f8HA74K8I0SaJkAAAAASUVORK5CYII=" />
 </td>
 <td class="content">
 <div class="paragraph"><p>Pour les profs :</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+But du TP : Manipuler des objets sans disposer du code source. Lire une documentation (param, return, throws, &#8230;).
+</p>
+</li>
+<li>
+<p>
+Idée de déroulement :
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Séance 1 : les comptes et les tests AgenceBancaire
+</p>
+</li>
+<li>
+<p>
+Séance 2 : l&#8217;appli sur l&#8217;agence.
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+Les try catch ont été vus en S1. Les aider sans doute en leur donnant la structure de base.
+</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>        <span style="font-weight: bold"><span style="color: #0000FF">try</span></span> <span style="color: #FF0000">{</span>
+                cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">deposer</span></span><span style="color: #990000">(</span><span style="color: #993399">1</span><span style="color: #990000">);</span>
+                cDeux<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">deposer</span></span><span style="color: #990000">(</span><span style="color: #993399">1000</span><span style="color: #990000">);</span>
+        <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">CompteException</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>e<span style="color: #990000">);</span> <span style="color: #008080">ou</span> System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>e<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getMesage</span></span><span style="color: #990000">());</span>
+        <span style="color: #FF0000">}</span></tt></pre></div></div>
+</li>
+<li>
+<p>
+Les aider au tableau au début si ca coince.
+</p>
+</li>
+</ul></div>
 <div class="paragraph"><p>Au départ :</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
-Présenter le support d&#8217;Intro + le démarrage de Eclipse.
+Attention au dézippage du fichier au bon endroit &#8594; dans le répertoire de travail.
 </p>
 </li>
 <li>
 <p>
-Faire la première partie (premier debug pas à pas) avec eux pas trop vite : manipulations Eclipse
+Faire avec eux le préambule pour installer les fichiers et démarrer le premier fichier .java à construire.
 </p>
 </li>
 <li>
 <p>
-Si ce n&#8217;est pas le cas, leur faire bouger le panel Variables de Eclipse en mode debug à droite du code et agrandir pour voir un maximum de code et de variables
+Il faut obtenir l&#8217;arborescence :
 </p>
 <div class="ulist"><ul>
 <li>
 <p>
-On peut même déplacer ce panel à droite pour avoir un seul panel qui prend toute la hauteur de la fenêtre.
+Rép de travail
 </p>
+<div class="ulist"><ul>
+<li>
+<p>
+<strong>ClasseEssaiCompte.java</strong>
+</p>
+</li>
+<li>
+<p>
+tps
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+banque
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Compte.class
+</p>
+</li>
+<li>
+<p>
+AgenceBancaire.class
+</p>
+</li>
+<li>
+<p>
+exception
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+CompteException.class
+</p>
+</li>
+<li>
+<p>
+&#8230;
+</p>
+</li>
+</ul></div>
 </li>
 </ul></div>
 </li>
 <li>
 <p>
-Leur faire bien arrêter les programmes (icône "carré rouge") en fin de pas à pas.
+jeux
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Devinette.class
+</p>
+</li>
+<li>
+<p>
+&#8230;
 </p>
 </li>
 </ul></div>
-<div class="paragraph"><p>Ensuite :</p></div>
-<div class="ulist"><ul>
-<li>
-<p>
-Si ils ont du mal : faire un exercice avec eux.
-</p>
 </li>
-<li>
-<p>
-Faire du pas à pas tout le temps.
-</p>
+</ul></div>
 </li>
-<li>
-<p>
-Si pb pour comprendre les boucles, décomposer les for en 3 lignes (affectation/test/incrémentation)
-</p>
-</li>
-<li>
-<p>
-Le sujet est peut être long (première année). <strong>Il faudrait dans tous les cas traiter les exercices sur les objets</strong>.
-</p>
-</li>
-<li>
-<p>
-Leur faire remarquer :
-</p>
-<div class="ulist"><ul>
-<li>
-<p>
-les variables qui apparaissent au fur et à mesure des initialisations,
-</p>
-</li>
-<li>
-<p>
-les tableaux qui ont des valeurs "(id=&#8230;)" &#8594; numéro d&#8217;objet unique (identifiant)
-</p>
-</li>
-<li>
-<p>
-les objets qui ont des valeurs "(id=&#8230;)" &#8594; numéro d&#8217;objet unique (identifiant)
-</p>
+</ul></div>
 </li>
 </ul></div>
 </li>
@@ -1020,7 +1080,7 @@ les objets qui ont des valeurs "(id=&#8230;)" &#8594; numéro d&#8217;objet uniq
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2014-02-13 13:45:41 CET
+Dernière mise à jour 2014-02-14 19:17:32 CET
 </div>
 </div>
 </body>

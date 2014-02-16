@@ -1,0 +1,25 @@
+@startuml
+
+class Compte {
+	- String proprietaire
+	- String numCompte
+	- double debits
+	- double credits
+	- int nbDebits
+	- int nbCredits
+	
+	+ Compte() 
+	+ Compte(String pNumCompte, String pNomProp) 
+	
+	+ String getNumCompte()
+	+ String getProprietaire()
+	+ double soldeCompte()
+	+ void setProprietaire(String pNomProp)
+	+ void retirer(double pSomme)
+	+ void deposer(double pSomme)
+	
+	+ void afficher()
+	+ String toString()
+}
+
+@enduml
