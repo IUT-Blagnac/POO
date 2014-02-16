@@ -1,25 +1,60 @@
 @startuml
-
-class Produits {
-	idPro
-	designation
-	poids
+class Voyages {
+	libelle
+	destination
+	depart
+	dateDepart
+	dateArrivee
+	prixBase
+	__
+	calculerPrix()
 }
-class Fournisseurs {
-	idFour
-	raisonSociale
+
+class TourOperator {
+	nom
 	adresse
 }
 
-Produits "0..*" -- "0..*" Fournisseurs
+class Options {
+	libelle
+}
 
-(Produits, Fournisseurs) . Fournir
+Voyages "1..*" --- "1" TourOperator : Proposer
 
-class Fournir {
-prixAchat
+Voyages "0..*" -- "0..*" Options
+
+Voyages "1" -- "0..*" Commandes : Commander
+
+class Commandes {
+	date
+	etat
+}
+
+class Voyageurs {
+	nom
+	prenom
+	sexe
+	dateNaissance
+}
+
+class Clients {
+	nom
+	adresse
+	telephone
+}
+
+Commandes "1..*" -- "1..*" Voyageurs : Concerner
+
+Clients "1" -- "1..*" Commandes : Passer
+
+(Voyages, Options) . PayerOption
+
+class PayerOption {
+	montant
 }
 
 hide class circle
 hide class methods
 
 @enduml
+
