@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="generator" content="Asciidoctor 0.1.4">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BCOO - Sujet TD 1</title>
+<title>BCOO - Sujet TD 2</title>
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary { display: block; }
@@ -425,7 +425,7 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 </head>
 <body class="article">
 <div id="header">
-<h1>BCOO - Sujet TD 1</h1>
+<h1>BCOO - Sujet TD 2</h1>
 <span id="author" class="author">Dut/Info-S2/M2104</span><br>
 </div>
 <div id="content">
@@ -439,17 +439,16 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">PreReq</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.  Je sais programmer, j&#8217;ai conscience qu&#8217;il faut réfléchir avant de se lancer dans le codage. J&#8217;ai des notions de structure de données.
-2.	Je connais les concepts principaux du Diagramme de Classes : classe, attribut, attribut dérivé, identifiant, association, composition, multiplicité, classe-association.
-3.	Je connais les conventions d’écriture du Diagramme de Classes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.	Je sais définir les concepts suivants : classe, attribut, attribut dérivé, identifiant, association, dimension d’une association, multiplicité, catégories d’association, attributs d’association, classe-association, rôles d’une association.
+2.	Je connais les conventions d’écriture du Diagramme de Classes</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ObjTD</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Comprendre ce qu&#8217;est un <strong>modèle</strong>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Je réalise un Diagramme des Classes à partir d’une description textuelle. Je suis capable de modéliser les données manipulées par  une organisation</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Durée</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>1 ou 2 séance(s)</strong> de 1,5h (selon le niveau initial en UML)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>1 séance</strong> de 1,5h (si TD précédent fini)</p></td>
 </tr>
 </tbody>
 </table>
@@ -457,261 +456,97 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 </div>
 </div>
 <div class="sect1">
-<h2 id="_rappel_du_cours">1. Rappel du cours</h2>
+<h2 id="_diagrammes_simples">1. Diagrammes simples</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_enonc_s">1.1. Enoncés</h3>
 <div class="paragraph">
-<p>Dans le diagramme de classe suivant, repérez les différents éléments :</p>
+<p>Réalisez les diagrammes de classes permettant de capturer les contraintes suivantes (chaque énoncé est indépendante,
+sauf mention contraire) :</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><code>Classe</code></p>
+<p>Des sociétés (employeurs) emploient des personnes (employés). On souhaite conserver la date d&#8217;embauche ainsi que le salaire actuel
+de chaque employé de chaque société, ainsi que la relation qui relie une personne (subalterne) à son supérieur hiérarchique direct éventuel.</p>
 </li>
 <li>
-<p><code>nom de classe</code></p>
+<p>Comment modifier le diagramme précédent pour pouvoir stocker les différents salaires (historique)?</p>
 </li>
 <li>
-<p><code>attribut</code></p>
+<p>Une maison peut être louée par une personne et est possédée par un propriétaire (une personne également)</p>
 </li>
 <li>
-<p><code>association</code></p>
-</li>
-<li>
-<p><code>cardinalité</code></p>
+<p>Une revue parait chaque semaine et est disponible dans plusieurs points de ventes. On souhaite suivre la quantité vendue chaque semaine pour chaque point de vente.</p>
 </li>
 </ol>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAP4AAAFQCAIAAAAQlVQsAAAjI0lEQVR42u2dCVgUR/7+MWrWExAxgCceKCpREe9gFMED/iR4haghIfFOYkJE3dUookYFFxUNUVSi4BHkEEFEIJwCCgISiAoqHnhxCYqAyCG4/++m9tc7OzMMCAxz9Ps+9fj0lD09XdSnq96q7m+Xyr8giJdSwZ8AAvoQBPQhCOhDENCHIKAPQUAfgoA+BAF9CAL6EAT0IQjoQxDQhyCgD0FAH4KAPgQBfQgC+hAE9CEI6EMQ0IcgoA9BQB+CgD4E9CEI6EMQ0IcgoA9BQJ8XqikpK4xNk59U86IclQL0W0NEm4/KOPlJTy+moVKAfuuhf8t1d2Gsj2zTrb27gT7Qb230ibw3b/6QbSqI8QH6QJ+/6Ifv9UhMTExPT8/Ozs7NzS0tLUUdAX1eoO+3ZU9wcHB0dHRKSgrRX1RUhDoC+rxA/+SGnd7e3oGBgUQ/tf3U8KOOgD4v0D+xfoeXlxfRT20/OZ+cnBzUEdDnBfq+jrsJ/ePHj/v5+VHDT54HdQT0ZYO+i8vq7t3VCgqi2Mdjx7aMH2/w+vVVoA/0lRx9onz0aP1PPplO2zk5F957TyMzMwCtPtDnheG5etW7bdt3/P1dTEzG7tz5HZdPV8LMmRPV1bvq6+v6+OximbNmTaJtU9NxCxfOoo+3bgVOmjRSQ0Ptiy8sZ8824XYD+kBfMby+vb3Nu++2HzNmGGd16urSRo0asnTpnMLCaF/fXZ06daArhPKHDNEdMKDXmTO78/Mj6SNdA0uWzH7+PC4m5ghdAIcObQL6QF+R0E9N/U1FReWHHxYJdgWUc/9+CPs4ZYrR998vZOi7u29kmS9eJLRv3446B/Zx8mTDw4eBPtBXKPSnTh1jbv4BNfw3b55lOWfP7lFT68LtYGe3iPwMQz8oyJVlhocfENwH6AN9BUPfy2sbszrUtJOVZ5mXL3tRq09uh32kC2PFinlC6JPnadOmDXM+tbVXR4zQA/pAX2HQf/bsoo6OJhke2r52za9du7aBgXtpu7LySp8+Wrt325Ppz8o6S617SMjPQuhTMjTUnzPHhHI+/XQGHcfDYzPQB/qKgf7y5XOZiWdp9erP+vfv9erVFdpOSDjWt6+2rm7Pjh3/5uCwjO0ghD5dLdQhkF8KCNhjZDT0t992An2gr0heX0LKy4usqUltcDeyRm3bvvPHH6eBPtBXEvQlp6VL5yxbNnfTpqXUG8yfb4ZbWkCfL+jfvh3k7+9y4MCGqKjDuJsL9HmEPh5kAPpAH+gDfaAP9IG+nKB/23U3kSfbxN7IAPSBfquiLz8J6AP91m3197nI/D08t11dgD7Qh9cH+kAf6ENAH+hDQB/oQ0BfOuhv2bKypCS+OSg/efL7P//5A9AH+gqGvqpq54cPw5qD/tWr3gMG9AL6QB/oA32gryDoHzu2ZdiwAWPGDDt/fj/LHDFC7+jRLXp6fcPDD9TVpfXv36u8/DLlR0cftraezvYJDt5PxNMXly6dA/SBvkKib29vU1Z26dy5fZqa6rW1V1mmre1HL14ksJeRqKiolJb+e5uuDWPjUeyLvXq9l5x8sqoqeceOVUAf6Cu24dHS6n7lygmWyb1ZRCz66ek+Awf2huEB+sqD/q1bgUKZYtE/e3aPoaE+0Af6io1+aOgvtJGR4TtoUB+xY99u3VSzss4S/R98MIqh//x5XIcO71LPQBfGP/7xJdAH+gqJ/urVn02fPoH45l6UKYS+o+MKHR1NGtGSree8/q5ddpRJQ+GtW78G+kBf8dBn97MqKpKqq1Mk8MoMj1CibzXmHQ1AH+jLI/p4kAHoA32gD/SBPtAH+kAf6AN9oA/0gT7QB/pAX9HR373bfvx4A3193fDwAywnKMh1wIBeQ4f2/+Yb6ylTjFjm778fNDAYRPnTpo29e/e8hMwRI/QCA/eOHq2vp9c3IsId6AN9eUS/oiKpS5dOT5/GsCUh2L/a2t3j449VV6fs3Pkdd6+qXz8dyqyrS3Ny+t7GxkJCpqpqZwsL48LC6EOHNs2cORHoA305bfWnT59gZDT00iVP9jEh4Ri11kIP51y5coJ7WC03N4Lgrqy8IjaToc96ADoU9QlAH+jLKfqvX191d9/IrYMSGXmIrI4Q+tHRh4cPH8gyi4piO3XqUFZ2SWym4EMQdDkBfaAvp+hXVSWzdVMOHvxx0SJz2iCfo6bW5fRp54wMXyurqawHoMtDS6s7e4zZy2vbnDkm9WUCfaCvGOjfvx/St6+2iclYGumyVbQoJSYenz3bxNJysqfn1nHjDLgV5jQ11elj//69UlJOScgE+kBfMQwPsytiZyG3bFnJVkLnrBG3jqLkTExuAn3FQF8offjh6PnzzSwsjM3Mxl+/7o95faDPF/TJ7t+4cSY3NwK3tIA+v9DH3VygD/SBPtBXFvSxqgrQ5yn6WFUF6PO11ceqKkAfXh9eH+gDfaAP9IE+0Af6QB/oA31lRr/xq6pI3vPly8SiotgHD0KBPtBXDPQbv7SEhD1ra68uWTL7+fO4w4c3XbjgBvSBPl/Qd3BYduSIA3uQc8oUozt3goE+0FcA9P39XYSiyMXGmzP0Fy6cdfq0M8vZv//ve/asoY0hQ3QJepbp5raeZQJ9oC/v6ItGkdcXb07oe3hsnjp1DHvv/qBBfbKzz+XmRnBvJ6cUGvrLvHmmQB/oKwD6QlHkEuLNCf2ysktdu3a+d+889QympuMoPyzsAPfOEkp//ukneCUAfaAv716fiydsMN78q68+dnRcQU07ex8/ZQ4e3I87IF0SVlZTgT7QVzz0G4w3Jy+ko6PZs2ePqqpk9l80TmCv8WER7rt22QF9oK946DcYb06Jmvl162y5g6xZ8/mpUzvYAIBcUGZmANAH+vKOfn1JQrw5/deAAb1u3w7icmpqUmk0XFqa4Om5lVuVCOgDfYVEX0Ly93cxMRkrujBRQUEUW4AR6AN95UT/2bOLz5/H4RkeoM879PH4GtBXPPRv7a03Njcv/LcWDMCVcDTE5gJ9GaCP2FygzzvVvCh/ejGNpfC9Hn5b9pzcsPPE+h2E4L/TnFW+g6z+s90SyUd/ju//+1rSPp4ngD7Qb20RagQcYUfw+f4ln7GLfO22+bacfL52+PcxJQroA/3WVmJiYnBwsLe3txeTm7tP1yleHke9WlBHj/loTDt+8LDkvegc6EzofHJyclAvQF/qSk9Pp4Y2MDCQyKN29+Sqzd6TbY+3tOiYpxbZS9rB25vOgc6Ezic3Nxf1AvSlLnIXKSkpxBy1uOQ3fEd96vfdFr8W17qdPnpWEv6ffp3Ogc6EzqeoqAj1AvSlLmpiiTZqa8lpRJ0L8VMziQoJi25p0TF9OxpHng2ubwf6dToHOhM6n9LSUtQL39F//Pixk5PThg0b0tLSGjV1U1Nz6dKl7du3N54e2pNaWQKOHHaS869hZl9nS0cxX25O3Ope3//Sr9M50JnQ+VRVVYFdXqP/8OHDvn37Evf79+/X0dGJioqSvP+rV680NDQMDQ1VVFQKCgqa8Itxs+weno6QUnEKIpNjzVYBSqDfsFasWPHVV1+x7aNHj77//vuS93/z5k1lZWVmZmbT0K/MLw7SNn/zulZKxaEjB/e2fJmTBy6BfgPq2rVrQEAA23769CkBfe3atQa/1WT073kEJdk4SrVE1zYduu16GlwCfUki10sEX7lyhctp3759UFCQ9NCPmbqSPIlUC1WcdJ1+BVwCfUm6c+eOUDNPncDx48elhD65HXIj0nM7TDl37/1TZ3LpzRygCfTrVUVFBREcHx/PPtbW1tLHyMhIKaF/3/N86kpn6RWHxiFVVVVxcXHLjM1vupyiMQnoBPr1Sk9Pz93dnW1nZGS0a9cuLy9PSujHzbJ7EnhRemXJzs4ePnz4tm3bHL9dPUxVy8vLC3QC/Xq1f/9+IyOj6upq2l68eLG1tTXLp+vByclJdLvJ6Fc8LiS3U1tZLe0SOTg4ODs7n3nf+sX1u6AT6Neruro6Il5XV9fAwGDSpEnPnz9n+dOnTx86dKjoNnkkdXV1GhIQ+qqqqlpaWo38obvuASlLd0i7ONTSr1mzJiwszMJgHHke0An0G1BhYaG0n2SMMl5WGJsm7YJQ9/Xy5UvaeHA5LXyUDegE+rIeTz8uDNSc0QpuR1ARY2zheYC+jHXb9bRU53bE6rrjkWubDuGPD/RlqVizVa3gdkS7mlB9a/zxgb7M9DInrxXuZIkV2X3c2wL6MtNNl1Ot73a4n85Yux9VAPRlIxpu5p5PkFWHEzJorkw6HKAPt5MXoG4qQ/hkMswA+tC/spy8EhdslOEJZLv5/bn+ACoC6MtgoCnV53YaVGV+8XldK3geoN+qenH9buvfyRJVzNSVxUnXUR1Av/V02/V0Kzy306BuupySh9MA+jxSxBjbvLBEmZ9GVVFJcG/L1+WvUCNAvzVUfuexrO5kifU8sppgBfq8U5aT1x8/7JWTk7nnEZS2ygWVAvRbQ+GjbORncCmTR0eBPh9VejMnVN9arqYU4y3tcW8L6EtdmT8dlbcbSU8CLyZ/uQ1VA/SlqzCDhSXpt+XqlF6XvyLPU1NShtoB+lJ0O/L50FjC7HU03kUFAX1p6dqmQ/IZHnXf8zxeRgv0pet25DMoltxOgLppZX4x6gjot7wIenkOC4y3tKe2H9UE9Hnkdpge+UfHzbJDNQH9lhc1+fI2tyOo2srq4N6WmOcB+i0sgl7+X4KQZOP44GQoKgvot6QU4tU3uecT4HmAfsu7Hfl/4Rl5Hv8OxhWPC1FfQL9lxOZ2FCIUMGXpjrvuAagyoN8ykvO5HUE98o/GokNAv8UU3NtSnud2BEVdU6DmDLyYDei3gIoSMkIGzVWgEybPk+WEZVeAfrOVtspFsV7xVxCZHGawEBUH9JvrH8jtPEvNUqBzrq2sDtI2L7/zGNUH9JvldqgFVbjXPKWudL7ueATVB/Sbrj9+2Jv501GFO+3ipOuKNT4B+nIncg6yupP15s2bmpqaJn89VN+6xed5mnlKLX4coC9dt9OcI3h7ex8RJ7YgnGSdOXOmW7duzemvmux5QkJC0tLSJJxSc8rV/KIBfakrbZVLM93O2rVrF/8lAwODHj16LP4/cSuZSo+PkvTbTR6lLFiwwNXVVcIpNadcQF8BdF7XqqXmSezt7SdMmPBWX2k+Hy0eUyZ6Sk0oF9BXALcTZbyMbX/++ef79u1buXIlVVhpaenTp0/nzp1L2/r6+jExMdw+P//8808//dS3b99JkyYlJydLRkTsQYqKiqysrDQ0NAwNDallbSYfZHgE723R6U2ePFlTU9PMzIydHrXTe/bs4Xb49ttv3d3dWVnc3Nwac0qi5SouLqava2lpaWtr29racv1AyxYN6Et3bue262m2PXXqVOrWnZ2ds7Oz6+rqCJ2lS5fSNXDw4MH333+f20dHR+e77767ceMGMT1nzhzJiIg9yKxZs2bOnPngwYMnT55YWlo2k4+XOXmCY5WAgICMjIyqqqrPPvvs008/pZxjx47179+fBp0MzY4dO9JPs7I4Ojo25pREyzVjxgxTU9OsvzRt2jRzc3NpFA3oS9ftcFHehMLy5cvZ9r1791RUVAIDA6lqaSzYtm3b/Px8ts/Chf/h7Ndff+3Tp48ERMQe5NGjR5R54cKFFnQFkRMWiz59RE07EU8b5eXlnTt3vnjx3wtkUPNPdHLlZeg3eEpC5bp//z7tHxwc/J/5saAg+vjw4UNpFA3oS0WFsWmc2xFqBcmcUC1OnDjxg/9TQkKC0D4nT57s3bu3BETEHoQQpMy8vLwW5IM8D/dm3HPnzo0fP370X9LV1WWZX3zxBdkS2iDfRd2CUHkbPCWx5eL2pwaePsbFxUmjaEBfKkpd6Zzt5icW/bt371It/v7770JfeSv0xR6EGv42bdokJia2IB/keVhcJVm1du3aRURE0LanpyeHPsFKDT+1x2TNX79+LVSWBk9JqFw3b96kckVFRbGP4eHh9PHOnTvSKBrQb3nVVlaf6TJFMNZJEGsSeVkTExNmi1++fFlWVva26Nd3ECMjIxoj0tAwNTV15MiRLcIH2f3ipOuXL18m9MmQEIU2Njbckcno9+vX77333tuwYYPY8ko+JaFy0UCI9qexBBWnpKTE2tp67NixbCwhjaIB/RbWI/9oQbcjij7RY2FhQQZ94MCBWlpa1KE3AX2xB6HWV1VVlTJp4Ovm5tYifNx0OcU8D428O3To0LNnTw8Pj+7du7ORLsnBwYGaZBp+iC2v5FMSLRd1L4S7mppaly5d6L+oyW/McYC+XCjJxpGb25EgGiMWFBQ087dED0Kuo/mHFdSL63eDtM3Zva3i4mJqmFk/08g7r007JfohavWbfxyg33p6Xf4qQN2ULLIyFSpk0FwsOgT0G3Y7EWNslaxQ1x2PUFcGoIG+JCUu2EjmWMkKVX7nMQ3csdAi0H+LuR2lUeSExXgxG9CvV/c8gpT1TR5ZTl7UoYFpoC9esWarlHVtEurKqEPDQotAX4wq84v9OxhXFZUoawGjjJdh0SGgL0Z33QOU+12tVMCE2euANdAX43Yeno5Q4gK+Ln9FnkeJuzWg3xQREAHqpkpvhWkQj0WHgL6wGbg8f73SFxMLLQJ9MW7nkX+00hezpqQsSNsciw4B/f+oMr+YD26HCQstAv3/6p5HEH9u9zwJvIhFh4D+f90OAcGTwmKhRaD/P26HVyg0MiAB6Cu57roH8O3hlrywRCw6BPT5MrcjqDeva6mjw0KLvEaf3E6g5gwePtSVtsoFCy3yGv1sNz9+hi8VJWRETlgMxPmLfpTxMv7M7QjpvK4VPA9P0aeKJ8urcIsFtZQy1u5XvlBMoN8o3fMISv5yG29rtzjpuvIF4AP9Rilull1eWCJva5ctDqlkr10B+g2rqqiEKp63bofzPNc2HQLo/EL/rntA6kpnnlfws9Ss8FE2AJ1f6MdMXVkYm4Y6pq5PVktEAn0ZqOJxYciguTx3O0zNWWgR6Cuespy8/lx/ABX8r78WWjyva4VWgC/ok8EtSshABTMFaZuLLjoE9JVQZG3Rzgnq2qZDGWv34++g/OiTtU1ZugO1y+lZahaNfPB3UH70qZr5fCerPgeI+S4lR7846Tq3xAgk2BNyCy1Cyok++VrUsahe5uQF97bEy2iVGX0a4Cr9bEZNTc2lS5e2b99eWlramP0fPHhA+0dOWAzPo7ToU9Uq/X37V69eaWhoGBoaqqioNLhm25s3b6qqquLi4jZu3HjXPSBl7T5Ar5zop650znLyUu46I5orKyszMzMbg352dvbw4cO3bdu2a9eu8WPG/qA5GqMgJUSfjGyAuilP7t00En0mBwcHZ2fn58+fx82yg+dRQvTzwhL5M3vdePS9vLzWrFkTFha2aNGi266nseiQEqKf/OU2/jyn1Xj0q6ur2drR1OrzPGJTOdFnb57hT0TSWxkeQcVb2mNxaaVCvzjpOq9iMpqMPk/WGeAR+mmrXDJ/Ospn9N3d3Z2cnES3hVSZXxykbY57W0qCPq/irysqKtTV1bt27Uroq6qqamlpsfzp06cPHTpUdFtUCbPX4RknJUGfb26nmbrnEUSOH+grg1JXOvPK7TRTbEU9nr+AXxnQZ3ey8LaZt1Ligo28fR+j8qBPthVu52318HQEzxdaVAb0k7/chhVE3lZsocXX5a+AvqIK64M3xyii1VdgFUQmw+1AfESf3E62mx8qEuIX+uR2AtRNS2/moCIhZUOfRdbV97+P/KOxTqDQ4LUwNk2xUs2LcqD/PxKMrKOPlZWVYt0OVg0RFJHkozJOsdLTi2lA/38kGFk3ceJELy8v0QkK/w7GWCtKFP1brrsLY33kP93auxvo1ysusk70v54EXowyXgbcRdEnqt68+UP+U0GMD9AXL8HIOtH/vTx/PeZ2lAD98L0eiYmJ6enp1M/n5uY28vUqSo6+YGSd6NxOkLY5zx/AUg70/bbsCQ4Ojo6OTklJIfqLioqAviTd9zzP80dQlAb9kxt2ent7BwYGEv3U9lPDD/QlKcnGEW5HOdA/sX4HOVuin9p+cj45OTlAv16xR6/gdhqDflVV8q1bgdXVKfXxt2uX3Y0bZ2SIvq/jbkL/+PHjfn5+1PCT5wH6cDvNRX/TpqVDh/afMsVIXb3r+fP7xfI3ZIhuUJAr0FcMXZ6/Hk8pN4g+teXdu6uVl1+m7Zqa1JcvE1sT/cmTDU+d2gH0W1KV+cWBmjPgdhpE/88//d55553k5JOCtOXkXLC0nNytm+p772kcPPgjQ/+333YuXDiLcuzsFrHdZs2a5O/vYmFhTN3F/PlmZWWXWP7EiSNSU39j26am4y5e/JXtfO7cPsEjbN68/G9/e1dHR3Pw4H65uRH0r2B69uwi0G+K7nkEJcxeB8obY3gWLTLv0OFdV9e1dXVp9LG29urIkYPJ/1y75ldcHPvoURhDv08fLXf3jXSREK/M91Pm8OEDz57d8/vvB3V1ex46tIkdsEePbvHxx9j2gAG9LlxwE3uE0tKEESP0DhzYkJ8fST9K/7I0Y8ZEE5Oxr19fBfpNUbylPXl9UN7IYe7Ond+9+277efNMyfBQg62iohIdfVjI8Li4rGbbxOvJk9tZpo/PLpb5j398+ckn0yWjL3oEI6OhQoaH9undW6uwMBqGpymqrawmt4OYrLea3Lxy5YS2dvd162ypFScL9OrVlfq8/pgxwzj0ucxjx7ZQDyAZfdEjCKEfE3OkU6cOdCbw+k0Xn8NJm4Y+JUfHFcQiGRJq9ZOSTrwV+uvXf7V8+VwO/dhYD9qork7R0uouGX22QYmcFQ0DONcE9CHpop+ZGZCR4cssPg1tP/10Rk1NKmFKw9anT2NomwagEtBfs+ZzGiEUFcWOHq3v5/dPtsP48Qb79q0jK29r+xH5KAnoz5077ccfl7AbC/StxYutMMMDtRL6J05sJzppkDpoUJ+PP57y4EEoZaan+wwe3K9z546amupbt34tAX0aHujr66qrd7WymlpRkcR2oGOqqnam71ITLtnwhIb+Qi09tf3h4Qeoq6Gv6OhospSdfQ7oQ9I1PNS037x5VnRGPz8/UsL9XY5marCLi2OF/ouORvmNmdqnn6BOg4/z+rINlpNV2Jt8ev23Ta1zi1dp0ZdtsJysAiCUA/3IyEN5eZFAv1nV0PrBcrINe1MO9PEMj0JWg2zD3oA+0Jcx+rIKewP6QF/G6Msq7E0e0L/tupv+CPKfmDUF+koS9iYP6CtWAvpKEvYmF63+PheFeA/PbVcXXqPfmAC5X35ZL/TkiYSDyNZBwuvD64uvhgULZnbvriZ4O7Axd08mTzY8fHhTI2/BAH2gL3foP3t2UU2ti7p61zNndgN9oM8j9Mm3WFtP//rrTz766ENBaj09t4rGwt25Ezxp0kgNDbUvvrA0MhrKoZ+Tc2HmzIm0s77+f8MpgD7Ql2v0ieALF9zItbdr1zY/P5KjVmws3IwZE7/5xvrFi4TQ0F+6dVNl+XV1aaNGDVm6dE5hYbSv765OnTpcveoN9JuA/pYtK0tK4oF+a1RDRoZvz549WFwmNdhcSJvYWLhXr6507Pg39pytoOEh0FVUVO7fD2H5U6YYff/9QqDfBPRVVTs/fBgG9FujGuzsFg0d2t/e3oaSoaG+gcEgUa/CxcJFRx8mSyPq9alzoNECl0/HnD3bBOgDfflFv6oqmcVG7N27ltKuXXbvvPNOSsqp+mLhbtw406ZNG3I7LN/YeBRD//JlL2r1udBmc/MPVqyYB/QbRH/3bvvx4w2osw0PP8ChTw3NsGEDxowZxr2dijwnNUkDBvSaNm3s3bvnWSb9YSmHmi3yn9TNAv23qwZ/f5fRo/UFi21qOu7bb60lxMLp6GiSKaquTvHw2Ny5c0fm9Ssrr/Tpo0UVSftnZZ2lHiAk5GegLxn9ioqkLl06PX0aw4IVOfSp+y0ru3Tu3D5qlVh+v3468fHH6G/r5PS9jY0F219buztlUkXs3PkdXQNA/+2qwcLCeP/+vwsW28trm4aGGqFM1NrafiQaC3fw4I/t27cj6MnNc60+pYSEY337atOAmAYDDg7LMMPTmFZ/+vQJRkZDL13yFGt4tLS6X7lygtLAgb1ZTm5uBO1AtUN/bT29viyTBlpAvyV9Z0lJPI19xcbC0WVQWpog9lt5eZE1Naly+AeVT/TpL+zuvpE6UupCxaJ/61Ygja+4l45QD9ypUwfqEyIjD5HVAfqKMccM9IX+5tSssHfvUEe6aJE5h35o6C9s5m3QoD7s8qBrICfnAuuT58wxYfG15CpPn3am3ahP5noAoA/0FQD9+/dDyCKamIylkS73xkxCf/Xqz8gIdeumyk0uE/Hk+8eNM+jfvxebhKCUmHh89mwTS8vJnp5b6b+APtBXsMlNoZcjsPtZZCmFXs1Abb/guwGF7oItXDgL6AN9xZ7Xb3z68MPR8+ebWVgYm5mNv37dH+gDfb6gT93CjRtn2KvacEvrLaqh9YPlZBv2pnzo425uE6uBb2FvQB/oyyxYTrZhb/KAPsLS4fV5ij7C0oE+X1t9hKUDfXh9eH2gD/SBPtAH+kAf8/pAH+hjXh/oNyq9fJlYVBTLhU0DfczryzX6EyeOYOteNTPV1l5dsmT28+dxhw9vav4B4fXh9aX+Ny8ru1RfZM9bJQeHZUeOOLAHPKdMMbpzJxjoA325Rn/ePNOYmCP1BZ6LzRwxQu/Eie1CcetDhuiy18lQcnNbv2fPGqAP9BXD8IgGnteXKRq3npsbweK5WAoN/YWuKKAP9BUAfbGB52Izxcath4UdEHwZyZ9/+gleCUAf6Msv+mIDz8Vmio1bp4+DB/fjjkk2ycpqKtCvtxpu7cW8vrygLzbwXGym2Lh1Snp6fbk3+Rw8+OOuXXZAH/P6iuH1xQaei80k9FesmCcUt75mzeenTu1g7/01NR2XmRkA9MWo5kX504tpLIXv9fDbsufkhp0n1u+gorZG8jwB9LlErfXt20ESAs9FM5nhEYpbr6lJpXFwaWmCp+dW7noA+pKUmJgYHBzs7e3t1bri51pagugvWTJ7wYKZJiZj35bL+t5HW1ISX1AQRdYfd3MbpfT0dCpVYGAgsXi8tcTbFRQF0SdSs7LONoFL4p6bwsczPE0XlSclJYUKRm2wX2uJt+vm4vE1OUKfGl0qErW+5D2iW0tYLV0aSexyLE17po0X6BN51O4SguS5s1tL9Fv0i/S79OtVVVVAv0WS6Bigyc+08QJ9SInRb/IzbUAfkjr6oquqjBihFxi4d/RofT29vhER7izT1vYj2s3AYJCn51aWExl5aOTIwQMG9BoyRJctfcDQr6lJnT/fjK1p0ORn2oA+JF3061tVxcLCuLAw+tChTTNnTmSZ16751dWlJSef5F4mrqvbk2imb3FwM/SXL5+7Zs3n7LGfJj/TBvQhqbf6YldVYc8nJyQc45b0q65OIe6dnL7v0OFd9npxNbUuQq9ipi9+8431xx9PYVdRc55pA/qQ1NGXsKoKXQ8M/ZycC717ax04sIFMDkM/Lu5ojx7duI6C++Lf/25L3QK7+9ucZ9qAPiRd9OtbVUUIfS+vbaam42iDGv527drS1ULmp08frdOnnZlTYtcA++LmzcupG2HLPTX5mTagD0kX/fpWVRFCv6goltrv4cMH0uVBw197exvKDAjYo67elXYYOLA3W+Ce++KKFfPMzMbTddXkZ9qAPtQak5tCq6rUl9haxeTvy8svc9P29a2z0sxn2oA+1BroSzU17Zk2oA8pPPp4hgcC+kAfkh36rR8UiqUlILlAH0tLAH3eScZBoQoVSgr0lVaEEcFESBFYvvItoA+1pGQVD60oUdRAX2klk3hoBYqiBvpKK5nEQytQFDXQV1rJJB5agaKogb7SSibx0AoURQ30IZ4K6ENAH4KAPgQBfQgC+hAE9CEI6EMQ0IcgoA9BQB+CgD4EAX0IAvoQBPQhCOhDENCHIKAPQUAfgoA+BAF9CAL6ECRB/x+nLw+hGUewjwAAAABJRU5ErkJggg==" alt="dc1" width="200" height="200">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_diagrammes_de_classes_simples">2. Diagrammes de classes simples</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Réalisez les diagrammes de classes suivants :</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Exams</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Les étudiants possèdent un numéro d'étudiant, un nom, un prénom, une date de naissance. Ils suivent des cours (titre, code du module).</p>
-</li>
-<li>
-<p>Les examens concernent un cours donné. Chaque examen a lien à une certaine date et possède un coefficient.</p>
-</li>
-<li>
-<p>Pour chaque examen un étudiant à une note.</p>
-</li>
-<li>
-<p>Les cours sont enseignés par un enseignant (nom, prénom)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Ordinateurs portables</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Un portable possède un clavier</p>
-</li>
-<li>
-<p>Un clavier peut-être de type "azerty" ou "querty"</p>
-</li>
-<li>
-<p>Un clavier possède des touches</p>
-</li>
-<li>
-<p>Un portable a éventuellement un propriétaire qui a lui même un nom et un prénom</p>
-</li>
-<li>
-<p>Un portable a un prix d’achat et une valeur actuelle (souvent différente)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
+<div style="page-break-after: always;"></div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_tour_op_rator">3. Tour Opérator</h2>
+<h2 id="_soci_t_canine">2. Société canine</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_enonc">3.1. Enoncé</h3>
+<h3 id="_compte_rendu_d_interview">2.1. Compte-rendu d&#8217;interview</h3>
 <div class="paragraph">
-<p>Des Tour Operator (Fram, Jet-Tours, Nouvelles Frontières…) proposent des voyages. Chaque TO est caractérisé par un identifiant, un nom et une adresse.</p>
-</div>
-<div class="paragraph">
-<p>Chaque voyage est rattaché à un seul TO et est défini par un identifiant, un libellé, un lieu de départ et de destination, une date de départ et d’arrivée ainsi qu’un prix de base.</p>
+<p>Une société canine veut répertorier, pour une année, les chiens de race et leur classement aux divers concours organisés dans certaines grandes villes. Chaque ville ne peut en organiser qu’un seul.</p>
 </div>
 <div class="paragraph">
-<p>Différentes options (chambre climatisée, pension complète, voyages en 1ère classe&#8230;) peuvent être choisies pour les différents voyages avec un montant différent selon celui-ci (par exemple l’option « Pension complète » coûtera plus cher pour un voyage à Paris que pour un voyage au Vietnam).</p>
+<p>Chaque chien est identifié par un numéro et appartient à une race bien précise.</p>
 </div>
 <div class="paragraph">
-<p>Des clients (identifiant, nom, prenom, adresse) passent des commandes pour des voyages, chaque commande ne concernant qu’un voyage. Une commande est définie par un numéro, une date et un état. A chaque commande est rattachée un certain nombre de voyageurs caractérisés par un identifiant, un nom, un prénom, un sexe et une date de naissance.</p>
+<p>On veut pouvoir obtenir, entre autres, les informations suivantes :</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_questions">3.2. Questions</h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Réaliser le Diagramme de Classes de ce cas d’étude</p>
-</li>
-<li>
-<p>Ajouter aux classes les méthodes qui permettront de réaliser les fonctionnalités attendues suivantes :</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Calculer le prix d&#8217;un <code>Voyage</code></p>
+<p>Nom et adresse du propriétaire d’un chien donné, ainsi que la date depuis laquelle il l’a en sa possession (une personne possède 10 chiens au plus).</p>
 </li>
 <li>
-<p>Calculer le prix moyen d&#8217;un voyage pour un <code>Tour Operator</code></p>
+<p>Nom, date de naissance, sexe et race d’un chien donné.</p>
 </li>
 <li>
-<p>Afficher la liste des options d&#8217;un <code>Voyage</code></p>
+<p>Liste des concours auxquels un chien donné a participé (10 maximum) et les classements obtenus.</p>
 </li>
 <li>
-<p>Afficher la liste des commandes en cours (à venir) d&#8217;un <code>Client</code></p>
+<p>Liste des différentes races.</p>
+</li>
+<li>
+<p>Liste des chiens ayant participé à un concours donné.</p>
+</li>
+<li>
+<p>Liste des concours, avec la ville organisatrice et la date.</p>
 </li>
 </ul>
 </div>
-</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_reverse_java_uml">4. Reverse Java &#8594; UML</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_enonc_2">4.1. Enoncé</h3>
-<div class="paragraph">
-<p>Soient les codes Java suivants :</p>
-</div>
-<div class="admonitionblock note">
+<div class="admonitionblock warning">
 <table>
 <tr>
 <td class="icon">
-<img src="data:image/png;base64,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" alt="Note">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAMVUlEQVRogdWZeXDVVZbHP7/f27JBwtJIiCERRFlbx5FuHRrRBgtBsRIwCCOrFmGmiDBjYVNlQlgiQjU6IjI4xLJxGf5QGp0Cbaftsu3Rhu6aYXqgLZoWEsjyyDP7S972e7/l3vnj5cW3Ji9M/zOn6lRS997fvd/vueece+59ipSS/89iv5mPZEQQQsS23RQARVEAUFUVRVFQog0ZyogJSClld3c327Ztw7IsLMuKto90KgBsNhtVVVXMnj2bvLw87Ha7HBEJKWXGKoSQXV1dcsuWLfLSpUsyKkKIIdWyrLTqdrvlU089Jc+cOSM9Ho8Mh8NSCCEzxTRi8JWVlbKtre0vAt6yLGmapmxtbZXr1q2TZ86ckW1tbSMikTH4GzduyKqqqkHwsSA1TZOhUChOg8HgoBqGIQ3DSAk+VleuXDliEspwviullD09PbzwwgscO3Yszt91XScQCNDZ2YlhGIPfuFwu7Pb48FJVlZycnEG/z8/PRwiBqqqDYzweD88//zyrV69m7ty5jBs3DofDMWRgD0lASik9Hg979uzh2LFjcYEaCoVob2/n2q9+hbZ585BGSCWltbVMr61NtSYbN25k7dq1zJkzZ1gSaqrGWPD79+9PAh8MBuns7OTie+8R2rwZCYOaqTTt3cuf6+qSwAMcP36co0eP8vXXX9Pd3Y1hGMg0lk65A1HwdXV1vPHGG0mW7+jo4A8/+xn2BAAAI0riQOnu3cyork7Zt3btWtavX89dd92VdieSCEgppdvt5sCBAxw5ciSuLxQK0dTURMOHHyJ37hwh1NSiAKU7djDzxRdT9q9YsYJt27YxY8aMlCTiCEgp5eXLl6mvr+fVV1+NmygYDNLW1sY3J09ipLEYQDPw2sBfCTwMLARKgKwhiNxWU8OsXbvi2qLYnnzySSorK1PvRGyqvH79uty6dWtSLg8EAvLKlSvyo1275M8hSV8H+eMBvRPkP9Vslp0tV6W3u12+c7hOTgT5NyAXgtwE8gTIUyn0D9XV0jAMqet6klZUVMjPP/88KcWqUcs3NjZy+PBhDh06FGeFqNtcOnECY8+euICVwDWgFtj/m1/wD+8f5xtg6uy5ZI+5BSkkU6fexgu7tvLWhd/x1tXL5P/905wAggnzSODavn388Sc/SblDL7/8Mq+99hqXL1+OC2zb7t27uX79+u7Dhw+ndJvW1lYaP/qI0EDKS1z0XeDjC7/l9llz+d6EWxjv0imdcgeFRcVofR46vm1Cx8ndP5hP3qjR/GDuX/GbC5/iberl1qirxGjv73+PYRjc8tBDcVhGjRpFRUUF27dvp7i4mPz8fFwuV2QHVq1aldLyDQ0NXDt5En91NRIQCRqNHld2HsLUCfu6GD9mNIoVQggDy9RQpYLTbkdV7Vh6CH9vJ/fcfz/vALsAN2AlzHv1wAEu1tTExUI0Hl555RXq6upobm4mEAhECEyePDkOvK7rtLS0cOP0aby1tUnAo2oNkFAUSTjoRfN+ix7wgjRBShACVVFQRGSkHvTypwtnmXHPQhrbb3D0k1McAdpiDBLVhp/+lIvV1UlV7oQJE8jNzcXtduPz+ZIPMtM0aWhooPH99+mtrU1ymVRqUxUQFlJYSBFGCivGOSyEaSCFAGlhd+Vy7w/n43BmM3POXWx69hl8AyMTDXTl4EEu7t2bCBGAQCCAruupCdjtdrp3705r+ViN22YhsUwdyzRBCpACyzIRMnpngCxXNjYlMk4L+ggoYXxp5pbAlX37cDgcSQSEEAxmoVgQg/9nAP67bVdAUcFmQ3W6IgtIiWUKLCGwLGvQj69e+m+EsBB6iGB/N/3e9oyNlIgRYm5kiR2JH0L6MkFYEi0UQKAycdJUbIodT3Mjpu6n3xfCptoRlomQCqZpRkhLCykMhLBQSV1HJbalKnvSF3MpNO0OSIEwDWyuPCaVzCRv7ER8Ph+mtJM35lZsdjvuxktYhobDkYOCgqJEDWLLaAfSVc1p78SJO2AAvUBggLUNKIx2Kgqjv3crY2wOiqaqKKoKihKJCctCC/npbW+jq7sbS7UjkGCZCCkQQkdJsV6mRWHGBH4HLHpxF3LcGDq6u7nw2S85++V/4gb0kB9hFoAZwuZwgc2BqjpQVRWbzYXd4cDlysHn7WJi0W2EfH24XA6EjKySqhTPtDRPIjB4XUtoPw3sKV/O+KJipJT4V63mq3/7Obu21/LN/5xl9l/PIys7G2fOaBS7E5vNQrU7UW0KNlUFp5P8MeO5/8HFhPo7CXr7MMIaQW8neSkMlqnEEYj1s8QJbwXaWpopmDgJh93OqHGFLFy9jjunTeHNo2uAvUy54/uMuaUYV24BUpVYpoVEwaY4UVUbitNJ9ugxOBw2tEAPfX29QCjuVB9OEmNBTdeRGEj3A56OdkwtgDDCCKFjz8ql6N55/G3VcRouX+SXH72Ht6udcCg4cJiJSPIn8oCloIKUKAhURUUIiVCjx128pjtrEiVtFkrMNNOBA+s34XG3YIRDSMtAkSbOrDzuvOchHnmiklEFY3n76G7Of/nv9Ht7EMJCSjGoljCxjOBAnaSjhYPowevDZrx04FMSGLwnJEzmAOYCn33wAUYoiGXoSMsEoeNwZTO2aDrzFpWxck0VJVOn4fd2E/T7oneNyOFlGkjLwNTD6FoILRQEa/hDcyhJIuB0OlFVNeVE04B3XjnC+d9+hRYKYJlhpDBBGDidDiaUfp/xk24nJ3c0eaPzsKsgzEhtZJkGIuzDNDRCAR99fb309XYhNAYPsnQ6IgJSSgoKCihavDilJZ4Aajf8HVf/fAnLCCNNAyktECaqIsgbV8So0WMHrn2RGLBMHREOYBg6eiiIFgzQ7/US8vmYoEDuENa/u6oqcwJRPysoKOC+N9+kcNGiJGvkAQuADY+twn3tCuFg/4CVDbB0VKHhzHbhdGVhs6kgDKTuR9f86KEAWtBHd0c73p52pB5Av5KewJxnnmHeoUOEw+EkjHEEYi8MEHlFKyws5IfHjlG4cGHSxJOA1cATPy7nT388j+73YoYDCEuP1DhSRrKOlFhmmLAWQNMCBHw9tHtu8K2nBcsI8uGxf8HoiRBINNTtjz7KQ/X1xL6iRDHGvubZAfr7+1Nuz+TJk6G+nv/atInmX/86rq8AWAlUrahk/Fio/8XHjM4fi93pHCgRFCzLQtd1tFAQLeCjs9NNb4cHxdL44J8PozfD7XyXRqNy97p1PPz220gp0XU9zriKogw+SaqqGtmB48ePU15enkRASklRURH31tcz6cEHk1JrAfAUcEcPLLjvMU69/694uzsI+X3093TS5blBl8eNt72VHk8Tfd9eR+vv4MQ/HkZpiJwttgTL3/Hoo2nBNzY2smjRIhYsWEBBQQEulyvyLuT3+2VTUxM7d+7k5MmTKXNuS0sL555+mtYvv0zqE0A7kavhqFL4oAlCCWOygGIiqTiHyMnuTBgz/bHHKDt9GillnN8D+P1+ysrKWLJkCdOmTWPWrFmUlpZGCAghpN/vp7m5mZqaGl5//XUKCwtJFLfbzX+sX8+Nr75K6rtZiXr49KVLKf/4Y4QQ6LqeBP6RRx6hvLycadOmMXPmTEpKSsjNzf3uZS6WRHV1NadOnUpaTEpJa2sr5zZupOkmSaQqk2csWcLyTz4BQNO0uL7GxkbWr1+fErzNZlMGw1lVVSUvL4+SkhL27dvH8uXL8Xg8ceABiouLue+ttyieN2+IK2Z6TRx/5+LFacE3NDRQWVmZFjwknAOxJF566SW2bNnChQsXkmKipKSEB959l9vmzcvo1pZOpz/8ME98+mla8Bs2bGDZsmVpwUOa5/VEd0oXE319fXxWXs43Z88m9Q0n03/0I1YPJIRE8OfOnWPHjh2UlZUNCT4tgUQSO3fupKqqigceeGCwP/a7VM8emUg0VcbK+fPn2bp1KytWrBgW/JAEEknU1NTw7LPPMn/+/GFBZQI8lZw/f57nnnuO5cuXM2XKlGHBD0sgkURdXR2PP/44FRUVNwV+qP7Tp09z8ODBjNxmRAQSSRw4cIBly5axdOnSvwh4RVH44osv2L9/P2VlZRlbfkQEEkls376djo4OQqHE83bk4nK5EEKwZs0aSktLRwR+RATgOxItLS1cu3aNvr6+wTfK/4tEfzeeMmUKkydPzhg8jJAAREgEg0H6+vrQNC2pFL8ZUVWVrKws8vPzycnJQVXVjH/s/F/lgJiyQFHragAAAABJRU5ErkJggg==" alt="Warning">
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Les codes complets ont été générés automatiquement, ils sont donc très "verbeux"&#8230;</p>
+<p>Toutes les informations ci-dessus ne concernent pas exclusivement le diagramme de classe. Faites le tri.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
-<div class="listingblock">
-<div class="title">Accident.java (version complète <a href="../examples/accidents/Accident.java">ici</a>)</div>
-<div class="content">
-<pre class="pygments highlight"><code class="java language-java"><span class="tok-kn">package</span> <span class="tok-n">accidents</span><span class="tok-o">;</span>
-<span class="tok-kn">import</span> <span class="tok-nn">java.sql.Date</span><span class="tok-o">;</span>
-<span class="tok-kn">import</span> <span class="tok-nn">java.sql.Time</span><span class="tok-o">;</span>
-
-<span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">Accident</span>
-<span class="tok-o">{</span>
-  <span class="tok-kd">private</span> <span class="tok-n">String</span> <span class="tok-n">id</span><span class="tok-o">;</span>
-  <span class="tok-kd">private</span> <span class="tok-n">String</span> <span class="tok-n">description</span><span class="tok-o">;</span>
-  <span class="tok-kd">private</span> <span class="tok-n">Date</span> <span class="tok-n">date</span><span class="tok-o">;</span>
-  <span class="tok-kd">private</span> <span class="tok-n">Time</span> <span class="tok-n">time</span><span class="tok-o">;</span>
-  <span class="tok-kd">private</span> <span class="tok-n">String</span> <span class="tok-n">other_details</span><span class="tok-o">;</span>
-
-  <span class="tok-kd">private</span> <span class="tok-n">Employee</span> <span class="tok-n">employee</span><span class="tok-o">;</span>
-  <span class="tok-kd">private</span> <span class="tok-n">AccidentType</span> <span class="tok-n">accidentType</span><span class="tok-o">;</span>
-  <span class="tok-kd">private</span> <span class="tok-n">SeriousnessLevel</span> <span class="tok-n">seriousnessLevel</span><span class="tok-o">;</span>
-
-  <span class="tok-kd">public</span> <span class="tok-nf">Accident</span><span class="tok-o">(</span><span class="tok-n">String</span> <span class="tok-n">aId</span><span class="tok-o">,</span> <span class="tok-n">String</span> <span class="tok-n">aDescription</span><span class="tok-o">,</span> <span class="tok-n">Date</span> <span class="tok-n">aDate</span><span class="tok-o">,</span> <span class="tok-n">Time</span> <span class="tok-n">aTime</span><span class="tok-o">,</span> <span class="tok-n">String</span> <span class="tok-n">aOther_details</span><span class="tok-o">,</span> <span class="tok-n">Employee</span> <span class="tok-n">aEmployee</span><span class="tok-o">,</span> <span class="tok-n">AccidentType</span> <span class="tok-n">aAccidentType</span><span class="tok-o">,</span> <span class="tok-n">SeriousnessLevel</span> <span class="tok-n">aSeriousnessLevel</span><span class="tok-o">)</span>
-  <span class="tok-o">{</span> <span class="tok-o">...</span> <span class="tok-o">}</span>
-  <span class="tok-c1">// gettes and setters</span>
-  <span class="tok-o">...</span>
-  <span class="tok-kd">public</span> <span class="tok-n">Employee</span> <span class="tok-nf">getEmployee</span><span class="tok-o">(){</span> <span class="tok-o">...</span> <span class="tok-o">}</span>
-  <span class="tok-kd">public</span> <span class="tok-n">AccidentType</span> <span class="tok-nf">getAccidentType</span><span class="tok-o">(){</span> <span class="tok-o">...</span> <span class="tok-o">}</span>
-  <span class="tok-kd">public</span> <span class="tok-n">SeriousnessLevel</span> <span class="tok-nf">getSeriousnessLevel</span><span class="tok-o">(){</span> <span class="tok-o">...</span> <span class="tok-o">}</span>
-  <span class="tok-kd">public</span> <span class="tok-kt">boolean</span> <span class="tok-nf">setEmployee</span><span class="tok-o">(</span><span class="tok-n">Employee</span> <span class="tok-n">aEmployee</span><span class="tok-o">){</span> <span class="tok-o">...</span> <span class="tok-o">}</span>
-  <span class="tok-kd">public</span> <span class="tok-kt">boolean</span> <span class="tok-nf">setAccidentType</span><span class="tok-o">(</span><span class="tok-n">AccidentType</span> <span class="tok-n">aNewAccidentType</span><span class="tok-o">){</span> <span class="tok-o">...</span> <span class="tok-o">}</span>
-  <span class="tok-kd">public</span> <span class="tok-kt">boolean</span> <span class="tok-nf">setSeriousnessLevel</span><span class="tok-o">(</span><span class="tok-n">SeriousnessLevel</span> <span class="tok-n">aNewSeriousnessLevel</span><span class="tok-o">){</span> <span class="tok-o">...</span> <span class="tok-o">}</span>
-<span class="tok-o">}</span>
-</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Accident.java (version complète <a href="../examples/accidents/AccidentType.java">ici</a>)</div>
-<div class="content">
-<pre class="pygments highlight"><code class="java language-java"><span class="tok-kn">package</span> <span class="tok-n">accidents</span><span class="tok-o">;</span>
-<span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">AccidentType</span>
-<span class="tok-o">{</span>
-  <span class="tok-kd">private</span> <span class="tok-n">String</span> <span class="tok-n">code</span><span class="tok-o">;</span>
-  <span class="tok-kd">private</span> <span class="tok-n">String</span> <span class="tok-n">description</span><span class="tok-o">;</span>
-
-  <span class="tok-kd">public</span> <span class="tok-nf">AccidentType</span><span class="tok-o">(</span><span class="tok-n">String</span> <span class="tok-n">aCode</span><span class="tok-o">,</span> <span class="tok-n">String</span> <span class="tok-n">aDescription</span><span class="tok-o">){</span> <span class="tok-o">...</span> <span class="tok-o">}</span>
-  <span class="tok-o">...</span>
-<span class="tok-o">}</span>
-</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Accident.java (version complète <a href="../examples/accidents/Employee.java">ici</a>)</div>
-<div class="content">
-<pre class="pygments highlight"><code class="java language-java"><span class="tok-kn">package</span> <span class="tok-n">accidents</span><span class="tok-o">;</span>
-<span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">Employee</span>
-<span class="tok-o">{</span>
-  <span class="tok-kd">private</span> <span class="tok-n">String</span> <span class="tok-n">id</span><span class="tok-o">;</span>
-  <span class="tok-kd">private</span> <span class="tok-n">String</span> <span class="tok-n">department</span><span class="tok-o">;</span>
-  <span class="tok-kd">private</span> <span class="tok-n">String</span> <span class="tok-n">name</span><span class="tok-o">;</span>
-  <span class="tok-kd">private</span> <span class="tok-n">String</span> <span class="tok-n">supervisor</span><span class="tok-o">;</span>
-  <span class="tok-kd">private</span> <span class="tok-n">String</span> <span class="tok-n">other_employee_details</span><span class="tok-o">;</span>
-
-  <span class="tok-kd">private</span> <span class="tok-n">List</span><span class="tok-o">&lt;</span><span class="tok-n">Accident</span><span class="tok-o">&gt;</span> <span class="tok-n">accidents</span><span class="tok-o">;</span>
-
-  <span class="tok-kd">public</span> <span class="tok-nf">Employee</span><span class="tok-o">(</span><span class="tok-n">String</span> <span class="tok-n">aId</span><span class="tok-o">,</span> <span class="tok-n">String</span> <span class="tok-n">aDepartment</span><span class="tok-o">,</span> <span class="tok-n">String</span> <span class="tok-n">aName</span><span class="tok-o">,</span> <span class="tok-o">...){</span> <span class="tok-o">...</span> <span class="tok-o">}</span>
-  <span class="tok-kd">public</span> <span class="tok-n">Accident</span> <span class="tok-nf">getAccident</span><span class="tok-o">(</span><span class="tok-kt">int</span> <span class="tok-n">index</span><span class="tok-o">){</span> <span class="tok-o">...</span> <span class="tok-o">}</span>
-  <span class="tok-kd">public</span> <span class="tok-n">List</span><span class="tok-o">&lt;</span><span class="tok-n">Accident</span><span class="tok-o">&gt;</span> <span class="tok-nf">getAccidents</span><span class="tok-o">(){</span> <span class="tok-o">...</span> <span class="tok-o">}</span>
-  <span class="tok-kd">public</span> <span class="tok-kt">int</span> <span class="tok-nf">numberOfAccidents</span><span class="tok-o">(){</span> <span class="tok-o">...</span> <span class="tok-o">}</span>
-  <span class="tok-kd">public</span> <span class="tok-kt">boolean</span> <span class="tok-nf">hasAccidents</span><span class="tok-o">(){</span> <span class="tok-o">...</span> <span class="tok-o">}</span>
-  <span class="tok-kd">public</span> <span class="tok-kt">int</span> <span class="tok-nf">indexOfAccident</span><span class="tok-o">(</span><span class="tok-n">Accident</span> <span class="tok-n">aAccident</span><span class="tok-o">){</span> <span class="tok-o">...</span> <span class="tok-o">}</span>
-  <span class="tok-kd">public</span> <span class="tok-kd">static</span> <span class="tok-kt">int</span> <span class="tok-nf">minimumNumberOfAccidents</span><span class="tok-o">(){</span><span class="tok-k">return</span> <span class="tok-mi">0</span><span class="tok-o">;}</span>
-  <span class="tok-kd">public</span> <span class="tok-n">Accident</span> <span class="tok-nf">addAccident</span><span class="tok-o">(</span><span class="tok-n">String</span> <span class="tok-n">aId</span><span class="tok-o">,</span> <span class="tok-n">String</span> <span class="tok-n">aDescription</span><span class="tok-o">,</span> <span class="tok-n">Date</span> <span class="tok-n">aDate</span><span class="tok-o">,</span> <span class="tok-o">...){</span> <span class="tok-o">...</span> <span class="tok-o">}</span>
-  <span class="tok-kd">public</span> <span class="tok-kt">boolean</span> <span class="tok-nf">addAccident</span><span class="tok-o">(</span><span class="tok-n">Accident</span> <span class="tok-n">aAccident</span><span class="tok-o">){</span> <span class="tok-o">...</span> <span class="tok-o">}</span>
-  <span class="tok-kd">public</span> <span class="tok-kt">boolean</span> <span class="tok-nf">removeAccident</span><span class="tok-o">(</span><span class="tok-n">Accident</span> <span class="tok-n">aAccident</span><span class="tok-o">){</span> <span class="tok-o">...</span> <span class="tok-o">}</span>
-<span class="tok-o">}</span>
-</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Accident.java (version complète <a href="../examples/accidents/SeriousnessLevel.java">ici</a>)</div>
-<div class="content">
-<pre class="pygments highlight"><code class="java language-java"><span class="tok-kn">package</span> <span class="tok-n">accidents</span><span class="tok-o">;</span>
-
-<span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">SeriousnessLevel</span>
-<span class="tok-o">{</span>
-  <span class="tok-kd">private</span> <span class="tok-n">String</span> <span class="tok-n">code</span><span class="tok-o">;</span>
-  <span class="tok-kd">private</span> <span class="tok-n">String</span> <span class="tok-n">description</span><span class="tok-o">;</span>
-
-  <span class="tok-kd">public</span> <span class="tok-nf">SeriousnessLevel</span><span class="tok-o">(</span><span class="tok-n">String</span> <span class="tok-n">aCode</span><span class="tok-o">,</span> <span class="tok-n">String</span> <span class="tok-n">aDescription</span><span class="tok-o">){</span> <span class="tok-o">...</span> <span class="tok-o">}</span>
-<span class="tok-o">}</span>
-</code></pre>
-</div>
-</div>
 </div>
 <div class="sect2">
-<h3 id="_question">4.2. Question</h3>
-<div class="paragraph">
-<p>Réaliser le Diagramme de Classes correspondant (avec associations et méthodes)</p>
+<h3 id="_travail_r_aliser">2.2. Travail à réaliser</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Concevoir le Diagramme des Classes (DC) prenant en compte ces informations en supposant qu’on se place en fin d’année et qu’aucun chien n’a changé de propriétaire.</p>
+</li>
+<li>
+<p>Compléter le DC si on veut prendre en compte le palmarès obtenu par tout chien sélectionné. Le propriétaire du chien gagne une prime qui ne dépend que du palmarès obtenu (ex : 1000 € pour une médaille d’or). Ce palmarès peut être : médaille d’or, d’argent, de bronze, 1er prix, 2ème prix, accessit &#8230;).</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -719,7 +554,7 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2014-02-16 22:03:32 CET
+Last updated 2014-02-16 22:27:10 CET
 </div>
 </div>
 </body>
