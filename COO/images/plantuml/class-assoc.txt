@@ -6,17 +6,19 @@ class Voyages {
 	dateDepart
 	dateArrivee
 	prixBase
-	__
 	calculerPrix()
+	afficherListeOptions()
 }
 
 class TourOperator {
 	nom
 	adresse
+	prixMoyenVoyages()
 }
 
 class Options {
 	libelle
+	getLibelle()
 }
 
 Voyages "1..*" --- "1" TourOperator : Proposer
@@ -28,6 +30,8 @@ Voyages "1" -- "0..*" Commandes : Commander
 class Commandes {
 	date
 	etat
+	afficherDetails()
+	getDate()
 }
 
 class Voyageurs {
@@ -41,6 +45,7 @@ class Clients {
 	nom
 	adresse
 	telephone
+	afficherCommandes()
 }
 
 Commandes "1..*" -- "1..*" Voyageurs : Concerner
@@ -51,10 +56,10 @@ Clients "1" -- "1..*" Commandes : Passer
 
 class PayerOption {
 	montant
+	getMontant()
 }
 
 hide class circle
-hide class methods
 
 @enduml
 
