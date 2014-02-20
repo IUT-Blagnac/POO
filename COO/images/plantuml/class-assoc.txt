@@ -31,7 +31,7 @@ class Commandes {
 	date
 	etat
 	afficherDetails()
-	getDate()
+	getEtat()
 }
 
 class Voyageurs {
@@ -57,6 +57,7 @@ Clients "1" -- "1..*" Commandes : Passer
 class PayerOption {
 	montant
 	getMontant()
+	getListeOptions()
 }
 
 hide class circle
