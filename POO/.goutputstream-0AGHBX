@@ -1,0 +1,3 @@
+asciidoc   -a toc   -a data-uri   -a icons   -a prof   -o htmlGenerated/TD4.html   TD4.asc
+
+

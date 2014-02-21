@@ -1,0 +1,181 @@
+:moduleTitle: BPOO
+:authorDefault:  Dut/Info-S2/M2103
+// include::lib/globals.asc[] // temporairement
+:tdnum: TD 4
+ifdef::eleve[]
+:doctitle:  {moduleTitle} - Sujet {tdnum}
+endif::eleve[]
+ifdef::prof[]
+:doctitle: {moduleTitle} - Support {tdnum}
+endif::prof[]
+ifdef::todoprof[]
+:doctitle: {moduleTitle} - DEROULEMENT SEANCE PROF {tdnum}
+endif::todoprof[]
+
+= {doctitle}
+:Author:  {authorDefault}
+:lang: fr
+:slideshowlocation: IUT Blagnac
+:copyright: {date={localdate}}, {slideshowlocation} *** {author} *** Powered by AsciiDoc and W3C Slidy &#169; 
+:incremental:
+:source-highlighter: pygments
+:numbered: true
+:iconsdir: icons/
+:icons: true
+
+// eleve : sujet pour élèves
+// prof : support prof pour séance
+// todoprof : support AVEC EXPLICATIONS DEROULEMENT pour profs
+
+//----------- définitions --------------
+:sitecours: http://webetud.iut-blagnac.fr/[Support de Cours]
+:pre: PreReq
+:objtd: ObjTD
+:duree: Durée
+:depot: À rendre
+:lien: Lien
+:img: img
+
+//-------------------- Warning si correction -----------
+ifdef::prof[]
+[CAUTION]
+.Version corrigée
+=====
+Cette version comporte des indications pour les 
+réponses aux exercices.
+=====
+endif::prof[]
+
+//-------------------- Cartouche d'en-tête -----------
+[[cartouche]]
+[align="left",cols="1,10",width="90%"]
+|======================
+| {pre}		| Cours 1 : approche objet. TD3 classes objets -encapsulation.
+| {objtd}	| *Ecrire une classe avec tableaux dynamiques - Encapsulation*.
+| {duree}	| *1 séance* de 1,5h
+|======================
+
+// // | {depot}	| -
+
+ifdef::todoprof[]
+[IMPORTANT]
+====
+Pour les profs :
+
+. Objectif :
+
+* TODO
+
+. Déroulement a priori :
+
+TODO
+_
+* 15' pour lire un peu la doc ou expliquer et comprendre
+* 30' : V1 sur feuille pré-remplie
+** Correction possible au tableau
+* 20' : V2 sur feuille pré-remplie auparavant (correctif en couleur)
+* 15' : Intérêts encapsulation.
+_
+
+====
+endif::todoprof[]
+
+ifndef::todoprof[]
+
+== Classe à développer
+
+[options="header"]
+|=======
+| Diagramme UML de l'interface de la classe Pile | Diagramme UML complet de la classe Pile
+| TODO | TODO
+| image:images/classeCompteInterface.png[] | image:images/classeCompte.png[]
+|=======
+
+== Quelques explications
+
+Pour les méthodes :
+TODO
+
+ESSAI
+ESSAI 2
+
+
+== Principes de stockage de données en mémoire
+
+Pour stocker des données, ce qui est donné comme disponible au programmeur en Java est :
+
+. les types de base,
+. le type tableau d'éléments d'un type donné :
+
+* permet de stocker des informations d'un type donné,
+* de façon contigüe en mémoire,
+* accès à un élément par un indice (tab[i])
+
+. le type "classe/structure" : des objets en mémoire contenant des attributs
+
+* chaque attribut à un identificateur e un type
+* accès à un attribut : ... *.* idAttribut
+
+C'est tout ...
+
+== Principe de tableaux dynamiques
+
+. Expliquer ici
+. Ou bien faire une exemple de main avec allongement de tableau
+
+[source, java]
+-----
+int t[], i;
+t = new int [5];
+for (i=0;i< t.length; i++) {
+	t[i] = lect.nextInt();
+System.out.println("Voulez vous entrer d'autres données ? (1=Oui, 0) -> ");
+rep = lect.nextInt();
+if (rep == 1) { // <1>
+	System.out.println("   Nb Valeurs : -> ");
+	nbValSuppl = lect.nextInt();
+	// Todo
+}
+for (i=0;i< t.length; i++) {
+	System.out.println(t[i]); // Affichera les 5 valeurs saisies + les éventuelles valeurs ajoutées en // <1>
+}
+-----
+
+== Pile avec tableau dynamique
+
+. Décrire le pb
+. Faire des schémas de 1 élts, empiler 2, empiler 3, dépiler 2, dépiler 1, dépiler 0.
+. faire un .doc pour le code 
+. Voir si intéressant de donner la version tableau avant ??
+
+== Principes si taille agrandissement/rétrécissement > 1 ?
+
+. Donner une taille d'agrandissement (un facteur) : fixe, relatif à la taille, ...
+. Donner les principes
+. Faire des schémas de 4-5-6-7-6-5-4-3, ... avec facteur de 5
+. A voir en détail.
+
+ifdef::prof[]
+[icon="{iconsdir}/solution.png"]
+[IMPORTANT]
+.Solution Usage Version 1
+======
+[source, java]
+-----
+	Compte c;
+	c = new Compte ("0101", "Jean")
+	try {
+		c.deposer(1000);
+		c.retirer(500);
+	} catch (CompteException e) {
+		System.out.println("Anormal ...");
+	}
+	c.setProprietaire ("Marcel");
+	c.afficher ();
+	System.out.println (c.soldeCompte());
+-----
+======
+endif::prof[]
+
+endif::todoprof[]
+
