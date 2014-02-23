@@ -817,7 +817,7 @@ cellspacing="0" cellpadding="4">
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">ObjTD</p></td>
-<td align="left" valign="top"><p class="table"><strong>Ecrire une classe avec tableaux dynamiques - Encapsulation</strong>.</p></td>
+<td align="left" valign="top"><p class="table"><strong>Écrire une classe avec tableaux dynamiques - Encapsulation</strong>.</p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">Durée</p></td>
@@ -851,7 +851,6 @@ le type "classe/structure" : des objets en mémoire contenant des attributs.
 </p>
 </li>
 </ol></div>
-<div class="paragraph"><p>C&#8217;est tout &#8230;</p></div>
 <div class="paragraph"><p>Pour stocker en mémoire "plusieurs" données, disons un "ensemble"/"suite"/"séquence" de données, il existe deux structures de programmation de base :</p></div>
 <div class="olist arabic"><ol class="arabic">
 <li>
@@ -997,13 +996,13 @@ TreeMap&lt;K,V&gt; : map implantée sous forme d&#8217;arbre balancé.
 <div class="sect1">
 <h2 id="_but_du_td">2. But du TD</h2>
 <div class="sectionbody">
-<div class="paragraph"><p>Etudier comment implémenter des "tableaux dynamiques" ou "comment changer la taille d&#8217;un tableau sans perdre les éléments". Implémenter une pile de String avec un tableau dynamique. Permet d&#8217;illustrer UN mode d&#8217;implémentation d&#8217;une structure de donnée.</p></div>
+<div class="paragraph"><p>Étudier comment implémenter des "tableaux dynamiques" ou "comment changer la taille d&#8217;un tableau sans perdre les éléments". Implémenter une pile de String avec un tableau dynamique. Permet d&#8217;illustrer UN mode d&#8217;implémentation d&#8217;une structure de donnée.</p></div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_principe_d_8217_un_tableau_dynamique">3. Principe d&#8217;un "tableau dynamique"</h2>
 <div class="sectionbody">
-<div class="paragraph"><p>Un problème de fond des tableaux :</p></div>
+<div class="paragraph"><p>Fonctionnement des tableaux :</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
@@ -1019,21 +1018,9 @@ une fois créés : la taille ne peut pas être modifiée.
 <div class="sect2">
 <h3 id="_exercice_comment_agrandir_rétrécir_un_tableau">3.1. Exercice : comment "agrandir/rétrécir" un tableau ?</h3>
 <div class="paragraph"><p>Question : Soit un tableau rempli de longueur n, dont la référence est stockée dans la variable <tt>tabCourant</tt> :</p></div>
-<div class="paragraph"><p>Comment faire "évoluer" la taille du tableau rempli, par exemple l&#8217;agrandir (tabCourant donnera accès à un tableau "plus grand").</p></div>
+<div class="paragraph"><p>Comment faire "évoluer" la taille du tableau rempli, par exemple l&#8217;agrandir (tabCourant donnera accès à un tableau "plus grand") ?</p></div>
 <div class="paragraph"><p>Rappel : un tableau se manipule au travers de sa référence.</p></div>
 <div class="paragraph"><p>Réponse :</p></div>
-<div class="literalblock">
-<div class="content">
-<pre><tt>.</tt></pre>
-</div></div>
-<div class="literalblock">
-<div class="content">
-<pre><tt>.</tt></pre>
-</div></div>
-<div class="literalblock">
-<div class="content">
-<pre><tt>.</tt></pre>
-</div></div>
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
@@ -1145,7 +1132,7 @@ Conserver la nouvelle référence de tableau : <tt>tabCourant = nouvTab;</tt>
 </div>
 <div class="sect2">
 <h3 id="_exercice_le_faire_8230">3.2. Exercice : le faire &#8230;</h3>
-<div class="paragraph"><p>Dans le programme suivant, indiquer le code nécessaire à ajouter pour agrandir le tableau référencé par tab :</p></div>
+<div class="paragraph"><p>Dans le programme joint, indiquer le code nécessaire à ajouter pour agrandir le tableau référencé par tab :</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
@@ -1168,62 +1155,6 @@ il faudra l&#8217;agrandir de <tt>nbValSuppl</tt> éléments,
 </p>
 </li>
 </ul></div>
-<div class="listingblock">
-<div class="content"><!-- Generator: GNU source-highlight 3.1.5
-by Lorenzo Bettini
-http://www.lorenzobettini.it
-http://www.gnu.org/software/src-highlite -->
-<pre><tt><span style="color: #008080">Scanner</span> lect <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Scanner</span></span> <span style="color: #990000">(</span>System<span style="color: #990000">.</span>in<span style="color: #990000">)</span> <span style="color: #990000">;</span>
-<span style="color: #009900">int</span> tabCourant<span style="color: #990000">[],</span> i<span style="color: #990000">,</span> rep<span style="color: #990000">,</span> nbValSuppl<span style="color: #990000">;</span>
-tabCourant <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="color: #009900">int</span> <span style="color: #990000">[</span><span style="color: #993399">5</span><span style="color: #990000">];</span>
-<span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span>i<span style="color: #990000">&lt;</span> tabCourant<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
-    tabCourant<span style="color: #990000">[</span>i<span style="color: #990000">]</span> <span style="color: #990000">=</span> lect<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">nextInt</span></span><span style="color: #990000">();</span>  <span style="font-style: italic"><span style="color: #9A1900">// <img alt="1" src="data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABjSURBVHja
-VY6xDcAwCAS/pPQaLim9QmajdOk2I2SNrMEIlARIoigU8Cek/4e7zdHaWOYOVwaoA6wOCw05Y7FB
-gE0tIWQ+sBcwKM8qoD/wB5wGL8hjfdzWrh01GRp1hInGjDoXwHgsFuzBVLQAAABDdEVYdFNvZnR3
-YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
-dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
-ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /> Remplissage</span></span>
-<span style="color: #FF0000">}</span>
-
-System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"   Nb Valeurs en plus ? : -&gt; "</span><span style="color: #990000">);</span>
-nbValSuppl <span style="color: #990000">=</span> lect<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">nextInt</span></span><span style="color: #990000">();</span>
-<span style="font-style: italic"><span style="color: #9A1900">// A faire ici</span></span>
-
-
-
-
-
-
-
-
-
-<span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">5</span><span style="color: #990000">;</span>i<span style="color: #990000">&lt;</span> tabCourant<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span> <span style="font-style: italic"><span style="color: #9A1900">// de 5 au nb de valeurs saisies</span></span>
-   tabCourant<span style="color: #990000">[</span>i<span style="color: #990000">]</span> <span style="color: #990000">=</span> lect<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">nextInt</span></span><span style="color: #990000">();</span>   <span style="font-style: italic"><span style="color: #9A1900">// <img alt="2" src="data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABvSURBVAgd
-BcGhAcJADADAky8rsZXIyK7AGkgksiu8RNYyAiswAhIbiYwMd7rrsS3LdlS3zuC8EtkqrJ/8vRdR
-Js+PtSZTMHe+L8IAUXeGAZd8DYbArB3C5FbXiBNThSMzcxelM4DI1l0zxtge1f0HVNk1YLFij6sA
-AABDdEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlz
-dGljLmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAODBlYWU1MjljOTRhN2Y0N2Rl
-Y2NmYWRhMjhhY2I5ZGblb7ENAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /> Remplissage complémentaire</span></span>
-<span style="color: #FF0000">}</span>
-<span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span>i<span style="color: #990000">&lt;</span> tabCourant<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
-    System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>tabCourant<span style="color: #990000">[</span>i<span style="color: #990000">]);</span>
-    <span style="font-style: italic"><span style="color: #9A1900">// Affichera les 5 valeurs saisies au départ <img alt="1" src="data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABjSURBVHja
-VY6xDcAwCAS/pPQaLim9QmajdOk2I2SNrMEIlARIoigU8Cek/4e7zdHaWOYOVwaoA6wOCw05Y7FB
-gE0tIWQ+sBcwKM8qoD/wB5wGL8hjfdzWrh01GRp1hInGjDoXwHgsFuzBVLQAAABDdEVYdFNvZnR3
-YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
-dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
-ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
-    <span style="font-style: italic"><span style="color: #9A1900">// + les valeurs ajoutées en <img alt="2" src="data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABvSURBVAgd
-BcGhAcJADADAky8rsZXIyK7AGkgksiu8RNYyAiswAhIbiYwMd7rrsS3LdlS3zuC8EtkqrJ/8vRdR
-Js+PtSZTMHe+L8IAUXeGAZd8DYbArB3C5FbXiBNThSMzcxelM4DI1l0zxtge1f0HVNk1YLFij6sA
-AABDdEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlz
-dGljLmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAODBlYWU1MjljOTRhN2Y0N2Rl
-Y2NmYWRhMjhhY2I5ZGblb7ENAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
-<span style="color: #FF0000">}</span></tt></pre></div></div>
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
@@ -1783,8 +1714,40 @@ gaTg9fBfTpg/FRnM2sgAAAAASUVORK5CYII=" />
 <div class="paragraph"><p>NB : noter que dans certains cas (livres, sites web, etc.), l&#8217;en-tête de depiler() pourrait être <tt><strong>String</strong> depiler ()</tt>, signifiant que depiler() pourrait ET enlever le sommet de la pile ET renvoyer la valeur de ce dernier.</p></div>
 <div class="sect2">
 <h3 id="_implémentation_mémoire">4.1. Implémentation mémoire</h3>
-<div class="paragraph"><p>Donner l&#8217;implémentation d&#8217;un objet Pile que l&#8217;on a créé avec une variable <tt>maPile</tt> :
+<div class="paragraph"><p>Donner l&#8217;implémentation d&#8217;un objet Pile que l&#8217;on a créé avec une variable <tt>maPile</tt>
  NB : on ne représentera pas le contenu des éléments du tableau de la Pile qui sont des String</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Avec un élément.
+</p>
+</li>
+<li>
+<p>
+Après empilement d&#8217;un nouvel élément
+</p>
+</li>
+<li>
+<p>
+Après empilement d&#8217;un nouvel élément
+</p>
+</li>
+<li>
+<p>
+Après dépilement d&#8217;un élément
+</p>
+</li>
+<li>
+<p>
+Après dépilement d&#8217;un élément
+</p>
+</li>
+<li>
+<p>
+Après dépilement d&#8217;un élément
+</p>
+</li>
+</ol></div>
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
@@ -1843,38 +1806,6 @@ lJga0LT8+uRGJ5P/2OBGpz/mT34Gmsy9nx36v3PoX1H4mIUGLCOSAAAAAElFTkSuQmCC" />
 </td>
 </tr></table>
 </div>
-<div class="olist arabic"><ol class="arabic">
-<li>
-<p>
-Avec un élément.
-</p>
-</li>
-<li>
-<p>
-Après empilement d&#8217;un nouvel élément
-</p>
-</li>
-<li>
-<p>
-Après empilement d&#8217;un nouvel élément
-</p>
-</li>
-<li>
-<p>
-Après dépilement d&#8217;un élément
-</p>
-</li>
-<li>
-<p>
-Après dépilement d&#8217;un élément
-</p>
-</li>
-<li>
-<p>
-Après dépilement d&#8217;un élément
-</p>
-</li>
-</ol></div>
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
@@ -2463,7 +2394,7 @@ http://www.gnu.org/software/src-highlite -->
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2014-02-22 19:24:13 CET
+Dernière mise à jour 2014-02-23 17:28:32 CET
 </div>
 </div>
 </body>
