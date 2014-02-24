@@ -4101,7 +4101,7 @@ cellspacing="0" cellpadding="4">
 <tbody class="incremental">
 <tr>
 <td align="left" valign="top"><p class="table">PreReq</p></td>
-<td align="left" valign="top"><p class="table">Cours 1 : approche objet. TD3 classes objets -encapsulation.</p></td>
+<td align="left" valign="top"><p class="table">Cours 1 : approche objet. TD1 (références, tableaux). TD3 classes objets-encapsulation.</p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">ObjTD</p></td>
@@ -4148,7 +4148,7 @@ le type tableau d'éléments d&#8217;un type donné,
 </li>
 <li>
 <span>
-le type "classe/structure" : des objets en mémoire contenant des attributs.
+le type "classe(/structure)" : des objets en mémoire contenant des attributs.
 </span>
 </li>
 </ol>
@@ -4165,7 +4165,7 @@ le tableau,
 </li>
 <li>
 <span>
-la structure chaînée (vu plus tard).
+la structure chaînée (vue plus tard).
 </span>
 </li>
 </ol>
@@ -4179,7 +4179,7 @@ la structure chaînée (vu plus tard).
 <div class="sectionbody">
 <div class="paragraph">
 <div class="incremental">
-<p>Une structure de donnée définit :</p>
+<p>En dehors de tout contexte particulier (langage et application), une structure de donnée définit :</p>
 </div>
 </div>
 <ol class="arabic incremental">
@@ -4201,12 +4201,12 @@ les opérations applicables sur ces informations &#8230; et leur résultat respe
 </ol>
 <div class="paragraph">
 <div class="incremental">
-<p>Exemples: pile, files, listes, ensembles, map (clef/valeur), arbres, graphes, &#8230;</p>
+<p>Exemples: pile, file, liste, ensemble, map (clef/valeur), arbre, graphe, &#8230;</p>
 </div>
 </div>
 <div class="paragraph">
 <div class="incremental">
-<p>Il faut <strong>construire</strong>/<strong>implémenter</strong> ces structures de données à partir des possibilités de chaque langage.</p>
+<p>Pour les utiliser, il faut <strong>construire</strong>/<strong>implémenter</strong> ces structures de données à partir des possibilités de chaque langage.</p>
 </div>
 </div>
 <div class="paragraph">
@@ -4217,12 +4217,12 @@ les opérations applicables sur ces informations &#8230; et leur résultat respe
 <ul class=" incremental">
 <li>
 <span>
-une représentation mémoire choisie,
+le choix d&#8217;une représentation mémoire,
 </span>
 </li>
 <li>
 <span>
-une implémentation algorithmique des opérations de la structure de donnée.
+le choix d&#8217;une implémentation algorithmique des opérations de la structure de donnée.
 </span>
 </li>
 <li>
@@ -4255,7 +4255,7 @@ LinkedList&lt;E&gt; : liste implantée sous forme de structure doublement chaîn
 </ul>
 <div class="paragraph">
 <div class="incremental">
-<p>Mais on trouvera aussi :</p>
+<p>On trouvera aussi :</p>
 </div>
 </div>
 <ul class=" incremental">
@@ -4295,7 +4295,7 @@ et d&#8217;autres &#8230;
 </li>
 <li>
 <span>
-Structure de donnée ensembles (collection sans doublons)
+Structure de donnée ensemble (collection sans doublons)
 </span>
 <ul class=" incremental">
 <li>
@@ -4312,7 +4312,7 @@ TreeSet&lt;E&gt; : ensemble implanté  sous forme d&#8217;arbre balancé.
 </li>
 <li>
 <span>
-Structure map (association clef/valeur)
+Structure de donnée map (association clef/valeur)
 </span>
 <ul class=" incremental">
 <li>
@@ -4512,7 +4512,7 @@ Conserver la nouvelle référence de tableau : <tt>tabCourant = nouvTab;</tt>
 <div class="sectionbody">
 <div class="paragraph">
 <div class="incremental">
-<p>Dans le programme joint, indiquer le code nécessaire à ajouter pour agrandir le tableau référencé par tab :</p>
+<p>Dans le programme joint, indiquer le code nécessaire à ajouter pour agrandir le tableau référencé par <tt>tabCourant</tt> :</p>
 </div>
 </div>
 <ul class=" incremental">
@@ -4948,18 +4948,18 @@ QmCC" />
 <ul class=" incremental">
 <li>
 <span>
-Structure de type LIFO (Last In, First Out).
+Structure de donnée de type LIFO (Last In, First Out).
 </span>
 </li>
 <li>
 <span>
-Dernier élément « entré » dans la pile sera le premier « sorti ».
+Dernier élément "entré" dans la pile sera le premier "sorti".
 </span>
 </li>
 </ul>
 <div class="paragraph">
 <div class="incremental">
-<p>On souhaite définir une classe Pile de String dont l&#8217;implémentation est un tableau "dynamique" de la taille exacte du nombre d'éléments contenus dans la Pile. L&#8217;implantation proposée ici consiste à changer le tableau de stockage à chaque modification de la pile (Le type Pile a déjà été implémenté sous forme d&#8217;un tableau de taille fixe, 100 éléments par exemple).</p>
+<p>On souhaite définir une classe <strong>Pile de String</strong> dont l&#8217;implémentation est un tableau "dynamique" de la taille exacte du nombre d'éléments contenus dans la Pile. L&#8217;implantation proposée ici consiste à changer le tableau de stockage à chaque modification de la pile.</p>
 </div>
 </div>
 <div class="tableblock">
@@ -4967,8 +4967,8 @@ Dernier élément « entré » dans la pile sera le premier « sorti ».
 width="100%"
 frame="border"
 cellspacing="0" cellpadding="4">
-<col width="23%" />
-<col width="76%" />
+<col width="50%" />
+<col width="50%" />
 <thead>
 <tr>
 <th align="left" valign="top"> Diagramme UML complet de la classe Pile </th>
@@ -5824,7 +5824,7 @@ http://www.gnu.org/software/src-highlite -->
 </div>
 <div id="footer" style="position: absolute; left: 5%; top: 80%; width: 90%;">
 <div id="footer-text">
-Dernière mise à jour 2014-02-24 00:14:00 CET
+Dernière mise à jour 2014-02-24 10:35:20 CET
 </div>
 </div>
 </div></div>

@@ -744,7 +744,7 @@ asciidoc.install(2);
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_test_arraylist_lt_e_gt_créer_et_tester_une_arraylist_lt_string_gt">1. Test ArrayList&lt;E&gt; : créer et tester une ArrayList&lt;String&gt;</h2>
+<h2 id="_test_arraylist_lt_e_gt_utiliser_une_arraylist_lt_string_gt">1. Test ArrayList&lt;E&gt; : utiliser une ArrayList&lt;String&gt;</h2>
 <div class="sectionbody">
 <div class="paragraph"><p>Nous allons tester la classe ArrayList&lt;E&gt; : nous allons créer une ArrayList d’objets String.</p></div>
 <div class="admonitionblock">
@@ -805,12 +805,13 @@ lJga0LT8+uRGJ5P/2OBGpz/mT34Gmsy9nx36v3PoX1H4mIUGLCOSAAAAAElFTkSuQmCC" />
 </td>
 </tr></table>
 </div>
-<div class="paragraph"><p>En parallèle de la lecture de la documentation, on testera les différentes méthodes de la classe ArrayList :</p></div>
+<div class="paragraph"><p>En parallèle de la lecture de la documentation et/ou du support de cours, on testera les différentes méthodes de la classe ArrayList&lt;E&gt; :</p></div>
 <div class="olist arabic"><ol class="arabic">
 <li>
 <p>
-Déclarer une variable <tt>alChaines</tt> de type ArrayList de String. NB : la classe ArrayList appartient au package <tt>java.util</tt>.
+Déclarer une variable <tt>alChaines</tt> de type ArrayList de String.
 </p>
+<div class="paragraph"><p>NB : la classe ArrayList appartient au package <tt>java.util</tt>.</p></div>
 </li>
 <li>
 <p>
@@ -824,7 +825,7 @@ Faire quelques ajouts de chaînes de caractères en fin de <tt>alChaines</tt> av
 </li>
 <li>
 <p>
-Afficher la taille de <tt>alChaines</tt> (cf. support de cours, méthode <tt>size()</tt>).
+Afficher la taille de <tt>alChaines</tt> (cf. support de cours).
 </p>
 </li>
 <li>
@@ -869,7 +870,7 @@ Tester la méthode <tt>toString()</tt> sur <tt>alChaines</tt>.
 </li>
 <li>
 <p>
-Faire quelques suppressions : premier élément, dernier élément, au milieu. (cf. support de cours, méthode <tt>remove()</tt>). Après chaque suppression, afficher le nombre d’éléments réellement contenus dans <tt>alChaines</tt>.
+Faire quelques suppressions : premier élément, dernier élément, au milieu. (cf. support de cours). Après chaque suppression, afficher le nombre d’éléments réellement contenus dans <tt>alChaines</tt>.
 </p>
 </li>
 <li>
@@ -899,8 +900,7 @@ Afficher les éléments de <tt>alChaines</tt> et sa taille.
 <div class="sect1">
 <h2 id="_manipuler_une_arraylist_de_compte">3. Manipuler une ArrayList de Compte</h2>
 <div class="sectionbody">
-<div class="paragraph"><p>Reprendre le programme suivant. Récupérer les packages tps du TP précédent.</p></div>
-<div class="paragraph"><p><strong>A faire : écrire le code de la méthode</strong> : <tt>public static ArrayList&lt;Compte&gt; getComptesDe (String pNomProprietaire, ArrayList&lt;Compte&gt; pComptes)</tt>. Son rôle est de renvoyer une ArrayList de Compte contenant les comptes du paramètre <tt>pComptes</tt> dont le nom de propriétaire est <tt>pNomProprietaire</tt>.</p></div>
+<div class="paragraph"><p>Reprendre le programme suivant. Récupérer les packages du TP précédent (tps.banque, &#8230;).</p></div>
 <div class="paragraph"><p>Le programme principal :</p></div>
 <div class="ulist"><ul>
 <li>
@@ -925,7 +925,7 @@ demande un nom de propriétaire
 </li>
 <li>
 <p>
-appelle getComptesDe() pour retrouver les comptes de ce propriétaire,
+appelle la méthode <tt>getComptesDe()</tt> pour retrouver les comptes de ce propriétaire,
 </p>
 </li>
 <li>
@@ -936,6 +936,7 @@ affiche les comptes de ce propriétaire.
 </ul></div>
 </li>
 </ul></div>
+<div class="paragraph"><p><strong>A faire : écrire le code de la méthode : <tt>public static ArrayList&lt;Compte&gt; getComptesDe (String pNomProprietaire, ArrayList&lt;Compte&gt; pComptes)</tt>. Son rôle est de renvoyer une ArrayList de Compte contenant les comptes du paramètre <tt>pComptes</tt> dont le nom de propriétaire est <tt>pNomProprietaire</tt>.</strong></p></div>
 <div class="listingblock">
 <div class="content"><!-- Generator: GNU source-highlight 3.1.5
 by Lorenzo Bettini
@@ -946,17 +947,6 @@ http://www.gnu.org/software/src-highlite -->
 <span style="font-weight: bold"><span style="color: #000080">import</span></span> tps<span style="color: #990000">.</span>banque<span style="color: #990000">.</span>Compte<span style="color: #990000">;</span>
 
 <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">ClasseEssaiArrayListCompte</span> <span style="color: #FF0000">{</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> Compte<span style="color: #990000">[]</span> tab <span style="color: #990000">=</span> <span style="color: #FF0000">{</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"01010101"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Lepoisson-Benoit"</span><span style="color: #990000">),</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"02020202"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Tabaniol-Alphonse"</span><span style="color: #990000">),</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"03030303"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Aidelaine-Gilles"</span><span style="color: #990000">),</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"04040404"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Sanfraper-André"</span><span style="color: #990000">),</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"05050505"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Tabaniol-Alphonse"</span><span style="color: #990000">),</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"06060606"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Bondeparme-Jean"</span><span style="color: #990000">),</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"07070707"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Sailair-Jacques"</span><span style="color: #990000">),</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"08080808"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Saidimanche-Damien"</span><span style="color: #990000">),</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"09090909"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Tabaniol-Alphonse"</span><span style="color: #990000">)</span>
-        <span style="color: #FF0000">}</span><span style="color: #990000">;</span>
 
         <span style="font-style: italic"><span style="color: #9A1900">/**</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         * Recherche les comptes du propriétaire pNomProprietaire</span></span>
@@ -970,6 +960,19 @@ http://www.gnu.org/software/src-highlite -->
 
         <span style="color: #FF0000">}</span>
         <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">(</span>String<span style="color: #990000">[]</span> arguments<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="font-style: italic"><span style="color: #9A1900">// Liste de comptes pour les tests</span></span>
+                Compte<span style="color: #990000">[]</span> tab <span style="color: #990000">=</span> <span style="color: #FF0000">{</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"01010101"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Lepoisson-Benoit"</span><span style="color: #990000">),</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"02020202"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Tabaniol-Alphonse"</span><span style="color: #990000">),</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"03030303"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Aidelaine-Gilles"</span><span style="color: #990000">),</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"04040404"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Sanfraper-André"</span><span style="color: #990000">),</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"05050505"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Tabaniol-Alphonse"</span><span style="color: #990000">),</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"06060606"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Bondeparme-Jean"</span><span style="color: #990000">),</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"07070707"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Sailair-Jacques"</span><span style="color: #990000">),</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"08080808"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Saidimanche-Damien"</span><span style="color: #990000">),</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"09090909"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Tabaniol-Alphonse"</span><span style="color: #990000">)</span>
+                <span style="color: #FF0000">}</span><span style="color: #990000">;</span>
+
                 <span style="color: #009900">int</span> i<span style="color: #990000">,</span> taille<span style="color: #990000">;</span>
                 <span style="color: #008080">ArrayList&lt;Compte&gt;</span> listeComptes<span style="color: #990000">;</span>
                 <span style="color: #008080">ArrayList&lt;Compte&gt;</span> resultatsProprietaire<span style="color: #990000">;</span>
@@ -978,8 +981,8 @@ http://www.gnu.org/software/src-highlite -->
 
                 listeComptes <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> ArrayList<span style="color: #990000">&lt;</span>Compte<span style="color: #990000">&gt;();</span>
 
-                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span><span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>ClasseEssaiArrayListCompte<span style="color: #990000">.</span>tab<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
-                        listeComptes<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">add</span></span><span style="color: #990000">(</span>ClasseEssaiArrayListCompte<span style="color: #990000">.</span>tab<span style="color: #990000">[</span>i<span style="color: #990000">]);</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span><span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>tab<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
+                        listeComptes<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">add</span></span><span style="color: #990000">(</span>tab<span style="color: #990000">[</span>i<span style="color: #990000">]);</span>
                 <span style="color: #FF0000">}</span>
 
                 System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Les comptes existants"</span><span style="color: #990000">);</span>
@@ -994,9 +997,8 @@ http://www.gnu.org/software/src-highlite -->
                         System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Nom de propriétaire -&gt; "</span><span style="color: #990000">);</span>
                         nomProp <span style="color: #990000">=</span> lect<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">next</span></span><span style="color: #990000">();</span>
 
-                        resultatsProprietaire <span style="color: #990000">=</span> ClasseEssaiArrayListCompte<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getComptesDe</span></span><span style="color: #990000">(</span>nomProp<span style="color: #990000">,</span> listeComptes<span style="color: #990000">);</span>
-
                         System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Ses comptes : "</span><span style="color: #990000">);</span>
+                        resultatsProprietaire <span style="color: #990000">=</span> ClasseEssaiArrayListCompte<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getComptesDe</span></span><span style="color: #990000">(</span>nomProp<span style="color: #990000">,</span> listeComptes<span style="color: #990000">);</span>
                         taille <span style="color: #990000">=</span> resultatsProprietaire<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">size</span></span><span style="color: #990000">();</span>
                         System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  "</span> <span style="color: #990000">+</span> taille <span style="color: #990000">+</span> <span style="color: #FF0000">" comptes"</span><span style="color: #990000">);</span>
                         <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>taille<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
@@ -1012,17 +1014,11 @@ http://www.gnu.org/software/src-highlite -->
 <div class="sect1">
 <h2 id="_pour_aller_plus_loin_optionnel">4. Pour aller plus loin (optionnel)</h2>
 <div class="sectionbody">
-<div class="paragraph"><p>On pourra tester rapidement une ArrayList de double.</p></div>
 <div class="paragraph"><p>On essaiera d’utiliser la méthode <tt>iterator()</tt> de la classe ArrayList dans le test sur ArrayList&lt;String&gt;.</p></div>
 <div class="olist arabic"><ol class="arabic">
 <li>
 <p>
-Cette méthode renvoie un objet de type <tt>Iterator&lt;E&gt;</tt>.
-</p>
-</li>
-<li>
-<p>
-On étudiera les méthodes fournies par <tt>Iterator&lt;E&gt;</tt> dans la documentation.
+Cette méthode renvoie un objet de type <tt>Iterator&lt;E&gt;</tt>. Étudier les méthodes fournies par <tt>Iterator&lt;E&gt;</tt> dans la documentation.
 </p>
 </li>
 <li>
@@ -1032,7 +1028,7 @@ On utilisera l’objet renvoyé par la méthode <tt>iterator()</tt> :
 <div class="ulist"><ul>
 <li>
 <p>
-Déclarer une variable objet de type <tt>Iterator&lt;E&gt;</tt> (&lt;E&gt; bien choisi …).
+Déclarer une variable objet de type <tt>Iterator&lt;E&gt;</tt> (<tt>&lt;E&gt;</tt> bien choisi …).
 </p>
 </li>
 <li>
@@ -1049,18 +1045,21 @@ On utilisera cette variable pour afficher le contenu de <tt>alChaines</tt>.
 </li>
 </ol></div>
 <div class="paragraph"><p>Que pensez vous que va réaliser la syntaxe suivante ? (A tester bien sur).</p></div>
-<div class="literalblock">
-<div class="content">
-<pre><tt>for ( String s : alChaines ) {
-     System.out.println ( s.toUpperCase() + " lg : " + s.length() );</tt></pre>
-</div></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span> <span style="color: #008080">String</span> s <span style="color: #990000">:</span> alChaines <span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span> s<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">toUpperCase</span></span><span style="color: #990000">()</span> <span style="color: #990000">+</span> <span style="color: #FF0000">" lg : "</span> <span style="color: #990000">+</span> s<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">length</span></span><span style="color: #990000">()</span> <span style="color: #990000">);</span></tt></pre></div></div>
+<div class="paragraph"><p>On pourra tester rapidement une ArrayList de double (cf. support de cours).</p></div>
 </div>
 </div>
 </div>
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2014-02-24 00:17:48 CET
+Dernière mise à jour 2014-02-24 11:02:28 CET
 </div>
 </div>
 </body>
