@@ -1,0 +1,16 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class Cellule {
+	- double contenu 
+	- Cellule suivant
+
+	+ Cellule (double pVal, Cellule pSuiv) 
+	
+	+ double getContenu ()
+	+ Cellule getSuivant ()
+	+ void setContenu (double pVal)
+	+ void setSuivant (Cellule pSuiv)
+}
+
+@enduml
