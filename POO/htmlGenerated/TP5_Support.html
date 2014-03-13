@@ -866,7 +866,7 @@ cellspacing="0" cellpadding="4">
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">ObjTP</p></td>
-<td align="left" valign="top"><p class="table">Programmer la classe AgenceBancaire avec tableau dynamique optimisé.</p></td>
+<td align="left" valign="top"><p class="table">Programmer la classe AgenceBancaire avec tableau dynamique.</p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">Durée</p></td>
@@ -891,7 +891,7 @@ cellspacing="0" cellpadding="4">
 <div class="ulist"><ul>
 <li>
 <p>
-Les Compte seront stockés dans un tableau de Compte dynamique bâti sur les principes vus en TD pour la classe <tt>Pile</tt>. Nous ferons deux versions.
+Les Compte seront stockés dans un tableau de Compte dynamique bâti sur les principes vus en TD pour la classe <tt>Pile</tt>.
 </p>
 </li>
 <li>
@@ -1227,7 +1227,7 @@ Ensuite seulement lancer Scite et ouvrir les 3 fichiers .java.
 </div>
 </div>
 <div class="sect1">
-<h2 id="_première_implémentation_de_solution">3. Première implémentation de solution</h2>
+<h2 id="_implémentation_de_la_solution">3. Implémentation de la solution</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_solution_envisagée">3.1. Solution envisagée</h3>
@@ -1415,7 +1415,7 @@ Enfin :
 </div>
 <div class="sect2">
 <h3 id="_codage_todo">3.3. Codage : TODO</h3>
-<div class="paragraph"><p>A vous de jouer : vous avez bien réfléchi ? Lancez vous.</p></div>
+<div class="paragraph"><p>A vous de jouer : modifier la classe pour réaliser l&#8217;implémentation demandée.</p></div>
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
@@ -1470,7 +1470,7 @@ RkWOKkVXIjB5X2ac8f8HA74K8I0SaJkAAAAASUVORK5CYII=" />
 </td>
 <td class="content">
 <div class="title">Rappel</div>
-<div class="paragraph"><p>On commence TOUJOURS par le constructeur car c&#8217;est la première choses réalisée sur un objet nouvellement créé : début de la vie d&#8217;un objet.</p></div>
+<div class="paragraph"><p>On commence TOUJOURS par le constructeur car c&#8217;est la première chose réalisée sur un objet nouvellement créé : début de la vie d&#8217;un objet.</p></div>
 <div class="paragraph"><p>Le rôle du constructeur est TOUJOURS d&#8217;initialiser TOUS les attributs de l&#8217;objet.</p></div>
 </td>
 </tr></table>
@@ -1552,7 +1552,22 @@ lJga0LT8+uRGJ5P/2OBGpz/mT34Gmsy9nx36v3PoX1H4mIUGLCOSAAAAAElFTkSuQmCC" />
 </td>
 </tr></table>
 </div>
-<div class="paragraph"><p>Votre classe doit passer avec succès (complet) les tests JUnit et être utilisable dans l&#8217;application (menu pour un opérateur de l&#8217;agence bancaire).</p></div>
+</div>
+<div class="sect2">
+<h3 id="_tests">3.4. Tests</h3>
+<div class="paragraph"><p>Testez votre classe :</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Elle doit passer avec succès (complet) les tests JUnit.
+</p>
+</li>
+<li>
+<p>
+L&#8217;application menu pour un opérateur de l&#8217;agence bancaire doit fonctionner avec votre classe.
+</p>
+</li>
+</ul></div>
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
@@ -1632,7 +1647,7 @@ Enfin <tt>removeCompte()</tt> ne peut être testée sans les 2 précédentes.
 </div>
 </div>
 <div class="sect1">
-<h2 id="_deuxième_implémentation_de_solution">4. Deuxième implémentation de solution</h2>
+<h2 id="_deuxième_implémentation_de_solution_optionnelle">4. Deuxième implémentation de solution (optionnelle)</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_solution_envisagée_2">4.1. Solution envisagée</h3>
@@ -1640,7 +1655,7 @@ Enfin <tt>removeCompte()</tt> ne peut être testée sans les 2 précédentes.
 <div class="ulist"><ul>
 <li>
 <p>
-pré-réserver un tableau plus grand que nécessaire de taille <tt>tailleMin</tt>.
+pré-réserver au départ un tableau de taille <tt>tailleMin</tt>.
 </p>
 </li>
 <li>
@@ -1650,7 +1665,7 @@ lorsque nécessaire de l&#8217;agrandir en doublant sa capacité.
 </li>
 <li>
 <p>
-de ne le réduire que lorsque il y a la moitié des éléments non utilisés.
+lorsque nécessaire de ne le réduire que lorsque il y a la moitié des éléments non utilisés et diviser alors sa taille par deux (sauf si elle est égale à <tt>tailleMin</tt>).
 </p>
 </li>
 </ul></div>
@@ -1701,7 +1716,7 @@ d&#8217;autre part la taille effective du tableau (3, 6, 12, 24, &#8230;)
 </ul></div>
 </div>
 <div class="sect2">
-<h3 id="_préparation_de_la_mise_en_oeuvre_2">4.2. Préparation de la mise en oeuvre</h3>
+<h3 id="_analyse_de_la_mise_en_oeuvre">4.2. Analyse de la mise en oeuvre</h3>
 <div class="sect3">
 <h4 id="_attributs_nécessaires">4.2.1. Attributs nécessaires</h4>
 <div class="paragraph"><p>Réfléchir aux attributs à ajouter pour cette solution (2 devraient suffire). Les déclarer (toujours en private !).</p></div>
@@ -1759,7 +1774,7 @@ AMfx8ZYkSYI90L87QNC71WolxgIK0Nf4W+GVUAX9QsCXDSwq8B//47GAh7AxjwdUQQPI4onGcI6G
 lJga0LT8+uRGJ5P/2OBGpz/mT34Gmsy9nx36v3PoX1H4mIUGLCOSAAAAAElFTkSuQmCC" />
 </td>
 <td class="content">
-<div class="paragraph"><p>Pour déclarer tailleMin, utiliser la syntaxe suivante :</p></div>
+<div class="paragraph"><p>Pour déclarer tailleMin, utiliser ajoutera un attribut en utilisant la syntaxe suivante :</p></div>
 <div class="paragraph"><p><tt>private final int tailleMin = 3;</tt></p></div>
 <div class="paragraph"><p>qui crée un attribut, privé, de type int, d&#8217;identificateur <tt>tailleMin</tt></p></div>
 <div class="paragraph"><p>mais déclaré <tt>final</tt> donc non modifiable. C&#8217;est une constante. Par la suite, pour passer à 1 élément ou à 100, modifier cette ligne sera suffisant.</p></div>
@@ -1774,8 +1789,24 @@ lJga0LT8+uRGJ5P/2OBGpz/mT34Gmsy9nx36v3PoX1H4mIUGLCOSAAAAAElFTkSuQmCC" />
 </div>
 <div class="sect3">
 <h4 id="_codage_todo_2">4.2.3. Codage : TODO</h4>
-<div class="paragraph"><p>A vous de jouer : vous avez bien réfléchi ? Lancez vous.</p></div>
+<div class="paragraph"><p>A vous de jouer : modifier la classe pour réaliser l&#8217;implémentation demandée.</p></div>
 </div>
+</div>
+<div class="sect2">
+<h3 id="_tests_2">4.3. Tests</h3>
+<div class="paragraph"><p>Testez votre classe :</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Elle doit passer avec succès (complet) les tests JUnit.
+</p>
+</li>
+<li>
+<p>
+L&#8217;application menu pour un opérateur de l&#8217;agence bancaire doit fonctionner avec votre classe.
+</p>
+</li>
+</ul></div>
 </div>
 </div>
 </div>
@@ -2665,7 +2696,7 @@ http://www.gnu.org/software/src-highlite -->
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2014-03-12 19:24:11 CET
+Dernière mise à jour 2014-03-13 18:03:44 CET
 </div>
 </div>
 </body>

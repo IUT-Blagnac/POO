@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
 <head>
 <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
-<meta name="copyright" content="2014-03-12, Your computer *** Dut/Info-S2/M2103 *** Powered by AsciiDoc and W3C Slidy &amp;#169;" />
+<meta name="copyright" content="2014-03-13, Your computer *** Dut/Info-S2/M2103 *** Powered by AsciiDoc and W3C Slidy &amp;#169;" />
 <meta name="generator" content="AsciiDoc 8.6.6 / slidy2 backend 1.0.3" />
 <title>BPOO - Support TP 5</title>
 <style type="text/css">
@@ -4152,7 +4152,7 @@ cellspacing="0" cellpadding="4">
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">ObjTP</p></td>
-<td align="left" valign="top"><p class="table">Programmer la classe AgenceBancaire avec tableau dynamique optimisé.</p></td>
+<td align="left" valign="top"><p class="table">Programmer la classe AgenceBancaire avec tableau dynamique.</p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">Durée</p></td>
@@ -4182,7 +4182,7 @@ cellspacing="0" cellpadding="4">
 <ul class="">
 <li>
 <span>
-Les Compte seront stockés dans un tableau de Compte dynamique bâti sur les principes vus en TD pour la classe <tt>Pile</tt>. Nous ferons deux versions.
+Les Compte seront stockés dans un tableau de Compte dynamique bâti sur les principes vus en TD pour la classe <tt>Pile</tt>.
 </span>
 </li>
 <li>
@@ -4531,8 +4531,8 @@ Ensuite seulement lancer Scite et ouvrir les 3 fichiers .java.
 </div><div class="slide">
 
 <div class="sect1">
-<h1 id="_première_implémentation_de_solution">3. Première implémentation de solution</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="3. Première implémentation de solution";slidefootnotes="";/*]]>*/</script>
+<h1 id="_implémentation_de_la_solution">3. Implémentation de la solution</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="3. Implémentation de la solution";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody">
 </div></div>
 <script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
@@ -4763,7 +4763,7 @@ Enfin :
 <script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect2";nexttitle="3.3. Codage : TODO";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A vous de jouer : vous avez bien réfléchi ? Lancez vous.</p>
+<p>A vous de jouer : modifier la classe pour réaliser l&#8217;implémentation demandée.</p>
 </div>
 <div class="admonitionblock">
 <table><tr>
@@ -4820,7 +4820,7 @@ RkWOKkVXIjB5X2ac8f8HA74K8I0SaJkAAAAASUVORK5CYII=" />
 <td class="content">
 <div class="title">Rappel</div>
 <div class="paragraph">
-<p>On commence TOUJOURS par le constructeur car c&#8217;est la première choses réalisée sur un objet nouvellement créé : début de la vie d&#8217;un objet.</p>
+<p>On commence TOUJOURS par le constructeur car c&#8217;est la première chose réalisée sur un objet nouvellement créé : début de la vie d&#8217;un objet.</p>
 </div>
 <div class="paragraph">
 <p>Le rôle du constructeur est TOUJOURS d&#8217;initialiser TOUS les attributs de l&#8217;objet.</p>
@@ -4913,9 +4913,29 @@ lJga0LT8+uRGJ5P/2OBGpz/mT34Gmsy9nx36v3PoX1H4mIUGLCOSAAAAAElFTkSuQmCC" />
 </td>
 </tr></table>
 </div>
+</div></div>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
+</div><div class="slide">
+
+<div class="sect2">
+<h1 id="_tests">3.4. Tests</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect2";nexttitle="3.4. Tests";slidefootnotes="";/*]]>*/</script>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Votre classe doit passer avec succès (complet) les tests JUnit et être utilisable dans l&#8217;application (menu pour un opérateur de l&#8217;agence bancaire).</p>
+<p>Testez votre classe :</p>
 </div>
+<ul class="">
+<li>
+<span>
+Elle doit passer avec succès (complet) les tests JUnit.
+</span>
+</li>
+<li>
+<span>
+L&#8217;application menu pour un opérateur de l&#8217;agence bancaire doit fonctionner avec votre classe.
+</span>
+</li>
+</ul>
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
@@ -4998,8 +5018,8 @@ Enfin <tt>removeCompte()</tt> ne peut être testée sans les 2 précédentes.
 </div><div class="slide">
 
 <div class="sect1">
-<h1 id="_deuxième_implémentation_de_solution">4. Deuxième implémentation de solution</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="4. Deuxième implémentation de solution";slidefootnotes="";/*]]>*/</script>
+<h1 id="_deuxième_implémentation_de_solution_optionnelle">4. Deuxième implémentation de solution (optionnelle)</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="4. Deuxième implémentation de solution (optionnelle)";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody">
 </div></div>
 <script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
@@ -5015,7 +5035,7 @@ Enfin <tt>removeCompte()</tt> ne peut être testée sans les 2 précédentes.
 <ul class="">
 <li>
 <span>
-pré-réserver un tableau plus grand que nécessaire de taille <tt>tailleMin</tt>.
+pré-réserver au départ un tableau de taille <tt>tailleMin</tt>.
 </span>
 </li>
 <li>
@@ -5025,7 +5045,7 @@ lorsque nécessaire de l&#8217;agrandir en doublant sa capacité.
 </li>
 <li>
 <span>
-de ne le réduire que lorsque il y a la moitié des éléments non utilisés.
+lorsque nécessaire de ne le réduire que lorsque il y a la moitié des éléments non utilisés et diviser alors sa taille par deux (sauf si elle est égale à <tt>tailleMin</tt>).
 </span>
 </li>
 </ul>
@@ -5081,8 +5101,8 @@ d&#8217;autre part la taille effective du tableau (3, 6, 12, 24, &#8230;)
 </div><div class="slide">
 
 <div class="sect2">
-<h1 id="_préparation_de_la_mise_en_oeuvre_2">4.2. Préparation de la mise en oeuvre</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect2";nexttitle="4.2. Préparation de la mise en oeuvre";slidefootnotes="";/*]]>*/</script>
+<h1 id="_analyse_de_la_mise_en_oeuvre">4.2. Analyse de la mise en oeuvre</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect2";nexttitle="4.2. Analyse de la mise en oeuvre";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody">
 </div></div>
 <script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
@@ -5150,7 +5170,7 @@ lJga0LT8+uRGJ5P/2OBGpz/mT34Gmsy9nx36v3PoX1H4mIUGLCOSAAAAAElFTkSuQmCC" />
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Pour déclarer tailleMin, utiliser la syntaxe suivante :</p>
+<p>Pour déclarer tailleMin, utiliser ajoutera un attribut en utilisant la syntaxe suivante :</p>
 </div>
 <div class="paragraph">
 <p><tt>private final int tailleMin = 3;</tt></p>
@@ -5187,8 +5207,31 @@ lJga0LT8+uRGJ5P/2OBGpz/mT34Gmsy9nx36v3PoX1H4mIUGLCOSAAAAAElFTkSuQmCC" />
 <script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect3";nexttitle="4.2.3. Codage : TODO";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A vous de jouer : vous avez bien réfléchi ? Lancez vous.</p>
+<p>A vous de jouer : modifier la classe pour réaliser l&#8217;implémentation demandée.</p>
 </div>
+</div></div>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
+</div><div class="slide">
+
+<div class="sect2">
+<h1 id="_tests_2">4.3. Tests</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect2";nexttitle="4.3. Tests";slidefootnotes="";/*]]>*/</script>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Testez votre classe :</p>
+</div>
+<ul class="">
+<li>
+<span>
+Elle doit passer avec succès (complet) les tests JUnit.
+</span>
+</li>
+<li>
+<span>
+L&#8217;application menu pour un opérateur de l&#8217;agence bancaire doit fonctionner avec votre classe.
+</span>
+</li>
+</ul>
 </div></div>
 <script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
@@ -6076,7 +6119,7 @@ http://www.gnu.org/software/src-highlite -->
 </div>
 <div id="footer" style="position: absolute; left: 5%; top: 80%; width: 90%;">
 <div id="footer-text">
-Dernière mise à jour 2014-03-12 19:24:11 CET
+Dernière mise à jour 2014-03-13 18:03:44 CET
 </div>
 </div>
 </div></div>
