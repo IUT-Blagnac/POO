@@ -1039,14 +1039,14 @@ Afficher les éléments de <tt>alChaines</tt> et sa taille.
 </div>
 </div>
 <div class="sect1">
-<h2 id="_manipuler_une_arraylist_de_compte">3. Manipuler une ArrayList de Compte</h2>
+<h2 id="_manipuler_une_arraylist_lt_compte_gt">3. Manipuler une ArrayList&lt;Compte&gt;</h2>
 <div class="sectionbody">
 <div class="paragraph"><p>Reprendre le programme suivant. Récupérer les packages du TP précédent (tps.banque, &#8230;).</p></div>
 <div class="paragraph"><p>Le programme principal :</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
-remplit une ArrayList de Compte,
+remplit une ArrayList&lt;Compte&gt;,
 </p>
 </li>
 <li>
@@ -1077,7 +1077,12 @@ affiche les comptes de ce propriétaire.
 </ul></div>
 </li>
 </ul></div>
-<div class="paragraph"><p><strong>A faire : écrire le code de la méthode : <tt>public static ArrayList&lt;Compte&gt; getComptesDe (String pNomProprietaire, ArrayList&lt;Compte&gt; pComptes)</tt>. Son rôle est de renvoyer une ArrayList de Compte contenant les comptes du paramètre <tt>pComptes</tt> dont le nom de propriétaire est <tt>pNomProprietaire</tt>.</strong></p></div>
+<div class="paragraph"><p><strong>A faire : écrire le code de la méthode :</strong></p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>public static ArrayList&lt;Compte&gt; getComptesDe (String pNomProprietaire, ArrayList&lt;Compte&gt; pComptes)</tt></pre>
+</div></div>
+<div class="paragraph"><p>Son rôle est de renvoyer une ArrayList de Compte contenant les comptes du paramètre <tt>pComptes</tt> dont le nom de propriétaire est <tt>pNomProprietaire</tt>.*</p></div>
 <div class="listingblock">
 <div class="content"><!-- Generator: GNU source-highlight 3.1.5
 by Lorenzo Bettini
@@ -1155,6 +1160,19 @@ http://www.gnu.org/software/src-highlite -->
 <div class="sect1">
 <h2 id="_pour_aller_plus_loin_optionnel">4. Pour aller plus loin (optionnel)</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_le_forall_ou_foreach">4.1. Le 'forall" ou "foreach"</h3>
+<div class="paragraph"><p>Que pensez vous que va réaliser la syntaxe suivante ? (A tester bien sur).</p></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span> <span style="color: #008080">String</span> s <span style="color: #990000">:</span> alChaines <span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span> s<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">toUpperCase</span></span><span style="color: #990000">()</span> <span style="color: #990000">+</span> <span style="color: #FF0000">" lg : "</span> <span style="color: #990000">+</span> s<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">length</span></span><span style="color: #990000">()</span> <span style="color: #990000">);</span></tt></pre></div></div>
+</div>
+<div class="sect2">
+<h3 id="_parcourir_une_arraylist_lt_e_gt">4.2. Parcourir une ArrayList&lt;E&gt;</h3>
 <div class="paragraph"><p>On essaiera d’utiliser la méthode <tt>iterator()</tt> de la classe ArrayList dans le test sur ArrayList&lt;String&gt;.</p></div>
 <div class="olist arabic"><ol class="arabic">
 <li>
@@ -1185,15 +1203,11 @@ On utilisera cette variable pour afficher le contenu de <tt>alChaines</tt>.
 </ul></div>
 </li>
 </ol></div>
-<div class="paragraph"><p>Que pensez vous que va réaliser la syntaxe suivante ? (A tester bien sur).</p></div>
-<div class="listingblock">
-<div class="content"><!-- Generator: GNU source-highlight 3.1.5
-by Lorenzo Bettini
-http://www.lorenzobettini.it
-http://www.gnu.org/software/src-highlite -->
-<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span> <span style="color: #008080">String</span> s <span style="color: #990000">:</span> alChaines <span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span> s<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">toUpperCase</span></span><span style="color: #990000">()</span> <span style="color: #990000">+</span> <span style="color: #FF0000">" lg : "</span> <span style="color: #990000">+</span> s<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">length</span></span><span style="color: #990000">()</span> <span style="color: #990000">);</span></tt></pre></div></div>
+</div>
+<div class="sect2">
+<h3 id="_autre_essai">4.3. Autre essai</h3>
 <div class="paragraph"><p>On pourra tester rapidement une ArrayList de double (cf. support de cours).</p></div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -1704,7 +1718,7 @@ http://www.gnu.org/software/src-highlite -->
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2014-02-24 11:02:28 CET
+Dernière mise à jour 2014-03-14 09:50:15 CET
 </div>
 </div>
 </body>
