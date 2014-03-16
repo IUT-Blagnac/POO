@@ -2536,16 +2536,75 @@ This module splits a long slide into multiple slides.
 </section>
 <section class="slide">
 <h2>Plan</h2>
-<div id="toc">
-  <div id="toctitle">Table des matières</div>
-  <noscript><p><b>JavaScript must be enabled in your browser to display the table of contents.</b></p></noscript>
-</div>
+<ol>
+<li class="">
+<p>
+Avant-propos
+</p>
+</li>
+<li class="">
+<p>
+Organisation et généralités
+</p>
+</li>
+<li class="">
+<p>
+La notation UML
+</p>
+</li>
+<li class="">
+<p>
+Modèles, Diagrammes et outils
+</p>
+</li>
+<li class="">
+<p>
+Modéliser les données
+</p>
+</li>
+<li class="">
+<p>
+Diagramme des UC
+</p>
+</li>
+<li class="">
+<p>
+Diagramme Séquence Système
+</p>
+</li>
+<li class="">
+<p>
+Compléments Diag. Classe
+</p>
+</li>
+<li class="">
+<p>
+Schéma Navigationnel d’Interface
+</p>
+</li>
+<li class="">
+<p>
+Diagramme Séquence et Java
+</p>
+</li>
+<li class="">
+<p>
+Conception de tests
+</p>
+</li>
+<li class="">
+<p>
+MVC
+</p>
+</li>
+</ol>
 </section>
 <section class="slide">
 <h2>Avant-propos</h2>
 <img src="/Users/bruel/dev/POO/COO/images/architecte-d-interieur-id518.jpg" alt="Architecte" class=""/>
 <p>Nous allons vous apprendre dans ce cours des techniques pour maîtriser
-la <strong>C</strong>onception <strong>O</strong>ientée <strong>O</strong>bjet.</p>
+la <strong>C</strong>onception <strong>O</strong>rientée <strong>O</strong>bjet.</p>
+<div style="page-break-after:always"></div>
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
@@ -2605,6 +2664,555 @@ PAr9L8j/96+U/w3yCoCXW14B8HLLvwDd67nwZIEPdgAAAABJRU5ErkJggg==" />
 <div style="page-break-after:always"></div>
 </section>
 <section class="slide">
+<h2>À qui est destiné ce document?</h2>
+<p>Les étudiants du DUT informatique, mes collègues enseignants qui cherchent un document de référence accessible, et &#8230; moi-même (pour organiser mes notes diverses)!</p>
+</section>
+<section class="slide">
+<h2>À qui il n&#8217;est pas destiné?</h2>
+<p>Si vous appartenez à une de ces catégories, ce document n&#8217;est pas pour vous :</p>
+<ul>
+<li class="">
+vous cherchez un document de référence
+</li>
+<li class="">
+vous voulez vous perfectionner
+</li>
+<li class="">
+vous souhaitez préparer une certification <a href="http://java.com/fr/">Java</a>.
+</li>
+</ul>
+</section>
+<section class="slide">
+<h2>Historique</h2>
+<p>Ce document est la compilation de plusieurs années d&#8217;enseignement &#8230;</p>
+<p>Vous trouverez en référence (cf. <a href="#refs">Bibiliographie</a>) les ouvrages et autres documents utilisés.</p>
+<p>Je tiens à remercier mes collègues qui m&#8217;ont aidé dans mon entreprise :</p>
+<ul>
+<li class="">
+<a href="mailto:belloir@univ-pau.fr">Nicolas Belloir</a> de l&#8217;Université de Pau et des Pays de l&#8217;Adour, <a href="mailto:laurent.nonne@univ-tlse2.fr">Laurent Nonne</a> et <a href="mailto:andre.peninou@univ-tlse2.fr">André Peninou</a> de l&#8217;<a href="http://www.iut-blagnac.fr">IUT de Blagnac</a>;
+</li>
+<li class="">
+le maître d&#8217;<a href="http://www.methods.co.nz/asciidoc">AsciiDoc</a> : <a href="mailto:jean-michel.inglebert@univ-tlse2.fr">Jean-Michel Inglebert</a>.
+</li>
+</ul>
+</section>
+<section class="slide">
+<h2>Sur l&#8217;auteur</h2>
+<ul>
+<li class="">
+Professeur à l&#8217;<a href="http://www.univ-toulouse.fr">Univesité de Toulouse</a>, en poste à l&#8217;<a href="http://www.iut-blagnac.fr">IUT de Blagnac</a>
+</li>
+<li class="">
+Co-fondateur de l&#8217;association <a href="http://www.sysml-france.fr">SysML-France</a>
+</li>
+<li class="">
+Membre du comité éditorial de la revue <em><a href="http://www.sosym.org/">SoSyM</a></em>
+</li>
+<li class="">
+Membre du <em>Steering Committee</em> de la conférence ACM/IEEE <a href="http://www.modelsconference.org/">MODELS</a>
+</li>
+<li class="">
+Chef du département informatique de l&#8217;<a href="http://www.iut-blagnac.fr">IUT de Blagnac</a> 2009 à 2012
+</li>
+<li class="">
+Responsable de l&#8217;ancien module <a href="http://jmbhome.heroku.com/teaching/ACSI/acsi.html">ACSI</a> (Analyse et Conception des Systèmes d&#8217;Information)
+</li>
+<li class="">
+Marié à une merveilleuse femme, papa d&#8217;une merveilleuse fille
+</li>
+</ul>
+</section>
+<section class="slide">
+<h2>Comment lire ce document?</h2>
+<p>Ce document a été réalisé de manière à être lu de préférence
+dans sa version électronique (au format HTML ou PDF), ce qui permet de
+naviguer entre les références et les renvois interactivement, de consulter
+directement les documents référencés par une URL, etc.</p>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Attention" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAMVUlEQVRogdWZeXDVVZbHP7/f27JB
+wtJIiCERRFlbx5FuHRrRBgtBsRIwCCOrFmGmiDBjYVNlQlgiQjU6IjI4xLJxGf5QGp0Cbaftsu3R
+hu6aYXqgLZoWEsjyyDP7S972e7/l3vnj5cW3Ji9M/zOn6lRS997fvd/vueece+59ipSS/89iv5mP
+ZEQQQsS23RQARVEAUFUVRVFQog0ZyogJSClld3c327Ztw7IsLMuKto90KgBsNhtVVVXMnj2bvLw8
+7Ha7HBEJKWXGKoSQXV1dcsuWLfLSpUsyKkKIIdWyrLTqdrvlU089Jc+cOSM9Ho8Mh8NSCCEzxTRi
+8JWVlbKtre0vAt6yLGmapmxtbZXr1q2TZ86ckW1tbSMikTH4GzduyKqqqkHwsSA1TZOhUChOg8Hg
+oBqGIQ3DSAk+VleuXDliEspwviullD09PbzwwgscO3Yszt91XScQCNDZ2YlhGIPfuFwu7Pb48FJV
+lZycnEG/z8/PRwiBqqqDYzweD88//zyrV69m7ty5jBs3DofDMWRgD0lASik9Hg979uzh2LFjcYEa
+CoVob2/n2q9+hbZ585BGSCWltbVMr61NtSYbN25k7dq1zJkzZ1gSaqrGWPD79+9PAh8MBuns7OTi
+e+8R2rwZCYOaqTTt3cuf6+qSwAMcP36co0eP8vXXX9Pd3Y1hGMg0lk65A1HwdXV1vPHGG0mW7+jo
+4A8/+xn2BAAAI0riQOnu3cyork7Zt3btWtavX89dd92VdieSCEgppdvt5sCBAxw5ciSuLxQK0dTU
+RMOHHyJ37hwh1NSiAKU7djDzxRdT9q9YsYJt27YxY8aMlCTiCEgp5eXLl6mvr+fVV1+NmygYDNLW
+1sY3J09ipLEYQDPw2sBfCTwMLARKgKwhiNxWU8OsXbvi2qLYnnzySSorK1PvRGyqvH79uty6dWtS
+Lg8EAvLKlSvyo1275M8hSV8H+eMBvRPkP9Vslp0tV6W3u12+c7hOTgT5NyAXgtwE8gTIUyn0D9XV
+0jAMqet6klZUVMjPP/88KcWqUcs3NjZy+PBhDh06FGeFqNtcOnECY8+euICVwDWgFtj/m1/wD+8f
+5xtg6uy5ZI+5BSkkU6fexgu7tvLWhd/x1tXL5P/905wAggnzSODavn388Sc/SblDL7/8Mq+99hqX
+L1+OC2zb7t27uX79+u7Dhw+ndJvW1lYaP/qI0EDKS1z0XeDjC7/l9llz+d6EWxjv0imdcgeFRcVo
+fR46vm1Cx8ndP5hP3qjR/GDuX/GbC5/iberl1qirxGjv73+PYRjc8tBDcVhGjRpFRUUF27dvp7i4
+mPz8fFwuV2QHVq1aldLyDQ0NXDt5En91NRIQCRqNHld2HsLUCfu6GD9mNIoVQggDy9RQpYLTbkdV
+7Vh6CH9vJ/fcfz/vALsAN2AlzHv1wAEu1tTExUI0Hl555RXq6upobm4mEAhECEyePDkOvK7rtLS0
+cOP0aby1tUnAo2oNkFAUSTjoRfN+ix7wgjRBShACVVFQRGSkHvTypwtnmXHPQhrbb3D0k1McAdpi
+DBLVhp/+lIvV1UlV7oQJE8jNzcXtduPz+ZIPMtM0aWhooPH99+mtrU1ymVRqUxUQFlJYSBFGCivG
+OSyEaSCFAGlhd+Vy7w/n43BmM3POXWx69hl8AyMTDXTl4EEu7t2bCBGAQCCAruupCdjtdrp3705r
++ViN22YhsUwdyzRBCpACyzIRMnpngCxXNjYlMk4L+ggoYXxp5pbAlX37cDgcSQSEEAxmoVgQg/9n
+AP67bVdAUcFmQ3W6IgtIiWUKLCGwLGvQj69e+m+EsBB6iGB/N/3e9oyNlIgRYm5kiR2JH0L6MkFY
+Ei0UQKAycdJUbIodT3Mjpu6n3xfCptoRlomQCqZpRkhLCykMhLBQSV1HJbalKnvSF3MpNO0OSIEw
+DWyuPCaVzCRv7ER8Ph+mtJM35lZsdjvuxktYhobDkYOCgqJEDWLLaAfSVc1p78SJO2AAvUBggLUN
+KIx2Kgqjv3crY2wOiqaqKKoKihKJCctCC/npbW+jq7sbS7UjkGCZCCkQQkdJsV6mRWHGBH4HLHpx
+F3LcGDq6u7nw2S85++V/4gb0kB9hFoAZwuZwgc2BqjpQVRWbzYXd4cDlysHn7WJi0W2EfH24XA6E
+jKySqhTPtDRPIjB4XUtoPw3sKV/O+KJipJT4V63mq3/7Obu21/LN/5xl9l/PIys7G2fOaBS7E5vN
+QrU7UW0KNlUFp5P8MeO5/8HFhPo7CXr7MMIaQW8neSkMlqnEEYj1s8QJbwXaWpopmDgJh93OqHGF
+LFy9jjunTeHNo2uAvUy54/uMuaUYV24BUpVYpoVEwaY4UVUbitNJ9ugxOBw2tEAPfX29QCjuVB9O
+EmNBTdeRGEj3A56OdkwtgDDCCKFjz8ql6N55/G3VcRouX+SXH72Ht6udcCg4cJiJSPIn8oCloIKU
+KAhURUUIiVCjx128pjtrEiVtFkrMNNOBA+s34XG3YIRDSMtAkSbOrDzuvOchHnmiklEFY3n76G7O
+f/nv9Ht7EMJCSjGoljCxjOBAnaSjhYPowevDZrx04FMSGLwnJEzmAOYCn33wAUYoiGXoSMsEoeNw
+ZTO2aDrzFpWxck0VJVOn4fd2E/T7oneNyOFlGkjLwNTD6FoILRQEa/hDcyhJIuB0OlFVNeVE04B3
+XjnC+d9+hRYKYJlhpDBBGDidDiaUfp/xk24nJ3c0eaPzsKsgzEhtZJkGIuzDNDRCAR99fb309XYh
+NAYPsnQ6IgJSSgoKCihavDilJZ4Aajf8HVf/fAnLCCNNAyktECaqIsgbV8So0WMHrn2RGLBMHREO
+YBg6eiiIFgzQ7/US8vmYoEDuENa/u6oqcwJRPysoKOC+N9+kcNGiJGvkAQuADY+twn3tCuFg/4CV
+DbB0VKHhzHbhdGVhs6kgDKTuR9f86KEAWtBHd0c73p52pB5Av5KewJxnnmHeoUOEw+EkjHEEYi8M
+EHlFKyws5IfHjlG4cGHSxJOA1cATPy7nT388j+73YoYDCEuP1DhSRrKOlFhmmLAWQNMCBHw9tHtu
+8K2nBcsI8uGxf8HoiRBINNTtjz7KQ/X1xL6iRDHGvubZAfr7+1Nuz+TJk6G+nv/atInmX/86rq8A
+WAlUrahk/Fio/8XHjM4fi93pHCgRFCzLQtd1tFAQLeCjs9NNb4cHxdL44J8PozfD7XyXRqNy97p1
+PPz220gp0XU9zriKogw+SaqqGtmB48ePU15enkRASklRURH31tcz6cEHk1JrAfAUcEcPLLjvMU69
+/694uzsI+X3093TS5blBl8eNt72VHk8Tfd9eR+vv4MQ/HkZpiJwttgTL3/Hoo2nBNzY2smjRIhYs
+WEBBQQEulyvyLuT3+2VTUxM7d+7k5MmTKXNuS0sL555+mtYvv0zqE0A7kavhqFL4oAlCCWOygGIi
+qTiHyMnuTBgz/bHHKDt9GillnN8D+P1+ysrKWLJkCdOmTWPWrFmUlpZGCAghpN/vp7m5mZqaGl5/
+/XUKCwtJFLfbzX+sX8+Nr75K6rtZiXr49KVLKf/4Y4QQ6LqeBP6RRx6hvLycadOmMXPmTEpKSsjN
+zf3uZS6WRHV1NadOnUpaTEpJa2sr5zZupOkmSaQqk2csWcLyTz4BQNO0uL7GxkbWr1+fErzNZlMG
+w1lVVSUvL4+SkhL27dvH8uXL8Xg8ceABiouLue+ttyieN2+IK2Z6TRx/5+LFacE3NDRQWVmZFjwk
+nAOxJF566SW2bNnChQsXkmKipKSEB959l9vmzcvo1pZOpz/8ME98+mla8Bs2bGDZsmVpwUOa5/VE
+d0oXE319fXxWXs43Z88m9Q0n03/0I1YPJIRE8OfOnWPHjh2UlZUNCT4tgUQSO3fupKqqigceeGCw
+P/a7VM8emUg0VcbK+fPn2bp1KytWrBgW/JAEEknU1NTw7LPPMn/+/GFBZQI8lZw/f57nnnuO5cuX
+M2XKlGHBD0sgkURdXR2PP/44FRUVNwV+qP7Tp09z8ODBjNxmRAQSSRw4cIBly5axdOnSvwh4RVH4
+4osv2L9/P2VlZRlbfkQEEkls376djo4OQqHE83bk4nK5EEKwZs0aSktLRwR+RATgOxItLS1cu3aN
+vr6+wTfK/4tEfzeeMmUKkydPzhg8jJAAREgEg0H6+vrQNC2pFL8ZUVWVrKws8vPzycnJQVXVjH/s
+/F/lgJiyQFHragAAAABJRU5ErkJggg==" />
+</td>
+<td class="content">Si vous lisez la version papier de ce document, ces liens clickables ne
+vous servent à rien, et c&#8217;est votre punition pour avoir utilisé du papier
+au lieu du support électronique!</td>
+</tr></table>
+</div>
+</section>
+<section class="slide">
+<h2>Conventions typographiques</h2>
+<p>J&#8217;ai utilisé un certain nombre de conventions personnelles
+pour rendre ce document le plus agréable à lire et le plus
+utile possible, grâce notamment à la puissance d&#8217;<a href="http://www.methods.co.nz/asciidoc">AsciiDoc</a> :</p>
+<ul>
+<li class="">
+Des mises en formes particulières concernent les noms de
+personnalités (e.g., <a href="mailto:jean-michel.inglebert@univ-tlse2.fr">Jean-Michel Inglebert</a>), etc.
+</li>
+<li class="">
+Les références bibliographiques présentées en fin de document
+(cf. <a href="#refs">Bibliographie</a>).
+</li>
+<li class="">
+Tous les <em>flottants</em> (figures, tableaux, définitions, etc.) sont
+listés à la suite de la table des matière.
+</li>
+<li class="">
+Les termes anglais (souvent incontournables) sont repérés
+en <em>italique</em>, non pas pour indiquer qu&#8217;il s&#8217;agit d&#8217;un
+mot anglais, mais pour indiquer au lecteur que nous employons
+volontairement ces termes (e.g., <em>Package</em>).
+</li>
+</ul>
+</section>
+<section class="slide">
+<h2>Conventions typographiques (suite)</h2>
+<p>Le titre des figures indique (entre parenthèses)
+un <code>M</code> pour les figures issues de <a href="http://www.modeliosoft.com/">Modelio</a>,
+un <code>MD</code> pour les figures issues de <a href="http://www.nomagic.com/">MagicDraw</a>,
+un <code>P</code> pour les figures issues de <a href="http://plantuml.sourceforge.net/">plantUML</a>,
+un <code>Py</code> pour les figures issues de <a href="http://www.eclipse.org/papyrus/">Papyrus</a>,
+un <code>R</code> pour les figures issues de <a href="http://www-142.ibm.com/software/products/us/en/ratirhap">Rhapsody</a>,
+un <code>T</code> pour les figures issues de <a href="http://www.topcased.org">TOPCASED</a>,
+un <code>Y</code> pour les figures issues de <a href="http://yuml.me/">yuml</a>,
+et un <code>UK</code> pour les figures en anglais.</p>
+<p>Pour les notes, conseils, avertissements, etc. voici la liste des pictogrammes utilisés :</p>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Note" src="data:image/png;base64,
+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" />
+</td>
+<td class="content">
+<p>Les notes comme celles-ci sont utilisées pour indiquer des éléments intéressant pour la majorité des lecteurs.</p>
+</td>
+</tr></table>
+</div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Avertissement" src="data:image/png;base64,
+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" />
+</td>
+<td class="content">
+<p>Ces notes indiquent des points importants qui réclament votre attention.</p>
+</td>
+</tr></table>
+</div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Astuce" src="data:image/png;base64,
+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" />
+</td>
+<td class="content">
+<p>Celles-ci concernent en général des points de détail et permettent "d&#8217;aller plus loin".</p>
+</td>
+</tr></table>
+</div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Note" src="data:image/png;base64,
+/9j/4AAQSkZJRgABAQAAAQABAAD/4gxYSUNDX1BST0ZJTEUAAQEAAAxITGlubwIQAABtbnRyUkdC
+IFhZWiAHzgACAAkABgAxAABhY3NwTVNGVAAAAABJRUMgc1JHQgAAAAAAAAAAAAAAAAAA9tYAAQAA
+AADTLUhQICAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABFj
+cHJ0AAABUAAAADNkZXNjAAABhAAAAGx3dHB0AAAB8AAAABRia3B0AAACBAAAABRyWFlaAAACGAAA
+ABRnWFlaAAACLAAAABRiWFlaAAACQAAAABRkbW5kAAACVAAAAHBkbWRkAAACxAAAAIh2dWVkAAAD
+TAAAAIZ2aWV3AAAD1AAAACRsdW1pAAAD+AAAABRtZWFzAAAEDAAAACR0ZWNoAAAEMAAAAAxyVFJD
+AAAEPAAACAxnVFJDAAAEPAAACAxiVFJDAAAEPAAACAx0ZXh0AAAAAENvcHlyaWdodCAoYykgMTk5
+OCBIZXdsZXR0LVBhY2thcmQgQ29tcGFueQAAZGVzYwAAAAAAAAASc1JHQiBJRUM2MTk2Ni0yLjEA
+AAAAAAAAAAAAABJzUkdCIElFQzYxOTY2LTIuMQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAWFlaIAAAAAAAAPNRAAEAAAABFsxYWVogAAAAAAAAAAAAAAAA
+AAAAAFhZWiAAAAAAAABvogAAOPUAAAOQWFlaIAAAAAAAAGKZAAC3hQAAGNpYWVogAAAAAAAAJKAA
+AA+EAAC2z2Rlc2MAAAAAAAAAFklFQyBodHRwOi8vd3d3LmllYy5jaAAAAAAAAAAAAAAAFklFQyBo
+dHRwOi8vd3d3LmllYy5jaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAABkZXNjAAAAAAAAAC5JRUMgNjE5NjYtMi4xIERlZmF1bHQgUkdCIGNvbG91ciBzcGFjZSAt
+IHNSR0IAAAAAAAAAAAAAAC5JRUMgNjE5NjYtMi4xIERlZmF1bHQgUkdCIGNvbG91ciBzcGFjZSAt
+IHNSR0IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAZGVzYwAAAAAAAAAsUmVmZXJlbmNlIFZpZXdpbmcg
+Q29uZGl0aW9uIGluIElFQzYxOTY2LTIuMQAAAAAAAAAAAAAALFJlZmVyZW5jZSBWaWV3aW5nIENv
+bmRpdGlvbiBpbiBJRUM2MTk2Ni0yLjEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHZpZXcAAAAA
+ABOk/gAUXy4AEM8UAAPtzAAEEwsAA1yeAAAAAVhZWiAAAAAAAEwJVgBQAAAAVx/nbWVhcwAAAAAA
+AAABAAAAAAAAAAAAAAAAAAAAAAAAAo8AAAACc2lnIAAAAABDUlQgY3VydgAAAAAAAAQAAAAABQAK
+AA8AFAAZAB4AIwAoAC0AMgA3ADsAQABFAEoATwBUAFkAXgBjAGgAbQByAHcAfACBAIYAiwCQAJUA
+mgCfAKQAqQCuALIAtwC8AMEAxgDLANAA1QDbAOAA5QDrAPAA9gD7AQEBBwENARMBGQEfASUBKwEy
+ATgBPgFFAUwBUgFZAWABZwFuAXUBfAGDAYsBkgGaAaEBqQGxAbkBwQHJAdEB2QHhAekB8gH6AgMC
+DAIUAh0CJgIvAjgCQQJLAlQCXQJnAnECegKEAo4CmAKiAqwCtgLBAssC1QLgAusC9QMAAwsDFgMh
+Ay0DOANDA08DWgNmA3IDfgOKA5YDogOuA7oDxwPTA+AD7AP5BAYEEwQgBC0EOwRIBFUEYwRxBH4E
+jASaBKgEtgTEBNME4QTwBP4FDQUcBSsFOgVJBVgFZwV3BYYFlgWmBbUFxQXVBeUF9gYGBhYGJwY3
+BkgGWQZqBnsGjAadBq8GwAbRBuMG9QcHBxkHKwc9B08HYQd0B4YHmQesB78H0gflB/gICwgfCDII
+RghaCG4IggiWCKoIvgjSCOcI+wkQCSUJOglPCWQJeQmPCaQJugnPCeUJ+woRCicKPQpUCmoKgQqY
+Cq4KxQrcCvMLCwsiCzkLUQtpC4ALmAuwC8gL4Qv5DBIMKgxDDFwMdQyODKcMwAzZDPMNDQ0mDUAN
+Wg10DY4NqQ3DDd4N+A4TDi4OSQ5kDn8Omw62DtIO7g8JDyUPQQ9eD3oPlg+zD88P7BAJECYQQxBh
+EH4QmxC5ENcQ9RETETERTxFtEYwRqhHJEegSBxImEkUSZBKEEqMSwxLjEwMTIxNDE2MTgxOkE8UT
+5RQGFCcUSRRqFIsUrRTOFPAVEhU0FVYVeBWbFb0V4BYDFiYWSRZsFo8WshbWFvoXHRdBF2UXiReu
+F9IX9xgbGEAYZRiKGK8Y1Rj6GSAZRRlrGZEZtxndGgQaKhpRGncanhrFGuwbFBs7G2MbihuyG9oc
+AhwqHFIcexyjHMwc9R0eHUcdcB2ZHcMd7B4WHkAeah6UHr4e6R8THz4faR+UH78f6iAVIEEgbCCY
+IMQg8CEcIUghdSGhIc4h+yInIlUigiKvIt0jCiM4I2YjlCPCI/AkHyRNJHwkqyTaJQklOCVoJZcl
+xyX3JicmVyaHJrcm6CcYJ0kneierJ9woDSg/KHEooijUKQYpOClrKZ0p0CoCKjUqaCqbKs8rAis2
+K2krnSvRLAUsOSxuLKIs1y0MLUEtdi2rLeEuFi5MLoIuty7uLyQvWi+RL8cv/jA1MGwwpDDbMRIx
+SjGCMbox8jIqMmMymzLUMw0zRjN/M7gz8TQrNGU0njTYNRM1TTWHNcI1/TY3NnI2rjbpNyQ3YDec
+N9c4FDhQOIw4yDkFOUI5fzm8Ofk6Njp0OrI67zstO2s7qjvoPCc8ZTykPOM9Ij1hPaE94D4gPmA+
+oD7gPyE/YT+iP+JAI0BkQKZA50EpQWpBrEHuQjBCckK1QvdDOkN9Q8BEA0RHRIpEzkUSRVVFmkXe
+RiJGZ0arRvBHNUd7R8BIBUhLSJFI10kdSWNJqUnwSjdKfUrESwxLU0uaS+JMKkxyTLpNAk1KTZNN
+3E4lTm5Ot08AT0lPk0/dUCdQcVC7UQZRUFGbUeZSMVJ8UsdTE1NfU6pT9lRCVI9U21UoVXVVwlYP
+VlxWqVb3V0RXklfgWC9YfVjLWRpZaVm4WgdaVlqmWvVbRVuVW+VcNVyGXNZdJ114XcleGl5sXr1f
+D19hX7NgBWBXYKpg/GFPYaJh9WJJYpxi8GNDY5dj62RAZJRk6WU9ZZJl52Y9ZpJm6Gc9Z5Nn6Wg/
+aJZo7GlDaZpp8WpIap9q92tPa6dr/2xXbK9tCG1gbbluEm5rbsRvHm94b9FwK3CGcOBxOnGVcfBy
+S3KmcwFzXXO4dBR0cHTMdSh1hXXhdj52m3b4d1Z3s3gReG54zHkqeYl553pGeqV7BHtje8J8IXyB
+fOF9QX2hfgF+Yn7CfyN/hH/lgEeAqIEKgWuBzYIwgpKC9INXg7qEHYSAhOOFR4Wrhg6GcobXhzuH
+n4gEiGmIzokziZmJ/opkisqLMIuWi/yMY4zKjTGNmI3/jmaOzo82j56QBpBukNaRP5GokhGSepLj
+k02TtpQglIqU9JVflcmWNJaflwqXdZfgmEyYuJkkmZCZ/JpomtWbQpuvnByciZz3nWSd0p5Anq6f
+HZ+Ln/qgaaDYoUehtqImopajBqN2o+akVqTHpTilqaYapoum/adup+CoUqjEqTepqaocqo+rAqt1
+q+msXKzQrUStuK4trqGvFq+LsACwdbDqsWCx1rJLssKzOLOutCW0nLUTtYq2AbZ5tvC3aLfguFm4
+0blKucK6O7q1uy67p7whvJu9Fb2Pvgq+hL7/v3q/9cBwwOzBZ8Hjwl/C28NYw9TEUcTOxUvFyMZG
+xsPHQce/yD3IvMk6ybnKOMq3yzbLtsw1zLXNNc21zjbOts83z7jQOdC60TzRvtI/0sHTRNPG1EnU
+y9VO1dHWVdbY11zX4Nhk2OjZbNnx2nba+9uA3AXcit0Q3ZbeHN6i3ynfr+A24L3hROHM4lPi2+Nj
+4+vkc+T85YTmDeaW5x/nqegy6LzpRunQ6lvq5etw6/vshu0R7ZzuKO6070DvzPBY8OXxcvH/8ozz
+GfOn9DT0wvVQ9d72bfb794r4Gfio+Tj5x/pX+uf7d/wH/Jj9Kf26/kv+3P9t////4QBMRXhpZgAA
+TU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAMqADAAQA
+AAABAAAAIwAAAAD/2wBDAAICAgICAQICAgICAgIDAwYEAwMDAwcFBQQGCAcICAgHCAgJCg0LCQkM
+CggICw8LDA0ODg4OCQsQEQ8OEQ0ODg7/2wBDAQICAgMDAwYEBAYOCQgJDg4ODg4ODg4ODg4ODg4O
+Dg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg7/wAARCAAjADIDASIAAhEBAxEB/8QA
+HwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQR
+BRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdI
+SUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2
+t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEB
+AQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMi
+MoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpj
+ZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbH
+yMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD9/KK8J+MWhePPFOn6
+VB8O/HGm+FblYphcSyXQXczBfKYAA7hkEduteV6l8N/jXJpqS23xXsS7xTNL/wATExqCUCowbaeB
+gnp37120sJCUFJ1Er9NR20Pd/ij8ZPh18HPBTa78QPEllolsQfIgZt09yR/DHGPmY/QVwmqa14a/
+af8A2VtQtfhN8XL7w4b6MbdX0J0+1WxwcxSo3zqDnDAFW44IrwX9o34ceFviN43XRfHlgmry2thA
+kWowny7i3Yxje0T9gWy205B9K+GfEH7Lvx6/Z5+PNtrPwP8AF764JY0uLRrCfybl4m5VJ4W+Rxx6
+n8K/Mck8SsmzHG4zB8/s54ep7OXNZJttqLi7635XZbn65k3BGDqYKhW+s+zxElzx5knBpWdnppa6
+u39zOxGsftZfsIa7HDq4PxG+D4mwrSO8tnhm/gkOXtnJP3WypJ6HrX6ffs9ftCeEf2ivg/deKfDF
+te6XdWFyLXVdMvMGS0lKhgNw4ZSDkMOtfmZqni79qf8AaP8AHWn/ALN/jrxN4A8CXWs2zzanp0ag
+3k0EGJHaRELlRwDt+XJr9P8A4BfAfwj+z58E18IeFmuLya4m+06rqVxjzb2cqF3ED7qgAAL2FfoU
+qU4W5la6vqc3GdbL6mAUsTyPG33pP3XHvPpd+Wv5HudFFFI/Kz8/LD4HeDdD8N6bY3nx5N4TbRSw
+z3FypmkjIDqyfNkgrIjLj1U9619U+EHhKezsGn+NiWr2kEiQCOcFHVvOfLrnkAq/thCK9Nf9k34Y
+TXlhdTy+JZryysYrO2mbUnzHHFEkMeB0yEjjH/ARVuT9ln4byuXafxIXKNGSdRcgx/PtTHTA3n69
+8819C8yg7P2rv/hRo567nEfEqxeX4s3sMczXRttJgcykYMgSNct+I5ritQ1S51bWLW8l3boYILdW
+B6eWgUc++Ca+rNX+HMN941n1yK6dzNpUllLbyLw2YiisD2PSvnfVPDd94f8Ahhp8mq2ktnqFxrLq
+Y5Bg7EjAB+hJY1/mr4s+H2dYLM8djZRcaNWpUqNrVNRkuRtrZv2lknbZ9j944U4gwdbD0aCac4xj
+Fd7te9/6T+R+V/7Ec89x/wAHJPjmW4mlnlN54lBeRyzYErgDJ9BX76+IPiN4I8L+PvDHhXXvEula
+d4l8Q3f2XRtLklBubuTaW+VBztAVjuOBx1r+WPQPHvxV+Hf/AAVk+KGsfBXSLrW/iLeeINb0zTYL
+awN3Knn3MitIkYB+ZR3PA6mv1J/ZU/YT+Lh/aV0H9o39pTxxq0/ji0ne8sdFF0Z51keN0zcSnIXA
+c4ROhxzX+qPEWVYeVOjia9ZRSpQSS1k3bt0XmfjWY0o+1cm7H7FUV47J8GtNkuJJP+Ez+JC7mLbV
+8SXAAz2A3dKK/NzyD2KiiigArmfFWj6ZrHhS5h1OzhvEiUvFvHKMB1BHINFFeVnmHpV8vrU6sVKL
+i7pq6enZnRhKkoVoyi7NNao8D/Zq+FPw68H/AA/1Txh4b8IaNpnirxBq17c6zq6RF7q7ka6lJ3SM
+SwXPRQQo7AV9RUUV686k52cnd2X5EV23UlfuFFFFSZH/2Q==" />
+</td>
+<td class="content">
+<div class="title">Définition : Exemple (OMG UML v2.4.1, p. 152)</div>
+<p>Ces notes concernent des définitions tirées de la spécification <a href="http://www.uml.org/">UML&#8482;</a> et sont donc précisément référencées.</p>
+</td>
+</tr></table>
+</div>
+</section>
+<section class="slide">
+<h2>Conventions typographiques (suite)</h2>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Note" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAEwAAABMCAYAAADHl1ErAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKySURBVHhe7ZrNCw1RGIcvyUYi+ViILIRSFsp/
+oCyklJQFEgvJUpSyULIhJVYksZBYYUNJlORrwY4sbGQjUUSS8PzuzOiYZq6ZzNyZO/N76umcuXUX
+553znnPmnRkYY4wxxhhjjDHGGGOMMf1lCR7E+/gRf8TtEzyCi9HAHDyDP/HXCL/hKZyOvWUhvsKs
+AOX5EBXk3jEXywYr8QFOw15xFrOCUdR9mDADV+Iq1I3oHEtRi3pWIIr6GXfh3eC3xDd4FGfhRKNA
+aWY8wvQg6/A1LsOJQzvbafzXTliH73ARThSXMGsw41JnuYnZJNZh1iDG7TasjKlxWwc74rZpNsRt
+JdQZMG31bWB13FZCXQHTulHnzSjDvLithDoGtR11HloxvGqeT3HbStZjE0eIUd7Dyqh6hh3GKVG3
+NdyJ21aiUkzWXW7K9zgfK6PqGabCX1tQwPaiTvytZT+m73ITah3dja1Hz46XMWsQ4/IlrsVaqGuB
+XoMbcfbwqn50dHiLz/ApfkfTBpo4AlxAzcCQD7gFNUvymIm34zbNCTwfdbvFVkyvOQpWkee9c5j+
+rzyGnWQB6tgRDrZosPJKRZ0NlriO4WCLBkspqFQN/ys7Hax0KhYNlshKxcaCNY5FX6mos1F4xNBs
+ex51hzzGm1H3L5SKt6LuH47jgajbTdKpmFbVBL1fTJOXinrUCb2KWf+fSDSQzYEqW3/FZPDXMO+b
+ibxdMfQGdiZYWYTPmhdx1AcmqjKEqjAZBusKdvoDFb3KVwppsCexTKVEJe8XmARLh9S2lMBrQ4u1
+BqtX+WVRKifB6vRxIkEfxX1BpWRZtEbp1b+CdQg7P7OEUmhn1C2Ngqz61p7hVQ9YjpuibmmSo4UW
+/N7wPzUxrXeqq5kCaO1Kl4GMMcYYY4wxxhhjjDHGmH4yGPwGW7Ta9y6Gz8IAAAAASUVORK5CYII=" />
+</td>
+<td class="content">
+<p>Modélisation UML incorrecte.</p>
+</td>
+</tr></table>
+</div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Note" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAEwAAABMCAYAAADHl1ErAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPhSURBVHhe7ZpZqE1RGMevIZJEEhlDJERSyCyF
+DMmYByUZkiFPvEok8SAeJOVBSfJAIsmLjClCkRfJC1KSIZEp/H/nnJVlt+/dZ9hn37XP/X71a0/n
+7rvX2mv49rd3k2EYhmEYhmEYhmEYRlB0KC1DZqL8Kb8UtoxELsuVxVUjiUnyjzxa2DISuSepsIeF
+rTZA+9KyGhZKKgu/yc6y4dkplxdXK8a1Lucs2fBQSAp7QQ5kR5n4rcu5WzY8HeVbSYE/ye2ynG4a
+bV14XbYJTkq/4HfkaNkcVDLHx8ppcpk8IO/KNgEF9isMf8hdst5MkJuLq/mB2Y1Zzq8wxrRhMm06
+ybnymHwp+V+LZWq0Ky3rzXm5VH6VG+QZGaWvnC+Hl9bhjXwlGb+esiOGbnKO5PyLZA/pOCdXFFfz
+xVr5Xk4tbP0PXfaG/CX9VhiVCtsko5PGeMm5o79/J/vLXNJb8pjjM0YykEcLmuQTSSX5MEHwcO7/
+jpbcMMyTtAC/gJVI5SyRPmy747TYhmGBZJb0K6Aaf8topZ2VnHtkYasBoBt+kHEVUI2f5TjpYObN
+IlzJjLgIvlY5Z0OyWsYVOA3XyExIMw4jaCSyniJ5pOkpp0sHLYHjUT5KBumb8rn8LonDhsqZcoZM
+4r4klR003SWB5j5JYElQ6t91P0s6WPrH8JkkqEzKc42Qx2VSnMb/CBoGW/LtcRePfh5+q/SPnZBd
+ZCVMli2FIutlLqArXJPRAvjB5SHp9pNUjNJLMsbRWo+UluvkIOnDLBsX1aOfL6PV1pLtzQSShXRN
+VwA/hXNKsm9/YesfVOol2Vx3I9biOBXlYEyL+70/BHAtPBHQyoOvOLKlDPDRCqMA5LoceyQVEi14
+nASjG6WD1uQfZ/w8LB0u04uPJNcUPH7l0CX9iz4o/QKX6w4JXeUtyXbcYM8MTWsmy+v+lps4W+YC
+wgNHLfEYXdGP7JPoI69K/xwMG1W/UMkqH+agZRBO9CtsVQcxF/EdaSGSg8RsDPKv5QPJ8+QL6WAM
+Ix83St725DqChkTfXunf7WrlGTJuP5LdzfUbJqL7KzKNDEUlMtEEP0NGWSWzrijfaBgTNGRZ00zl
+VCOTRKq5sXo22S3SfyHRGvD927biavjwxU3cXc/aVL/8qWcLC+VrmwGlZSrUo8KIsnnsqSXWSpNQ
+blwsZBcIGuO6Rmv5WKZG2i2MFxBDiqvBwDNnsLhPm0Iy+gI5KKIfnbS2p2XQXJRxF94aEk5UmgbP
+HJKGtXwCkJZ8HURmJBfwKMKDb0sZhbRlKOAVHV0wN0lCwzAMwzAMwzAMwzAMwzAMwyibpqa/+Hna
+D+7PtIkAAAAASUVORK5CYII=" />
+</td>
+<td class="content">
+<p>Modélisation UML partiellement correcte ou pouvant prêter à confusion.</p>
+</td>
+</tr></table>
+</div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Note" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAEwAAABMCAYAAADHl1ErAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAP+SURBVHhe7ZtLqBRHFIavDxSRYDAYkCAI0QTR
+BBHUhVlE0YgPxDeIEgIRRJTsXLgRN4JmkV0QREJ0IwnxkaBLX6gIakQRQRFXCoEQEkQUjc//6+ki
+x6KvM/dO12S653zw0Y+Z6ZmqW111+lTdPsdxHMdxHMdxHMdxnK5iWL7tZmbJZ/JRduQ05YRc09h1
+mjFbvpLfZ0dOUy5JKuxqdtQDDM23g2GJpLLwiRwpa882uaqxO2BC6wp+LmsPhaSwx+QETrSIbV3B
+nbL2DJd/Sgr8QH4jW7lN49aFZ2RP8KO0Bb8gp8r+oJJ5/VP5mVwp98iLsiegwLbC8F+5Q6Zmptzc
+2K0OjG6McrbC6NMmybIZIb+Qe+U9yXctk6UxJN+m5ohcIR/LjfKQjBkvF8nJ+T78Ie9L+q+bnCjg
+HblAcv2l8l0ZOCxXN3arxVfybzknO3oTbtmz8rm0rTCWCtsk40FjhuTa8fv/kh/ISvK+5DHH8omk
+I48L2swbkkqyMEDwcG7fR0uuDQslLcAWcCBSOculhePwOi22NiyWjJK2AgbjSxlX2k+Sa0/JjmoA
+t+E/sqgCBuNDOV0GGHk7Ea50jKIIvl25Zi1ZL4sKXIZfyspB0EjYQIbiV3lOWlK0rmAlWtkYSaC5
+SxJYEpTaQtgs6URpX0sh39HV0NmSby/68Wjz8Ftk0XvK9GuZnHYyotckeSsC0tOciLibb+HDfJsS
+m2/j+bWdsvVLGRel/5gn50obMD7NtzAu36bEfgfhxXVJKy+14sq8GP0YGVYegC9zosPYnD/70+TP
+8nfJndD1kAgMfCeL+p0ytSnskBq3hjuhLZLc5zlkHwK2P0sF+a9AURdAMvGkDHdCV9PpsIKQJn6d
+9NA+uUGmSF6WTicDV0Zw5g6+lWRcx8rKQRKxqLBlyLUto/JtpaG/TNHKrkg7wFQanittf5E6vVNp
+PpI8X/6SHf1HygRipTklQ+FI7VhSpKgrDUO3LSC3TjxxUeYkCMdMtFQSgsawnsLKVFhcUGCajdxZ
+s2m2W7Jomo2K59rxSJmEFBO5TESsbexmsD6VCPs3eVzaiNzC5C3928f5PoSJXD5fNJHLM+IB+Z48
+Kqn8SkHfRGvgFqSzXyftTHRZkMr5QdoWWLlFd9wq2yV/ddLVKWGBSZzhxeQtrMxl5/zg8/KOfMGJ
+FqFV3JbMXjO1z2/iUYa+kDVlRdciWD0oWRZlk5O0Mha61B4yCHFriZ8P+4MZozDIsK1N1P82yGXF
+FTaQpB8hxX7J53pqLWyw1dYVM19ubezWG/oxu+iuEinl/xvirHZaV88RsqRFi+66hm76b7bRubuz
+I6cpjHT8q5/jOI7jOI7jOI7jOI7TIn19rwHxRFgzUciFPgAAAABJRU5ErkJggg==" />
+</td>
+<td class="content">
+<p>Modélisation UML correcte.</p>
+</td>
+</tr></table>
+</div>
+</section>
+<section class="slide">
+<h2>Pourquoi parler de "document"?</h2>
+<p>Parce que j&#8217;ignore la version que vous êtes en train de lire. À partir de l&#8217;<a href="../cours.asc">original</a>, plusieurs versions ont été générées grâce à <a href="http://www.methods.co.nz/asciidoc">AsciiDoc</a> :</p>
+<ul>
+<li class="">
+Une version pour le web (Moodle) au format <a href="cours.html">html</a>
+</li>
+<li class="">
+Une version pour présentation en amphi au format <a href="cours.slides.html">présentation</a>
+</li>
+<li class="">
+Une version pour impression au format <a href="M2104.pdf">pdf</a>
+</li>
+</ul>
+</section>
+<section class="slide">
+<h2>Utilisation et autres mentions légales</h2>
+<p>Les images qui ne sont pas libres de droit contiennent un lien vers les sites où je les ai "empruntées".</p>
+<p>N&#8217;hésitez pas à m&#8217;envoyer vos remarques en tout genre en m'écrivant <a href="mailto:jean-michel.bruel@univ-tlse2.fr">ici</a>.</p>
+</section>
+<section class="slide">
 <h2>Organisation et généralités</h2>
 <p>Ce support de cours sert deux publiques :</p>
 <ul>
@@ -2621,8 +3229,9 @@ Il va porter principalement sur <a href="http://www.uml.org/">UML&#8482;</a>, un
 </section>
 <section class="slide">
 <h2>La notation UML</h2>
-<div class="sect2">
-<h3 id="_méthodologie_de_développement">Méthodologie de développement</h3>
+</section>
+<section class="slide">
+<h2>Méthodologie de développement</h2>
 <p>Nous allons aborder les points suivants :</p>
 <ul>
 <li class="">
@@ -2638,8 +3247,9 @@ Processus de développement
 Conception logicielle
 </li>
 </ul>
-<div class="sect3">
-<h4 id="_pourquoi_l_8217_orienté_objet">Pourquoi l&#8217;orienté objet ?</h4>
+</section>
+<section class="slide">
+<h2>Pourquoi l&#8217;orienté objet ?</h2>
 <ul>
 <li class="">
 Prendre en compte tout le système
@@ -2665,9 +3275,9 @@ l&#8217;héritage et le polymorphisme
 </ul>
 </li>
 </ul>
-</div>
-<div class="sect3">
-<h4 id="_pourquoi_uml">Pourquoi UML?</h4>
+</section>
+<section class="slide">
+<h2>Pourquoi UML?</h2>
 <ul>
 <li class="">
 tout le cycle de vie :
@@ -2693,9 +3303,9 @@ synthèse des meilleurs aspects des méthodes courantes
 standard mondial
 </li>
 </ul>
-</div>
-<div class="sect3">
-<h4 id="_processus_de_développement">Processus de développement</h4>
+</section>
+<section class="slide">
+<h2>Processus de développement</h2>
 <p>Activités de bases :</p>
 <ul>
 <li class="">
@@ -2723,6 +3333,7 @@ Test
 Révision
 </li>
 </ul>
+<div style="page-break-after:always"></div>
 <p>Plusieurs approches :</p>
 <ul>
 <li class="">
@@ -2757,9 +3368,9 @@ ensembles de "principes"
 </ul>
 </li>
 </ul>
-</div>
-<div class="sect3">
-<h4 id="_conception_logicielle">Conception logicielle</h4>
+</section>
+<section class="slide">
+<h2>Conception logicielle</h2>
 <p>Qu&#8217;est-ce qu&#8217;une bonne conception?</p>
 <ul>
 <li class="">
@@ -2790,7 +3401,8 @@ faible dépendance et forte cohésion
 utilisation de standards (outils, langages et notations)
 </li>
 </ul>
-<p>Notation pour la copnception</p>
+<div style="page-break-after:always"></div>
+<p>Notation pour la conception</p>
 <ul>
 <li class="">
 Cas d&#8217;utilisation
@@ -2826,10 +3438,9 @@ CRC
 &#8230;
 </li>
 </ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_uml_en_résumé">UML en résumé</h3>
+</section>
+<section class="slide">
+<h2>UML en résumé</h2>
 <ul>
 <li class="">
 Diagrammes
@@ -2863,24 +3474,24 @@ contraintes
 </ul>
 </li>
 </ul>
-<div class="sect3">
-<h4 id="_diagrammes">Diagrammes</h4>
+</section>
+<section class="slide">
+<h2>Diagrammes</h2>
 <p>Plus tard</p>
-</div>
-<div class="sect3">
-<h4 id="_principes_généraux">Principes généraux</h4>
+</section>
+<section class="slide">
+<h2>Principes généraux</h2>
 <p>Plus tard</p>
-</div>
-<div class="sect3">
-<h4 id="_mécanismes">Mécanismes</h4>
+</section>
+<section class="slide">
+<h2>Mécanismes</h2>
 <p>Plus tard</p>
-</div>
-</div>
 </section>
 <section class="slide">
 <h2>Modèles, Diagrammes et outils</h2>
-<div class="sect2">
-<h3 id="_différence_entre_modèle_et_dessins">Différence entre modèle et dessins</h3>
+</section>
+<section class="slide">
+<h2>Différence entre modèle et dessins</h2>
 <p><a href="http://www.uml.org/">UML&#8482;</a> n&#8217;est pas une palette de dessins et d'éléments de base servant à faire
 des diagrammes. Il existe une représentation graphique des éléments modélisés en <a href="http://www.uml.org/">UML&#8482;</a>.
 Cette représentation graphique est celle à laquelle la plupart des étudiants s&#8217;attachent et
@@ -2889,6 +3500,7 @@ Elle est importante car elle permet de communiquer visuellement sur le système 
 mais du point de vue du concepteur, c&#8217;est <strong>le modèle</strong> qui importe le plus.</p>
 <p>C&#8217;est pourquoi nous vous recommandons de ne jamais "dessiner" des diagrammes <a href="http://www.uml.org/">UML&#8482;</a> <span class="footnote"><br />[Sauf bien sûr au brouillon ou sur un tableau, notamment quand on travaille en équipe.]<br /></span>, mais d&#8217;utiliser des outils dédiés (cf. <a href="#Outils">[Outils]</a>).
 Ils respectent en général la norme <a href="http://www.omg.org/spec/UML/2.4.1/">OMG UML v2.4.1</a> (bien qu&#8217;il faille se méfier).</p>
+<div style="page-break-after:always"></div>
 <p>Un des intérêts de la modélisation est de faciliter la communication, notamment
 au travers des diagrammes et leur aspect graphique et synthétique.
 Un dessin est donc un plus par rapport à du texte.</p>
@@ -2902,6 +3514,7 @@ un dessin n&#8217;est pas assez formel (comment être sûr d&#8217;avoir correct
 il est impossible d&#8217;assurer la cohérence globale des modèles dans le cas d&#8217;un dessin.
 </li>
 </ul>
+<div style="page-break-after:always"></div>
 <p>Un <strong>modèle</strong> est une sorte de base de donnée qui regroupe des éléments issues de différents points de vue (saisis le plus
 souvent au travers de diagrammes). Un <strong>diagramme</strong> est une vue partielle du modèle (donc incomplète).
 Le modèle est la vraie plus value car il va permettre de détecter les incohérences sur les exigences, les problèmes de complétude,
@@ -2968,7 +3581,6 @@ respectent la notation de manière automatique.</p>
 </div>
 <p>Voici deux exemples de non respect de la notation qui illustre le type d&#8217;erreur que l&#8217;on trouve souvent dans les modèles qui circulent
 sur Internet ou même parfois dans certains livres.</p>
-</div>
 </section>
 <section class="slide">
 <h2>Diagramme des cas d&#8217;utilisation</h2>
@@ -2994,7 +3606,7 @@ BqtX+WVRKifB6vRxIkEfxX1BpWRZtEbp1b+CdQg7P7OEUmhn1C2Ngqz61p7hVQ9YjpuibmmSo4UW
 /N7wPzUxrXeqq5kCaO1Kl4GMMcYYY4wxxhhjjDHGmH4yGPwGW7Ta9y6Gz8IAAAAASUVORK5CYII=" />
 </td>
 <td class="content">
-<div class="title">Erreur : relations entre UC incorrecte</div>
+<div class="title">Erreur : relations entre UC incorrecte (<code>P</code>)</div>
 <p><span class="image">
 <img alt="badUC.png" height="350" src="data:image/png;base64,
 iVBORw0KGgoAAAANSUhEUgAABFwAAANyCAIAAADQGkhWAAAMRWlDQ1BJQ0MgUHJvZmlsZQAASA2t
@@ -5879,6 +6491,7 @@ YASMgBEwAsUi8P8BjNrgXtiwc0MAAAAASUVORK5CYII=" />
 </td>
 </tr></table>
 </div>
+<div style="page-break-after:always"></div>
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
@@ -7736,6 +8349,7 @@ AZO8khHbGvVjicD/BZtxgYRXqGQ4AAAAAElFTkSuQmCC" />
 </td>
 </tr></table>
 </div>
+<div style="page-break-after:always"></div>
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
@@ -8975,8 +9589,9 @@ PAr9L8j/96+U/w3yCoCXW14B8HLLvwDd67nwZIEPdgAAAABJRU5ErkJggg==" />
 <td class="content">Pour une discussion intéressante sur les différences entre modéliser et dessiner, cf. <a href="http://modeling-languages.com/drawing-tools-vs-modeling-tools/">http://modeling-languages.com/drawing-tools-vs-modeling-tools/</a>.</td>
 </tr></table>
 </div>
-<div class="sect2">
-<h3 id="Outils">Outils UML</h3>
+</section>
+<section class="slide">
+<h2>Outils UML</h2>
 <p>Il existe un certain nombre d&#8217;outils permettant de réaliser des modèles <a href="http://www.uml.org/">UML&#8482;</a>. Voici une liste non exhaustive :</p>
 <ul>
 <li class="">
@@ -9001,8 +9616,6 @@ PAr9L8j/96+U/w3yCoCXW14B8HLLvwDd67nwZIEPdgAAAABJRU5ErkJggg==" />
 &#8230;
 </li>
 </ul>
-<p>:leveloffset:0</p>
-</div>
 </section>
 <section class="slide">
 <h2>Modéliser les données</h2>
@@ -9021,6 +9634,7 @@ ou bien des objets manipulés dans le futur programme Java (par exemple).</p>
 </div></div>
 <p>Nous souhaitons donc dépasser la notion de <strong>variable</strong> vu en programmation au premier semestre
 pour passer à la notion de <strong>donnée</strong> (qui sera utilisée pour véhiculer une <strong>information</strong>).</p>
+<div style="page-break-after:always"></div>
 </div>
 <div class="sect2">
 <h3 id="_en_merise">En Merise</h3>
@@ -9135,8 +9749,9 @@ Pour l&#8217;instant considérons que les 2 sont équivalents.</p>
 </td>
 </tr></table>
 </div>
-<div class="sect2">
-<h3 id="_concept_de_strong_classe_strong">Concept de <strong>Classe</strong></h3>
+</section>
+<section class="slide">
+<h2>Concept de <strong>Classe</strong></h2>
 <p>Une <strong>classe</strong> est une représentation unique servant à caractériser
 un ensemble d’<strong>objets</strong> jouant un rôle identique et décrits par les mêmes <strong>attributs</strong>.</p>
 <img src="/Users/bruel/dev/POO/COO/images/classe.png" alt="classe.png" class=""/>
@@ -9274,16 +9889,16 @@ mise au pluriel des noms
 </tr></table>
 </div>
 <img src="/Users/bruel/dev/POO/COO/images/pluriels.png" alt="pluriels.png" class=""/>
-</div>
-<div class="sect2">
-<h3 id="_classes_et_objets">Classes et objets</h3>
+</section>
+<section class="slide">
+<h2>Classes et objets</h2>
 <p>En programmation on parle de <code>type</code> et de <code>variable</code>. Même si c&#8217;est un raccourci très rapide
 nous pouvons pour l&#8217;instant faire le parallèle entre les notions de <code>classe</code> et d'<code>objet</code>.</p>
 <p>On parlera toutefois d'<strong>instance</strong> pour désigner un objet issu d&#8217;une classe.</p>
 <img src="/Users/bruel/dev/POO/COO/images/object.png" alt="object.png" class=""/>
-</div>
-<div class="sect2">
-<h3 id="_attributs">Attributs</h3>
+</section>
+<section class="slide">
+<h2>Attributs</h2>
 <p>Un <strong>attribut</strong> est une propriété représentative d’un objet
 (nom d’une personne, couleur d’une voiture, moyenne d’un étudiant&#8230;).</p>
 <p>Pour chaque objet d’une classe, un attribut possède une valeur particulière.</p>
@@ -9425,9 +10040,9 @@ interprétables, comme :</p>
 </td>
 </tr></table>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_identifiant">Identifiant</h3>
+</section>
+<section class="slide">
+<h2>Identifiant</h2>
 <p>Un <strong>identifiant</strong> est un attribut particulier d’une classe dont les valeurs représentent
 sans ambiguïté chaque objet de la classe.</p>
 <div class="admonitionblock">
@@ -9546,9 +10161,9 @@ PAr9L8j/96+U/w3yCoCXW14B8HLLvwDd67nwZIEPdgAAAABJRU5ErkJggg==" />
 </tr></table>
 </div>
 <p>Vous approfondirez (ou avez déjà abordé) cette notion en Base de donnée.</p>
-</div>
-<div class="sect2">
-<h3 id="_association">Association</h3>
+</section>
+<section class="slide">
+<h2>Association</h2>
 <p>Une <strong>association</strong> est un ensemble de liens permanents existant entre les objets de deux ou plusieurs classes.
 On dira qu’une association lie plusieurs classes ou que les classes <strong>participent</strong> à l’association.</p>
 <div class="admonitionblock">
@@ -9755,9 +10370,9 @@ PAr9L8j/96+U/w3yCoCXW14B8HLLvwDd67nwZIEPdgAAAABJRU5ErkJggg==" />
 <code>1</code> : signifie <code>[1..1]</code>
 </li>
 </ul>
-</div>
-<div class="sect2">
-<h3 id="_représentation">Représentation</h3>
+</section>
+<section class="slide">
+<h2>Représentation</h2>
 <p>Représentation des classes</p>
 <p>Une classe est représentée par un rectangle divisé en plusieurs compartiments. Le compartiment supérieur contient le <strong>nom</strong> de la classe et le compartiment inférieur la liste des <strong>attributs</strong> (l’identifiant est placé en tête de liste).</p>
 <img src="/Users/bruel/dev/POO/COO/images/exp1.png" alt="exp1.png" class=""/>
@@ -9765,23 +10380,37 @@ PAr9L8j/96+U/w3yCoCXW14B8HLLvwDd67nwZIEPdgAAAABJRU5ErkJggg==" />
 <p>Représentation des associations</p>
 <p>Une association binaire est représentée par un trait reliant deux classes. Le <strong>nom</strong> de l’association est placé à proximité du trait et les <strong>cardinalités</strong> sont placées de part et d’autre.</p>
 <img src="/Users/bruel/dev/POO/COO/images/exp2.png" alt="exp2.png" class=""/>
-</div>
-<div class="sect2">
-<h3 id="_classe_association">Classe association</h3>
+</section>
+<section class="slide">
+<h2>Classe association</h2>
 <p>Certains attributs ne dépendent pas d&#8217;une seule classe, mais de plusieurs.
 Exemple : le prix d&#8217;un produit selon le fournisseur qui le propose.</p>
 <img src="/Users/bruel/dev/POO/COO/images/class-assoc.png" alt="class-assoc.png" class=""/>
 <div style="page-break-after:always"></div>
 <p>Pour les représenter, ils seront placés dans une <strong>classe-association</strong> reliée au  trait de liaison par un trait en pointillés. Le nom de l&#8217;association sera alors placé dans la classe-association.</p>
 <img src="/Users/bruel/dev/POO/COO/images/class-assoc.png" alt="class-assoc.png" class=""/>
-</div>
 </section>
 <section class="slide">
 <h2>Pour dessiner rapidement de l&#8217;UML</h2>
 <p>Les schémas de cette section sont écrits en utilisant le langage <a href="http://plantuml.sourceforge.net/">PlantUML</a>.</p>
 <p>Par exemple le schéma précédent a été réalisé à partir du code suivant :</p>
 <div class="listingblock">
-<div class="content"></div></div>
+<div class="content">
+<pre><tt>@startuml
+class Produits {
+        idPro
+        designation
+        poids
+}
+class Fournisseurs {
+        idFour
+        raisonSociale
+        adresse
+}
+Produits "0..*" -- "0..*" Fournisseurs : Fournir
+@enduml</tt></pre>
+</div></div>
+<div style="page-break-after:always"></div>
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
@@ -9866,6 +10495,9 @@ Les cours sont enseignés par un enseignant (nom, prénom)
 </li>
 </ol>
 </li>
+</ul>
+<div style="page-break-after:always"></div>
+<ul>
 <li class="">
 Réalisez le diagramme de classes suivant :
 <ol>
@@ -9900,12 +10532,15 @@ Un portable a un prix d&#8217;achat et une valeur actuelle (souvent différente)
 </section>
 <section class="slide">
 <h2>Diagramme des UC</h2>
+<p>Bientôt&#8230;</p>
 </section>
 <section class="slide">
 <h2>Diagramme Séquence Système</h2>
+<p>Bientôt&#8230;</p>
 </section>
 <section class="slide">
 <h2>Compléments Diag. Classe</h2>
+<p>Bientôt&#8230;</p>
 </section>
 <section class="slide">
 <h2>Schéma Navigationnel d&#8217;Interface</h2>
@@ -9966,6 +10601,7 @@ PAr9L8j/96+U/w3yCoCXW14B8HLLvwDd67nwZIEPdgAAAABJRU5ErkJggg==" />
 </section>
 <section class="slide">
 <h2>Diagramme Séquence et Java</h2>
+<p>Bientôt&#8230;</p>
 </section>
 <section class="slide">
 <h2>Conception de tests</h2>

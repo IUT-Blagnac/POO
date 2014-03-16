@@ -1,5 +1,7 @@
 == La notation UML
 
+ifdef::slides[:leveloffset: -1]
+
 === Méthodologie de développement
 
 Nous allons aborder les points suivants :
@@ -9,6 +11,7 @@ Nous allons aborder les points suivants :
 - Processus de développement
 - Conception logicielle
 
+ifdef::slides[:leveloffset: -2]
 
 ==== Pourquoi l'orienté objet ?
 
@@ -43,7 +46,7 @@ Activités de bases :
 - Test
 - Révision
 
-ifdef::backend-slidy2[<<<]
+ifdef::slides[<<<]
 
 Plusieurs approches :
 
@@ -73,9 +76,9 @@ Quelques éléments dans ce sens :
 - faible dépendance et forte cohésion
 - utilisation de standards (outils, langages et notations)
 
-ifdef::backend-slidy2[<<<]
+ifdef::slides[<<<]
 
-Notation pour la copnception
+Notation pour la conception
 
 - Cas d'utilisation
 - Diagrammes de classe
@@ -89,6 +92,8 @@ Notation pour la copnception
 - CRC
 - ...
 
+ifdef::slides[:leveloffset: -1]
+
 === UML en résumé
 
 - Diagrammes
@@ -100,6 +105,8 @@ Notation pour la copnception
 * étiquettes
 * notes
 * contraintes
+
+ifdef::slides[:leveloffset: -2]
 
 ==== Diagrammes
 
@@ -113,3 +120,4 @@ Plus tard
 
 Plus tard
 
+ifdef::slides[:leveloffset: 0]
