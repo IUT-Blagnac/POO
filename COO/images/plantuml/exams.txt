@@ -1,0 +1,29 @@
+@startuml
+Class Etudiants{
+numero
+nom
+prenom
+dateNaissance
+}
+Class Cours {
+titre
+code module
+}
+Class Examens {
+date
+coefficient
+}
+Etudiants "*" - "1..*" Cours : suivre
+Examens "*" - "1" Cours : concerner
+(Etudiants,Examens) .. Noter 
+Class Noter {
+note
+}
+Class Enseignants {
+nom
+prenom
+}
+Enseignants "*" - "*" Cours : enseigner
+hide circle
+hide class method
+@enduml
