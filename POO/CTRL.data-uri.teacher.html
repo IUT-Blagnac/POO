@@ -1,0 +1,1423 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="AsciiDoc 8.6.6">
+<title>SDA - Contrôle du 27 Janvier 2014</title>
+<style type="text/css">
+/* Shared CSS for AsciiDoc xhtml11 and html5 backends */
+
+/* Default font. */
+body {
+  font-family: Georgia,serif;
+}
+
+/* Title font. */
+h1, h2, h3, h4, h5, h6,
+div.title, caption.title,
+thead, p.table.header,
+#toctitle,
+#author, #revnumber, #revdate, #revremark,
+#footer {
+  font-family: Arial,Helvetica,sans-serif;
+}
+
+body {
+  margin: 1em 5% 1em 5%;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
+a:visited {
+  color: fuchsia;
+}
+
+em {
+  font-style: italic;
+  color: navy;
+}
+
+strong {
+  font-weight: bold;
+  color: #083194;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #527bbd;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+  line-height: 1.3;
+}
+
+h1, h2, h3 {
+  border-bottom: 2px solid silver;
+}
+h2 {
+  padding-top: 0.5em;
+}
+h3 {
+  float: left;
+}
+h3 + * {
+  clear: left;
+}
+h5 {
+  font-size: 1.0em;
+}
+
+div.sectionbody {
+  margin-left: 0;
+}
+
+hr {
+  border: 1px solid silver;
+}
+
+p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+ul, ol, li > p {
+  margin-top: 0;
+}
+ul > li     { color: #aaa; }
+ul > li > * { color: black; }
+
+pre {
+  padding: 0;
+  margin: 0;
+}
+
+#author {
+  color: #527bbd;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+#email {
+}
+#revnumber, #revdate, #revremark {
+}
+
+#footer {
+  font-size: small;
+  border-top: 2px solid silver;
+  padding-top: 0.5em;
+  margin-top: 4.0em;
+}
+#footer-text {
+  float: left;
+  padding-bottom: 0.5em;
+}
+#footer-badges {
+  float: right;
+  padding-bottom: 0.5em;
+}
+
+#preamble {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+div.imageblock, div.exampleblock, div.verseblock,
+div.quoteblock, div.literalblock, div.listingblock, div.sidebarblock,
+div.admonitionblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.admonitionblock {
+  margin-top: 2.0em;
+  margin-bottom: 2.0em;
+  margin-right: 10%;
+  color: #606060;
+}
+
+div.content { /* Block element content. */
+  padding: 0;
+}
+
+/* Block element titles. */
+div.title, caption.title {
+  color: #527bbd;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 1.0em;
+  margin-bottom: 0.5em;
+}
+div.title + * {
+  margin-top: 0;
+}
+
+td div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content + div.title {
+  margin-top: 0.0em;
+}
+
+div.sidebarblock > div.content {
+  background: #ffffee;
+  border: 1px solid #dddddd;
+  border-left: 4px solid #f0f0f0;
+  padding: 0.5em;
+}
+
+div.listingblock > div.content {
+  border: 1px solid #dddddd;
+  border-left: 5px solid #f0f0f0;
+  background: #f8f8f8;
+  padding: 0.5em;
+}
+
+div.quoteblock, div.verseblock {
+  padding-left: 1.0em;
+  margin-left: 1.0em;
+  margin-right: 10%;
+  border-left: 5px solid #f0f0f0;
+  color: #888;
+}
+
+div.quoteblock > div.attribution {
+  padding-top: 0.5em;
+  text-align: right;
+}
+
+div.verseblock > pre.content {
+  font-family: inherit;
+  font-size: inherit;
+}
+div.verseblock > div.attribution {
+  padding-top: 0.75em;
+  text-align: left;
+}
+/* DEPRECATED: Pre version 8.2.7 verse style literal block. */
+div.verseblock + div.attribution {
+  text-align: left;
+}
+
+div.admonitionblock .icon {
+  vertical-align: top;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #527bbd;
+  padding-right: 0.5em;
+}
+div.admonitionblock td.content {
+  padding-left: 0.5em;
+  border-left: 3px solid #dddddd;
+}
+
+div.exampleblock > div.content {
+  border-left: 3px solid #dddddd;
+  padding-left: 0.5em;
+}
+
+div.imageblock div.content { padding-left: 0; }
+span.image img { border-style: none; }
+a.image:visited { color: white; }
+
+dl {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+dt {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  font-style: normal;
+  color: navy;
+}
+dd > *:first-child {
+  margin-top: 0.1em;
+}
+
+ul, ol {
+    list-style-position: outside;
+}
+ol.arabic {
+  list-style-type: decimal;
+}
+ol.loweralpha {
+  list-style-type: lower-alpha;
+}
+ol.upperalpha {
+  list-style-type: upper-alpha;
+}
+ol.lowerroman {
+  list-style-type: lower-roman;
+}
+ol.upperroman {
+  list-style-type: upper-roman;
+}
+
+div.compact ul, div.compact ol,
+div.compact p, div.compact p,
+div.compact div, div.compact div {
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+}
+
+tfoot {
+  font-weight: bold;
+}
+td > div.verse {
+  white-space: pre;
+}
+
+div.hdlist {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+div.hdlist tr {
+  padding-bottom: 15px;
+}
+dt.hdlist1.strong, td.hdlist1.strong {
+  font-weight: bold;
+}
+td.hdlist1 {
+  vertical-align: top;
+  font-style: normal;
+  padding-right: 0.8em;
+  color: navy;
+}
+td.hdlist2 {
+  vertical-align: top;
+}
+div.hdlist.compact tr {
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.comment {
+  background: yellow;
+}
+
+.footnote, .footnoteref {
+  font-size: 0.8em;
+}
+
+span.footnote, span.footnoteref {
+  vertical-align: super;
+}
+
+#footnotes {
+  margin: 20px 0 20px 0;
+  padding: 7px 0 0 0;
+}
+
+#footnotes div.footnote {
+  margin: 0 0 5px 0;
+}
+
+#footnotes hr {
+  border: none;
+  border-top: 1px solid silver;
+  height: 1px;
+  text-align: left;
+  margin-left: 0;
+  width: 20%;
+  min-width: 100px;
+}
+
+div.colist td {
+  padding-right: 0.5em;
+  padding-bottom: 0.3em;
+  vertical-align: top;
+}
+div.colist td img {
+  margin-top: 0.3em;
+}
+
+@media print {
+  #footer-badges { display: none; }
+}
+
+#toc {
+  margin-bottom: 2.5em;
+}
+
+#toctitle {
+  color: #527bbd;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 1.0em;
+  margin-bottom: 0.1em;
+}
+
+div.toclevel1, div.toclevel2, div.toclevel3, div.toclevel4 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+div.toclevel2 {
+  margin-left: 2em;
+  font-size: 0.9em;
+}
+div.toclevel3 {
+  margin-left: 4em;
+  font-size: 0.9em;
+}
+div.toclevel4 {
+  margin-left: 6em;
+  font-size: 0.9em;
+}
+
+span.aqua { color: aqua; }
+span.black { color: black; }
+span.blue { color: blue; }
+span.fuchsia { color: fuchsia; }
+span.gray { color: gray; }
+span.green { color: green; }
+span.lime { color: lime; }
+span.maroon { color: maroon; }
+span.navy { color: navy; }
+span.olive { color: olive; }
+span.purple { color: purple; }
+span.red { color: red; }
+span.silver { color: silver; }
+span.teal { color: teal; }
+span.white { color: white; }
+span.yellow { color: yellow; }
+
+span.aqua-background { background: aqua; }
+span.black-background { background: black; }
+span.blue-background { background: blue; }
+span.fuchsia-background { background: fuchsia; }
+span.gray-background { background: gray; }
+span.green-background { background: green; }
+span.lime-background { background: lime; }
+span.maroon-background { background: maroon; }
+span.navy-background { background: navy; }
+span.olive-background { background: olive; }
+span.purple-background { background: purple; }
+span.red-background { background: red; }
+span.silver-background { background: silver; }
+span.teal-background { background: teal; }
+span.white-background { background: white; }
+span.yellow-background { background: yellow; }
+
+span.big { font-size: 2em; }
+span.small { font-size: 0.6em; }
+
+span.underline { text-decoration: underline; }
+span.overline { text-decoration: overline; }
+span.line-through { text-decoration: line-through; }
+
+
+/*
+ * xhtml11 specific
+ *
+ * */
+
+tt {
+  font-family: monospace;
+  font-size: inherit;
+  color: navy;
+}
+
+div.tableblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.tableblock > table {
+  border: 3px solid #527bbd;
+}
+thead, p.table.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+p.table {
+  margin-top: 0;
+}
+/* Because the table frame attribute is overriden by CSS in most browsers. */
+div.tableblock > table[frame="void"] {
+  border-style: none;
+}
+div.tableblock > table[frame="hsides"] {
+  border-left-style: none;
+  border-right-style: none;
+}
+div.tableblock > table[frame="vsides"] {
+  border-top-style: none;
+  border-bottom-style: none;
+}
+
+
+/*
+ * html5 specific
+ *
+ * */
+
+.monospaced {
+  font-family: monospace;
+  font-size: inherit;
+  color: navy;
+}
+
+table.tableblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+thead, p.tableblock.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+p.tableblock {
+  margin-top: 0;
+}
+table.tableblock {
+  border-width: 3px;
+  border-spacing: 0px;
+  border-style: solid;
+  border-color: #527bbd;
+  border-collapse: collapse;
+}
+th.tableblock, td.tableblock {
+  border-width: 1px;
+  padding: 4px;
+  border-style: solid;
+  border-color: #527bbd;
+}
+
+table.tableblock.frame-topbot {
+  border-left-style: hidden;
+  border-right-style: hidden;
+}
+table.tableblock.frame-sides {
+  border-top-style: hidden;
+  border-bottom-style: hidden;
+}
+table.tableblock.frame-none {
+  border-style: hidden;
+}
+
+th.tableblock.halign-left, td.tableblock.halign-left {
+  text-align: left;
+}
+th.tableblock.halign-center, td.tableblock.halign-center {
+  text-align: center;
+}
+th.tableblock.halign-right, td.tableblock.halign-right {
+  text-align: right;
+}
+
+th.tableblock.valign-top, td.tableblock.valign-top {
+  vertical-align: top;
+}
+th.tableblock.valign-middle, td.tableblock.valign-middle {
+  vertical-align: middle;
+}
+th.tableblock.valign-bottom, td.tableblock.valign-bottom {
+  vertical-align: bottom;
+}
+
+
+/*
+ * manpage specific
+ *
+ * */
+
+body.manpage h1 {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  border-top: 2px solid silver;
+  border-bottom: 2px solid silver;
+}
+body.manpage h2 {
+  border-style: none;
+}
+body.manpage div.sectionbody {
+  margin-left: 3em;
+}
+
+@media print {
+  body.manpage div#toc { display: none; }
+}
+/*
+  pygmentize filter
+*/
+.highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f4f4f4; }
+.highlight .c { color: #008800; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #AA22FF; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #008800; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #008800 } /* Comment.Preproc */
+.highlight .c1 { color: #008800; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #008800; font-weight: bold } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #808080 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0040D0 } /* Generic.Traceback */
+.highlight .kc { color: #AA22FF; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #AA22FF; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #AA22FF; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #AA22FF } /* Keyword.Pseudo */
+.highlight .kr { color: #AA22FF; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #00BB00; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BB4444 } /* Literal.String */
+.highlight .na { color: #BB4444 } /* Name.Attribute */
+.highlight .nb { color: #AA22FF } /* Name.Builtin */
+.highlight .nc { color: #0000FF } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #00A000 } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #B8860B } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sb { color: #BB4444 } /* Literal.String.Backtick */
+.highlight .sc { color: #BB4444 } /* Literal.String.Char */
+.highlight .sd { color: #BB4444; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BB4444 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BB4444 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BB4444 } /* Literal.String.Single */
+.highlight .ss { color: #B8860B } /* Literal.String.Symbol */
+.highlight .bp { color: #AA22FF } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #B8860B } /* Name.Variable.Class */
+.highlight .vg { color: #B8860B } /* Name.Variable.Global */
+.highlight .vi { color: #B8860B } /* Name.Variable.Instance */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+.keycap {
+	padding-left: .2em;
+	padding-right: .2em;
+	border-style: solid;
+	border-top-width: 2px;
+	border-left-width: 3px;
+	border-right-width: 3px;
+	border-bottom-width: 4px;
+	border-top-color: #ddddbb;
+	border-left-color: #ddddbb;
+	border-right-color: #888866;
+	border-bottom-color: #888866;
+	background-color: #ccccaa;
+	font-family: sans-serif;
+	font-size: smaller;
+}
+</style>
+<script type="text/javascript">
+/*<![CDATA[*/
+var asciidoc = {  // Namespace.
+
+/////////////////////////////////////////////////////////////////////
+// Table Of Contents generator
+/////////////////////////////////////////////////////////////////////
+
+/* Author: Mihai Bazon, September 2002
+ * http://students.infoiasi.ro/~mishoo
+ *
+ * Table Of Content generator
+ * Version: 0.4
+ *
+ * Feel free to use this script under the terms of the GNU General Public
+ * License, as long as you do not remove or alter this notice.
+ */
+
+ /* modified by Troy D. Hanson, September 2006. License: GPL */
+ /* modified by Stuart Rackham, 2006, 2009. License: GPL */
+
+// toclevels = 1..4.
+toc: function (toclevels) {
+
+  function getText(el) {
+    var text = "";
+    for (var i = el.firstChild; i != null; i = i.nextSibling) {
+      if (i.nodeType == 3 /* Node.TEXT_NODE */) // IE doesn't speak constants.
+        text += i.data;
+      else if (i.firstChild != null)
+        text += getText(i);
+    }
+    return text;
+  }
+
+  function TocEntry(el, text, toclevel) {
+    this.element = el;
+    this.text = text;
+    this.toclevel = toclevel;
+  }
+
+  function tocEntries(el, toclevels) {
+    var result = new Array;
+    var re = new RegExp('[hH]([2-'+(toclevels+1)+'])');
+    // Function that scans the DOM tree for header elements (the DOM2
+    // nodeIterator API would be a better technique but not supported by all
+    // browsers).
+    var iterate = function (el) {
+      for (var i = el.firstChild; i != null; i = i.nextSibling) {
+        if (i.nodeType == 1 /* Node.ELEMENT_NODE */) {
+          var mo = re.exec(i.tagName);
+          if (mo && (i.getAttribute("class") || i.getAttribute("className")) != "float") {
+            result[result.length] = new TocEntry(i, getText(i), mo[1]-1);
+          }
+          iterate(i);
+        }
+      }
+    }
+    iterate(el);
+    return result;
+  }
+
+  var toc = document.getElementById("toc");
+  if (!toc) {
+    return;
+  }
+
+  // Delete existing TOC entries in case we're reloading the TOC.
+  var tocEntriesToRemove = [];
+  var i;
+  for (i = 0; i < toc.childNodes.length; i++) {
+    var entry = toc.childNodes[i];
+    if (entry.nodeName == 'div'
+     && entry.getAttribute("class")
+     && entry.getAttribute("class").match(/^toclevel/))
+      tocEntriesToRemove.push(entry);
+  }
+  for (i = 0; i < tocEntriesToRemove.length; i++) {
+    toc.removeChild(tocEntriesToRemove[i]);
+  }
+
+  // Rebuild TOC entries.
+  var entries = tocEntries(document.getElementById("content"), toclevels);
+  for (var i = 0; i < entries.length; ++i) {
+    var entry = entries[i];
+    if (entry.element.id == "")
+      entry.element.id = "_toc_" + i;
+    var a = document.createElement("a");
+    a.href = "#" + entry.element.id;
+    a.appendChild(document.createTextNode(entry.text));
+    var div = document.createElement("div");
+    div.appendChild(a);
+    div.className = "toclevel" + entry.toclevel;
+    toc.appendChild(div);
+  }
+  if (entries.length == 0)
+    toc.parentNode.removeChild(toc);
+},
+
+
+/////////////////////////////////////////////////////////////////////
+// Footnotes generator
+/////////////////////////////////////////////////////////////////////
+
+/* Based on footnote generation code from:
+ * http://www.brandspankingnew.net/archive/2005/07/format_footnote.html
+ */
+
+footnotes: function () {
+  // Delete existing footnote entries in case we're reloading the footnodes.
+  var i;
+  var noteholder = document.getElementById("footnotes");
+  if (!noteholder) {
+    return;
+  }
+  var entriesToRemove = [];
+  for (i = 0; i < noteholder.childNodes.length; i++) {
+    var entry = noteholder.childNodes[i];
+    if (entry.nodeName == 'div' && entry.getAttribute("class") == "footnote")
+      entriesToRemove.push(entry);
+  }
+  for (i = 0; i < entriesToRemove.length; i++) {
+    noteholder.removeChild(entriesToRemove[i]);
+  }
+
+  // Rebuild footnote entries.
+  var cont = document.getElementById("content");
+  var spans = cont.getElementsByTagName("span");
+  var refs = {};
+  var n = 0;
+  for (i=0; i<spans.length; i++) {
+    if (spans[i].className == "footnote") {
+      n++;
+      var note = spans[i].getAttribute("data-note");
+      if (!note) {
+        // Use [\s\S] in place of . so multi-line matches work.
+        // Because JavaScript has no s (dotall) regex flag.
+        note = spans[i].innerHTML.match(/\s*\[([\s\S]*)]\s*/)[1];
+        spans[i].innerHTML =
+          "[<a id='_footnoteref_" + n + "' href='#_footnote_" + n +
+          "' title='View footnote' class='footnote'>" + n + "</a>]";
+        spans[i].setAttribute("data-note", note);
+      }
+      noteholder.innerHTML +=
+        "<div class='footnote' id='_footnote_" + n + "'>" +
+        "<a href='#_footnoteref_" + n + "' title='Return to text'>" +
+        n + "</a>. " + note + "</div>";
+      var id =spans[i].getAttribute("id");
+      if (id != null) refs["#"+id] = n;
+    }
+  }
+  if (n == 0)
+    noteholder.parentNode.removeChild(noteholder);
+  else {
+    // Process footnoterefs.
+    for (i=0; i<spans.length; i++) {
+      if (spans[i].className == "footnoteref") {
+        var href = spans[i].getElementsByTagName("a")[0].getAttribute("href");
+        href = href.match(/#.*/)[0];  // Because IE return full URL.
+        n = refs[href];
+        spans[i].innerHTML =
+          "[<a href='#_footnote_" + n +
+          "' title='View footnote' class='footnote'>" + n + "</a>]";
+      }
+    }
+  }
+},
+
+install: function(toclevels) {
+  var timerId;
+
+  function reinstall() {
+    asciidoc.footnotes();
+    if (toclevels) {
+      asciidoc.toc(toclevels);
+    }
+  }
+
+  function reinstallAndRemoveTimer() {
+    clearInterval(timerId);
+    reinstall();
+  }
+
+  timerId = setInterval(reinstall, 500);
+  if (document.addEventListener)
+    document.addEventListener("DOMContentLoaded", reinstallAndRemoveTimer, false);
+  else
+    window.onload = reinstallAndRemoveTimer;
+}
+
+}
+asciidoc.install();
+/*]]>*/
+</script>
+</head>
+<body class="article">
+<div id="header">
+<h1>SDA - Contrôle du 27 Janvier 2014</h1>
+<span id="author">DUT/INFO/M1103</span><br>
+<span id="revnumber">version 2013</span>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="admonitionblock">
+<table><tbody><tr>
+<td class="icon">
+<img alt="Important" src="data:image/png;base64,%0A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%0Ah04nvXoAAAAASUVORK5CYII=">
+</td>
+<td class="content">
+<div class="title">Version corrigée</div>
+<div class="paragraph"><p>Cette version comporte des indications pour les
+réponses aux exercices.</p></div>
+</td>
+</tr></tbody></table>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Barème indicatif</div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>Question 1 (2 Points)
+Question 2 (2 Points)
+Question 3 (3 Points)
+Question 4 (3 Points)  (*)
+Question 5 (2 Points)
+Question 6 (2 Points)  (*)
+Question 7 (3 Points)  (*)
+Question 8 (3 Points)  (*)</tt></pre>
+</div></div>
+<div class="paragraph"><p>Les questions marquées (*) sont indépendantes les unes des autres.</p></div>
+</div></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>                            ===== Durée 1h =====
+
+                     Feuille manuscrite recto autorisée
+
+                            ==================</tt></pre>
+</div></div>
+<div class="paragraph"><p>En fin de soldes, un magasin souhaite réaliser l’inventaire de son stock.</p></div>
+<div class="paragraph"><p>Les articles qu’il vend sont répertoriés avec :</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+un nom d’article
+</p>
+</li>
+<li>
+<p>
+un numéro d’article
+</p>
+</li>
+<li>
+<p>
+une catégorie d’article
+</p>
+</li>
+<li>
+<p>
+une quantité d’articles
+</p>
+</li>
+</ol></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_question_1_barème_2_points">Question 1 (Barème : 2 Points)</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Ecrire en <strong>Java</strong> la définition des champs d’un enregistrement Article.</p></div>
+<div class="admonitionblock">
+<table><tbody><tr>
+<td class="icon">
+<img alt="Important" src="data:image/png;base64,%0A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%0Ah04nvXoAAAAASUVORK5CYII=">
+</td>
+<td class="content">
+<div class="title">Version corrigée</div>
+<div class="listingblock">
+<div class="content"><div class="highlight"><pre><span class="kd">class</span> <span class="nc">Article</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">nom</span> <span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">numero</span> <span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">categorie</span> <span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">quantite</span> <span class="o">;</span>
+<span class="o">}</span>
+</pre></div></div></div>
+</td>
+</tr></tbody></table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_question_2_barème_2_points">Question 2 (Barème : 2 Points)</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Les employés souhaitent pouvoir créer un article :</p></div>
+<div class="openblock">
+<div class="content">
+<div class="ulist"><ul>
+<li>
+<p>
+en ne fournissant que son nom et son numéro (catégorie et quantité sont alors égales à 1)
+</p>
+</li>
+<li>
+<p>
+en fournissant la valeur de tous ses champs
+</p>
+</li>
+</ul></div>
+</div></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Ecrire en <strong>Java</strong> la définition des 2 constructeurs d’Article demandés.
+</p>
+<div class="admonitionblock">
+<table><tbody><tr>
+<td class="icon">
+<img alt="Important" src="data:image/png;base64,%0A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%0Ah04nvXoAAAAASUVORK5CYII=">
+</td>
+<td class="content">
+<div class="title">Version corrigée</div>
+<div class="listingblock">
+<div class="content"><div class="highlight"><pre>    <span class="n">Article</span><span class="o">(</span><span class="n">String</span> <span class="n">pNom</span><span class="o">,</span> <span class="kt">int</span> <span class="n">pNumero</span><span class="o">){</span>
+        <span class="n">nom</span> <span class="o">=</span> <span class="n">pNom</span> <span class="o">;</span>
+        <span class="n">numero</span> <span class="o">=</span> <span class="n">pNumero</span> <span class="o">;</span>
+        <span class="n">categorie</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">;</span>
+        <span class="n">quantite</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">;</span>
+    <span class="o">}</span>
+    <span class="n">Article</span><span class="o">(</span><span class="n">String</span> <span class="n">pNom</span><span class="o">,</span> <span class="kt">int</span> <span class="n">pNumero</span><span class="o">,</span> <span class="kt">int</span> <span class="n">pCategorie</span><span class="o">,</span> <span class="kt">int</span> <span class="n">pQuantite</span><span class="o">){</span>
+        <span class="n">nom</span> <span class="o">=</span> <span class="n">pNom</span> <span class="o">;</span>
+        <span class="n">numero</span> <span class="o">=</span> <span class="n">pNumero</span> <span class="o">;</span>
+        <span class="n">categorie</span> <span class="o">=</span> <span class="n">pCategorie</span> <span class="o">;</span>
+        <span class="n">quantite</span> <span class="o">=</span> <span class="n">pQuantite</span> <span class="o">;</span>
+    <span class="o">}</span>
+</pre></div></div></div>
+</td>
+</tr></tbody></table>
+</div>
+</li>
+</ol></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_question_3_barème_3_points">Question 3 (Barème : 3 Points)</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Les employés souhaitent pouvoir disposer des opérations suivantes permettant de vendre ou de reprendre un seul Article :</p></div>
+<div class="dlist"><dl>
+<dt class="hdlist1">
+<tt>enStock() : Article → booleen</tt>
+</dt>
+<dd>
+<p>
+retourne VRAI si sa quantité est supérieure à 0
+</p>
+</dd>
+<dt class="hdlist1">
+<tt>vendre() : Article → entier</tt>
+</dt>
+<dd>
+<p>
+retourne le nombre d’articles restants
+</p>
+</dd>
+<dt class="hdlist1">
+<tt>reprendre() : Article → entier</tt>
+</dt>
+<dd>
+<p>
+retourne le nombre d’articles restants
+</p>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Fournir les préconditions de ces actions
+</p>
+</li>
+<li>
+<p>
+Ecrire en <strong>java</strong> les 3 opérations <tt>enStock()</tt>, <tt>vendre()</tt> et <tt>reprendre()</tt> du type Abstrait Article.
+</p>
+</li>
+</ol></div>
+<div class="admonitionblock">
+<table><tbody><tr>
+<td class="icon">
+<img alt="Important" src="data:image/png;base64,%0A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%0Ah04nvXoAAAAASUVORK5CYII=">
+</td>
+<td class="content">
+<div class="title">Version corrigée</div>
+<div class="listingblock">
+<div class="content"><div class="highlight"><pre>    <span class="kt">boolean</span> <span class="nf">enStock</span><span class="o">(){</span>
+        <span class="k">return</span><span class="o">(</span><span class="n">quantite</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="kt">int</span> <span class="nf">vendre</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span><span class="o">{</span>
+        <span class="k">if</span> <span class="o">(!</span> <span class="n">enStock</span><span class="o">())</span> <span class="o">{</span> <span class="kd">throws</span> <span class="n">Exception</span><span class="o">(</span><span class="s">"vente impossible"</span><span class="o">);</span> <span class="o">}</span>
+        <span class="n">quantite</span> <span class="o">=</span> <span class="n">quantite</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">;</span>
+        <span class="k">return</span><span class="o">(</span><span class="n">quantite</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="kt">int</span> <span class="nf">reprendre</span><span class="o">(){</span>
+        <span class="n">quantite</span> <span class="o">=</span> <span class="n">quantite</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">;</span>
+        <span class="k">return</span><span class="o">(</span><span class="n">quantite</span><span class="o">);</span>
+    <span class="o">}</span>
+</pre></div></div></div>
+</td>
+</tr></tbody></table>
+</div>
+</dd>
+</dl></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_question_4_strong_strong_barème_3_points">Question 4 (<strong>*</strong>) (Barème : 3 Points)</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>On souhaite écrire en <strong>java</strong> une classe Magasin</p></div>
+<div class="paragraph"><p>et un gentil étudiant (dont je tairais le nom)
+a fourni l’algorithme suivant :</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>DEBUT
+ fini &lt;- FAUX
+ TANTQUE NON fini FAIRE
+  Afficher (ecran) "Nom et Numéro de l'article ?"
+  Saisir (clavier) nom, numero
+  tabStock[indice] &lt;- new Article(nom,numero)
+  indice &lt;- indice + 1
+  Afficher (ecran) "Encore ? (O/N)"
+  Saisir (clavier) reponse
+  SI (reponse = "N") OU (reponse = "n") ALORS fini &lt;- VRAI FINSI
+ FINTANTQUE
+FIN</tt></pre>
+</div></div>
+<div class="admonitionblock">
+<table><tbody><tr>
+<td class="icon">
+<img alt="Note" src="data:image/png;base64,%0A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">
+</td>
+<td class="content">
+<div class="paragraph"><p>Le tableau <tt>tabStock[]</tt> est de taille 1000</p></div>
+</td>
+</tr></tbody></table>
+</div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Fournir le glossaire de l’algorithme précédent
+</p>
+<div class="admonitionblock">
+<table><tbody><tr>
+<td class="icon">
+<img alt="Important" src="data:image/png;base64,%0A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%0Ah04nvXoAAAAASUVORK5CYII=">
+</td>
+<td class="content">
+<div class="title">Glossaire</div>
+<div class="listingblock">
+<div class="content">
+<pre><tt> tabStock : tableau de 1000 articles
+ fini : booleen
+ indice : entier
+ nom : chaine
+ numero : entier
+ reponse : chaine</tt></pre>
+</div></div>
+</td>
+</tr></tbody></table>
+</div>
+</li>
+<li>
+<p>
+Corriger les 2 erreurs d’inattention de l'étudiant qui a fourni l’algorithme
+</p>
+<div class="admonitionblock">
+<table><tbody><tr>
+<td class="icon">
+<img alt="Important" src="data:image/png;base64,%0A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%0Ah04nvXoAAAAASUVORK5CYII=">
+</td>
+<td class="content">
+<div class="title">Erreurs</div>
+<div class="listingblock">
+<div class="content">
+<pre><tt> indice &lt;- 0
+ TANTQUE (NON fini) ET (indice &lt; 1000) FAIRE</tt></pre>
+</div></div>
+</td>
+</tr></tbody></table>
+</div>
+</li>
+<li>
+<p>
+Ecrire la classe <strong>java</strong> Magasin
+</p>
+<div class="admonitionblock">
+<table><tbody><tr>
+<td class="icon">
+<img alt="Important" src="data:image/png;base64,%0AiVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAIAAADYYG7QAAAAAXNSR0IArs4c6QAAAARnQU1BAACx%0Ajwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAACLBJREFU%0AWEftmHlMldkZxkeWsl5kB0EEAcULlYvIHlaXuSyyeVmUywVHa0AxRUeJcWb8YxqZlMRkotG02LFJ%0AB8QGEkYTiKRTt+i4i/uCWxR33G2tu/Z3zgeUsN3baaexyTx+3ny5nPM+z/u873fO+e6I9+/ff/RB%0AAUEfFD76oNSIcv0syIgD/w8OvX79esaMGb6+vuN+GhA5Pj7+9u3bg3o1iEMPHz7UarVr1qz5/CfA%0AZ59/BooNhrNnz5oq6Pr16wiqra0t/Q9RImAQKAZ6vb6oSPwvmiWwb98+UwWdO3dueEE3btwYKLWk%0AtFShLy4W/NDriwS74C+cVVg4q0BBfn6eRGtrq6mCDh8+jKDVq1cPZRCBJHeJAeuLDfp/0cvcEVBY%0AWFAIN+zd/DqdLleXK5GTk5OdnZ1TX19vqqBdu3YhaOXKlYqgktISQ4/5SvJv376ViUvvIe9Dn5ef%0AD7egl/yCXNBnZ2VnZ2ZlCmRkpKdzpdOjpgqqrq7OnZm7ePFiyCsqKo4cOXL+/PnLly+Xl5fjfUFB%0AIYLInGHozOvOXYeqgwcP3uvq+n1tbVZWViaXYM9IFwrS09PS09JSAamC6dOnk7CpglasWIEBixZV%0AkPrNmzcbGhoQt379+u3bt8vUcx89etTefoxw/HVxZSXkcDc1NW7atKmhYfPJkyfTIIdeK+mnQz9N%0AYKrAFInk5CkLFiwwVVBlZeX8+fPLy8qgN5QaqGBXVxdk7969I3Vw4cIFvd5AMZqbm58/fw497Iyh%0AZfUG/fmOjh52SZ8MPUhKSkzkSkxMSIhP4L8uP99UQfPmzZszZ44ofFbWd83fXb16dcmSJcuXL2e+%0A4E5Lo3wyc+3ChQv5EnqtNhW5Svb4kQR7NzncCSyDcRKxElExMVFRMXxtqiD6o2JRhSh6WtqzZ8+W%0ALl0KX+rHqczH+6nTpt27dw8RcPPJl4I+MfH06dP4EB+fwDdffvmbKImY6OiYKOhBJIiIiJw8OWKy%0AxKRJkwg+UNMgKzU6aCP6Dr6XL1/y/E+ZOiUjI1Phhp0er/v225SU5LKy8hcvXiipNzU11dTUMObN%0Amzfbtm3zH+sfGBAYHBwcGhYKd5iEJkwTqgkFE0FISGfnNZME4XBVVZUse1L1V9XMOXPmzNq1a7mJ%0Ai8P8WFZO7v8usXXrVpl7JKXhSx7Aa9eueXl5jRw50sHBwcPDA1khAggIQR9QB6snSBxtbzcuiFbQ%0AaCYt+3RZnFL42NjZs2fzvMTExGzYsEE4HxHZ0tKCWh6ZlKSUMCV7TRih29vbt2zZolarPT3d7ezs%0ArK2t7e3t3dzcfHx8MEzs1OPHB44bFxgY6M/lP7atrc24IJLm2aj8dWWkUvcICk/VuTC+23uNhLA+%0ANFRJnbis73/cuHGCWh0UFDTaZ7SjoyOaFDg4qJycnUaNGjVmzBg/9npfXx8fLp+6ujrjglha6NC5%0An8xVyDWUXXBrJlL40ImSPSRYeo/zivUEpasaGxtl9v7A18/Xy9vb3d2dwkmrbGxtbamgq4sLsry8%0AKamXp6cn3WlcEO0yc+ZMtgvZdnALcsEtMGHCeAmIu50X9DU1v21taaXnRPYydRwa7T0aVjdXN3Sg%0ABtgI2KpUKicnJ2cXZxcXl6qqZcYF7d27NzsnJy9PFxAQ0M0uBMjCC4wV8PPz5cIHBAhyAW8BL0+R%0Au5enhyft7O7u4eLm5uzs4uToaK9S0VJWVlZ82tja2NrZ0V50p3FBq1atYnOgaqLroPcT/yS1qLyS%0Avbekl9TCeU/BDr27u6u7i6urC4VxFsAJp5Fc4nnDGPxB0C+A8mFlxQpiXBArMkcHHi9J3p06DSHK%0ADrtMvZvdFXIJCiDpoVaedsGvUtmr7O1t7WW1RL2sbazRYWlpaS5hYW6O88YFsaWzs/J4dScu2EX2%0Agl3y9+RO8pALepVKCKAE3eyCnsqICllySVhYIMDCzNzcDIwwU16VeRJZt1ho+srqv1KjhoME5AcO%0AHHj69Cl7J/hHD+rq62Xqkr6nUyW56A/ILSwsLcSn8MDMTNCPGME1JKDop6m/II4uujwduT958uT4%0A8eOcfPuivKwc5+lMhV5JXbLDbz4s9eCaOOq/evUKTb0m9RfEkUqBsjMPit4x/5Ub3Gf7G06QsiT/%0Az0ApMGlIQb1/QDXaHzx4wGbJaslBlq5iSw8K91NHjCn5VfEPxhCdOtFX7f1NQ+3AgbQB590TJ05c%0AuXLl/v37tKlxQZwrOKryjoYa9ikWzN27dy/8Yn5IVEB4cgjHSKOo/KIiKMIvJDpw4EhC7dmz59Ch%0AQxwceIVlAzUuiP6/desWmxTeMHnnzp07duxI0UVHazW/+9O6v/YBZ+2hkJIXqYkPYrwyQJnEDaFQ%0AiU8cwDs7O6macUG8UHN4PXXqFN4iiJyWV38KgbYoXquPM/2Kz5wcnhKCAnR8L8EN6RFw//79VA0W%0ASmFckNI9WMrDf/ToUaqmW6DN/CSFKvy7F4I2bt6g2Ay4oR0JSGQqwHuwSQ5RMl4k6CEy4FS/+g9f%0A4UpgqC+nMMIpfYp5x44dYy25ePEiY+jQgWhs2Uwm0R9rmIglgBvyvHTpEpE57ZB538P1kL8P0dT0%0AGrLwkzkEnVoQXajPw2S6CnDT0dGBi3fu3GEAJWbkoMicm4SgP2/dhCUA9XQnUx4/fkx8nmWTHntW%0AT558fivinL+u/muChiWo132zhrcLgNVIwULcJiJjCDoU/rJ3m2ISL3QYw2OFDhJmPPFh6budDfcL%0AGuMAE1CTWpw4u6SQuihWExQzlOSUzWgYwEqE8JTg5rYmvGEianpn9dvwjf+kB9O0gvCQ2EBqj467%0Ad+9SHapJ0H7JDTxLKN/A/f0PbQT5ZawfZVL2in6bvPGnrHeEYhKL6d8kaECkkPTAk8NQgpQIzEIK%0AcZg7lBoiGHeIQUpEAiklN11Kv6yYa9RUkwQpmnoxlBPDf2/idFMF/TgRP2LWz4KMmfbBOfRPWjnJ%0Ah04nvXoAAAAASUVORK5CYII=">
+</td>
+<td class="content">
+<div class="title">Magasin.java</div>
+<div class="listingblock">
+<div class="content"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
+
+<span class="kd">class</span> <span class="nc">Magasin</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">arguments</span><span class="o">){</span>
+    <span class="n">Article</span><span class="o">[]</span> <span class="n">tabStock</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Article</span><span class="o">[</span><span class="mi">1000</span><span class="o">];</span>
+    <span class="n">Scanner</span> <span class="n">lecteur</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+    <span class="kt">boolean</span> <span class="n">fini</span> <span class="o">=</span> <span class="kc">false</span> <span class="o">;</span>
+    <span class="kt">int</span> <span class="n">indice</span> <span class="o">=</span> <span class="mi">0</span> <span class="o">;</span>
+    <span class="k">while</span> <span class="o">((!</span> <span class="n">fini</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="o">(</span> <span class="n">indice</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="o">))</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Nom et Numéro de l'article ?"</span><span class="o">);</span>
+        <span class="n">String</span> <span class="n">nom</span> <span class="o">=</span> <span class="n">lecteur</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
+        <span class="kt">int</span> <span class="n">numero</span> <span class="o">=</span> <span class="n">lecteur</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>
+        <span class="n">tabStock</span><span class="o">[</span><span class="n">indice</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Article</span><span class="o">(</span><span class="n">nom</span><span class="o">,</span><span class="n">numero</span><span class="o">);</span>
+        <span class="n">indice</span> <span class="o">=</span> <span class="n">indice</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">;</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Encore ? (O/N)"</span><span class="o">);</span>
+        <span class="n">String</span> <span class="n">reponse</span> <span class="o">=</span> <span class="n">lecteur</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
+        <span class="k">if</span> <span class="o">(</span> <span class="n">reponse</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"N"</span><span class="o">)</span> <span class="o">||</span> <span class="n">reponse</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"n"</span><span class="o">))</span> <span class="o">{</span> <span class="n">fini</span> <span class="o">=</span> <span class="kc">true</span> <span class="o">;</span> <span class="o">}</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div></div></div>
+</td>
+</tr></tbody></table>
+</div>
+</li>
+</ol></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>.
+.
+.
+.
+.
+.
+.</tt></pre>
+</div></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_question_5_barème_2_points">Question 5 (Barème : 2 Points)</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Après quelques jours d’utilisation</p></div>
+<div class="paragraph"><p>les employés souhaitent disposer
+des opérations supplémentaires suivantes :</p></div>
+<div class="openblock">
+<div class="content">
+<div class="dlist"><dl>
+<dt class="hdlist1">
+<tt>vendre() : Article X Entier → entier</tt>
+</dt>
+<dd>
+<p>
+met à jour et retourne le nombre d’articles restants après retrait du nombre fourni
+</p>
+</dd>
+<dt class="hdlist1">
+<tt>reprendre() : Article X Entier → entier</tt>
+</dt>
+<dd>
+<p>
+met à jour et retourne le nombre d’articles restants après ajout du nombre fourni
+</p>
+</dd>
+</dl></div>
+</div></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Fournir les préconditions de ces actions
+</p>
+</li>
+<li>
+<p>
+Ecrire en <strong>Java</strong> les 2 opérations supplémentaires du type Abstrait Article.
+</p>
+<div class="admonitionblock">
+<table><tbody><tr>
+<td class="icon">
+<img alt="Important" src="data:image/png;base64,%0A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%0Ah04nvXoAAAAASUVORK5CYII=">
+</td>
+<td class="content">
+<div class="title">Version corrigée</div>
+<div class="listingblock">
+<div class="content"><div class="highlight"><pre>    <span class="kt">int</span> <span class="nf">vendre</span><span class="o">(</span><span class="kt">int</span> <span class="n">combien</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span><span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">quantite</span> <span class="o">&gt;=</span> <span class="n">combien</span><span class="o">)</span> <span class="o">{</span> <span class="kd">throws</span> <span class="n">Exception</span><span class="o">(</span><span class="s">"stock insuffisant"</span><span class="o">);</span> <span class="o">}</span>
+        <span class="n">quantite</span> <span class="o">=</span> <span class="n">quantite</span> <span class="o">-</span> <span class="n">combien</span> <span class="o">;</span>
+        <span class="k">return</span><span class="o">(</span><span class="n">quantite</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="kt">int</span> <span class="nf">reprendre</span><span class="o">(</span><span class="kt">int</span> <span class="n">combien</span><span class="o">){</span>
+        <span class="n">quantite</span> <span class="o">=</span> <span class="n">quantite</span> <span class="o">+</span> <span class="n">combien</span> <span class="o">;</span>
+        <span class="k">return</span><span class="o">(</span><span class="n">quantite</span><span class="o">);</span>
+    <span class="o">}</span>
+</pre></div></div></div>
+</td>
+</tr></tbody></table>
+</div>
+</li>
+</ol></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_question_6_strong_strong_barème_2_points">Question 6  (<strong>*</strong>) (Barème : 2 Points)</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Le responsable du magasin souhaite lors de l’inventaire
+de son stock cumuler le nombre d’articles par catégorie.</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+En supposant que le tableau tabStock[] ait été préalablement rempli,
+fournir le code <strong>java</strong> de la fonction <tt>stockCategories(tabStock)</tt> qui retourne un tableau
+d’entiers contenant le nombre total d’articles de chaque catégorie et
+le nombre total d’articles toutes catégories confondues à l’indice 0.
+</p>
+</li>
+</ol></div>
+<div class="admonitionblock">
+<table><tbody><tr>
+<td class="icon">
+<img alt="Note" src="data:image/png;base64,%0A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">
+</td>
+<td class="content">
+<div class="paragraph"><p>Le magasin vends exactement 4 catégories d’articles</p></div>
+<div class="paragraph"><p>Les numéros de catégorie sont 1,2,3 et 4</p></div>
+<div class="paragraph"><p>Exemple:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt> SI stockCategories() retourne [6,2,0,1,3]
+ ALORS
+ le magasin dispose
+  d'un total de 6 articles,
+ dont 2 de catégorie 1,
+  0 de catégorie 2,
+  1 de catégorie 3
+  et 3 de catégorie 4.</tt></pre>
+</div></div>
+</td>
+</tr></tbody></table>
+</div>
+<div class="admonitionblock">
+<table><tbody><tr>
+<td class="icon">
+<img alt="Important" src="data:image/png;base64,%0A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%0Ah04nvXoAAAAASUVORK5CYII=">
+</td>
+<td class="content">
+<div class="title">stockCategories()</div>
+<div class="listingblock">
+<div class="content"><div class="highlight"><pre>  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">stockCategories</span><span class="o">(</span><span class="n">Article</span><span class="o">[]</span> <span class="n">tab</span><span class="o">){</span>
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">resultat</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">5</span><span class="o">]</span> <span class="o">;</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">indice</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">indice</span> <span class="o">&lt;</span> <span class="n">tab</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">indice</span> <span class="o">=</span> <span class="n">indice</span> <span class="o">+</span> <span class="mi">1</span><span class="o">){</span>
+        <span class="n">resultat</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="n">resultat</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">+</span> <span class="n">tab</span><span class="o">[</span><span class="n">indice</span><span class="o">].</span><span class="na">quantite</span> <span class="o">;</span>
+        <span class="n">resultat</span><span class="o">[</span><span class="n">tab</span><span class="o">[</span><span class="n">indice</span><span class="o">].</span><span class="na">categorie</span><span class="o">]</span> <span class="o">=</span> <span class="n">resultat</span><span class="o">[</span><span class="n">tab</span><span class="o">[</span><span class="n">indice</span><span class="o">].</span><span class="na">categorie</span><span class="o">]</span> <span class="o">+</span> <span class="n">tab</span><span class="o">[</span><span class="n">indice</span><span class="o">].</span><span class="na">quantite</span> <span class="o">;</span>
+    <span class="o">}</span>
+    <span class="k">return</span><span class="o">(</span><span class="n">resultat</span><span class="o">);</span>
+  <span class="o">}</span>
+</pre></div></div></div>
+</td>
+</tr></tbody></table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.</tt></pre>
+</div></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_question_7_strong_strong_barème_3_points">Question 7  (<strong>*</strong>) (Barème : 3 Points)</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Le responsable du magasin souhaite obtenir l’affichage suivant de son stock :</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt> Catégorie 1 : souris, clavier
+ Catégorie 2 :
+ Catégorie 3 : cleUSB
+ Catégorie 4 : tablette, tour, portable</tt></pre>
+</div></div>
+<div class="paragraph"><p>En supposant que le tableau <tt>tabStock[]</tt> ait été préalablement rempli
+et que la classe Pile (d’entiers) vue en TD/TP soit disponible</p></div>
+<div class="paragraph"><p>A partir de l’algorithme suivant :</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>DEBUT
+POUR indice de 0 à nbArticles FAIRE
+ article &lt;- tabStock[indice]
+ SI article.categorie = 1 ALORS pileCategorie1.empiler(article.nom) FINSI
+ SI article.categorie = 2 ALORS pileCategorie2.empiler(article.nom) FINSI
+ SI article.categorie = 3 ALORS pileCategorie4.empiler(article.nom) FINSI
+ SI article.categorie = 4 ALORS pileCategorie4.empiler(article.nom) FINSI
+FINPOUR
+/* Affichage */
+FIN</tt></pre>
+</div></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Compléter la partie Affichage de l’algorithme
+</p>
+<div class="admonitionblock">
+<table><tbody><tr>
+<td class="icon">
+<img alt="Important" src="data:image/png;base64,%0AiVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAIAAADYYG7QAAAAAXNSR0IArs4c6QAAAARnQU1BAACx%0Ajwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAACLBJREFU%0AWEftmHlMldkZxkeWsl5kB0EEAcULlYvIHlaXuSyyeVmUywVHa0AxRUeJcWb8YxqZlMRkotG02LFJ%0AB8QGEkYTiKRTt+i4i/uCWxR33G2tu/Z3zgeUsN3baaexyTx+3ny5nPM+z/u873fO+e6I9+/ff/RB%0AAUEfFD76oNSIcv0syIgD/w8OvX79esaMGb6+vuN+GhA5Pj7+9u3bg3o1iEMPHz7UarVr1qz5/CfA%0AZ59/BooNhrNnz5oq6Pr16wiqra0t/Q9RImAQKAZ6vb6oSPwvmiWwb98+UwWdO3dueEE3btwYKLWk%0AtFShLy4W/NDriwS74C+cVVg4q0BBfn6eRGtrq6mCDh8+jKDVq1cPZRCBJHeJAeuLDfp/0cvcEVBY%0AWFAIN+zd/DqdLleXK5GTk5OdnZ1TX19vqqBdu3YhaOXKlYqgktISQ4/5SvJv376ViUvvIe9Dn5ef%0AD7egl/yCXNBnZ2VnZ2ZlCmRkpKdzpdOjpgqqrq7OnZm7ePFiyCsqKo4cOXL+/PnLly+Xl5fjfUFB%0AIYLInGHozOvOXYeqgwcP3uvq+n1tbVZWViaXYM9IFwrS09PS09JSAamC6dOnk7CpglasWIEBixZV%0AkPrNmzcbGhoQt379+u3bt8vUcx89etTefoxw/HVxZSXkcDc1NW7atKmhYfPJkyfTIIdeK+mnQz9N%0AYKrAFInk5CkLFiwwVVBlZeX8+fPLy8qgN5QaqGBXVxdk7969I3Vw4cIFvd5AMZqbm58/fw497Iyh%0AZfUG/fmOjh52SZ8MPUhKSkzkSkxMSIhP4L8uP99UQfPmzZszZ44ofFbWd83fXb16dcmSJcuXL2e+%0A4E5Lo3wyc+3ChQv5EnqtNhW5Svb4kQR7NzncCSyDcRKxElExMVFRMXxtqiD6o2JRhSh6WtqzZ8+W%0ALl0KX+rHqczH+6nTpt27dw8RcPPJl4I+MfH06dP4EB+fwDdffvmbKImY6OiYKOhBJIiIiJw8OWKy%0AxKRJkwg+UNMgKzU6aCP6Dr6XL1/y/E+ZOiUjI1Phhp0er/v225SU5LKy8hcvXiipNzU11dTUMObN%0Amzfbtm3zH+sfGBAYHBwcGhYKd5iEJkwTqgkFE0FISGfnNZME4XBVVZUse1L1V9XMOXPmzNq1a7mJ%0Ai8P8WFZO7v8usXXrVpl7JKXhSx7Aa9eueXl5jRw50sHBwcPDA1khAggIQR9QB6snSBxtbzcuiFbQ%0AaCYt+3RZnFL42NjZs2fzvMTExGzYsEE4HxHZ0tKCWh6ZlKSUMCV7TRih29vbt2zZolarPT3d7ezs%0ArK2t7e3t3dzcfHx8MEzs1OPHB44bFxgY6M/lP7atrc24IJLm2aj8dWWkUvcICk/VuTC+23uNhLA+%0ANFRJnbis73/cuHGCWh0UFDTaZ7SjoyOaFDg4qJycnUaNGjVmzBg/9npfXx8fLp+6ujrjglha6NC5%0An8xVyDWUXXBrJlL40ImSPSRYeo/zivUEpasaGxtl9v7A18/Xy9vb3d2dwkmrbGxtbamgq4sLsry8%0AKamXp6cn3WlcEO0yc+ZMtgvZdnALcsEtMGHCeAmIu50X9DU1v21taaXnRPYydRwa7T0aVjdXN3Sg%0ABtgI2KpUKicnJ2cXZxcXl6qqZcYF7d27NzsnJy9PFxAQ0M0uBMjCC4wV8PPz5cIHBAhyAW8BL0+R%0Au5enhyft7O7u4eLm5uzs4uToaK9S0VJWVlZ82tja2NrZ0V50p3FBq1atYnOgaqLroPcT/yS1qLyS%0Avbekl9TCeU/BDr27u6u7i6urC4VxFsAJp5Fc4nnDGPxB0C+A8mFlxQpiXBArMkcHHi9J3p06DSHK%0ADrtMvZvdFXIJCiDpoVaedsGvUtmr7O1t7WW1RL2sbazRYWlpaS5hYW6O88YFsaWzs/J4dScu2EX2%0Agl3y9+RO8pALepVKCKAE3eyCnsqICllySVhYIMDCzNzcDIwwU16VeRJZt1ho+srqv1KjhoME5AcO%0AHHj69Cl7J/hHD+rq62Xqkr6nUyW56A/ILSwsLcSn8MDMTNCPGME1JKDop6m/II4uujwduT958uT4%0A8eOcfPuivKwc5+lMhV5JXbLDbz4s9eCaOOq/evUKTb0m9RfEkUqBsjMPit4x/5Ub3Gf7G06QsiT/%0Az0ApMGlIQb1/QDXaHzx4wGbJaslBlq5iSw8K91NHjCn5VfEPxhCdOtFX7f1NQ+3AgbQB590TJ05c%0AuXLl/v37tKlxQZwrOKryjoYa9ikWzN27dy/8Yn5IVEB4cgjHSKOo/KIiKMIvJDpw4EhC7dmz59Ch%0AQxwceIVlAzUuiP6/desWmxTeMHnnzp07duxI0UVHazW/+9O6v/YBZ+2hkJIXqYkPYrwyQJnEDaFQ%0AiU8cwDs7O6macUG8UHN4PXXqFN4iiJyWV38KgbYoXquPM/2Kz5wcnhKCAnR8L8EN6RFw//79VA0W%0ASmFckNI9WMrDf/ToUaqmW6DN/CSFKvy7F4I2bt6g2Ay4oR0JSGQqwHuwSQ5RMl4k6CEy4FS/+g9f%0A4UpgqC+nMMIpfYp5x44dYy25ePEiY+jQgWhs2Uwm0R9rmIglgBvyvHTpEpE57ZB538P1kL8P0dT0%0AGrLwkzkEnVoQXajPw2S6CnDT0dGBi3fu3GEAJWbkoMicm4SgP2/dhCUA9XQnUx4/fkx8nmWTHntW%0AT558fivinL+u/muChiWo132zhrcLgNVIwULcJiJjCDoU/rJ3m2ISL3QYw2OFDhJmPPFh6budDfcL%0AGuMAE1CTWpw4u6SQuihWExQzlOSUzWgYwEqE8JTg5rYmvGEianpn9dvwjf+kB9O0gvCQ2EBqj467%0Ad+9SHapJ0H7JDTxLKN/A/f0PbQT5ZawfZVL2in6bvPGnrHeEYhKL6d8kaECkkPTAk8NQgpQIzEIK%0AcZg7lBoiGHeIQUpEAiklN11Kv6yYa9RUkwQpmnoxlBPDf2/idFMF/TgRP2LWz4KMmfbBOfRPWjnJ%0Ah04nvXoAAAAASUVORK5CYII=">
+</td>
+<td class="content">
+<div class="title">Affichage</div>
+<div class="listingblock">
+<div class="content"><div class="highlight"><pre> <span class="n">chaine</span> <span class="o">=</span> <span class="s">""</span>
+ <span class="n">chaine</span> <span class="o">=</span> <span class="n">chaine</span> <span class="o">++</span> <span class="s">"Categorie 1 : "</span>
+ <span class="n">TANTQUE</span> <span class="n">NON</span> <span class="n">pileCategorie1</span><span class="o">.</span><span class="na">estVide</span><span class="o">()</span> <span class="n">FAIRE</span>
+   <span class="n">article</span> <span class="o">=</span> <span class="n">pileCategorie1</span><span class="o">.</span><span class="na">depiler</span><span class="o">()</span>
+   <span class="n">chaine</span> <span class="o">=</span> <span class="n">chaine</span> <span class="o">++</span> <span class="n">article</span><span class="o">.</span><span class="na">nom</span>
+   <span class="n">SI</span> <span class="n">NON</span> <span class="n">pileCategorie1</span><span class="o">.</span><span class="na">estVide</span><span class="o">()</span> <span class="n">ALORS</span> <span class="n">chaine</span> <span class="o">=</span> <span class="n">chaine</span> <span class="o">++</span> <span class="s">", "</span>
+ <span class="n">FINTANTQUE</span>
+
+ <span class="c1">// idem pour les catégories 2, 3 et 4</span>
+</pre></div></div></div>
+</td>
+</tr></tbody></table>
+</div>
+</li>
+<li>
+<p>
+Fournir le code <strong>java</strong> de la procédure <tt>nomsParCategories(tabStock)</tt> qui affiche à l'écran l'état demandé.
+</p>
+</li>
+</ol></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_question_8_strong_strong_barème_3_points">Question 8  (<strong>*</strong>) (Barème : 3 Points)</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>En supposant que les 4 piles <tt>pileCategorie[1234]</tt> ont été remplies,</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Ecrire une fonction <tt>nomsArticlesTries()</tt> qui retourne une chaîne
+ de caractères contenant la liste des noms d’articles du stock triée par
+ ordre alphabétique croissant à partir des 4 piles fournies en 
+paramètre.
+</p>
+<div class="listingblock">
+<div class="title">Exemple :</div>
+<div class="content">
+<pre><tt>nomsArticlesTries(pileCategorie1,pileCategorie2,pileCategorie3,pileCategorie4)
+-&gt; "clavier + cleUSB + portable + souris + tablette + tour"</tt></pre>
+</div></div>
+</li>
+<li>
+<p>
+Fournir la signature d’une fonction <tt>nomsArticlesTries()</tt> qui prend un tableau de piles en paramètres
+</p>
+</li>
+<li>
+<p>
+Fournir le code <strong>java</strong> de cette nouvelle fonction <tt>nomsArticlesTries()</tt> qui prend un tableau de piles en paramètres
+</p>
+</li>
+</ol></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_annexe">Annexe</h2>
+<div class="sectionbody">
+<div class="admonitionblock">
+<table><tbody><tr>
+<td class="icon">
+<img alt="Important" src="data:image/png;base64,%0A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%0Ah04nvXoAAAAASUVORK5CYII=">
+</td>
+<td class="content">
+<div class="title">Fichiers</div>
+<div class="paragraph"><p><a href="http://webetud.iut-blagnac.fr/file.php/584/CTRL_Janvier_2014/Article.java">Article.java</a></p></div>
+<div class="paragraph"><p><a href="http://webetud.iut-blagnac.fr/file.php/584/CTRL_Janvier_2014/Magasin.java">Magasin.java</a></p></div>
+<div class="paragraph"><p><a href="http://webetud.iut-blagnac.fr/file.php/584/CTRL_Janvier_2014/CTRL.txt">CTRL.txt</a></p></div>
+</td>
+</tr></tbody></table>
+</div>
+</div>
+</div>
+</div>
+
+<div id="footer">
+<div id="footer-text">
+Version 2013<br>
+Dernière mise à jour 2014-02-03 09:37:01 Paris, Madrid
+</div>
+<div id="footer-badges">
+<a href="http://validator.w3.org/check?uri=referer">
+  <img style="border:0;width:88px;height:31px" src="CTRL.data-uri.teacher_fichiers/valid-xhtml11-blue.png" alt="Valid XHTML 1.1" height="31" width="88">
+</a>
+<a href="http://jigsaw.w3.org/css-validator/">
+  <img style="border:0;width:88px;height:31px" src="CTRL.data-uri.teacher_fichiers/vcss-blue.gif" alt="Valid CSS!">
+</a>
+</div>
+</div>
+
+
+</body></html>
