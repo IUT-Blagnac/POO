@@ -1,0 +1,29 @@
+@startuml
+
+object "Commande : 111@111" as co1  {
+	idCde : "comm1"
+	leClient : 333@333
+	...
+}
+
+object "Client : 333@333" as client2 {
+	idClient : "client2"
+	laCommande : null
+	...
+}
+
+object "Commande : 444@444" as co2  {
+	idCde : "comm2"
+	leClient : null
+	...
+}
+
+object "Client : 222@222" as client1 {
+	idClient : "client1"
+	laCommande : 444@444
+	...
+}
+
+
+
+@enduml
