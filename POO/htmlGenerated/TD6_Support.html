@@ -961,15 +961,15 @@ la classe <tt>AgenceBancaire</tt> contient une ArrayList de <tt>Compte</tt>,
 </li>
 <li>
 <p>
-les objets <tt>Compte</tt> ne sont pas reliés à une <tt>AgenceBancaire</tt>.
+les objets <tt>Compte</tt> <strong>ne sont pas</strong> reliés à une <tt>AgenceBancaire</tt>.
 </p>
 </li>
 </ul></div>
-<div class="paragraph"><p>Pour mettre en oeuvre une association, le principe sera toujours de :</p></div>
+<div class="paragraph"><p>Pour mettre en oeuvre une association, le principe est toujours de :</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
-stocker les "liens" d&#8217;une classe vers une autre par un attribut, et ce dans les deux classes,
+pour la navigabilité : stocker les "liens" d&#8217;une classe vers une autre par un attribut, et ce dans les deux classes,
 </p>
 </li>
 <li>
@@ -988,7 +988,7 @@ il faudra créer des méthodes permettant de maintenir les relations en "état c
 <div class="sect1">
 <h2 id="_premier_cas_association_0_1_8201_8212_8201_0_1">2. Premier cas : association 0..1&#8201;&#8212;&#8201;0..1</h2>
 <div class="sectionbody">
-<div class="paragraph"><p>On fixe les multiplicités de l&#8217;association "Passer" à "0..1" comme indiqué sur le diagramme ci-dessous.</p></div>
+<div class="paragraph"><p>On fixe les multiplicités de l&#8217;association "Passer" à "0..1" et "0..1" comme indiqué sur le diagramme ci-dessous.</p></div>
 <div class="paragraph"><div class="title">Diagramme UML des classes mises en oeuvre (multiplicités 0..1)</div><p><span class="image">
 <img alt="images/td6.un.un.png" src="data:image/png;base64,
 iVBORw0KGgoAAAANSUhEUgAAAUIAAAG6CAIAAADyDti/AAAANXRFWHRjb3B5bGVmdABHZW5lcmF0
@@ -1195,12 +1195,12 @@ deux méthodes :
 <div class="ulist"><ul>
 <li>
 <p>
-<tt>Client getClient ()</tt> : permet d&#8217;obtenir le client associé à une Commande (renvoie null si pas de Client),
+<tt>Client getClient ()</tt> : permet d&#8217;obtenir le client associé à une Commande (renvoie null si pas associée à un Client),
 </p>
 </li>
 <li>
 <p>
-<tt>void setCommande (Commande comm)</tt> : attribue une commande à un Client,
+<tt>void setClient (Client cli)</tt> : associe la Commande à un Client,
 </p>
 </li>
 </ul></div>
@@ -1224,7 +1224,7 @@ deux méthodes :
 <div class="ulist"><ul>
 <li>
 <p>
-<tt>Commande getCommande ()</tt> : permet d&#8217;obtenir la commande d&#8217;un Client (renvoie null si pas de Commande),
+<tt>Commande getCommande ()</tt> : permet d&#8217;obtenir la commande associée a un Client (renvoie null si pas associé à une Commande),
 </p>
 </li>
 <li>
@@ -1633,27 +1633,27 @@ NYPBYDAYTNUMBoPBYDCYqhkMBoPB8GX8Bxbibhlak0k/AAAAAElFTkSuQmCC" />
 <div class="ulist"><ul>
 <li>
 <p>
-si le Client est déjà associé une Commande, l&#8217;association de cette Commande vers ce Client soit rompue,
-</p>
-</li>
-<li>
-<p>
-si la Commande affectée est déjà associée à un Client, cette association soit rompue,
-</p>
-</li>
-<li>
-<p>
 associer la Commande affectée au Client,
 </p>
 </li>
 <li>
 <p>
-associer le Client à la Commande
+associer le Client à la Commande,
+</p>
+</li>
+<li>
+<p>
+si le Client est déjà associé une Commande, l&#8217;association de cette Commande vers ce Client doit être rompue,
+</p>
+</li>
+<li>
+<p>
+si la Commande affectée est déjà associée à un Client, cette association doit être rompue.
 </p>
 </li>
 </ul></div>
-<div class="paragraph"><p>il en est de même lorsqu&#8217;un Client est associé à une Commande.</p></div>
-<div class="paragraph"><p><strong>Question</strong> : Ecrire :</p></div>
+<div class="paragraph"><p>Il en est de même lorsqu&#8217;un Client est associé à une Commande.</p></div>
+<div class="paragraph"><p><strong>Question</strong> : Pour réaliser ce traitement, écrire :</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
@@ -1790,9 +1790,22 @@ http://www.gnu.org/software/src-highlite -->
                 <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>leClient <span style="color: #990000">!=</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
                         <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>leClient<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setCommande</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">);</span>
                 <span style="color: #FF0000">}</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>leClient <span style="color: #990000">=</span> cli <span style="color: #990000">;</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>leClient <span style="color: #990000">=</span> cli<span style="color: #990000">;</span> <span style="font-style: italic"><span style="color: #9A1900">// Ou this.setClient(cli);</span></span>
                 cli<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setCommande</span></span> <span style="color: #990000">(</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span> <span style="color: #990000">);</span>
         <span style="color: #FF0000">}</span>
+<span style="color: #FF0000">}</span>
+
+<span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">definirCommande</span></span> <span style="color: #990000">(</span><span style="color: #008080">Commande</span> comm<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">if</span></span><span style="color: #990000">(</span> comm <span style="color: #990000">!=</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span> <span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>comm<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getClient</span></span><span style="color: #990000">()</span> <span style="color: #990000">!=</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span> <span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                        comm<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getClient</span></span><span style="color: #990000">().</span><span style="font-weight: bold"><span style="color: #000000">setCommande</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">);</span>
+                <span style="color: #FF0000">}</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>laCommande <span style="color: #990000">!=</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>laCommande<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setClient</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">);</span>
+                <span style="color: #FF0000">}</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>laCommande <span style="color: #990000">=</span> comm<span style="color: #990000">;</span> <span style="font-style: italic"><span style="color: #9A1900">// Ou this.setCommande(comm);</span></span>
+                comm<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setClient</span></span> <span style="color: #990000">(</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span> <span style="color: #990000">);</span>
+          <span style="color: #FF0000">}</span>
 <span style="color: #FF0000">}</span></tt></pre></div></div>
 <div class="paragraph"><p>La méthode <tt>public void definirCommande (Commande comm)</tt> de la classe Client est symétrique.</p></div>
 </td>
@@ -1804,7 +1817,7 @@ http://www.gnu.org/software/src-highlite -->
 <div class="sect1">
 <h2 id="_deuxième_cas_association_0_1_8201_8212_8201_0">3. Deuxième cas : association 0..1&#8201;&#8212;&#8201;0..*</h2>
 <div class="sectionbody">
-<div class="paragraph"><p>On fixe les multiplicités de l&#8217;association "Passer" à "0..1" comme indiqué sur le diagramme ci-dessous.</p></div>
+<div class="paragraph"><p>On fixe les multiplicités de l&#8217;association "Passer" à "0..1" et "0..*" comme indiqué sur le diagramme ci-dessous.</p></div>
 <div class="paragraph"><div class="title">Diagramme UML des classes mises en oeuvre (multiplicités 0..1)</div><p><span class="image">
 <img alt="images/td6.un.etoile.png" src="data:image/png;base64,
 iVBORw0KGgoAAAANSUhEUgAAAUIAAAG6CAIAAADyDti/AAAANXRFWHRjb3B5bGVmdABHZW5lcmF0
@@ -1996,7 +2009,7 @@ IwTGCCEwRgiBMUIIjBECY4QQGCOEwBgh5Fr/H3VdV+2wdlliAAAAAElFTkSuQmCC" />
 <div class="ulist"><ul>
 <li>
 <p>
-à la classe Commande :
+à la classe Commande (pas de changement) :
 </p>
 <div class="ulist"><ul>
 <li>
@@ -2011,12 +2024,12 @@ deux méthodes :
 <div class="ulist"><ul>
 <li>
 <p>
-<tt>Client getClient ()</tt> : permet d&#8217;obtenir le client associé à une Commande (renvoie null si pas de Client),
+<tt>Client getClient ()</tt> : permet d&#8217;obtenir le client associé à une Commande (renvoie null si pas associée à un Client),
 </p>
 </li>
 <li>
 <p>
-<tt>void setCommande (Commande comm)</tt> : attribue une commande à un Client,
+<tt>void setClient (Client cli)</tt> : associe la Commande à un Client,
 </p>
 </li>
 </ul></div>
@@ -2040,17 +2053,22 @@ trois méthodes :
 <div class="ulist"><ul>
 <li>
 <p>
-<tt>void addCommande(Commande comm)</tt> : ajoute la Commande comm à <tt>lesCommandes</tt>
+<tt>void addCommande(Commande comm)</tt> : associe le Client à la nouvelle Commande (ajoute la Commande comm à <tt>lesCommandes</tt>),
 </p>
 </li>
 <li>
 <p>
-<tt>void removeCommande (Commande comm)</tt> : retire la Commande comm de <tt>lesCommandes</tt>
+<tt>void removeCommande (Commande comm)</tt> : enlève l&#8217;association du Client à la Commande comm (retire la Commande comm de <tt>lesCommandes</tt>),
 </p>
 </li>
 <li>
 <p>
-<tt>public boolean existeCommande(Commande comm)</tt> : permet de savoir si un objet Commande comm est présent dans <tt>lesCommandes</tt>
+<tt>public boolean existeCommande(Commande comm)</tt> : permet de savoir si le Client comm est associé à une Commande comm (comm est présent dans <tt>lesCommandes</tt>).
+</p>
+</li>
+<li>
+<p>
+on aurait pu imaginer un "getter" des Commandes auxquelles le Client est associé.
 </p>
 </li>
 </ul></div>
@@ -2222,57 +2240,11 @@ dans la classe Commande une nouvelle méthode <tt>void definirClient (Client cli
 </li>
 <li>
 <p>
-dans la classe Client, une nouvelle méthode duale : <tt>public void ajouterUneCommande (Commande comm)</tt>.
+dans la classe Client, une nouvelle méthode duale : <tt>void ajouterUneCommande (Commande comm)</tt>.
 </p>
 </li>
 </ul></div>
-<div class="paragraph"><p>Ces deux méthodes doivent permettre de construire les liens entre objets afin de maintenir les associations cohérentes.</p></div>
-<div class="paragraph"><p>La méthode <tt>void definirClient (Client cli)</tt> dans la classe Commande :</p></div>
-<div class="ulist"><ul>
-<li>
-<p>
-Vérifie si le paramètre cli est null : auquel cas ne rien faire.
-</p>
-</li>
-<li>
-<p>
-Vérifie que le Client cli n&#8217;est pas déjà associé à cette Commande (existeCommande()) : auquel cas ne rien faire.
-</p>
-</li>
-<li>
-<p>
-Si la Commande est déjà associée à un Client : défaire cette association (enlever la Commande au Client (removeCommande())).
-</p>
-</li>
-<li>
-<p>
-Associer la Commande et le Client cli.
-</p>
-</li>
-</ul></div>
-<div class="paragraph"><p>La méthode <tt>public void ajouterUneCommande (Commande comm)</tt> dans la classe Client :</p></div>
-<div class="ulist"><ul>
-<li>
-<p>
-Vérifie si le paramètre comm est null : auquel cas ne rien faire.
-</p>
-</li>
-<li>
-<p>
-Vérifie que la Commande comm ne soit pas déja enregistrée comme Commande de ce Client : auquel cas ne rien faire (existeCommande()).
-</p>
-</li>
-<li>
-<p>
-Si la Commande comm est associé à un Client : défaire cette association (removeCommande()).
-</p>
-</li>
-<li>
-<p>
-Associer la Commande et le Client cli.
-</p>
-</li>
-</ul></div>
+<div class="paragraph"><p>Ces deux méthodes doivent permettre de défaire et construire correctement les liens entre objets afin de maintenir les associations cohérentes (éviter le problème du cas précédent)</p></div>
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
@@ -2361,6 +2333,47 @@ SUVORK5CYII=" />
 </td>
 <td class="content">
 <div class="title">Réponse</div>
+<div class="paragraph"><p>La méthode <tt>void definirClient (Client cli)</tt> dans la classe Commande :</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Vérifie si le paramètre cli est null : auquel cas ne rien faire.
+</p>
+</li>
+<li>
+<p>
+Si la Commande est déjà associée à un Client : défaire cette association (enlever la Commande au Client (removeCommande())).
+</p>
+</li>
+<li>
+<p>
+Associer la Commande et le Client cli.
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>La méthode <tt>public void ajouterUneCommande (Commande comm)</tt> dans la classe Client :</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Vérifie si le paramètre comm est null : auquel cas ne rien faire.
+</p>
+</li>
+<li>
+<p>
+Vérifie que la Commande comm ne soit pas déjà enregistrée comme Commande de ce Client : auquel cas ne rien faire (existeCommande()).
+</p>
+</li>
+<li>
+<p>
+Si la Commande comm est associé à un Client : défaire cette association (removeCommande()).
+</p>
+</li>
+<li>
+<p>
+Associer la Commande et le Client cli.
+</p>
+</li>
+</ul></div>
 <div class="listingblock">
 <div class="content"><!-- Generator: GNU source-highlight 3.1.5
 by Lorenzo Bettini
@@ -2374,7 +2387,7 @@ http://www.gnu.org/software/src-highlite -->
                         <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>leClient <span style="color: #990000">!=</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
                                 <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>leClient<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">removeCommande</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">);</span>
                         <span style="color: #FF0000">}</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>leClient <span style="color: #990000">=</span> cli<span style="color: #990000">;</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>leClient <span style="color: #990000">=</span> cli<span style="color: #990000">;</span> <span style="font-style: italic"><span style="color: #9A1900">// Ou this.setClient(cli);</span></span>
                         cli<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">addCommande</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">);</span>
                 <span style="color: #FF0000">}</span>
             <span style="color: #FF0000">}</span>
@@ -2389,7 +2402,7 @@ http://www.gnu.org/software/src-highlite -->
                         <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>comm<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getClient</span></span><span style="color: #990000">()</span> <span style="color: #990000">!=</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span> <span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
                                 comm<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getClient</span></span><span style="color: #990000">().</span><span style="font-weight: bold"><span style="color: #000000">removeCommande</span></span><span style="color: #990000">(</span>comm<span style="color: #990000">);</span>
                         <span style="color: #FF0000">}</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>lesCommandes<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">add</span></span> <span style="color: #990000">(</span> comm <span style="color: #990000">);</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>lesCommandes<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">add</span></span> <span style="color: #990000">(</span> comm <span style="color: #990000">);</span> <span style="font-style: italic"><span style="color: #9A1900">// Ou this.addCommande(comm);</span></span>
                         comm<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setClient</span></span> <span style="color: #990000">(</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span> <span style="color: #990000">);</span>
                 <span style="color: #FF0000">}</span>
             <span style="color: #FF0000">}</span>
@@ -2404,7 +2417,7 @@ http://www.gnu.org/software/src-highlite -->
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2014-03-20 03:20:27 CET
+Dernière mise à jour 2014-03-21 18:39:50 CET
 </div>
 </div>
 </body>
