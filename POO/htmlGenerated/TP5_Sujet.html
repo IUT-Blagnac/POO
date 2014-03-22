@@ -833,7 +833,7 @@ cellspacing="0" cellpadding="4">
 <div class="ulist"><ul>
 <li>
 <p>
-Les Compte seront stockés dans un tableau de Compte dynamique bâti sur les principes vus en TD pour la classe <tt>Pile</tt>.
+Les Compte seront stockés dans un tableau de Compte dynamique bâti sur les principes vus en TD pour stocker les informations en tableau dynamique dans la classe <tt>Pile</tt>.
 </p>
 </li>
 <li>
@@ -843,7 +843,7 @@ La documentation de la classe est connue : cf. documentation en ligne. <strong>O
 </li>
 <li>
 <p>
-Parce que nous ne changeons pas l&#8217;interface de la classe, l&#8217;encapsulation va nous permettre d&#8217;utiliser le même programme de test JUnit et le même programme client (menu pour un opérateur de l&#8217;agence bancaire).
+Parce que nous ne changeons pas l&#8217;interface de la classe, l&#8217;encapsulation va nous permettre d&#8217;utiliser le même programme client (menu pour un opérateur de l&#8217;agence bancaire) et le même programme de test JUnit .
 </p>
 </li>
 </ul></div>
@@ -1125,12 +1125,12 @@ Le fichier AgenceBancaire.java : <strong>le fichier à modifier</strong> durant 
 </li>
 <li>
 <p>
-Le fichier TestAgenceBancaire.java : fichier JUnit de test des développements que vous ferez dans AgenceBancaire.java. A modifier ponctuellement pour les tests.
+Le fichier ClasseApplicationAgenceBancaire.java : pour les tests (menu pour un opérateur de l&#8217;agence bancaire). A ne pas toucher.
 </p>
 </li>
 <li>
 <p>
-Le fichier ClasseApplicationAgenceBancaire.java : pour les tests (menu pour un opérateur de l&#8217;agence bancaire). A ne pas toucher.
+Le fichier TestAgenceBancaire.java : fichier JUnit de test des développements que vous ferez dans AgenceBancaire.java. A modifier ponctuellement pour les tests.
 </p>
 </li>
 <li>
@@ -1211,7 +1211,7 @@ Déclarez à sa place un attribut (private) <tt>tableauDesComptes</tt> de type t
 </p>
 </li>
 </ol></div>
-<div class="paragraph"><p>Si besoin, vous ajouterez d'éventuels attributs si vous en avez besoin.</p></div>
+<div class="paragraph"><p>Si besoin, vous ajouterez d'éventuels attributs.</p></div>
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
@@ -1280,7 +1280,7 @@ lJga0LT8+uRGJ5P/2OBGpz/mT34Gmsy9nx36v3PoX1H4mIUGLCOSAAAAAElFTkSuQmCC" />
 <p>
 D&#8217;une part :
 </p>
-<div class="ulist"><ul>
+<div class="olist loweralpha"><ol class="loweralpha">
 <li>
 <p>
 <tt>String getNomAgence()</tt>
@@ -1296,13 +1296,13 @@ D&#8217;une part :
 <tt>Compte getCompte(String pNumCompte)</tt>
 </p>
 </li>
-</ul></div>
+</ol></div>
 </li>
 <li>
 <p>
 D&#8217;autre part :
 </p>
-<div class="ulist"><ul>
+<div class="olist loweralpha"><ol class="loweralpha">
 <li>
 <p>
 <tt>int getNbComptes()</tt>
@@ -1320,7 +1320,7 @@ D&#8217;autre part :
 </li>
 <li>
 <p>
-<tt>Compte[] getComptesDe(String pNomProprietaire)</tt> (rappel : On s’autorisera à utiliser une ArrayList dans la méthode <tt>Compte[] getComptesDe(String pNomProprietaire)</tt>)
+<tt>Compte[] getComptesDe(String pNomProprietaire)</tt> (rappel : on s’autorisera à utiliser une ArrayList dans cette méthode)
 </p>
 </li>
 <li>
@@ -1328,16 +1328,16 @@ D&#8217;autre part :
 <tt>Compte trouveCompte(String pNC)</tt> (private).
 </p>
 </li>
-</ul></div>
+</ol></div>
 </li>
 <li>
 <p>
 Enfin :
 </p>
-<div class="ulist"><ul>
+<div class="olist loweralpha"><ol class="loweralpha">
 <li>
 <p>
-<tt>AgenceBancaire(String pNomAgence, String pLocAgence</tt>
+<tt>AgenceBancaire(String pNomAgence, String pLocAgence)</tt>
 </p>
 </li>
 <li>
@@ -1350,7 +1350,7 @@ Enfin :
 <tt>void removeCompte(String pNumCompte)</tt>
 </p>
 </li>
-</ul></div>
+</ol></div>
 </li>
 </ol></div>
 </div>
@@ -1496,20 +1496,76 @@ lJga0LT8+uRGJ5P/2OBGpz/mT34Gmsy9nx36v3PoX1H4mIUGLCOSAAAAAElFTkSuQmCC" />
 </div>
 </div>
 <div class="sect2">
-<h3 id="_tests">3.4. Tests</h3>
+<h3 id="_tests_de_la_classe">3.4. Tests de la classe</h3>
 <div class="paragraph"><p>Testez votre classe :</p></div>
-<div class="ulist"><ul>
-<li>
-<p>
-Elle doit passer avec succès (complet) les tests JUnit.
-</p>
-</li>
+<div class="olist arabic"><ol class="arabic">
 <li>
 <p>
 L&#8217;application menu pour un opérateur de l&#8217;agence bancaire doit fonctionner avec votre classe.
 </p>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Note" src="data:image/png;base64,
+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" />
+</td>
+<td class="content">
+<div class="paragraph"><p>C&#8217;est l&#8217;application la plus simple à utiliser pour les  premiers tests : ajouts, puis recherches, puis suppressions, puis recherches à nouveau &#8230;</p></div>
+</td>
+</tr></table>
+</div>
 </li>
-</ul></div>
+<li>
+<p>
+Elle doit passer avec succès (complet) les tests JUnit.
+</p>
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
@@ -1585,6 +1641,8 @@ Enfin <tt>removeCompte()</tt> ne peut être testée sans les 2 précédentes.
 </td>
 </tr></table>
 </div>
+</li>
+</ol></div>
 </div>
 </div>
 </div>
@@ -1594,7 +1652,7 @@ Enfin <tt>removeCompte()</tt> ne peut être testée sans les 2 précédentes.
 <div class="sect2">
 <h3 id="_solution_envisagée_2">4.1. Solution envisagée</h3>
 <div class="paragraph"><p>On souhaite maintenant faire une nouvelle version de la classe AgenceBancaire, toujours basée sur des tableaux dynamiques. Cette fois on stockera les comptes dans un tableau "avec de la marge". L&#8217;idée est de :</p></div>
-<div class="ulist"><ul>
+<div class="olist arabic"><ol class="arabic">
 <li>
 <p>
 pré-réserver au départ un tableau de taille <tt>tailleMin</tt>.
@@ -1602,17 +1660,17 @@ pré-réserver au départ un tableau de taille <tt>tailleMin</tt>.
 </li>
 <li>
 <p>
-lorsque nécessaire de l&#8217;agrandir en doublant sa capacité.
+lorsque nécessaire : agrandir le tableau en doublant sa capacité.
 </p>
 </li>
 <li>
 <p>
-lorsque nécessaire de ne le réduire que lorsque il y a la moitié des éléments non utilisés et diviser alors sa taille par deux (sauf si elle est égale à <tt>tailleMin</tt>).
+lorsque nécessaire : réduire le tableau que lorsque il y a la moitié des éléments non utilisés et diviser alors sa taille par deux (sauf si elle est égale à <tt>tailleMin</tt>).
 </p>
 </li>
-</ul></div>
+</ol></div>
 <div class="paragraph"><p>Dans cette version :</p></div>
-<div class="ulist"><ul>
+<div class="olist arabic"><ol class="arabic">
 <li>
 <p>
 <tt>tailleMin</tt> est fixé à 3 pour les tests, on pourra le modifier plus tard si besoin (100 par exemple).
@@ -1642,7 +1700,7 @@ le tableau de comptes <tt>tableauDesComptes</tt> aura tout le temps au minimum <
 <p>
 Il faudra donc gérer dans cette version :
 </p>
-<div class="ulist"><ul>
+<div class="olist loweralpha"><ol class="loweralpha">
 <li>
 <p>
 d&#8217;une part le nombre d'éléments réellement dans le tableau,
@@ -1653,9 +1711,9 @@ d&#8217;une part le nombre d'éléments réellement dans le tableau,
 d&#8217;autre part la taille effective du tableau (3, 6, 12, 24, &#8230;)
 </p>
 </li>
-</ul></div>
+</ol></div>
 </li>
-</ul></div>
+</ol></div>
 </div>
 <div class="sect2">
 <h3 id="_analyse_de_la_mise_en_oeuvre">4.2. Analyse de la mise en oeuvre</h3>
@@ -1735,20 +1793,20 @@ lJga0LT8+uRGJ5P/2OBGpz/mT34Gmsy9nx36v3PoX1H4mIUGLCOSAAAAAElFTkSuQmCC" />
 </div>
 </div>
 <div class="sect2">
-<h3 id="_tests_2">4.3. Tests</h3>
+<h3 id="_tests">4.3. Tests</h3>
 <div class="paragraph"><p>Testez votre classe :</p></div>
-<div class="ulist"><ul>
-<li>
-<p>
-Elle doit passer avec succès (complet) les tests JUnit.
-</p>
-</li>
+<div class="olist arabic"><ol class="arabic">
 <li>
 <p>
 L&#8217;application menu pour un opérateur de l&#8217;agence bancaire doit fonctionner avec votre classe.
 </p>
 </li>
-</ul></div>
+<li>
+<p>
+Elle doit passer avec succès (complet) les tests JUnit.
+</p>
+</li>
+</ol></div>
 </div>
 </div>
 </div>
@@ -1756,7 +1814,7 @@ L&#8217;application menu pour un opérateur de l&#8217;agence bancaire doit fonc
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2014-03-14 09:53:39 CET
+Dernière mise à jour 2014-03-20 13:41:56 CET
 </div>
 </div>
 </body>

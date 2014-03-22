@@ -1,0 +1,1762 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+<meta name="generator" content="AsciiDoc 8.6.6" />
+<title>BPOO - Sujet TP 6</title>
+<style type="text/css">
+/* Shared CSS for AsciiDoc xhtml11 and html5 backends */
+
+/* Default font. */
+body {
+  font-family: Georgia,serif;
+}
+
+/* Title font. */
+h1, h2, h3, h4, h5, h6,
+div.title, caption.title,
+thead, p.table.header,
+#toctitle,
+#author, #revnumber, #revdate, #revremark,
+#footer {
+  font-family: Arial,Helvetica,sans-serif;
+}
+
+body {
+  margin: 1em 5% 1em 5%;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
+a:visited {
+  color: fuchsia;
+}
+
+em {
+  font-style: italic;
+  color: navy;
+}
+
+strong {
+  font-weight: bold;
+  color: #083194;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #527bbd;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+  line-height: 1.3;
+}
+
+h1, h2, h3 {
+  border-bottom: 2px solid silver;
+}
+h2 {
+  padding-top: 0.5em;
+}
+h3 {
+  float: left;
+}
+h3 + * {
+  clear: left;
+}
+h5 {
+  font-size: 1.0em;
+}
+
+div.sectionbody {
+  margin-left: 0;
+}
+
+hr {
+  border: 1px solid silver;
+}
+
+p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+ul, ol, li > p {
+  margin-top: 0;
+}
+ul > li     { color: #aaa; }
+ul > li > * { color: black; }
+
+pre {
+  padding: 0;
+  margin: 0;
+}
+
+#author {
+  color: #527bbd;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+#email {
+}
+#revnumber, #revdate, #revremark {
+}
+
+#footer {
+  font-size: small;
+  border-top: 2px solid silver;
+  padding-top: 0.5em;
+  margin-top: 4.0em;
+}
+#footer-text {
+  float: left;
+  padding-bottom: 0.5em;
+}
+#footer-badges {
+  float: right;
+  padding-bottom: 0.5em;
+}
+
+#preamble {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+div.imageblock, div.exampleblock, div.verseblock,
+div.quoteblock, div.literalblock, div.listingblock, div.sidebarblock,
+div.admonitionblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.admonitionblock {
+  margin-top: 2.0em;
+  margin-bottom: 2.0em;
+  margin-right: 10%;
+  color: #606060;
+}
+
+div.content { /* Block element content. */
+  padding: 0;
+}
+
+/* Block element titles. */
+div.title, caption.title {
+  color: #527bbd;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 1.0em;
+  margin-bottom: 0.5em;
+}
+div.title + * {
+  margin-top: 0;
+}
+
+td div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content + div.title {
+  margin-top: 0.0em;
+}
+
+div.sidebarblock > div.content {
+  background: #ffffee;
+  border: 1px solid #dddddd;
+  border-left: 4px solid #f0f0f0;
+  padding: 0.5em;
+}
+
+div.listingblock > div.content {
+  border: 1px solid #dddddd;
+  border-left: 5px solid #f0f0f0;
+  background: #f8f8f8;
+  padding: 0.5em;
+}
+
+div.quoteblock, div.verseblock {
+  padding-left: 1.0em;
+  margin-left: 1.0em;
+  margin-right: 10%;
+  border-left: 5px solid #f0f0f0;
+  color: #888;
+}
+
+div.quoteblock > div.attribution {
+  padding-top: 0.5em;
+  text-align: right;
+}
+
+div.verseblock > pre.content {
+  font-family: inherit;
+  font-size: inherit;
+}
+div.verseblock > div.attribution {
+  padding-top: 0.75em;
+  text-align: left;
+}
+/* DEPRECATED: Pre version 8.2.7 verse style literal block. */
+div.verseblock + div.attribution {
+  text-align: left;
+}
+
+div.admonitionblock .icon {
+  vertical-align: top;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #527bbd;
+  padding-right: 0.5em;
+}
+div.admonitionblock td.content {
+  padding-left: 0.5em;
+  border-left: 3px solid #dddddd;
+}
+
+div.exampleblock > div.content {
+  border-left: 3px solid #dddddd;
+  padding-left: 0.5em;
+}
+
+div.imageblock div.content { padding-left: 0; }
+span.image img { border-style: none; }
+a.image:visited { color: white; }
+
+dl {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+dt {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  font-style: normal;
+  color: navy;
+}
+dd > *:first-child {
+  margin-top: 0.1em;
+}
+
+ul, ol {
+    list-style-position: outside;
+}
+ol.arabic {
+  list-style-type: decimal;
+}
+ol.loweralpha {
+  list-style-type: lower-alpha;
+}
+ol.upperalpha {
+  list-style-type: upper-alpha;
+}
+ol.lowerroman {
+  list-style-type: lower-roman;
+}
+ol.upperroman {
+  list-style-type: upper-roman;
+}
+
+div.compact ul, div.compact ol,
+div.compact p, div.compact p,
+div.compact div, div.compact div {
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+}
+
+tfoot {
+  font-weight: bold;
+}
+td > div.verse {
+  white-space: pre;
+}
+
+div.hdlist {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+div.hdlist tr {
+  padding-bottom: 15px;
+}
+dt.hdlist1.strong, td.hdlist1.strong {
+  font-weight: bold;
+}
+td.hdlist1 {
+  vertical-align: top;
+  font-style: normal;
+  padding-right: 0.8em;
+  color: navy;
+}
+td.hdlist2 {
+  vertical-align: top;
+}
+div.hdlist.compact tr {
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.comment {
+  background: yellow;
+}
+
+.footnote, .footnoteref {
+  font-size: 0.8em;
+}
+
+span.footnote, span.footnoteref {
+  vertical-align: super;
+}
+
+#footnotes {
+  margin: 20px 0 20px 0;
+  padding: 7px 0 0 0;
+}
+
+#footnotes div.footnote {
+  margin: 0 0 5px 0;
+}
+
+#footnotes hr {
+  border: none;
+  border-top: 1px solid silver;
+  height: 1px;
+  text-align: left;
+  margin-left: 0;
+  width: 20%;
+  min-width: 100px;
+}
+
+div.colist td {
+  padding-right: 0.5em;
+  padding-bottom: 0.3em;
+  vertical-align: top;
+}
+div.colist td img {
+  margin-top: 0.3em;
+}
+
+@media print {
+  #footer-badges { display: none; }
+}
+
+#toc {
+  margin-bottom: 2.5em;
+}
+
+#toctitle {
+  color: #527bbd;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 1.0em;
+  margin-bottom: 0.1em;
+}
+
+div.toclevel1, div.toclevel2, div.toclevel3, div.toclevel4 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+div.toclevel2 {
+  margin-left: 2em;
+  font-size: 0.9em;
+}
+div.toclevel3 {
+  margin-left: 4em;
+  font-size: 0.9em;
+}
+div.toclevel4 {
+  margin-left: 6em;
+  font-size: 0.9em;
+}
+
+span.aqua { color: aqua; }
+span.black { color: black; }
+span.blue { color: blue; }
+span.fuchsia { color: fuchsia; }
+span.gray { color: gray; }
+span.green { color: green; }
+span.lime { color: lime; }
+span.maroon { color: maroon; }
+span.navy { color: navy; }
+span.olive { color: olive; }
+span.purple { color: purple; }
+span.red { color: red; }
+span.silver { color: silver; }
+span.teal { color: teal; }
+span.white { color: white; }
+span.yellow { color: yellow; }
+
+span.aqua-background { background: aqua; }
+span.black-background { background: black; }
+span.blue-background { background: blue; }
+span.fuchsia-background { background: fuchsia; }
+span.gray-background { background: gray; }
+span.green-background { background: green; }
+span.lime-background { background: lime; }
+span.maroon-background { background: maroon; }
+span.navy-background { background: navy; }
+span.olive-background { background: olive; }
+span.purple-background { background: purple; }
+span.red-background { background: red; }
+span.silver-background { background: silver; }
+span.teal-background { background: teal; }
+span.white-background { background: white; }
+span.yellow-background { background: yellow; }
+
+span.big { font-size: 2em; }
+span.small { font-size: 0.6em; }
+
+span.underline { text-decoration: underline; }
+span.overline { text-decoration: overline; }
+span.line-through { text-decoration: line-through; }
+
+
+/*
+ * xhtml11 specific
+ *
+ * */
+
+tt {
+  font-family: monospace;
+  font-size: inherit;
+  color: navy;
+}
+
+div.tableblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.tableblock > table {
+  border: 3px solid #527bbd;
+}
+thead, p.table.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+p.table {
+  margin-top: 0;
+}
+/* Because the table frame attribute is overriden by CSS in most browsers. */
+div.tableblock > table[frame="void"] {
+  border-style: none;
+}
+div.tableblock > table[frame="hsides"] {
+  border-left-style: none;
+  border-right-style: none;
+}
+div.tableblock > table[frame="vsides"] {
+  border-top-style: none;
+  border-bottom-style: none;
+}
+
+
+/*
+ * html5 specific
+ *
+ * */
+
+.monospaced {
+  font-family: monospace;
+  font-size: inherit;
+  color: navy;
+}
+
+table.tableblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+thead, p.tableblock.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+p.tableblock {
+  margin-top: 0;
+}
+table.tableblock {
+  border-width: 3px;
+  border-spacing: 0px;
+  border-style: solid;
+  border-color: #527bbd;
+  border-collapse: collapse;
+}
+th.tableblock, td.tableblock {
+  border-width: 1px;
+  padding: 4px;
+  border-style: solid;
+  border-color: #527bbd;
+}
+
+table.tableblock.frame-topbot {
+  border-left-style: hidden;
+  border-right-style: hidden;
+}
+table.tableblock.frame-sides {
+  border-top-style: hidden;
+  border-bottom-style: hidden;
+}
+table.tableblock.frame-none {
+  border-style: hidden;
+}
+
+th.tableblock.halign-left, td.tableblock.halign-left {
+  text-align: left;
+}
+th.tableblock.halign-center, td.tableblock.halign-center {
+  text-align: center;
+}
+th.tableblock.halign-right, td.tableblock.halign-right {
+  text-align: right;
+}
+
+th.tableblock.valign-top, td.tableblock.valign-top {
+  vertical-align: top;
+}
+th.tableblock.valign-middle, td.tableblock.valign-middle {
+  vertical-align: middle;
+}
+th.tableblock.valign-bottom, td.tableblock.valign-bottom {
+  vertical-align: bottom;
+}
+
+
+/*
+ * manpage specific
+ *
+ * */
+
+body.manpage h1 {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  border-top: 2px solid silver;
+  border-bottom: 2px solid silver;
+}
+body.manpage h2 {
+  border-style: none;
+}
+body.manpage div.sectionbody {
+  margin-left: 3em;
+}
+
+@media print {
+  body.manpage div#toc { display: none; }
+}
+</style>
+<script type="text/javascript">
+/*<![CDATA[*/
+var asciidoc = {  // Namespace.
+
+/////////////////////////////////////////////////////////////////////
+// Table Of Contents generator
+/////////////////////////////////////////////////////////////////////
+
+/* Author: Mihai Bazon, September 2002
+ * http://students.infoiasi.ro/~mishoo
+ *
+ * Table Of Content generator
+ * Version: 0.4
+ *
+ * Feel free to use this script under the terms of the GNU General Public
+ * License, as long as you do not remove or alter this notice.
+ */
+
+ /* modified by Troy D. Hanson, September 2006. License: GPL */
+ /* modified by Stuart Rackham, 2006, 2009. License: GPL */
+
+// toclevels = 1..4.
+toc: function (toclevels) {
+
+  function getText(el) {
+    var text = "";
+    for (var i = el.firstChild; i != null; i = i.nextSibling) {
+      if (i.nodeType == 3 /* Node.TEXT_NODE */) // IE doesn't speak constants.
+        text += i.data;
+      else if (i.firstChild != null)
+        text += getText(i);
+    }
+    return text;
+  }
+
+  function TocEntry(el, text, toclevel) {
+    this.element = el;
+    this.text = text;
+    this.toclevel = toclevel;
+  }
+
+  function tocEntries(el, toclevels) {
+    var result = new Array;
+    var re = new RegExp('[hH]([2-'+(toclevels+1)+'])');
+    // Function that scans the DOM tree for header elements (the DOM2
+    // nodeIterator API would be a better technique but not supported by all
+    // browsers).
+    var iterate = function (el) {
+      for (var i = el.firstChild; i != null; i = i.nextSibling) {
+        if (i.nodeType == 1 /* Node.ELEMENT_NODE */) {
+          var mo = re.exec(i.tagName);
+          if (mo && (i.getAttribute("class") || i.getAttribute("className")) != "float") {
+            result[result.length] = new TocEntry(i, getText(i), mo[1]-1);
+          }
+          iterate(i);
+        }
+      }
+    }
+    iterate(el);
+    return result;
+  }
+
+  var toc = document.getElementById("toc");
+  if (!toc) {
+    return;
+  }
+
+  // Delete existing TOC entries in case we're reloading the TOC.
+  var tocEntriesToRemove = [];
+  var i;
+  for (i = 0; i < toc.childNodes.length; i++) {
+    var entry = toc.childNodes[i];
+    if (entry.nodeName == 'div'
+     && entry.getAttribute("class")
+     && entry.getAttribute("class").match(/^toclevel/))
+      tocEntriesToRemove.push(entry);
+  }
+  for (i = 0; i < tocEntriesToRemove.length; i++) {
+    toc.removeChild(tocEntriesToRemove[i]);
+  }
+
+  // Rebuild TOC entries.
+  var entries = tocEntries(document.getElementById("content"), toclevels);
+  for (var i = 0; i < entries.length; ++i) {
+    var entry = entries[i];
+    if (entry.element.id == "")
+      entry.element.id = "_toc_" + i;
+    var a = document.createElement("a");
+    a.href = "#" + entry.element.id;
+    a.appendChild(document.createTextNode(entry.text));
+    var div = document.createElement("div");
+    div.appendChild(a);
+    div.className = "toclevel" + entry.toclevel;
+    toc.appendChild(div);
+  }
+  if (entries.length == 0)
+    toc.parentNode.removeChild(toc);
+},
+
+
+/////////////////////////////////////////////////////////////////////
+// Footnotes generator
+/////////////////////////////////////////////////////////////////////
+
+/* Based on footnote generation code from:
+ * http://www.brandspankingnew.net/archive/2005/07/format_footnote.html
+ */
+
+footnotes: function () {
+  // Delete existing footnote entries in case we're reloading the footnodes.
+  var i;
+  var noteholder = document.getElementById("footnotes");
+  if (!noteholder) {
+    return;
+  }
+  var entriesToRemove = [];
+  for (i = 0; i < noteholder.childNodes.length; i++) {
+    var entry = noteholder.childNodes[i];
+    if (entry.nodeName == 'div' && entry.getAttribute("class") == "footnote")
+      entriesToRemove.push(entry);
+  }
+  for (i = 0; i < entriesToRemove.length; i++) {
+    noteholder.removeChild(entriesToRemove[i]);
+  }
+
+  // Rebuild footnote entries.
+  var cont = document.getElementById("content");
+  var spans = cont.getElementsByTagName("span");
+  var refs = {};
+  var n = 0;
+  for (i=0; i<spans.length; i++) {
+    if (spans[i].className == "footnote") {
+      n++;
+      var note = spans[i].getAttribute("data-note");
+      if (!note) {
+        // Use [\s\S] in place of . so multi-line matches work.
+        // Because JavaScript has no s (dotall) regex flag.
+        note = spans[i].innerHTML.match(/\s*\[([\s\S]*)]\s*/)[1];
+        spans[i].innerHTML =
+          "[<a id='_footnoteref_" + n + "' href='#_footnote_" + n +
+          "' title='View footnote' class='footnote'>" + n + "</a>]";
+        spans[i].setAttribute("data-note", note);
+      }
+      noteholder.innerHTML +=
+        "<div class='footnote' id='_footnote_" + n + "'>" +
+        "<a href='#_footnoteref_" + n + "' title='Return to text'>" +
+        n + "</a>. " + note + "</div>";
+      var id =spans[i].getAttribute("id");
+      if (id != null) refs["#"+id] = n;
+    }
+  }
+  if (n == 0)
+    noteholder.parentNode.removeChild(noteholder);
+  else {
+    // Process footnoterefs.
+    for (i=0; i<spans.length; i++) {
+      if (spans[i].className == "footnoteref") {
+        var href = spans[i].getElementsByTagName("a")[0].getAttribute("href");
+        href = href.match(/#.*/)[0];  // Because IE return full URL.
+        n = refs[href];
+        spans[i].innerHTML =
+          "[<a href='#_footnote_" + n +
+          "' title='View footnote' class='footnote'>" + n + "</a>]";
+      }
+    }
+  }
+},
+
+install: function(toclevels) {
+  var timerId;
+
+  function reinstall() {
+    asciidoc.footnotes();
+    if (toclevels) {
+      asciidoc.toc(toclevels);
+    }
+  }
+
+  function reinstallAndRemoveTimer() {
+    clearInterval(timerId);
+    reinstall();
+  }
+
+  timerId = setInterval(reinstall, 500);
+  if (document.addEventListener)
+    document.addEventListener("DOMContentLoaded", reinstallAndRemoveTimer, false);
+  else
+    window.onload = reinstallAndRemoveTimer;
+}
+
+}
+asciidoc.install(2);
+/*]]>*/
+</script>
+</head>
+<body class="article">
+<div id="header">
+<h1>BPOO - Sujet TP 6</h1>
+<span id="author">Dut/Info-S2/M2103</span><br />
+<div id="toc">
+  <div id="toctitle">Table des matières</div>
+  <noscript><p><b>JavaScript must be enabled in your browser to display the table of contents.</b></p></noscript>
+</div>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Important" src="data:image/png;base64,
+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
+h04nvXoAAAAASUVORK5CYII=" />
+</td>
+<td class="content">
+<div class="tableblock" id="cartouche">
+<table rules="all"
+style="margin-left:0; margin-right:auto;"
+width="90%"
+frame="border"
+cellspacing="0" cellpadding="4">
+<col width="9%" />
+<col width="90%" />
+<tbody>
+<tr>
+<td align="left" valign="top"><p class="table">PreReq</p></td>
+<td align="left" valign="top"><p class="table">TD5 : Listes chainées, TP5 : implémentation classe AgenceBancaire,</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">ObjTP</p></td>
+<td align="left" valign="top"><p class="table">Programmer la classe AgenceBancaire avec une liste chaînée.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">Durée</p></td>
+<td align="left" valign="top"><p class="table"><strong>2 séance</strong> de 1,5h sur machine.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">À rendre</p></td>
+<td align="left" valign="top"><p class="table">Code source à déposer : Classe AgenceBancaire + réponses au questions éventuelles en commentaire en début de fichier.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr></table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_objectif">1. Objectif</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Le but de ce TP est de construire la classe <tt>AgenceBancaire</tt> mais de façon différente :</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Les Compte seront stockés dans une liste chaînée dont chaque Cellule contiendra un Compte. Cette liste chaînée sera bâtie selon les principes vus en TD pour stocker les données sous forme de liste chaînée.
+</p>
+</li>
+<li>
+<p>
+La documentation de la classe est connue : cf. documentation en ligne. <strong>On ne changera pas l&#8217;interface de la classe</strong>.
+</p>
+</li>
+<li>
+<p>
+Parce que nous ne changeons pas l&#8217;interface de la classe, l&#8217;encapsulation va nous permettre d&#8217;utiliser le même programme client (menu pour un opérateur de l&#8217;agence bancaire) et, au final, le même programme de test JUnit.
+</p>
+</li>
+</ul></div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph"><div class="title">Diagramme UML des classes mises en oeuvre</div><p><span class="image">
+<img alt="images/tp6-AG-Compte.png" src="data:image/png;base64,
+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" />
+</span></p></div>
+</div></div>
+<div class="paragraph"><p>Il vous faudra réécrire une partie de la classe.</p></div>
+<div class="paragraph"><p>Pour les tests :</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+le programme d&#8217;utilisation vous est fourni (menu pour un opérateur de l&#8217;agence bancaire).
+</p>
+</li>
+<li>
+<p>
+le programme de test JUnit est aussi fourni.
+</p>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_mise_en_place_de_l_8217_environnement">2. Mise en place de l&#8217;environnement</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Vous devrez mettre dans un seul et même répertoire de travail :</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Le fichier AgenceBancaire.java : <strong>le fichier à modifier</strong> durant le TP.
+</p>
+</li>
+<li>
+<p>
+Le fichier <strong>Cellule.java : définit la classe Cellule nécessaire pour les listes chaînées</strong>.
+</p>
+</li>
+<li>
+<p>
+Le fichier ClasseApplicationAgenceBancaire.java : pour les tests (menu pour un opérateur de l&#8217;agence bancaire). A ne pas toucher.
+</p>
+</li>
+<li>
+<p>
+Le fichier TestAgenceBancaire.java : fichier JUnit de test des développements que vous ferez dans AgenceBancaire.java. A modifier ponctuellement pour les tests.
+</p>
+</li>
+<li>
+<p>
+Dé-zipper le fichier packagesTps5.zip fourni : il contient les packages de travail pour ce tp SAUF la classe AgenceBancaire bien sur &#8230;
+</p>
+</li>
+<li>
+<p>
+Récupérer les fichiers :
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+SciTE.properties : il paramètre Scite pour compiler/exécuter en utilisant la librairie JUnit contenue dans le fichier .jar.
+</p>
+</li>
+<li>
+<p>
+junit.jar : il contient la librairie JUnit pour les tests.
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+Ensuite seulement lancer Scite et ouvrir les fichiers .java.
+</p>
+</li>
+</ol></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_implémentation_de_la_solution">3. Implémentation de la solution</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_solution_envisagée">3.1. Solution envisagée</h3>
+<div class="paragraph"><p>L&#8217;idée est donc maintenant de modifier la classe AgenceBancaire afin de stocker les comptes dans une liste chaînée. Vous disposez de la classe <strong>Cellule</strong> permettant de construire une liste chaînée sur les principes vus en TD.</p></div>
+<div class="paragraph"><p>On s&#8217;autorisera à utiliser une ArrayList dans la méthode <tt>public Compte[] getComptesDe(String pNomProprietaire)</tt></p></div>
+</div>
+<div class="sect2">
+<h3 id="_préparation_de_la_mise_en_oeuvre">3.2. Préparation de la mise en oeuvre</h3>
+<div class="sect3">
+<h4 id="_modification_des_attributs">3.2.1. Modification des attributs</h4>
+<div class="paragraph"><p>Dans la classe AgenceBancaire :</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Enlevez la déclaration existante pour le stockage des Compte (ArrayList ou tableau de Compte).
+</p>
+</li>
+<li>
+<p>
+Déclarez à sa place un attribut (private) <tt>debutDeListe</tt> de type <tt>Cellule</tt> pour stocker la référence de la première Cellule de la liste chaînée.
+</p>
+</li>
+<li>
+<p>
+Si besoin, vous ajouterez d'éventuels attributs.
+</p>
+</li>
+</ol></div>
+</div>
+<div class="sect3">
+<h4 id="_analyse_de_la_solution_à_mettre_en_oeuvre">3.2.2. Analyse de la solution à mettre en oeuvre</h4>
+<div class="paragraph"><p>Une bonne démarche consiste à réfléchir 10'-15' avant de commencer.</p></div>
+<div class="paragraph"><p>Parcourez le code (quasi vide) de la classe et réfléchir à ce qui sera à programmer, en particulier dans les méthodes :</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+D&#8217;une part :
+</p>
+<div class="olist loweralpha"><ol class="loweralpha">
+<li>
+<p>
+<tt>String getNomAgence()</tt>
+</p>
+</li>
+<li>
+<p>
+<tt>String getLocAgence()</tt>
+</p>
+</li>
+<li>
+<p>
+<tt>Compte getCompte(String pNumCompte)</tt>
+</p>
+</li>
+</ol></div>
+</li>
+<li>
+<p>
+D&#8217;autre part :
+</p>
+<div class="olist loweralpha"><ol class="loweralpha">
+<li>
+<p>
+<tt>String toString()</tt>
+</p>
+</li>
+<li>
+<p>
+<tt>int getNbComptes()</tt> : <strong>veiller ici</strong> à limiter le nombre de parcours de la liste chaînée. Calculer ce nombre de compte à chaque appel en reparcourant la liste est une <strong>mauvaise solution</strong>. Trouvez mieux &#8230;
+</p>
+</li>
+<li>
+<p>
+<tt>void afficher()</tt>
+</p>
+</li>
+<li>
+<p>
+<tt>Compte[] getComptesDe(String pNomProprietaire)</tt> (rappel : on s’autorisera à utiliser une ArrayList dans cette méthode)
+</p>
+</li>
+<li>
+<p>
+<tt>Compte trouveCompte(String pNC)</tt> (private).
+</p>
+</li>
+</ol></div>
+</li>
+<li>
+<p>
+Enfin :
+</p>
+<div class="olist loweralpha"><ol class="loweralpha">
+<li>
+<p>
+<tt>AgenceBancaire(String pNomAgence, String pLocAgence)</tt> :
+</p>
+<div class="olist lowerroman"><ol class="lowerroman">
+<li>
+<p>
+Il faudra initialiser l&#8217;attribut <tt>debutDeListe</tt>. Il y a 0 Compte, donc pas de Cellule nécessaire.
+</p>
+</li>
+</ol></div>
+</li>
+<li>
+<p>
+<tt>void addCompte(Compte pCompteAAjouter)</tt>
+</p>
+<div class="olist lowerroman"><ol class="lowerroman">
+<li>
+<p>
+Deux stratégies possibles : ajout en début de liste chaînée, ajout en fin de liste chaînée.
+</p>
+</li>
+<li>
+<p>
+Choisissez la solution la plus simple et la plus économe en temps de calcul.
+</p>
+</li>
+</ol></div>
+</li>
+<li>
+<p>
+<tt>void removeCompte(String pNumCompte)</tt>
+</p>
+<div class="olist lowerroman"><ol class="lowerroman">
+<li>
+<p>
+On évitera de rechercher le Compte PUIS de le supprimer car cela serait couteux en temps de calcul (2 parcours de la liste).
+</p>
+</li>
+<li>
+<p>
+Il faudra traiter les différents cas possibles de suppression dans la liste.
+</p>
+<div class="olist upperalpha"><ol class="upperalpha">
+<li>
+<p>
+En tête de liste (première Cellule).
+</p>
+</li>
+<li>
+<p>
+En milieu fin de liste.
+</p>
+</li>
+<li>
+<p>
+En fin de liste.
+</p>
+</li>
+</ol></div>
+</li>
+</ol></div>
+</li>
+</ol></div>
+</li>
+</ol></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_codage_todo">3.3. Codage : TODO</h3>
+<div class="paragraph"><p>A vous de jouer : modifier la classe pour réaliser l&#8217;implémentation demandée.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Important" src="data:image/png;base64,
+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" />
+</td>
+<td class="content">
+<div class="title">Rappel</div>
+<div class="paragraph"><p>On commence TOUJOURS par le constructeur car c&#8217;est la première chose réalisée sur un objet nouvellement créé : début de la vie d&#8217;un objet.</p></div>
+<div class="paragraph"><p>Le rôle du constructeur est TOUJOURS d&#8217;initialiser TOUS les attributs de l&#8217;objet.</p></div>
+</td>
+</tr></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_tests_de_la_classe">3.4. Tests de la classe</h3>
+<div class="paragraph"><p>Testez votre classe :</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+L&#8217;application menu pour un opérateur de l&#8217;agence bancaire doit fonctionner avec votre classe.
+</p>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Note" src="data:image/png;base64,
+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" />
+</td>
+<td class="content">
+<div class="paragraph"><p>C&#8217;est l&#8217;application la plus simple à utiliser pour les  premiers tests : ajouts, puis recherches, puis suppressions, puis recherches à nouveau &#8230;</p></div>
+</td>
+</tr></table>
+</div>
+</li>
+<li>
+<p>
+Elle doit passer avec succès (complet) les tests JUnit.
+</p>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Note" src="data:image/png;base64,
+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" />
+</td>
+<td class="content">
+<div class="paragraph"><p>On réalise les tests "d&#8217;un coup" car :</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<tt>getCompte()</tt> ne peut être testée sans <tt>addCompte()</tt> (seul un cas particulier peut être testé).
+</p>
+</li>
+<li>
+<p>
+De même <tt>addCompte()</tt> ne peut être testée sans <tt>getCompte()</tt> (seul un cas particulier peut être testé).
+</p>
+</li>
+<li>
+<p>
+Enfin <tt>removeCompte()</tt> ne peut être testée sans les 2 précédentes.
+</p>
+</li>
+</ul></div>
+</td>
+</tr></table>
+</div>
+</li>
+</ol></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_amélioration_de_la_solution">4. Amélioration de la solution</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_besoin_du_client">4.1. Besoin du client</h3>
+<div class="paragraph"><p>Le client (directeur d&#8217;une agence) nous fait la remarque suivante : comme les clients connaissent en général leur numéro de compte, les options du menu les plus utilisées sont celles qui permettent de faire des opérations sur un Compte à partir de son numéro :</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+s - Supprimer un compte de l&#8217;agence (par son numéro)
+</p>
+</li>
+<li>
+<p>
+v - Voir un compte (par son numéro)
+</p>
+</li>
+<li>
+<p>
+d - Déposer de l&#8217;argent sur un compte
+</p>
+</li>
+<li>
+<p>
+r - Retirer de l&#8217;argent sur un compte
+</p>
+</li>
+</ul></div>
+</div>
+<div class="sect2">
+<h3 id="_amélioration_envisagée">4.2. Amélioration envisagée</h3>
+<div class="paragraph"><p>En remarquant que tous les numéros de Compte sont différents dans un objet AgenceBancaire par construction même de la classe, on peut les stocker dans l&#8217;ordre des numéros pour accélérer ainsi les recherches des numéros inexistants (fautes de frappe) et les suppressions.</p></div>
+<div class="paragraph"><p>NB : dans une vraie agence bancaire, les numéros de comptes suivent une logique de numérotation. L&#8217;approche est donc intéressante même si elle n&#8217;est pas parfaite.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_codage_todo_2">4.3. Codage : TODO</h3>
+<div class="paragraph"><p>Après un moment de réflexion : mettez en oeuvre la solution ci-dessus :</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Modifier TOUTES les méthodes impliquées. Les modifications porteront sur :
+</p>
+<div class="olist loweralpha"><ol class="loweralpha">
+<li>
+<p>
+La détection plus rapide des cas où un numéro de compte est absent (on ne sera pas toujours obligés de parcourir toute la liste).
+</p>
+</li>
+<li>
+<p>
+Ceci porte sur la recherche ET la suppression.
+</p>
+</li>
+</ol></div>
+</li>
+<li>
+<p>
+Lors de l&#8217;ajout, traiter tous les cas possibles : ajout dans une liste vide, ajout en première position, au milieu, à la fin.
+</p>
+</li>
+</ol></div>
+<div class="paragraph"><p>On pourra utiliser une des deux méthodes de la classe String donc la documentation (partielle) est reproduite ci-dessous :</p></div>
+<div class="olist loweralpha"><ol class="loweralpha">
+<li>
+<p>
+<tt>public int compareTo(String anotherString)</tt>
+</p>
+<div class="paragraph"><p>Compares two strings lexicographically. The comparison is based on the Unicode value of each character in the strings. The character sequence represented by this String object is compared lexicographically to the character sequence represented by the argument string. The result is a negative integer if this String object lexicographically precedes the argument string. The result is a positive integer if this String object lexicographically follows the argument string. The result is zero if the strings are equal; compareTo returns 0 exactly when the equals(Object) method would return true.</p></div>
+<div class="paragraph"><p>This is the definition of lexicographic ordering. If two strings are different, then either they have different characters at some index that is a valid index for both strings, or their lengths are different, or both.</p></div>
+<div class="paragraph"><p>If they have different characters at one or more index positions, let k be the smallest such index; then the string whose character at position k has the smaller value, as determined by using the &lt; operator, lexicographically precedes the other string.</p></div>
+<div class="paragraph"><p>If there is no index position at which they differ, then the shorter string lexicographically precedes the longer string.</p></div>
+<div class="paragraph"><p><strong>Parameters</strong>:   anotherString - the String to be compared.</p></div>
+<div class="paragraph"><p><strong>Returns</strong>:      the value 0 if the argument string is equal to this string; a value less than 0 if this string is lexicographically less than the string argument; and a value greater than 0 if this string is lexicographically greater than the string argument.</p></div>
+</li>
+<li>
+<p>
+<tt>public int compareToIgnoreCase(String str)</tt>
+</p>
+<div class="paragraph"><p>Compares two strings lexicographically, ignoring case differences. This method returns an integer whose sign is that of calling compareTo with normalized versions of the strings where case differences have been eliminated by calling Character.toLowerCase(Character.toUpperCase(character)) on each character.</p></div>
+<div class="paragraph"><p>Note that this method does not take locale into account, and will result in an unsatisfactory ordering for certain locales. The java.text package provides collators to allow locale-sensitive ordering.</p></div>
+<div class="paragraph"><p><strong>Parameters</strong>:   str - the String to be compared.</p></div>
+<div class="paragraph"><p><strong>Returns</strong>:      a negative integer, zero, or a positive integer as the specified String is greater than, equal to, or less than this String, ignoring case considerations.</p></div>
+</li>
+</ol></div>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes"><hr /></div>
+<div id="footer">
+<div id="footer-text">
+Dernière mise à jour 2014-03-21 16:36:11 CET
+</div>
+</div>
+</body>
+</html>
