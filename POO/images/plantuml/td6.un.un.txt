@@ -3,9 +3,6 @@
 skinparam classAttributeIconSize 0
 
 class Commande {
-	- String idCde
-	- String dateCde
-	- boolean etatCde
 	+ Commande(String id, Date d)
 	+ void afficherInfos()
 	+ boolean getEtat()
@@ -13,10 +10,6 @@ class Commande {
 
 
 class Client {
-	- String idClient
-	- String nomClient
-	- String adrClient
-	- String telClient
 	+ Client(String id, String nom, String adr, String tel)
 	+ void afficherCommandes()
 }
