@@ -1,0 +1,40 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class Vehicule {
+	- String  marque
+	- int  noSerie
+	- int  km
+	+ Vehicule  ()
+	+ Vehicule  (String  pMarque,  int  pSerie)
+	+ String  getMarque()
+	+ int  getNoSerie()
+	+ int  getKm()
+	+ void  setNoSerie(int  pSerie)
+    + void  rouler  (int  nbKm)
+	+ void  afficher  ()
+}
+
+class Voiture {
+	-  String  noImmat
+	+ Voiture()
+	+ Voiture(String  pMarque,  int  pSerie,  String  pImmat)
+	+ String  getNumeroImmat  ()  
+	+ void  setNumeroImmat  (String pImmat)
+	+ void  afficher  ()
+} 
+
+class  MonoSpace {
+	+  Monospace () 
+	+ void  afficher  ()
+	+ void  afficher  (int decalage)
+} 
+
+class AutreVehicule {
+} 
+
+Vehicule <|-- Voiture
+Voiture <|-- MonoSpace
+Vehicule <|-- AutreVehicule
+
+@enduml
