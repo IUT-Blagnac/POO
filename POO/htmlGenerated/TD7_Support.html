@@ -1198,12 +1198,10 @@ http://www.gnu.org/software/src-highlite -->
    <span style="font-weight: bold"><span style="color: #0000FF">private</span></span>  <span style="color: #009900">int</span>  km<span style="color: #990000">;</span>
 
    <span style="font-style: italic"><span style="color: #9A1900">// Constructeur</span></span>
-   <span style="font-weight: bold"><span style="color: #0000FF">public</span></span>  <span style="font-weight: bold"><span style="color: #000000">Vehicule</span></span>  <span style="color: #990000">()</span>
-   <span style="color: #FF0000">{</span>
+   <span style="font-weight: bold"><span style="color: #0000FF">public</span></span>  <span style="font-weight: bold"><span style="color: #000000">Vehicule</span></span>  <span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
        <span style="font-weight: bold"><span style="color: #0000FF">this</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">""</span><span style="color: #990000">,</span> <span style="color: #993399">0</span><span style="color: #990000">);</span>   <span style="font-style: italic"><span style="color: #9A1900">// Appel  de Vehicule (String, int)</span></span>
    <span style="color: #FF0000">}</span>
-   <span style="font-weight: bold"><span style="color: #0000FF">public</span></span>  <span style="font-weight: bold"><span style="color: #000000">Vehicule</span></span>  <span style="color: #990000">(</span><span style="color: #008080">String</span>  pMarque<span style="color: #990000">,</span>  <span style="color: #009900">int</span>  pSerie<span style="color: #990000">)</span>
-   <span style="color: #FF0000">{</span>
+   <span style="font-weight: bold"><span style="color: #0000FF">public</span></span>  <span style="font-weight: bold"><span style="color: #000000">Vehicule</span></span>  <span style="color: #990000">(</span><span style="color: #008080">String</span>  pMarque<span style="color: #990000">,</span>  <span style="color: #009900">int</span>  pSerie<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
        <span style="font-weight: bold"><span style="color: #0000FF">super</span></span> <span style="color: #990000">()</span> <span style="color: #990000">;</span>  <span style="font-style: italic"><span style="color: #9A1900">// Implicite : Appel de Object()</span></span>
        <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>marque  <span style="color: #990000">=</span>  pMarque<span style="color: #990000">;</span>
        <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>noSerie  <span style="color: #990000">=</span>  pSerie<span style="color: #990000">;</span>
@@ -1215,8 +1213,7 @@ http://www.gnu.org/software/src-highlite -->
    <span style="font-weight: bold"><span style="color: #0000FF">public</span></span>  <span style="color: #009900">int</span>  <span style="font-weight: bold"><span style="color: #000000">getNoSerie</span></span><span style="color: #990000">()</span>  <span style="color: #FF0000">{</span>  <span style="font-weight: bold"><span style="color: #0000FF">return</span></span>  <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>noSerie<span style="color: #990000">;</span>  <span style="color: #FF0000">}</span>
    <span style="font-weight: bold"><span style="color: #0000FF">public</span></span>  <span style="color: #009900">int</span>  <span style="font-weight: bold"><span style="color: #000000">getKm</span></span><span style="color: #990000">()</span>  <span style="color: #FF0000">{</span>  <span style="font-weight: bold"><span style="color: #0000FF">return</span></span>  <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>km<span style="color: #990000">;</span>  <span style="color: #FF0000">}</span>
 
-   <span style="font-weight: bold"><span style="color: #0000FF">public</span></span>  <span style="color: #009900">void</span>  <span style="font-weight: bold"><span style="color: #000000">afficher</span></span>  <span style="color: #990000">()</span>
-   <span style="color: #FF0000">{</span>
+   <span style="font-weight: bold"><span style="color: #0000FF">public</span></span>  <span style="color: #009900">void</span>  <span style="font-weight: bold"><span style="color: #000000">afficher</span></span>  <span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"Vehicule "</span> <span style="color: #990000">+</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>marque <span style="color: #990000">+</span> <span style="color: #FF0000">" "</span> <span style="color: #990000">+</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>noSerie<span style="color: #990000">);</span>
    <span style="color: #FF0000">}</span>
 
@@ -1224,7 +1221,7 @@ http://www.gnu.org/software/src-highlite -->
    <span style="font-weight: bold"><span style="color: #0000FF">public</span></span>  <span style="color: #009900">void</span>  <span style="font-weight: bold"><span style="color: #000000">rouler</span></span>  <span style="color: #990000">(</span><span style="color: #009900">int</span>  nbKm<span style="color: #990000">)</span>  <span style="color: #FF0000">{</span>  <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>km  <span style="color: #990000">=</span>  <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>km  <span style="color: #990000">+</span>  nbKm<span style="color: #990000">;</span> <span style="color: #FF0000">}</span>
 <span style="color: #FF0000">}</span> <span style="font-style: italic"><span style="color: #9A1900">// Fin Classe Vehicule</span></span>
 
-<span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span>  <span style="color: #008080">AutreVehicule</span>  <span style="font-weight: bold"><span style="color: #0000FF">extends</span></span>  Vehicule  <span style="color: #FF0000">{}</span>
+
 
 <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span>  <span style="color: #008080">Voiture</span>  <span style="font-weight: bold"><span style="color: #0000FF">extends</span></span>  Vehicule
 <span style="color: #FF0000">{</span>
@@ -1232,13 +1229,11 @@ http://www.gnu.org/software/src-highlite -->
    <span style="font-weight: bold"><span style="color: #0000FF">private</span></span>  <span style="color: #008080">String</span>  noImmat<span style="color: #990000">;</span>
 
    <span style="font-style: italic"><span style="color: #9A1900">// Constructeurs</span></span>
-   <span style="font-weight: bold"><span style="color: #0000FF">public</span></span>  <span style="font-weight: bold"><span style="color: #000000">Voiture</span></span><span style="color: #990000">()</span>
-   <span style="color: #FF0000">{</span>
+   <span style="font-weight: bold"><span style="color: #0000FF">public</span></span>  <span style="font-weight: bold"><span style="color: #000000">Voiture</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
        <span style="font-weight: bold"><span style="color: #0000FF">this</span></span>  <span style="color: #990000">(</span><span style="color: #FF0000">""</span><span style="color: #990000">,</span>  <span style="color: #993399">0</span><span style="color: #990000">,</span>  <span style="color: #FF0000">""</span><span style="color: #990000">);</span> <span style="font-style: italic"><span style="color: #9A1900">// Appel  de Voiture (String, int, String)</span></span>
    <span style="color: #FF0000">}</span>
 
-   <span style="font-weight: bold"><span style="color: #0000FF">public</span></span>  <span style="font-weight: bold"><span style="color: #000000">Voiture</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span>  pMarque<span style="color: #990000">,</span>  <span style="color: #009900">int</span>  pSerie<span style="color: #990000">,</span>  <span style="color: #008080">String</span>  pImmat<span style="color: #990000">)</span>
-   <span style="color: #FF0000">{</span>
+   <span style="font-weight: bold"><span style="color: #0000FF">public</span></span>  <span style="font-weight: bold"><span style="color: #000000">Voiture</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span>  pMarque<span style="color: #990000">,</span>  <span style="color: #009900">int</span>  pSerie<span style="color: #990000">,</span>  <span style="color: #008080">String</span>  pImmat<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
        <span style="font-weight: bold"><span style="color: #0000FF">super</span></span>  <span style="color: #990000">(</span>pMarque<span style="color: #990000">,</span>  pSerie<span style="color: #990000">);</span> <span style="font-style: italic"><span style="color: #9A1900">// Appel  de Vehicule (String, int)</span></span>
        <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>noImmat  <span style="color: #990000">=</span>  pImmat<span style="color: #990000">;</span>
    <span style="color: #FF0000">}</span>
@@ -1247,8 +1242,7 @@ http://www.gnu.org/software/src-highlite -->
    <span style="font-weight: bold"><span style="color: #0000FF">public</span></span>  <span style="color: #008080">String</span>  <span style="font-weight: bold"><span style="color: #000000">getNumeroImmat</span></span>  <span style="color: #990000">()</span>  <span style="color: #FF0000">{</span>  <span style="font-weight: bold"><span style="color: #0000FF">return</span></span>  <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>noImmat<span style="color: #990000">;</span> <span style="color: #FF0000">}</span>
    <span style="font-weight: bold"><span style="color: #0000FF">public</span></span>  <span style="color: #009900">void</span>  <span style="font-weight: bold"><span style="color: #000000">setNumeroImmat</span></span>  <span style="color: #990000">(</span><span style="color: #008080">String</span> pImmat<span style="color: #990000">)</span>  <span style="color: #FF0000">{</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>noImmat <span style="color: #990000">=</span> pImmat<span style="color: #990000">;</span> <span style="color: #FF0000">}</span>
 
-   <span style="font-weight: bold"><span style="color: #0000FF">public</span></span>  <span style="color: #009900">void</span>  <span style="font-weight: bold"><span style="color: #000000">afficher</span></span>  <span style="color: #990000">()</span>
-   <span style="color: #FF0000">{</span>
+   <span style="font-weight: bold"><span style="color: #0000FF">public</span></span>  <span style="color: #009900">void</span>  <span style="font-weight: bold"><span style="color: #000000">afficher</span></span>  <span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span>  <span style="color: #990000">(</span><span style="color: #FF0000">"Immatriculation "</span>  <span style="color: #990000">+</span>  <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>noImmat<span style="color: #990000">);</span>
        <span style="font-weight: bold"><span style="color: #0000FF">super</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
    <span style="color: #FF0000">}</span>
@@ -1259,23 +1253,471 @@ http://www.gnu.org/software/src-highlite -->
    <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #000000">Monospace</span></span> <span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
        <span style="font-weight: bold"><span style="color: #0000FF">super</span></span><span style="color: #990000">();</span>
    <span style="color: #FF0000">}</span>
-   <span style="font-weight: bold"><span style="color: #0000FF">public</span></span>  <span style="color: #009900">void</span>  <span style="font-weight: bold"><span style="color: #000000">afficher</span></span>  <span style="color: #990000">()</span>
-   <span style="color: #FF0000">{</span>
-       System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span>  <span style="color: #990000">(</span><span style="color: #FF0000">"MonoSpace "</span><span style="color: #990000">);</span>
+   <span style="font-weight: bold"><span style="color: #0000FF">public</span></span>  <span style="color: #009900">void</span>  <span style="font-weight: bold"><span style="color: #000000">afficher</span></span>  <span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
        <span style="font-weight: bold"><span style="color: #0000FF">super</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
+       System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span>  <span style="color: #990000">(</span><span style="color: #FF0000">"MonoSpace "</span><span style="color: #990000">);</span>
    <span style="color: #FF0000">}</span>
-   <span style="font-weight: bold"><span style="color: #0000FF">public</span></span>  <span style="color: #009900">void</span>  <span style="font-weight: bold"><span style="color: #000000">afficher</span></span>  <span style="color: #990000">(</span><span style="color: #009900">int</span> decalage<span style="color: #990000">)</span>
-        <span style="color: #FF0000">{</span>
+   <span style="font-weight: bold"><span style="color: #0000FF">public</span></span>  <span style="color: #009900">void</span>  <span style="font-weight: bold"><span style="color: #000000">afficher</span></span>  <span style="color: #990000">(</span><span style="color: #009900">int</span> decalage<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
            <span style="color: #009900">int</span>  i<span style="color: #990000">;</span>
            <span style="font-weight: bold"><span style="color: #0000FF">for</span></span>  <span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span>  i<span style="color: #990000">&lt;</span>decalage<span style="color: #990000">;</span>  i<span style="color: #990000">++)</span>  System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">" "</span><span style="color: #990000">);</span>
            <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
    <span style="color: #FF0000">}</span>
 <span style="color: #FF0000">}</span> <span style="font-style: italic"><span style="color: #9A1900">// Fin Classe MonoSpace</span></span></tt></pre></div></div>
-<div class="paragraph"><p>TOTOTOTOTOTOTTOOTOT</p></div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_principe">2. Principe</h2>
+<h2 id="_principe_de_l_8217_héritage">2. Principe de l&#8217;héritage</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Héritage :</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+« Relation » établie entre classes d’objets.
+</p>
+</li>
+<li>
+<p>
+Relatif à la nature des objets.
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>Principe : mécanisme de transmission des <strong>attributs et des méthodes</strong> de la super-classe VERS sa sous-classe. Pas de transmission des constructeurs.</p></div>
+<div class="paragraph"><p>Exemple :</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Avertissement" src="data:image/png;base64,
+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" />
+</td>
+<td class="content">
+<div class="title">Démonstration</div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Point d&#8217;arrêt sur : av = new AutreVehicule ();
+</p>
+</li>
+<li>
+<p>
+Mettre en commentaire : i) le extends dans AutreVehicule, ii)  les appels de méthodes dans le main (méthodes de Vehicule).
+</p>
+</li>
+<li>
+<p>
+Faire un debug  &#8658; Un objet sans attribut.
+</p>
+</li>
+<li>
+<p>
+Enlever les commentaires mis ci-dessus.
+</p>
+</li>
+<li>
+<p>
+Faire un debug &#8658; Un objet
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Avec les attributs de Vehicule (hérités).
+</p>
+</li>
+<li>
+<p>
+Les méthodes publiques héritées de Vehicule sont applicables.
+</p>
+</li>
+<li>
+<p>
+Pas de constructeur déclaré &#8658; il existe un constructeur par défaut
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+AutreVehicule ()
+</p>
+</li>
+<li>
+<p>
+appelle Vehicule () (vu plus tard)
+</p>
+</li>
+</ul></div>
+</li>
+</ul></div>
+</li>
+</ol></div>
+</td>
+</tr></table>
+</div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span>  <span style="color: #008080">Vehicule</span>
+<span style="color: #FF0000">{</span>
+   <span style="font-style: italic"><span style="color: #9A1900">// ... Le code complet</span></span>
+<span style="color: #FF0000">}</span>
+
+<span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span>  <span style="color: #008080">AutreVehicule</span>  <span style="font-weight: bold"><span style="color: #0000FF">extends</span></span>  Vehicule  <span style="color: #FF0000">{}</span>
+
+<span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">TestAutreVehicule</span>
+<span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">(</span>String<span style="color: #990000">[]</span> args<span style="color: #990000">)</span>
+        <span style="color: #FF0000">{</span>
+                <span style="color: #008080">AutreVehicule</span> av<span style="color: #990000">;</span>
+
+                av <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">AutreVehicule</span></span> <span style="color: #990000">();</span> <span style="font-style: italic"><span style="color: #9A1900">// Constructeur par défaut créé automatiquement</span></span>
+
+                av<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setNoSerie</span></span><span style="color: #990000">(</span><span style="color: #993399">10</span><span style="color: #990000">);</span><span style="font-style: italic"><span style="color: #9A1900">// setNoSerie() héritée</span></span>
+                              <span style="font-style: italic"><span style="color: #9A1900">// =&gt; fait partie de l'interface des objets AutreVehicule</span></span>
+                av<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">rouler</span></span> <span style="color: #990000">(</span><span style="color: #993399">159</span><span style="color: #990000">);</span> <span style="font-style: italic"><span style="color: #9A1900">// Idem</span></span>
+                av<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span> <span style="color: #990000">();</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span>av<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getNoSerie</span></span><span style="color: #990000">());</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span>av<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getKm</span></span><span style="color: #990000">());</span>
+
+        <span style="color: #FF0000">}</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+<div class="paragraph"><p>L&#8217;objet créé avec <tt>av</tt> contient bien tous les attributs déclarés dans la classe Vehicule dont hérite AutreVehicule.</p></div>
+<div class="paragraph"><p>Sur l&#8217;objet créé avec <tt>av</tt> on peut appliquer toutes les méthodes de la classe Vehicule dont hérite AutreVehicule.</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_appel_des_constructeurs">3. Appel des constructeurs</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_appel_du_constructeur_de_la_super_classe">3.1. Appel du constructeur de la super-classe</h3>
+<div class="paragraph"><p>Dans une sous-classe :</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Constructeurs de la super-classe non hérités &#8658; problème : comment initialiser la partie des attributs hérités mais inaccessibles (private) ?
+</p>
+</li>
+<li>
+<p>
+Solution : les constructeurs de la classe dérivée invoqueront (exécuteront) un constructeur de la classe de base.
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>Principes d&#8217;appels des constructeurs de la classe parente ou de la classe courante : <strong>Obligatoirement la première ligne du code</strong> :</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+super(param1, …); &#8658; appel constructeur de la super-classe correspondant aux paramètres indiqués.
+</p>
+</li>
+<li>
+<p>
+this(param1, …); &#8658; appel autre constructeur de la classe courante correspondant aux paramètres indiqués.
+</p>
+</li>
+<li>
+<p>
+Autre instruction : &#8658; appel implicite super(). &lt;&#8658; écrire :  super();
+</p>
+</li>
+</ul></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Avertissement" src="data:image/png;base64,
+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" />
+</td>
+<td class="content">
+<div class="title">Démonstration</div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Browser le code
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Vehicule : 2 cas super(&#8230;) et this(&#8230;) ci-dessus.
+</p>
+</li>
+<li>
+<p>
+Voiture : 2 cas super(&#8230;) et this(&#8230;) ci-dessus.
+</p>
+</li>
+<li>
+<p>
+MonoSpace : appel explicite constructeur par défaut : pourrait en pas être écrit !
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+Points d&#8217;arrêt sur :
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+1° ligne du main (1° new)
+</p>
+</li>
+<li>
+<p>
+Chaque première ligne de tous les constructeurs (super(&#8230;) ou this(&#8230;))
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+Faire démo des appels de chaque constructeur
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Sur les new : faire une "resume" pour sauter au point d&#8217;arrêt du constructeur car le new est interne et n&#8217;est pas inspectable (Step into ne marche pas la première fois)
+</p>
+</li>
+<li>
+<p>
+Step into sur appels super(&#8230;) et this(&#8230;) SAUF sur Vehicule (car constructeur de Object inaccessible).
+</p>
+</li>
+</ul></div>
+</li>
+</ol></div>
+</td>
+</tr></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_constructeur_synthétisé">3.2. Constructeur synthétisé</h3>
+<div class="paragraph"><p>Rappel Règle :</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Si aucun constructeur défini :
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Il existe un constructeur par défaut créé par java (synthétisé).
+</p>
+</li>
+<li>
+<p>
+Ce constructeur synthétisé ne fait rien de particulier mais <strong>appelle</strong> le constructeur par défaut de la super-classe (cf. ci-après).
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+Si au moins un constructeur est défini :
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Cache le constructeur par défaut synthétisé.
+</p>
+</li>
+<li>
+<p>
+Parfois &#8658; redéfinir le constructeur apr défaut.
+</p>
+</li>
+</ul></div>
+</li>
+</ol></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Avertissement" src="data:image/png;base64,
+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" />
+</td>
+<td class="content">
+<div class="title">Démonstration</div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Diffrence de code : MonoSpace n&#8217;a plus de constructeur &#8658;  constructeur synthétisé.
+</p>
+</li>
+<li>
+<p>
+Points d&#8217;arrêt sur :
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+1° ligne du main (1° new)
+</p>
+</li>
+<li>
+<p>
+Chaque première ligne de tous les constructeurs (super(&#8230;) ou this(&#8230;))
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+Faire démo des appels de chaque constructeur
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Sur le new : faire une "resume" pour sauter au point d&#8217;arrêt du constructeur car le new est interne et n&#8217;est pas inspectable (Step into ne marche pas la première fois)
+</p>
+</li>
+<li>
+<p>
+Step into sur appels super(&#8230;) et this(&#8230;) SAUF sur Vehicule (car constructeur de Object inaccessible).
+</p>
+</li>
+</ul></div>
+</li>
+</ol></div>
+</td>
+</tr></table>
+</div>
+<div class="paragraph"><p>TOTOTOTOTOTOTTOOTOT</p></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_principe">4. Principe</h2>
 <div class="sectionbody">
 <div class="paragraph"><p>En TP, nous avons déjà travaillé le cas de l&#8217;association orientée (navigable dans un seul sens) ou agrégation dans le cas de la classe <tt>AgenceBancaire</tt> :</p></div>
 <div class="ulist"><ul>
@@ -1311,7 +1753,7 @@ il faudra créer des méthodes permettant de maintenir les relations en "état c
 </div>
 </div>
 <div class="sect1">
-<h2 id="_premier_cas_association_0_1_8201_8212_8201_0_1">3. Premier cas : association 0..1&#8201;&#8212;&#8201;0..1</h2>
+<h2 id="_premier_cas_association_0_1_8201_8212_8201_0_1">5. Premier cas : association 0..1&#8201;&#8212;&#8201;0..1</h2>
 <div class="sectionbody">
 <div class="paragraph"><p>On fixe les multiplicités de l&#8217;association "Passer" à "0..1" et "0..1" comme indiqué sur le diagramme ci-dessous.</p></div>
 <div class="paragraph"><div class="title">Diagramme UML des classes mises en oeuvre (multiplicités 0..1)</div><p><span class="image">
@@ -1612,7 +2054,7 @@ gSLQVSAk8DO5OEEgyASxINns7GxUIadXeE5xI8hxMToJlIKgf4zJxQkCQSaIBcnm5+ejCjm9wnOK
 x91jYmJa1omQMzERciYmJkLOxMTk2vRf6XhNEXu2IzMAAAAASUVORK5CYII=" />
 </span></p></div>
 <div class="sect2">
-<h3 id="_une_version_incomplète">3.1. Une version incomplète</h3>
+<h3 id="_une_version_incomplète">5.1. Une version incomplète</h3>
 <div class="paragraph"><p>Cela donne la première version comme donnée sur la feuille jointe.</p></div>
 <div class="paragraph"><p>Soit le programme :</p></div>
 <div class="listingblock">
@@ -1937,7 +2379,7 @@ NYPBYDAYTNUMBoPBYDCYqhkMBoPB8GX8Bxbibhlak0k/AAAAAElFTkSuQmCC" />
 </div>
 </div>
 <div class="sect2">
-<h3 id="_une_version_cohérente_maintient_des_liens">3.2. Une version cohérente : maintient des liens</h3>
+<h3 id="_une_version_cohérente_maintient_des_liens">5.2. Une version cohérente : maintient des liens</h3>
 <div class="paragraph"><p>Pour résoudre le problème et maintenir les liens cohérents : il faut que lors de l&#8217;association d&#8217;une Commande co à un Client cl :</p></div>
 <div class="ulist"><ul>
 <li>
@@ -2155,7 +2597,7 @@ http://www.gnu.org/software/src-highlite -->
 </div>
 </div>
 <div class="sect1">
-<h2 id="_deuxième_cas_association_0_1_8201_8212_8201_0">4. Deuxième cas : association 0..1&#8201;&#8212;&#8201;0..*</h2>
+<h2 id="_deuxième_cas_association_0_1_8201_8212_8201_0">6. Deuxième cas : association 0..1&#8201;&#8212;&#8201;0..*</h2>
 <div class="sectionbody">
 <div class="paragraph"><p>On fixe les multiplicités de l&#8217;association "Passer" à "0..1" et "0..*" comme indiqué sur le diagramme ci-dessous.</p></div>
 <div class="paragraph"><div class="title">Diagramme UML des classes mises en oeuvre (multiplicités 0..1)</div><p><span class="image">
@@ -2795,7 +3237,7 @@ http://www.gnu.org/software/src-highlite -->
 </div>
 </div>
 <div class="sect1">
-<h2 id="_remarques_finales">5. Remarques finales</h2>
+<h2 id="_remarques_finales">7. Remarques finales</h2>
 <div class="sectionbody">
 <div class="paragraph"><p>Toutes les méthodes sont déclarées publiques et donc sont accessibles aux clients, en particulier <tt>setClient()</tt>, <tt>setCommande</tt>, et <tt>addCommande()/removeCommande()</tt> en version 0..*.</p></div>
 <div class="paragraph"><p>Notons que les clients de la classe DOIVENT maintenant utiliser UNIQUEMENT les méthodes <tt>associerClient()</tt> et <tt>associerCommande()</tt> (et <tt>defaireAssoCommande()</tt> en version 0..*).</p></div>
@@ -2824,7 +3266,7 @@ Trouver des algorithmes pour <tt>associerClient()</tt> et <tt>associerCommande()
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2014-03-26 12:23:56 CET
+Dernière mise à jour 2014-03-26 16:39:19 CET
 </div>
 </div>
 </body>
