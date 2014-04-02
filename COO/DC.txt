@@ -6,7 +6,7 @@ ifdef::slides[:leveloffset: -2]
 Nous souhaitons représenter les données manipulées par le système, ainsi
 que les relations entre ces données.
 
-image::plantuml-cd.png[]
+image:plantuml-cd.png[]
 
 [NOTE]
 ====
@@ -22,7 +22,7 @@ ifdef::slides[:leveloffset: -3]
 Une *classe* est une représentation unique servant à caractériser
 un ensemble d’*objets* jouant un rôle identique et décrits par les mêmes *attributs*.
 
-image::classe.png[]
+image:classe.png[]
 
 [WARNING]
 ====
@@ -43,7 +43,7 @@ Exemple de convention d’écriture suivante : +
 - mise au pluriel des noms
 ====
 
-image::pluriels.png[]
+image:pluriels.png[]
 
 ===== Classes et objets
 
@@ -52,7 +52,7 @@ nous pouvons pour l'instant faire le parallèle entre les notions de +classe+ et
 
 On parlera toutefois d'*instance* pour désigner un objet issu d'une classe.
 
-image::object.png[]
+image:object.png[]
 
 
 ===== Attributs
@@ -64,7 +64,7 @@ Pour chaque objet d’une classe, un attribut possède une valeur particulière.
 
 Exemples :
 
-image::attrib.png[]
+image:attrib.png[]
 
 ifdef::slides[<<<]
 
@@ -108,7 +108,7 @@ Il faut prendre un attribut non ambigu (le nom d’une personne ne convient pas)
 
 ifdef::slides[<<<]
 
-image::id.png[]
+image:id.png[]
 
 [NOTE]
 ====
@@ -142,7 +142,7 @@ Exemple d’association binaire 
 Soient les classes +Fournisseurs+ et +Produits+. 
 On veut indiquer quels sont les produits susceptibles d’être fournis par chaque fournisseur et quels sont les fournisseurs susceptibles de fournir chaque produit.
 
-image::prod-fourn.png[width="40%"]
+image:prod-fourn.png[width="40%"]
 
 ifdef::slides[<<<]
 
@@ -186,7 +186,7 @@ Représentation des classes
 
 Une classe est représentée par un rectangle divisé en plusieurs compartiments. Le compartiment supérieur contient le *nom* de la classe et le compartiment inférieur la liste des *attributs* (l’identifiant est placé en tête de liste).
 
-image::exp1.png[]
+image:exp1.png[]
 
 ifdef::slides[<<<]
 
@@ -194,20 +194,20 @@ Représentation des associations
 
 Une association binaire est représentée par un trait reliant deux classes. Le *nom* de l’association est placé à proximité du trait et les *cardinalités* sont placées de part et d’autre.
 
-image::exp2.png[]
+image:exp2.png[]
 
 =====  Classe association
 
 Certains attributs ne dépendent pas d'une seule classe, mais de plusieurs.
 Exemple : le prix d'un produit selon le fournisseur qui le propose.
 
-image::class-assoc.png[width=200]
+image:class-assoc.png[width=200]
 
 ifdef::slides[<<<]
 
 Pour les représenter, ils seront placés dans une *classe-association* reliée au  trait de liaison par un trait en pointillés. Le nom de l'association sera alors placé dans la classe-association.
 
-image::class-assoc.png[width=200]
+image:class-assoc.png[width=200]
 
 ifdef::slides[:leveloffset: -2]
 
@@ -241,7 +241,7 @@ Vous pouvez tester en ligne : http://www.plantuml.com/plantuml/ ou encore télé
 ====
 
 [[plantumlecl]]
-image::plantuml-eclipse.png[width=600,height=600]
+image:plantuml-eclipse.png[width=600,height=600]
 
 ==== Exercices de révision
 
