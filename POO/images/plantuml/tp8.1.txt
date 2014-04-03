@@ -1,0 +1,51 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class Compte {
+	- String proprietaire
+	- String numCompte
+	- double debits
+	- double credits
+	- int nbDebits
+	- int nbCredits
+	
+	+ Compte() 
+	+ Compte(String pNumCompte, String pNomProp) 
+	
+	+ String getNumCompte()
+	+ String getProprietaire()
+	+ double soldeCompte()
+	+ void setProprietaire(String pNomProp)
+	+ void retirer(double pSomme)
+	+ void deposer(double pSomme)
+	
+	+ void afficher()
+	+ String toString()
+}
+
+class CompteMoneo {
+} 
+
+class  CompteDepot {
+} 
+
+class CompteEpargne {
+} 
+
+class CompteSecurise {
+} 
+
+class CompteJeune {
+} 
+
+class CompteBancaire {
+} 
+
+Compte <|-- CompteMoneo
+Compte <|-- CompteDepot
+CompteDepot <|-- CompteEpargne
+CompteDepot <|-- CompteSecurise
+CompteSecurise <|-- CompteJeune
+CompteSecurise <|-- CompteBancaire
+
+@enduml
