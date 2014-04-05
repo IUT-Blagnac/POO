@@ -1,0 +1,71 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class Vehicule {
+   	- String immatriculation;
+	- int puissance ;
+	- int distParcourue ;
+	- double consommation ;
+	
+   + Vehicule ()
+   + Vehicule (String pImmat, int pPuiss)
+   
+   + String getImmat ()
+   + int getPuissance ()
+   + int getKilometrage ()
+   + double coutTotal () 
+   + double coutSuppl ()
+   
+   + void rouler (int pKm)
+   + void setConso (double pConso)
+   + void setPuissance (int pPuiss)
+   + void setImmat (String pImmat)
+   
+   + void afficher ()
+}
+
+class Voiture {
+	- double tauxUsure;
+	- String marque;
+
+	+ Voiture ()
+	+ Voiture (String pImmat, int pPuiss)
+	+ Voiture (String pImmat, int pPuiss, 
+		String pMarque, double pTauxUsure)
+
+   + double getTauxUsure () 
+   + String getMarque () 
+   + double coutTotal ()  
+   + double coutSuppl () 
+
+   + void setTauxUsure (double pTauxUsure)
+   + void setMarque (String pMarque)
+
+   + void afficher ()   
+} 
+
+class  Camion {
+
+	- int chargeUtile;
+	- double ratio ;
+
+	+ Camion ()
+   + Camion (String pImmat, int pPuiss)
+   + Camion (String pImmat, int pPuiss, 
+   int pChargeU, double pRatio)
+
+   + double getRatio () 
+   + double coutTotal ()   
+   + double coutSuppl ()  
+
+   + void setRatio (double pRatio) 
+   + void setChargeU (int pChargeU) 
+
+   + void afficher ()   
+
+} 
+
+Vehicule <|-- Voiture
+Vehicule <|-- Camion
+
+@enduml
