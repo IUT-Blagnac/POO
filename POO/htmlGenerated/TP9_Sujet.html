@@ -1,0 +1,1700 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+<meta name="generator" content="AsciiDoc 8.6.6" />
+<title>BPOO - Sujet TP 9</title>
+<style type="text/css">
+/* Shared CSS for AsciiDoc xhtml11 and html5 backends */
+
+/* Default font. */
+body {
+  font-family: Georgia,serif;
+}
+
+/* Title font. */
+h1, h2, h3, h4, h5, h6,
+div.title, caption.title,
+thead, p.table.header,
+#toctitle,
+#author, #revnumber, #revdate, #revremark,
+#footer {
+  font-family: Arial,Helvetica,sans-serif;
+}
+
+body {
+  margin: 1em 5% 1em 5%;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
+a:visited {
+  color: fuchsia;
+}
+
+em {
+  font-style: italic;
+  color: navy;
+}
+
+strong {
+  font-weight: bold;
+  color: #083194;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #527bbd;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+  line-height: 1.3;
+}
+
+h1, h2, h3 {
+  border-bottom: 2px solid silver;
+}
+h2 {
+  padding-top: 0.5em;
+}
+h3 {
+  float: left;
+}
+h3 + * {
+  clear: left;
+}
+h5 {
+  font-size: 1.0em;
+}
+
+div.sectionbody {
+  margin-left: 0;
+}
+
+hr {
+  border: 1px solid silver;
+}
+
+p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+ul, ol, li > p {
+  margin-top: 0;
+}
+ul > li     { color: #aaa; }
+ul > li > * { color: black; }
+
+pre {
+  padding: 0;
+  margin: 0;
+}
+
+#author {
+  color: #527bbd;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+#email {
+}
+#revnumber, #revdate, #revremark {
+}
+
+#footer {
+  font-size: small;
+  border-top: 2px solid silver;
+  padding-top: 0.5em;
+  margin-top: 4.0em;
+}
+#footer-text {
+  float: left;
+  padding-bottom: 0.5em;
+}
+#footer-badges {
+  float: right;
+  padding-bottom: 0.5em;
+}
+
+#preamble {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+div.imageblock, div.exampleblock, div.verseblock,
+div.quoteblock, div.literalblock, div.listingblock, div.sidebarblock,
+div.admonitionblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.admonitionblock {
+  margin-top: 2.0em;
+  margin-bottom: 2.0em;
+  margin-right: 10%;
+  color: #606060;
+}
+
+div.content { /* Block element content. */
+  padding: 0;
+}
+
+/* Block element titles. */
+div.title, caption.title {
+  color: #527bbd;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 1.0em;
+  margin-bottom: 0.5em;
+}
+div.title + * {
+  margin-top: 0;
+}
+
+td div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content + div.title {
+  margin-top: 0.0em;
+}
+
+div.sidebarblock > div.content {
+  background: #ffffee;
+  border: 1px solid #dddddd;
+  border-left: 4px solid #f0f0f0;
+  padding: 0.5em;
+}
+
+div.listingblock > div.content {
+  border: 1px solid #dddddd;
+  border-left: 5px solid #f0f0f0;
+  background: #f8f8f8;
+  padding: 0.5em;
+}
+
+div.quoteblock, div.verseblock {
+  padding-left: 1.0em;
+  margin-left: 1.0em;
+  margin-right: 10%;
+  border-left: 5px solid #f0f0f0;
+  color: #888;
+}
+
+div.quoteblock > div.attribution {
+  padding-top: 0.5em;
+  text-align: right;
+}
+
+div.verseblock > pre.content {
+  font-family: inherit;
+  font-size: inherit;
+}
+div.verseblock > div.attribution {
+  padding-top: 0.75em;
+  text-align: left;
+}
+/* DEPRECATED: Pre version 8.2.7 verse style literal block. */
+div.verseblock + div.attribution {
+  text-align: left;
+}
+
+div.admonitionblock .icon {
+  vertical-align: top;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #527bbd;
+  padding-right: 0.5em;
+}
+div.admonitionblock td.content {
+  padding-left: 0.5em;
+  border-left: 3px solid #dddddd;
+}
+
+div.exampleblock > div.content {
+  border-left: 3px solid #dddddd;
+  padding-left: 0.5em;
+}
+
+div.imageblock div.content { padding-left: 0; }
+span.image img { border-style: none; }
+a.image:visited { color: white; }
+
+dl {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+dt {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  font-style: normal;
+  color: navy;
+}
+dd > *:first-child {
+  margin-top: 0.1em;
+}
+
+ul, ol {
+    list-style-position: outside;
+}
+ol.arabic {
+  list-style-type: decimal;
+}
+ol.loweralpha {
+  list-style-type: lower-alpha;
+}
+ol.upperalpha {
+  list-style-type: upper-alpha;
+}
+ol.lowerroman {
+  list-style-type: lower-roman;
+}
+ol.upperroman {
+  list-style-type: upper-roman;
+}
+
+div.compact ul, div.compact ol,
+div.compact p, div.compact p,
+div.compact div, div.compact div {
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+}
+
+tfoot {
+  font-weight: bold;
+}
+td > div.verse {
+  white-space: pre;
+}
+
+div.hdlist {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+div.hdlist tr {
+  padding-bottom: 15px;
+}
+dt.hdlist1.strong, td.hdlist1.strong {
+  font-weight: bold;
+}
+td.hdlist1 {
+  vertical-align: top;
+  font-style: normal;
+  padding-right: 0.8em;
+  color: navy;
+}
+td.hdlist2 {
+  vertical-align: top;
+}
+div.hdlist.compact tr {
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.comment {
+  background: yellow;
+}
+
+.footnote, .footnoteref {
+  font-size: 0.8em;
+}
+
+span.footnote, span.footnoteref {
+  vertical-align: super;
+}
+
+#footnotes {
+  margin: 20px 0 20px 0;
+  padding: 7px 0 0 0;
+}
+
+#footnotes div.footnote {
+  margin: 0 0 5px 0;
+}
+
+#footnotes hr {
+  border: none;
+  border-top: 1px solid silver;
+  height: 1px;
+  text-align: left;
+  margin-left: 0;
+  width: 20%;
+  min-width: 100px;
+}
+
+div.colist td {
+  padding-right: 0.5em;
+  padding-bottom: 0.3em;
+  vertical-align: top;
+}
+div.colist td img {
+  margin-top: 0.3em;
+}
+
+@media print {
+  #footer-badges { display: none; }
+}
+
+#toc {
+  margin-bottom: 2.5em;
+}
+
+#toctitle {
+  color: #527bbd;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 1.0em;
+  margin-bottom: 0.1em;
+}
+
+div.toclevel1, div.toclevel2, div.toclevel3, div.toclevel4 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+div.toclevel2 {
+  margin-left: 2em;
+  font-size: 0.9em;
+}
+div.toclevel3 {
+  margin-left: 4em;
+  font-size: 0.9em;
+}
+div.toclevel4 {
+  margin-left: 6em;
+  font-size: 0.9em;
+}
+
+span.aqua { color: aqua; }
+span.black { color: black; }
+span.blue { color: blue; }
+span.fuchsia { color: fuchsia; }
+span.gray { color: gray; }
+span.green { color: green; }
+span.lime { color: lime; }
+span.maroon { color: maroon; }
+span.navy { color: navy; }
+span.olive { color: olive; }
+span.purple { color: purple; }
+span.red { color: red; }
+span.silver { color: silver; }
+span.teal { color: teal; }
+span.white { color: white; }
+span.yellow { color: yellow; }
+
+span.aqua-background { background: aqua; }
+span.black-background { background: black; }
+span.blue-background { background: blue; }
+span.fuchsia-background { background: fuchsia; }
+span.gray-background { background: gray; }
+span.green-background { background: green; }
+span.lime-background { background: lime; }
+span.maroon-background { background: maroon; }
+span.navy-background { background: navy; }
+span.olive-background { background: olive; }
+span.purple-background { background: purple; }
+span.red-background { background: red; }
+span.silver-background { background: silver; }
+span.teal-background { background: teal; }
+span.white-background { background: white; }
+span.yellow-background { background: yellow; }
+
+span.big { font-size: 2em; }
+span.small { font-size: 0.6em; }
+
+span.underline { text-decoration: underline; }
+span.overline { text-decoration: overline; }
+span.line-through { text-decoration: line-through; }
+
+
+/*
+ * xhtml11 specific
+ *
+ * */
+
+tt {
+  font-family: monospace;
+  font-size: inherit;
+  color: navy;
+}
+
+div.tableblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.tableblock > table {
+  border: 3px solid #527bbd;
+}
+thead, p.table.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+p.table {
+  margin-top: 0;
+}
+/* Because the table frame attribute is overriden by CSS in most browsers. */
+div.tableblock > table[frame="void"] {
+  border-style: none;
+}
+div.tableblock > table[frame="hsides"] {
+  border-left-style: none;
+  border-right-style: none;
+}
+div.tableblock > table[frame="vsides"] {
+  border-top-style: none;
+  border-bottom-style: none;
+}
+
+
+/*
+ * html5 specific
+ *
+ * */
+
+.monospaced {
+  font-family: monospace;
+  font-size: inherit;
+  color: navy;
+}
+
+table.tableblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+thead, p.tableblock.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+p.tableblock {
+  margin-top: 0;
+}
+table.tableblock {
+  border-width: 3px;
+  border-spacing: 0px;
+  border-style: solid;
+  border-color: #527bbd;
+  border-collapse: collapse;
+}
+th.tableblock, td.tableblock {
+  border-width: 1px;
+  padding: 4px;
+  border-style: solid;
+  border-color: #527bbd;
+}
+
+table.tableblock.frame-topbot {
+  border-left-style: hidden;
+  border-right-style: hidden;
+}
+table.tableblock.frame-sides {
+  border-top-style: hidden;
+  border-bottom-style: hidden;
+}
+table.tableblock.frame-none {
+  border-style: hidden;
+}
+
+th.tableblock.halign-left, td.tableblock.halign-left {
+  text-align: left;
+}
+th.tableblock.halign-center, td.tableblock.halign-center {
+  text-align: center;
+}
+th.tableblock.halign-right, td.tableblock.halign-right {
+  text-align: right;
+}
+
+th.tableblock.valign-top, td.tableblock.valign-top {
+  vertical-align: top;
+}
+th.tableblock.valign-middle, td.tableblock.valign-middle {
+  vertical-align: middle;
+}
+th.tableblock.valign-bottom, td.tableblock.valign-bottom {
+  vertical-align: bottom;
+}
+
+
+/*
+ * manpage specific
+ *
+ * */
+
+body.manpage h1 {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  border-top: 2px solid silver;
+  border-bottom: 2px solid silver;
+}
+body.manpage h2 {
+  border-style: none;
+}
+body.manpage div.sectionbody {
+  margin-left: 3em;
+}
+
+@media print {
+  body.manpage div#toc { display: none; }
+}
+</style>
+<script type="text/javascript">
+/*<![CDATA[*/
+var asciidoc = {  // Namespace.
+
+/////////////////////////////////////////////////////////////////////
+// Table Of Contents generator
+/////////////////////////////////////////////////////////////////////
+
+/* Author: Mihai Bazon, September 2002
+ * http://students.infoiasi.ro/~mishoo
+ *
+ * Table Of Content generator
+ * Version: 0.4
+ *
+ * Feel free to use this script under the terms of the GNU General Public
+ * License, as long as you do not remove or alter this notice.
+ */
+
+ /* modified by Troy D. Hanson, September 2006. License: GPL */
+ /* modified by Stuart Rackham, 2006, 2009. License: GPL */
+
+// toclevels = 1..4.
+toc: function (toclevels) {
+
+  function getText(el) {
+    var text = "";
+    for (var i = el.firstChild; i != null; i = i.nextSibling) {
+      if (i.nodeType == 3 /* Node.TEXT_NODE */) // IE doesn't speak constants.
+        text += i.data;
+      else if (i.firstChild != null)
+        text += getText(i);
+    }
+    return text;
+  }
+
+  function TocEntry(el, text, toclevel) {
+    this.element = el;
+    this.text = text;
+    this.toclevel = toclevel;
+  }
+
+  function tocEntries(el, toclevels) {
+    var result = new Array;
+    var re = new RegExp('[hH]([2-'+(toclevels+1)+'])');
+    // Function that scans the DOM tree for header elements (the DOM2
+    // nodeIterator API would be a better technique but not supported by all
+    // browsers).
+    var iterate = function (el) {
+      for (var i = el.firstChild; i != null; i = i.nextSibling) {
+        if (i.nodeType == 1 /* Node.ELEMENT_NODE */) {
+          var mo = re.exec(i.tagName);
+          if (mo && (i.getAttribute("class") || i.getAttribute("className")) != "float") {
+            result[result.length] = new TocEntry(i, getText(i), mo[1]-1);
+          }
+          iterate(i);
+        }
+      }
+    }
+    iterate(el);
+    return result;
+  }
+
+  var toc = document.getElementById("toc");
+  if (!toc) {
+    return;
+  }
+
+  // Delete existing TOC entries in case we're reloading the TOC.
+  var tocEntriesToRemove = [];
+  var i;
+  for (i = 0; i < toc.childNodes.length; i++) {
+    var entry = toc.childNodes[i];
+    if (entry.nodeName == 'div'
+     && entry.getAttribute("class")
+     && entry.getAttribute("class").match(/^toclevel/))
+      tocEntriesToRemove.push(entry);
+  }
+  for (i = 0; i < tocEntriesToRemove.length; i++) {
+    toc.removeChild(tocEntriesToRemove[i]);
+  }
+
+  // Rebuild TOC entries.
+  var entries = tocEntries(document.getElementById("content"), toclevels);
+  for (var i = 0; i < entries.length; ++i) {
+    var entry = entries[i];
+    if (entry.element.id == "")
+      entry.element.id = "_toc_" + i;
+    var a = document.createElement("a");
+    a.href = "#" + entry.element.id;
+    a.appendChild(document.createTextNode(entry.text));
+    var div = document.createElement("div");
+    div.appendChild(a);
+    div.className = "toclevel" + entry.toclevel;
+    toc.appendChild(div);
+  }
+  if (entries.length == 0)
+    toc.parentNode.removeChild(toc);
+},
+
+
+/////////////////////////////////////////////////////////////////////
+// Footnotes generator
+/////////////////////////////////////////////////////////////////////
+
+/* Based on footnote generation code from:
+ * http://www.brandspankingnew.net/archive/2005/07/format_footnote.html
+ */
+
+footnotes: function () {
+  // Delete existing footnote entries in case we're reloading the footnodes.
+  var i;
+  var noteholder = document.getElementById("footnotes");
+  if (!noteholder) {
+    return;
+  }
+  var entriesToRemove = [];
+  for (i = 0; i < noteholder.childNodes.length; i++) {
+    var entry = noteholder.childNodes[i];
+    if (entry.nodeName == 'div' && entry.getAttribute("class") == "footnote")
+      entriesToRemove.push(entry);
+  }
+  for (i = 0; i < entriesToRemove.length; i++) {
+    noteholder.removeChild(entriesToRemove[i]);
+  }
+
+  // Rebuild footnote entries.
+  var cont = document.getElementById("content");
+  var spans = cont.getElementsByTagName("span");
+  var refs = {};
+  var n = 0;
+  for (i=0; i<spans.length; i++) {
+    if (spans[i].className == "footnote") {
+      n++;
+      var note = spans[i].getAttribute("data-note");
+      if (!note) {
+        // Use [\s\S] in place of . so multi-line matches work.
+        // Because JavaScript has no s (dotall) regex flag.
+        note = spans[i].innerHTML.match(/\s*\[([\s\S]*)]\s*/)[1];
+        spans[i].innerHTML =
+          "[<a id='_footnoteref_" + n + "' href='#_footnote_" + n +
+          "' title='View footnote' class='footnote'>" + n + "</a>]";
+        spans[i].setAttribute("data-note", note);
+      }
+      noteholder.innerHTML +=
+        "<div class='footnote' id='_footnote_" + n + "'>" +
+        "<a href='#_footnoteref_" + n + "' title='Return to text'>" +
+        n + "</a>. " + note + "</div>";
+      var id =spans[i].getAttribute("id");
+      if (id != null) refs["#"+id] = n;
+    }
+  }
+  if (n == 0)
+    noteholder.parentNode.removeChild(noteholder);
+  else {
+    // Process footnoterefs.
+    for (i=0; i<spans.length; i++) {
+      if (spans[i].className == "footnoteref") {
+        var href = spans[i].getElementsByTagName("a")[0].getAttribute("href");
+        href = href.match(/#.*/)[0];  // Because IE return full URL.
+        n = refs[href];
+        spans[i].innerHTML =
+          "[<a href='#_footnote_" + n +
+          "' title='View footnote' class='footnote'>" + n + "</a>]";
+      }
+    }
+  }
+},
+
+install: function(toclevels) {
+  var timerId;
+
+  function reinstall() {
+    asciidoc.footnotes();
+    if (toclevels) {
+      asciidoc.toc(toclevels);
+    }
+  }
+
+  function reinstallAndRemoveTimer() {
+    clearInterval(timerId);
+    reinstall();
+  }
+
+  timerId = setInterval(reinstall, 500);
+  if (document.addEventListener)
+    document.addEventListener("DOMContentLoaded", reinstallAndRemoveTimer, false);
+  else
+    window.onload = reinstallAndRemoveTimer;
+}
+
+}
+asciidoc.install(2);
+/*]]>*/
+</script>
+</head>
+<body class="article">
+<div id="header">
+<h1>BPOO - Sujet TP 9</h1>
+<span id="author">Dut/Info-S2/M2103</span><br />
+<div id="toc">
+  <div id="toctitle">Table des matières</div>
+  <noscript><p><b>JavaScript must be enabled in your browser to display the table of contents.</b></p></noscript>
+</div>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Important" src="data:image/png;base64,
+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
+h04nvXoAAAAASUVORK5CYII=" />
+</td>
+<td class="content">
+<div class="tableblock" id="cartouche">
+<table rules="all"
+style="margin-left:0; margin-right:auto;"
+width="90%"
+frame="border"
+cellspacing="0" cellpadding="4">
+<col width="9%" />
+<col width="90%" />
+<tbody>
+<tr>
+<td align="left" valign="top"><p class="table">PreReq</p></td>
+<td align="left" valign="top"><p class="table">-</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">ObjTP</p></td>
+<td align="left" valign="top"><p class="table">Générer un programme de Test pour une classe déjà écrite.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">Durée</p></td>
+<td align="left" valign="top"><p class="table"><strong>1 séance</strong> de 1,5h sur machine.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">À rendre</p></td>
+<td align="left" valign="top"><p class="table">Programme de test proposé + Cylindre.java de la dernière partie.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr></table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_objectif">1. Objectif</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>L&#8217;objectif de ce TP est de produite le programme de test JUnit de la classe Cylindre développée dans un TP précédant.</p></div>
+<div class="paragraph"><p>Rappel de la hiérarchie de classes utilisée :</p></div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph"><div class="title">Diagramme UML des classes mises en oeuvre</div><p><span class="image">
+<img alt="images/tp7.1.png" src="data:image/png;base64,
+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" />
+</span></p></div>
+</div></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_mise_en_place_de_l_8217_environnement">2. Mise en place de l&#8217;environnement</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Récupérer depuis le serveur les fichiers :</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Le fichier TestCylindre.java : <strong>le fichier à modifier</strong> durant le TP.
+</p>
+</li>
+<li>
+<p>
+Le fichier de la classe à tester : Cylindre.java.
+</p>
+</li>
+<li>
+<p>
+Les fichiers déjà écrit : FormeGraphique.java, Cercle.java nécessaires pour compiler Cylindre.java.
+</p>
+</li>
+<li>
+<p>
+Les fichiers :
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+SciTE.properties : il paramètre Scite pour compiler/exécuter en utilisant la librairie JUnit contenue dans le fichier .jar.
+</p>
+</li>
+<li>
+<p>
+junit.jar : il contient la librairie JUnit pour les tests.
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+Ensuite seulement lancer Scite et ouvrir TestCylindre.java.
+</p>
+</li>
+</ol></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_principes_des_tests">3. Principes des tests</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Dans ce module (et aussi en S1), de nombreux programmes de tests automatiques JUnit vous ont été proposés pour développer vos classes.</p></div>
+<div class="paragraph"><p>Les tests automatiques permettent : de tester une unité "seule" : une classe en Java. On cherche à valider le code écrit pour la classe.</p></div>
+<div class="paragraph"><p>Les tests unitaires :</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+font une évaluation partielle : une classe,
+</p>
+</li>
+<li>
+<p>
+ne garantissent pas le fonctionnement de l’intégralité du programme mais d&#8217;une classe seulement,
+</p>
+</li>
+<li>
+<p>
+test d&#8217;assertions à vérifier sur différentes situations critiques couvrant l&#8217;ensemble des situations possibles,
+</p>
+</li>
+<li>
+<p>
+suite de tests indépendants,
+</p>
+</li>
+<li>
+<p>
+attention : possibilité de bug dans les tests !!
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>La mise en place de programmes de test peut être réaliser pour atteindre plusieurs objectifs, par exemple :</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Maintenance logicielle :
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+évolution des programmes au cours du temps &#8658; apparition de nouveaux bugs,
+</p>
+</li>
+<li>
+<p>
+nécessité de tester après chaque modification &#8658; tests unitaires répétés à chaque modification de classe.
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+Concevoir/Développer par les tests :
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+spécifier une classe,
+</p>
+</li>
+<li>
+<p>
+puis commencer par écrire les tests,
+</p>
+</li>
+<li>
+<p>
+puis écriture de la classe,
+</p>
+</li>
+<li>
+<p>
+puis écriture de méthodes de la classe erronées qui font échouer le test : test du test.
+</p>
+</li>
+</ul></div>
+</li>
+</ol></div>
+<div class="paragraph"><p>Le couple programmeATester (classe à tester)  / programmeDeTest (classe de test) que l&#8217;on maintient dans le temps en équilibre peut s’intégrer dans les processus industriels d’intégration continue, de Tiers Maintenance Applicative (TMA) ou de contribution logicielle (par exemple libre).</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_tests_junit">4. Tests JUnit</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_junit_c_8217_est_quoi">4.1. JUnit  c&#8217;est quoi</h3>
+<div class="paragraph"><p>JUnit c&#8217;est : un <strong>environnement</strong> pour programmer des tests unitaires qui propose un ensemble de méthodes, macros, classes, etc. De tels environnements existent aussi dans d’autres langages C++, C, C#, …</p></div>
+<div class="paragraph"><p>JUnit permet :</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+d’écrire les tests,
+</p>
+</li>
+<li>
+<p>
+d’automatiser en partie leurs lancements,
+</p>
+</li>
+<li>
+<p>
+de récupérer tous les tests échoués,
+</p>
+</li>
+<li>
+<p>
+tous les tests sont "joués" (réalisés) en une fois !
+</p>
+</li>
+</ul></div>
+</div>
+<div class="sect2">
+<h3 id="_tests_unitaires_simples_de_classes">4.2. Tests unitaires simples de classes</h3>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Note" src="data:image/png;base64,
+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" />
+</td>
+<td class="content">
+<div class="paragraph"><p>La méthodologie de test appliquée ici reste partielle.</p></div>
+<div class="paragraph"><p>L&#8217;objectif est de comprendre le principe.</p></div>
+</td>
+</tr></table>
+</div>
+<div class="paragraph"><p>Le test unitaire d&#8217;une classe consiste a minima à tester l'état attendu des objets après application :</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+de chaque constructeur dont les cas de préconditions attendues,
+</p>
+</li>
+<li>
+<p>
+de chaque transformateur dont les cas de préconditions attendues,
+</p>
+</li>
+</ol></div>
+<div class="paragraph"><p>Le test unitaire d&#8217;une classe consistera donc a minima à écrire une méthode de test (ou plusieurs) par constructeur/setter dans laquelle :</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+mettre un objet à tester dans un situation,
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+des lignes de codes pour créer un objet et y appliquer si besoin des méthodes transformateur pour se mettre dans la situation désirée,
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+vérifier que l&#8217;objet est bien dans l'état attendu,
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+appliquer chaque transformateur pour vérifier que la valeur retournée est bien celle attendue.
+</p>
+</li>
+</ul></div>
+</li>
+</ol></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Note" src="data:image/png;base64,
+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" />
+</td>
+<td class="content">
+<div class="paragraph"><p>La méthodologie de test appliquée ici reste partielle.</p></div>
+<div class="paragraph"><p>L&#8217;objectif est de comprendre le principe.</p></div>
+</td>
+</tr></table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_écrire_le_test_unitaire_de_la_classe_cylindre">5. Écrire le test unitaire de la classe Cylindre</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_démarrage_et_test_des_constructeurs">5.1. Démarrage et test des constructeurs</h3>
+<div class="paragraph"><p>Ouvrir le fichier TestCylindre.java
+Il contient le code de la première méthode de test du constructeur par défaut :</p></div>
+<div class="paragraph"><p>Le code :</p></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">TestCylindre</span> <span style="font-weight: bold"><span style="color: #0000FF">extends</span></span> TestCase <span style="color: #FF0000">{</span>  <span style="font-style: italic"><span style="color: #9A1900">// <img alt="1" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABjSURBVHja
+VY6xDcAwCAS/pPQaLim9QmajdOk2I2SNrMEIlARIoigU8Cek/4e7zdHaWOYOVwaoA6wOCw05Y7FB
+gE0tIWQ+sBcwKM8qoD/wB5wGL8hjfdzWrh01GRp1hInGjDoXwHgsFuzBVLQAAABDdEVYdFNvZnR3
+YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
+dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
+ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
+
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">testConstructeurParDefaut</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span> <span style="font-style: italic"><span style="color: #9A1900">// <img alt="2" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABvSURBVAgd
+BcGhAcJADADAky8rsZXIyK7AGkgksiu8RNYyAiswAhIbiYwMd7rrsS3LdlS3zuC8EtkqrJ/8vRdR
+Js+PtSZTMHe+L8IAUXeGAZd8DYbArB3C5FbXiBNThSMzcxelM4DI1l0zxtge1f0HVNk1YLFij6sA
+AABDdEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlz
+dGljLmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAODBlYWU1MjljOTRhN2Y0N2Rl
+Y2NmYWRhMjhhY2I5ZGblb7ENAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
+
+                <span style="color: #009900">int</span> xDeTest<span style="color: #990000">,</span> yDeTest<span style="color: #990000">;</span> <span style="font-style: italic"><span style="color: #9A1900">// <img alt="3" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABxSURBVAgd
+BcGhAYNAEEXBJ1duG8gvr5XYSGRaiFyJTAtI2kAisSeRK39msHsbmePXNp4ixgg0TYu8r/tM1BR8
+ZqRXKAS5kF5BBMA+r4AgAMa7VwgEr4LzAFFQj8bzhaJF7t17oMZzgQA0jd2lSG1t/wFRuDVjQOMG
+MAAAAEN0RVh0U29mdHdhcmUAQCgjKUltYWdlTWFnaWNrIDQuMi44IDk5LzA4LzAxIGNyaXN0eUBt
+eXN0aWMuZXMuZHVwb250LmNvbZG6IbgAAAAqdEVYdFNpZ25hdHVyZQA4MGJiZGEyNzI2ZGRhY2U4
+YWI4YTAxZjU5ZGUyZWJkYgj9DnUAAAAOdEVYdFBhZ2UAMTJ4MTIrMCswhG27fQAAAABJRU5ErkJg
+gg==" /></span></span>
+                <span style="color: #009900">double</span> hauteurDeTest<span style="color: #990000">,</span> rayonDeTest<span style="color: #990000">;</span>
+                <span style="color: #009900">double</span> surfaceDeTest<span style="color: #990000">,</span> volumeDeTest<span style="color: #990000">;</span>
+                <span style="color: #008080">Cylindre</span> c<span style="color: #990000">;</span>
+
+                <span style="font-style: italic"><span style="color: #9A1900">// Initialisations</span></span>
+
+                xDeTest <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span>  <span style="font-style: italic"><span style="color: #9A1900">// <img alt="4" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABsSURBVAgd
+BcERosNAGAbAwWAwWlwM5gqLxerDh3uNYLEazJWqweCPX2ckOZ+t9SOJVEebbVeko2ewlRPzlYG3
+jvO4B1YLr2uugcnicY9W+8Kk+0uSHKwOUAO72uD7Tyu5N6B9I6nPOk/rXskP6gY2ju5T29cAAABD
+dEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGlj
+LmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAOWY4MmZjYWM5ZTAzOWNiZGI3MjM4
+MGE0NTkxMzI0ZjWAu/h2AAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
+                yDeTest <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span>
+                hauteurDeTest <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span>
+                rayonDeTest <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span>
+
+                <span style="font-style: italic"><span style="color: #9A1900">// Situation testée</span></span>
+
+                c <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Cylindre</span></span><span style="color: #990000">();</span>  <span style="font-style: italic"><span style="color: #9A1900">// <img alt="5" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABwSURBVAgd
+BcGhAQMhEEXBJ1cisUgkclughNSDRCLPItNKSsCeXIn8mUHS4zn5vBIKt1pLtXaEHFdEdOplg8sA
+mHRwfX/DoJHBNfr7gJGhDJgBRof0gfVCY0NTL2fBRA4j7k7Ui8LBDOoRkpabtXmlPyNbNy/5rUKm
+AAAAQ3RFWHRTb2Z0d2FyZQBAKCMpSW1hZ2VNYWdpY2sgNC4yLjggOTkvMDgvMDEgY3Jpc3R5QG15
+c3RpYy5lcy5kdXBvbnQuY29tkbohuAAAACp0RVh0U2lnbmF0dXJlAGZlNjkwNDYzMzc5ZWIyNWU1
+NjJmY2M4Y2M5YjNjN2Uw37I5ngAAAA50RVh0UGFnZQAxMngxMiswKzCEbbt9AAAAAElFTkSuQmCC" /></span></span>
+
+                <span style="font-style: italic"><span style="color: #9A1900">// Calcul des résultats attendus</span></span>
+                <span style="font-style: italic"><span style="color: #9A1900">// Les autres variables ne changent pas</span></span>
+
+                surfaceDeTest <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span>      <span style="font-style: italic"><span style="color: #9A1900">// <img alt="6" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAAB3SURBVAgd
+BcGhAYMwEIbRT56sjEVGRt4KkV2jkhWQSGRtJCPUIjMCFnny5N/3kHS+a+1DEsoOpYI/Qh1GPJfh
+yQlrlBIOBx2uUd2ARoEn5pwvMArcE4sVjA6/AXODxoBPLEt22EmHI3ODmigczKDeQsqvm7U9pT+z
+czjqM2LYYQAAAEN0RVh0U29mdHdhcmUAQCgjKUltYWdlTWFnaWNrIDQuMi44IDk5LzA4LzAxIGNy
+aXN0eUBteXN0aWMuZXMuZHVwb250LmNvbZG6IbgAAAAqdEVYdFNpZ25hdHVyZQBkMjVkNzE3NmQ2
+N2EwMzhhZmMxYzU2NTU4ZTNkZmIxYf0Q9bUAAAAOdEVYdFBhZ2UAMTJ4MTIrMCswhG27fQAAAABJ
+RU5ErkJggg==" /></span></span>
+                volumeDeTest <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span>
+
+                <span style="font-style: italic"><span style="color: #9A1900">// Tests</span></span>
+
+                TestCase<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">assertEquals</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Echec test X"</span><span style="color: #990000">,</span> xDeTest<span style="color: #990000">,</span> c<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getOrigineX</span></span><span style="color: #990000">());</span> <span style="font-style: italic"><span style="color: #9A1900">// <img alt="7" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABnSURBVAgd
+BcGhAYMwAATAk5FIVoiMxFYiI5kJWdkVKiNZgxWQlZHfO0lGr3X/zkRmX9ZlXZbtiRy+SXJr0wXW
+5+DtAOPCpkGfDUWDe0BxYEuHZuCcBU7ZGQPqlN8LqE8k+Wyl1HMmfz42Mb/cLVK4AAAAQ3RFWHRT
+b2Z0d2FyZQBAKCMpSW1hZ2VNYWdpY2sgNC4yLjggOTkvMDgvMDEgY3Jpc3R5QG15c3RpYy5lcy5k
+dXBvbnQuY29tkbohuAAAACp0RVh0U2lnbmF0dXJlADI5ODM2ODE0MmFjNDNjZWJkMjU4NmQ4ZDEx
+MzdjOGRmJjnpmQAAAA50RVh0UGFnZQAxMngxMiswKzCEbbt9AAAAAElFTkSuQmCC" /></span></span>
+                TestCase<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">assertEquals</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Echec testY"</span><span style="color: #990000">,</span> yDeTest<span style="color: #990000">,</span> c<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getOrigineY</span></span><span style="color: #990000">());</span>
+                TestCase<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">assertEquals</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Echec test hauteur"</span><span style="color: #990000">,</span> hauteurDeTest<span style="color: #990000">,</span> c<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getHauteur</span></span><span style="color: #990000">());</span>
+                TestCase<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">assertEquals</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Echec test rayon"</span><span style="color: #990000">,</span> rayonDeTest<span style="color: #990000">,</span> c<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getRayon</span></span><span style="color: #990000">());</span>
+                TestCase<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">assertEquals</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Echec test surface"</span><span style="color: #990000">,</span> surfaceDeTest<span style="color: #990000">,</span> c<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">surface</span></span><span style="color: #990000">());</span>
+                TestCase<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">assertEquals</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Echec test volume"</span><span style="color: #990000">,</span> volumeDeTest<span style="color: #990000">,</span> c<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">volume</span></span><span style="color: #990000">());</span>
+        <span style="color: #FF0000">}</span>
+
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> argv<span style="color: #990000">[])</span> <span style="color: #FF0000">{</span>
+                <span style="color: #008080">TestSuite</span> suite <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">TestSuite</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Tests complets"</span><span style="color: #990000">);</span> <span style="font-style: italic"><span style="color: #9A1900">// <img alt="8" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAAB3SURBVAgd
+BcERAsQwEIbRD4PBarAYrAYHi3uFYq+wR8gVBouLvUaxGhwM/vsekq59LbtLQmGQC2xDqIG/z52p
+EwebmXFCx6DNnOKAygL8xvskSCzwmbvFAQkDv+G6oeJwxlrGFzpqpD6iJ+pEYQCwhZDkVkpzSX+j
+nzm6ZQIiVQAAAEN0RVh0U29mdHdhcmUAQCgjKUltYWdlTWFnaWNrIDQuMi44IDk5LzA4LzAxIGNy
+aXN0eUBteXN0aWMuZXMuZHVwb250LmNvbZG6IbgAAAAqdEVYdFNpZ25hdHVyZQA1N2JlMTk1MDVj
+MDNmOTJmMzg0N2Y1MzVlOWIxMTRlOdk0a0MAAAAOdEVYdFBhZ2UAMTJ4MTIrMCswhG27fQAAAABJ
+RU5ErkJggg==" /></span></span>
+                suite<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">addTestSuite</span></span><span style="color: #990000">(</span>TestCylindre<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #0000FF">class</span></span><span style="color: #990000">);</span>
+                junit<span style="color: #990000">.</span>textui<span style="color: #990000">.</span>TestRunner<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">run</span></span><span style="color: #990000">(</span>suite<span style="color: #990000">);</span>
+        <span style="color: #FF0000">}</span></tt></pre></div></div>
+<div class="colist arabic"><table>
+<tr><td><img alt="1" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABjSURBVHja
+VY6xDcAwCAS/pPQaLim9QmajdOk2I2SNrMEIlARIoigU8Cek/4e7zdHaWOYOVwaoA6wOCw05Y7FB
+gE0tIWQ+sBcwKM8qoD/wB5wGL8hjfdzWrh01GRp1hInGjDoXwHgsFuzBVLQAAABDdEVYdFNvZnR3
+YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
+dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
+ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></td><td>
+héritage de TestCase obligatoire
+</td></tr>
+<tr><td><img alt="2" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABvSURBVAgd
+BcGhAcJADADAky8rsZXIyK7AGkgksiu8RNYyAiswAhIbiYwMd7rrsS3LdlS3zuC8EtkqrJ/8vRdR
+Js+PtSZTMHe+L8IAUXeGAZd8DYbArB3C5FbXiBNThSMzcxelM4DI1l0zxtge1f0HVNk1YLFij6sA
+AABDdEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlz
+dGljLmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAODBlYWU1MjljOTRhN2Y0N2Rl
+Y2NmYWRhMjhhY2I5ZGblb7ENAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></td><td>
+l&#8217;identificateur d&#8217;une méthode de test DOIT TOUJOURS débuter par <tt>test</tt>
+</td></tr>
+<tr><td><img alt="3" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABxSURBVAgd
+BcGhAYNAEEXBJ1duG8gvr5XYSGRaiFyJTAtI2kAisSeRK39msHsbmePXNp4ixgg0TYu8r/tM1BR8
+ZqRXKAS5kF5BBMA+r4AgAMa7VwgEr4LzAFFQj8bzhaJF7t17oMZzgQA0jd2lSG1t/wFRuDVjQOMG
+MAAAAEN0RVh0U29mdHdhcmUAQCgjKUltYWdlTWFnaWNrIDQuMi44IDk5LzA4LzAxIGNyaXN0eUBt
+eXN0aWMuZXMuZHVwb250LmNvbZG6IbgAAAAqdEVYdFNpZ25hdHVyZQA4MGJiZGEyNzI2ZGRhY2U4
+YWI4YTAxZjU5ZGUyZWJkYgj9DnUAAAAOdEVYdFBhZ2UAMTJ4MTIrMCswhG27fQAAAABJRU5ErkJg
+gg==" /></td><td>
+variables locales pour réaliser les tests
+</td></tr>
+<tr><td><img alt="4" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABsSURBVAgd
+BcERosNAGAbAwWAwWlwM5gqLxerDh3uNYLEazJWqweCPX2ckOZ+t9SOJVEebbVeko2ewlRPzlYG3
+jvO4B1YLr2uugcnicY9W+8Kk+0uSHKwOUAO72uD7Tyu5N6B9I6nPOk/rXskP6gY2ju5T29cAAABD
+dEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGlj
+LmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAOWY4MmZjYWM5ZTAzOWNiZGI3MjM4
+MGE0NTkxMzI0ZjWAu/h2AAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></td><td>
+initialisation de quelques variables pour les tests
+</td></tr>
+<tr><td><img alt="5" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABwSURBVAgd
+BcGhAQMhEEXBJ1cisUgkclughNSDRCLPItNKSsCeXIn8mUHS4zn5vBIKt1pLtXaEHFdEdOplg8sA
+mHRwfX/DoJHBNfr7gJGhDJgBRof0gfVCY0NTL2fBRA4j7k7Ui8LBDOoRkpabtXmlPyNbNy/5rUKm
+AAAAQ3RFWHRTb2Z0d2FyZQBAKCMpSW1hZ2VNYWdpY2sgNC4yLjggOTkvMDgvMDEgY3Jpc3R5QG15
+c3RpYy5lcy5kdXBvbnQuY29tkbohuAAAACp0RVh0U2lnbmF0dXJlAGZlNjkwNDYzMzc5ZWIyNWU1
+NjJmY2M4Y2M5YjNjN2Uw37I5ngAAAA50RVh0UGFnZQAxMngxMiswKzCEbbt9AAAAAElFTkSuQmCC" /></td><td>
+mise en place de la situation à tester (ici utilisation du constructeur par défaut)
+</td></tr>
+<tr><td><img alt="6" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAAB3SURBVAgd
+BcGhAYMwEIbRT56sjEVGRt4KkV2jkhWQSGRtJCPUIjMCFnny5N/3kHS+a+1DEsoOpYI/Qh1GPJfh
+yQlrlBIOBx2uUd2ARoEn5pwvMArcE4sVjA6/AXODxoBPLEt22EmHI3ODmigczKDeQsqvm7U9pT+z
+czjqM2LYYQAAAEN0RVh0U29mdHdhcmUAQCgjKUltYWdlTWFnaWNrIDQuMi44IDk5LzA4LzAxIGNy
+aXN0eUBteXN0aWMuZXMuZHVwb250LmNvbZG6IbgAAAAqdEVYdFNpZ25hdHVyZQBkMjVkNzE3NmQ2
+N2EwMzhhZmMxYzU2NTU4ZTNkZmIxYf0Q9bUAAAAOdEVYdFBhZ2UAMTJ4MTIrMCswhG27fQAAAABJ
+RU5ErkJggg==" /></td><td>
+définition de l'état attendu de l&#8217;objet SANS appel des méthodes de l&#8217;objet
+</td></tr>
+<tr><td><img alt="7" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABnSURBVAgd
+BcGhAYMwAATAk5FIVoiMxFYiI5kJWdkVKiNZgxWQlZHfO0lGr3X/zkRmX9ZlXZbtiRy+SXJr0wXW
+5+DtAOPCpkGfDUWDe0BxYEuHZuCcBU7ZGQPqlN8LqE8k+Wyl1HMmfz42Mb/cLVK4AAAAQ3RFWHRT
+b2Z0d2FyZQBAKCMpSW1hZ2VNYWdpY2sgNC4yLjggOTkvMDgvMDEgY3Jpc3R5QG15c3RpYy5lcy5k
+dXBvbnQuY29tkbohuAAAACp0RVh0U2lnbmF0dXJlADI5ODM2ODE0MmFjNDNjZWJkMjU4NmQ4ZDEx
+MzdjOGRmJjnpmQAAAA50RVh0UGFnZQAxMngxMiswKzCEbbt9AAAAAElFTkSuQmCC" /></td><td>
+la méthode statique assertEquals prend en paramètre : le message affiché si échec, la valeur attendue, la valeur actuelle
+</td></tr>
+<tr><td><img alt="8" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAAB3SURBVAgd
+BcERAsQwEIbRD4PBarAYrAYHi3uFYq+wR8gVBouLvUaxGhwM/vsekq59LbtLQmGQC2xDqIG/z52p
+EwebmXFCx6DNnOKAygL8xvskSCzwmbvFAQkDv+G6oeJwxlrGFzpqpD6iJ+pEYQCwhZDkVkpzSX+j
+nzm6ZQIiVQAAAEN0RVh0U29mdHdhcmUAQCgjKUltYWdlTWFnaWNrIDQuMi44IDk5LzA4LzAxIGNy
+aXN0eUBteXN0aWMuZXMuZHVwb250LmNvbZG6IbgAAAAqdEVYdFNpZ25hdHVyZQA1N2JlMTk1MDVj
+MDNmOTJmMzg0N2Y1MzVlOWIxMTRlOdk0a0MAAAAOdEVYdFBhZ2UAMTJ4MTIrMCswhG27fQAAAABJ
+RU5ErkJggg==" /></td><td>
+la méthode <tt>main()</tt> lance l’exécution de toutes les méthodes de test (toutes les méthodes dont le nom est <tt>test&#8230;</tt>) et affiche le rapport.
+</td></tr>
+</table></div>
+<div class="paragraph"><p><strong>Questions</strong> :</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+<strong>Lancer l&#8217;exécution : le test doit fonctionner.</strong>
+</p>
+</li>
+<li>
+<p>
+<strong>Modifier le constructeur par défaut de Cylindre pour positionner la hauteur à 1 &#8658; le test doit échouer. Revenir à la bonne version du constructeur.</strong>
+</p>
+</li>
+<li>
+<p>
+<strong>Écrire sur ce même modèle la méthode de test du constructeur paramétré de Cylindre en donnant à x, y, rayon et hauteur des valeurs différentes les unes des autres.</strong>
+</p>
+<div class="paragraph"><p>Rappels des calculs de surface/volume : <a href="http://webetud.iut-blagnac.fr/file.php/599/data/TPs_Resources/TP7/TP7_Sujet.html">cf ici TP7</a></p></div>
+</li>
+</ol></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Note" src="data:image/png;base64,
+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" />
+</td>
+<td class="content">
+<div class="paragraph"><p>Lors du test de double, des problèmes de précision et d&#8217;arrondis peuvent apparaître.</p></div>
+<div class="paragraph"><p>On peut utiliser une version différent de assertEquals prenant un quatrième paramètre : le delta de valeur attendue.</p></div>
+<div class="paragraph"><p>Exemple pour tester à 0,001 prés : <tt>TestCase.assertEquals("&#8230;", volumeDeTest, c.volume(), 0.001);</tt></p></div>
+</td>
+</tr></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_tests_unitaires_des_transformateurs">5.2. Tests unitaires des transformateurs</h3>
+<div class="paragraph"><p>Pour tester les transformateurs, il faudra :</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+créer un objet cylindre,
+</p>
+</li>
+<li>
+<p>
+lui appliquer le transformateur,
+</p>
+</li>
+<li>
+<p>
+vérifier son état.
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p><strong>Question : Écrire les méthodes de test des transformateurs : setOrigineX, setOrigineY, setHauteur, setRayon. On utilisera le constructeur paramétré à chaque fois en donnant à x, y, rayon et hauteur des valeurs différentes les unes des autres.</strong></p></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_test_de_votre_programme">6. Test de votre programme</h2>
+<div class="sectionbody">
+<div class="paragraph"><p><strong>Question</strong> Maintenant que le test unitaire est écrit : récupérer vos code sources de Cercle.java et Cylindre.java du TP précédant et testez-les. Si erreur &#8658; faire la mise au point.</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_pour_aller_plus_loin_utilisation_des_tests_pour_la_maintenance">7. Pour aller plus loin : utilisation des tests pour la maintenance</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_ajout_de_méthode_à_la_classe_cylindre">7.1. Ajout de méthode à la classe Cylindre</h3>
+<div class="paragraph"><p><strong>Questions</strong> :</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Reprendre les versions livrées de Cercle.java et Cylindre.java
+</p>
+</li>
+<li>
+<p>
+Modifier la classe Cylindre.java
+</p>
+<div class="olist loweralpha"><ol class="loweralpha">
+<li>
+<p>
+Ajouter une méthode <tt>double surfaceCylindreSeul ()</tt> calculant la surface du cylindre sans les deux disques (formule : 2 x &Pi; x R x H)
+</p>
+</li>
+<li>
+<p>
+Modifier la méthode <tt>double surface()</tt> pour qu&#8217;elle utilise maintenant <tt>double surfaceCylindreSeul ()</tt> dans son calcul.
+</p>
+</li>
+</ol></div>
+</li>
+<li>
+<p>
+La modification de la classe &#8658; la modification des tests
+</p>
+<div class="olist loweralpha"><ol class="loweralpha">
+<li>
+<p>
+Modifier chaque méthode de test pour ajouter la vérification de la valeur retournée par <tt>double surfaceCylindreSeul ()</tt>
+</p>
+</li>
+</ol></div>
+</li>
+<li>
+<p>
+Lancer le test et corriger la classe jusqu'à succès.
+</p>
+</li>
+<li>
+<p>
+Bien noter que l&#8217;on teste les deux méthodes mises à jour : <tt>double surfaceCylindreSeul ()</tt> ET <tt>double surface()</tt>.
+</p>
+</li>
+</ol></div>
+</div>
+<div class="sect2">
+<h3 id="_tester_la_classe_de_quelqu_8217_un_d_8217_autre">7.2. Tester la classe de quelqu&#8217;un d&#8217;autre</h3>
+<div class="paragraph"><p>Un programmeur à écrit la classe Cylindre (cf. fichier CylindreErronnee.java).</p></div>
+<div class="paragraph"><p><strong>Question</strong> : tester cette classe (copier/coller du code dans Cylindre.java) et débogguez la classe. NE PAS modifier le test qui est juste a priori. Indiquer en commentaire dans Cylindre.java les erreurs trouvées.</p></div>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes"><hr /></div>
+<div id="footer">
+<div id="footer-text">
+Dernière mise à jour 2014-04-11 16:11:19 CEST
+</div>
+</div>
+</body>
+</html>
