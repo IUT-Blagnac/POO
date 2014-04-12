@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
 <meta name="generator" content="AsciiDoc 8.6.6" />
-<title>BPOO - Support TP 10</title>
+<title>BPOO - Support TP 11</title>
 <style type="text/css">
 /* Shared CSS for AsciiDoc xhtml11 and html5 backends */
 
@@ -735,7 +735,7 @@ asciidoc.install(2);
 </head>
 <body class="article">
 <div id="header">
-<h1>BPOO - Support TP 10</h1>
+<h1>BPOO - Support TP 11</h1>
 <span id="author">Dut/Info-S2/M2103</span><br />
 <div id="toc">
   <div id="toctitle">Table des matières</div>
@@ -862,19 +862,19 @@ cellspacing="0" cellpadding="4">
 <tbody>
 <tr>
 <td align="left" valign="top"><p class="table">PreReq</p></td>
-<td align="left" valign="top"><p class="table">Avoir fait le TP de hiérarchie de classes Compte. Maitriser l&#8217;héritage.</p></td>
+<td align="left" valign="top"><p class="table">Avoir fait le TP de hiérarchie de classes Compte. Maîtriser l&#8217;héritage. TD8 : polymorphisme. Cours : polymorphisme.</p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">ObjTP</p></td>
-<td align="left" valign="top"><p class="table">Générer la documentation de classes pour les clients de la classe (API).</p></td>
+<td align="left" valign="top"><p class="table">Test du polymorphisme, mise en oeuvre du polymorphisme sur l&#8217;AgenceBancaire.</p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">Durée</p></td>
-<td align="left" valign="top"><p class="table"><strong>1 séance</strong> de 1,5h sur machine.</p></td>
+<td align="left" valign="top"><p class="table"><strong>2 séance</strong> de 1,5h sur machine.</p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">À rendre</p></td>
-<td align="left" valign="top"><p class="table">A déposer : code source de CompteDepot et CompteSecurise commentées et, dans un répertoire, la documentation générée par javadoc pour toutes les classes (un seul fichier .zip).</p></td>
+<td align="left" valign="top"><p class="table">A déposer : code source de la classe Compte, ClasseEsssai, ClasseApplicationAgenceBancaire.</p></td>
 </tr>
 </tbody>
 </table>
@@ -887,29 +887,16 @@ cellspacing="0" cellpadding="4">
 <div class="sect1">
 <h2 id="_objectif">1. Objectif</h2>
 <div class="sectionbody">
-<div class="paragraph"><p>Le but de ce TP est de documenter des classes à destination de <strong>programmeurs</strong> pour deux usages distincts :</p></div>
+<div class="paragraph"><p>L&#8217;objectif de ce Tp est <strong>important</strong> :</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
-Développement de classes <strong>clientes</strong> de vos classes.
+Tester le polymorphisme.
 </p>
 </li>
 <li>
 <p>
-Développement de classes qui <strong>héritent</strong> de vos classes.
-</p>
-</li>
-</ul></div>
-<div class="paragraph"><p>Le but de ce TP est de générer la documentation des classes du TP précédant sur la hiérarchie de comptes :</p></div>
-<div class="ulist"><ul>
-<li>
-<p>
-la documentation générée automatiquement par javadoc (structure de la documentation),
-</p>
-</li>
-<li>
-<p>
-la documentation détaillée (réelle) pour les classes CompteDepot et CompteSecurise. Les plus avancés pourront faire les autres classes.
+L&#8217;utiliser dans une application "réelle".
 </p>
 </li>
 </ul></div>
@@ -917,7 +904,7 @@ la documentation détaillée (réelle) pour les classes CompteDepot et CompteSec
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph"><div class="title">Diagramme UML des classes mises en oeuvre</div><p><span class="image">
-<img alt="images/tp8.1.png" src="data:image/png;base64,
+<img alt="images//tp8.1.png" src="data:image/png;base64,
 iVBORw0KGgoAAAANSUhEUgAAAbwAAAKACAIAAABoglrDAAAANXRFWHRjb3B5bGVmdABHZW5lcmF0
 ZWQgYnkgaHR0cDovL3BsYW50dW1sLnNvdXJjZWZvcmdlLm5ldDpnVRsAAAGnelRYdHBsYW50dW1s
 AAB4nH2T0W6bMBSGr+unOJdEG1VolkWtetE2zbRVSxWNdLucDJymVrGN7EMmreu7z4ChTsR2B//3
@@ -1336,6 +1323,7 @@ AE0IgiBAE4IgyDj6v/Q40ssrUwxQAAAAAElFTkSuQmCC" />
 <div class="sect1">
 <h2 id="_mise_en_place_de_l_8217_environnement">2. Mise en place de l&#8217;environnement</h2>
 <div class="sectionbody">
+<div class="paragraph"><p>TODOTODOTODOTO</p></div>
 <div class="paragraph"><p>Récupérer les fichiers suivants dans votre répertoire de travail :</p></div>
 <div class="ulist"><ul>
 <li>
@@ -1348,349 +1336,21 @@ classe Compte.java telle qu&#8217;elle vous est livrée (commentée),
 toutes les sous-classes développées au TP précédant (sous classes de Compte).
 </p>
 </li>
-<li>
-<p>
-les classes CompteException, Operation et SensOperation
-</p>
-</li>
 </ul></div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_principes_de_documentation_des_classes">3. Principes de documentation des classes</h2>
+<h2 id="_title_toidotodotodotodo">3. TITLE TOIDOTODOTODOTODO</h2>
 <div class="sectionbody">
-<div class="olist arabic"><ol class="arabic">
-<li>
-<p>
-<tt>javadoc</tt> est un outil développé par Sun Microsystems permettant de générer une documentation d&#8217;API en format HTML depuis les commentaires présents dans un code source en Java.
-</p>
-<div class="olist loweralpha"><ol class="loweralpha">
-<li>
-<p>
-NB : Il existe d&#8217;autres outils de génération de documentation suivant les mêmes principes.
-</p>
-</li>
-</ol></div>
-</li>
-<li>
-<p>
-L’utilitaire javadoc permet de générer automatiquement la documentation d’un ensemble de classes java à partir des fichiers sources (.java).
-</p>
-</li>
-<li>
-<p>
-La documentation produite pour une classe est destinée aux futurs clients et sous-classes de cette classe :
-</p>
-<div class="ulist"><ul>
-<li>
-<p>
-On y retrouvera donc les propriétés public et protected, de classe et d’instances.
-</p>
-</li>
-<li>
-<p>
-Les propriétés privées et le code des méthodes, c’est-à-dire l’implémentation, ne se trouveront pas a priori dans la documentation (mais c&#8217;est possible).
-</p>
-</li>
-</ul></div>
-</li>
-<li>
-<p>
-La génération de la documentation se fait, à partir des fichiers sources, en recherchant deux types d’informations pour générer la documentation :
-</p>
-<div class="ulist"><ul>
-<li>
-<p>
-les <strong>déclarations java</strong> "pures" (le code java) pour trouver les informations "syntaxiques" à mettre dans la documentation : identificateurs des classes, héritage, propriétés déclarées publiques, identificateurs de méthodes, identificateurs des paramètres formels, &#8230;
-</p>
-</li>
-<li>
-<p>
-des <strong>commentaires</strong> ayant un <strong>format et un emplacement spécifiques</strong>, ajoutés par le programmeur, et qui viendront donner les éléments d’explication qui seront ajoutés à la documentation.
-</p>
-</li>
-</ul></div>
-</li>
-</ol></div>
+<div class="paragraph"><p>Classe Compte :
+public void  afficherAvecSolde ()</p></div>
+<div class="paragraph"><p>Classe Compte :
+public void transferer (Compte c, double pSomme)
+                // Transfert (virement) de pSomme de l&#8217;objet courant (retrait) vers le compte c (dépôt)</p></div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_commande_javadoc_traitement_des_déclarations_java">4. Commande javadoc : traitement des déclarations java</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_utiliser_la_commande_javadoc">4.1. Utiliser la commande javadoc</h3>
-<div class="paragraph"><p>Ouvrir une fenêtre de commande :</p></div>
-<div class="olist arabic"><ol class="arabic">
-<li>
-<p>
-Se positionner dans votre répertoire de travail contenant les fichiers .java.
-</p>
-</li>
-<li>
-<p>
-Tester la commande <tt>javadoc</tt>.
-</p>
-<div class="ulist"><ul>
-<li>
-<p>
-La réponse est une liste d&#8217;options de la commande (-version, &#8230;) &#8658; ok, passer à la suite.
-</p>
-</li>
-<li>
-<p>
-La réponse est un message du type "unknown command" &#8658; positionner le <tt>path</tt> permettant d&#8217;accéder à l&#8217;utilitaire javadoc qui se trouve dans le répertoire bin de la distribution du jdk : exemple
-</p>
-<div class="literalblock">
-<div class="content">
-<pre><tt>path=%path%;"C:\Programmes...\Java\...\jdkxxx\bin"</tt></pre>
-</div></div>
-</li>
-</ul></div>
-</li>
-</ol></div>
-<div class="paragraph"><p>Quelques options de la commande javadoc :</p></div>
-<div class="literalblock">
-<div class="content">
-<pre><tt>javadoc    -version  -author  -link URLDOC  -d  rep    c1.java  [c2.java ...]</tt></pre>
-</div></div>
-<div class="paragraph"><p>Cette commande, permet de générer la documentation :</p></div>
-<div class="ulist"><ul>
-<li>
-<p>
-<tt>c1.java  [c2.java &#8230;]</tt> : pour la classe c1.java, et autres si précisées (*.java possible), les classes doivent exister dans le répertoire courant,
-</p>
-</li>
-<li>
-<p>
-<tt>-d  rep</tt> : recommandé, la documentation est générée dans le répertoire rep (<tt>-d</tt> : directory),
-</p>
-</li>
-<li>
-<p>
-<tt>-author</tt> : optionnel, provoque la génération des informations sur l&#8217;auteur si disponibles,
-</p>
-</li>
-<li>
-<p>
-<tt>-version</tt> : optionnel, provoque la génération des informations de version si disponibles,
-</p>
-</li>
-<li>
-<p>
-<tt>-link URLDOC</tt> : optionnel, provoque la génération de liens hypertextes depuis la documentation générée vers une autre documentation située à URLDOC. L&#8217;URL peut être une URL classique ou bien un fichier local.
-</p>
-<div class="paragraph"><p>Exemple : <a href="http://java.sun.com/javase/6/docs/api/">http://java.sun.com/javase/6/docs/api/</a>. Cela fera que les noms de classes connues dans l&#8217;API Java (String, &#8230;) se présenteront comme des liens hypertextes vers la documentation générée.</p></div>
-</li>
-</ul></div>
-</div>
-<div class="sect2">
-<h3 id="_travail_à_faire">4.2. Travail à faire</h3>
-<div class="paragraph"><p><strong>Question :</strong> Sans ajouter de commentaire aux classes écrites :</p></div>
-<div class="ulist"><ul>
-<li>
-<p>
-<strong>si besoin, reprendre la classe <tt>Compte</tt> du serveur (documentée),</strong>
-</p>
-</li>
-<li>
-<p>
-<strong>générer la documentation de toutes vos classes du TP (hiérarchie de Compte + autres classes),</strong>
-</p>
-</li>
-<li>
-<p>
-<strong>consulter la documentation pour comprendre ce qui est généré.</strong>
-</p>
-</li>
-</ul></div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_commentaires_javadoc">5. Commentaires javadoc</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_insertion_de_commentaires_pour_générer_le_complément_de_documentation">5.1. Insertion de commentaires pour générer le complément de documentation</h3>
-<div class="olist arabic"><ol class="arabic">
-<li>
-<p>
-Des commentaires spécifiques sont analysés par javadoc pour construire la documentation générée. Ils ont la forme :
-</p>
-<div class="listingblock">
-<div class="content"><!-- Generator: GNU source-highlight 3.1.5
-by Lorenzo Bettini
-http://www.lorenzobettini.it
-http://www.gnu.org/software/src-highlite -->
-<pre><tt><span style="font-style: italic"><span style="color: #9A1900">/**</span></span>
-<span style="font-style: italic"><span style="color: #9A1900"> * Ici les commentaires que javadoc analysera</span></span>
-<span style="font-style: italic"><span style="color: #9A1900"> * Le tout servira à produire des blocs de textes dans la documentation générée.</span></span>
-<span style="font-style: italic"><span style="color: #9A1900"> */</span></span></tt></pre></div></div>
-</li>
-<li>
-<p>
-Ces éléments de commentaire sont insérés <strong>avant</strong> l'élément syntaxique qu&#8217;ils décrivent : avant la clause de déclaration de classe, avant la déclaration d&#8217;une méthode, &#8230;
-</p>
-</li>
-<li>
-<p>
-L'élément important est ici le début du commentaire : <tt>/**</tt>
-</p>
-</li>
-<li>
-<p>
-Chaque élément de commentaire contient (principalement) :
-</p>
-<div class="ulist"><ul>
-<li>
-<p>
-une première ligne se terminant par un point (".") ; C&#8217;est le résumé qui apparaît dans le tableau résumé de la documentation (cf. description des méthodes),
-</p>
-</li>
-<li>
-<p>
-du texte composant le commentaire détaillé,
-</p>
-</li>
-<li>
-<p>
-des balises html de mise en forme (<tt>&lt;BR&gt;, &lt;B&gt; &#8230; &lt;/B&gt;, &lt;code&gt; &#8230; &lt;/code&gt;, &#8230;</tt>),
-</p>
-</li>
-<li>
-<p>
-des  balises spéciales propres à javadoc et commençant pas le caractère @ : les « tags ».
-</p>
-</li>
-</ul></div>
-</li>
-</ol></div>
-<div class="paragraph"><p>Exemple :</p></div>
-<div class="listingblock">
-<div class="content"><!-- Generator: GNU source-highlight 3.1.5
-by Lorenzo Bettini
-http://www.lorenzobettini.it
-http://www.gnu.org/software/src-highlite -->
-<pre><tt><span style="font-style: italic"><span style="color: #9A1900">/**</span></span>
-<span style="font-style: italic"><span style="color: #9A1900"> * Permet d'effectuer un retrait sur un Compte.</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
-<span style="font-style: italic"><span style="color: #9A1900"> * </span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
-<span style="font-style: italic"><span style="color: #9A1900"> * Effectue un retrait (débit) de pSomme Euros sur le Compte.</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
-<span style="font-style: italic"><span style="color: #9A1900"> * Lève une exception si pSomme &lt; 0. </span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
-<span style="font-style: italic"><span style="color: #9A1900"> *</span></span>
-<span style="font-style: italic"><span style="color: #9A1900"> * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900"> pSomme   Le montant retiré sur le Compte.</span></span>
-<span style="font-style: italic"><span style="color: #9A1900"> * </span></span><span style="color: #009900">@throws</span><span style="font-style: italic"><span style="color: #9A1900"> CompteException   Lorsque pSomme &lt; 0</span></span>
-<span style="font-style: italic"><span style="color: #9A1900"> * </span></span><span style="color: #009900">@see</span><span style="font-style: italic"><span style="color: #9A1900"> Compte#deposer(double)</span></span>
-<span style="font-style: italic"><span style="color: #9A1900"> */</span></span>
-<span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">retirer</span></span><span style="color: #990000">(</span><span style="color: #009900">double</span> pSomme<span style="color: #990000">)</span> <span style="font-weight: bold"><span style="color: #0000FF">throws</span></span> CompteException <span style="color: #FF0000">{</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>pSomme <span style="color: #990000">&lt;</span> <span style="color: #993399">0</span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">throw</span></span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">CompteException</span></span><span style="color: #990000">(</span>
-                        <span style="color: #FF0000">"Erreur de somme négative lors d'un retrait sur "</span> <span style="color: #990000">+</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>numCompte<span style="color: #990000">);</span>
-        <span style="color: #FF0000">}</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>debits <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>debits <span style="color: #990000">+</span> pSomme<span style="color: #990000">;</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>nbDebits<span style="color: #990000">++;</span>
-<span style="color: #FF0000">}</span></tt></pre></div></div>
-<div class="paragraph"><p>Voir la classe Compte.java livrée.</p></div>
-</div>
-<div class="sect2">
-<h3 id="_liste_non_exhaustive_de_tags_reconnus_par_javadoc">5.2. Liste (non exhaustive) de tags reconnus par javadoc</h3>
-<div class="tableblock">
-<table rules="all"
-style="margin-left:0; margin-right:auto;"
-width="90%"
-frame="border"
-cellspacing="0" cellpadding="4">
-<col width="10%" />
-<col width="80%" />
-<col width="10%" />
-<tbody>
-<tr>
-<td align="left" valign="top"><p class="table">Balise</p></td>
-<td align="left" valign="top"><p class="table">Rôle</p></td>
-<td align="left" valign="top"><p class="table">Applicable à</p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table">@author</p></td>
-<td align="left" valign="top"><p class="table"><tt>@author   text</tt></p>
-<p class="table">Précise l&#8217;auteur de la source. Si plusieurs auteurs, mettre plusieurs balises.</p>
-<p class="table">Ex : <tt>@author A. Péninou</tt></p></td>
-<td align="left" valign="top"><p class="table">Classe et Méthode.</p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table">@version</p></td>
-<td align="left" valign="top"><p class="table"><tt>@version  version-text</tt></p>
-<p class="table">Version en cours de l'élément.</p>
-<p class="table">Ex : <tt>@version          2.3.1.15.12</tt></p></td>
-<td align="left" valign="top"><p class="table">Classe, Méthode et Interface.</p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table">@param</p></td>
-<td align="left" valign="top"><p class="table"><tt>@param  parameter-name description</tt></p>
-<p class="table">Définit un paramètre de méthode. Requis pour chaque paramètre. Donne l&#8217;identificateur du paramètre suivi d&#8217;une explication succincte.</p>
-<p class="table">Ex : <tt>@param     pNomProp     Le nom du propriétaire.</tt></p></td>
-<td align="left" valign="top"><p class="table">Constructeur et Méthode.</p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table">@return</p></td>
-<td align="left" valign="top"><p class="table"><tt>@return  description</tt></p>
-<p class="table">Documente la valeur de retour d&#8217;une méthode. Ce tag ne doit pas être employé pour des constructeurs ni des méthodes définies comme void.</p>
-<p class="table">Ex : <tt>@return   true si ok, false sinon.</tt></p></td>
-<td align="left" valign="top"><p class="table">Méthode.</p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table">@exception</p>
-<p class="table">@throws</p></td>
-<td align="left" valign="top"><p class="table"><tt>@throws  class-name  description</tt></p>
-<p class="table"><tt>@exception class-name  description</tt></p>
-<p class="table">Documente une exception lancée par une méthode.</p>
-<p class="table">@throws est un synonyme pour @exception disponible depuis Javadoc 1.2.</p>
-<p class="table">Exemple : <tt>throws CompteException Lorsque pSomme &lt; 0</tt></p></td>
-<td align="left" valign="top"><p class="table">Méthode.</p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table">@see</p></td>
-<td align="left" valign="top"><p class="table"><tt>@see  reference</tt></p>
-<p class="table">Crée un paragraphe "Voir aussi".</p>
-<p class="table">Établit un lien hypertexte vers un autre élément en rapport avec la partie traitée. L’élément en rapport peut être dans la classe ou dans une autre classe.</p>
-<p class="table">Ex : <tt>@see   Compte#deposer(double)</tt></p></td>
-<td align="left" valign="top"><p class="table">Package, Classe, Méthode, Constructeur, Interface et Attribut.</p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table">@since</p></td>
-<td align="left" valign="top"><p class="table"><tt>@since  since-text</tt></p>
-<p class="table">Précise à quelle version de la JDK un élément défini a été ajouté à la classe. Date de création de l&#8217;entité.</p></td>
-<td align="left" valign="top"><p class="table">Package, Classe, Méthode, Constructeur, Interface et Attribut.</p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table">@deprecated</p></td>
-<td align="left" valign="top"><p class="table"><tt>@deprecated   text</tt></p>
-<p class="table">Deprecated signifie "à ne plus utiliser à partir d’une version donnée (text)", susceptible de disparaître dans les versions ultérieures.</p>
-<p class="table">Lorsque cette balise est mise dans le commentaire de tête (classe), TOUT ce qui suit est considéré comme Deprecated (Méthode,&#8230;). Sinon le préciser seulement au niveau désiré.</p></td>
-<td align="left" valign="top"><p class="table">Classe, Interface, Méthode et Attribut.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_travail_à_faire_2">5.3. Travail à faire</h3>
-<div class="paragraph"><p><strong>Question : Commenter les classes CompteDepot et CompteSecurise et générer la documentation correspondante. Voir la documentation générée sur toutes les classes (héritage).</strong></p></div>
-<div class="paragraph"><p>Rappel : La documentation d&#8217;une classe est à destination de <strong>programmeurs</strong> pour deux usages distincts :</p></div>
-<div class="ulist"><ul>
-<li>
-<p>
-Développement de classes <strong>clientes</strong> de vos classes.
-</p>
-</li>
-<li>
-<p>
-Développement de classes qui <strong>héritent</strong> de vos classes.
-</p>
-</li>
-</ul></div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_solutions">6. Solutions</h2>
+<h2 id="_solutions">4. Solutions</h2>
 <div class="sectionbody">
 <div class="admonitionblock">
 <table><tr>
@@ -1785,7 +1445,7 @@ SUVORK5CYII=" />
 by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
-<pre><tt>Pas de <span style="color: #008080">sol</span> particulière <span style="color: #990000">:</span> <span style="color: #008080">ils</span> n<span style="color: #FF0000">'ont que de la documentation à produire.</span></tt></pre></div></div>
+<pre><tt></tt></pre></div></div>
 </td>
 </tr></table>
 </div>
@@ -1795,7 +1455,7 @@ http://www.gnu.org/software/src-highlite -->
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2014-04-12 22:04:33 CEST
+Dernière mise à jour 2014-04-12 21:55:07 CEST
 </div>
 </div>
 </body>
