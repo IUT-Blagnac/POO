@@ -842,7 +842,7 @@ cellspacing="0" cellpadding="4">
 </p>
 </li>
 </ul></div>
-<div class="paragraph"><p>Nous avons déjà "utilisé" le polymorphisme : dans le TP sur les FormesGraphique à l&#8217;aide d&#8217;un tableau, en TD. <strong>Nous allons l'étudier plus avant ici.</strong></p></div>
+<div class="paragraph"><p>Nous avons déjà "utilisé" le polymorphisme : i) dans le TP sur les FormesGraphique à l&#8217;aide d&#8217;un tableau, en TD. <strong>Nous allons l'étudier plus avant ici.</strong></p></div>
 <div class="paragraph"><p>Rappel de la hiérarchie de classes du TP précédant :</p></div>
 <div class="exampleblock">
 <div class="content">
@@ -1266,7 +1266,7 @@ AE0IgiBAE4IgyDj6v/Q40ssrUwxQAAAAAElFTkSuQmCC" />
 <div class="sect1">
 <h2 id="_mise_en_place_de_l_8217_environnement">2. Mise en place de l&#8217;environnement</h2>
 <div class="sectionbody">
-<div class="paragraph"><p>Récupérer les fichiers de vos TPs précédant :</p></div>
+<div class="paragraph"><p>Récupérer les fichiers de votre TP précédant :</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
@@ -1346,7 +1346,7 @@ Elle transfère (virement) pSomme euros de l&#8217;objet courant (retrait, <tt>t
 </li>
 <li>
 <p>
-Elle lève une exception <tt>CompteException</tt> si le dépôt ou le retrait sur un des deux comptes ne peut pas avoir lieu normalement.
+Elle lève une exception <tt>CompteException</tt> si le dépôt ou le retrait sur un des deux comptes ne peut pas avoir lieu normalement. En fait elle "laisse" passer les exceptions levées par retirer() ou deposer().
 </p>
 </li>
 </ol></div>
@@ -1423,12 +1423,12 @@ Remarquez que, depuis le début de cette partie :
 <div class="olist loweralpha"><ol class="loweralpha">
 <li>
 <p>
-<strong>Vous manipulez des variables déclarées de type Compte.</strong>
+<strong>Vous manipulez des variables déclarées de type Compte (type statique).</strong>
 </p>
 </li>
 <li>
 <p>
-<strong>Qui en fait référencent un CompteBancaire, un CompteEpargne, un CompteMoneo.</strong>
+<strong>Qui au "runtime" référencent un CompteBancaire, un CompteEpargne, un CompteMoneo.</strong>
 </p>
 </li>
 <li>
@@ -1502,7 +1502,7 @@ Par une boucle for, appliquer la méthode <tt>afficherAvecSolde()</tt> à chacun
 <div class="sect1">
 <h2 id="_le_polymorphisme_en_vraie_grandeur">4. Le polymorphisme en vraie grandeur</h2>
 <div class="sectionbody">
-<div class="paragraph"><p>L&#8217;objectif maintenant est d&#8217;utiliser l&#8217;ensemble des comptes définis dans la classe AgenceBancaire. Pour cela nous allons modifier la classe déjà développée ClasseApplicationAgenceBancaire.java.</p></div>
+<div class="paragraph"><p>L&#8217;objectif maintenant est d&#8217;utiliser plusieurs types de comptes définis dans la classe AgenceBancaire. Pour cela nous allons modifier la classe déjà développée ClasseApplicationAgenceBancaire.java.</p></div>
 <div class="paragraph"><p><strong>Questions</strong> :</p></div>
 <div class="olist arabic"><ol class="arabic">
 <li>
@@ -1512,12 +1512,12 @@ Préparer l&#8217;activité :
 <div class="olist loweralpha"><ol class="loweralpha">
 <li>
 <p>
-Récupérer les classes du serveur tp11-partie2. Ce fichier contient :
+Dans le même répertoire que précédemment, récupérer les classes du serveur tp11-partie2. Ce fichier contient :
 </p>
 <div class="olist lowerroman"><ol class="lowerroman">
 <li>
 <p>
-ClasseApplicationAgenceBancaire.java : classe à modifier (revue sous forme objet).
+ClasseApplicationAgenceBancaire.java : classe à modifier.
 </p>
 </li>
 <li>
@@ -1541,27 +1541,49 @@ Ouvrir le fichier ClasseApplicationAgenceBancaire.java.
 </li>
 <li>
 <p>
-Étudier le code de la classe ClasseApplicationAgenceBancaire. Par rapport à une ancienne version d&#8217;un TP antérieur, la classe a évolué et définit maintenant des objets mettant en oeuvre l&#8217;application de gestion des comptes sur un objet AgenceBancaire passé en paramètre du constructeur.
-</p>
-</li>
-<li>
-<p>
-On peut considérer que :
+Dans ce TP, on considérera que :
 </p>
 <div class="olist loweralpha"><ol class="loweralpha">
 <li>
 <p>
-AgenceBancaire est la classe <strong>modèle</strong>
+AgenceBancaire est la classe <strong>Modèle</strong>
 </p>
 </li>
 <li>
 <p>
-ClasseApplicationAgenceBancaire est la classe regroupant à la fois <strong>vue et contrôleur</strong>.
+ClasseApplicationAgenceBancaire est la classe regroupant à la fois <strong>Vue et Contrôleur</strong>.
 </p>
 </li>
 <li>
 <p>
 LanceurApplication est la classe permettant de lancer l&#8217;application sur une agence particulière.
+</p>
+</li>
+</ol></div>
+</li>
+<li>
+<p>
+Étudier le code de la classe ClasseApplicationAgenceBancaire.
+</p>
+<div class="olist loweralpha"><ol class="loweralpha">
+<li>
+<p>
+Par rapport à une version antérieure de TP, la classe a évolué et elle définit maintenant des objets mettant en oeuvre l&#8217;application de gestion des comptes sur un objet AgenceBancaire passé en paramètre du constructeur.
+</p>
+</li>
+<li>
+<p>
+Etudier le constructeur
+</p>
+</li>
+<li>
+<p>
+Etudier la méthode runApplication().
+</p>
+</li>
+<li>
+<p>
+Etudier les méthodes voirUnCompte (), supprimerUnCompte(), deposerSurUnCompte(), retirerSurUnCompte().
 </p>
 </li>
 </ol></div>
@@ -1578,22 +1600,22 @@ Lancer l&#8217;application, elle doit fonctionner mais les fonctions "Créer un 
 <div class="olist loweralpha"><ol class="loweralpha">
 <li>
 <p>
-<tt>private void creerCompteBancaire ()</tt> pour créer un compte bancaire et l&#8217;ajouter à l&#8217;agence bancaire. Saisir tous les paramètres pour le constructeur paramétré le plus complet.
+<tt>private void creerCompteBancaire ()</tt> pour i) saisir les paramètres nécessaires ii) créer un compte bancaire et iii) l&#8217;ajouter à l&#8217;agence bancaire (cf. attribut monAg). Utiliser le le constructeur paramétré le plus complet.
 </p>
 </li>
 <li>
 <p>
-<tt>private void creerCompteEpargne ()</tt> pour créer un compte épargne et l&#8217;ajouter à l&#8217;agence bancaire. Saisir tous les paramètres pour le constructeur paramétré le plus complet.
+<tt>private void creerCompteEpargne ()</tt> pour i) saisir les paramètres nécessaires ii) créer un compte épargne et iii) l&#8217;ajouter à l&#8217;agence bancaire (cf. attribut monAg). Utiliser le le constructeur paramétré le plus complet.
 </p>
 </li>
 <li>
 <p>
-<tt>private void creerCompteMoneo ()</tt> pour créer un compte monéo et l&#8217;ajouter à l&#8217;agence bancaire. Saisir tous les paramètres pour le constructeur paramétré le plus complet.
+<tt>private void creerCompteMoneo ()</tt> pour i) saisir les paramètres nécessaires ii) créer un compte monéo et iii) l&#8217;ajouter à l&#8217;agence bancaire (cf. attribut monAg). Utiliser le le constructeur paramétré le plus complet.
 </p>
 </li>
 <li>
 <p>
-<tt>private void creerCompteJeune ()</tt> pour créer un compte jeune et l&#8217;ajouter à l&#8217;agence bancaire. Saisir tous les paramètres pour le constructeur paramétré le plus complet.
+<tt>private void creerCompteJeune ()</tt> pour i) saisir les paramètres nécessaires ii) créer un compte jeune et iii) l&#8217;ajouter à l&#8217;agence bancaire (cf. attribut monAg). Utiliser le le constructeur paramétré le plus complet.
 </p>
 </li>
 </ol></div>
@@ -1605,7 +1627,7 @@ Lancer l&#8217;application, elle doit fonctionner mais les fonctions "Créer un 
 <div class="olist loweralpha"><ol class="loweralpha">
 <li>
 <p>
-<tt>private void transfertEntreDeuxComptes ()</tt> permettant de réaliser un transfert : i) saisir le numéro de deux comptes, ii) saisir un montant, iii) transférer le montant saisi du premier copte vers le second.
+<tt>private void transfertEntreDeuxComptes ()</tt> permettant de réaliser un transfert : i) saisir le numéro de deux comptes, ii) saisir un montant, iii) transférer le montant saisi du premier compte vers le second.
 </p>
 </li>
 </ol></div>
@@ -1615,9 +1637,12 @@ Lancer l&#8217;application, elle doit fonctionner mais les fonctions "Créer un 
 Tester la création de compte, le dépôt de sommes sur les comptes, le retrait, le transfert entre comptes, l&#8217;affichage de l&#8217;AgenceBancaire, l&#8217;affichage individuel des comptes. Tout doit fonctionner &#8230;
 </p>
 </li>
+</ol></div>
+<div class="paragraph"><p><strong>Questions - Analyse du code écrit</strong> :</p></div>
+<div class="olist arabic"><ol class="arabic">
 <li>
 <p>
-Analyser le code de AngeceBancaire. <strong>Quelle est la classe de comptes que laquelle est définie AgenceBancaire</strong> ?
+Analyser le code de AgenceBancaire. <strong>Quelle est la classe de comptes sur laquelle est définie AgenceBancaire</strong> ?
 </p>
 </li>
 <li>
@@ -1651,7 +1676,7 @@ Imaginons que nous ajoutions une classe ClassePlacement comme sous-classe de Com
 <div class="sect1">
 <h2 id="_pousser_le_polymorphisme_plus_loin">5. Pousser le polymorphisme plus loin</h2>
 <div class="sectionbody">
-<div class="paragraph"><p><strong>Classes abstraites</strong> :</p></div>
+<div class="paragraph"><p><strong>Question - Classes abstraites</strong> :</p></div>
 <div class="olist arabic"><ol class="arabic">
 <li>
 <p>
@@ -1664,7 +1689,7 @@ Déclarer <tt>abstract</tt> les classes Compte, CompteDepot, et CompteSecurise. 
 </p>
 </li>
 </ol></div>
-<div class="paragraph"><p><strong>Méthodes spécifiques</strong> :</p></div>
+<div class="paragraph"><p><strong>Question - Méthodes spécifiques</strong> :</p></div>
 <div class="olist arabic"><ol class="arabic">
 <li>
 <p>
@@ -1673,7 +1698,12 @@ Pour les classes héritant de CompteSecurise (CompteBancaire, CompteJeune), on n
 </li>
 <li>
 <p>
-Déclarer la méthode <tt>isRetraitPossible()</tt> comme <tt>abstract</tt> dans  Compte et CompteDepot. La redéfinir si besoin et correctement dans les classes CompteMoneo, CompteEpargne, CompteBancaire, CompteCompteJeune. A noter : jusqu'à maintenant, tout retrait est possible quelque soit son montant (&gt;=0) sur les comptes monéo et épargne.
+Déclarer la méthode <tt>isRetraitPossible()</tt> comme <tt>abstract</tt> dans  Compte et CompteDepot.
+</p>
+</li>
+<li>
+<p>
+La redéfinir <strong>si besoin</strong> et correctement dans les classes CompteMoneo, CompteEpargne, CompteBancaire, CompteCompteJeune. A noter : jusqu'à maintenant, tout retrait est possible quelque soit son montant (&gt;=0) sur les comptes monéo et épargne.
 </p>
 </li>
 <li>
@@ -1706,7 +1736,7 @@ Tester l&#8217;application et essayer des dépôts sur les 4 types de comptes et
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2014-04-13 01:13:54 CEST
+Dernière mise à jour 2014-04-17 18:03:13 CEST
 </div>
 </div>
 </body>
