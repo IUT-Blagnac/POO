@@ -1726,7 +1726,7 @@ Vous venez de constater les (premiers) effets du polymorphisme&#8230;
 </li>
 <li>
 <p>
-Imaginons que nous ajoutions une classe ClassePlacement comme sous-classe de CompteEpargne. <strong>Que faut-il modifier dans ClasseApplicationAgenceBancaire</strong> pour "intégrer" cette nouvelle classe ?
+Imaginons que nous ajoutions une classe ComptePlacement comme sous-classe de CompteEpargne. <strong>Que faut-il modifier dans ClasseApplicationAgenceBancaire</strong> pour "intégrer" cette nouvelle classe ?
 </p>
 </li>
 </ol></div>
@@ -1752,12 +1752,17 @@ Déclarer <tt>abstract</tt> les classes Compte, CompteDepot, et CompteSecurise. 
 <div class="olist arabic"><ol class="arabic">
 <li>
 <p>
-Pour les classes héritant de CompteSecurise (CompteBancaire, CompteJeune), on ne peut pas utiliser dans ClasseApplicationAgenceBancaire la méthode <tt>isRetraitPossible()</tt> (à essayer si besoin). <strong>Expliquez pourquoi</strong>.
+Pour les classes héritant de CompteSecurise (CompteBancaire, CompteJeune), on ne peut pas utiliser dans ClasseApplicationAgenceBancaire la méthode <tt>isRetraitPossible()</tt>. Essayer d&#8217;appeler <tt>isRetraitPossible()</tt> dans dans la méthode de retrait sur un Compte <tt>retirerSurUnCompte()</tt> pour vérifier. <strong>Expliquez pourquoi</strong>.
 </p>
 </li>
 <li>
 <p>
-Déclarer la méthode <tt>isRetraitPossible()</tt> comme <tt>abstract</tt> dans  Compte et CompteDepot.
+Déclarer la méthode <tt>isRetraitPossible()</tt> comme <tt>abstract</tt> dans Compte.
+</p>
+</li>
+<li>
+<p>
+On souhaite que la méthode <tt>isRetraitPossible()</tt> soit <tt>abstract</tt> dans CompteDepot. Faut-il écrire quelque chose ? Quoi ? Rien ?
 </p>
 </li>
 <li>
@@ -2376,7 +2381,7 @@ http://www.gnu.org/software/src-highlite -->
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2014-04-22 07:51:45 CEST
+Dernière mise à jour 2014-04-22 11:37:43 CEST
 </div>
 </div>
 </body>
