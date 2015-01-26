@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
 <head>
 <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
-<meta name="copyright" content="2014-02-02, IUT Blagnac *** Dut/Info-S2/M2103 *** Powered by AsciiDoc and W3C Slidy &amp;#169;" />
+<meta name="copyright" content="2015-01-26, IUT Blagnac *** Dut/Info-S2/M2103 *** Powered by AsciiDoc and W3C Slidy &amp;#169;" />
 <meta name="generator" content="AsciiDoc 8.6.6 / slidy2 backend 1.0.3" />
 <title>BPOO - Support TD 1</title>
 <style type="text/css">
@@ -4296,12 +4296,12 @@ qTCT16/0nPgLA/i6xjf+Xw3+B2ll/uiqTaJTAAAAAElFTkSuQmCC" />
 <ul class=" incremental">
 <li>
 <span>
-d&#8217;accéder à la valeur &#8594; aspect l-value
+d&#8217;accéder à la valeur &#8594; aspect r-value
 </span>
 </li>
 <li>
 <span>
-de modifier le contenu de l&#8217;emplacement mémoire avec une valeur du type attendu &#8594; aspect une r-value
+de modifier le contenu de l&#8217;emplacement mémoire avec une valeur du type attendu &#8594; aspect une l-value
 </span>
 </li>
 </ul>
@@ -4355,7 +4355,7 @@ gg==" />
 </object></span></span>
         k <span style="color: #990000">=</span> j <span style="color: #990000">;</span>
         e <span style="color: #990000">=</span> <span style="color: #993399">10.5</span><span style="color: #990000">;</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>e <span style="color: #990000">&lt;</span> i<span style="color: #990000">)</span> <span style="color: #FF0000">{</span> <span style="font-style: italic"><span style="color: #9A1900">// <object data="icons//callouts/4.svg" type="image/svg+xml" title="4" width="4%">
+        <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>e <span style="color: #990000">&gt;</span> i<span style="color: #990000">)</span> <span style="color: #FF0000">{</span> <span style="font-style: italic"><span style="color: #9A1900">// <object data="icons//callouts/4.svg" type="image/svg+xml" title="4" width="4%">
 <img alt="4" src="data:image/png;base64,
 iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABsSURBVAgd
 BcERosNAGAbAwWAwWlwM5gqLxerDh3uNYLEazJWqweCPX2ckOZ+t9SOJVEebbVeko2ewlRPzlYG3
@@ -4743,7 +4743,7 @@ YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
 dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
 ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" />
 </object></span></span>
-        <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>e <span style="color: #990000">&lt;</span> i<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>e <span style="color: #990000">&gt;</span> i<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
                 f <span style="color: #990000">=</span> j <span style="color: #990000">+</span> k <span style="color: #990000">;</span>
                 k <span style="color: #990000">=</span> <span style="color: #990000">(</span><span style="color: #009900">int</span><span style="color: #990000">)</span> <span style="color: #990000">(</span>f <span style="color: #990000">-</span> e<span style="color: #990000">)</span> <span style="color: #990000">;</span>
         <span style="color: #FF0000">}</span>
@@ -4758,117 +4758,111 @@ ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" />
 <div class="incremental">
 <p><span class="image">
 <img alt="images/td1Exemple1.png" width="650" src="data:image/png;base64,
-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" />
+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" />
 </span></p>
 </div>
 </div>
@@ -6591,12 +6585,17 @@ qTCT16/0nPgLA/i6xjf+Xw3+B2ll/uiqTaJTAAAAAElFTkSuQmCC" />
 <div class="title">Attention</div>
 <div class="paragraph">
 <div class="incremental">
-<p><tt>null</tt> : une valeur particulière de référence (objet ou tableau) qui veut dire "pas d&#8217;objet", "aucun objet référencé".</p>
+<p><tt>null</tt> : une valeur particulière de référence (objet ou tableau) qui veut dire "aucun objet référencé".</p>
 </div>
 </div>
 <div class="paragraph">
 <div class="incremental">
 <p><tt>null</tt> <strong>n&#8217;est pas</strong> "rien" ou "indéfini". A distinguer d&#8217;une variable "may not have been initialized".</p>
+</div>
+</div>
+<div class="paragraph">
+<div class="incremental">
+<p><tt>null</tt> : on peut tester si une variable contient <tt>null</tt> (<tt>if (pers == null) &#8230;</tt>) mais on ne peut pas accéder à l&#8217;objet correspondant car cela génère une <tt>NullPointerException</tt> (ex : <tt>pers.nom = ""</tt>).</p>
 </div>
 </div>
 </td>
@@ -6805,12 +6804,12 @@ by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
 <pre><tt><span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">Personne</span> <span style="color: #FF0000">{</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">String</span> nom <span style="color: #990000">;</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">Personne</span> pere <span style="color: #990000">;</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #009900">int</span> age <span style="color: #990000">;</span>
+        <span style="color: #008080">String</span> nom <span style="color: #990000">;</span>
+        <span style="color: #008080">Personne</span> pere <span style="color: #990000">;</span>
+        <span style="color: #009900">int</span> age <span style="color: #990000">;</span>
         <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #000000">Personne</span></span> <span style="color: #990000">(</span><span style="color: #008080">String</span> nomPers<span style="color: #990000">,</span> <span style="color: #008080">Personne</span> perePers<span style="color: #990000">,</span> <span style="color: #009900">int</span> agePers<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
                 <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>nom <span style="color: #990000">=</span> nomPers<span style="color: #990000">;</span>
-                pere <span style="color: #990000">=</span> perePers<span style="color: #990000">;</span> <span style="font-style: italic"><span style="color: #9A1900">// this optionnel</span></span>
+                pere <span style="color: #990000">=</span> perePers<span style="color: #990000">;</span> <span style="font-style: italic"><span style="color: #9A1900">// this optionnel MAIS TRES RECOMMANDE</span></span>
                 <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>age <span style="color: #990000">=</span> agePers<span style="color: #990000">;</span>
         <span style="color: #FF0000">}</span>
         <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> argv<span style="color: #990000">[])</span> <span style="color: #FF0000">{</span>
@@ -7539,11 +7538,16 @@ affecter une référence renvoyée par un new (ex : <tt>pers = new Personne("Jos
 affecter une référence contenue dans une autre variable ou renvoyée par un appel de sous-programme (ex : <tt>pers2 = pers;</tt>),
 </span>
 </li>
+<li>
+<span>
+affecter la valeur <tt>null</tt> (ex : <tt>pers2 = null;</tt>) ; cela signifie que la variable ne référence aucun objet,
+</span>
+</li>
 </ul>
 </li>
 <li>
 <span>
-appeler une méthode sur l&#8217;objet (ex : <tt>pers.setPere(pers2);</tt>).
+utiliser l&#8217;objet : accès aux attributs lorsque possible ou appeler une méthode sur l&#8217;objet (ex : <tt>pers.setPere(pers2);</tt>).
 </span>
 </li>
 </ul>
@@ -7573,12 +7577,12 @@ by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
 <pre><tt><span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">Personne</span> <span style="color: #FF0000">{</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">String</span> nom <span style="color: #990000">;</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">Personne</span> pere <span style="color: #990000">;</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #009900">int</span> age <span style="color: #990000">;</span>
+        <span style="color: #008080">String</span> nom <span style="color: #990000">;</span>
+        <span style="color: #008080">Personne</span> pere <span style="color: #990000">;</span>
+        <span style="color: #009900">int</span> age <span style="color: #990000">;</span>
         <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #000000">Personne</span></span> <span style="color: #990000">(</span><span style="color: #008080">String</span> nomPers<span style="color: #990000">,</span> <span style="color: #008080">Personne</span> perePers<span style="color: #990000">,</span> <span style="color: #009900">int</span> agePers<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
                 <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>nom <span style="color: #990000">=</span> nomPers<span style="color: #990000">;</span>
-                pere <span style="color: #990000">=</span> perePers<span style="color: #990000">;</span> <span style="font-style: italic"><span style="color: #9A1900">// this optionnel</span></span>
+                pere <span style="color: #990000">=</span> perePers<span style="color: #990000">;</span> <span style="font-style: italic"><span style="color: #9A1900">// this optionnel MAIS TRES RECOMMANDE</span></span>
                 <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>age <span style="color: #990000">=</span> agePers<span style="color: #990000">;</span>
         <span style="color: #FF0000">}</span>
         <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> argv<span style="color: #990000">[])</span> <span style="color: #FF0000">{</span>
@@ -8618,9 +8622,9 @@ by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
 <pre><tt><span style="font-weight: bold"><span style="color: #0000FF">public</span></span> MaClasse <span style="color: #FF0000">{</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">test</span></span>  <span style="color: #990000">(</span><span style="color: #009900">int</span><span style="color: #990000">[]</span> t<span style="color: #990000">,</span> <span style="color: #009900">int</span> i<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">afficheTab</span></span>  <span style="color: #990000">(</span><span style="color: #009900">int</span><span style="color: #990000">[]</span> t<span style="color: #990000">,</span> <span style="color: #009900">int</span> i<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
                 <span style="color: #009900">int</span> j<span style="color: #990000">;</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>i<span style="color: #990000">);</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span>i<span style="color: #990000">);</span>
                 <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>j<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> j<span style="color: #990000">&lt;</span>t<span style="color: #990000">.</span>length<span style="color: #990000">;</span> j<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
                         System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>t<span style="color: #990000">[</span>j<span style="color: #990000">]);</span>
                 <span style="color: #FF0000">}</span>
@@ -13813,7 +13817,7 @@ rkJggg==" />
 </div>
 <div id="footer" style="position: absolute; left: 5%; top: 80%; width: 90%;">
 <div id="footer-text">
-Dernière mise à jour 2014-02-02 22:19:03 CET
+Dernière mise à jour 2015-01-26 17:29:36 CET
 </div>
 </div>
 </div></div>
