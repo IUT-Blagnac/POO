@@ -1,4 +1,5 @@
 Guardfile
 Makefile
 .DS_Store
+**/*.class
 
