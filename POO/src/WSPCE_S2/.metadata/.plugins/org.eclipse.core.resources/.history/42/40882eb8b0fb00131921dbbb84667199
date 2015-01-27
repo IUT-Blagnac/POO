@@ -1,0 +1,74 @@
+package vue;
+
+import java.util.Scanner;
+
+import modele.Station;
+
+import controleur.CtrlRadio;
+
+public class Affichage
+{
+	private CtrlRadio controleur;
+	
+	public Affichage()
+	{
+		this.controleur = new CtrlRadio(this);
+	}
+
+	public void afficherMenu()
+	{	
+		System.out.println("Menu");
+		System.out.println("Changer volume (1)");
+		System.out.println("Changer station (2)");
+		System.out.println("Mémoriser station (3)");
+		System.out.println("Eteindre (0)");
+	}
+	
+	public void choixMenu()
+	{
+		Scanner lect = new Scanner(System.in);
+		
+		int choix = 0;
+		do
+		{
+			System.out.print("Entrez votre choix : ");
+			choix = lect.nextInt();
+			switch (choix)
+			{
+			case 1:
+				System.out.print("Entrez le nouveau volume : ");
+				int nouvVol = lect.nextInt();
+				this.controleur.getRadio().setVolume(nouvVol);
+				break;
+			case 2:
+				System.out.print("Entrez le numéro de la station : ");
+				int indiceS = lect.nextInt();
+				try
+				{
+					this.controleur.setStationActuelle(this.controleur.getListeStations().get(indiceS));
+					System.out.println("Station changée");
+				}
+				catch (IndexOutOfBoundsException e)
+				{
+					System.out.println("Station inexistante");
+				}
+				break;
+			case 3:
+				System.out.print("Entrez l'emplacement cible : ");
+				int cible = lect.nextInt();
+				System.out.print("Entrez le nom de la station : ");
+				String nomS = lect.nextLine();
+				System.out.print("Entrez la fréquence : ");
+				int freq = lect.nextInt();
+				this.controleur.getListeStationsEnreg().add(new Station(nomS, freq));
+				break;
+			case 0:
+				System.out.println("Arrêt");
+				break;
+			default:
+				System.out.println("Choisissez une option du menu");
+				break;
+			}
+		} while (choix > 0);
+	}
+}

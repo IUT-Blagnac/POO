@@ -1,0 +1,33 @@
+package modele;
+
+public class Station
+{
+	private String nom;
+	private double frequence;
+	
+	public Station(String pNom, double pFreq)
+	{
+		this.nom = pNom;
+		this.frequence = pFreq;
+	}
+	
+	public String getNom()
+	{
+		return this.nom;
+	}
+	
+	public void setNom(String pNom)
+	{
+		this.nom = pNom;
+	}
+	
+	public double getFrequence()
+	{
+		return this.frequence;
+	}
+	
+	public void setFrequence(double pFreq)
+	{
+		this.frequence = pFreq;
+	}
+}

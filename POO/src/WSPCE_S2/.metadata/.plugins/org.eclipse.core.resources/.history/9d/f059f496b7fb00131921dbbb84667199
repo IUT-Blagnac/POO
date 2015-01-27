@@ -1,0 +1,30 @@
+public class Station {
+	
+	private double frequence ;
+	private String nom;
+	
+	public Station(double pFrequence,String pNom)
+	{
+		this.frequence=pFrequence;
+		this.nom=pNom;
+	}
+
+
+	double getFrequence(){
+		return this.frequence;
+	}
+	
+	String getNom(){
+		return this.nom;
+	}
+	
+	void setFrequence(double pfrequence){
+		frequence=pfrequence;
+	}
+	
+	void setNom(String pnom){
+		nom=pnom;
+	}
+	
+	
+}

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+  <base>http://bstore1.example.com/bib.xml</base>
+  <bib>
+    <book year="1994">
+      <title>TCP/IP Illustrated</title>
+      <author>
+	<last>Stevens</last>
+	<first>W.</first>
+      </author>
+      <publisher>Addison-Wesley</publisher>
+      <price>65.95</price>
+    </book>
+    <book year="1992">
+      <title>Advanced Programming in the Unix environment</title>
+      <author>
+	<last>Stevens</last>
+	<first>W.</first>
+      </author>
+      <publisher>Addison-Wesley</publisher>
+      <price>65.95</price>
+    </book>
+    <book year="2000">
+      <title>Data on the Web</title>
+      <author>
+	<last>Abiteboul</last>
+	<first>Serge</first>
+      </author>
+      <author>
+	<last>Buneman</last>
+	<first>Peter</first>
+      </author>
+      <author>
+	<last>Suciu</last>
+	<first>Dan</first>
+      </author>
+      <publisher>Morgan Kaufmann Publishers</publisher>
+      <price>39.95</price>
+    </book>
+    <book year="1999">
+      <title>The Economics of Technology and Content for Digital TV</title>
+      <editor>
+	<last>Gerbarg</last>
+	<first>Darcy</first>
+	<affiliation>CITI</affiliation>
+      </editor>
+      <publisher>Kluwer Academic Publishers</publisher>
+      <price>129.95</price>
+    </book>
+  </bib>
+  <base>http://bstore2.example.com/reviews.xml</base>
+  <reviews>
+    <entry>
+      <title>Data on the Web</title>
+      <price>34.95</price>
+      <review>
+               A very good discussion of semi-structured database
+               systems and XML.
+        </review>
+    </entry>
+    <entry>
+      <title>Advanced Programming in the Unix environment</title>
+      <price>65.95</price>
+      <review>
+               A clear and detailed discussion of UNIX programming.
+        </review>
+    </entry>
+    <entry>
+      <title>TCP/IP Illustrated</title>
+      <price>65.95</price>
+      <review>
+               One of the best books on TCP/IP.
+        </review>
+    </entry>
+  </reviews>
+  <base>books.xml</base>
+  <chapter>
+    <title>Data Model</title>
+    <section>
+      <title>Syntax For Data Model</title>
+    </section>
+    <section>
+      <title>XML</title>
+      <section>
+	<title>Basic Syntax</title>
+      </section>
+      <section>
+	<title>XML and Semistructured Data</title>
+      </section>
+    </section>
+  </chapter>
+  <base>prices.xml</base>
+  <prices>
+    <book>
+      <title>Advanced Programming in the Unix environment</title>
+      <source>bstore2.example.com</source>
+      <price>65.95</price>
+    </book>
+    <book>
+      <title>Advanced Programming in the Unix environment</title>
+      <source>bstore1.example.com</source>
+      <price>65.95</price>
+    </book>
+    <book>
+      <title>TCP/IP Illustrated</title>
+      <source>bstore2.example.com</source>
+      <price>65.95</price>
+    </book>
+    <book>
+      <title>TCP/IP Illustrated</title>
+      <source>bstore1.example.com</source>
+      <price>65.95</price>
+    </book>
+    <book>
+      <title>Data on the Web</title>
+      <source>bstore2.example.com</source>
+      <price>34.95</price>
+    </book>
+    <book>
+      <title>Data on the Web</title>
+      <source>bstore1.example.com</source>
+      <price>39.95</price>
+    </book>
+  </prices>
+  <base>book.xml</base>
+  <book>
+    <title>Data on the Web</title>
+    <author>Serge Abiteboul</author>
+    <author>Peter Buneman</author>
+    <author>Dan Suciu</author>
+    <section id="intro" difficulty="easy">
+      <title>Introduction</title>
+      <p>Text ... </p>
+      <section>
+	<title>Audience</title>
+	<p>Text ... </p>
+      </section>
+      <section>
+	<title>Web Data and the Two Cultures</title>
+	<p>Text ... </p>
+	<figure height="400" width="400">
+	  <title>Traditional client/server architecture</title>
+	  <image source="csarch.gif"/>
+	</figure>
+	<p>Text ... </p>
+      </section>
+    </section>
+    <section id="syntax" difficulty="medium">
+      <title>A Syntax For Data</title>
+      <p>Text ... </p>
+      <figure height="200" width="500">
+	<title>Graph representations of structures</title>
+	<image source="graphs.gif"/>
+      </figure>
+      <p>Text ... </p>
+      <section>
+	<title>Base Types</title>
+	<p>Text ... </p>
+      </section>
+      <section>
+	<title>Representing Relational Databases</title>
+	<p>Text ... </p>
+	<figure height="250" width="400">
+	  <title>Examples of Relations</title>
+	  <image source="relations.gif"/>
+	</figure>
+      </section>
+      <section>
+	<title>Representing Object Databases</title>
+	<p>Text ... </p>
+      </section>
+    </section>
+  </book>
+</database>

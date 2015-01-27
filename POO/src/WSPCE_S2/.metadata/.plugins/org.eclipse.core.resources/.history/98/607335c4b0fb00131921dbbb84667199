@@ -1,0 +1,11 @@
+package vue;
+
+public class Main
+{
+	public static void main(String[] args)
+	{
+		Affichage aff = new Affichage();
+		aff.afficherMenu();
+		aff.choixMenu();
+	}
+}
