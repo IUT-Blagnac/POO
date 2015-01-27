@@ -1,63 +1,40 @@
-import java.text.NumberFormat;
-import java.util.Locale;
-
 public class ClasseEssai {
-
-	public static void main(String[] arguments) throws Exception {
+	public static void afficheTab (int[] pfT) { 
+		int i; 
 		
-		Personne shmi, anakin, padme ;
+		for (i=0; i<pfT.length; i++) {
+			System.out.println(pfT[i]); 
+		} 
+	}
+	public static int somTab (int[] pfT) {
+		int i, som;
+		som = 0;
 		
-		shmi = new Personne("Shmi","Skywalker","feminin",null,null); // <1>
-		System.out.println(shmi);
+		for (i=0; i<pfT.length; i++) {
+			som = som+pfT[i]; 
+		}
+		return som;
+	}
+	public static void changeTab (int[] pfT) {
+		int i ;
 		
-		//ClasseEssai.testChangeObjet(shmi) ; // <2>
-		System.out.println(shmi);
-		
-		System.out.println("->"+Locale.FRANCE.getCountry());
+		for (i=0; i<pfT.length; i++) {
+			pfT[i] = pfT[i] * 100; 
+		}
 	}
 	
-	public static void testChangeObjet (Personne p) {
-		p.setNom ("Nouveau nom", "Autre prénom"); // <3>
-	}
-}
-
-//Type Personne
-class Personne {
-	private String nom ;
-	private String prenom ;
-	private String sexe ;
-	private Personne descendantDe ;
-	private Personne conjointDe ;
-
-	// Constructeur
-	// usage:
-	// Personne parent, conjoint ;
-	// Personne p = new Personne("prenom","nom","feminin",parent,conjoint);
-	Personne(String valeurInitialePrenom, String valeurInitialeNom, String valeurInitialeSexe, Personne valeurInitialeDescendantDe, Personne valeurInitialeConjointDe){
-		nom = valeurInitialeNom ;
-		prenom = valeurInitialePrenom ;
-		sexe = valeurInitialeSexe ;
-		descendantDe = valeurInitialeDescendantDe ;
-		conjointDe = valeurInitialeConjointDe ;
-	}
-
-	public void setNom (String n, String p) {
-		this.nom = n; // <4>
-		this.prenom = p;
-	}
-	
-	public void setConjointDe (Personne p) {
-		this.conjointDe = p;
-	}
-
-	public String toString() { // Appelée lorsqu'on fait System.out.println(unePersonne);
-		String resultat = "" ;
-		resultat = resultat + "Personne: " + System.identityHashCode(this) + "\n" ;
-		resultat = resultat + "  Nom: " + nom + "\n" ;
-		resultat = resultat + "  Prenom: " + prenom + "\n" ;
-		resultat = resultat + "  Sexe: " + sexe + "\n" ;
-		resultat = resultat + "  Conjoint de: " + System.identityHashCode(conjointDe) + "\n" ;
-		resultat = resultat + "  Descendant de: " + System.identityHashCode(descendantDe) ;
-		return resultat ;
+	public static void main(String argv[]) {
+		int tab [],  i, som; 
+		int tab3 [] = {1, 2, 3};
+		
+		tab = new int [5];  // <1>
+		for (i = 0; i < tab.length; i++) {
+			tab[i] = 20+i;
+		}
+		ClasseEssai.afficheTab(tab); // <2>
+		System.out.println ( ClasseEssai.somTab(tab) ); // <3>
+		System.out.println ( ClasseEssai.somTab(tab3) ); // <4>
+		ClasseEssai.changeTab(tab); // <5>
+		ClasseEssai.afficheTab(tab); // <6>
 	}
 }
