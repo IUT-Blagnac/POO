@@ -2,4 +2,4 @@ Guardfile
 Makefile
 .DS_Store
 **/*.class
-
+POO/src/WSPCE_S2/.metadata/**
