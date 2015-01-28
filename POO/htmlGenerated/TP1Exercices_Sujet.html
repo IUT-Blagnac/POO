@@ -1341,10 +1341,10 @@ Reprendre le code du début du tp (cf. ci-dessous);
 by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
-<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">double</span> <span style="font-weight: bold"><span style="color: #000000">plusPlus</span></span> <span style="color: #990000">(</span><span style="color: #009900">double</span> a<span style="color: #990000">,</span> <span style="color: #009900">int</span> d<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">double</span> <span style="font-weight: bold"><span style="color: #000000">plusPlus</span></span> <span style="color: #990000">(</span><span style="color: #009900">double</span> pFA<span style="color: #990000">,</span> <span style="color: #009900">int</span> pfD<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
         <span style="color: #009900">double</span> res<span style="color: #990000">;</span>
 
-        res <span style="color: #990000">=</span> a <span style="color: #990000">+</span> d <span style="color: #990000">+</span> <span style="color: #993399">1</span><span style="color: #990000">;</span>
+        res <span style="color: #990000">=</span> pFA <span style="color: #990000">+</span> pfD <span style="color: #990000">+</span> <span style="color: #993399">1</span><span style="color: #990000">;</span>
         <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> res<span style="color: #990000">;</span>
 <span style="color: #FF0000">}</span>
 <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> argv<span style="color: #990000">[])</span> <span style="color: #FF0000">{</span>
@@ -1499,27 +1499,27 @@ by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
 <pre><tt><span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">ClasseEssai</span> <span style="color: #FF0000">{</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">afficheTab</span></span> <span style="color: #990000">(</span><span style="color: #009900">int</span><span style="color: #990000">[]</span> t<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">afficheTab</span></span> <span style="color: #990000">(</span><span style="color: #009900">int</span><span style="color: #990000">[]</span> pfT<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
                 <span style="color: #009900">int</span> i<span style="color: #990000">;</span>
 
-                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>t<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>t<span style="color: #990000">[</span>i<span style="color: #990000">]);</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>pfT<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
+                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>pfT<span style="color: #990000">[</span>i<span style="color: #990000">]);</span>
                 <span style="color: #FF0000">}</span>
         <span style="color: #FF0000">}</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">somTab</span></span> <span style="color: #990000">(</span><span style="color: #009900">int</span><span style="color: #990000">[]</span> t<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">somTab</span></span> <span style="color: #990000">(</span><span style="color: #009900">int</span><span style="color: #990000">[]</span> pfT<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
                 <span style="color: #009900">int</span> i<span style="color: #990000">,</span> som<span style="color: #990000">;</span>
                 som <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span>
 
-                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>t<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
-                        som <span style="color: #990000">=</span> som<span style="color: #990000">+</span>t<span style="color: #990000">[</span>i<span style="color: #990000">];</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>pfT<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
+                        som <span style="color: #990000">=</span> som<span style="color: #990000">+</span>pfT<span style="color: #990000">[</span>i<span style="color: #990000">];</span>
                 <span style="color: #FF0000">}</span>
                 <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> som<span style="color: #990000">;</span>
         <span style="color: #FF0000">}</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">changeTab</span></span> <span style="color: #990000">(</span><span style="color: #009900">int</span><span style="color: #990000">[]</span> t<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">changeTab</span></span> <span style="color: #990000">(</span><span style="color: #009900">int</span><span style="color: #990000">[]</span> pfT<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
                 <span style="color: #009900">int</span> i <span style="color: #990000">;</span>
 
-                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>t<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
-                        t<span style="color: #990000">[</span>i<span style="color: #990000">]</span> <span style="color: #990000">=</span> t<span style="color: #990000">[</span>i<span style="color: #990000">]</span> <span style="color: #990000">*</span> <span style="color: #993399">100</span><span style="color: #990000">;</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>pfT<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
+                        pfT<span style="color: #990000">[</span>i<span style="color: #990000">]</span> <span style="color: #990000">=</span> pfT<span style="color: #990000">[</span>i<span style="color: #990000">]</span> <span style="color: #990000">*</span> <span style="color: #993399">100</span><span style="color: #990000">;</span>
                 <span style="color: #FF0000">}</span>
         <span style="color: #FF0000">}</span>
 
@@ -1594,7 +1594,7 @@ En &lt;2&gt; : quel est l&#8217;identifiant de tableau contenu dans tab ?
 </li>
 <li>
 <p>
-Entrer dans l&#8217;exécution de afficheTab(). Quel est l&#8217;identifiant de tableau contenu dans t ?
+Entrer dans l&#8217;exécution de afficheTab(). Quel est l&#8217;identifiant de tableau contenu dans pfT ?
 </p>
 </li>
 <li>
@@ -1614,7 +1614,7 @@ En &lt;3&gt; : quel est l&#8217;identifiant de tableau contenu dans tab ?
 </li>
 <li>
 <p>
-Entrer dans l&#8217;exécution de somTab(). Quel est l&#8217;identifiant de tableau contenu dans t ?
+Entrer dans l&#8217;exécution de somTab(). Quel est l&#8217;identifiant de tableau contenu dans pfT ?
 </p>
 </li>
 <li>
@@ -1634,7 +1634,7 @@ En &lt;4&gt; : quel est l&#8217;identifiant de tableau contenu dans tab3 ?
 </li>
 <li>
 <p>
-Entrer dans l&#8217;exécution de somTab(). Quel est l&#8217;identifiant de tableau contenu dans t ?
+Entrer dans l&#8217;exécution de somTab(). Quel est l&#8217;identifiant de tableau contenu dans pfT ?
 </p>
 </li>
 <li>
@@ -1654,7 +1654,7 @@ En &lt;5&gt; : quel est l&#8217;identifiant de tableau contenu dans tab ?
 </li>
 <li>
 <p>
-Entrer dans l&#8217;exécution de changeTab(). Quel est l&#8217;identifiant de tableau contenu dans t ?
+Entrer dans l&#8217;exécution de changeTab(). Quel est l&#8217;identifiant de tableau contenu dans pfT ?
 </p>
 </li>
 <li>
@@ -1822,23 +1822,23 @@ http://www.gnu.org/software/src-highlite -->
 
         <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">(</span>String<span style="color: #990000">[]</span> arguments<span style="color: #990000">)</span> <span style="font-weight: bold"><span style="color: #0000FF">throws</span></span> Exception <span style="color: #FF0000">{</span>
 
-                <span style="color: #008080">Personne</span> shmi<span style="color: #990000">,</span> anakin<span style="color: #990000">,</span> padme <span style="color: #990000">;</span>
+                <span style="color: #008080">Personne</span> shmi<span style="color: #990000">,</span> anakin<span style="color: #990000">,</span> padme<span style="color: #990000">;</span>
 
-                shmi <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Personne</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Shmi"</span><span style="color: #990000">,</span><span style="color: #FF0000">"Skywalker"</span><span style="color: #990000">,</span><span style="color: #FF0000">"feminin"</span><span style="color: #990000">,</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">,</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">);</span> <span style="font-style: italic"><span style="color: #9A1900">// <img alt="1" src="data:image/png;base64,
+                shmi <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Personne</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Shmi"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Skywalker"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"feminin"</span><span style="color: #990000">,</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">,</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">);</span> <span style="font-style: italic"><span style="color: #9A1900">// <img alt="1" src="data:image/png;base64,
 iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABjSURBVHja
 VY6xDcAwCAS/pPQaLim9QmajdOk2I2SNrMEIlARIoigU8Cek/4e7zdHaWOYOVwaoA6wOCw05Y7FB
 gE0tIWQ+sBcwKM8qoD/wB5wGL8hjfdzWrh01GRp1hInGjDoXwHgsFuzBVLQAAABDdEVYdFNvZnR3
 YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
 dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
 ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
-                anakin <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Personne</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Anakin"</span><span style="color: #990000">,</span><span style="color: #FF0000">"Skywalker"</span><span style="color: #990000">,</span><span style="color: #FF0000">"masculin"</span><span style="color: #990000">,</span>shmi<span style="color: #990000">,</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">);</span> <span style="font-style: italic"><span style="color: #9A1900">// <img alt="2" src="data:image/png;base64,
+                anakin <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Personne</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Anakin"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Skywalker"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"masculin"</span><span style="color: #990000">,</span> shmi<span style="color: #990000">,</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">);</span> <span style="font-style: italic"><span style="color: #9A1900">// <img alt="2" src="data:image/png;base64,
 iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABvSURBVAgd
 BcGhAcJADADAky8rsZXIyK7AGkgksiu8RNYyAiswAhIbiYwMd7rrsS3LdlS3zuC8EtkqrJ/8vRdR
 Js+PtSZTMHe+L8IAUXeGAZd8DYbArB3C5FbXiBNThSMzcxelM4DI1l0zxtge1f0HVNk1YLFij6sA
 AABDdEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlz
 dGljLmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAODBlYWU1MjljOTRhN2Y0N2Rl
 Y2NmYWRhMjhhY2I5ZGblb7ENAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
-                padme <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Personne</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Padme"</span><span style="color: #990000">,</span><span style="color: #FF0000">"Amidala"</span><span style="color: #990000">,</span><span style="color: #FF0000">"feminin"</span><span style="color: #990000">,</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">,</span>anakin<span style="color: #990000">);</span>  <span style="font-style: italic"><span style="color: #9A1900">// <img alt="3" src="data:image/png;base64,
+                padme <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Personne</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Padme"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Amidala"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"feminin"</span><span style="color: #990000">,</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">,</span> anakin<span style="color: #990000">);</span> <span style="font-style: italic"><span style="color: #9A1900">// <img alt="3" src="data:image/png;base64,
 iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABxSURBVAgd
 BcGhAYNAEEXBJ1duG8gvr5XYSGRaiFyJTAtI2kAisSeRK39msHsbmePXNp4ixgg0TYu8r/tM1BR8
 ZqRXKAS5kF5BBMA+r4AgAMa7VwgEr4LzAFFQj8bzhaJF7t17oMZzgQA0jd2lSG1t/wFRuDVjQOMG
@@ -1846,7 +1846,7 @@ MAAAAEN0RVh0U29mdHdhcmUAQCgjKUltYWdlTWFnaWNrIDQuMi44IDk5LzA4LzAxIGNyaXN0eUBt
 eXN0aWMuZXMuZHVwb250LmNvbZG6IbgAAAAqdEVYdFNpZ25hdHVyZQA4MGJiZGEyNzI2ZGRhY2U4
 YWI4YTAxZjU5ZGUyZWJkYgj9DnUAAAAOdEVYdFBhZ2UAMTJ4MTIrMCswhG27fQAAAABJRU5ErkJg
 gg==" /></span></span>
-                anakin<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setConjointDe</span></span> <span style="color: #990000">(</span>padme<span style="color: #990000">)</span> <span style="color: #990000">;</span> <span style="font-style: italic"><span style="color: #9A1900">// <img alt="4" src="data:image/png;base64,
+                PersonneOperations<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">mariage</span></span><span style="color: #990000">(</span>anakin<span style="color: #990000">,</span> padme<span style="color: #990000">);</span> <span style="font-style: italic"><span style="color: #9A1900">// <img alt="4" src="data:image/png;base64,
 iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABsSURBVAgd
 BcERosNAGAbAwWAwWlwM5gqLxerDh3uNYLEazJWqweCPX2ckOZ+t9SOJVEebbVeko2ewlRPzlYG3
 jvO4B1YLr2uugcnicY9W+8Kk+0uSHKwOUAO72uD7Tyu5N6B9I6nPOk/rXskP6gY2ju5T29cAAABD
@@ -1854,45 +1854,62 @@ dEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGlj
 LmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAOWY4MmZjYWM5ZTAzOWNiZGI3MjM4
 MGE0NTkxMzI0ZjWAu/h2AAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
 
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>shmi<span style="color: #990000">);</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>anakin<span style="color: #990000">);</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>padme<span style="color: #990000">);</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>PersonneOperations<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">toString</span></span><span style="color: #990000">(</span>shmi<span style="color: #990000">));</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>PersonneOperations<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">toString</span></span><span style="color: #990000">(</span>anakin<span style="color: #990000">));</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>PersonneOperations<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">toString</span></span><span style="color: #990000">(</span>padme<span style="color: #990000">));</span>
         <span style="color: #FF0000">}</span>
 <span style="color: #FF0000">}</span>
 
-<span style="font-style: italic"><span style="color: #9A1900">//Type Personne</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">// Type Personne</span></span>
 <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">Personne</span> <span style="color: #FF0000">{</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">String</span> nom <span style="color: #990000">;</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">String</span> prenom <span style="color: #990000">;</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">String</span> sexe <span style="color: #990000">;</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">Personne</span> descendantDe <span style="color: #990000">;</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">Personne</span> conjointDe <span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #008080">String</span> nom<span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #008080">String</span> prenom<span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #008080">String</span> sexe<span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #008080">Personne</span> descendantDe<span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #008080">Personne</span> conjointDe<span style="color: #990000">;</span>
 
         <span style="font-style: italic"><span style="color: #9A1900">// Constructeur</span></span>
         <span style="font-style: italic"><span style="color: #9A1900">// usage:</span></span>
-        <span style="font-style: italic"><span style="color: #9A1900">// Personne parent, conjoint ;</span></span>
-        <span style="font-style: italic"><span style="color: #9A1900">// Personne p = new Personne("prenom","nom","feminin",parent,conjoint);</span></span>
-        <span style="font-weight: bold"><span style="color: #000000">Personne</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> valeurInitialePrenom<span style="color: #990000">,</span> <span style="color: #008080">String</span> valeurInitialeNom<span style="color: #990000">,</span> <span style="color: #008080">String</span> valeurInitialeSexe<span style="color: #990000">,</span> <span style="color: #008080">Personne</span> valeurInitialeDescendantDe<span style="color: #990000">,</span> <span style="color: #008080">Personne</span> valeurInitialeConjointDe<span style="color: #990000">)</span><span style="color: #FF0000">{</span>
-                nom <span style="color: #990000">=</span> valeurInitialeNom <span style="color: #990000">;</span>
-                prenom <span style="color: #990000">=</span> valeurInitialePrenom <span style="color: #990000">;</span>
-                sexe <span style="color: #990000">=</span> valeurInitialeSexe <span style="color: #990000">;</span>
-                descendantDe <span style="color: #990000">=</span> valeurInitialeDescendantDe <span style="color: #990000">;</span>
-                conjointDe <span style="color: #990000">=</span> valeurInitialeConjointDe <span style="color: #990000">;</span>
+        <span style="font-style: italic"><span style="color: #9A1900">// Personne p = new Personne("prenom", "nom", "feminin", parent, conjoint);</span></span>
+        <span style="font-weight: bold"><span style="color: #000000">Personne</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> pfPrenom<span style="color: #990000">,</span> <span style="color: #008080">String</span> pfNom<span style="color: #990000">,</span>
+                        <span style="color: #008080">String</span> pfSexe<span style="color: #990000">,</span> <span style="color: #008080">Personne</span> pfAscendant<span style="color: #990000">,</span>
+                        <span style="color: #008080">Personne</span> pfConjoint<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                nom <span style="color: #990000">=</span> pfNom<span style="color: #990000">;</span>
+                prenom <span style="color: #990000">=</span> pfPrenom<span style="color: #990000">;</span>
+                sexe <span style="color: #990000">=</span> pfSexe<span style="color: #990000">;</span>
+                descendantDe <span style="color: #990000">=</span> pfAscendant<span style="color: #990000">;</span>
+                conjointDe <span style="color: #990000">=</span> pfConjoint<span style="color: #990000">;</span>
+        <span style="color: #FF0000">}</span>
+<span style="color: #FF0000">}</span>
+
+<span style="font-style: italic"><span style="color: #9A1900">// Opérations sur la classe Personne</span></span>
+<span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">PersonneOperations</span> <span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">mariage</span></span><span style="color: #990000">(</span><span style="color: #008080">Personne</span> pfPersonne1<span style="color: #990000">,</span> <span style="color: #008080">Personne</span> pfPersonne2<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                pfPersonne1<span style="color: #990000">.</span>conjointDe <span style="color: #990000">=</span> pfPersonne2<span style="color: #990000">;</span>
+                pfPersonne2<span style="color: #990000">.</span>conjointDe <span style="color: #990000">=</span> pfPersonne1<span style="color: #990000">;</span>
         <span style="color: #FF0000">}</span>
 
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">setConjointDe</span></span> <span style="color: #990000">(</span><span style="color: #008080">Personne</span> p<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>conjointDe <span style="color: #990000">=</span> p<span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">naissance</span></span><span style="color: #990000">(</span><span style="color: #008080">Personne</span> pfPersonne<span style="color: #990000">,</span> <span style="color: #008080">Personne</span> pfAscendant<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                pfPersonne<span style="color: #990000">.</span>descendantDe <span style="color: #990000">=</span> pfAscendant<span style="color: #990000">;</span>
         <span style="color: #FF0000">}</span>
 
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #008080">String</span> <span style="font-weight: bold"><span style="color: #000000">toString</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span> <span style="font-style: italic"><span style="color: #9A1900">// Appelée lorsqu'on fait System.out.println(unePersonne);</span></span>
-                <span style="color: #008080">String</span> resultat <span style="color: #990000">=</span> <span style="color: #FF0000">""</span> <span style="color: #990000">;</span>
-                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">Personne: "</span> <span style="color: #990000">+</span> System<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">identityHashCode</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">)</span> <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span> <span style="color: #990000">;</span>
-                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"  Nom: "</span> <span style="color: #990000">+</span> nom <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span> <span style="color: #990000">;</span>
-                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"  Prenom: "</span> <span style="color: #990000">+</span> prenom <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span> <span style="color: #990000">;</span>
-                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"  Sexe: "</span> <span style="color: #990000">+</span> sexe <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span> <span style="color: #990000">;</span>
-                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"  Conjoint de: "</span> <span style="color: #990000">+</span> System<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">identityHashCode</span></span><span style="color: #990000">(</span>conjointDe<span style="color: #990000">)</span> <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span> <span style="color: #990000">;</span>
-                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"  Descendant de: "</span> <span style="color: #990000">+</span> System<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">identityHashCode</span></span><span style="color: #990000">(</span>descendantDe<span style="color: #990000">)</span> <span style="color: #990000">;</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> resultat <span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #008080">String</span> <span style="font-weight: bold"><span style="color: #000000">toString</span></span><span style="color: #990000">(</span><span style="color: #008080">Personne</span> pfPersonne<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="color: #008080">String</span> resultat <span style="color: #990000">=</span> <span style="color: #FF0000">""</span><span style="color: #990000">;</span>
+                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">Personne: "</span>
+                                <span style="color: #990000">+</span> System<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">identityHashCode</span></span><span style="color: #990000">(</span>pfPersonne<span style="color: #990000">)</span> <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span><span style="color: #990000">;</span>
+                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"  Nom: "</span> <span style="color: #990000">+</span> pfPersonne<span style="color: #990000">.</span>nom <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span><span style="color: #990000">;</span>
+                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"  Prenom: "</span> <span style="color: #990000">+</span> pfPersonne<span style="color: #990000">.</span>prenom <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span><span style="color: #990000">;</span>
+                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"  Sexe: "</span> <span style="color: #990000">+</span> pfPersonne<span style="color: #990000">.</span>sexe <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span><span style="color: #990000">;</span>
+                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"  Conjoint de: "</span>
+                                <span style="color: #990000">+</span> System<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">identityHashCode</span></span><span style="color: #990000">(</span>pfPersonne<span style="color: #990000">.</span>conjointDe<span style="color: #990000">)</span> <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span><span style="color: #990000">;</span>
+                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"  Descendant de: "</span>
+                                <span style="color: #990000">+</span> System<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">identityHashCode</span></span><span style="color: #990000">(</span>pfPersonne<span style="color: #990000">.</span>descendantDe<span style="color: #990000">);</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> resultat<span style="color: #990000">;</span>
+        <span style="color: #FF0000">}</span>
+
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">setNom</span></span><span style="color: #990000">(</span><span style="color: #008080">Personne</span> pfPersonne<span style="color: #990000">,</span> <span style="color: #008080">String</span> pfNom<span style="color: #990000">,</span> <span style="color: #008080">String</span> pfPrenom<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                pfPersonne<span style="color: #990000">.</span>nom <span style="color: #990000">=</span> pfNom<span style="color: #990000">;</span>
+                pfPersonne<span style="color: #990000">.</span>prenom <span style="color: #990000">=</span> pfPrenom<span style="color: #990000">;</span>
         <span style="color: #FF0000">}</span>
 <span style="color: #FF0000">}</span></tt></pre></div></div>
 </div>
@@ -1940,7 +1957,7 @@ YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
 dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
 ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
                 <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>familleSkywalker<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>familleSkywalker<span style="color: #990000">[</span>i<span style="color: #990000">]);</span>
+                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>PersonneOperations<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">toString</span></span><span style="color: #990000">(</span>familleSkywalker<span style="color: #990000">[</span>i<span style="color: #990000">]));</span>
         <span style="color: #FF0000">}</span>
 
         <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> Personne<span style="color: #990000">[]</span> <span style="font-weight: bold"><span style="color: #000000">init</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
@@ -1952,17 +1969,17 @@ ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
                 <span style="color: #008080">Personne</span> anakin <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Personne</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Anakin"</span><span style="color: #990000">,</span><span style="color: #FF0000">"Skywalker"</span><span style="color: #990000">,</span><span style="color: #FF0000">"masculin"</span><span style="color: #990000">,</span>shmi<span style="color: #990000">,</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">);</span>
                 famille <span style="color: #990000">[</span><span style="color: #993399">1</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> anakin<span style="color: #990000">;</span>
                 <span style="color: #008080">Personne</span> padme <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Personne</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Padme"</span><span style="color: #990000">,</span><span style="color: #FF0000">"Amidala"</span><span style="color: #990000">,</span><span style="color: #FF0000">"feminin"</span><span style="color: #990000">,</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">,</span>anakin<span style="color: #990000">);</span>
-                anakin<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setConjointDe</span></span> <span style="color: #990000">(</span>padme<span style="color: #990000">)</span> <span style="color: #990000">;</span>
+                PersonneOperations<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">mariage</span></span><span style="color: #990000">(</span>anakin<span style="color: #990000">,</span>  padme<span style="color: #990000">)</span> <span style="color: #990000">;</span>
                 famille <span style="color: #990000">[</span><span style="color: #993399">2</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> padme<span style="color: #990000">;</span>
                 <span style="color: #008080">Personne</span> leia <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Personne</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Leia"</span><span style="color: #990000">,</span><span style="color: #FF0000">"Organa"</span><span style="color: #990000">,</span><span style="color: #FF0000">"feminin"</span><span style="color: #990000">,</span>anakin<span style="color: #990000">,</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">);</span>
                 famille <span style="color: #990000">[</span><span style="color: #993399">3</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> leia<span style="color: #990000">;</span>
                 <span style="color: #008080">Personne</span> han <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Personne</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Han"</span><span style="color: #990000">,</span><span style="color: #FF0000">"Solo"</span><span style="color: #990000">,</span><span style="color: #FF0000">"masculin"</span><span style="color: #990000">,</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">,</span>leia<span style="color: #990000">);</span>
-                leia<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setConjointDe</span></span> <span style="color: #990000">(</span>han<span style="color: #990000">)</span> <span style="color: #990000">;</span>
+                PersonneOperations<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">mariage</span></span><span style="color: #990000">(</span>leia<span style="color: #990000">,</span> han<span style="color: #990000">)</span> <span style="color: #990000">;</span>
                 famille <span style="color: #990000">[</span><span style="color: #993399">4</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> han<span style="color: #990000">;</span>
                 <span style="color: #008080">Personne</span> luke <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Personne</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Luke"</span><span style="color: #990000">,</span><span style="color: #FF0000">"Skywalker"</span><span style="color: #990000">,</span><span style="color: #FF0000">"masculin"</span><span style="color: #990000">,</span>anakin<span style="color: #990000">,</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">);</span>
                 famille <span style="color: #990000">[</span><span style="color: #993399">5</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> luke<span style="color: #990000">;</span>
                 <span style="color: #008080">Personne</span> mara <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Personne</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Mara"</span><span style="color: #990000">,</span><span style="color: #FF0000">"Jade"</span><span style="color: #990000">,</span><span style="color: #FF0000">"feminin"</span><span style="color: #990000">,</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">,</span>luke<span style="color: #990000">);</span>
-                luke<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setConjointDe</span></span><span style="color: #990000">(</span>mara<span style="color: #990000">);</span>
+                PersonneOperations<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">mariage</span></span><span style="color: #990000">(</span>luke<span style="color: #990000">,</span> mara<span style="color: #990000">);</span>
                 famille <span style="color: #990000">[</span><span style="color: #993399">6</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> mara<span style="color: #990000">;</span>
                 <span style="color: #008080">Personne</span> ben <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Personne</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Ben"</span><span style="color: #990000">,</span><span style="color: #FF0000">"Skywalker"</span><span style="color: #990000">,</span><span style="color: #FF0000">"masculin"</span><span style="color: #990000">,</span>luke<span style="color: #990000">,</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">);</span>
                 famille <span style="color: #990000">[</span><span style="color: #993399">7</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> ben<span style="color: #990000">;</span>
@@ -1984,7 +2001,7 @@ Js+PtSZTMHe+L8IAUXeGAZd8DYbArB3C5FbXiBNThSMzcxelM4DI1l0zxtge1f0HVNk1YLFij6sA
 AABDdEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlz
 dGljLmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAODBlYWU1MjljOTRhN2Y0N2Rl
 Y2NmYWRhMjhhY2I5ZGblb7ENAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
-                kol<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setConjointDe</span></span><span style="color: #990000">(</span>famille<span style="color: #990000">[</span><span style="color: #993399">13</span><span style="color: #990000">]);</span> <span style="font-style: italic"><span style="color: #9A1900">// <img alt="3" src="data:image/png;base64,
+                PersonneOperations<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">mariage</span></span><span style="color: #990000">(</span>kol<span style="color: #990000">,</span> famille<span style="color: #990000">[</span><span style="color: #993399">13</span><span style="color: #990000">]);</span> <span style="font-style: italic"><span style="color: #9A1900">// <img alt="3" src="data:image/png;base64,
 iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABxSURBVAgd
 BcGhAYNAEEXBJ1duG8gvr5XYSGRaiFyJTAtI2kAisSeRK39msHsbmePXNp4ixgg0TYu8r/tM1BR8
 ZqRXKAS5kF5BBMA+r4AgAMa7VwgEr4LzAFFQj8bzhaJF7t17oMZzgQA0jd2lSG1t/wFRuDVjQOMG
@@ -2004,39 +2021,56 @@ MGE0NTkxMzI0ZjWAu/h2AAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></sp
         <span style="color: #FF0000">}</span>
 <span style="color: #FF0000">}</span>
 
-<span style="font-style: italic"><span style="color: #9A1900">//Type Personne</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">// Type Personne</span></span>
 <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">Personne</span> <span style="color: #FF0000">{</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">String</span> nom <span style="color: #990000">;</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">String</span> prenom <span style="color: #990000">;</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">String</span> sexe <span style="color: #990000">;</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">Personne</span> descendantDe <span style="color: #990000">;</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">Personne</span> conjointDe <span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #008080">String</span> nom<span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #008080">String</span> prenom<span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #008080">String</span> sexe<span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #008080">Personne</span> descendantDe<span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #008080">Personne</span> conjointDe<span style="color: #990000">;</span>
 
         <span style="font-style: italic"><span style="color: #9A1900">// Constructeur</span></span>
         <span style="font-style: italic"><span style="color: #9A1900">// usage:</span></span>
-        <span style="font-style: italic"><span style="color: #9A1900">// Personne parent, conjoint ;</span></span>
-        <span style="font-style: italic"><span style="color: #9A1900">// Personne p = new Personne("prenom","nom","feminin",parent,conjoint);</span></span>
-        <span style="font-weight: bold"><span style="color: #000000">Personne</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> valeurInitialePrenom<span style="color: #990000">,</span> <span style="color: #008080">String</span> valeurInitialeNom<span style="color: #990000">,</span> <span style="color: #008080">String</span> valeurInitialeSexe<span style="color: #990000">,</span> <span style="color: #008080">Personne</span> valeurInitialeDescendantDe<span style="color: #990000">,</span> <span style="color: #008080">Personne</span> valeurInitialeConjointDe<span style="color: #990000">)</span><span style="color: #FF0000">{</span>
-                nom <span style="color: #990000">=</span> valeurInitialeNom <span style="color: #990000">;</span>
-                prenom <span style="color: #990000">=</span> valeurInitialePrenom <span style="color: #990000">;</span>
-                sexe <span style="color: #990000">=</span> valeurInitialeSexe <span style="color: #990000">;</span>
-                descendantDe <span style="color: #990000">=</span> valeurInitialeDescendantDe <span style="color: #990000">;</span>
-                conjointDe <span style="color: #990000">=</span> valeurInitialeConjointDe <span style="color: #990000">;</span>
+        <span style="font-style: italic"><span style="color: #9A1900">// Personne p = new Personne("prenom", "nom", "feminin", parent, conjoint);</span></span>
+        <span style="font-weight: bold"><span style="color: #000000">Personne</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> pfPrenom<span style="color: #990000">,</span> <span style="color: #008080">String</span> pfNom<span style="color: #990000">,</span>
+                        <span style="color: #008080">String</span> pfSexe<span style="color: #990000">,</span> <span style="color: #008080">Personne</span> pfAscendant<span style="color: #990000">,</span>
+                        <span style="color: #008080">Personne</span> pfConjoint<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                nom <span style="color: #990000">=</span> pfNom<span style="color: #990000">;</span>
+                prenom <span style="color: #990000">=</span> pfPrenom<span style="color: #990000">;</span>
+                sexe <span style="color: #990000">=</span> pfSexe<span style="color: #990000">;</span>
+                descendantDe <span style="color: #990000">=</span> pfAscendant<span style="color: #990000">;</span>
+                conjointDe <span style="color: #990000">=</span> pfConjoint<span style="color: #990000">;</span>
+        <span style="color: #FF0000">}</span>
+<span style="color: #FF0000">}</span>
+
+<span style="font-style: italic"><span style="color: #9A1900">// Opérations sur la classe Personne</span></span>
+<span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">PersonneOperations</span> <span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">mariage</span></span><span style="color: #990000">(</span><span style="color: #008080">Personne</span> pfPersonne1<span style="color: #990000">,</span> <span style="color: #008080">Personne</span> pfPersonne2<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                pfPersonne1<span style="color: #990000">.</span>conjointDe <span style="color: #990000">=</span> pfPersonne2<span style="color: #990000">;</span>
+                pfPersonne2<span style="color: #990000">.</span>conjointDe <span style="color: #990000">=</span> pfPersonne1<span style="color: #990000">;</span>
         <span style="color: #FF0000">}</span>
 
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">setConjointDe</span></span> <span style="color: #990000">(</span><span style="color: #008080">Personne</span> p<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>conjointDe <span style="color: #990000">=</span> p<span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">naissance</span></span><span style="color: #990000">(</span><span style="color: #008080">Personne</span> pfPersonne<span style="color: #990000">,</span> <span style="color: #008080">Personne</span> pfAscendant<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                pfPersonne<span style="color: #990000">.</span>descendantDe <span style="color: #990000">=</span> pfAscendant<span style="color: #990000">;</span>
         <span style="color: #FF0000">}</span>
 
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #008080">String</span> <span style="font-weight: bold"><span style="color: #000000">toString</span></span><span style="color: #990000">()</span><span style="color: #FF0000">{</span>
-                <span style="color: #008080">String</span> resultat <span style="color: #990000">=</span> <span style="color: #FF0000">""</span> <span style="color: #990000">;</span>
-                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">Personne: "</span> <span style="color: #990000">+</span> System<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">identityHashCode</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">)</span> <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span> <span style="color: #990000">;</span>
-                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"  Nom: "</span> <span style="color: #990000">+</span> nom <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span> <span style="color: #990000">;</span>
-                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"  Prenom: "</span> <span style="color: #990000">+</span> prenom <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span> <span style="color: #990000">;</span>
-                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"  Sexe: "</span> <span style="color: #990000">+</span> sexe <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span> <span style="color: #990000">;</span>
-                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"  Conjoint de: "</span> <span style="color: #990000">+</span> System<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">identityHashCode</span></span><span style="color: #990000">(</span>conjointDe<span style="color: #990000">)</span> <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span> <span style="color: #990000">;</span>
-                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"  Descendant de: "</span> <span style="color: #990000">+</span> System<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">identityHashCode</span></span><span style="color: #990000">(</span>descendantDe<span style="color: #990000">)</span> <span style="color: #990000">;</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> resultat <span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #008080">String</span> <span style="font-weight: bold"><span style="color: #000000">toString</span></span><span style="color: #990000">(</span><span style="color: #008080">Personne</span> pfPersonne<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="color: #008080">String</span> resultat <span style="color: #990000">=</span> <span style="color: #FF0000">""</span><span style="color: #990000">;</span>
+                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">Personne: "</span>
+                                <span style="color: #990000">+</span> System<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">identityHashCode</span></span><span style="color: #990000">(</span>pfPersonne<span style="color: #990000">)</span> <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span><span style="color: #990000">;</span>
+                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"  Nom: "</span> <span style="color: #990000">+</span> pfPersonne<span style="color: #990000">.</span>nom <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span><span style="color: #990000">;</span>
+                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"  Prenom: "</span> <span style="color: #990000">+</span> pfPersonne<span style="color: #990000">.</span>prenom <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span><span style="color: #990000">;</span>
+                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"  Sexe: "</span> <span style="color: #990000">+</span> pfPersonne<span style="color: #990000">.</span>sexe <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span><span style="color: #990000">;</span>
+                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"  Conjoint de: "</span>
+                                <span style="color: #990000">+</span> System<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">identityHashCode</span></span><span style="color: #990000">(</span>pfPersonne<span style="color: #990000">.</span>conjointDe<span style="color: #990000">)</span> <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span><span style="color: #990000">;</span>
+                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"  Descendant de: "</span>
+                                <span style="color: #990000">+</span> System<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">identityHashCode</span></span><span style="color: #990000">(</span>pfPersonne<span style="color: #990000">.</span>descendantDe<span style="color: #990000">);</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> resultat<span style="color: #990000">;</span>
+        <span style="color: #FF0000">}</span>
+
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">setNom</span></span><span style="color: #990000">(</span><span style="color: #008080">Personne</span> pfPersonne<span style="color: #990000">,</span> <span style="color: #008080">String</span> pfNom<span style="color: #990000">,</span> <span style="color: #008080">String</span> pfPrenom<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                pfPersonne<span style="color: #990000">.</span>nom <span style="color: #990000">=</span> pfNom<span style="color: #990000">;</span>
+                pfPersonne<span style="color: #990000">.</span>prenom <span style="color: #990000">=</span> pfPrenom<span style="color: #990000">;</span>
         <span style="color: #FF0000">}</span>
 <span style="color: #FF0000">}</span></tt></pre></div></div>
 </div>
@@ -2066,7 +2100,7 @@ de schmi en &lt;2&gt;
 </li>
 <li>
 <p>
-de p en &lt;3&gt;
+de pfPersonne en &lt;3&gt;
 </p>
 </li>
 <li>
@@ -2095,7 +2129,7 @@ gE0tIWQ+sBcwKM8qoD/wB5wGL8hjfdzWrh01GRp1hInGjDoXwHgsFuzBVLQAAABDdEVYdFNvZnR3
 YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
 dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
 ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>shmi<span style="color: #990000">);</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>PersonneOperations<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">toString</span></span><span style="color: #990000">(</span>shmi<span style="color: #990000">));</span>
 
                 ClasseEssai<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">testChangeObjet</span></span><span style="color: #990000">(</span>shmi<span style="color: #990000">)</span> <span style="color: #990000">;</span> <span style="font-style: italic"><span style="color: #9A1900">// <img alt="2" src="data:image/png;base64,
 iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABvSURBVAgd
@@ -2104,11 +2138,11 @@ Js+PtSZTMHe+L8IAUXeGAZd8DYbArB3C5FbXiBNThSMzcxelM4DI1l0zxtge1f0HVNk1YLFij6sA
 AABDdEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlz
 dGljLmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAODBlYWU1MjljOTRhN2Y0N2Rl
 Y2NmYWRhMjhhY2I5ZGblb7ENAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>shmi<span style="color: #990000">);</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>PersonneOperations<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">toString</span></span><span style="color: #990000">(</span>shmi<span style="color: #990000">));</span>
         <span style="color: #FF0000">}</span>
 
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">testChangeObjet</span></span> <span style="color: #990000">(</span><span style="color: #008080">Personne</span> p<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                p<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setNom</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"Nouveau nom"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Autre prénom"</span><span style="color: #990000">);</span> <span style="font-style: italic"><span style="color: #9A1900">// <img alt="3" src="data:image/png;base64,
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">testChangeObjet</span></span> <span style="color: #990000">(</span><span style="color: #008080">Personne</span> pfPersonne<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                PersonneOperations<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setNom</span></span> <span style="color: #990000">(</span>pfPersonne<span style="color: #990000">,</span> <span style="color: #FF0000">"Nouveau nom"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Autre prénom"</span><span style="color: #990000">);</span> <span style="font-style: italic"><span style="color: #9A1900">// <img alt="3" src="data:image/png;base64,
 iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABxSURBVAgd
 BcGhAYNAEEXBJ1duG8gvr5XYSGRaiFyJTAtI2kAisSeRK39msHsbmePXNp4ixgg0TYu8r/tM1BR8
 ZqRXKAS5kF5BBMA+r4AgAMa7VwgEr4LzAFFQj8bzhaJF7t17oMZzgQA0jd2lSG1t/wFRuDVjQOMG
@@ -2119,50 +2153,56 @@ gg==" /></span></span>
         <span style="color: #FF0000">}</span>
 <span style="color: #FF0000">}</span>
 
-<span style="font-style: italic"><span style="color: #9A1900">//Type Personne</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">// Type Personne</span></span>
 <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">Personne</span> <span style="color: #FF0000">{</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">String</span> nom <span style="color: #990000">;</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">String</span> prenom <span style="color: #990000">;</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">String</span> sexe <span style="color: #990000">;</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">Personne</span> descendantDe <span style="color: #990000">;</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">Personne</span> conjointDe <span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #008080">String</span> nom<span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #008080">String</span> prenom<span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #008080">String</span> sexe<span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #008080">Personne</span> descendantDe<span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #008080">Personne</span> conjointDe<span style="color: #990000">;</span>
 
         <span style="font-style: italic"><span style="color: #9A1900">// Constructeur</span></span>
         <span style="font-style: italic"><span style="color: #9A1900">// usage:</span></span>
-        <span style="font-style: italic"><span style="color: #9A1900">// Personne parent, conjoint ;</span></span>
-        <span style="font-style: italic"><span style="color: #9A1900">// Personne p = new Personne("prenom","nom","feminin",parent,conjoint);</span></span>
-        <span style="font-weight: bold"><span style="color: #000000">Personne</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> valeurInitialePrenom<span style="color: #990000">,</span> <span style="color: #008080">String</span> valeurInitialeNom<span style="color: #990000">,</span> <span style="color: #008080">String</span> valeurInitialeSexe<span style="color: #990000">,</span> <span style="color: #008080">Personne</span> valeurInitialeDescendantDe<span style="color: #990000">,</span> <span style="color: #008080">Personne</span> valeurInitialeConjointDe<span style="color: #990000">)</span><span style="color: #FF0000">{</span>
-                nom <span style="color: #990000">=</span> valeurInitialeNom <span style="color: #990000">;</span>
-                prenom <span style="color: #990000">=</span> valeurInitialePrenom <span style="color: #990000">;</span>
-                sexe <span style="color: #990000">=</span> valeurInitialeSexe <span style="color: #990000">;</span>
-                descendantDe <span style="color: #990000">=</span> valeurInitialeDescendantDe <span style="color: #990000">;</span>
-                conjointDe <span style="color: #990000">=</span> valeurInitialeConjointDe <span style="color: #990000">;</span>
+        <span style="font-style: italic"><span style="color: #9A1900">// Personne p = new Personne("prenom", "nom", "feminin", parent, conjoint);</span></span>
+        <span style="font-weight: bold"><span style="color: #000000">Personne</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> pfPrenom<span style="color: #990000">,</span> <span style="color: #008080">String</span> pfNom<span style="color: #990000">,</span>
+                        <span style="color: #008080">String</span> pfSexe<span style="color: #990000">,</span> <span style="color: #008080">Personne</span> pfAscendant<span style="color: #990000">,</span>
+                        <span style="color: #008080">Personne</span> pfConjoint<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                nom <span style="color: #990000">=</span> pfNom<span style="color: #990000">;</span>
+                prenom <span style="color: #990000">=</span> pfPrenom<span style="color: #990000">;</span>
+                sexe <span style="color: #990000">=</span> pfSexe<span style="color: #990000">;</span>
+                descendantDe <span style="color: #990000">=</span> pfAscendant<span style="color: #990000">;</span>
+                conjointDe <span style="color: #990000">=</span> pfConjoint<span style="color: #990000">;</span>
+        <span style="color: #FF0000">}</span>
+<span style="color: #FF0000">}</span>
+
+<span style="font-style: italic"><span style="color: #9A1900">// Opérations sur la classe Personne</span></span>
+<span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">PersonneOperations</span> <span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">mariage</span></span><span style="color: #990000">(</span><span style="color: #008080">Personne</span> pfPersonne1<span style="color: #990000">,</span> <span style="color: #008080">Personne</span> pfPersonne2<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                pfPersonne1<span style="color: #990000">.</span>conjointDe <span style="color: #990000">=</span> pfPersonne2<span style="color: #990000">;</span>
+                pfPersonne2<span style="color: #990000">.</span>conjointDe <span style="color: #990000">=</span> pfPersonne1<span style="color: #990000">;</span>
         <span style="color: #FF0000">}</span>
 
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">setNom</span></span> <span style="color: #990000">(</span><span style="color: #008080">String</span> n<span style="color: #990000">,</span> <span style="color: #008080">String</span> p<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>nom <span style="color: #990000">=</span> n<span style="color: #990000">;</span> <span style="font-style: italic"><span style="color: #9A1900">// <img alt="4" src="data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABsSURBVAgd
-BcERosNAGAbAwWAwWlwM5gqLxerDh3uNYLEazJWqweCPX2ckOZ+t9SOJVEebbVeko2ewlRPzlYG3
-jvO4B1YLr2uugcnicY9W+8Kk+0uSHKwOUAO72uD7Tyu5N6B9I6nPOk/rXskP6gY2ju5T29cAAABD
-dEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGlj
-LmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAOWY4MmZjYWM5ZTAzOWNiZGI3MjM4
-MGE0NTkxMzI0ZjWAu/h2AAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
-                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>prenom <span style="color: #990000">=</span> p<span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">naissance</span></span><span style="color: #990000">(</span><span style="color: #008080">Personne</span> pfPersonne<span style="color: #990000">,</span> <span style="color: #008080">Personne</span> pfAscendant<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                pfPersonne<span style="color: #990000">.</span>descendantDe <span style="color: #990000">=</span> pfAscendant<span style="color: #990000">;</span>
         <span style="color: #FF0000">}</span>
 
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">setConjointDe</span></span> <span style="color: #990000">(</span><span style="color: #008080">Personne</span> p<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>conjointDe <span style="color: #990000">=</span> p<span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #008080">String</span> <span style="font-weight: bold"><span style="color: #000000">toString</span></span><span style="color: #990000">(</span><span style="color: #008080">Personne</span> pfPersonne<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="color: #008080">String</span> resultat <span style="color: #990000">=</span> <span style="color: #FF0000">""</span><span style="color: #990000">;</span>
+                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">Personne: "</span>
+                                <span style="color: #990000">+</span> System<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">identityHashCode</span></span><span style="color: #990000">(</span>pfPersonne<span style="color: #990000">)</span> <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span><span style="color: #990000">;</span>
+                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"  Nom: "</span> <span style="color: #990000">+</span> pfPersonne<span style="color: #990000">.</span>nom <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span><span style="color: #990000">;</span>
+                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"  Prenom: "</span> <span style="color: #990000">+</span> pfPersonne<span style="color: #990000">.</span>prenom <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span><span style="color: #990000">;</span>
+                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"  Sexe: "</span> <span style="color: #990000">+</span> pfPersonne<span style="color: #990000">.</span>sexe <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span><span style="color: #990000">;</span>
+                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"  Conjoint de: "</span>
+                                <span style="color: #990000">+</span> System<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">identityHashCode</span></span><span style="color: #990000">(</span>pfPersonne<span style="color: #990000">.</span>conjointDe<span style="color: #990000">)</span> <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span><span style="color: #990000">;</span>
+                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"  Descendant de: "</span>
+                                <span style="color: #990000">+</span> System<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">identityHashCode</span></span><span style="color: #990000">(</span>pfPersonne<span style="color: #990000">.</span>descendantDe<span style="color: #990000">);</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> resultat<span style="color: #990000">;</span>
         <span style="color: #FF0000">}</span>
 
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #008080">String</span> <span style="font-weight: bold"><span style="color: #000000">toString</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span> <span style="font-style: italic"><span style="color: #9A1900">// Appelée lorsqu'on fait System.out.println(unePersonne);</span></span>
-                <span style="color: #008080">String</span> resultat <span style="color: #990000">=</span> <span style="color: #FF0000">""</span> <span style="color: #990000">;</span>
-                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"Personne: "</span> <span style="color: #990000">+</span> System<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">identityHashCode</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">)</span> <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span> <span style="color: #990000">;</span>
-                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"  Nom: "</span> <span style="color: #990000">+</span> nom <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span> <span style="color: #990000">;</span>
-                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"  Prenom: "</span> <span style="color: #990000">+</span> prenom <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span> <span style="color: #990000">;</span>
-                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"  Sexe: "</span> <span style="color: #990000">+</span> sexe <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span> <span style="color: #990000">;</span>
-                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"  Conjoint de: "</span> <span style="color: #990000">+</span> System<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">identityHashCode</span></span><span style="color: #990000">(</span>conjointDe<span style="color: #990000">)</span> <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span> <span style="color: #990000">;</span>
-                resultat <span style="color: #990000">=</span> resultat <span style="color: #990000">+</span> <span style="color: #FF0000">"  Descendant de: "</span> <span style="color: #990000">+</span> System<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">identityHashCode</span></span><span style="color: #990000">(</span>descendantDe<span style="color: #990000">)</span> <span style="color: #990000">;</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> resultat <span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">setNom</span></span><span style="color: #990000">(</span><span style="color: #008080">Personne</span> pfPersonne<span style="color: #990000">,</span> <span style="color: #008080">String</span> pfNom<span style="color: #990000">,</span> <span style="color: #008080">String</span> pfPrenom<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                pfPersonne<span style="color: #990000">.</span>nom <span style="color: #990000">=</span> pfNom<span style="color: #990000">;</span> <span style="font-style: italic"><span style="color: #9A1900">// 4</span></span>
+                pfPersonne<span style="color: #990000">.</span>prenom <span style="color: #990000">=</span> pfPrenom<span style="color: #990000">;</span>
         <span style="color: #FF0000">}</span>
 <span style="color: #FF0000">}</span></tt></pre></div></div>
 </div>
@@ -2209,14 +2249,14 @@ by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
 <pre><tt><span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">ClasseEssai</span> <span style="color: #FF0000">{</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">boolean</span> <span style="font-weight: bold"><span style="color: #000000">estPresent</span></span> <span style="color: #990000">(</span><span style="color: #009900">int</span><span style="color: #990000">[]</span> t<span style="color: #990000">,</span> <span style="color: #009900">int</span> val<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">boolean</span> <span style="font-weight: bold"><span style="color: #000000">estPresent</span></span> <span style="color: #990000">(</span><span style="color: #009900">int</span><span style="color: #990000">[]</span> pfT<span style="color: #990000">,</span> <span style="color: #009900">int</span> pfVal<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
                 <span style="color: #009900">int</span> i<span style="color: #990000">;</span>
                 <span style="color: #009900">boolean</span> trouve <span style="color: #990000">;</span>
 
                 trouve <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">false</span></span><span style="color: #990000">;</span>
 
-                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>t<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>t<span style="color: #990000">[</span>i<span style="color: #990000">]</span> <span style="color: #990000">==</span> val<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>pfT<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>pfT<span style="color: #990000">[</span>i<span style="color: #990000">]</span> <span style="color: #990000">==</span> pfVal<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
                                 trouve <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">true</span></span><span style="color: #990000">;</span>
                         <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">else</span></span> <span style="color: #FF0000">{</span>
                                 trouve <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">false</span></span><span style="color: #990000">;</span>
@@ -2275,16 +2315,16 @@ by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
 <pre><tt><span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">ClasseEssai</span> <span style="color: #FF0000">{</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">mystere</span></span> <span style="color: #990000">(</span><span style="color: #009900">int</span><span style="color: #990000">[]</span> tab<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">mystere</span></span> <span style="color: #990000">(</span><span style="color: #009900">int</span><span style="color: #990000">[]</span> pfTab<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
                 <span style="color: #009900">int</span> a<span style="color: #990000">,</span> i <span style="color: #990000">;</span>
                 <span style="color: #009900">boolean</span> c <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">true</span></span> <span style="color: #990000">;</span>
                 <span style="font-weight: bold"><span style="color: #0000FF">while</span></span> <span style="color: #990000">(</span>c<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
                         c <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">false</span></span> <span style="color: #990000">;</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span> i <span style="color: #990000">&lt;</span> <span style="color: #990000">(</span>tab<span style="color: #990000">.</span>length <span style="color: #990000">-</span> <span style="color: #993399">1</span><span style="color: #990000">);</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
-                                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>tab<span style="color: #990000">[</span>i<span style="color: #990000">]</span> <span style="color: #990000">&gt;</span> tab<span style="color: #990000">[</span>i<span style="color: #990000">+</span><span style="color: #993399">1</span><span style="color: #990000">])</span> <span style="color: #FF0000">{</span>
-                                        a <span style="color: #990000">=</span> tab<span style="color: #990000">[</span>i<span style="color: #990000">];</span>
-                                        tab<span style="color: #990000">[</span>i<span style="color: #990000">]</span> <span style="color: #990000">=</span> tab<span style="color: #990000">[</span>i<span style="color: #990000">+</span><span style="color: #993399">1</span><span style="color: #990000">];</span>
-                                        tab<span style="color: #990000">[</span>i<span style="color: #990000">+</span><span style="color: #993399">1</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> a<span style="color: #990000">;</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span> i <span style="color: #990000">&lt;</span> <span style="color: #990000">(</span>pfTab<span style="color: #990000">.</span>length <span style="color: #990000">-</span> <span style="color: #993399">1</span><span style="color: #990000">);</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
+                                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>pfTab<span style="color: #990000">[</span>i<span style="color: #990000">]</span> <span style="color: #990000">&gt;</span> pfTab<span style="color: #990000">[</span>i<span style="color: #990000">+</span><span style="color: #993399">1</span><span style="color: #990000">])</span> <span style="color: #FF0000">{</span>
+                                        a <span style="color: #990000">=</span> pfTab<span style="color: #990000">[</span>i<span style="color: #990000">];</span>
+                                        pfTab<span style="color: #990000">[</span>i<span style="color: #990000">]</span> <span style="color: #990000">=</span> pfTab<span style="color: #990000">[</span>i<span style="color: #990000">+</span><span style="color: #993399">1</span><span style="color: #990000">];</span>
+                                        pfTab<span style="color: #990000">[</span>i<span style="color: #990000">+</span><span style="color: #993399">1</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> a<span style="color: #990000">;</span>
                                         c <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">true</span></span> <span style="color: #990000">;</span>
                                 <span style="color: #FF0000">}</span>
                         <span style="color: #FF0000">}</span>
@@ -2294,13 +2334,7 @@ http://www.gnu.org/software/src-highlite -->
                 <span style="color: #009900">int</span> tab <span style="color: #990000">[],</span> i<span style="color: #990000">;</span>
                 <span style="color: #009900">int</span> <span style="color: #990000">[]</span> tab2 <span style="color: #990000">=</span> <span style="color: #FF0000">{</span> <span style="color: #993399">5</span><span style="color: #990000">,</span> <span style="color: #993399">10</span><span style="color: #990000">,</span> <span style="color: #993399">11</span><span style="color: #990000">,</span> <span style="color: #993399">12</span><span style="color: #990000">,</span> <span style="color: #993399">20</span><span style="color: #990000">,</span> <span style="color: #993399">23</span> <span style="color: #FF0000">}</span><span style="color: #990000">;</span>
 
-                tab <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="color: #009900">int</span><span style="color: #990000">[</span><span style="color: #993399">10</span><span style="color: #990000">];</span>   <span style="font-style: italic"><span style="color: #9A1900">//  <img alt="1" src="data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABjSURBVHja
-VY6xDcAwCAS/pPQaLim9QmajdOk2I2SNrMEIlARIoigU8Cek/4e7zdHaWOYOVwaoA6wOCw05Y7FB
-gE0tIWQ+sBcwKM8qoD/wB5wGL8hjfdzWrh01GRp1hInGjDoXwHgsFuzBVLQAAABDdEVYdFNvZnR3
-YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
-dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
-ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
+                tab <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="color: #009900">int</span><span style="color: #990000">[</span><span style="color: #993399">10</span><span style="color: #990000">];</span>   <span style="font-style: italic"><span style="color: #9A1900">//  1</span></span>
                 tab<span style="color: #990000">[</span><span style="color: #993399">0</span><span style="color: #990000">]=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span>    tab<span style="color: #990000">[</span><span style="color: #993399">1</span><span style="color: #990000">]=</span><span style="color: #993399">100</span><span style="color: #990000">;</span>   tab<span style="color: #990000">[</span><span style="color: #993399">2</span><span style="color: #990000">]=</span><span style="color: #993399">20</span><span style="color: #990000">;</span>   tab<span style="color: #990000">[</span><span style="color: #993399">3</span><span style="color: #990000">]=</span><span style="color: #993399">90</span><span style="color: #990000">;</span>   tab<span style="color: #990000">[</span><span style="color: #993399">4</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> <span style="color: #993399">30</span><span style="color: #990000">;</span>
                 tab<span style="color: #990000">[</span><span style="color: #993399">5</span><span style="color: #990000">]=</span> <span style="color: #993399">80</span><span style="color: #990000">;</span>   tab<span style="color: #990000">[</span><span style="color: #993399">6</span><span style="color: #990000">]=</span><span style="color: #993399">40</span><span style="color: #990000">;</span>    tab<span style="color: #990000">[</span><span style="color: #993399">7</span><span style="color: #990000">]=</span><span style="color: #993399">70</span><span style="color: #990000">;</span>   tab<span style="color: #990000">[</span><span style="color: #993399">8</span><span style="color: #990000">]=</span><span style="color: #993399">50</span><span style="color: #990000">;</span>   tab<span style="color: #990000">[</span><span style="color: #993399">9</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> <span style="color: #993399">60</span><span style="color: #990000">;</span>
 
@@ -2336,27 +2370,27 @@ by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
 <pre><tt><span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">ClasseEssai</span> <span style="color: #FF0000">{</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">int</span>  <span style="font-weight: bold"><span style="color: #000000">mystere2</span></span> <span style="color: #990000">(</span><span style="color: #009900">int</span> x<span style="color: #990000">,</span> <span style="color: #009900">int</span> y<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">int</span>  <span style="font-weight: bold"><span style="color: #000000">mystere2</span></span> <span style="color: #990000">(</span><span style="color: #009900">int</span> pfX<span style="color: #990000">,</span> <span style="color: #009900">int</span> pfY<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
                 <span style="color: #009900">int</span> z<span style="color: #990000">;</span>
                 <span style="color: #009900">int</span> s<span style="color: #990000">;</span>
                 <span style="color: #009900">int</span> r<span style="color: #990000">;</span>
 
-                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>x <span style="color: #990000">&lt;</span> y<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                        z<span style="color: #990000">=</span>x<span style="color: #990000">;</span>
-                        x<span style="color: #990000">=</span>y<span style="color: #990000">;</span>
-                        y<span style="color: #990000">=</span>z<span style="color: #990000">;</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>pfX <span style="color: #990000">&lt;</span> pfY<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                        z<span style="color: #990000">=</span>pfX<span style="color: #990000">;</span>
+                        pfX<span style="color: #990000">=</span>pfY<span style="color: #990000">;</span>
+                        pfY<span style="color: #990000">=</span>z<span style="color: #990000">;</span>
                 <span style="color: #FF0000">}</span>
-                r <span style="color: #990000">=</span> y<span style="color: #990000">;</span>
+                r <span style="color: #990000">=</span> pfY<span style="color: #990000">;</span>
                 s<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">while</span></span> <span style="color: #990000">(</span>x<span style="color: #990000">-</span>y <span style="color: #990000">&gt;</span> <span style="color: #993399">0</span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                        s <span style="color: #990000">=</span> x<span style="color: #990000">-</span>y<span style="color: #990000">;</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>s <span style="color: #990000">&lt;</span> y<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                                x <span style="color: #990000">=</span> y<span style="color: #990000">;</span>
-                                y <span style="color: #990000">=</span> s<span style="color: #990000">;</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">while</span></span> <span style="color: #990000">(</span>pfX<span style="color: #990000">-</span>pfY <span style="color: #990000">&gt;</span> <span style="color: #993399">0</span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                        s <span style="color: #990000">=</span> pfX<span style="color: #990000">-</span>pfY<span style="color: #990000">;</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>s <span style="color: #990000">&lt;</span> pfY<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                                pfX <span style="color: #990000">=</span> pfY<span style="color: #990000">;</span>
+                                pfY <span style="color: #990000">=</span> s<span style="color: #990000">;</span>
                                 r <span style="color: #990000">=</span> s<span style="color: #990000">;</span>
                         <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">else</span></span> <span style="color: #FF0000">{</span>
-                                x <span style="color: #990000">=</span> s<span style="color: #990000">;</span>
-                                r <span style="color: #990000">=</span> y<span style="color: #990000">;</span>
+                                pfX <span style="color: #990000">=</span> s<span style="color: #990000">;</span>
+                                r <span style="color: #990000">=</span> pfY<span style="color: #990000">;</span>
                         <span style="color: #FF0000">}</span>
                 <span style="color: #FF0000">}</span>
                 <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> r<span style="color: #990000">;</span>
@@ -2434,38 +2468,31 @@ by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
 <pre><tt><span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">ClasseEssai</span> <span style="color: #FF0000">{</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">int</span>  <span style="font-weight: bold"><span style="color: #000000">mystere3</span></span> <span style="color: #990000">(</span><span style="color: #009900">int</span> x<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">mystere3</span></span><span style="color: #990000">(</span><span style="color: #009900">int</span> pfX<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
                 <span style="color: #009900">int</span> r<span style="color: #990000">;</span>
 
                 r <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>x <span style="color: #990000">==</span> <span style="color: #993399">0</span> <span style="color: #990000">||</span> x <span style="color: #990000">==</span> <span style="color: #993399">1</span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>pfX <span style="color: #990000">==</span> <span style="color: #993399">0</span> <span style="color: #990000">||</span> pfX <span style="color: #990000">==</span> <span style="color: #993399">1</span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
                         r <span style="color: #990000">=</span> <span style="color: #993399">1</span><span style="color: #990000">;</span>
                 <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">else</span></span> <span style="color: #FF0000">{</span>
-                        r <span style="color: #990000">=</span> x <span style="color: #990000">*</span> <span style="font-weight: bold"><span style="color: #000000">mystere3</span></span> <span style="color: #990000">(</span>x<span style="color: #990000">-</span><span style="color: #993399">1</span><span style="color: #990000">);</span>
+                        r <span style="color: #990000">=</span> pfX <span style="color: #990000">*</span> <span style="font-weight: bold"><span style="color: #000000">mystere3</span></span><span style="color: #990000">(</span>pfX <span style="color: #990000">-</span> <span style="color: #993399">1</span><span style="color: #990000">);</span>
                 <span style="color: #FF0000">}</span>
                 <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> r<span style="color: #990000">;</span>
         <span style="color: #FF0000">}</span>
+
         <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> argv<span style="color: #990000">[])</span> <span style="color: #FF0000">{</span>
 
-                <span style="color: #009900">int</span> val<span style="color: #990000">,</span> res <span style="color: #990000">;</span>
+                <span style="color: #009900">int</span> val<span style="color: #990000">,</span> res<span style="color: #990000">;</span>
 
-                val <span style="color: #990000">=</span> <span style="color: #993399">2</span><span style="color: #990000">;</span> <span style="font-style: italic"><span style="color: #9A1900">// <img alt="1" src="data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABjSURBVHja
-VY6xDcAwCAS/pPQaLim9QmajdOk2I2SNrMEIlARIoigU8Cek/4e7zdHaWOYOVwaoA6wOCw05Y7FB
-gE0tIWQ+sBcwKM8qoD/wB5wGL8hjfdzWrh01GRp1hInGjDoXwHgsFuzBVLQAAABDdEVYdFNvZnR3
-YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
-dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
-ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
-                res <span style="color: #990000">=</span> ClasseEssai<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">mystere3</span></span> <span style="color: #990000">(</span>val<span style="color: #990000">);</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span> <span style="color: #FF0000">"Pour "</span> <span style="color: #990000">+</span> val <span style="color: #990000">+</span> <span style="color: #FF0000">" : "</span> <span style="color: #990000">+</span> res <span style="color: #990000">);</span>
+                val <span style="color: #990000">=</span> <span style="color: #993399">2</span><span style="color: #990000">;</span> <span style="font-style: italic"><span style="color: #9A1900">// 1</span></span>
+                res <span style="color: #990000">=</span> ClasseEssai<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">mystere3</span></span><span style="color: #990000">(</span>val<span style="color: #990000">);</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Pour "</span> <span style="color: #990000">+</span> val <span style="color: #990000">+</span> <span style="color: #FF0000">" : "</span> <span style="color: #990000">+</span> res<span style="color: #990000">);</span>
                 val <span style="color: #990000">=</span> <span style="color: #993399">5</span><span style="color: #990000">;</span>
-                res <span style="color: #990000">=</span> ClasseEssai<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">mystere3</span></span> <span style="color: #990000">(</span>val<span style="color: #990000">);</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span> <span style="color: #FF0000">"Pour "</span> <span style="color: #990000">+</span> val <span style="color: #990000">+</span> <span style="color: #FF0000">" : "</span> <span style="color: #990000">+</span> res <span style="color: #990000">);</span>
+                res <span style="color: #990000">=</span> ClasseEssai<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">mystere3</span></span><span style="color: #990000">(</span>val<span style="color: #990000">);</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Pour "</span> <span style="color: #990000">+</span> val <span style="color: #990000">+</span> <span style="color: #FF0000">" : "</span> <span style="color: #990000">+</span> res<span style="color: #990000">);</span>
                 val <span style="color: #990000">=</span> <span style="color: #993399">10</span><span style="color: #990000">;</span>
-                res <span style="color: #990000">=</span> ClasseEssai<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">mystere3</span></span> <span style="color: #990000">(</span>val<span style="color: #990000">);</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span> <span style="color: #FF0000">"Pour "</span> <span style="color: #990000">+</span> val <span style="color: #990000">+</span> <span style="color: #FF0000">" : "</span> <span style="color: #990000">+</span> res <span style="color: #990000">);</span>
-
-
+                res <span style="color: #990000">=</span> ClasseEssai<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">mystere3</span></span><span style="color: #990000">(</span>val<span style="color: #990000">);</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Pour "</span> <span style="color: #990000">+</span> val <span style="color: #990000">+</span> <span style="color: #FF0000">" : "</span> <span style="color: #990000">+</span> res<span style="color: #990000">);</span>
         <span style="color: #FF0000">}</span>
 <span style="color: #FF0000">}</span></tt></pre></div></div>
 </div>
@@ -2492,7 +2519,7 @@ N&#8217;oubliez-pas de vous déconnecter
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2014-03-14 09:34:00 CET
+Dernière mise à jour 2015-01-28 16:15:55 CET
 </div>
 </div>
 </body>
