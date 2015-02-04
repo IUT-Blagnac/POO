@@ -775,23 +775,8 @@ cellspacing="0" cellpadding="4">
 <h2 id="_préliminaires_et_rappels">1. Préliminaires et rappels</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_déclaration_de_sous_programmes_en_java_principes">1.1. Déclaration de sous-programmes en Java (principes)</h3>
-<div class="sect3">
-<h4 id="_en_tête_de_sous_programme">1.1.1. En-tête de sous-programme</h4>
+<h3 id="_en_tête_de_sous_programme_en_java">1.1. En-tête de sous-programme en Java</h3>
 <div class="paragraph"><p>Un en-tête de sous-programme définit :</p></div>
-<div class="olist arabic"><ol class="arabic">
-<li>
-<p>
-une spécification pour le programmeur qui doit développer le sous-programme,
-</p>
-</li>
-<li>
-<p>
-une "mode d&#8217;emploi" pour le programmeur qui doit utiliser ce sous-programme.
-</p>
-</li>
-</ol></div>
-<div class="paragraph"><p>Cet en-tête définit :</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
@@ -805,12 +790,12 @@ le nombre ET le type ET l&#8217;ordre des paramètres formels : une suite de cou
 </li>
 <li>
 <p>
-un éventuel type de valeur retournée, void si rien n&#8217;est retourné.
+un éventuel type de valeur retournée, <tt>void</tt> si rien n&#8217;est retourné.
 </p>
-<div class="paragraph"><p>Notez que "void", du point de vue du compilateur,  ne veut pas dire "rien" mais est un type qui n&#8217;a aucune valeur et veut donc dire "pas de valeur de retour".</p></div>
+<div class="paragraph"><p>Notez que <tt>void</tt>, du point de vue du compilateur,  ne veut pas dire "rien" mais est un type (il existe une classe Void) qui n&#8217;a aucune valeur et veut donc dire "retourne aucune valeur".</p></div>
 </li>
 </ul></div>
-<div class="paragraph"><p>La <strong>signature ou prototype</strong> du sous-programme est ce qui permet de le distinguer ET de le reconnaître. Elle est formé de :</p></div>
+<div class="paragraph"><p>La <strong>signature ou prototype</strong> du sous-programme est ce qui permet de le reconnaître. Elle est formé de :</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
@@ -843,8 +828,8 @@ http://www.gnu.org/software/src-highlite -->
         <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> resultat<span style="color: #990000">;</span>
 <span style="color: #FF0000">}</span></tt></pre></div></div>
 </div>
-<div class="sect3">
-<h4 id="_appel_d_8217_un_sous_programme">1.1.2. Appel d&#8217;un sous-programme</h4>
+<div class="sect2">
+<h3 id="_appel_d_8217_un_sous_programme_en_java">1.2. Appel d&#8217;un sous-programme en Java</h3>
 <div class="paragraph"><p>L&#8217;appel d&#8217;un sous-programme fait intervenir :</p></div>
 <div class="ulist"><ul>
 <li>
@@ -859,7 +844,8 @@ des paramètres effectifs en nombre ET ordre ET type correspondant au prototype 
 </li>
 </ul></div>
 <div class="paragraph"><p>Les paramètres effectifs peuvent être toute expression donnant une valeur du type attendu.</p></div>
-<div class="paragraph"><p><strong>Exercice</strong> Pour les  appels suivants,expliquez si : i) l&#8217;appel est correct, ii) les calculs effectués pour réaliser l&#8217;appel. On considérera les appels corrects même si nous reviendrons plus tard sur la syntaxe exacte d&#8217;appel.</p></div>
+<div class="paragraph"><p>Lors de l&#8217;appel, d'éventuelles conversions de types, si elles sont nécessaires, peuvent intervenir. Les plus "classiques" sont les conversions des types de base : char &#8594; int &#8594; long &#8594; float &#8594; double.</p></div>
+<div class="paragraph"><p><strong>Exercice</strong> Pour les  appels suivants, expliquez si : i) l&#8217;appel est correct, ii) les calculs effectués pour réaliser l&#8217;appel. On considérera l'écriture des  appels comme correcte même si nous reviendrons plus tard sur la syntaxe exacte d&#8217;appel.</p></div>
 <div class="olist arabic"><ol class="arabic">
 <li>
 <p>
@@ -958,217 +944,7 @@ Calculs ?
 </li>
 </ul></div>
 </li>
-<li>
-<p>
-Q : <tt>double  puissance (double v, int puiss)</tt>
-</p>
-<div class="listingblock">
-<div class="content"><!-- Generator: GNU source-highlight 3.1.5
-by Lorenzo Bettini
-http://www.lorenzobettini.it
-http://www.gnu.org/software/src-highlite -->
-<pre><tt><span style="color: #009900">int</span> val<span style="color: #990000">;</span>
-val <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">puissance</span></span> <span style="color: #990000">(</span><span style="color: #993399">10</span><span style="color: #990000">,</span> <span style="color: #993399">2</span><span style="color: #990000">);</span></tt></pre></div></div>
-<div class="ulist"><ul>
-<li>
-<p>
-Correct ?
-</p>
-</li>
-<li>
-<p>
-Calculs ?
-</p>
-</li>
-</ul></div>
-</li>
 </ol></div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_méthodes_static_en_java">1.2. Méthodes static en Java</h3>
-<div class="paragraph"><p>Il existe des sous-programmes qui existent "en eux-mêmes". Ont peut les décrire et on souhaite pouvoir les programmer pour les appeler. Exemple : sinus, cosinus, calcul de puissance, obtenir l&#8217;heure du système, &#8230;</p></div>
-<div class="paragraph"><p>En java :</p></div>
-<div class="olist arabic"><ol class="arabic">
-<li>
-<p>
-Tout identificateur déclaré ne peut l’être qu’à l’intérieur d’une unité de définition appelée classe.
-</p>
-</li>
-<li>
-<p>
-On peut déclarer un sous-programme rattaché à une classe, appelée méthode <strong>de classe</strong> ou méthode <strong>statique</strong>.
-</p>
-</li>
-<li>
-<p>
-Elle s'écrit précédée du mot-clef <tt><strong>static</strong></tt>
-</p>
-</li>
-<li>
-<p>
-Pour l&#8217;appeler, il faut utiliser le nom de la classe devant l&#8217;appel : <tt>NomDeClasse . identificateurmethode(&#8230;)</tt>
-</p>
-</li>
-</ol></div>
-<div class="paragraph"><p>Exemple :</p></div>
-<div class="listingblock">
-<div class="content"><!-- Generator: GNU source-highlight 3.1.5
-by Lorenzo Bettini
-http://www.lorenzobettini.it
-http://www.gnu.org/software/src-highlite -->
-<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">ClasseLibrairie</span> <span style="color: #FF0000">{</span>
-        <span style="font-style: italic"><span style="color: #9A1900">/**</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">        * Calcul de la puisssance puiss de la valeur v (calcul de v puissance puiss).</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">        * Ne fonctionne que si puiss &gt;= 0</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">        *</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">        * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900">    v      valeur dont on cherche la puissance</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">        * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900">    puiss  puissance à laquelle on va élever v</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">        * </span></span><span style="color: #009900">@return</span><span style="font-style: italic"><span style="color: #9A1900">   v      elévé à la puissance puiss</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">        **/</span></span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">double</span>  <span style="font-weight: bold"><span style="color: #000000">puissance</span></span> <span style="color: #990000">(</span><span style="color: #009900">double</span> v<span style="color: #990000">,</span> <span style="color: #009900">int</span> puiss<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                <span style="color: #009900">double</span> resultat<span style="color: #990000">=</span><span style="color: #993399">0</span> <span style="color: #990000">;</span>
-                <span style="color: #990000">...</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> resultat<span style="color: #990000">;</span>
-        <span style="color: #FF0000">}</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> argv<span style="color: #990000">[])</span> <span style="font-weight: bold"><span style="color: #0000FF">throws</span></span> Exception  <span style="color: #FF0000">{</span>
-                <span style="color: #009900">double</span> x<span style="color: #990000">;</span>
-                x <span style="color: #990000">=</span> ClasseLibrairie<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">puissance</span></span> <span style="color: #990000">(</span><span style="color: #993399">10.5</span><span style="color: #990000">,</span> <span style="color: #993399">2</span><span style="color: #990000">);</span>
-        <span style="color: #FF0000">}</span>
-<span style="color: #FF0000">}</span></tt></pre></div></div>
-<div class="paragraph"><p>Par la suite, lorsque nous écrirons des classes, on séparera clairement :</p></div>
-<div class="ulist"><ul>
-<li>
-<p>
-des classes "librairies" qui définissent uniquement des méthodes statiques. Ex Math et System ou une classe contenant une fonction main().
-</p>
-</li>
-<li>
-<p>
-des classes décrivant des objets définissant uniquement des méthodes non statiques.
-</p>
-</li>
-</ul></div>
-<div class="paragraph"><p>Cette dichotomie que l&#8217;on recherchera ne sera pas tous toujours possible ou souhaitable. Nous l&#8217;appliquerons le plus possible. Exception : les sujets de TD ou TP (pour diminuer le volume des exemples).</p></div>
-<div class="admonitionblock">
-<table><tr>
-<td class="icon">
-<img alt="Astuce" src="data:image/png;base64,
-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" />
-</td>
-<td class="content">
-<div class="paragraph"><p>Notons que les librairies Java mélangent souvent les deux type de méthodes et d&#8217;attributs.
-Faire attention en lisant la documentation.</p></div>
-</td>
-</tr></table>
-</div>
-<div class="paragraph"><p>Autre exemple :</p></div>
-<div class="listingblock">
-<div class="content"><!-- Generator: GNU source-highlight 3.1.5
-by Lorenzo Bettini
-http://www.lorenzobettini.it
-http://www.gnu.org/software/src-highlite -->
-<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> argv<span style="color: #990000">[])</span>  <span style="color: #FF0000">{</span>
-        <span style="color: #009900">double</span> x<span style="color: #990000">,</span> y<span style="color: #990000">,</span> xpowy<span style="color: #990000">;</span>
-        <span style="color: #009900">long</span> debut<span style="color: #990000">,</span> lg<span style="color: #990000">;</span>
-
-        debut <span style="color: #990000">=</span> System<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">currentTimeMillis</span></span><span style="color: #990000">();</span>  <span style="font-style: italic"><span style="color: #9A1900">// instant de démarrage en milisecondes</span></span>
-                                             <span style="font-style: italic"><span style="color: #9A1900">// calculé depuis January 1, 1970 UTC - 0h.)</span></span>
-        x <span style="color: #990000">=</span> <span style="color: #993399">100</span> <span style="color: #990000">*</span> Math<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">random</span></span><span style="color: #990000">();</span>   <span style="font-style: italic"><span style="color: #9A1900">// Tirage au sort d'un nombre entre 0 et 100</span></span>
-        y <span style="color: #990000">=</span> <span style="color: #993399">10</span> <span style="color: #990000">*</span> Math<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">random</span></span><span style="color: #990000">();</span>    <span style="font-style: italic"><span style="color: #9A1900">// Tirage au sort d'un nombre entre 0 et 10</span></span>
-        xpowy <span style="color: #990000">=</span> Math<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">pow</span></span><span style="color: #990000">(</span>x<span style="color: #990000">,</span> y<span style="color: #990000">);</span>    <span style="font-style: italic"><span style="color: #9A1900">// Calcul de x puissance y</span></span>
-        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Résultat : "</span> <span style="color: #990000">+</span> x <span style="color: #990000">+</span> <span style="color: #FF0000">" pow "</span> <span style="color: #990000">+</span> y <span style="color: #990000">+</span> <span style="color: #FF0000">" =&gt; "</span> <span style="color: #990000">+</span> xpowy<span style="color: #990000">);</span>
-        lg <span style="color: #990000">=</span> System<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">currentTimeMillis</span></span><span style="color: #990000">()</span> <span style="color: #990000">-</span> debut<span style="color: #990000">;</span> <span style="font-style: italic"><span style="color: #9A1900">// Calcul durée du programme</span></span>
-        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Durée : "</span> <span style="color: #990000">+</span> lg<span style="color: #990000">);</span>
-<span style="color: #FF0000">}</span>
-
-Exécution <span style="color: #990000">:</span>
- Résultat <span style="color: #990000">:</span> <span style="color: #993399">80.6991463652636</span> pow <span style="color: #993399">1.7813938064916623</span> <span style="color: #990000">=&gt;</span> <span style="color: #993399">2493.931501272706</span>
- Durée <span style="color: #990000">:</span> <span style="color: #993399">3</span>
- <span style="color: #008080">Exit</span> code<span style="color: #990000">:</span> <span style="color: #993399">0</span></tt></pre></div></div>
-</div>
-<div class="sect2">
-<h3 id="_constantes_attributs_static">1.3. Constantes (attributs static)</h3>
-<div class="paragraph"><p>De la même manière, on peut aussi définir des attributs de classe (static) : attributs accessibles à partir de la classe.</p></div>
-<div class="paragraph"><p>Ils sont très souvent déclarés <strong>public</strong> (accessibles), <strong>static</strong> (de classe), <strong>final</strong> (non modifiables).</p></div>
-<div class="paragraph"><p>Exemple : Math.PI &#8594; Valeur de approchée de pi (double) : 3,141592&#8230;</p></div>
-<div class="paragraph"><p>Exemple : Math.E &#8594; Valeur de approchée de e (double) : e = 2,718281&#8230;</p></div>
-</div>
-<div class="sect2">
-<h3 id="_autres_cas_particuliers_attributs_static">1.4. Autres cas particuliers (attributs static)</h3>
-<div class="paragraph"><p>Certaines classes définissent des attributs de classe (static) "modifiables", mais à ne modifier qu&#8217;avec précaution.</p></div>
-<div class="paragraph"><p>Ils donnent accès à des ressources systèmes.</p></div>
-<div class="paragraph"><p>Exemple :</p></div>
-<div class="ulist"><ul>
-<li>
-<p>
-System.out &#8594; accès au dispositif de sortie standard par défaut du programme (objet de la classe PrintStream).
-</p>
-</li>
-<li>
-<p>
-System.in &#8594; accès au dispositif d&#8217;entrée standard du programme (objet de la classe BufferedInputStream).
-</p>
-</li>
-<li>
-<p>
-System.err &#8594; accès au dispositif de sortie d&#8217;erreur standard du programme (objet de la classe PrintStream).
-</p>
-</li>
-</ul></div>
-<div class="listingblock">
-<div class="content">
-<pre><tt>System.in
-|-----|     Une classe (un indicateur -&gt; majuscule)
-|---------| Un attribut de la classe (indicateur -&gt; pas de parenthèses après le "in").</tt></pre>
-</div></div>
 </div>
 </div>
 </div>
@@ -1675,103 +1451,86 @@ un/des constructeurs (public) pour construire des objets.
 <div class="paragraph"><p>Exemple :</p></div>
 <div class="paragraph"><p><span class="image">
 <img alt="images/td2classpersonne.png" src="data:image/png;base64,
-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
-HUrPKP8GdQeRZ8qr0wEAAAAASUVORK5CYII=" />
+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" />
 </span></p></div>
 <div class="listingblock">
 <div class="content"><!-- Generator: GNU source-highlight 3.1.5
@@ -1877,7 +1636,7 @@ applique le constructeur spécifié (signature à partir des paramètres),
 </div>
 <div class="sect2">
 <h3 id="_identité_d_8217_objet_en_java">2.4. Identité d&#8217;objet en Java</h3>
-<div class="paragraph"><p>L&#8217;identité d&#8217;objet en Java est automatique &#8594; c&#8217;est la référence de l&#8217;objet créé par <strong>new</strong>.</p></div>
+<div class="paragraph"><p>L&#8217;identité d&#8217;objet en Java est automatique &#8594; c&#8217;est la référence de l&#8217;objet créée par <strong>new</strong>.</p></div>
 <div class="paragraph"><p>Elle est unique et permet de désigner l&#8217;objet indépendamment des valeurs des attributs.</p></div>
 <div class="paragraph"><p>Les variables objet contiennent la référence vers l&#8217;objet &#8230; donc son identité.</p></div>
 </div>
@@ -1945,7 +1704,7 @@ On suppose une valeur entière à trouver, tirée au sort par le programme, entr
 </li>
 <li>
 <p>
-L&#8217;utilisateur chercher la valeur par essais successifs, la machine répondant à chaque coup si le nombre recherché est supérieur ou inférieur au nombre soumis.
+L&#8217;utilisateur cherche la valeur par essais successifs, la machine répondant à chaque coup si le nombre recherché est supérieur ou inférieur au nombre soumis.
 </p>
 </li>
 <li>
@@ -2477,7 +2236,7 @@ DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&n
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2014-02-10 01:23:26 CET
+Dernière mise à jour 2015-02-04 20:33:24 CET
 </div>
 </div>
 </body>
