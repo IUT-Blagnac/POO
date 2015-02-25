@@ -804,19 +804,19 @@ cellspacing="0" cellpadding="4">
 <tbody>
 <tr>
 <td align="left" valign="top"><p class="table">PreReq</p></td>
-<td align="left" valign="top"><p class="table">Cours 2 : ArrayList&lt;E&gt;, Cours 1 : objets.</p></td>
+<td align="left" valign="top"><p class="table">CM1 sur les objets, TD2 sur la manipulation d&#8217;objets, TP2 classes <tt>Compte</tt> et <tt>AgenceBancaire</tt>.</p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">ObjTP</p></td>
-<td align="left" valign="top"><p class="table">Utiliser des objets - Lire une documentation. ArrayList&lt;E&gt;</p></td>
+<td align="left" valign="top"><p class="table">Utiliser des objets - Lire une documentation.</p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">Durée</p></td>
-<td align="left" valign="top"><p class="table"><strong>1 séance</strong> de 1,5h sur machine.</p></td>
+<td align="left" valign="top"><p class="table"><strong>1 séances</strong> de 1,5h sur machine.</p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">À rendre</p></td>
-<td align="left" valign="top"><p class="table">Code source à déposer : essais réalisés.</p></td>
+<td align="left" valign="top"><p class="table">Code source à déposer : application de gestion d&#8217;AgenceBancaire.</p></td>
 </tr>
 </tbody>
 </table>
@@ -827,9 +827,208 @@ cellspacing="0" cellpadding="4">
 </div>
 </div>
 <div class="sect1">
-<h2 id="_test_arraylist_lt_e_gt_utiliser_une_arraylist_lt_string_gt">1. Test ArrayList&lt;E&gt; : utiliser une ArrayList&lt;String&gt;</h2>
+<h2 id="Preambule">1. Préambule</h2>
 <div class="sectionbody">
-<div class="paragraph"><p>Nous allons tester la classe ArrayList&lt;E&gt; : nous allons créer une ArrayList d’objets String.</p></div>
+<div class="paragraph"><p>Récupérer les pakages des classes à utiliser :</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Depuis webetud, récupérer le fichier packageTPs.zip du tp.
+</p>
+</li>
+<li>
+<p>
+Le dézipper dans le répertoire où vous comptez travailler (répertoire de travail).
+</p>
+</li>
+<li>
+<p>
+Ce zip contient les packages de travail pour les tps. Il comporte en fait plusieurs packages de classes : <tt>tps.jeux</tt>, <tt>tps.jeux.exception</tt>, <tt>tps.banque</tt>, &#8230;
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Regarder le contenu du répertoire (des fichiers .class structurés en répertoires).
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+Pour utiliser ces classes dans vos programmes:
+</p>
+<div class="paragraph"><p><tt>import  tps.-<em>nomPackage[.nomPackage &#8230;]</em>.<em>NomDeClasse</em>;</tt>. Exemple : <tt>import  tps.jeux.Devinette;</tt></p></div>
+</li>
+</ol></div>
+<div class="paragraph"><p>Pour chaque exercice, créer un programme Java <tt>ClasseEssaiXXXXX.java</tt> comportant une méthode main(). "XXXXX" sera le nom de la classe testée à chaque exercice (Compte, &#8230;).</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_programme_utilisateur_pour_une_agence_bancaire">2. Programme utilisateur pour une agence bancaire</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_objectif">2.1. Objectif</h3>
+<div class="paragraph"><p>L&#8217;objectif est d'écrire un programme permettant de gérer les comptes d&#8217;une <tt>AgenceBancaire</tt>. L&#8217;application permettra :</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+de créer/supprimer des objets Compte(s) de l&#8217;AgenceBancaire,
+</p>
+</li>
+<li>
+<p>
+de voir un compte de l&#8217;AgenceBancaire, de voir les comptes d&#8217;un propriétaire de l&#8217;AgenceBancaire,
+</p>
+</li>
+<li>
+<p>
+de débiter/créditer les compte(s) de l&#8217;AgenceBancaire,
+</p>
+</li>
+<li>
+<p>
+de lister tous les comptes de l&#8217;AgenceBancaire,
+</p>
+</li>
+<li>
+<p>
+de quitter l&#8217;application.
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>Pour commencer, vous pouvez reprendre le début de code suivant contenant :</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+la méthode main(),
+</p>
+</li>
+<li>
+<p>
+une méthode pour afficher le menu de l&#8217;application,
+</p>
+</li>
+<li>
+<p>
+une méthode de "temporisation" attendant la frappe de n&#8217;importe quel caractère.
+</p>
+</li>
+</ul></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #000080">import</span></span> java<span style="color: #990000">.</span>util<span style="color: #990000">.</span>Locale<span style="color: #990000">;</span>
+<span style="font-weight: bold"><span style="color: #000080">import</span></span> java<span style="color: #990000">.</span>util<span style="color: #990000">.</span>Scanner<span style="color: #990000">;</span>
+
+<span style="font-weight: bold"><span style="color: #000080">import</span></span> tps<span style="color: #990000">.</span>banque<span style="color: #990000">.</span>Compte<span style="color: #990000">;</span>
+<span style="font-weight: bold"><span style="color: #000080">import</span></span> tps<span style="color: #990000">.</span>banque<span style="color: #990000">.</span>AgenceBancaire<span style="color: #990000">;</span>
+<span style="font-weight: bold"><span style="color: #000080">import</span></span> tps<span style="color: #990000">.</span>banque<span style="color: #990000">.</span>exception<span style="color: #990000">.</span>ABCompteDejaExistantException<span style="color: #990000">;</span>
+<span style="font-weight: bold"><span style="color: #000080">import</span></span> tps<span style="color: #990000">.</span>banque<span style="color: #990000">.</span>exception<span style="color: #990000">.</span>ABCompteInexistantException<span style="color: #990000">;</span>
+<span style="font-weight: bold"><span style="color: #000080">import</span></span> tps<span style="color: #990000">.</span>banque<span style="color: #990000">.</span>exception<span style="color: #990000">.</span>ABCompteNullException<span style="color: #990000">;</span>
+<span style="font-weight: bold"><span style="color: #000080">import</span></span> tps<span style="color: #990000">.</span>banque<span style="color: #990000">.</span>exception<span style="color: #990000">.</span>CompteException<span style="color: #990000">;</span>
+
+<span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">ClasseEssaiAgenceBancaire</span> <span style="color: #FF0000">{</span>
+
+        <span style="font-style: italic"><span style="color: #9A1900">/**</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * Affichage du menu de l'application</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900"> ag    AgenceBancaire pour récupérer le nom et la localisation</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         */</span></span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">afficherMenu</span></span><span style="color: #990000">(</span><span style="color: #008080">AgenceBancaire</span> ag<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Menu de "</span> <span style="color: #990000">+</span> ag<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getNomAgence</span></span><span style="color: #990000">()</span> <span style="color: #990000">+</span> <span style="color: #FF0000">" ("</span> <span style="color: #990000">+</span> ag<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getLocAgence</span></span><span style="color: #990000">()</span> <span style="color: #990000">+</span> <span style="color: #FF0000">")"</span><span style="color: #990000">);</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"c - Créer un nouveau compte dans l'agence"</span><span style="color: #990000">);</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"s - Supprimer un compte de l'agence (par son numéro)"</span><span style="color: #990000">);</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"l - Liste des comptes de l'agence"</span><span style="color: #990000">);</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"v - Voir un compte (par son numéro)"</span><span style="color: #990000">);</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"p - voir les comptes d'un Propriétaire (par son nom)"</span><span style="color: #990000">);</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"d - Déposer de l'argent sur un compte"</span><span style="color: #990000">);</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"r - Retirer de l'argent sur un compte"</span><span style="color: #990000">);</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"q - Quitter"</span><span style="color: #990000">);</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Choix -&gt; "</span><span style="color: #990000">);</span>
+        <span style="color: #FF0000">}</span>
+
+        <span style="font-style: italic"><span style="color: #9A1900">/**</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * Temporisation : Affiche un message et attend la frappe de n'importe quel caractère.</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         */</span></span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">tempo</span></span> <span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
+                <span style="color: #008080">Scanner</span> lect <span style="color: #990000">;</span>
+                <span style="color: #008080">String</span> s<span style="color: #990000">;</span>
+
+                lect <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Scanner</span></span> <span style="color: #990000">(</span>System<span style="color: #990000">.</span>in <span style="color: #990000">);</span>
+
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Tapper un car + return pour continuer ... "</span><span style="color: #990000">);</span>
+                s <span style="color: #990000">=</span> lect<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">next</span></span><span style="color: #990000">();</span> <span style="font-style: italic"><span style="color: #9A1900">// Inutile à stocker mais ...</span></span>
+        <span style="color: #FF0000">}</span>
+
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> argv<span style="color: #990000">[])</span> <span style="color: #FF0000">{</span>
+
+                <span style="color: #008080">String</span> choix<span style="color: #990000">;</span>
+
+                <span style="color: #009900">boolean</span> continuer <span style="color: #990000">;</span>
+                <span style="color: #008080">Scanner</span> lect<span style="color: #990000">;</span>
+                <span style="color: #008080">AgenceBancaire</span> monAg <span style="color: #990000">;</span>
+
+                lect <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Scanner</span></span> <span style="color: #990000">(</span> System<span style="color: #990000">.</span>in <span style="color: #990000">);</span>
+                lect<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">useLocale</span></span><span style="color: #990000">(</span>Locale<span style="color: #990000">.</span>US<span style="color: #990000">);</span>
+
+                monAg <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">AgenceBancaire</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Caisse Ep"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Pibrac"</span><span style="color: #990000">);</span>
+
+                continuer <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">true</span></span><span style="color: #990000">;</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">while</span></span> <span style="color: #990000">(</span>continuer<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                        ClasseEssaiAgenceBancaire<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficherMenu</span></span><span style="color: #990000">(</span>monAg<span style="color: #990000">);</span>
+                        choix <span style="color: #990000">=</span> lect<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">next</span></span><span style="color: #990000">();</span>
+                        choix <span style="color: #990000">=</span> choix<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">toLowerCase</span></span><span style="color: #990000">();</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">switch</span></span> <span style="color: #990000">(</span>choix<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                                <span style="font-weight: bold"><span style="color: #0000FF">case</span></span> <span style="color: #FF0000">"q"</span> <span style="color: #990000">:</span>
+                                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"ByeBye"</span><span style="color: #990000">);</span>
+                                        ClasseEssaiAgenceBancaire<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">tempo</span></span><span style="color: #990000">();</span>
+                                        continuer <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">false</span></span><span style="color: #990000">;</span>
+                                        <span style="font-weight: bold"><span style="color: #0000FF">break</span></span><span style="color: #990000">;</span>
+
+                                <span style="font-style: italic"><span style="color: #9A1900">// A CONTINUER ICI</span></span>
+
+                                <span style="font-weight: bold"><span style="color: #0000FF">default</span></span> <span style="color: #990000">:</span>
+                                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Erreur de saisie ..."</span><span style="color: #990000">);</span>
+                                        ClasseEssaiAgenceBancaire<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">tempo</span></span><span style="color: #990000">();</span>
+                                        <span style="font-weight: bold"><span style="color: #0000FF">break</span></span><span style="color: #990000">;</span>
+                        <span style="color: #FF0000">}</span>
+                <span style="color: #FF0000">}</span>
+
+        <span style="color: #FF0000">}</span>
+
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+</div>
+<div class="sect2">
+<h3 id="_développement_de_l_8217_application">2.2. Développement de l&#8217;application</h3>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+A vous maintenant de rajouter et traiter les <tt>case</tt> qui manquent. Traiter une par une dans l&#8217;ordre chaque option du menu et tester à chaque fois.
+</p>
+</li>
+<li>
+<p>
+Pour l&#8217;option  <tt>"p - voir les comptes d&#8217;un Propriétaire (par son nom)"</tt>, programmer une méthode statique :
+</p>
+<div class="paragraph"><p><tt>public static void comptesDUnPropretaire (AgenceBancaire ag, String nomProprietaire)</tt></p></div>
+<div class="paragraph"><p>réalisant le traitement associé.</p></div>
+</li>
+<li>
+<p>
+Pour l&#8217;option  <tt>"d - Déposer de l&#8217;argent sur un compte"</tt>, programmer une méthode statique :
+</p>
+<div class="paragraph"><p><tt>public static void deposerSurUnCompte (AgenceBancaire ag, String numeroCompte, double montant)</tt></p></div>
+<div class="paragraph"><p>réalisant le traitement associé.</p></div>
+</li>
+<li>
+<p>
+Pour l&#8217;option  <tt>"r - Retirer de l&#8217;argent sur un compte"</tt>, programmer une méthode statique :
+</p>
+<div class="paragraph"><p><tt>public static void retirerSurUnCompte (AgenceBancaire ag, String numeroCompte, double montant)</tt></p></div>
+<div class="paragraph"><p>réalisant le traitement associé.</p></div>
+</li>
+</ol></div>
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
@@ -884,271 +1083,90 @@ AMfx8ZYkSYI90L87QNC71WolxgIK0Nf4W+GVUAX9QsCXDSwq8B//47GAh7AxjwdUQQPI4onGcI6G
 lJga0LT8+uRGJ5P/2OBGpz/mT34Gmsy9nx36v3PoX1H4mIUGLCOSAAAAAElFTkSuQmCC" />
 </td>
 <td class="content">
-<div class="paragraph"><p>La documentation de la classe ArrayList est accessible depuis <a href="http://docs.oracle.com/javase/7/docs/api/">documentation java</a> et se trouve ici : <a href="http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html">documentation ArrayList&lt;E&gt;</a>.</p></div>
+<div class="paragraph"><p>Concernant les entrées sorties : voir aide sur le serveur webetud &#8594; classe Scanner (Rubrique "Nécessaire pour TPs").</p></div>
 </td>
 </tr></table>
 </div>
-<div class="paragraph"><p>En parallèle de la lecture de la documentation et/ou du support de cours, on testera les différentes méthodes de la classe ArrayList&lt;E&gt; :</p></div>
-<div class="olist arabic"><ol class="arabic">
-<li>
-<p>
-Déclarer une variable <tt>alChaines</tt> de type ArrayList de String.
-</p>
-<div class="paragraph"><p>NB : la classe ArrayList appartient au package <tt>java.util</tt>.</p></div>
-</li>
-<li>
-<p>
-Créer avec <tt>alChaines</tt> une ArrayList de String avec le constructeur par défaut.
-</p>
-</li>
-<li>
-<p>
-Faire quelques ajouts de chaînes de caractères en fin de <tt>alChaines</tt> avec la méthode <tt>add()</tt> (cf. support de cours).
-</p>
-</li>
-<li>
-<p>
-Afficher la taille de <tt>alChaines</tt> (cf. support de cours).
-</p>
-</li>
-<li>
-<p>
-Par une boucle : afficher les éléments de <tt>alChaines</tt> (cf. support de cours, méthodes <tt>get(), size()</tt>).
-</p>
-</li>
-<li>
-<p>
-Faire quelques ajouts en fin, au début, au milieu. Regarder les méthodes et surcharges associées de <tt>add()</tt> (cf. support de cours). Après chaque ajout, afficher le nombre d’éléments réellement contenus dans <tt>alChaines</tt>.
-</p>
-</li>
-<li>
-<p>
-Par une boucle : afficher les éléments de <tt>alChaines</tt>. Afficher la taille de <tt>alChaines</tt>.
-</p>
-</li>
-<li>
-<p>
-Faire quelques ajouts de plus par un for (15-25) (tester <tt>alChaines.add("chaine "+i)</tt>).
-</p>
-</li>
-<li>
-<p>
-Afficher les éléments de <tt>alChaines</tt> et sa taille.
-</p>
-</li>
-<li>
-<p>
-Modifier quelques éléments contenus dans <tt>alChaines</tt> : le premier, le dernier, quelques uns au milieu. Ne pas faire retrait/ajout, mais utiliser la méthode <tt>set()</tt> (cf. support de cours).
-</p>
-</li>
-<li>
-<p>
-Afficher les éléments de <tt>alChaines</tt> et sa taille.
-</p>
-</li>
-<li>
-<p>
-Tester la méthode <tt>toString()</tt> sur <tt>alChaines</tt>.
-</p>
-</li>
-<li>
-<p>
-Faire quelques suppressions : premier élément, dernier élément, au milieu. (cf. support de cours). Après chaque suppression, afficher le nombre d’éléments réellement contenus dans <tt>alChaines</tt>.
-</p>
-</li>
-<li>
-<p>
-Vider <tt>alChaines</tt> en une instruction.
-</p>
-</li>
-<li>
-<p>
-Afficher les éléments de <tt>alChaines</tt> et sa taille.
-</p>
-</li>
-<li>
-<p>
-Étudier la documentation de la méthode trimToSize(). A quoi sert-elle ?
-</p>
-</li>
-</ol></div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_mise_en_oeuvre_des_arraylist">2. Mise en oeuvre des ArrayList</h2>
-<div class="sectionbody">
-<div class="paragraph"><p>Pour les curieux (tous en somme), copier/coller dans Eclipse votre programme et regarder les attributs de l&#8217;objet <tt>alChaines</tt> en mode debug (cf. TP 1 - Debug Eclipse). Que représentent les attributs <tt>elementData</tt> et <tt>size</tt> ?</p></div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_manipuler_une_arraylist_lt_compte_gt">3. Manipuler une ArrayList&lt;Compte&gt;</h2>
-<div class="sectionbody">
-<div class="paragraph"><p>Reprendre le programme suivant. Récupérer les packages du TP précédent (tps.banque, &#8230;).</p></div>
-<div class="paragraph"><p>Le programme principal :</p></div>
-<div class="ulist"><ul>
-<li>
-<p>
-remplit une ArrayList&lt;Compte&gt;,
-</p>
-</li>
-<li>
-<p>
-affiche les comptes
-</p>
-</li>
-<li>
-<p>
-réalise en boucle :
-</p>
-<div class="ulist"><ul>
-<li>
-<p>
-demande un nom de propriétaire
-</p>
-</li>
-<li>
-<p>
-appelle la méthode <tt>getComptesDe()</tt> pour retrouver les comptes de ce propriétaire,
-</p>
-</li>
-<li>
-<p>
-affiche les comptes de ce propriétaire.
-</p>
-</li>
-</ul></div>
-</li>
-</ul></div>
-<div class="paragraph"><p><strong>A faire : écrire le code de la méthode :</strong></p></div>
-<div class="literalblock">
+<div class="paragraph"><p>Exemple d&#8217;exécution possible :</p></div>
+<div class="listingblock">
 <div class="content">
-<pre><tt>public static ArrayList&lt;Compte&gt; getComptesDe (String pNomProprietaire, ArrayList&lt;Compte&gt; pComptes)</tt></pre>
+<pre><tt>Menu de Caisse Ep (Pibrac)
+c - Créer un nouveau compte dans l'agence
+s - Supprimer un compte de l'agence (par son numéro)
+l - Liste des comptes de l'agence
+v - Voir un compte (par son numéro)
+p - voir les comptes d'un Propriétaire (par son nom)
+d - Déposer de l'argent sur un compte
+r - Retirer de l'argent sur un compte
+q - Quitter
+Choix -&gt; c
+
+Num compte -&gt; 1212
+Propriétaire -&gt; Prop12
+
+Ajout effectué
+Tapper un car + return pour continuer ... .
+
+Menu de Caisse Ep (Pibrac)
+...
+Choix -&gt; c
+
+Num compte -&gt; 1212
+Propriétaire -&gt; PropAutre
+
+Numéro de compte existant
+Erreur ajout Compte déja existant (1212) dans l'agence Caisse Ep(Pibrac)
+
+Tapper un car + return pour continuer ... .
+
+Menu de Caisse Ep (Pibrac)
+...
+Choix -&gt; d
+
+Num compte -&gt; 1212
+Montant à déposer -&gt; 456
+
+Solde avant dépôt: 0.0
+Montant déposé, solde : 456.0
+
+Tapper un car + return pour continuer ... .
+
+Menu de Caisse Ep (Pibrac)
+...
+Choix -&gt; d
+
+Num compte -&gt; 1212
+Montant à déposer -&gt; -89
+
+Solde avant dépôt: 456.0
+Erreur de dépot, solde inchangé : 456.0
+Erreur de somme négative lors d'un dépot sur 1212
+
+Tapper un car + return pour continuer ... .
+
+Menu de Caisse Ep (Pibrac)
+...
+Choix -&gt; s
+
+Num compte -&gt; 4545
+
+Numéro de compte inexistant
+Erreur suppression Compte inexistant (4545) dans l'agence Caisse Ep(Pibrac)
+
+Tapper un car + return pour continuer ... .
+
+Menu de Caisse Ep (Pibrac)
+...
+Choix -&gt; s
+
+Num compte -&gt; 1212
+Suppression effectuée
+
+Tapper un car + return pour continuer ... .
+
+Menu de Caisse Ep (Pibrac)
+...</tt></pre>
 </div></div>
-<div class="paragraph"><p>Son rôle est de renvoyer une ArrayList de Compte contenant les comptes du paramètre <tt>pComptes</tt> dont le nom de propriétaire est <tt>pNomProprietaire</tt>.*</p></div>
-<div class="listingblock">
-<div class="content"><!-- Generator: GNU source-highlight 3.1.5
-by Lorenzo Bettini
-http://www.lorenzobettini.it
-http://www.gnu.org/software/src-highlite -->
-<pre><tt><span style="font-weight: bold"><span style="color: #000080">import</span></span> java<span style="color: #990000">.</span>util<span style="color: #990000">.</span>ArrayList<span style="color: #990000">;</span>
-<span style="font-weight: bold"><span style="color: #000080">import</span></span> java<span style="color: #990000">.</span>util<span style="color: #990000">.</span>Scanner<span style="color: #990000">;</span>
-<span style="font-weight: bold"><span style="color: #000080">import</span></span> tps<span style="color: #990000">.</span>banque<span style="color: #990000">.</span>Compte<span style="color: #990000">;</span>
-
-<span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">ClasseEssaiArrayListCompte</span> <span style="color: #FF0000">{</span>
-
-        <span style="font-style: italic"><span style="color: #9A1900">/**</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * Recherche les comptes du propriétaire pNomProprietaire</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * dans la liste de comptes pComptes.</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900"> pNomProprietaire      Propriétaire recherché</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900"> pComptes      Liste dans laquelle les comptes sont recherchés</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@return</span><span style="font-style: italic"><span style="color: #9A1900">      Liste des compte de pComtes ayant pour propriétaire pNomProprietaire. Liste vide si aucun compte trouvé.</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         */</span></span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #008080">ArrayList&lt;Compte&gt; getComptesDe (String pNomProprietaire, ArrayList&lt;Compte&gt;</span> pComptes<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                <span style="font-style: italic"><span style="color: #9A1900">// A ecrire</span></span>
-
-        <span style="color: #FF0000">}</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">(</span>String<span style="color: #990000">[]</span> arguments<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                <span style="font-style: italic"><span style="color: #9A1900">// Liste de comptes pour les tests</span></span>
-                Compte<span style="color: #990000">[]</span> tab <span style="color: #990000">=</span> <span style="color: #FF0000">{</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"01010101"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Lepoisson-Benoit"</span><span style="color: #990000">),</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"02020202"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Tabaniol-Alphonse"</span><span style="color: #990000">),</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"03030303"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Aidelaine-Gilles"</span><span style="color: #990000">),</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"04040404"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Sanfraper-André"</span><span style="color: #990000">),</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"05050505"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Tabaniol-Alphonse"</span><span style="color: #990000">),</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"06060606"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Bondeparme-Jean"</span><span style="color: #990000">),</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"07070707"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Sailair-Jacques"</span><span style="color: #990000">),</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"08080808"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Saidimanche-Damien"</span><span style="color: #990000">),</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"09090909"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Tabaniol-Alphonse"</span><span style="color: #990000">)</span>
-                <span style="color: #FF0000">}</span><span style="color: #990000">;</span>
-
-                <span style="color: #009900">int</span> i<span style="color: #990000">,</span> taille<span style="color: #990000">;</span>
-                <span style="color: #008080">ArrayList&lt;Compte&gt;</span> listeComptes<span style="color: #990000">;</span>
-                <span style="color: #008080">ArrayList&lt;Compte&gt;</span> resultatsProprietaire<span style="color: #990000">;</span>
-                <span style="color: #008080">String</span> nomProp<span style="color: #990000">;</span>
-                <span style="color: #008080">Scanner</span> lect <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Scanner</span></span><span style="color: #990000">(</span>System<span style="color: #990000">.</span>in<span style="color: #990000">);</span>
-
-                listeComptes <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> ArrayList<span style="color: #990000">&lt;</span>Compte<span style="color: #990000">&gt;();</span>
-
-                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span><span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>tab<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
-                        listeComptes<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">add</span></span><span style="color: #990000">(</span>tab<span style="color: #990000">[</span>i<span style="color: #990000">]);</span>
-                <span style="color: #FF0000">}</span>
-
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Les comptes existants"</span><span style="color: #990000">);</span>
-                taille <span style="color: #990000">=</span> listeComptes<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">size</span></span><span style="color: #990000">();</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  "</span> <span style="color: #990000">+</span> taille <span style="color: #990000">+</span> <span style="color: #FF0000">" comptes"</span><span style="color: #990000">);</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>taille<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  "</span><span style="color: #990000">);</span>
-                        listeComptes<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">get</span></span><span style="color: #990000">(</span>i<span style="color: #990000">).</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
-                <span style="color: #FF0000">}</span>
-
-                <span style="font-weight: bold"><span style="color: #0000FF">while</span></span> <span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">true</span></span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Nom de propriétaire -&gt; "</span><span style="color: #990000">);</span>
-                        nomProp <span style="color: #990000">=</span> lect<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">next</span></span><span style="color: #990000">();</span>
-
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Ses comptes : "</span><span style="color: #990000">);</span>
-                        resultatsProprietaire <span style="color: #990000">=</span> ClasseEssaiArrayListCompte<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getComptesDe</span></span><span style="color: #990000">(</span>nomProp<span style="color: #990000">,</span> listeComptes<span style="color: #990000">);</span>
-                        taille <span style="color: #990000">=</span> resultatsProprietaire<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">size</span></span><span style="color: #990000">();</span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  "</span> <span style="color: #990000">+</span> taille <span style="color: #990000">+</span> <span style="color: #FF0000">" comptes"</span><span style="color: #990000">);</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>taille<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
-                                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  "</span><span style="color: #990000">);</span>
-                                resultatsProprietaire<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">get</span></span><span style="color: #990000">(</span>i<span style="color: #990000">).</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
-                                <span style="font-style: italic"><span style="color: #9A1900">// ou bien System.out.println("  " + resultatsProprietaire.get(i));</span></span>
-                        <span style="color: #FF0000">}</span>
-                <span style="color: #FF0000">}</span>
-        <span style="color: #FF0000">}</span>
-<span style="color: #FF0000">}</span></tt></pre></div></div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_pour_aller_plus_loin_optionnel">4. Pour aller plus loin (optionnel)</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_le_forall_ou_foreach">4.1. Le 'forall" ou "foreach"</h3>
-<div class="paragraph"><p>Que pensez vous que va réaliser la syntaxe suivante ? (A tester bien sur).</p></div>
-<div class="listingblock">
-<div class="content"><!-- Generator: GNU source-highlight 3.1.5
-by Lorenzo Bettini
-http://www.lorenzobettini.it
-http://www.gnu.org/software/src-highlite -->
-<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span> <span style="color: #008080">String</span> s <span style="color: #990000">:</span> alChaines <span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span> s<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">toUpperCase</span></span><span style="color: #990000">()</span> <span style="color: #990000">+</span> <span style="color: #FF0000">" lg : "</span> <span style="color: #990000">+</span> s<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">length</span></span><span style="color: #990000">()</span> <span style="color: #990000">);</span></tt></pre></div></div>
-</div>
-<div class="sect2">
-<h3 id="_parcourir_une_arraylist_lt_e_gt">4.2. Parcourir une ArrayList&lt;E&gt;</h3>
-<div class="paragraph"><p>On essaiera d’utiliser la méthode <tt>iterator()</tt> de la classe ArrayList dans le test sur ArrayList&lt;String&gt;.</p></div>
-<div class="olist arabic"><ol class="arabic">
-<li>
-<p>
-Cette méthode renvoie un objet de type <tt>Iterator&lt;E&gt;</tt>. Étudier les méthodes fournies par <tt>Iterator&lt;E&gt;</tt> dans la documentation.
-</p>
-</li>
-<li>
-<p>
-On utilisera l’objet renvoyé par la méthode <tt>iterator()</tt> :
-</p>
-<div class="ulist"><ul>
-<li>
-<p>
-Déclarer une variable objet de type <tt>Iterator&lt;E&gt;</tt> (<tt>&lt;E&gt;</tt> bien choisi …).
-</p>
-</li>
-<li>
-<p>
-On initialisera cette variable avec la méthode <tt>iterator()</tt> appliquée à l&#8217;ArrayList <tt>alChaines</tt>.
-</p>
-</li>
-<li>
-<p>
-On utilisera cette variable pour afficher le contenu de <tt>alChaines</tt>.
-</p>
-</li>
-</ul></div>
-</li>
-</ol></div>
-</div>
-<div class="sect2">
-<h3 id="_autre_essai">4.3. Autre essai</h3>
-<div class="paragraph"><p>On pourra tester rapidement une ArrayList de double (cf. support de cours).</p></div>
 </div>
 </div>
 </div>
@@ -1156,7 +1174,7 @@ On utilisera cette variable pour afficher le contenu de <tt>alChaines</tt>.
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2014-03-14 09:50:15 CET
+Dernière mise à jour 2015-02-25 09:09:10 CET
 </div>
 </div>
 </body>

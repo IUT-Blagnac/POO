@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
 <head>
 <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
-<meta name="copyright" content="2014-03-20, Your computer *** Dut/Info-S2/M2103 *** Powered by AsciiDoc and W3C Slidy &amp;#169;" />
+<meta name="copyright" content="2015-02-25, Your computer *** Dut/Info-S2/M2103 *** Powered by AsciiDoc and W3C Slidy &amp;#169;" />
 <meta name="generator" content="AsciiDoc 8.6.6 / slidy2 backend 1.0.3" />
 <title>BPOO - Support TP 4</title>
 <style type="text/css">
@@ -4148,19 +4148,19 @@ cellspacing="0" cellpadding="4">
 <tbody>
 <tr>
 <td align="left" valign="top"><p class="table">PreReq</p></td>
-<td align="left" valign="top"><p class="table">TD3 : Encapsulation/Création de classes, CM2/TP3 : ArrayList&lt;E&gt;, TP2 : classe Compte et AgenceBancaire.</p></td>
+<td align="left" valign="top"><p class="table">Cours 2 : ArrayList&lt;E&gt;, Cours 1 : objets.</p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">ObjTP</p></td>
-<td align="left" valign="top"><p class="table">Programmer une classe.</p></td>
+<td align="left" valign="top"><p class="table">Utiliser des objets - Lire une documentation. ArrayList&lt;E&gt;</p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">Durée</p></td>
-<td align="left" valign="top"><p class="table"><strong>2 séance</strong> de 1,5h sur machine.</p></td>
+<td align="left" valign="top"><p class="table"><strong>1 séance</strong> de 1,5h sur machine.</p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">À rendre</p></td>
-<td align="left" valign="top"><p class="table">Code source à déposer : Classe AgenceBancaire + réponses au questions éventuelles en commentaire en début de fichier.</p></td>
+<td align="left" valign="top"><p class="table">Code source à déposer : essais réalisés.</p></td>
 </tr>
 </tbody>
 </table>
@@ -4173,882 +4173,378 @@ cellspacing="0" cellpadding="4">
 </div><div class="slide">
 
 <div class="sect1">
-<h1 id="_objectif">1. Objectif</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="1. Objectif";slidefootnotes="";/*]]>*/</script>
+<h1 id="_test_arraylist_lt_e_gt_utiliser_une_arraylist_lt_string_gt">1. Test ArrayList&lt;E&gt; : utiliser une ArrayList&lt;String&gt;</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="1. Test ArrayList&lt;E&gt; : utiliser une ArrayList&lt;String&gt;";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Le but de ce TP est de construire la classe <tt>AgenceBancaire</tt>.</p>
+<p>Nous allons tester la classe ArrayList&lt;E&gt; : nous allons créer une ArrayList d’objets String.</p>
+</div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Note" src="data:image/png;base64,
+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" />
+</td>
+<td class="content">
+<div class="paragraph">
+<p>La documentation de la classe ArrayList est accessible depuis <a href="http://docs.oracle.com/javase/7/docs/api/">documentation java</a> et se trouve ici : <a href="http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html">documentation ArrayList&lt;E&gt;</a>.</p>
+</div>
+</td>
+</tr></table>
 </div>
 <div class="paragraph">
-<p>La documentation de la classe est connue : cf. documentation en ligne.</p>
-</div>
-<div class="paragraph">
-<p>Pour l&#8217;implémentation, <strong>on choisit de stocker les comptes de l&#8217;agence dans une <tt>ArrayList&lt;Compte&gt;</tt></strong>.</p>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph"><div class="title">Diagramme UML des classes mises en oeuvre</div>
-<p><span class="image">
-<img alt="images/tp4-AG-Compte.png" src="data:image/png;base64,
-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" />
-</span></p>
-</div>
-</div></div>
-<div class="paragraph">
-<p>Il vous faudra écrire une partie des méthodes de la classe.</p>
-</div>
-<div class="paragraph">
-<p>Pour les tests :</p>
-</div>
-<ul class="">
-<li>
-<span>
-un programme d&#8217;utilisation vous est fourni (menu pour un opérateur de l&#8217;agence bancaire).
-</span>
-</li>
-<li>
-<span>
-un programme de test JUnit est aussi fourni.
-</span>
-</li>
-</ul>
-</div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
-</div><div class="slide">
-
-<div class="sect1">
-<h1 id="_mise_en_place_de_l_8217_environnement">2. Mise en place de l&#8217;environnement</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="2. Mise en place de l&#8217;environnement";slidefootnotes="";/*]]>*/</script>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Vous devrez mettre dans un seul et même répertoire de travail :</p>
+<p>En parallèle de la lecture de la documentation et/ou du support de cours, on testera les différentes méthodes de la classe ArrayList&lt;E&gt; :</p>
 </div>
 <ol class="arabic">
 <li>
 <span>
-Le fichier AgenceBancaire.java : <strong>le fichier à compléter</strong> durant le TP.
+Déclarer une variable <tt>alChaines</tt> de type ArrayList de String.
+</span>
+<div class="paragraph">
+<p>NB : la classe ArrayList appartient au package <tt>java.util</tt>.</p>
+</div>
+</li>
+<li>
+<span>
+Créer avec <tt>alChaines</tt> une ArrayList de String avec le constructeur par défaut.
 </span>
 </li>
 <li>
 <span>
-Le fichier ClasseApplicationAgenceBancaire.java : pour les tests (menu pour un opérateur de l&#8217;agence bancaire). A ne pas toucher.
+Faire quelques ajouts de chaînes de caractères en fin de <tt>alChaines</tt> avec la méthode <tt>add()</tt> (cf. support de cours).
 </span>
 </li>
 <li>
 <span>
-Le fichier TestAgenceBancaire.java : fichier JUnit de test des développements que vous ferez dans AgenceBancaire.java. A modifier ponctuellement pour les tests.
+Afficher la taille de <tt>alChaines</tt> (cf. support de cours).
 </span>
 </li>
 <li>
 <span>
-Dé-zipper le fichier packagesTps4.zip fourni : il contient les packages de travail pour ce TP SAUF la classe AgenceBancaire bien sur &#8230;
+Par une boucle : afficher les éléments de <tt>alChaines</tt> (cf. support de cours, méthodes <tt>get(), size()</tt>).
 </span>
 </li>
 <li>
 <span>
-Récupérer les fichiers :
-</span>
-<ul class="">
-<li>
-<span>
-SciTE.properties : il paramètre Scite pour compiler/exécuter en utilisant la librairie JUnit contenue dans le fichier .jar.
+Faire quelques ajouts en fin, au début, au milieu. Regarder les méthodes et surcharges associées de <tt>add()</tt> (cf. support de cours). Après chaque ajout, afficher le nombre d’éléments réellement contenus dans <tt>alChaines</tt>.
 </span>
 </li>
 <li>
 <span>
-junit.jar : il contient la librairie JUnit pour les tests.
+Par une boucle : afficher les éléments de <tt>alChaines</tt>. Afficher la taille de <tt>alChaines</tt>.
 </span>
 </li>
-</ul>
+<li>
+<span>
+Faire quelques ajouts de plus par un for (15-25) (tester <tt>alChaines.add("chaine "+i)</tt>).
+</span>
+</li>
+<li>
+<span>
+Afficher les éléments de <tt>alChaines</tt> et sa taille.
+</span>
+</li>
+<li>
+<span>
+Modifier quelques éléments contenus dans <tt>alChaines</tt> : le premier, le dernier, quelques uns au milieu. Ne pas faire retrait/ajout, mais utiliser la méthode <tt>set()</tt> (cf. support de cours).
+</span>
+</li>
+<li>
+<span>
+Afficher les éléments de <tt>alChaines</tt> et sa taille.
+</span>
+</li>
+<li>
+<span>
+Tester la méthode <tt>toString()</tt> sur <tt>alChaines</tt>.
+</span>
+</li>
+<li>
+<span>
+Faire quelques suppressions : premier élément, dernier élément, au milieu. (cf. support de cours). Après chaque suppression, afficher le nombre d’éléments réellement contenus dans <tt>alChaines</tt>.
+</span>
+</li>
+<li>
+<span>
+Vider <tt>alChaines</tt> en une instruction.
+</span>
+</li>
+<li>
+<span>
+Afficher les éléments de <tt>alChaines</tt> et sa taille.
+</span>
+</li>
+<li>
+<span>
+Étudier la documentation de la méthode trimToSize(). A quoi sert-elle ?
+</span>
 </li>
 </ol>
+</div></div>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
+</div><div class="slide">
+
+<div class="sect1">
+<h1 id="_mise_en_oeuvre_des_arraylist">2. Mise en oeuvre des ArrayList</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="2. Mise en oeuvre des ArrayList";slidefootnotes="";/*]]>*/</script>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Ensuite seulement lancer Scite et ouvrir les 3 fichiers .java.</p>
+<p>Pour les curieux (tous en somme), copier/coller dans Eclipse votre programme et regarder les attributs de l&#8217;objet <tt>alChaines</tt> en mode debug (cf. TP 1 - Debug Eclipse). Que représentent les attributs <tt>elementData</tt> et <tt>size</tt> ?</p>
 </div>
 </div></div>
 <script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
-<h1 id="_implémentation_de_la_classe_agencebancaire">3. Implémentation de la classe AgenceBancaire</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="3. Implémentation de la classe AgenceBancaire";slidefootnotes="";/*]]>*/</script>
-<div class="sectionbody">
-</div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
-</div><div class="slide">
-
-<div class="sect2">
-<h1 id="_analyse_de_l_8217_implémentation">3.1. Analyse de l&#8217;implémentation</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect2";nexttitle="3.1. Analyse de l&#8217;implémentation";slidefootnotes="";/*]]>*/</script>
+<h1 id="_manipuler_une_arraylist_lt_compte_gt">3. Manipuler une ArrayList&lt;Compte&gt;</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="3. Manipuler une ArrayList&lt;Compte&gt;";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Reprendre le code fourni.</p>
+<p>Reprendre le programme suivant. Récupérer les packages du TP précédent (tps.banque, &#8230;).</p>
 </div>
-</div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
-</div><div class="slide">
-
-<div class="sect3">
-<h1 id="_les_attributs">3.1.1. Les attributs</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect3";nexttitle="3.1.1. Les attributs";slidefootnotes="";/*]]>*/</script>
-<div class="sectionbody">
 <div class="paragraph">
-<p>Vous trouverez dans le fichier la déclaration suivante :</p>
+<p>Le programme principal :</p>
 </div>
 <ul class="">
 <li>
 <span>
-deux attributs de type String pour le nom et la localisation de l&#8217;agence bancaire
+remplit une ArrayList&lt;Compte&gt;,
 </span>
 </li>
 <li>
 <span>
-un attribut <tt>alCptes</tt> qui est l'<tt>ArrayList&lt;Compte&gt;</tt> qui contient les différents comptes de l&#8217;agence.
+affiche les comptes
+</span>
+</li>
+<li>
+<span>
+réalise en boucle :
+</span>
+<ul class="">
+<li>
+<span>
+demande un nom de propriétaire
+</span>
+</li>
+<li>
+<span>
+appelle la méthode <tt>getComptesDe()</tt> pour retrouver les comptes de ce propriétaire,
+</span>
+</li>
+<li>
+<span>
+affiche les comptes de ce propriétaire.
 </span>
 </li>
 </ul>
+</li>
+</ul>
+<div class="paragraph">
+<p><strong>A faire : écrire le code de la méthode :</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>public static ArrayList&lt;Compte&gt; getComptesDe (String pNomProprietaire, ArrayList&lt;Compte&gt; pComptes)</tt></pre>
+</div></div>
+<div class="paragraph">
+<p>Son rôle est de renvoyer une ArrayList de Compte contenant les comptes du paramètre <tt>pComptes</tt> dont le nom de propriétaire est <tt>pNomProprietaire</tt>.*</p>
+</div>
 <div class="listingblock">
 <div class="content"><!-- Generator: GNU source-highlight 3.1.5
 by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
-<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">AgenceBancaire</span> <span style="color: #FF0000">{</span>
-        <span style="font-style: italic"><span style="color: #9A1900">// Attributs</span></span>
-        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">String</span> nom<span style="color: #990000">,</span> loc<span style="color: #990000">;</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">ArrayList&lt;Compte&gt;</span> alCptes<span style="color: #990000">;</span></tt></pre></div></div>
-</div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
-</div><div class="slide">
+<pre><tt><span style="font-weight: bold"><span style="color: #000080">import</span></span> java<span style="color: #990000">.</span>util<span style="color: #990000">.</span>ArrayList<span style="color: #990000">;</span>
+<span style="font-weight: bold"><span style="color: #000080">import</span></span> java<span style="color: #990000">.</span>util<span style="color: #990000">.</span>Scanner<span style="color: #990000">;</span>
+<span style="font-weight: bold"><span style="color: #000080">import</span></span> tps<span style="color: #990000">.</span>banque<span style="color: #990000">.</span>Compte<span style="color: #990000">;</span>
 
-<div class="sect3">
-<h1 id="_le_code_déjà_écrit">3.1.2. Le code déjà écrit</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect3";nexttitle="3.1.2. Le code déjà écrit";slidefootnotes="";/*]]>*/</script>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Il vous est proposé une classe AgenceBancaire avec les en-têtes des méthodes et constructeur et les commentaires associés.</p>
-</div>
-<div class="paragraph">
-<p>Sont déjà écrites, à étudier :</p>
-</div>
-<ol class="arabic">
-<li>
-<span>
-<tt>public Compte[] getComptesDe(String pNomProprietaire)</tt>
-</span>
-</li>
-<li>
-<span>
-<tt>public void afficher()</tt>
-</span>
-</li>
-<li>
-<span>
-<tt>public String toString()</tt>
-</span>
-</li>
-</ol>
-</div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
-</div><div class="slide">
+<span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">ClasseEssaiArrayListCompte</span> <span style="color: #FF0000">{</span>
 
-<div class="sect2">
-<h1 id="_implémentation_à_réaliser">3.2. Implémentation à réaliser</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect2";nexttitle="3.2. Implémentation à réaliser";slidefootnotes="";/*]]>*/</script>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Les méthodes à écrire comportent un <tt>return xx;</tt> lorsque nécessaire, ceci afin de pouvoir compiler à chaque étape. Cela s&#8217;appelle un "bouchon", qui renvoie une mauvaise valeur ici en l&#8217;occurrence. <strong>Ne pas oublier d&#8217;enlever ces instructions inutiles (et fausses)</strong>.</p>
-</div>
-<div class="paragraph">
-<p>Implémenter les méthodes dans l&#8217;ordre :</p>
-</div>
-<ol class="arabic">
-<li>
-<span>
-<tt>public AgenceBancaire(String pNomAgence, String pLocAgence)</tt> : le constructeur, en 3 lignes.
-</span>
-<div class="admonitionblock">
-<table><tr>
-<td class="icon">
-<img alt="Note" src="data:image/png;base64,
-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" />
-</td>
-<td class="content">
-<div class="paragraph">
-<p>On commence TOUJOURS par le constructeur car c&#8217;est la première chose réalisée sur un objet nouvellement créé : début de la vie d&#8217;un objet.</p>
-</div>
-</td>
-</tr></table>
-</div>
-<div class="admonitionblock">
-<table><tr>
-<td class="icon">
-<img alt="Important" src="data:image/png;base64,
-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" />
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Le rôle du constructeur est TOUJOURS d&#8217;initialiser TOUS les attributs de l&#8217;objet.</p>
-</div>
-</td>
-</tr></table>
-</div>
-</li>
-<li>
-<span>
-<tt>public String getNomAgence()</tt> : simple &#8230; (1 ligne).
-</span>
-</li>
-<li>
-<span>
-<tt>public String getLocAgence()</tt> : simple aussi (1 ligne).
-</span>
-</li>
-<li>
-<span>
-<tt>public int getNbComptes()</tt> (1 ligne).
-</span>
-</li>
-</ol>
-<div class="paragraph">
-<p>A ce stade, écrire dans l&#8217;ordre :</p>
-</div>
-<ol class="arabic">
-<li>
-<span>
-<strong>La méthode <tt>private Compte trouveCompte(String pNC)</tt>, méthode privée utilisée plusieurs fois par la suite</strong>. Elle permet de retrouver un compte à partir de son numéro de compte.
-</span>
-<ul class="">
-<li>
-<span>
-Attention ici à la comparaison effectuée pour la recherche.
-</span>
-</li>
-<li>
-<span>
-On optimisera la boucle de recherche (sortie dès que solution trouvée). Et on expliquera pourquoi on trouvera 0 objet compte ou 1 seul pour un numéro de compte donné.
-</span>
-</li>
-</ul>
-</li>
-<li>
-<span>
-<tt>public Compte getCompte(String pNumCompte)</tt> : facile à écrire maintenant.
-</span>
-</li>
-<li>
-<span>
-<tt>public void addCompte(Compte pCompteAAjouter) throws ABCompteNullException, ABCompteDejaExistantException</tt>
-</span>
-<ul class="">
-<li>
-<span>
-Faire attention à TOUS les cas d&#8217;erreur.
-</span>
-</li>
-<li>
-<span>
-Réutiliser <tt>trouveCompte()</tt>.
-</span>
-</li>
-</ul>
-</li>
-<li>
-<span>
-<tt>public void removeCompte(String pNumCompte) throws ABCompteInexistantException</tt>
-</span>
-<ul class="">
-<li>
-<span>
-Faire attention aux cas d&#8217;erreurs.
-</span>
-</li>
-<li>
-<span>
-Réutiliser <tt>trouveCompte()</tt>.
-</span>
-</li>
-<li>
-<span>
-Lire la documentation de ArrayList&lt;E&gt; : il existe plusieurs <strong>surcharges</strong> de la méthode <tt>remove()</tt> dont l&#8217;une d&#8217;elle doit vous aider à régler la suppression "facilement"
-</span>
-</li>
-</ul>
-</li>
-</ol>
-</div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
-</div><div class="slide">
+        <span style="font-style: italic"><span style="color: #9A1900">/**</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * Recherche les comptes du propriétaire pNomProprietaire</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * dans la liste de comptes pComptes.</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900"> pNomProprietaire      Propriétaire recherché</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900"> pComptes      Liste dans laquelle les comptes sont recherchés</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@return</span><span style="font-style: italic"><span style="color: #9A1900">      Liste des compte de pComtes ayant pour propriétaire pNomProprietaire. Liste vide si aucun compte trouvé.</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         */</span></span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #008080">ArrayList&lt;Compte&gt; getComptesDe (String pNomProprietaire, ArrayList&lt;Compte&gt;</span> pComptes<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="font-style: italic"><span style="color: #9A1900">// A ecrire</span></span>
 
-<div class="sect2">
-<h1 id="_tests_de_la_classe">3.3. Tests de la classe</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect2";nexttitle="3.3. Tests de la classe";slidefootnotes="";/*]]>*/</script>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Testez votre classe :</p>
-</div>
-<ol class="arabic">
-<li>
-<span>
-L&#8217;application menu pour un opérateur de l&#8217;agence bancaire doit fonctionner avec votre classe.
-</span>
-<div class="admonitionblock">
-<table><tr>
-<td class="icon">
-<img alt="Note" src="data:image/png;base64,
-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" />
-</td>
-<td class="content">
-<div class="paragraph">
-<p>C&#8217;est l&#8217;application la plus simple à utiliser pour les  premiers tests : ajouts, puis recherches, puis suppressions, puis recherches à nouveau &#8230;</p>
-</div>
-</td>
-</tr></table>
-</div>
-</li>
-<li>
-<span>
-Elle doit passer avec succès (complet) les tests JUnit.
-</span>
-<div class="admonitionblock">
-<table><tr>
-<td class="icon">
-<img alt="Note" src="data:image/png;base64,
-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" />
-</td>
-<td class="content">
-<div class="paragraph">
-<p>On réalise les tests "d&#8217;un coup" car :</p>
-</div>
-<ul class="">
-<li>
-<span>
-<tt>getCompte()</tt> ne peut être testée sans <tt>addCompte()</tt> (seul un cas particulier peut être testé).
-</span>
-</li>
-<li>
-<span>
-De même <tt>addCompte()</tt> ne peut être testée sans <tt>getCompte()</tt> (seul un cas particulier peut être testé).
-</span>
-</li>
-<li>
-<span>
-Enfin <tt>removeCompte()</tt> ne peut être testée sans les 2 précédentes.
-</span>
-</li>
-</ul>
-</td>
-</tr></table>
-</div>
-</li>
-</ol>
+        <span style="color: #FF0000">}</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">(</span>String<span style="color: #990000">[]</span> arguments<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="font-style: italic"><span style="color: #9A1900">// Liste de comptes pour les tests</span></span>
+                Compte<span style="color: #990000">[]</span> tab <span style="color: #990000">=</span> <span style="color: #FF0000">{</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"01010101"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Lepoisson-Benoit"</span><span style="color: #990000">),</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"02020202"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Tabaniol-Alphonse"</span><span style="color: #990000">),</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"03030303"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Aidelaine-Gilles"</span><span style="color: #990000">),</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"04040404"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Sanfraper-André"</span><span style="color: #990000">),</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"05050505"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Tabaniol-Alphonse"</span><span style="color: #990000">),</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"06060606"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Bondeparme-Jean"</span><span style="color: #990000">),</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"07070707"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Sailair-Jacques"</span><span style="color: #990000">),</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"08080808"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Saidimanche-Damien"</span><span style="color: #990000">),</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"09090909"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Tabaniol-Alphonse"</span><span style="color: #990000">)</span>
+                <span style="color: #FF0000">}</span><span style="color: #990000">;</span>
+
+                <span style="color: #009900">int</span> i<span style="color: #990000">,</span> taille<span style="color: #990000">;</span>
+                <span style="color: #008080">ArrayList&lt;Compte&gt;</span> listeComptes<span style="color: #990000">;</span>
+                <span style="color: #008080">ArrayList&lt;Compte&gt;</span> resultatsProprietaire<span style="color: #990000">;</span>
+                <span style="color: #008080">String</span> nomProp<span style="color: #990000">;</span>
+                <span style="color: #008080">Scanner</span> lect <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Scanner</span></span><span style="color: #990000">(</span>System<span style="color: #990000">.</span>in<span style="color: #990000">);</span>
+
+                listeComptes <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> ArrayList<span style="color: #990000">&lt;</span>Compte<span style="color: #990000">&gt;();</span>
+
+                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span><span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>tab<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
+                        listeComptes<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">add</span></span><span style="color: #990000">(</span>tab<span style="color: #990000">[</span>i<span style="color: #990000">]);</span>
+                <span style="color: #FF0000">}</span>
+
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Les comptes existants"</span><span style="color: #990000">);</span>
+                taille <span style="color: #990000">=</span> listeComptes<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">size</span></span><span style="color: #990000">();</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  "</span> <span style="color: #990000">+</span> taille <span style="color: #990000">+</span> <span style="color: #FF0000">" comptes"</span><span style="color: #990000">);</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>taille<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
+                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  "</span><span style="color: #990000">);</span>
+                        listeComptes<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">get</span></span><span style="color: #990000">(</span>i<span style="color: #990000">).</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
+                <span style="color: #FF0000">}</span>
+
+                <span style="font-weight: bold"><span style="color: #0000FF">while</span></span> <span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">true</span></span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Nom de propriétaire -&gt; "</span><span style="color: #990000">);</span>
+                        nomProp <span style="color: #990000">=</span> lect<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">next</span></span><span style="color: #990000">();</span>
+
+                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Ses comptes : "</span><span style="color: #990000">);</span>
+                        resultatsProprietaire <span style="color: #990000">=</span> ClasseEssaiArrayListCompte<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getComptesDe</span></span><span style="color: #990000">(</span>nomProp<span style="color: #990000">,</span> listeComptes<span style="color: #990000">);</span>
+                        taille <span style="color: #990000">=</span> resultatsProprietaire<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">size</span></span><span style="color: #990000">();</span>
+                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  "</span> <span style="color: #990000">+</span> taille <span style="color: #990000">+</span> <span style="color: #FF0000">" comptes"</span><span style="color: #990000">);</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>taille<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
+                                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  "</span><span style="color: #990000">);</span>
+                                resultatsProprietaire<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">get</span></span><span style="color: #990000">(</span>i<span style="color: #990000">).</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
+                                <span style="font-style: italic"><span style="color: #9A1900">// ou bien System.out.println("  " + resultatsProprietaire.get(i));</span></span>
+                        <span style="color: #FF0000">}</span>
+                <span style="color: #FF0000">}</span>
+        <span style="color: #FF0000">}</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
 </div></div>
 <script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
-<h1 id="_vous_avez_fini_optionnel">4. Vous avez fini ? (optionnel)</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="4. Vous avez fini ? (optionnel)";slidefootnotes="";/*]]>*/</script>
+<h1 id="_pour_aller_plus_loin_optionnel">4. Pour aller plus loin (optionnel)</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="4. Pour aller plus loin (optionnel)";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody">
+</div></div>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
+</div><div class="slide">
+
+<div class="sect2">
+<h1 id="_le_forall_ou_foreach">4.1. Le 'forall" ou "foreach"</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect2";nexttitle="4.1. Le 'forall" ou "foreach"";slidefootnotes="";/*]]>*/</script>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Que pensez vous que va réaliser la syntaxe suivante ? (A tester bien sur).</p>
+</div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span> <span style="color: #008080">String</span> s <span style="color: #990000">:</span> alChaines <span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span> s<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">toUpperCase</span></span><span style="color: #990000">()</span> <span style="color: #990000">+</span> <span style="color: #FF0000">" lg : "</span> <span style="color: #990000">+</span> s<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">length</span></span><span style="color: #990000">()</span> <span style="color: #990000">);</span></tt></pre></div></div>
+</div></div>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
+</div><div class="slide">
+
+<div class="sect2">
+<h1 id="_parcourir_une_arraylist_lt_e_gt">4.2. Parcourir une ArrayList&lt;E&gt;</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect2";nexttitle="4.2. Parcourir une ArrayList&lt;E&gt;";slidefootnotes="";/*]]>*/</script>
+<div class="sectionbody">
+<div class="paragraph">
+<p>On essaiera d’utiliser la méthode <tt>iterator()</tt> de la classe ArrayList dans le test sur ArrayList&lt;String&gt;.</p>
+</div>
 <ol class="arabic">
 <li>
 <span>
-Reprogrammez la méthode  <tt>public Compte[] getComptesDe(String pNomProprietaire)</tt> :
+Cette méthode renvoie un objet de type <tt>Iterator&lt;E&gt;</tt>. Étudier les méthodes fournies par <tt>Iterator&lt;E&gt;</tt> dans la documentation.
+</span>
+</li>
+<li>
+<span>
+On utilisera l’objet renvoyé par la méthode <tt>iterator()</tt> :
 </span>
 <ul class="">
 <li>
 <span>
-L&#8217;algorithme suivi sera le suivant :
-</span>
-<ul class="">
-<li>
-<span>
-Parcourir <tt>alCptes</tt> pour compter le nombre comptes à renvoyer pour le propriétaire recherché. Conserver les indices du premier et dernier compte trouvé.
+Déclarer une variable objet de type <tt>Iterator&lt;E&gt;</tt> (<tt>&lt;E&gt;</tt> bien choisi …).
 </span>
 </li>
 <li>
 <span>
-Créer un tableau de Compte pour le résultat de la taille nécessaire.
+On initialisera cette variable avec la méthode <tt>iterator()</tt> appliquée à l&#8217;ArrayList <tt>alChaines</tt>.
 </span>
 </li>
 <li>
 <span>
-Remplir le tableau à partir de <tt>alCptes</tt> en optimisant le parcours au vu de la recherche effectuée.
+On utilisera cette variable pour afficher le contenu de <tt>alChaines</tt>.
 </span>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<span>
-Tous les tests (en particulier JUnit) doivent fonctionner.
-</span>
-</li>
-<li>
-<span>
-Calculer le coup moyen de calcul des 2 versions programmées (existante et la votre) :
-</span>
-<ul class="">
-<li>
-<span>
-Compter un coût de 1 pour l&#8217;accès à un compte d&#8217;une l&#8217;ArrayList ou d&#8217;un tableau (en lecture ou en modification).
-</span>
-</li>
-<li>
-<span>
-Compter que dans la version initiale, l&#8217;ArrayList sera recopiée en interne une fois.
-</span>
-</li>
-<li>
-<span>
-Prendre en compte les éléments suivants :
-</span>
-<ul class="">
-<li>
-<span>
-Un propriétaire possède en moyenne 12 comptes dans une agence.
-</span>
-</li>
-<li>
-<span>
-Une agence gère en moyenne 36000 comptes.
-</span>
-</li>
-</ul>
 </li>
 </ul>
 </li>
 </ol>
+</div></div>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
+</div><div class="slide">
+
+<div class="sect2">
+<h1 id="_autre_essai">4.3. Autre essai</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect2";nexttitle="4.3. Autre essai";slidefootnotes="";/*]]>*/</script>
+<div class="sectionbody">
+<div class="paragraph">
+<p>On pourra tester rapidement une ArrayList de double (cf. support de cours).</p>
+</div>
 </div></div>
 <script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
@@ -5144,296 +4640,85 @@ EoAjGf88yXMZEtJTDOcRVg59vR52wHrUMosL0Pr6+oJJMnhJJBu7N4xGwP8A4X8RE1D3pWkAAAAA
 SUVORK5CYII=" />
 </td>
 <td class="content">
-<div class="title">Solution Agence Bancaire</div>
+<div class="title">Solution test ArrayList&lt;String&gt;</div>
 <div class="listingblock">
 <div class="content"><!-- Generator: GNU source-highlight 3.1.5
 by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
-<pre><tt><span style="font-weight: bold"><span style="color: #000080">package</span></span> tps<span style="color: #990000">.</span>banque<span style="color: #990000">;</span>
+<pre><tt><span style="font-weight: bold"><span style="color: #000080">import</span></span> java<span style="color: #990000">.</span>util<span style="color: #990000">.</span>ArrayList<span style="color: #990000">;</span>
+<span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">ClasseEssaiArrayList</span> <span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">int</span> MAX <span style="color: #990000">=</span> <span style="color: #993399">5</span><span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">(</span>String<span style="color: #990000">[]</span> arguments<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="color: #009900">int</span> i<span style="color: #990000">,</span> taille<span style="color: #990000">;</span>
 
-<span style="font-weight: bold"><span style="color: #000080">import</span></span> java<span style="color: #990000">.</span>util<span style="color: #990000">.</span>ArrayList<span style="color: #990000">;</span>
+                ArrayList <span style="color: #990000">&lt;</span>String<span style="color: #990000">&gt;</span> alChaines<span style="color: #990000">;</span>
 
-<span style="font-weight: bold"><span style="color: #000080">import</span></span> tps<span style="color: #990000">.</span>banque<span style="color: #990000">.</span>exception<span style="color: #990000">.</span>ABCompteDejaExistantException<span style="color: #990000">;</span>
-<span style="font-weight: bold"><span style="color: #000080">import</span></span> tps<span style="color: #990000">.</span>banque<span style="color: #990000">.</span>exception<span style="color: #990000">.</span>ABCompteInexistantException<span style="color: #990000">;</span>
-<span style="font-weight: bold"><span style="color: #000080">import</span></span> tps<span style="color: #990000">.</span>banque<span style="color: #990000">.</span>exception<span style="color: #990000">.</span>ABCompteNullException<span style="color: #990000">;</span>
+                alChaines <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> ArrayList<span style="color: #990000">&lt;</span>String<span style="color: #990000">&gt;</span> <span style="color: #990000">();</span>
 
+                alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">add</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"Chaine 1"</span><span style="color: #990000">);</span>
+                alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">add</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"Chaine 2"</span><span style="color: #990000">);</span>
+                alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">add</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"Chaine 3"</span><span style="color: #990000">);</span>
+                alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">add</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"Chaine 4"</span><span style="color: #990000">);</span>
+                alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">add</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"Chaine 5"</span><span style="color: #990000">);</span>
 
-<span style="font-style: italic"><span style="color: #9A1900">/************************************************************</span></span>
-<span style="font-style: italic"><span style="color: #9A1900"> * La classe AgenceBancaire permet de gérer une agence bancaire comme un ensemble de Comptes.</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
-<span style="font-style: italic"><span style="color: #9A1900"> * Une AgenceBancaire a un nom, une localisation (ville) et gère un ensemble de Comptes.</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
-<span style="font-style: italic"><span style="color: #9A1900"> * Exemple : agence "Agence Caisse Epargne" à "Pibrac".</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
-<span style="font-style: italic"><span style="color: #9A1900"> * Chaque Compte de l'AgenceBancaire a un numéro unique (vérification faite lors de l'ajout d'un Compte).</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
-<span style="font-style: italic"><span style="color: #9A1900"> *</span></span>
-<span style="font-style: italic"><span style="color: #9A1900"> * </span></span><span style="color: #009900">@author</span><span style="font-style: italic"><span style="color: #9A1900"> André Péninou.</span></span>
-<span style="font-style: italic"><span style="color: #9A1900"> * </span></span><span style="color: #009900">@version</span><span style="font-style: italic"><span style="color: #9A1900"> 7.02</span></span>
-<span style="font-style: italic"><span style="color: #9A1900"> *****************************/</span></span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"Size : "</span><span style="color: #990000">+</span>alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">size</span></span><span style="color: #990000">());</span>
+                <span style="font-style: italic"><span style="color: #9A1900">// size : nb éléments présents dans l'ArrayList.</span></span>
 
-<span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">AgenceBancaire</span> <span style="color: #FF0000">{</span>
-        <span style="font-style: italic"><span style="color: #9A1900">// Attributs</span></span>
-        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">String</span> nom<span style="color: #990000">,</span> loc<span style="color: #990000">;</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">ArrayList&lt;Compte&gt;</span> alCptes<span style="color: #990000">;</span>
+                taille <span style="color: #990000">=</span> alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">size</span></span><span style="color: #990000">();</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span> <span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>taille<span style="color: #990000">;</span> i<span style="color: #990000">++)</span>
+                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"chaine en "</span><span style="color: #990000">+</span>i<span style="color: #990000">+</span><span style="color: #FF0000">" : "</span><span style="color: #990000">+</span>alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">get</span></span><span style="color: #990000">(</span>i<span style="color: #990000">));</span>
 
-        <span style="font-style: italic"><span style="color: #9A1900">/**</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * Constructeur paramétré.</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * Permet de créer une AgenceBancaire en donnant son nom et sa ville.</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * L'AgenceBancaire est initialisée avec 0 comptes.</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         *</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900"> pNomAgence</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         *            Le nom de l'AgenceBancaire.</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900"> pLocAgence</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         *            La ville de localisation de l'AgenceBancaire.</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         */</span></span>
+                alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">add</span></span> <span style="color: #990000">(</span><span style="color: #993399">0</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Toto"</span><span style="color: #990000">);</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"Size : "</span><span style="color: #990000">+</span>alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">size</span></span><span style="color: #990000">());</span>
 
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #000000">AgenceBancaire</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> pNomAgence<span style="color: #990000">,</span> <span style="color: #008080">String</span> pLocAgence<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>nom <span style="color: #990000">=</span> pNomAgence<span style="color: #990000">;</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>loc <span style="color: #990000">=</span> pLocAgence<span style="color: #990000">;</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>alCptes <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> ArrayList<span style="color: #990000">&lt;</span>Compte<span style="color: #990000">&gt;();</span>
-        <span style="color: #FF0000">}</span>
+                alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">add</span></span> <span style="color: #990000">(</span><span style="color: #993399">1</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Tata"</span><span style="color: #990000">)</span>       <span style="color: #990000">;</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"Size : "</span><span style="color: #990000">+</span>alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">size</span></span><span style="color: #990000">());</span>
 
-        <span style="font-style: italic"><span style="color: #9A1900">/**</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * Permet de connaître le nom de l'AgenceBancaire.</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         *</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@return</span><span style="font-style: italic"><span style="color: #9A1900"> Le nom de l'AgenceBancaire.</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         */</span></span>
+                alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">add</span></span> <span style="color: #990000">(</span>alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">size</span></span><span style="color: #990000">(),</span> <span style="color: #FF0000">"Tutu"</span><span style="color: #990000">)</span>        <span style="color: #990000">;</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"Size : "</span><span style="color: #990000">+</span>alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">size</span></span><span style="color: #990000">());</span>
 
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #008080">String</span> <span style="font-weight: bold"><span style="color: #000000">getNomAgence</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>nom<span style="color: #990000">;</span>
-        <span style="color: #FF0000">}</span>
+                alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">add</span></span> <span style="color: #990000">(</span>alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">size</span></span><span style="color: #990000">()/</span><span style="color: #993399">2</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Titi"</span><span style="color: #990000">)</span>      <span style="color: #990000">;</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"Size : "</span><span style="color: #990000">+</span>alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">size</span></span><span style="color: #990000">());</span>
 
-        <span style="font-style: italic"><span style="color: #9A1900">/**</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * Permet de connaître la localisation de l'AgenceBancaire.</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         *</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@return</span><span style="font-style: italic"><span style="color: #9A1900"> La ville de localisation de l'AgenceBancaire.</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         */</span></span>
+                taille <span style="color: #990000">=</span> alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">size</span></span><span style="color: #990000">();</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span> <span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>taille<span style="color: #990000">;</span> i<span style="color: #990000">++)</span>
+                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"chaine en "</span><span style="color: #990000">+</span>i<span style="color: #990000">+</span><span style="color: #FF0000">" : "</span><span style="color: #990000">+</span>alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">get</span></span><span style="color: #990000">(</span>i<span style="color: #990000">));</span>
 
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #008080">String</span> <span style="font-weight: bold"><span style="color: #000000">getLocAgence</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>loc<span style="color: #990000">;</span>
-        <span style="color: #FF0000">}</span>
-
-        <span style="font-style: italic"><span style="color: #9A1900">/**</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * Permet de connaître le nombre de Comptes existant dans l'AgenceBancaire.</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         *</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@return</span><span style="font-style: italic"><span style="color: #9A1900"> Le nombre de comptes de l'AgenceBancaire.</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         */</span></span>
-
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">getNbComptes</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>alCptes<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">size</span></span><span style="color: #990000">();</span>
-        <span style="color: #FF0000">}</span>
-
-        <span style="font-style: italic"><span style="color: #9A1900">/**</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * Permet de retrouver un Compte de l'AgenceBancaire à partir de son numéro de</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * compte (unique).</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * Renvoie null si le Compte de numéro de compte pNumCompte n'est pas</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * trouvé.</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         *</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900"> pNumCompte</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         *            Le numéro du Compte recherché.</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@see</span><span style="font-style: italic"><span style="color: #9A1900"> AgenceBancaire#addCompte(Compte)</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@return</span><span style="font-style: italic"><span style="color: #9A1900"> Le Compte de numéro pNumCompte, null si le compte n'est pas</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         *         trouvé.</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         */</span></span>
-
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #008080">Compte</span> <span style="font-weight: bold"><span style="color: #000000">getCompte</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> pNumCompte<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                <span style="font-style: italic"><span style="color: #9A1900">// A titre d'exemple : utilise une méthode privée définie en fin de</span></span>
-                <span style="font-style: italic"><span style="color: #9A1900">// classe</span></span>
-                <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">trouveCompte</span></span><span style="color: #990000">(</span>pNumCompte<span style="color: #990000">);</span>
-        <span style="color: #FF0000">}</span>
-
-        <span style="font-style: italic"><span style="color: #9A1900">/**</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * Permet de retrouver les Comptes de l'AgenceBancaire correspondant à un nom de</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * propriétaire donné.</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * Renvoie un tableau du nombre de Comptes ayant pour propriétaire</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * pNomProprietaire (et contenant les dits Comptes...).</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * Si aucun Compte n'est trouvé, renvoie un tableau de longueur 0.</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         *</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900"> pNomProprietaire</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         *            Le nom du propriétaire de Compte dont on veut les Comptes.</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@see</span><span style="font-style: italic"><span style="color: #9A1900"> AgenceBancaire#addCompte(Compte)</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@return</span><span style="font-style: italic"><span style="color: #9A1900"> Un tableau des Comptes ayant pour propriétaire pNomProprietaire,</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         *         un tableau de longueur 0 si aucun compte n'est trouvé.</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         */</span></span>
-
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> Compte<span style="color: #990000">[]</span> <span style="font-weight: bold"><span style="color: #000000">getComptesDe</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> pNomProprietaire<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                <span style="font-style: italic"><span style="color: #9A1900">/*</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">                 * Méthode : créer une ArrayList de Compte temporaire : alTemp.</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">                 * Parcourir this.alCptes.</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">                 *      Si un compe appartient au proprietaire</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">                 *              =&gt; le garder dans alTemp.</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">                 * Si alTemp non vide : recopier tous les comptes de alTemp dans</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">                 * un nouveau tableau qui sera renvoyé</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">                 * Sinon créer un tableau de 0 éléments.</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">                 */</span></span>
-
-                <span style="color: #008080">Compte</span> t<span style="color: #990000">[],</span> cTemp<span style="color: #990000">;</span>
-                <span style="color: #008080">ArrayList&lt;Compte&gt;</span> alTemp<span style="color: #990000">;</span> <span style="font-style: italic"><span style="color: #9A1900">// ArrayList de Compte temporaire</span></span>
-                <span style="color: #009900">int</span> nbC<span style="color: #990000">,</span> nbCTemp<span style="color: #990000">,</span> i<span style="color: #990000">;</span>
-
-                t <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">;</span>
-
-                <span style="font-style: italic"><span style="color: #9A1900">// Recherche des comptes de pNomProprietaire dans l'AgenceBancaire</span></span>
-                alTemp <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> ArrayList<span style="color: #990000">&lt;</span>Compte<span style="color: #990000">&gt;();</span>
-                nbC <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>alCptes<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">size</span></span><span style="color: #990000">();</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span> i <span style="color: #990000">&lt;</span> nbC<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
-                        cTemp <span style="color: #990000">=</span> alCptes<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">get</span></span><span style="color: #990000">(</span>i<span style="color: #990000">);</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>cTemp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getProprietaire</span></span><span style="color: #990000">().</span><span style="font-weight: bold"><span style="color: #000000">equals</span></span><span style="color: #990000">(</span>pNomProprietaire<span style="color: #990000">))</span> <span style="color: #FF0000">{</span>
-                                alTemp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">add</span></span><span style="color: #990000">(</span>cTemp<span style="color: #990000">);</span>
-                        <span style="color: #FF0000">}</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>ClasseEssaiArrayList<span style="color: #990000">.</span>MAX<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
+                        alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">add</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"Chaine "</span> <span style="color: #990000">+</span> i<span style="color: #990000">);</span>
                 <span style="color: #FF0000">}</span>
 
-                <span style="font-style: italic"><span style="color: #9A1900">// Si on a trouvé des comptes ...</span></span>
-                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>alTemp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">size</span></span><span style="color: #990000">()</span> <span style="color: #990000">!=</span> <span style="color: #993399">0</span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                        <span style="font-style: italic"><span style="color: #9A1900">// ... on crée un tableau et on les recopie</span></span>
-                        nbCTemp <span style="color: #990000">=</span> alTemp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">size</span></span><span style="color: #990000">();</span>
-                        t <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> Compte<span style="color: #990000">[</span>nbCTemp<span style="color: #990000">];</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span> i <span style="color: #990000">&lt;</span> nbCTemp<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
-                                t<span style="color: #990000">[</span>i<span style="color: #990000">]</span> <span style="color: #990000">=</span> alTemp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">get</span></span><span style="color: #990000">(</span>i<span style="color: #990000">);</span>
-                        <span style="color: #FF0000">}</span>
-                        <span style="font-style: italic"><span style="color: #9A1900">/*</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">                         * Ou bien directement, sans les lignes ci-dessus :</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">                         *              t = alTemp.toArray(new Compte[0]);</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">                         * cf. doc ArrayList / T[] toArray(T[])</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">                         */</span></span>
-                <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">else</span></span> <span style="color: #FF0000">{</span>
-                        <span style="font-style: italic"><span style="color: #9A1900">// ... pas de compte dans un tableau vide</span></span>
-                        t <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> Compte<span style="color: #990000">[</span><span style="color: #993399">0</span><span style="color: #990000">];</span>
-                <span style="color: #FF0000">}</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> t<span style="color: #990000">;</span>
-        <span style="color: #FF0000">}</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"Size : "</span><span style="color: #990000">+</span>alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">size</span></span><span style="color: #990000">());</span>
+                taille <span style="color: #990000">=</span> alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">size</span></span><span style="color: #990000">();</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span> <span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>taille<span style="color: #990000">;</span> i<span style="color: #990000">++)</span>
+                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"chaine en "</span><span style="color: #990000">+</span>i<span style="color: #990000">+</span><span style="color: #FF0000">" : "</span><span style="color: #990000">+</span>alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">get</span></span><span style="color: #990000">(</span>i<span style="color: #990000">));</span>
 
-        <span style="font-style: italic"><span style="color: #9A1900">/**</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * Permet d'afficher une AgenceBancaire -</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;B&gt;</span></span><span style="font-style: italic"><span style="color: #9A1900"> SPECIAL TP.</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;/B&gt;&lt;BR&gt;</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * Affiche le nom de l'AgenceBancaire, sa localisation, le nombre de Comptes,</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * chaque Compte avec son solde.</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;B&gt;</span></span><span style="font-style: italic"><span style="color: #9A1900">ATTENTION : Méthode spéciale pour les TP.</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;/B&gt;&lt;BR&gt;</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         */</span></span>
+                alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">set</span></span><span style="color: #990000">(</span><span style="color: #993399">0</span><span style="color: #990000">,</span><span style="color: #FF0000">"BLABLA"</span><span style="color: #990000">);</span>
+                alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">set</span></span><span style="color: #990000">(</span>alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">size</span></span><span style="color: #990000">()-</span><span style="color: #993399">1</span><span style="color: #990000">,</span><span style="color: #FF0000">"BLABLA"</span><span style="color: #990000">);</span>
+                alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">set</span></span><span style="color: #990000">(</span>alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">size</span></span><span style="color: #990000">()/</span><span style="color: #993399">2</span> <span style="color: #990000">-</span> alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">size</span></span><span style="color: #990000">()/</span><span style="color: #993399">4</span><span style="color: #990000">,</span><span style="color: #FF0000">"BLABLA"</span><span style="color: #990000">);</span>
+                alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">set</span></span><span style="color: #990000">(</span>alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">size</span></span><span style="color: #990000">()/</span><span style="color: #993399">2</span> <span style="color: #990000">+</span> alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">size</span></span><span style="color: #990000">()/</span><span style="color: #993399">4</span><span style="color: #990000">,</span><span style="color: #FF0000">"BLABLA"</span><span style="color: #990000">);</span>
 
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
-                <span style="color: #009900">int</span> i<span style="color: #990000">,</span> nbC<span style="color: #990000">;</span>
-                <span style="color: #008080">Compte</span> cTemp<span style="color: #990000">;</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"Size : "</span><span style="color: #990000">+</span>alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">size</span></span><span style="color: #990000">());</span>
+                taille <span style="color: #990000">=</span> alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">size</span></span><span style="color: #990000">();</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span> <span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>taille<span style="color: #990000">;</span> i<span style="color: #990000">++)</span>
+                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"chaine en "</span><span style="color: #990000">+</span>i<span style="color: #990000">+</span><span style="color: #FF0000">" : "</span><span style="color: #990000">+</span>alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">get</span></span><span style="color: #990000">(</span>i<span style="color: #990000">));</span>
 
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">();</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Nom : "</span> <span style="color: #990000">+</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>nom <span style="color: #990000">+</span> <span style="color: #FF0000">" ("</span> <span style="color: #990000">+</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>loc <span style="color: #990000">+</span> <span style="color: #FF0000">")"</span><span style="color: #990000">);</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">""</span> <span style="color: #990000">+</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>alCptes<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">size</span></span><span style="color: #990000">()</span> <span style="color: #990000">+</span> <span style="color: #FF0000">" Comptes :"</span><span style="color: #990000">);</span>
-                nbC <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>alCptes<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">size</span></span><span style="color: #990000">();</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span> i <span style="color: #990000">&lt;</span> nbC<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
-                        cTemp <span style="color: #990000">=</span> alCptes<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">get</span></span><span style="color: #990000">(</span>i<span style="color: #990000">);</span>
-                        cTemp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"   Solde : "</span> <span style="color: #990000">+</span> cTemp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soldeCompte</span></span><span style="color: #990000">());</span>
-                <span style="color: #FF0000">}</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">();</span>
-        <span style="color: #FF0000">}</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">toString</span></span><span style="color: #990000">());</span>
 
-        <span style="font-style: italic"><span style="color: #9A1900">/**</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * Permet d'obtenir la représentation String d'une AgenceBancaire.</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * Donne le nom de l'AgenceBancaire, la localisation, le nombre de Comptes.</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         */</span></span>
+                alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">remove</span></span><span style="color: #990000">(</span>alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">size</span></span><span style="color: #990000">()-</span><span style="color: #993399">1</span><span style="color: #990000">);</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"Size : "</span><span style="color: #990000">+</span>alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">size</span></span><span style="color: #990000">());</span>
+                alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">remove</span></span><span style="color: #990000">(</span><span style="color: #993399">0</span><span style="color: #990000">);</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"Size : "</span><span style="color: #990000">+</span>alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">size</span></span><span style="color: #990000">());</span>
+                alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">remove</span></span><span style="color: #990000">(</span>alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">size</span></span><span style="color: #990000">()/</span><span style="color: #993399">2</span> <span style="color: #990000">-</span> alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">size</span></span><span style="color: #990000">()/</span><span style="color: #993399">4</span><span style="color: #990000">);</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"Size : "</span><span style="color: #990000">+</span>alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">size</span></span><span style="color: #990000">());</span>
+                alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">remove</span></span><span style="color: #990000">(</span>alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">size</span></span><span style="color: #990000">()/</span><span style="color: #993399">2</span> <span style="color: #990000">+</span> alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">size</span></span><span style="color: #990000">()/</span><span style="color: #993399">4</span><span style="color: #990000">);</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"Size : "</span><span style="color: #990000">+</span>alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">size</span></span><span style="color: #990000">());</span>
 
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #008080">String</span> <span style="font-weight: bold"><span style="color: #000000">toString</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="color: #FF0000">"Nom Agence : "</span> <span style="color: #990000">+</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>nom <span style="color: #990000">+</span> <span style="color: #FF0000">" ("</span> <span style="color: #990000">+</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>loc <span style="color: #990000">+</span> <span style="color: #FF0000">") : "</span><span style="color: #990000">+</span><span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>alCptes<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">size</span></span><span style="color: #990000">()+</span><span style="color: #FF0000">" cptes"</span><span style="color: #990000">;</span>
-        <span style="color: #FF0000">}</span>
-
-        <span style="font-style: italic"><span style="color: #9A1900">/**</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * Permet d'ajouter un Compte à l'AgenceBancaire.</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * Le Compte pCompteAAjouter est ajouté à l'AgenceBancaire s'il n'existe pas déjà un Compte</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * ayant le même numéro de compte que pCompteAAjouter</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * (identique en numéro de compte à pCompteAAjouter.getNumCompte()).</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * Si on appelle la méthode avec null en paramètre, la méthode lève une exception.</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         *</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900"> pCompteAAjouter</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         *            Le Compte à ajouter à l'AgenceBancaire.</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@throws</span><span style="font-style: italic"><span style="color: #9A1900"> ABCompteNullException  lorsque pCompteAAjouter == null</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@throws</span><span style="font-style: italic"><span style="color: #9A1900"> ABCompteDejaExistantException  lorsque un compte de numéro pCompteAAjouter.getNumCompte() existe déjà dans l'AgenceBancaire.</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@see</span><span style="font-style: italic"><span style="color: #9A1900"> AgenceBancaire#removeCompte(String)</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         */</span></span>
-
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">addCompte</span></span><span style="color: #990000">(</span><span style="color: #008080">Compte</span> pCompteAAjouter<span style="color: #990000">)</span> <span style="font-weight: bold"><span style="color: #0000FF">throws</span></span> ABCompteNullException<span style="color: #990000">,</span> ABCompteDejaExistantException <span style="color: #FF0000">{</span>
-                <span style="color: #008080">Compte</span> c<span style="color: #990000">;</span>
-
-                <span style="font-style: italic"><span style="color: #9A1900">// Si null =&gt; refusé</span></span>
-                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>pCompteAAjouter <span style="color: #990000">==</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">throw</span></span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">ABCompteNullException</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Erreur ajout Compte 'null' dans l'agence "</span>
-                                        <span style="color: #990000">+</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>nom <span style="color: #990000">+</span> <span style="color: #FF0000">" ("</span> <span style="color: #990000">+</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>loc <span style="color: #990000">+</span> <span style="color: #FF0000">")"</span><span style="color: #990000">);</span>
-                <span style="color: #FF0000">}</span>
-
-                <span style="font-style: italic"><span style="color: #9A1900">// On cherche un Compte de même numéro</span></span>
-                c <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">trouveCompte</span></span><span style="color: #990000">(</span>pCompteAAjouter<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getNumCompte</span></span><span style="color: #990000">());</span>
-
-                <span style="font-style: italic"><span style="color: #9A1900">// Si pas trouvé</span></span>
-                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>c <span style="color: #990000">==</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                        <span style="font-style: italic"><span style="color: #9A1900">// ... on ajoute le Compte</span></span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>alCptes<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">add</span></span><span style="color: #990000">(</span>pCompteAAjouter<span style="color: #990000">);</span>
-                <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">else</span></span> <span style="color: #FF0000">{</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">throw</span></span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">ABCompteDejaExistantException</span></span><span style="color: #990000">(</span>
-                                        <span style="color: #FF0000">"Erreur ajout Compte déja existant ("</span>
-                                        <span style="color: #990000">+</span> pCompteAAjouter<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getNumCompte</span></span><span style="color: #990000">()</span> <span style="color: #990000">+</span> <span style="color: #FF0000">") dans l'agence "</span>
-                                        <span style="color: #990000">+</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>nom <span style="color: #990000">+</span> <span style="color: #FF0000">" ("</span> <span style="color: #990000">+</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>loc <span style="color: #990000">+</span> <span style="color: #FF0000">")"</span><span style="color: #990000">);</span>
-                <span style="color: #FF0000">}</span>
-        <span style="color: #FF0000">}</span>
-
-        <span style="font-style: italic"><span style="color: #9A1900">/**</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * Permet de supprimer un Compte de l'AgenceBancaire, à partir de son numéro.</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * Le Compte (unique) de numéro pNumCompte est retiré de l'AgenceBancaire s'il est</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * trouvé.</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * Une exception est levée si le compte n'est pas trouvé.</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         *</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900"> pNumCompte</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         *            Le numéro du Compte à supprimer de l'AgenceBancaire.</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@throws</span><span style="font-style: italic"><span style="color: #9A1900"> ABCompteInexistantException  Lorsque aucun compte de numéro pNumCompte ne peut être trouvé.</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@see</span><span style="font-style: italic"><span style="color: #9A1900"> AgenceBancaire#addCompte(Compte)</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         */</span></span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">removeCompte</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> pNumCompte<span style="color: #990000">)</span> <span style="font-weight: bold"><span style="color: #0000FF">throws</span></span> ABCompteInexistantException<span style="color: #FF0000">{</span>
-                <span style="color: #008080">Compte</span> c<span style="color: #990000">;</span>
-
-                <span style="font-style: italic"><span style="color: #9A1900">// On cherche un Compte de même numéro</span></span>
-                c <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">trouveCompte</span></span><span style="color: #990000">(</span>pNumCompte<span style="color: #990000">);</span>
-
-                <span style="font-style: italic"><span style="color: #9A1900">// Si trouvé ...</span></span>
-                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>c <span style="color: #990000">!=</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                        <span style="font-style: italic"><span style="color: #9A1900">// ... on enlève ce Compte</span></span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>alCptes<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">remove</span></span><span style="color: #990000">(</span>c<span style="color: #990000">);</span>
-                <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">else</span></span> <span style="color: #FF0000">{</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">throw</span></span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">ABCompteInexistantException</span></span><span style="color: #990000">(</span>
-                                        <span style="color: #FF0000">"Erreur suppression Compte inexistant ("</span>
-                                        <span style="color: #990000">+</span> pNumCompte<span style="color: #990000">+</span> <span style="color: #FF0000">") dans l'agence "</span>
-                                        <span style="color: #990000">+</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>nom <span style="color: #990000">+</span> <span style="color: #FF0000">" ("</span> <span style="color: #990000">+</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>loc <span style="color: #990000">+</span> <span style="color: #FF0000">")"</span><span style="color: #990000">);</span>
-                <span style="color: #FF0000">}</span>
-        <span style="color: #FF0000">}</span>
-
-
-        <span style="font-style: italic"><span style="color: #9A1900">/**</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * Méthode privée de recherche d'un compte.</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * Cherche un compte dans alCptes ayant pour numéro de compte pNC.</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * Renvoie null si aucun compte n'est trouvé.</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         *</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900">      pNC  numéro dui compte recherché</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@return</span><span style="font-style: italic"><span style="color: #9A1900">     l'objet compte (la référence de) trouvé ou null si non trouvé.</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         */</span></span>
-        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">Compte</span> <span style="font-weight: bold"><span style="color: #000000">trouveCompte</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> pNC<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                <span style="color: #008080">Compte</span> c <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">,</span> cTemp<span style="color: #990000">;</span>
-                <span style="color: #009900">int</span> i<span style="color: #990000">,</span> nbC<span style="color: #990000">;</span>
-
-                <span style="font-style: italic"><span style="color: #9A1900">// On parcours l'ArrayList de l'AgenceBancaire</span></span>
-                nbC <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>alCptes<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">size</span></span><span style="color: #990000">();</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span> i <span style="color: #990000">&lt;</span> nbC <span style="color: #990000">&amp;&amp;</span> c <span style="color: #990000">==</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
-                        cTemp <span style="color: #990000">=</span> alCptes<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">get</span></span><span style="color: #990000">(</span>i<span style="color: #990000">);</span>
-                        <span style="font-style: italic"><span style="color: #9A1900">// Si un Compte a le même numéro que pNC</span></span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>cTemp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getNumCompte</span></span><span style="color: #990000">().</span><span style="font-weight: bold"><span style="color: #000000">equals</span></span><span style="color: #990000">(</span>pNC<span style="color: #990000">))</span> <span style="color: #FF0000">{</span>
-                                <span style="font-style: italic"><span style="color: #9A1900">// ... on le garde</span></span>
-                                c <span style="color: #990000">=</span> cTemp<span style="color: #990000">;</span>
-                        <span style="color: #FF0000">}</span>
-                <span style="color: #FF0000">}</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> c<span style="color: #990000">;</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"Size : "</span><span style="color: #990000">+</span>alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">size</span></span><span style="color: #990000">());</span>
+                taille <span style="color: #990000">=</span> alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">size</span></span><span style="color: #990000">();</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span> <span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>taille<span style="color: #990000">;</span> i<span style="color: #990000">++)</span>
+                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"chaine en "</span><span style="color: #990000">+</span>i<span style="color: #990000">+</span><span style="color: #FF0000">" : "</span><span style="color: #990000">+</span>alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">get</span></span><span style="color: #990000">(</span>i<span style="color: #990000">));</span>
         <span style="color: #FF0000">}</span>
 <span style="color: #FF0000">}</span></tt></pre></div></div>
 </td>
@@ -5526,117 +4811,250 @@ EoAjGf88yXMZEtJTDOcRVg59vR52wHrUMosL0Pr6+oJJMnhJJBu7N4xGwP8A4X8RE1D3pWkAAAAA
 SUVORK5CYII=" />
 </td>
 <td class="content">
-<div class="title">Solution exo optionnel</div>
-<div class="paragraph">
-<p>Calculs :</p>
+<div class="title">Solution Mise en oeuvre des ArrayList</div>
+<ul class="">
+<li>
+<span>
+elementData : tableau contenant les données.
+</span>
+</li>
+<li>
+<span>
+size : nombre d'éléments "utilisés" dans elementData.
+</span>
+</li>
+</ul>
+</td>
+</tr></table>
 </div>
-<ol class="arabic">
-<li>
-<span>
-Version initiale :
-</span>
-<ul class="">
-<li>
-<span>
-parcours : 36000
-</span>
-</li>
-<li>
-<span>
-copie dans ArrayList : 12
-</span>
-</li>
-<li>
-<span>
-recopie de l&#8217;ArrayList : 10
-</span>
-</li>
-<li>
-<span>
-recopie dans tableau : 12 (accès ArrayList) + 12 (accès tableau)
-</span>
-</li>
-<li>
-<span>
-Total : <strong>36046</strong>
-</span>
-</li>
-</ul>
-</li>
-<li>
-<span>
-Version deux :
-</span>
-<ul class="">
-<li>
-<span>
-parcours de recherche : 36000
-</span>
-</li>
-<li>
-<span>
-parcours d&#8217;extraction : 36000 + 12 (accès tableau)
-</span>
-</li>
-<li>
-<span>
-Total : <strong>72012</strong>
-</span>
-</li>
-</ul>
-</li>
-</ol>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Important" src="data:image/png;base64,
+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
+SUVORK5CYII=" />
+</td>
+<td class="content">
+<div class="title">Solution recherche dans une ArrayList&lt;Compte&gt;</div>
 <div class="listingblock">
 <div class="content"><!-- Generator: GNU source-highlight 3.1.5
 by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
-<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">public</span></span> Compte<span style="color: #990000">[]</span> <span style="font-weight: bold"><span style="color: #000000">getComptesDe</span></span> <span style="color: #990000">(</span><span style="color: #008080">String</span> pNomProprietaire<span style="color: #990000">)</span>
-<span style="color: #FF0000">{</span>
-        <span style="color: #008080">Compte</span> t<span style="color: #990000">[],</span> cTemp<span style="color: #990000">;</span>
-        <span style="color: #009900">int</span> nbC<span style="color: #990000">,</span> nbCCourants<span style="color: #990000">,</span> i<span style="color: #990000">,</span> j<span style="color: #990000">;</span>
+<pre><tt>        <span style="font-style: italic"><span style="color: #9A1900">/**</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * Recherche les comptes du propriétaire pNomProprietaire</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * dans la liste de comptes pComptes.</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900"> pNomProprietaire      Propriétaire recherché</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900"> pComptes      Liste dans laquelle les comptes sont recherchés</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@return</span><span style="font-style: italic"><span style="color: #9A1900">      Liste des compte de pComtes ayant pour propriétaire pNomProprietaire. Liste vide si aucun compte trouvé.</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         */</span></span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #008080">ArrayList&lt;Compte&gt; getComptesDe (String pNomProprietaire, ArrayList&lt;Compte&gt;</span> pComptes<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="color: #009900">int</span> i<span style="color: #990000">,</span> taille<span style="color: #990000">;</span>
+                <span style="color: #008080">ArrayList&lt;Compte&gt;</span> result<span style="color: #990000">;</span>
 
-        t<span style="color: #990000">=</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">;</span>
-
-        <span style="font-style: italic"><span style="color: #9A1900">// On compte les comptes de pNomProprietaire</span></span>
-        nbC <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span>
-        nbCCourants <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>vCpt<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">size</span></span><span style="color: #990000">();</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>nbCCourants<span style="color: #990000">;</span> i<span style="color: #990000">++)</span>
-        <span style="color: #FF0000">{</span>
-                cTemp <span style="color: #990000">=</span> alCptes<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">get</span></span><span style="color: #990000">(</span>i<span style="color: #990000">);</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>cTemp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getProprietaire</span></span><span style="color: #990000">().</span><span style="font-weight: bold"><span style="color: #000000">equals</span></span><span style="color: #990000">(</span>pNomProprietaire<span style="color: #990000">))</span> <span style="color: #FF0000">{</span>
-                        nbC<span style="color: #990000">++;</span>
-                <span style="color: #FF0000">}</span>
-        <span style="color: #FF0000">}</span>
-
-        <span style="font-style: italic"><span style="color: #9A1900">// Si on a trouvé des comptes ...</span></span>
-        <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>nbC <span style="color: #990000">!=</span> <span style="color: #993399">0</span><span style="color: #990000">)</span>
-        <span style="color: #FF0000">{</span>
-                <span style="font-style: italic"><span style="color: #9A1900">// ...  on crée un tableau et on les recherche à nouveau</span></span>
-                <span style="font-style: italic"><span style="color: #9A1900">// pour les recopier</span></span>
-                t <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> Compte<span style="color: #990000">[</span>nbC<span style="color: #990000">];</span>
-                j<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span>
-                nbCCourants <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>alCptes<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">size</span></span><span style="color: #990000">();</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>nbCCourants<span style="color: #990000">;</span> i<span style="color: #990000">++)</span>
-                <span style="color: #FF0000">{</span>
-                        cTemp <span style="color: #990000">=</span> alCptes<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">get</span></span><span style="color: #990000">(</span>i<span style="color: #990000">);</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>cTemp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getProprietaire</span></span><span style="color: #990000">().</span><span style="font-weight: bold"><span style="color: #000000">equals</span></span><span style="color: #990000">(</span>pNomProprietaire<span style="color: #990000">))</span> <span style="color: #FF0000">{</span>
-                                t<span style="color: #990000">[</span>j<span style="color: #990000">++]</span> <span style="color: #990000">=</span> cTemp<span style="color: #990000">;</span>
+                result <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> ArrayList<span style="color: #990000">&lt;</span>Compte<span style="color: #990000">&gt;();</span>
+                taille <span style="color: #990000">=</span> pComptes<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">size</span></span><span style="color: #990000">();</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>taille<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>pComptes<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">get</span></span><span style="color: #990000">(</span>i<span style="color: #990000">).</span><span style="font-weight: bold"><span style="color: #000000">getProprietaire</span></span><span style="color: #990000">().</span><span style="font-weight: bold"><span style="color: #000000">equals</span></span><span style="color: #990000">(</span>pNomProprietaire<span style="color: #990000">))</span> <span style="color: #FF0000">{</span>
+                                result<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">add</span></span><span style="color: #990000">(</span>pComptes<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">get</span></span><span style="color: #990000">(</span>i<span style="color: #990000">));</span>
                         <span style="color: #FF0000">}</span>
                 <span style="color: #FF0000">}</span>
-        <span style="color: #FF0000">}</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">else</span></span> <span style="color: #FF0000">{</span>
-                t<span style="color: #990000">=</span><span style="font-weight: bold"><span style="color: #0000FF">new</span></span> Compte<span style="color: #990000">[</span><span style="color: #993399">0</span><span style="color: #990000">];</span>
-        <span style="color: #FF0000">}</span>
 
-        <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> t<span style="color: #990000">;</span>
-<span style="color: #FF0000">}</span></tt></pre></div></div>
+                <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> result<span style="color: #990000">;</span>
+        <span style="color: #FF0000">}</span></tt></pre></div></div>
+</td>
+</tr></table>
+</div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Important" src="data:image/png;base64,
+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
+SUVORK5CYII=" />
+</td>
+<td class="content">
+<div class="title">Solution tests optionnels</div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>                <span style="font-style: italic"><span style="color: #9A1900">// Tests finaux optionnels</span></span>
+
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"AFFICHAGE PAR ITERATEUR"</span><span style="color: #990000">);</span>
+                <span style="color: #008080">Iterator&lt;String&gt;</span> it <span style="color: #990000">;</span>
+                it <span style="color: #990000">=</span> alChaines<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">iterator</span></span><span style="color: #990000">();</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">while</span></span> <span style="color: #990000">(</span>it<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">hasNext</span></span><span style="color: #990000">())</span> <span style="color: #FF0000">{</span>
+                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>it<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">next</span></span><span style="color: #990000">());</span>
+                <span style="color: #FF0000">}</span>
+
+                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span><span style="color: #008080">String</span> s <span style="color: #990000">:</span> alChaines<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span> s<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">toUpperCase</span></span><span style="color: #990000">()</span> <span style="color: #990000">+</span> <span style="color: #FF0000">" lg : "</span> <span style="color: #990000">+</span> s<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">length</span></span><span style="color: #990000">()</span> <span style="color: #990000">);</span>
+                <span style="color: #FF0000">}</span></tt></pre></div></div>
 </td>
 </tr></table>
 </div>
 <div id="footer" style="position: absolute; left: 5%; top: 80%; width: 90%;">
 <div id="footer-text">
-Dernière mise à jour 2014-03-20 12:43:45 CET
+Dernière mise à jour 2015-02-25 09:08:59 CET
 </div>
 </div>
 </div></div>

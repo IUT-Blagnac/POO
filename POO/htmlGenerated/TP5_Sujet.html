@@ -804,11 +804,11 @@ cellspacing="0" cellpadding="4">
 <tbody>
 <tr>
 <td align="left" valign="top"><p class="table">PreReq</p></td>
-<td align="left" valign="top"><p class="table">TD4 : Tableaux dynamiques, TP4 : implémentation classe AgenceBancaire, TD3 : Encapsulation/Création de classes,</p></td>
+<td align="left" valign="top"><p class="table">TD3 : Encapsulation/Création de classes, CM2/TP3 : ArrayList&lt;E&gt;, TP2 : classe Compte et AgenceBancaire.</p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">ObjTP</p></td>
-<td align="left" valign="top"><p class="table">Programmer la classe AgenceBancaire avec tableau dynamique.</p></td>
+<td align="left" valign="top"><p class="table">Programmer une classe.</p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">Durée</p></td>
@@ -816,7 +816,7 @@ cellspacing="0" cellpadding="4">
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">À rendre</p></td>
-<td align="left" valign="top"><p class="table">Code source à déposer : Classe AgenceBancaire en 2 versions + réponses au questions éventuelles en commentaire en début de fichier.</p></td>
+<td align="left" valign="top"><p class="table">Code source à déposer : Classe AgenceBancaire + réponses au questions éventuelles en commentaire en début de fichier.</p></td>
 </tr>
 </tbody>
 </table>
@@ -829,24 +829,9 @@ cellspacing="0" cellpadding="4">
 <div class="sect1">
 <h2 id="_objectif">1. Objectif</h2>
 <div class="sectionbody">
-<div class="paragraph"><p>Le but de ce TP est de construire la classe <tt>AgenceBancaire</tt> mais de façon différente :</p></div>
-<div class="ulist"><ul>
-<li>
-<p>
-Les Compte seront stockés dans un tableau de Compte dynamique bâti sur les principes vus en TD pour stocker les informations en tableau dynamique dans la classe <tt>Pile</tt>.
-</p>
-</li>
-<li>
-<p>
-La documentation de la classe est connue : cf. documentation en ligne. <strong>On ne changera pas l&#8217;interface de la classe</strong>.
-</p>
-</li>
-<li>
-<p>
-Parce que nous ne changeons pas l&#8217;interface de la classe, l&#8217;encapsulation va nous permettre d&#8217;utiliser le même programme client (menu pour un opérateur de l&#8217;agence bancaire) et le même programme de test JUnit .
-</p>
-</li>
-</ul></div>
+<div class="paragraph"><p>Le but de ce TP est de construire la classe <tt>AgenceBancaire</tt>.</p></div>
+<div class="paragraph"><p>La documentation de la classe est connue : cf. documentation en ligne.</p></div>
+<div class="paragraph"><p>Pour l&#8217;implémentation, <strong>on choisit de stocker les comptes de l&#8217;agence dans une <tt>ArrayList&lt;Compte&gt;</tt></strong>.</p></div>
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph"><div class="title">Diagramme UML des classes mises en oeuvre</div><p><span class="image">
@@ -1097,17 +1082,17 @@ FhZHiMiwvywsUReqmIWFxREiMuwvC0vUhSpmYWFxhIgM+8vCEnWhillYWBwhIsP+srBEXahiFhYW
 R4jIwsLCwsJCIrKwsLCwsJCILCwsLCwsJCILCwsLC0t8lv8HnQrfmoI07cYAAAAASUVORK5CYII=" />
 </span></p></div>
 </div></div>
-<div class="paragraph"><p>Il vous faudra réécrire une partie de la classe.</p></div>
+<div class="paragraph"><p>Il vous faudra écrire une partie des méthodes de la classe.</p></div>
 <div class="paragraph"><p>Pour les tests :</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
-le programme d&#8217;utilisation vous est fourni (menu pour un opérateur de l&#8217;agence bancaire).
+un programme d&#8217;utilisation vous est fourni (menu pour un opérateur de l&#8217;agence bancaire).
 </p>
 </li>
 <li>
 <p>
-le programme de test JUnit est aussi fourni.
+un programme de test JUnit est aussi fourni.
 </p>
 </li>
 </ul></div>
@@ -1120,7 +1105,7 @@ le programme de test JUnit est aussi fourni.
 <div class="olist arabic"><ol class="arabic">
 <li>
 <p>
-Le fichier AgenceBancaire.java : <strong>le fichier à modifier</strong> durant le TP.
+Le fichier AgenceBancaire.java : <strong>le fichier à compléter</strong> durant le TP.
 </p>
 </li>
 <li>
@@ -1135,7 +1120,7 @@ Le fichier TestAgenceBancaire.java : fichier JUnit de test des développements q
 </li>
 <li>
 <p>
-Dé-zipper le fichier packagesTps5.zip fourni : il contient les packages de travail pour ce tp SAUF la classe AgenceBancaire bien sur &#8230;
+Dé-zipper le fichier packagesTps4.zip fourni : il contient les packages de travail pour ce TP SAUF la classe AgenceBancaire bien sur &#8230;
 </p>
 </li>
 <li>
@@ -1155,63 +1140,73 @@ junit.jar : il contient la librairie JUnit pour les tests.
 </li>
 </ul></div>
 </li>
-<li>
-<p>
-Ensuite seulement lancer Scite et ouvrir les 3 fichiers .java.
-</p>
-</li>
-<li>
-<p>
-<strong>Copier/Coller votre version AgenceBancaire du TP précédent</strong>
-</p>
-</li>
 </ol></div>
+<div class="paragraph"><p>Ensuite seulement lancer Scite et ouvrir les 3 fichiers .java.</p></div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_implémentation_de_la_solution">3. Implémentation de la solution</h2>
+<h2 id="_implémentation_de_la_classe_agencebancaire">3. Implémentation de la classe AgenceBancaire</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_solution_envisagée">3.1. Solution envisagée</h3>
-<div class="paragraph"><p>L&#8217;idée est donc maintenant de modifier la classe AgenceBancaire afin de stocker les comptes dans un tableau dynamique à la place de l&#8217;ArrayList.</p></div>
-<div class="paragraph"><p>Dans cette version :</p></div>
+<h3 id="_analyse_de_l_8217_implémentation">3.1. Analyse de l&#8217;implémentation</h3>
+<div class="paragraph"><p>Reprendre le code fourni.</p></div>
+<div class="sect3">
+<h4 id="_les_attributs">3.1.1. Les attributs</h4>
+<div class="paragraph"><p>Vous trouverez dans le fichier la déclaration suivante :</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+deux attributs de type String pour le nom et la localisation de l&#8217;agence bancaire
+</p>
+</li>
+<li>
+<p>
+un attribut <tt>alCptes</tt> qui est l'<tt>ArrayList&lt;Compte&gt;</tt> qui contient les différents comptes de l&#8217;agence.
+</p>
+</li>
+</ul></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">AgenceBancaire</span> <span style="color: #FF0000">{</span>
+        <span style="font-style: italic"><span style="color: #9A1900">// Attributs</span></span>
+        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">String</span> nom<span style="color: #990000">,</span> loc<span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">ArrayList&lt;Compte&gt;</span> alCptes<span style="color: #990000">;</span></tt></pre></div></div>
+</div>
+<div class="sect3">
+<h4 id="_le_code_déjà_écrit">3.1.2. Le code déjà écrit</h4>
+<div class="paragraph"><p>Il vous est proposé une classe AgenceBancaire avec les en-têtes des méthodes et constructeur et les commentaires associés.</p></div>
+<div class="paragraph"><p>Sont déjà écrites, à étudier :</p></div>
 <div class="olist arabic"><ol class="arabic">
 <li>
 <p>
-La taille du tableau sera toujours la même que le nombre de comptes dans l&#8217;AgenceBancaire (10 comptes &#8658; tableau de 10 éléments).
+<tt>public Compte[] getComptesDe(String pNomProprietaire)</tt>
 </p>
 </li>
 <li>
 <p>
-Chaque ajout de compte agrandira ce tableau de un élément.
+<tt>public void afficher()</tt>
 </p>
 </li>
 <li>
 <p>
-Chaque retrait de compte rétrécira ce tableau de un élément.
+<tt>public String toString()</tt>
 </p>
 </li>
 </ol></div>
-<div class="paragraph"><p>On s&#8217;autorisera à utiliser une ArrayList dans la méthode <tt>public Compte[] getComptesDe(String pNomProprietaire)</tt></p></div>
+</div>
 </div>
 <div class="sect2">
-<h3 id="_préparation_de_la_mise_en_oeuvre">3.2. Préparation de la mise en oeuvre</h3>
-<div class="sect3">
-<h4 id="_modification_des_attributs">3.2.1. Modification des attributs</h4>
-<div class="paragraph"><p>Dans la classe AgenceBancaire :</p></div>
+<h3 id="_implémentation_à_réaliser">3.2. Implémentation à réaliser</h3>
+<div class="paragraph"><p>Les méthodes à écrire comportent un <tt>return xx;</tt> lorsque nécessaire, ceci afin de pouvoir compiler à chaque étape. Cela s&#8217;appelle un "bouchon", qui renvoie une mauvaise valeur ici en l&#8217;occurrence. <strong>Ne pas oublier d&#8217;enlever ces instructions inutiles (et fausses)</strong>.</p></div>
+<div class="paragraph"><p>Implémenter les méthodes dans l&#8217;ordre :</p></div>
 <div class="olist arabic"><ol class="arabic">
 <li>
 <p>
-Enlevez la déclaration de l&#8217;ArrayList.
+<tt>public AgenceBancaire(String pNomAgence, String pLocAgence)</tt> : le constructeur, en 3 lignes.
 </p>
-</li>
-<li>
-<p>
-Déclarez à sa place un attribut (private) <tt>tableauDesComptes</tt> de type tableau de Compte pour stocker les comptes.
-</p>
-</li>
-</ol></div>
-<div class="paragraph"><p>Si besoin, vous ajouterez d'éventuels attributs.</p></div>
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
@@ -1266,98 +1261,10 @@ AMfx8ZYkSYI90L87QNC71WolxgIK0Nf4W+GVUAX9QsCXDSwq8B//47GAh7AxjwdUQQPI4onGcI6G
 lJga0LT8+uRGJ5P/2OBGpz/mT34Gmsy9nx36v3PoX1H4mIUGLCOSAAAAAElFTkSuQmCC" />
 </td>
 <td class="content">
-<div class="paragraph"><p>On peut faire avec ce seul attribut <tt>tableauDesComptes</tt>.</p></div>
+<div class="paragraph"><p>On commence TOUJOURS par le constructeur car c&#8217;est la première chose réalisée sur un objet nouvellement créé : début de la vie d&#8217;un objet.</p></div>
 </td>
 </tr></table>
 </div>
-</div>
-<div class="sect3">
-<h4 id="_analyse_de_la_solution_à_mettre_en_oeuvre">3.2.2. Analyse de la solution à mettre en oeuvre</h4>
-<div class="paragraph"><p>Une bonne démarche consiste à réfléchir 10'-15' avant de commencer.</p></div>
-<div class="paragraph"><p>Parcourez le code écrit en version précédente. Réfléchir à ce qui sera modifié, en particulier dans les méthodes :</p></div>
-<div class="olist arabic"><ol class="arabic">
-<li>
-<p>
-D&#8217;une part :
-</p>
-<div class="olist loweralpha"><ol class="loweralpha">
-<li>
-<p>
-<tt>String getNomAgence()</tt>
-</p>
-</li>
-<li>
-<p>
-<tt>String getLocAgence()</tt>
-</p>
-</li>
-<li>
-<p>
-<tt>Compte getCompte(String pNumCompte)</tt>
-</p>
-</li>
-</ol></div>
-</li>
-<li>
-<p>
-D&#8217;autre part :
-</p>
-<div class="olist loweralpha"><ol class="loweralpha">
-<li>
-<p>
-<tt>int getNbComptes()</tt>
-</p>
-</li>
-<li>
-<p>
-<tt>String toString()</tt>
-</p>
-</li>
-<li>
-<p>
-<tt>void afficher()</tt>
-</p>
-</li>
-<li>
-<p>
-<tt>Compte[] getComptesDe(String pNomProprietaire)</tt> (rappel : on s’autorisera à utiliser une ArrayList dans cette méthode)
-</p>
-</li>
-<li>
-<p>
-<tt>Compte trouveCompte(String pNC)</tt> (private).
-</p>
-</li>
-</ol></div>
-</li>
-<li>
-<p>
-Enfin :
-</p>
-<div class="olist loweralpha"><ol class="loweralpha">
-<li>
-<p>
-<tt>AgenceBancaire(String pNomAgence, String pLocAgence)</tt>
-</p>
-</li>
-<li>
-<p>
-<tt>void addCompte(Compte pCompteAAjouter)</tt>
-</p>
-</li>
-<li>
-<p>
-<tt>void removeCompte(String pNumCompte)</tt>
-</p>
-</li>
-</ol></div>
-</li>
-</ol></div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_codage_todo">3.3. Codage : TODO</h3>
-<div class="paragraph"><p>A vous de jouer : modifier la classe pour réaliser l&#8217;implémentation demandée.</p></div>
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
@@ -1411,92 +1318,94 @@ mb1jlLOVv2YADrOhDp5hPCCyADY3vhXhJUNMwAxsBqfwISBwjSx5lu/Rn35PLY+2EhzqZCmV7YC5
 RkWOKkVXIjB5X2ac8f8HA74K8I0SaJkAAAAASUVORK5CYII=" />
 </td>
 <td class="content">
-<div class="title">Rappel</div>
-<div class="paragraph"><p>On commence TOUJOURS par le constructeur car c&#8217;est la première chose réalisée sur un objet nouvellement créé : début de la vie d&#8217;un objet.</p></div>
 <div class="paragraph"><p>Le rôle du constructeur est TOUJOURS d&#8217;initialiser TOUS les attributs de l&#8217;objet.</p></div>
 </td>
 </tr></table>
 </div>
-<div class="paragraph"><p>Pour la suppression d&#8217;un comptes, il peut être utile de connaître le rang de celui-ci. Malheureusement, la méthode existante <tt>private Compte trouveCompte(String pNC)</tt> renvoie le Compte, pas sa position.</p></div>
-<div class="paragraph"><p>On pourra donc ajouter une méthode nouvelle pour faciliter la programmation :</p></div>
-<div class="listingblock">
-<div class="content"><!-- Generator: GNU source-highlight 3.1.5
-by Lorenzo Bettini
-http://www.lorenzobettini.it
-http://www.gnu.org/software/src-highlite -->
-<pre><tt><span style="font-style: italic"><span style="color: #9A1900">/**</span></span>
-<span style="font-style: italic"><span style="color: #9A1900"> * Méthode privée de recherche du rang d'un compte.</span></span>
-<span style="font-style: italic"><span style="color: #9A1900"> * Cherche un compte dans le tableau de comptes ayant pour numéro de compte pNC.</span></span>
-<span style="font-style: italic"><span style="color: #9A1900"> * Renvoie -1 si aucun compte n'est trouvé.</span></span>
-<span style="font-style: italic"><span style="color: #9A1900"> *</span></span>
-<span style="font-style: italic"><span style="color: #9A1900"> * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900">      pNC  numéro du compte recherché</span></span>
-<span style="font-style: italic"><span style="color: #9A1900"> * </span></span><span style="color: #009900">@return</span><span style="font-style: italic"><span style="color: #9A1900">     l'indice de l'objet compte trouvé ou -1 si non trouvé.</span></span>
-<span style="font-style: italic"><span style="color: #9A1900"> */</span></span>
-<span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">trouveRangDeCompte</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> pNC<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-        <span style="font-style: italic"><span style="color: #9A1900">// Code à écrire</span></span>
-<span style="color: #FF0000">}</span></tt></pre></div></div>
-<div class="admonitionblock">
-<table><tr>
-<td class="icon">
-<img alt="Note" src="data:image/png;base64,
-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" />
-</td>
-<td class="content">
-<div class="paragraph"><p>On peut ajouter autant de méthode privée que désiré : <strong>cela ne change pas l&#8217;interface de la classe</strong>.</p></div>
-<div class="paragraph"><p>Vous pouvez d&#8217;ailleurs en ajouter d&#8217;autres si vous le souhaitez.</p></div>
-</td>
-</tr></table>
-</div>
+</li>
+<li>
+<p>
+<tt>public String getNomAgence()</tt> : simple &#8230; (1 ligne).
+</p>
+</li>
+<li>
+<p>
+<tt>public String getLocAgence()</tt> : simple aussi (1 ligne).
+</p>
+</li>
+<li>
+<p>
+<tt>public int getNbComptes()</tt> (1 ligne).
+</p>
+</li>
+</ol></div>
+<div class="paragraph"><p>A ce stade, écrire dans l&#8217;ordre :</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+<strong>La méthode <tt>private Compte trouveCompte(String pNC)</tt>, méthode privée utilisée plusieurs fois par la suite</strong>. Elle permet de retrouver un compte à partir de son numéro de compte.
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Attention ici à la comparaison effectuée pour la recherche.
+</p>
+</li>
+<li>
+<p>
+On optimisera la boucle de recherche (sortie dès que solution trouvée). Et on expliquera pourquoi on trouvera 0 objet compte ou 1 seul pour un numéro de compte donné.
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+<tt>public Compte getCompte(String pNumCompte)</tt> : facile à écrire maintenant.
+</p>
+</li>
+<li>
+<p>
+<tt>public void addCompte(Compte pCompteAAjouter) throws ABCompteNullException, ABCompteDejaExistantException</tt>
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Faire attention à TOUS les cas d&#8217;erreur.
+</p>
+</li>
+<li>
+<p>
+Réutiliser <tt>trouveCompte()</tt>.
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+<tt>public void removeCompte(String pNumCompte) throws ABCompteInexistantException</tt>
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Faire attention aux cas d&#8217;erreurs.
+</p>
+</li>
+<li>
+<p>
+Réutiliser <tt>trouveCompte()</tt>.
+</p>
+</li>
+<li>
+<p>
+Lire la documentation de ArrayList&lt;E&gt; : il existe plusieurs <strong>surcharges</strong> de la méthode <tt>remove()</tt> dont l&#8217;une d&#8217;elle doit vous aider à régler la suppression "facilement"
+</p>
+</li>
+</ul></div>
+</li>
+</ol></div>
 </div>
 <div class="sect2">
-<h3 id="_tests_de_la_classe">3.4. Tests de la classe</h3>
+<h3 id="_tests_de_la_classe">3.3. Tests de la classe</h3>
 <div class="paragraph"><p>Testez votre classe :</p></div>
 <div class="olist arabic"><ol class="arabic">
 <li>
@@ -1647,174 +1556,85 @@ Enfin <tt>removeCompte()</tt> ne peut être testée sans les 2 précédentes.
 </div>
 </div>
 <div class="sect1">
-<h2 id="_deuxième_implémentation_de_solution_optionnelle">4. Deuxième implémentation de solution (optionnelle)</h2>
+<h2 id="_vous_avez_fini_optionnel">4. Vous avez fini ? (optionnel)</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_solution_envisagée_2">4.1. Solution envisagée</h3>
-<div class="paragraph"><p>On souhaite maintenant faire une nouvelle version de la classe AgenceBancaire, toujours basée sur des tableaux dynamiques. Cette fois on stockera les comptes dans un tableau "avec de la marge". L&#8217;idée est de :</p></div>
 <div class="olist arabic"><ol class="arabic">
 <li>
 <p>
-pré-réserver au départ un tableau de taille <tt>tailleMin</tt>.
+Reprogrammez la méthode  <tt>public Compte[] getComptesDe(String pNomProprietaire)</tt> :
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+L&#8217;algorithme suivi sera le suivant :
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Parcourir <tt>alCptes</tt> pour compter le nombre comptes à renvoyer pour le propriétaire recherché. Conserver les indices du premier et dernier compte trouvé.
 </p>
 </li>
 <li>
 <p>
-lorsque nécessaire : agrandir le tableau en doublant sa capacité.
+Créer un tableau de Compte pour le résultat de la taille nécessaire.
 </p>
 </li>
 <li>
 <p>
-lorsque nécessaire : réduire le tableau que lorsque il y a la moitié des éléments non utilisés et diviser alors sa taille par deux (sauf si elle est égale à <tt>tailleMin</tt>).
+Remplir le tableau à partir de <tt>alCptes</tt> en optimisant le parcours au vu de la recherche effectuée.
 </p>
+</li>
+</ul></div>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+Tous les tests (en particulier JUnit) doivent fonctionner.
+</p>
+</li>
+<li>
+<p>
+Calculer le coup moyen de calcul des 2 versions programmées (existante et la votre) :
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Compter un coût de 1 pour l&#8217;accès à un compte d&#8217;une l&#8217;ArrayList ou d&#8217;un tableau (en lecture ou en modification).
+</p>
+</li>
+<li>
+<p>
+Compter que dans la version initiale, l&#8217;ArrayList sera recopiée en interne une fois.
+</p>
+</li>
+<li>
+<p>
+Prendre en compte les éléments suivants :
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Un propriétaire possède en moyenne 12 comptes dans une agence.
+</p>
+</li>
+<li>
+<p>
+Une agence gère en moyenne 36000 comptes.
+</p>
+</li>
+</ul></div>
+</li>
+</ul></div>
 </li>
 </ol></div>
-<div class="paragraph"><p>Dans cette version :</p></div>
-<div class="olist arabic"><ol class="arabic">
-<li>
-<p>
-<tt>tailleMin</tt> est fixé à 3 pour les tests, on pourra le modifier plus tard si besoin (100 par exemple).
-</p>
-</li>
-<li>
-<p>
-Le constructeur créera un tableau de <tt>tailleMin</tt> éléments.
-</p>
-</li>
-<li>
-<p>
-Lors de l&#8217;ajout de compte, si le tableau est "plein", on doublera sa capacité (sa taille effective).
-</p>
-</li>
-<li>
-<p>
-Lors du retrait de compte, si le tableau contient la moitié des éléments non utilisés, on le réduira en divisant sans taille par deux, <strong>sauf</strong> si la taille est déjà de <tt>tailleMin</tt> éléments.
-</p>
-</li>
-<li>
-<p>
-le tableau de comptes <tt>tableauDesComptes</tt> aura tout le temps au minimum <tt>tailleMin</tt> éléments.
-</p>
-</li>
-<li>
-<p>
-Il faudra donc gérer dans cette version :
-</p>
-<div class="olist loweralpha"><ol class="loweralpha">
-<li>
-<p>
-d&#8217;une part le nombre d'éléments réellement dans le tableau,
-</p>
-</li>
-<li>
-<p>
-d&#8217;autre part la taille effective du tableau (3, 6, 12, 24, &#8230;)
-</p>
-</li>
-</ol></div>
-</li>
-</ol></div>
-</div>
-<div class="sect2">
-<h3 id="_analyse_de_la_mise_en_oeuvre">4.2. Analyse de la mise en oeuvre</h3>
-<div class="sect3">
-<h4 id="_attributs_nécessaires">4.2.1. Attributs nécessaires</h4>
-<div class="paragraph"><p>Réfléchir aux attributs à ajouter pour cette solution (2 devraient suffire). Les déclarer (toujours en private !).</p></div>
-<div class="admonitionblock">
-<table><tr>
-<td class="icon">
-<img alt="Note" src="data:image/png;base64,
-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" />
-</td>
-<td class="content">
-<div class="paragraph"><p>Pour déclarer tailleMin, utiliser ajoutera un attribut en utilisant la syntaxe suivante :</p></div>
-<div class="paragraph"><p><tt>private final int tailleMin = 3;</tt></p></div>
-<div class="paragraph"><p>qui crée un attribut, privé, de type int, d&#8217;identificateur <tt>tailleMin</tt></p></div>
-<div class="paragraph"><p>mais déclaré <tt>final</tt> donc non modifiable. C&#8217;est une constante. Par la suite, pour passer à 1 élément ou à 100, modifier cette ligne sera suffisant.</p></div>
-</td>
-</tr></table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_analyse_de_la_solution_à_mettre_en_oeuvre_2">4.2.2. Analyse de la solution à mettre en oeuvre</h4>
-<div class="paragraph"><p>Une bonne démarche consiste à réfléchir 10'-15' avant de commencer.</p></div>
-<div class="paragraph"><p>Parcourez le code écrit en version précédente. Réfléchir à ce qui sera modifié.</p></div>
-</div>
-<div class="sect3">
-<h4 id="_codage_todo_2">4.2.3. Codage : TODO</h4>
-<div class="paragraph"><p>A vous de jouer : modifier la classe pour réaliser l&#8217;implémentation demandée.</p></div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_tests">4.3. Tests</h3>
-<div class="paragraph"><p>Testez votre classe :</p></div>
-<div class="olist arabic"><ol class="arabic">
-<li>
-<p>
-L&#8217;application menu pour un opérateur de l&#8217;agence bancaire doit fonctionner avec votre classe.
-</p>
-</li>
-<li>
-<p>
-Elle doit passer avec succès (complet) les tests JUnit.
-</p>
-</li>
-</ol></div>
-</div>
 </div>
 </div>
 </div>
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2014-03-20 13:41:56 CET
+Dernière mise à jour 2015-02-25 09:08:19 CET
 </div>
 </div>
 </body>

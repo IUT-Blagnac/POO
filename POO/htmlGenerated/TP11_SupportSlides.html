@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
 <head>
 <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
-<meta name="copyright" content="2014-04-22, Your computer *** Dut/Info-S2/M2103 *** Powered by AsciiDoc and W3C Slidy &amp;#169;" />
+<meta name="copyright" content="2015-02-25, Your computer *** Dut/Info-S2/M2103 *** Powered by AsciiDoc and W3C Slidy &amp;#169;" />
 <meta name="generator" content="AsciiDoc 8.6.6 / slidy2 backend 1.0.3" />
 <title>BPOO - Support TP 11</title>
 <style type="text/css">
@@ -4148,19 +4148,19 @@ cellspacing="0" cellpadding="4">
 <tbody>
 <tr>
 <td align="left" valign="top"><p class="table">PreReq</p></td>
-<td align="left" valign="top"><p class="table">Avoir fait le TP de hiérarchie de classes Compte. Maîtriser l&#8217;héritage. TD8 : polymorphisme. Cours : polymorphisme.</p></td>
+<td align="left" valign="top"><p class="table">Avoir fait le TP de hiérarchie de classes Compte. Maitriser l&#8217;héritage.</p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">ObjTP</p></td>
-<td align="left" valign="top"><p class="table">Test du polymorphisme, mise en oeuvre du polymorphisme sur l&#8217;AgenceBancaire.</p></td>
+<td align="left" valign="top"><p class="table">Générer la documentation de classes pour les clients de la classe (API).</p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">Durée</p></td>
-<td align="left" valign="top"><p class="table"><strong>2 séance</strong> de 1,5h sur machine.</p></td>
+<td align="left" valign="top"><p class="table"><strong>1 séance</strong> de 1,5h sur machine.</p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">À rendre</p></td>
-<td align="left" valign="top"><p class="table">A déposer : code source des classes crées ou mises à jour. Les réponses aux questions sont à mettre en commentaire dans les fichiers rendus.</p></td>
+<td align="left" valign="top"><p class="table">A déposer : code source de CompteDepot et CompteSecurise commentées et, dans un répertoire, la documentation générée par javadoc pour toutes les classes (un seul fichier .zip).</p></td>
 </tr>
 </tbody>
 </table>
@@ -4177,26 +4177,35 @@ cellspacing="0" cellpadding="4">
 <script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="1. Objectif";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody">
 <div class="paragraph">
-<p>L&#8217;objectif de ce TP est <strong>important</strong> :</p>
+<p>Le but de ce TP est de documenter des classes à destination de <strong>programmeurs</strong> pour deux usages distincts :</p>
 </div>
 <ul class="">
 <li>
 <span>
-<strong>Tester le polymorphisme.</strong>
+Développement de classes <strong>clientes</strong> de vos classes.
 </span>
 </li>
 <li>
 <span>
-<strong>L&#8217;utiliser dans une application "réelle".</strong>
+Développement de classes qui <strong>héritent</strong> de vos classes.
 </span>
 </li>
 </ul>
 <div class="paragraph">
-<p>Nous avons déjà "utilisé" le polymorphisme : i) dans le TP sur les FormesGraphique à l&#8217;aide d&#8217;un tableau, ii) en TD.</p>
+<p>Le but de ce TP est de générer la documentation des classes du TP précédent sur la hiérarchie de comptes :</p>
 </div>
-<div class="paragraph">
-<p><strong>Nous allons l'étudier plus avant ici.</strong></p>
-</div>
+<ul class="">
+<li>
+<span>
+la documentation générée automatiquement par javadoc (structure de la documentation),
+</span>
+</li>
+<li>
+<span>
+la documentation détaillée (réelle) pour les classes CompteDepot et CompteSecurise. Les plus avancés pourront faire les autres classes.
+</span>
+</li>
+</ul>
 <div class="paragraph">
 <p>Rappel de la hiérarchie de classes du TP précédent :</p>
 </div>
@@ -4204,7 +4213,7 @@ cellspacing="0" cellpadding="4">
 <div class="content">
 <div class="paragraph"><div class="title">Diagramme UML des classes mises en oeuvre</div>
 <p><span class="image">
-<img alt="images//tp8.1.png" src="data:image/png;base64,
+<img alt="images/tp8.1.png" src="data:image/png;base64,
 iVBORw0KGgoAAAANSUhEUgAAAbwAAAKACAIAAABoglrDAAAANXRFWHRjb3B5bGVmdABHZW5lcmF0
 ZWQgYnkgaHR0cDovL3BsYW50dW1sLnNvdXJjZWZvcmdlLm5ldDpnVRsAAAGnelRYdHBsYW50dW1s
 AAB4nH2T0W6bMBSGr+unOJdEG1VolkWtetE2zbRVSxWNdLucDJymVrGN7EMmreu7z4ChTsR2B//3
@@ -4628,512 +4637,407 @@ AE0IgiBAE4IgyDj6v/Q40ssrUwxQAAAAAElFTkSuQmCC" />
 <script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="2. Mise en place de l&#8217;environnement";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Récupérer les fichiers de votre TP précédent :</p>
+<p>Récupérer les fichiers suivants dans votre répertoire de travail :</p>
 </div>
 <ul class="">
 <li>
 <span>
-Classe Compte.java telle qu&#8217;elle vous a été livrée (commentée).
+classe Compte.java telle qu&#8217;elle vous est livrée (commentée),
 </span>
 </li>
 <li>
 <span>
-Toutes les sous-classes développées au TP précédent (sous classes de Compte).
+toutes les sous-classes développées au TP précédent (sous classes de Compte).
 </span>
 </li>
 <li>
 <span>
-Les classes CompteException, Operation et SensOperation.
+les classes CompteException, Operation et SensOperation
 </span>
 </li>
 </ul>
-<div class="paragraph">
-<p>Récupérer depuis le serveur :</p>
-</div>
-<ul class="">
-<li>
-<span>
-ClassEssai.java : la classe à modifier au départ.
-</span>
-</li>
-<li>
-<span>
-Si besoin : tp11-partie1 : contient les fichiers ci-dessus si vous n'êtes pas arrivés au bout.
-</span>
-</li>
-</ul>
-<div class="paragraph">
-<p>Par la suite, les autres fichiers du serveur seront à télé-charger, pas nécessaires pour le moment.</p>
-</div>
 </div></div>
 <script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
-<h1 id="_test_du_polymorphisme">3. Test du polymorphisme</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="3. Test du polymorphisme";slidefootnotes="";/*]]>*/</script>
+<h1 id="_principes_de_documentation_des_classes">3. Principes de documentation des classes</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="3. Principes de documentation des classes";slidefootnotes="";/*]]>*/</script>
+<div class="sectionbody">
+<ol class="arabic">
+<li>
+<span>
+<tt>javadoc</tt> est un outil développé par Sun Microsystems permettant de générer une documentation d&#8217;API en format HTML depuis les commentaires présents dans un code source en Java.
+</span>
+<ol class="loweralpha">
+<li>
+<span>
+NB : Il existe d&#8217;autres outils de génération de documentation suivant les mêmes principes.
+</span>
+</li>
+</ol>
+</li>
+<li>
+<span>
+L’utilitaire javadoc permet de générer automatiquement la documentation d’un ensemble de classes java à partir des fichiers sources (.java).
+</span>
+</li>
+<li>
+<span>
+La documentation produite pour une classe est destinée aux futurs clients et sous-classes de cette classe :
+</span>
+<ul class="">
+<li>
+<span>
+On y retrouvera donc les propriétés public et protected, de classe et d’instances.
+</span>
+</li>
+<li>
+<span>
+Les propriétés privées et le code des méthodes, c’est-à-dire l’implémentation, ne se trouveront pas a priori dans la documentation (mais c&#8217;est possible).
+</span>
+</li>
+</ul>
+</li>
+<li>
+<span>
+La génération de la documentation se fait, à partir des fichiers sources, en recherchant deux types d’informations pour générer la documentation :
+</span>
+<ul class="">
+<li>
+<span>
+les <strong>déclarations java</strong> "pures" (le code java) pour trouver les informations "syntaxiques" à mettre dans la documentation : identificateurs des classes, héritage, propriétés déclarées publiques, identificateurs de méthodes, identificateurs des paramètres formels, &#8230;
+</span>
+</li>
+<li>
+<span>
+des <strong>commentaires</strong> ayant un <strong>format et un emplacement spécifiques</strong>, ajoutés par le programmeur, et qui viendront donner les éléments d’explication qui seront ajoutés à la documentation.
+</span>
+</li>
+</ul>
+</li>
+</ol>
+</div></div>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
+</div><div class="slide">
+
+<div class="sect1">
+<h1 id="_commande_javadoc_traitement_des_déclarations_java">4. Commande javadoc : traitement des déclarations java</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="4. Commande javadoc : traitement des déclarations java";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody">
 </div></div>
 <script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect2">
-<h1 id="_préparation_ajout_de_méthodes">3.1. Préparation : ajout de méthodes</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect2";nexttitle="3.1. Préparation : ajout de méthodes";slidefootnotes="";/*]]>*/</script>
+<h1 id="_utiliser_la_commande_javadoc">4.1. Utiliser la commande javadoc</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect2";nexttitle="4.1. Utiliser la commande javadoc";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>Questions</strong> :</p>
+<p>Ouvrir une fenêtre de commande :</p>
 </div>
 <ol class="arabic">
 <li>
 <span>
-Dans la classe <strong><tt>Compte</tt></strong>
-</span>
-<ol class="loweralpha">
-<li>
-<span>
-Déclarer une nouvelle méthode :
-</span>
-<ol class="lowerroman">
-<li>
-<span>
-<tt>public void  afficherAvecSolde ()</tt>.
+Se positionner dans votre répertoire de travail contenant les fichiers .java.
 </span>
 </li>
 <li>
 <span>
-Elle affiche le Compte (méthode <tt>this.afficher()</tt>) et ajoute le solde à l'écran (<tt>this.soldeCompte()</tt>).
+Tester la commande <tt>javadoc</tt>.
 </span>
+<ul class="">
+<li>
+<span>
+La réponse est une liste d&#8217;options de la commande (-version, &#8230;) &#8658; ok, passer à la suite.
+</span>
+</li>
+<li>
+<span>
+La réponse est un message du type "unknown command" &#8658; positionner le <tt>path</tt> permettant d&#8217;accéder à l&#8217;utilitaire javadoc qui se trouve dans le répertoire bin de la distribution du jdk : exemple
+</span>
+<div class="literalblock">
+<div class="content">
+<pre><tt>path=%path%;"C:\Programmes...\Java\...\jdkxxx\bin"</tt></pre>
+</div></div>
+</li>
+</ul>
 </li>
 </ol>
+<div class="paragraph">
+<p>Quelques options de la commande javadoc :</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>javadoc    -version  -author  -link URLDOC  -d  rep    c1.java  [c2.java ...]</tt></pre>
+</div></div>
+<div class="paragraph">
+<p>Cette commande, permet de générer la documentation :</p>
+</div>
+<ul class="">
+<li>
+<span>
+<tt>c1.java  [c2.java &#8230;]</tt> : pour la classe c1.java, et autres si précisées (*.java possible), les classes doivent exister dans le répertoire courant,
+</span>
 </li>
 <li>
 <span>
-Déclarer une autre méthode :
-</span>
-<ol class="lowerroman">
-<li>
-<span>
-<tt>public void transferer (Compte c, double pSomme) throws CompteException</tt>.
+<tt>-d  rep</tt> : recommandé, la documentation est générée dans le répertoire rep (<tt>-d</tt> : directory),
 </span>
 </li>
 <li>
 <span>
-Elle transfère (virement) pSomme euros de l&#8217;objet courant (retrait, <tt>this.retirer(pSomme)</tt>) vers le compte c (dépôt, <tt>c.deposer(pSomme)</tt>).
+<tt>-author</tt> : optionnel, provoque la génération des informations sur l&#8217;auteur si disponibles,
 </span>
 </li>
 <li>
 <span>
-Elle lève une exception <tt>CompteException</tt> si le dépôt ou le retrait sur un des deux comptes ne peut pas avoir lieu normalement. En fait elle "laisse" passer les exceptions levées par retirer() ou deposer().
+<tt>-version</tt> : optionnel, provoque la génération des informations de version si disponibles,
 </span>
 </li>
-</ol>
+<li>
+<span>
+<tt>-link URLDOC</tt> : optionnel, provoque la génération de liens hypertextes depuis la documentation générée vers une autre documentation située à URLDOC. L&#8217;URL peut être une URL classique ou bien un fichier local.
+</span>
+<div class="paragraph">
+<p>Exemple : <a href="http://java.sun.com/javase/6/docs/api/">http://java.sun.com/javase/6/docs/api/</a>. Cela fera que les noms de classes connues dans l&#8217;API Java (String, &#8230;) se présenteront comme des liens hypertextes vers la documentation générée.</p>
+</div>
 </li>
-</ol>
-</li>
-</ol>
+</ul>
 </div></div>
 <script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect2">
-<h1 id="_premiers_tests_de_polymorphisme">3.2. Premiers tests de polymorphisme</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect2";nexttitle="3.2. Premiers tests de polymorphisme";slidefootnotes="";/*]]>*/</script>
+<h1 id="_travail_à_faire">4.2. Travail à faire</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect2";nexttitle="4.2. Travail à faire";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>Questions</strong> :</p>
-</div>
-<ol class="arabic">
-<li>
-<span>
-Ouvrir le fichier ClassEssai.java.
-</span>
-</li>
-<li>
-<span>
-Il contient la déclaration de trois variables de type Compte : <tt>cUn, cDeux, cTrois</tt>.
-</span>
-</li>
-<li>
-<span>
-<strong>Sans changer ces déclarations</strong> :
-</span>
-<ol class="loweralpha">
-<li>
-<span>
-A l&#8217;aide de <tt>cUn</tt>, créer un objet de type CompteBancaire (avec le constructeur paramétré).
-</span>
-</li>
-<li>
-<span>
-A l&#8217;aide de <tt>cDeux</tt>, créer un objet de type CompteEpargne (avec le constructeur paramétré).
-</span>
-</li>
-<li>
-<span>
-A l&#8217;aide de <tt>cTrois</tt>, créer un objet de type CompteMoneo (avec le constructeur paramétré).
-</span>
-</li>
-</ol>
-</li>
-<li>
-<span>
-Déposer 2000 € sur chacun des trois comptes.
-</span>
-</li>
-<li>
-<span>
-Appliquer la méthode <tt>afficherAvecSolde()</tt> à chacun de ces trois comptes. <strong>Quelle est la méthode afficher() appelée pour chacun d&#8217;eux ?</strong>
-</span>
-</li>
-<li>
-<span>
-Transférer 500 € de <tt>cUn</tt> vers <tt>cDeux</tt>.
-</span>
-</li>
-<li>
-<span>
-Transférer 500 € de <tt>cUn</tt> vers <tt>cTrois</tt>.
-</span>
-</li>
-<li>
-<span>
-Appliquer la méthode afficherAvecSolde() à chacun de ces trois comptes. <strong>Quelle est la méthode afficher() appelée pour chacun d&#8217;eux ?</strong>
-</span>
-</li>
-<li>
-<span>
-Remarquez que, depuis le début de cette partie :
-</span>
-<ol class="loweralpha">
-<li>
-<span>
-<strong>Vous manipulez des variables déclarées de type Compte (type statique).</strong>
-</span>
-</li>
-<li>
-<span>
-<strong>Qui au "runtime" référencent un CompteBancaire, un CompteEpargne, un CompteMoneo.</strong>
-</span>
-</li>
-<li>
-<span>
-<strong>Et réagissent en fonction de leur type dynamique.</strong>
-</span>
-</li>
-</ol>
-</li>
-<li>
-<span>
-Déclarer une variable <tt>tabC</tt> de type tableau de Compte.
-</span>
-</li>
-<li>
-<span>
-Créer avec <tt>tabC</tt> un tableau de 3 Compte (références vers des objets Compte).
-</span>
-</li>
-<li>
-<span>
-Stocker :
-</span>
-<ol class="loweralpha">
-<li>
-<span>
-<tt>cUn</tt> dans l'élément 0 de <tt>tabC</tt>.
-</span>
-</li>
-<li>
-<span>
-<tt>cDeux</tt> dans l'élément 1 de <tt>tabC</tt>.
-</span>
-</li>
-<li>
-<span>
-<tt>cTrois</tt> dans l'élément 2 de <tt>tabC</tt>.
-</span>
-</li>
-</ol>
-</li>
-<li>
-<span>
-Par une boucle for, appliquer la méthode <tt>afficherAvecSolde()</tt> à chacun des éléments du tableau. <strong>Quelle est la méthode afficher() appelée pour chacun d&#8217;eux ?</strong>
-</span>
-</li>
-<li>
-<span>
-Par une boucle for, déposer 3000 € sur chacun des comptes de <tt>tabC</tt>.
-</span>
-</li>
-<li>
-<span>
-Transférer 1000 € de <tt>tabc[0]</tt> vers <tt>tabc[1]</tt>.
-</span>
-</li>
-<li>
-<span>
-Transférer 1000 € de <tt>tabc[0]</tt> vers <tt>tabc[2]</tt>.
-</span>
-</li>
-<li>
-<span>
-Par une boucle for, appliquer la méthode <tt>afficherAvecSolde()</tt> à chacun des éléments du tableau. <strong>Quelle est la méthode afficher() appelée pour chacun d&#8217;eux ?</strong>
-</span>
-</li>
-</ol>
-</div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
-</div><div class="slide">
-
-<div class="sect1">
-<h1 id="_le_polymorphisme_en_vraie_grandeur">4. Le polymorphisme en vraie grandeur</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="4. Le polymorphisme en vraie grandeur";slidefootnotes="";/*]]>*/</script>
-<div class="sectionbody">
-<div class="paragraph">
-<p>L&#8217;objectif maintenant est d&#8217;utiliser plusieurs types de comptes définis dans la classe AgenceBancaire. Pour cela nous allons modifier la classe déjà développée ClasseApplicationAgenceBancaire.java.</p>
-</div>
-<div class="paragraph">
-<p><strong>Questions</strong> :</p>
-</div>
-<ol class="arabic">
-<li>
-<span>
-Préparer l&#8217;activité :
-</span>
-<ol class="loweralpha">
-<li>
-<span>
-Dans le même répertoire que précédemment, récupérer les classes du serveur tp11-partie2. Ce fichier contient :
-</span>
-<ol class="lowerroman">
-<li>
-<span>
-ClasseApplicationAgenceBancaire.java : classe à modifier.
-</span>
-</li>
-<li>
-<span>
-LanceurApplication.java : programme contenant le main() à lancer.
-</span>
-</li>
-<li>
-<span>
-AgenceBancaire.java ainsi que les différentes classes d&#8217;exceptions nécessaires ABCompteDejaExistantException, ABCompteInexistantException, ABCompteNullException.
-</span>
-</li>
-</ol>
-</li>
-<li>
-<span>
-Ouvrir le fichier ClasseApplicationAgenceBancaire.java.
-</span>
-</li>
-</ol>
-</li>
-<li>
-<span>
-Dans ce TP, on considérera que :
-</span>
-<ol class="loweralpha">
-<li>
-<span>
-AgenceBancaire est la classe <strong>Modèle</strong>
-</span>
-</li>
-<li>
-<span>
-ClasseApplicationAgenceBancaire est la classe regroupant à la fois <strong>Vue et Contrôleur</strong>.
-</span>
-</li>
-<li>
-<span>
-LanceurApplication est la classe permettant de lancer l&#8217;application sur une agence particulière.
-</span>
-</li>
-</ol>
-</li>
-<li>
-<span>
-Étudier le code de la classe ClasseApplicationAgenceBancaire.
-</span>
-<ol class="loweralpha">
-<li>
-<span>
-Par rapport à une version antérieure de TP, la classe a évolué et elle définit maintenant des objets mettant en oeuvre l&#8217;application de gestion des comptes sur un objet AgenceBancaire passé en paramètre du constructeur.
-</span>
-</li>
-<li>
-<span>
-Etudier le constructeur
-</span>
-</li>
-<li>
-<span>
-Etudier la méthode runApplication().
-</span>
-</li>
-<li>
-<span>
-Etudier les méthodes voirUnCompte (), supprimerUnCompte(), deposerSurUnCompte(), retirerSurUnCompte().
-</span>
-</li>
-</ol>
-</li>
-<li>
-<span>
-Lancer l&#8217;application, elle doit fonctionner mais les fonctions "Créer un compte" (monéo, bancaire, épargne, jeune) et "Transférer" ne sont pas implémentées.
-</span>
-</li>
-<li>
-<span>
-Écrire les méthodes :
-</span>
-<ol class="loweralpha">
-<li>
-<span>
-<tt>private void creerCompteBancaire ()</tt> pour i) saisir les paramètres nécessaires ii) créer un compte bancaire et iii) l&#8217;ajouter à l&#8217;agence bancaire (cf. attribut monAg). Utiliser le constructeur paramétré le plus complet.
-</span>
-</li>
-<li>
-<span>
-<tt>private void creerCompteEpargne ()</tt> pour i) saisir les paramètres nécessaires ii) créer un compte épargne et iii) l&#8217;ajouter à l&#8217;agence bancaire (cf. attribut monAg). Utiliser le constructeur paramétré le plus complet.
-</span>
-</li>
-<li>
-<span>
-<tt>private void creerCompteMoneo ()</tt> pour i) saisir les paramètres nécessaires ii) créer un compte monéo et iii) l&#8217;ajouter à l&#8217;agence bancaire (cf. attribut monAg). Utiliser le constructeur paramétré le plus complet.
-</span>
-</li>
-<li>
-<span>
-<tt>private void creerCompteJeune ()</tt> pour i) saisir les paramètres nécessaires ii) créer un compte jeune et iii) l&#8217;ajouter à l&#8217;agence bancaire (cf. attribut monAg). Utiliser le constructeur paramétré le plus complet.
-</span>
-</li>
-</ol>
-</li>
-<li>
-<span>
-Écrire la méthode :
-</span>
-<ol class="loweralpha">
-<li>
-<span>
-<tt>private void transfertEntreDeuxComptes ()</tt> permettant de réaliser un transfert : i) saisir le numéro de deux comptes, ii) saisir un montant, iii) transférer le montant saisi du premier compte vers le second.
-</span>
-</li>
-</ol>
-</li>
-<li>
-<span>
-Tester la création de compte, le dépôt de sommes sur les comptes, le retrait, le transfert entre comptes, l&#8217;affichage de l&#8217;AgenceBancaire, l&#8217;affichage individuel des comptes. Tout doit fonctionner &#8230;
-</span>
-</li>
-</ol>
-<div class="paragraph">
-<p><strong>Questions - Analyse du code écrit</strong> :</p>
-</div>
-<ol class="arabic">
-<li>
-<span>
-Analyser le code de AgenceBancaire. <strong>Quelle est la classe de comptes sur laquelle est définie AgenceBancaire</strong> ?
-</span>
-</li>
-<li>
-<span>
-Analyser le code de ClasseApplicationAgenceBancaire. <strong>A quels "moments" précis se pose-t-on la question du type de compte réellement manipulé</strong> ?
-</span>
-</li>
-<li>
-<span>
-Analyser le code de ClasseApplicationAgenceBancaire. <strong>Quel type manipulent les méthodes <tt>voirUnCompte()</tt>, <tt>supprimerUnCompte()</tt>, <tt>deposerSurUnCompte()</tt>, <tt>retirerSurUnCompte</tt></strong> ?
-</span>
-</li>
-<li>
-<span>
-Analyser le code de ClasseApplicationAgenceBancaire. <strong>Quel type manipule la méthode <tt>transfertEntreDeuxComptes()</tt></strong> ?
-</span>
-</li>
-<li>
-<span>
-Vous venez de constater les (premiers) effets du polymorphisme&#8230;
-</span>
-</li>
-<li>
-<span>
-Imaginons que nous ajoutions une classe ComptePlacement comme sous-classe de CompteEpargne. <strong>Que faut-il modifier dans ClasseApplicationAgenceBancaire</strong> pour "intégrer" cette nouvelle classe ?
-</span>
-</li>
-</ol>
-</div></div>
-<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
-</div><div class="slide">
-
-<div class="sect1">
-<h1 id="_pousser_le_polymorphisme_plus_loin">5. Pousser le polymorphisme plus loin</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="5. Pousser le polymorphisme plus loin";slidefootnotes="";/*]]>*/</script>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Question - Classes abstraites</strong> :</p>
-</div>
-<ol class="arabic">
-<li>
-<span>
-On peut constater que les classes Compte, CompteDepot, et CompteSecurise ne représentent pas des comptes réels que les banquiers proposent à leurs clients.
-</span>
-</li>
-<li>
-<span>
-Déclarer <tt>abstract</tt> les classes Compte, CompteDepot, et CompteSecurise. Le programme continue-t-il à fonctionner ?
-</span>
-</li>
-</ol>
-<div class="paragraph">
-<p><strong>Question - Méthodes spécifiques</strong> :</p>
-</div>
-<ol class="arabic">
-<li>
-<span>
-Pour les classes héritant de CompteSecurise (CompteBancaire, CompteJeune), on ne peut pas utiliser dans ClasseApplicationAgenceBancaire la méthode <tt>isRetraitPossible()</tt>. Essayer d&#8217;appeler <tt>isRetraitPossible()</tt> dans dans la méthode de retrait sur un Compte <tt>retirerSurUnCompte()</tt> pour vérifier. <strong>Expliquez pourquoi</strong>.
-</span>
-</li>
-<li>
-<span>
-Déclarer la méthode <tt>isRetraitPossible()</tt> comme <tt>abstract</tt> dans Compte.
-</span>
-</li>
-<li>
-<span>
-On souhaite que la méthode <tt>isRetraitPossible()</tt> soit <tt>abstract</tt> dans CompteDepot. Faut-il écrire quelque chose ? Quoi ? Rien ?
-</span>
-</li>
-<li>
-<span>
-La redéfinir <strong>si besoin</strong> et correctement dans les classes CompteMoneo, CompteEpargne, CompteBancaire, CompteCompteJeune. A noter : jusqu'à maintenant, tout retrait est possible quelque soit son montant (&gt;=0) sur les comptes monéo et épargne.
-</span>
-</li>
-<li>
-<span>
-Utiliser la méthode <tt>isRetraitPossible()</tt> pour tester un retrait avant de l&#8217;effectuer dans la classe ClasseApplicationAgenceBancaire dans les méthodes : <tt>retirerSurUnCompte()</tt> et <tt>transfertEntreDeuxComptes()</tt>.
-</span>
-</li>
-<li>
-<span>
-Tester l&#8217;application et essayer des dépôts sur les 4 types de comptes et des transferts entre les 4 types de comptes.
-</span>
-</li>
-</ol>
-<div class="paragraph">
-<p><strong>Conclusion :</strong></p>
+<p><strong>Question :</strong> Sans ajouter de commentaire aux classes écrites :</p>
 </div>
 <ul class="">
 <li>
 <span>
-<strong>Pour faciliter le polymorphisme : les méthodes sont à déclarer "le plus haut possible" dans une hiérarchie d&#8217;héritage</strong>.
+<strong>si besoin, reprendre la classe <tt>Compte</tt> du serveur (documentée),</strong>
 </span>
 </li>
 <li>
 <span>
-<strong>Ce point est un problème de conception des classe</strong>.
+<strong>générer la documentation de toutes vos classes du TP (hiérarchie de Compte + autres classes),</strong>
+</span>
+</li>
+<li>
+<span>
+<strong>consulter la documentation pour comprendre ce qui est généré.</strong>
+</span>
+</li>
+</ul>
+</div></div>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
+</div><div class="slide">
+
+<div class="sect1">
+<h1 id="_commentaires_javadoc">5. Commentaires javadoc</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="5. Commentaires javadoc";slidefootnotes="";/*]]>*/</script>
+<div class="sectionbody">
+</div></div>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
+</div><div class="slide">
+
+<div class="sect2">
+<h1 id="_insertion_de_commentaires_pour_générer_le_complément_de_documentation">5.1. Insertion de commentaires pour générer le complément de documentation</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect2";nexttitle="5.1. Insertion de commentaires pour générer le complément de documentation";slidefootnotes="";/*]]>*/</script>
+<div class="sectionbody">
+<ol class="arabic">
+<li>
+<span>
+Des commentaires spécifiques sont analysés par javadoc pour construire la documentation générée. Ils ont la forme :
+</span>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-style: italic"><span style="color: #9A1900">/**</span></span>
+<span style="font-style: italic"><span style="color: #9A1900"> * Ici les commentaires que javadoc analysera</span></span>
+<span style="font-style: italic"><span style="color: #9A1900"> * Le tout servira à produire des blocs de textes dans la documentation générée.</span></span>
+<span style="font-style: italic"><span style="color: #9A1900"> */</span></span></tt></pre></div></div>
+</li>
+<li>
+<span>
+Ces éléments de commentaire sont insérés <strong>avant</strong> l'élément syntaxique qu&#8217;ils décrivent : avant la clause de déclaration de classe, avant la déclaration d&#8217;une méthode, &#8230;
+</span>
+</li>
+<li>
+<span>
+L'élément important est ici le début du commentaire : <tt>/**</tt>
+</span>
+</li>
+<li>
+<span>
+Chaque élément de commentaire contient (principalement) :
+</span>
+<ul class="">
+<li>
+<span>
+une première ligne se terminant par un point (".") ; C&#8217;est le résumé qui apparaît dans le tableau résumé de la documentation (cf. description des méthodes),
+</span>
+</li>
+<li>
+<span>
+du texte composant le commentaire détaillé,
+</span>
+</li>
+<li>
+<span>
+des balises html de mise en forme (<tt>&lt;BR&gt;, &lt;B&gt; &#8230; &lt;/B&gt;, &lt;code&gt; &#8230; &lt;/code&gt;, &#8230;</tt>),
+</span>
+</li>
+<li>
+<span>
+des  balises spéciales propres à javadoc et commençant pas le caractère @ : les « tags ».
+</span>
+</li>
+</ul>
+</li>
+</ol>
+<div class="paragraph">
+<p>Exemple :</p>
+</div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-style: italic"><span style="color: #9A1900">/**</span></span>
+<span style="font-style: italic"><span style="color: #9A1900"> * Permet d'effectuer un retrait sur un Compte.</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
+<span style="font-style: italic"><span style="color: #9A1900"> * </span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
+<span style="font-style: italic"><span style="color: #9A1900"> * Effectue un retrait (débit) de pSomme Euros sur le Compte.</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
+<span style="font-style: italic"><span style="color: #9A1900"> * Lève une exception si pSomme &lt; 0. </span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
+<span style="font-style: italic"><span style="color: #9A1900"> *</span></span>
+<span style="font-style: italic"><span style="color: #9A1900"> * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900"> pSomme   Le montant retiré sur le Compte.</span></span>
+<span style="font-style: italic"><span style="color: #9A1900"> * </span></span><span style="color: #009900">@throws</span><span style="font-style: italic"><span style="color: #9A1900"> CompteException   Lorsque pSomme &lt; 0</span></span>
+<span style="font-style: italic"><span style="color: #9A1900"> * </span></span><span style="color: #009900">@see</span><span style="font-style: italic"><span style="color: #9A1900"> Compte#deposer(double)</span></span>
+<span style="font-style: italic"><span style="color: #9A1900"> */</span></span>
+<span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">retirer</span></span><span style="color: #990000">(</span><span style="color: #009900">double</span> pSomme<span style="color: #990000">)</span> <span style="font-weight: bold"><span style="color: #0000FF">throws</span></span> CompteException <span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>pSomme <span style="color: #990000">&lt;</span> <span style="color: #993399">0</span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">throw</span></span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">CompteException</span></span><span style="color: #990000">(</span>
+                        <span style="color: #FF0000">"Erreur de somme négative lors d'un retrait sur "</span> <span style="color: #990000">+</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>numCompte<span style="color: #990000">);</span>
+        <span style="color: #FF0000">}</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>debits <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>debits <span style="color: #990000">+</span> pSomme<span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>nbDebits<span style="color: #990000">++;</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+<div class="paragraph">
+<p>Voir la classe Compte.java livrée.</p>
+</div>
+</div></div>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
+</div><div class="slide">
+
+<div class="sect2">
+<h1 id="_liste_non_exhaustive_de_tags_reconnus_par_javadoc">5.2. Liste (non exhaustive) de tags reconnus par javadoc</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect2";nexttitle="5.2. Liste (non exhaustive) de tags reconnus par javadoc";slidefootnotes="";/*]]>*/</script>
+<div class="sectionbody">
+<div class="tableblock">
+<table rules="all"
+style="margin-left:0; margin-right:auto;"
+width="90%"
+frame="border"
+cellspacing="0" cellpadding="4">
+<col width="10%" />
+<col width="80%" />
+<col width="10%" />
+<tbody>
+<tr>
+<td align="left" valign="top"><p class="table">Balise</p></td>
+<td align="left" valign="top"><p class="table">Rôle</p></td>
+<td align="left" valign="top"><p class="table">Applicable à</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">@author</p></td>
+<td align="left" valign="top"><p class="table"><tt>@author   text</tt></p>
+<p class="table">Précise l&#8217;auteur de la source. Si plusieurs auteurs, mettre plusieurs balises.</p>
+<p class="table">Ex : <tt>@author A. Péninou</tt></p></td>
+<td align="left" valign="top"><p class="table">Classe et Méthode.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">@version</p></td>
+<td align="left" valign="top"><p class="table"><tt>@version  version-text</tt></p>
+<p class="table">Version en cours de l'élément.</p>
+<p class="table">Ex : <tt>@version          2.3.1.15.12</tt></p></td>
+<td align="left" valign="top"><p class="table">Classe, Méthode et Interface.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">@param</p></td>
+<td align="left" valign="top"><p class="table"><tt>@param  parameter-name description</tt></p>
+<p class="table">Définit un paramètre de méthode. Requis pour chaque paramètre. Donne l&#8217;identificateur du paramètre suivi d&#8217;une explication succincte.</p>
+<p class="table">Ex : <tt>@param     pNomProp     Le nom du propriétaire.</tt></p></td>
+<td align="left" valign="top"><p class="table">Constructeur et Méthode.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">@return</p></td>
+<td align="left" valign="top"><p class="table"><tt>@return  description</tt></p>
+<p class="table">Documente la valeur de retour d&#8217;une méthode. Ce tag ne doit pas être employé pour des constructeurs ni des méthodes définies comme void.</p>
+<p class="table">Ex : <tt>@return   true si ok, false sinon.</tt></p></td>
+<td align="left" valign="top"><p class="table">Méthode.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">@exception</p>
+<p class="table">@throws</p></td>
+<td align="left" valign="top"><p class="table"><tt>@throws  class-name  description</tt></p>
+<p class="table"><tt>@exception class-name  description</tt></p>
+<p class="table">Documente une exception lancée par une méthode.</p>
+<p class="table">@throws est un synonyme pour @exception disponible depuis Javadoc 1.2.</p>
+<p class="table">Exemple : <tt>throws CompteException Lorsque pSomme &lt; 0</tt></p></td>
+<td align="left" valign="top"><p class="table">Méthode.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">@see</p></td>
+<td align="left" valign="top"><p class="table"><tt>@see  reference</tt></p>
+<p class="table">Crée un paragraphe "Voir aussi".</p>
+<p class="table">Établit un lien hypertexte vers un autre élément en rapport avec la partie traitée. L’élément en rapport peut être dans la classe ou dans une autre classe.</p>
+<p class="table">Ex : <tt>@see   Compte#deposer(double)</tt></p></td>
+<td align="left" valign="top"><p class="table">Package, Classe, Méthode, Constructeur, Interface et Attribut.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">@since</p></td>
+<td align="left" valign="top"><p class="table"><tt>@since  since-text</tt></p>
+<p class="table">Précise à quelle version de la JDK un élément défini a été ajouté à la classe. Date de création de l&#8217;entité.</p></td>
+<td align="left" valign="top"><p class="table">Package, Classe, Méthode, Constructeur, Interface et Attribut.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">@deprecated</p></td>
+<td align="left" valign="top"><p class="table"><tt>@deprecated   text</tt></p>
+<p class="table">Deprecated signifie "à ne plus utiliser à partir d’une version donnée (text)", susceptible de disparaître dans les versions ultérieures.</p>
+<p class="table">Lorsque cette balise est mise dans le commentaire de tête (classe), TOUT ce qui suit est considéré comme Deprecated (Méthode,&#8230;). Sinon le préciser seulement au niveau désiré.</p></td>
+<td align="left" valign="top"><p class="table">Classe, Interface, Méthode et Attribut.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></div>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
+</div><div class="slide">
+
+<div class="sect2">
+<h1 id="_travail_à_faire_2">5.3. Travail à faire</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect2";nexttitle="5.3. Travail à faire";slidefootnotes="";/*]]>*/</script>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Question : Commenter les classes CompteDepot et CompteSecurise et générer la documentation correspondante. Voir la documentation générée sur toutes les classes (héritage).</strong></p>
+</div>
+<div class="paragraph">
+<p>Rappel : La documentation d&#8217;une classe est à destination de <strong>programmeurs</strong> pour deux usages distincts :</p>
+</div>
+<ul class="">
+<li>
+<span>
+Développement de classes <strong>clientes</strong> de vos classes.
+</span>
+</li>
+<li>
+<span>
+Développement de classes qui <strong>héritent</strong> de vos classes.
 </span>
 </li>
 </ul>
@@ -5232,516 +5136,19 @@ EoAjGf88yXMZEtJTDOcRVg59vR52wHrUMosL0Pr6+oJJMnhJJBu7N4xGwP8A4X8RE1D3pWkAAAAA
 SUVORK5CYII=" />
 </td>
 <td class="content">
-<div class="title">Solution Première partie</div>
+<div class="title">Solutions</div>
 <div class="listingblock">
 <div class="content"><!-- Generator: GNU source-highlight 3.1.5
 by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
-<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">Compte</span> <span style="font-weight: bold"><span style="color: #0000FF">extends</span></span> Object
-<span style="color: #FF0000">{</span>
-        <span style="font-style: italic"><span style="color: #9A1900">// ...</span></span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span>  <span style="font-weight: bold"><span style="color: #000000">afficherAvecSolde</span></span> <span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Solde : "</span><span style="color: #990000">+</span><span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soldeCompte</span></span><span style="color: #990000">());</span>
-        <span style="color: #FF0000">}</span>
-
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">transferer</span></span> <span style="color: #990000">(</span><span style="color: #008080">Compte</span> c<span style="color: #990000">,</span> <span style="color: #009900">double</span> pSomme<span style="color: #990000">)</span> <span style="font-weight: bold"><span style="color: #0000FF">throws</span></span> CompteException <span style="color: #FF0000">{</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">retirer</span></span><span style="color: #990000">(</span>pSomme<span style="color: #990000">);</span>
-                c<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">deposer</span></span><span style="color: #990000">(</span>pSomme<span style="color: #990000">);</span>
-        <span style="color: #FF0000">}</span>
-<span style="color: #FF0000">}</span>
-
-<span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">ClassEssai</span> <span style="color: #FF0000">{</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">(</span>String<span style="color: #990000">[]</span> args<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-
-                <span style="color: #008080">Compte</span> cUn<span style="color: #990000">,</span> cDeux<span style="color: #990000">,</span> cTrois<span style="color: #990000">;</span>
-
-                cUn <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">CompteBancaire</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"010101"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"prop01"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"jisa010101"</span><span style="color: #990000">,</span> <span style="color: #993399">500</span><span style="color: #990000">);</span>
-                cDeux <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">CompteEpargne</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"02020202"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"prop020202"</span><span style="color: #990000">,</span> <span style="color: #993399">10</span><span style="color: #990000">);</span>
-                cTrois <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">CompteMoneo</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"03030303"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"prop030303"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"moneo030303"</span><span style="color: #990000">);</span>
-
-                <span style="font-weight: bold"><span style="color: #0000FF">try</span></span> <span style="color: #FF0000">{</span>
-                        cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">deposer</span></span><span style="color: #990000">(</span><span style="color: #993399">2000</span><span style="color: #990000">);</span>
-                        cDeux<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">deposer</span></span><span style="color: #990000">(</span><span style="color: #993399">2000</span><span style="color: #990000">);</span>
-                        cTrois<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">deposer</span></span><span style="color: #990000">(</span><span style="color: #993399">2000</span><span style="color: #990000">);</span>
-                <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">CompteException</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"PBPB"</span><span style="color: #990000">);</span>
-                <span style="color: #FF0000">}</span>
-
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"cUn"</span><span style="color: #990000">);</span>
-                cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficherAvecSolde</span></span><span style="color: #990000">();</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"cDeux"</span><span style="color: #990000">);</span>
-                cDeux<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficherAvecSolde</span></span><span style="color: #990000">();</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"cTrois"</span><span style="color: #990000">);</span>
-                cTrois<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficherAvecSolde</span></span><span style="color: #990000">();</span>
-
-                <span style="font-weight: bold"><span style="color: #0000FF">try</span></span> <span style="color: #FF0000">{</span>
-                        cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">transferer</span></span><span style="color: #990000">(</span>cDeux<span style="color: #990000">,</span> <span style="color: #993399">500</span><span style="color: #990000">);</span>
-                        cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">transferer</span></span><span style="color: #990000">(</span>cTrois<span style="color: #990000">,</span> <span style="color: #993399">500</span><span style="color: #990000">);</span>
-                <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">CompteException</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"PBPB"</span><span style="color: #990000">);</span>
-                <span style="color: #FF0000">}</span>
-
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"cUn"</span><span style="color: #990000">);</span>
-                cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficherAvecSolde</span></span><span style="color: #990000">();</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"cDeux"</span><span style="color: #990000">);</span>
-                cDeux<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficherAvecSolde</span></span><span style="color: #990000">();</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"cTrois"</span><span style="color: #990000">);</span>
-                cTrois<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficherAvecSolde</span></span><span style="color: #990000">();</span>
-
-                <span style="color: #008080">Compte</span> tabC<span style="color: #990000">[]</span> <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> Compte<span style="color: #990000">[</span><span style="color: #993399">3</span><span style="color: #990000">];</span>
-
-                tabC<span style="color: #990000">[</span><span style="color: #993399">0</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> cUn<span style="color: #990000">;</span>
-                tabC<span style="color: #990000">[</span><span style="color: #993399">1</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> cDeux<span style="color: #990000">;</span>
-                tabC<span style="color: #990000">[</span><span style="color: #993399">2</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> cTrois<span style="color: #990000">;</span>
-
-                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span><span style="color: #009900">int</span> i <span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>tabC<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Compte : "</span><span style="color: #990000">+</span>i<span style="color: #990000">);</span>
-                        tabC<span style="color: #990000">[</span>i<span style="color: #990000">].</span><span style="font-weight: bold"><span style="color: #000000">afficherAvecSolde</span></span><span style="color: #990000">();</span>
-                <span style="color: #FF0000">}</span>
-
-                <span style="font-weight: bold"><span style="color: #0000FF">try</span></span> <span style="color: #FF0000">{</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span><span style="color: #009900">int</span> i <span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>tabC<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
-                                tabC<span style="color: #990000">[</span>i<span style="color: #990000">].</span><span style="font-weight: bold"><span style="color: #000000">deposer</span></span><span style="color: #990000">(</span><span style="color: #993399">3000</span><span style="color: #990000">);</span>
-                        <span style="color: #FF0000">}</span>
-                        tabC<span style="color: #990000">[</span><span style="color: #993399">0</span><span style="color: #990000">].</span><span style="font-weight: bold"><span style="color: #000000">transferer</span></span><span style="color: #990000">(</span>tabC<span style="color: #990000">[</span><span style="color: #993399">1</span><span style="color: #990000">],</span> <span style="color: #993399">1000</span><span style="color: #990000">);</span>
-                        tabC<span style="color: #990000">[</span><span style="color: #993399">0</span><span style="color: #990000">].</span><span style="font-weight: bold"><span style="color: #000000">transferer</span></span><span style="color: #990000">(</span>tabC<span style="color: #990000">[</span><span style="color: #993399">2</span><span style="color: #990000">],</span> <span style="color: #993399">1000</span><span style="color: #990000">);</span>
-                <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">CompteException</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"PBPB"</span><span style="color: #990000">);</span>
-                <span style="color: #FF0000">}</span>
-
-                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span><span style="color: #009900">int</span> i <span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>tabC<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Compte : "</span><span style="color: #990000">+</span>i<span style="color: #990000">);</span>
-                        tabC<span style="color: #990000">[</span>i<span style="color: #990000">].</span><span style="font-weight: bold"><span style="color: #000000">afficherAvecSolde</span></span><span style="color: #990000">();</span>
-                <span style="color: #FF0000">}</span>
-        <span style="color: #FF0000">}</span>
-<span style="color: #FF0000">}</span></tt></pre></div></div>
-</td>
-</tr></table>
-</div>
-<div class="admonitionblock">
-<table><tr>
-<td class="icon">
-<img alt="Important" src="data:image/png;base64,
-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
-SUVORK5CYII=" />
-</td>
-<td class="content">
-<div class="title">Solution Deuxième partie</div>
-<div class="listingblock">
-<div class="content"><!-- Generator: GNU source-highlight 3.1.5
-by Lorenzo Bettini
-http://www.lorenzobettini.it
-http://www.gnu.org/software/src-highlite -->
-<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">ClasseApplicationAgenceBancaire</span> <span style="color: #FF0000">{</span>
-
-        <span style="font-style: italic"><span style="color: #9A1900">// Saisir les infos pour un CompteBancaire</span></span>
-        <span style="font-style: italic"><span style="color: #9A1900">// Créer l'objet CompteBancaire</span></span>
-        <span style="font-style: italic"><span style="color: #9A1900">// Ajouter cet objet à l'agence gérée</span></span>
-        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">creerCompteBancaire</span></span> <span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
-                <span style="color: #008080">CompteBancaire</span> cb<span style="color: #990000">;</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Not Yet Implemented"</span><span style="color: #990000">);</span>
-
-                <span style="color: #008080">String</span> numero<span style="color: #990000">,</span> proprietaire<span style="color: #990000">,</span> carteJissa<span style="color: #990000">;</span>
-                <span style="color: #009900">double</span> da<span style="color: #990000">;</span>
-
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Num compte -&gt; "</span><span style="color: #990000">);</span>
-                numero <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>lect<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">next</span></span><span style="color: #990000">();</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Propriétaire -&gt; "</span><span style="color: #990000">);</span>
-                proprietaire <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>lect<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">next</span></span><span style="color: #990000">();</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Carte Jisa -&gt; "</span><span style="color: #990000">);</span>
-                carteJissa <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>lect<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">next</span></span><span style="color: #990000">();</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Découvert autorisé -&gt; "</span><span style="color: #990000">);</span>
-                da <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>lect<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">nextDouble</span></span><span style="color: #990000">();</span>
-
-                cb <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">CompteBancaire</span></span><span style="color: #990000">(</span>numero<span style="color: #990000">,</span> proprietaire<span style="color: #990000">,</span> carteJissa<span style="color: #990000">,</span> da<span style="color: #990000">);</span>
-
-                <span style="font-weight: bold"><span style="color: #0000FF">try</span></span> <span style="color: #FF0000">{</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>monAg<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">addCompte</span></span><span style="color: #990000">(</span>cb<span style="color: #990000">);</span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Ajout effectué ..."</span><span style="color: #990000">);</span>
-                <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">ABCompteNullException</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{}</span>
-                  <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">ABCompteDejaExistantException</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                          System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Pb ... numéro déjà existant, ajout non effectué ..."</span><span style="color: #990000">);</span>
-                <span style="color: #FF0000">}</span>
-        <span style="color: #FF0000">}</span>
-
-        <span style="font-style: italic"><span style="color: #9A1900">// Autres méthodes sur ce modèle</span></span>
-
-
-        <span style="font-style: italic"><span style="color: #9A1900">// Transfert entre deux comptes</span></span>
-        <span style="font-style: italic"><span style="color: #9A1900">// Saisir les numéros de deux comptes,</span></span>
-        <span style="font-style: italic"><span style="color: #9A1900">// Saisir le montant à transférer</span></span>
-        <span style="font-style: italic"><span style="color: #9A1900">// Réaliser le transfert</span></span>
-
-        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">transfertEntreDeuxComptes</span></span> <span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Not Yet Implemented"</span><span style="color: #990000">);</span>
-                <span style="color: #008080">Compte</span> cDe<span style="color: #990000">,</span> cVers<span style="color: #990000">;</span>
-                <span style="color: #008080">String</span> numDe<span style="color: #990000">,</span> numVers<span style="color: #990000">;</span>
-                <span style="color: #009900">double</span> montant<span style="color: #990000">;</span>
-
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Transfére du compte numéro -&gt; "</span><span style="color: #990000">);</span>
-                numDe <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>lect<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">next</span></span><span style="color: #990000">();</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Vers le compte numéro -&gt; "</span><span style="color: #990000">);</span>
-                numVers <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>lect<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">next</span></span><span style="color: #990000">();</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Montant à transférer -&gt; "</span><span style="color: #990000">);</span>
-                montant <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>lect<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">nextDouble</span></span><span style="color: #990000">();</span>
-                cDe <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>monAg<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getCompte</span></span><span style="color: #990000">(</span>numDe<span style="color: #990000">);</span>
-                cVers <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>monAg<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getCompte</span></span><span style="color: #990000">(</span>numVers<span style="color: #990000">);</span>
-
-                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>cDe <span style="color: #990000">==</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span> <span style="color: #990000">||</span> cVers <span style="color: #990000">==</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Un des deux comptes est inexistant ..."</span><span style="color: #990000">);</span>
-                <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">else</span></span> <span style="color: #FF0000">{</span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Solde de "</span> <span style="color: #990000">+</span> numDe <span style="color: #990000">+</span> <span style="color: #FF0000">" avant dépôt : "</span> <span style="color: #990000">+</span> cDe<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soldeCompte</span></span><span style="color: #990000">());</span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Solde de "</span> <span style="color: #990000">+</span> numVers <span style="color: #990000">+</span> <span style="color: #FF0000">" avant dépôt : "</span> <span style="color: #990000">+</span> cVers<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soldeCompte</span></span><span style="color: #990000">());</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">try</span></span> <span style="color: #FF0000">{</span>
-                                cDe<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">transferer</span></span><span style="color: #990000">(</span>cVers<span style="color: #990000">,</span> montant<span style="color: #990000">);</span>
-                                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Solde de "</span> <span style="color: #990000">+</span> numDe <span style="color: #990000">+</span> <span style="color: #FF0000">" avant dépôt : "</span> <span style="color: #990000">+</span> cDe<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soldeCompte</span></span><span style="color: #990000">());</span>
-                                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Solde de "</span> <span style="color: #990000">+</span> numVers <span style="color: #990000">+</span> <span style="color: #FF0000">" avant dépôt : "</span> <span style="color: #990000">+</span> cVers<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soldeCompte</span></span><span style="color: #990000">());</span>
-                        <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">CompteException</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Erreur de transfert"</span><span style="color: #990000">);</span>
-                        <span style="color: #FF0000">}</span>
-                <span style="color: #FF0000">}</span>
-        <span style="color: #FF0000">}</span>
-<span style="color: #FF0000">}</span></tt></pre></div></div>
-</td>
-</tr></table>
-</div>
-<div class="admonitionblock">
-<table><tr>
-<td class="icon">
-<img alt="Important" src="data:image/png;base64,
-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
-SUVORK5CYII=" />
-</td>
-<td class="content">
-<div class="title">Solution</div>
-<div class="paragraph">
-<p>AgenceBancaire &#8658; Compte</p>
-</div>
-<div class="paragraph">
-<p>ClasseApplicationAgenceBancaire &#8658; question du type lors de la création des comptes.</p>
-</div>
-<div class="paragraph">
-<p>ClasseApplicationAgenceBancaire &#8658; méthodes <tt>voirUnCompte()</tt>, <tt>supprimerUnCompte()</tt>, <tt>deposerSurUnCompte()</tt>, <tt>retirerSurUnCompte</tt> &#8658; manipulent des objets de la classe Compte.</p>
-</div>
-<div class="paragraph">
-<p>ClasseApplicationAgenceBancaire &#8658; méthode <tt>transfertEntreDeuxComptes()</tt> &#8658; manipule des objets de la classe Compte.</p>
-</div>
-<div class="paragraph">
-<p>Classe ClassePlacement comme sous-classe de CompteEpargne. <strong>Que faut-il modifier dans ClasseApplicationAgenceBancaire</strong> pour "intégrer" cette nouvelle classe ? &#8658; Ajouter une option de menu de création de ce type de compte + code correspondant. C&#8217;est tout, le reste marchera.</p>
-</div>
-</td>
-</tr></table>
-</div>
-<div class="admonitionblock">
-<table><tr>
-<td class="icon">
-<img alt="Important" src="data:image/png;base64,
-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
-SUVORK5CYII=" />
-</td>
-<td class="content">
-<div class="title">Solution</div>
-<div class="literalblock">
-<div class="content">
-<pre><tt>public abstract class Compte { ... }</tt></pre>
-</div></div>
-<div class="literalblock">
-<div class="content">
-<pre><tt>public abstract class CompteDepot { ... }</tt></pre>
-</div></div>
-<div class="literalblock">
-<div class="content">
-<pre><tt>public abstract class CompteSecurise { ... }</tt></pre>
-</div></div>
-<div class="paragraph">
-<p>Le programme continue à fonctionner.</p>
-</div>
-<div class="paragraph">
-<p>Pour les classes héritant de CompteSecurise (CompteBancaire, CompteJeune), on ne peut pas utiliser dans ClasseApplicationAgenceBancaire la méthode <tt>isRetraitPossible()</tt> (à essayer si besoin). <strong>Expliquez pourquoi</strong>.</p>
-</div>
-<div class="paragraph">
-<p>&#8658; Car non définie dans la classe Compte.</p>
-</div>
-<div class="listingblock">
-<div class="content"><!-- Generator: GNU source-highlight 3.1.5
-by Lorenzo Bettini
-http://www.lorenzobettini.it
-http://www.gnu.org/software/src-highlite -->
-<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">abstract</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">Compte</span> <span style="color: #FF0000">{</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">abstract</span></span> <span style="color: #009900">boolean</span> <span style="font-weight: bold"><span style="color: #000000">isRetraitPossible</span></span><span style="color: #990000">(</span><span style="color: #009900">double</span> pSomme<span style="color: #990000">);</span>
-<span style="color: #FF0000">}</span>
-
-<span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">CompteMoneo</span> <span style="color: #FF0000">{</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">abstract</span></span> <span style="color: #009900">boolean</span> <span style="font-weight: bold"><span style="color: #000000">isRetraitPossible</span></span><span style="color: #990000">(</span><span style="color: #009900">double</span> pSomme<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="font-weight: bold"><span style="color: #0000FF">true</span></span><span style="color: #990000">;</span> <span style="font-style: italic"><span style="color: #9A1900">// Car toujours ok</span></span>
-        <span style="color: #FF0000">}</span>
-<span style="color: #FF0000">}</span>
-
-<span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">abstract</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">CompteDepot</span> <span style="color: #FF0000">{</span> <span style="font-style: italic"><span style="color: #9A1900">// Rien de spécial</span></span>
-<span style="color: #FF0000">}</span>
-
-<span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">CompteEpargne</span> <span style="color: #FF0000">{</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">abstract</span></span> <span style="color: #009900">boolean</span> <span style="font-weight: bold"><span style="color: #000000">isRetraitPossible</span></span><span style="color: #990000">(</span><span style="color: #009900">double</span> pSomme<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="font-weight: bold"><span style="color: #0000FF">true</span></span><span style="color: #990000">;</span> <span style="font-style: italic"><span style="color: #9A1900">// Car toujours ok</span></span>
-        <span style="color: #FF0000">}</span>
-<span style="color: #FF0000">}</span>
-
-<span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">abstract</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">CompteSecurise</span> <span style="color: #FF0000">{</span> <span style="font-style: italic"><span style="color: #9A1900">// Non modifiée, telle que au départ</span></span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">boolean</span> <span style="font-weight: bold"><span style="color: #000000">isRetraitPossible</span></span><span style="color: #990000">(</span><span style="color: #009900">double</span> pSomme<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soldeCompte</span></span><span style="color: #990000">()</span> <span style="color: #990000">-</span> pSomme <span style="color: #990000">&gt;=</span> <span style="color: #990000">(-</span><span style="color: #993399">1</span><span style="color: #990000">)</span> <span style="color: #990000">*</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>debitAutorise<span style="color: #990000">);</span>
-        <span style="color: #FF0000">}</span>
-<span style="color: #FF0000">}</span>
-
-<span style="font-style: italic"><span style="color: #9A1900">// CompteBancaire, CompteJeune =&gt; rien à faire =&gt; héritée</span></span></tt></pre></div></div>
-<div class="paragraph">
-<p>Utiliser et tester <tt>isRetraitPossible()</tt> avant de retirer et avant de faire un transfert.
-&#8658; OK</p>
-</div>
+<pre><tt>Pas de <span style="color: #008080">sol</span> particulière <span style="color: #990000">:</span> <span style="color: #008080">ils</span> n<span style="color: #FF0000">'ont que de la documentation à produire.</span></tt></pre></div></div>
 </td>
 </tr></table>
 </div>
 <div id="footer" style="position: absolute; left: 5%; top: 80%; width: 90%;">
 <div id="footer-text">
-Dernière mise à jour 2014-04-22 11:37:43 CEST
+Dernière mise à jour 2015-02-25 08:43:51 CET
 </div>
 </div>
 </div></div>

@@ -862,19 +862,19 @@ cellspacing="0" cellpadding="4">
 <tbody>
 <tr>
 <td align="left" valign="top"><p class="table">PreReq</p></td>
-<td align="left" valign="top"><p class="table">-</p></td>
+<td align="left" valign="top"><p class="table">Cours 4 : Héritage, TP7 : Héritage figures.</p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">ObjTP</p></td>
-<td align="left" valign="top"><p class="table">Générer un programme de Test pour une classe déjà écrite.</p></td>
+<td align="left" valign="top"><p class="table">Programmer une hiérarchie d&#8217;héritage de Compte.</p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">Durée</p></td>
-<td align="left" valign="top"><p class="table"><strong>1 séance</strong> de 1,5h sur machine.</p></td>
+<td align="left" valign="top"><p class="table"><strong>2 séance</strong> de 1,5h sur machine.</p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">À rendre</p></td>
-<td align="left" valign="top"><p class="table">Programme de test proposé + Cylindre.java de la dernière partie.</p></td>
+<td align="left" valign="top"><p class="table">Code source à déposer : classes produites (un seul fichier zip) + réponses au questions éventuelles en commentaire en début de fichier dans les fichiers concernés.</p></td>
 </tr>
 </tbody>
 </table>
@@ -939,12 +939,51 @@ RkWOKkVXIjB5X2ac8f8HA74K8I0SaJkAAAAASUVORK5CYII=" />
 <div class="ulist"><ul>
 <li>
 <p>
-But du TP : Écrire un programme de test pour des classes déjà écrites.
+But du TP : Créer une hiérarchie de classes Compte.
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+On leur donne l&#8217;interface attendue des classes : toutes les méthodes qui seront dispos une fois la classe programmée
 </p>
 </li>
 <li>
 <p>
-Même si le processus standard serait inverse : écrire les tests PUIS écrire la classe.
+Ils doivent définir :
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Les attributs nécessaires
+</p>
+</li>
+<li>
+<p>
+<strong>Les méthodes à ajouter</strong>
+</p>
+</li>
+<li>
+<p>
+<strong>Les méthodes à redéfinir</strong>
+</p>
+</li>
+<li>
+<p>
+Et bien sur écrire le minimum de code
+</p>
+</li>
+</ul></div>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+Le Cours 4 (cf en ligne moodle) a introduit l&#8217;héritage, les problématiques de constructeur (super(&#8230;)) et appel des méthodes héritées (super.methode(&#8230;)).
+</p>
+</li>
+<li>
+<p>
+Le TP7 a déjà illustré le pb.
 </p>
 </li>
 </ul></div>
@@ -1004,17 +1043,39 @@ mb1jlLOVv2YADrOhDp5hPCCyADY3vhXhJUNMwAxsBqfwISBwjSx5lu/Rn35PLY+2EhzqZCmV7YC5
 RkWOKkVXIjB5X2ac8f8HA74K8I0SaJkAAAAASUVORK5CYII=" />
 </td>
 <td class="content">
-<div class="paragraph"><p>Lire le début avec eux pour accélérer et en venir vite aux tests :</p></div>
+<div class="paragraph"><p>Nouveauté à partir de cette semaine : les TPs se font en groupes TD complets dans un seule salle de TP :</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
-les principes de tests
+je ferai une note aux étudiants
 </p>
 </li>
 <li>
 <p>
-tests JUnit
+ceux qui ont un portable (installé) &#8658; peuvent l&#8217;utiliser
 </p>
+</li>
+<li>
+<p>
+les autres en binomes : Consignes à donner
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+on change les binomes chaque semaine (3 semaines)
+</p>
+</li>
+<li>
+<p>
+à mi TP : on change le clavier de main pour que les 2 "participent"
+</p>
+</li>
+<li>
+<p>
+chaque étudiant rend le TP, en notant dans les fichiers avec qui il l&#8217;a fait.
+</p>
+</li>
+</ul></div>
 </li>
 </ul></div>
 </td>
@@ -1074,8 +1135,30 @@ RkWOKkVXIjB5X2ac8f8HA74K8I0SaJkAAAAASUVORK5CYII=" />
 </td>
 <td class="content">
 <div class="paragraph"><p>A Suivre :</p></div>
-<div class="paragraph"><p>La dernière partie est optionnelle.</p></div>
-<div class="paragraph"><p>On peut avancer vite par copier/coller.</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Le choix des attributs, dans les classes
+</p>
+</li>
+<li>
+<p>
+Ne pas redéfinir "trop" de méthodes
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Ne pas laisser passer les définitions du genre : <tt>methode() { super.methode(); }</tt>
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+Les appels à super.afficher() lorsque nécessaire.
+</p>
+</li>
+</ul></div>
 </td>
 </tr></table>
 </div>
@@ -1085,7 +1168,7 @@ RkWOKkVXIjB5X2ac8f8HA74K8I0SaJkAAAAASUVORK5CYII=" />
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2014-04-15 08:29:11 CEST
+Dernière mise à jour 2015-02-25 08:44:36 CET
 </div>
 </div>
 </body>

@@ -3,9 +3,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
 <head>
 <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
-<meta name="copyright" content="2015-02-23, Your computer *** Dut/Info-S2/M2103 *** Powered by AsciiDoc and W3C Slidy &amp;#169;" />
+<meta name="copyright" content="2015-02-25, Your computer *** Dut/Info-S2/M2103 *** Powered by AsciiDoc and W3C Slidy &amp;#169;" />
 <meta name="generator" content="AsciiDoc 8.6.6 / slidy2 backend 1.0.3" />
-<title>BPOO - Support TP 2</title>
+<title>BPOO - Support TP 13</title>
 <style type="text/css">
 /* Shared CSS for AsciiDoc xhtml11 and html5 backends */
 
@@ -4021,7 +4021,7 @@ setTimeout(w3c_slidy.hide_slides, 50);
 </head>
 <body class="article">
 <div id="header" class="slide">
-<h1>BPOO - Support TP 2</h1>
+<h1>BPOO - Support TP 13</h1>
 <span id="author">Dut/Info-S2/M2103</span><br />
 </div>
 <div class="slide">
@@ -4148,19 +4148,19 @@ cellspacing="0" cellpadding="4">
 <tbody>
 <tr>
 <td align="left" valign="top"><p class="table">PreReq</p></td>
-<td align="left" valign="top"><p class="table">CM1 sur les objets, TD2 sur la manipulation d&#8217;objets, TP2 classes <tt>Compte</tt> et <tt>AgenceBancaire</tt>.</p></td>
+<td align="left" valign="top"><p class="table">Maîtriser l&#8217;héritage. Cours : polymorphisme. Cours : notion d&#8217;interface.</p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">ObjTP</p></td>
-<td align="left" valign="top"><p class="table">Utiliser des objets - Lire une documentation.</p></td>
+<td align="left" valign="top"><p class="table">Implémenter une interface Java.</p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">Durée</p></td>
-<td align="left" valign="top"><p class="table"><strong>1 séances</strong> de 1,5h sur machine.</p></td>
+<td align="left" valign="top"><p class="table"><strong>1 séance</strong> de 1,5h sur machine.</p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">À rendre</p></td>
-<td align="left" valign="top"><p class="table">Code source à déposer : application de gestion d&#8217;AgenceBancaire.</p></td>
+<td align="left" valign="top"><p class="table">A déposer : code source classe de test, réponse aux questions en commentaire dans le code, classe Outils, classes modifiées.</p></td>
 </tr>
 </tbody>
 </table>
@@ -4173,394 +4173,282 @@ cellspacing="0" cellpadding="4">
 </div><div class="slide">
 
 <div class="sect1">
-<h1 id="Preambule">1. Préambule</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="1. Préambule";slidefootnotes="";/*]]>*/</script>
+<h1 id="_objectif">1. Objectif</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="1. Objectif";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Récupérer les pakages des classes à utiliser :</p>
-</div>
-<ol class="arabic">
-<li>
-<span>
-Depuis webetud, récupérer le fichier packageTPs.zip du tp.
-</span>
-</li>
-<li>
-<span>
-Le dézipper dans le répertoire où vous comptez travailler (répertoire de travail).
-</span>
-</li>
-<li>
-<span>
-Ce zip contient les packages de travail pour les tps. Il comporte en fait plusieurs packages de classes : <tt>tps.jeux</tt>, <tt>tps.jeux.exception</tt>, <tt>tps.banque</tt>, &#8230;
-</span>
-<ul class="">
-<li>
-<span>
-Regarder le contenu du répertoire (des fichiers .class structurés en répertoires).
-</span>
-</li>
-</ul>
-</li>
-<li>
-<span>
-Pour utiliser ces classes dans vos programmes:
-</span>
-<div class="paragraph">
-<p><tt>import  tps.-<em>nomPackage[.nomPackage &#8230;]</em>.<em>NomDeClasse</em>;</tt>. Exemple : <tt>import  tps.jeux.Devinette;</tt></p>
-</div>
-</li>
-</ol>
-<div class="paragraph">
-<p>Pour chaque exercice, créer un programme Java <tt>ClasseEssaiXXXXX.java</tt> comportant une méthode main(). "XXXXX" sera le nom de la classe testée à chaque exercice (Compte, &#8230;).</p>
+<p>L’objectif de ce TP est d’implémenter une interface simple pour en tester les effets. Le but est de pouvoir afficher à l’écran "n’importe quel objet sans se soucier de son type réel".</p>
 </div>
 </div></div>
 <script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
-<h1 id="_programme_utilisateur_pour_une_agence_bancaire">2. Programme utilisateur pour une agence bancaire</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="2. Programme utilisateur pour une agence bancaire";slidefootnotes="";/*]]>*/</script>
+<h1 id="_mise_en_place_de_l_8217_environnement">2. Mise en place de l&#8217;environnement</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="2. Mise en place de l&#8217;environnement";slidefootnotes="";/*]]>*/</script>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Récupérer les fichiers suivants dans votre répertoire de travail :</p>
+</div>
+<ul class="">
+<li>
+<span>
+la classe Outils,
+</span>
+</li>
+<li>
+<span>
+la classe Principal contenant le main à lancer pour ce TP,
+</span>
+</li>
+<li>
+<span>
+les classes Compte et Vehicule.
+</span>
+</li>
+</ul>
+</div></div>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
+</div><div class="slide">
+
+<div class="sect1">
+<h1 id="_implémenter_une_interface">3. Implémenter une interface</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="3. Implémenter une interface";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody">
 </div></div>
 <script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect2">
-<h1 id="_objectif">2.1. Objectif</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect2";nexttitle="2.1. Objectif";slidefootnotes="";/*]]>*/</script>
+<h1 id="_le_problème_à_résoudre">3.1. Le problème à résoudre</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect2";nexttitle="3.1. Le problème à résoudre";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody">
 <div class="paragraph">
-<p>L&#8217;objectif est d'écrire un programme permettant de gérer les comptes d&#8217;une <tt>AgenceBancaire</tt>. L&#8217;application permettra :</p>
+<p><strong>Questions :</strong></p>
 </div>
-<ul class="">
+<ol class="arabic">
 <li>
 <span>
-de créer/supprimer des objets Compte(s) de l&#8217;AgenceBancaire,
+Étudiez les classes livrées :
+</span>
+<ol class="loweralpha">
+<li>
+<span>
+La classe Outils dispose d’une méthode statique <tt>testAffichage()</tt> qui devra de prendre en paramètre soit un Compte soit un Vehicule et appliquer à ce paramètre la méthode <tt>afficher()</tt>. En tout cas : on compte sur vous pour faire en sorte qu’elle marche &#8230;.
 </span>
 </li>
 <li>
 <span>
-de voir un compte de l&#8217;AgenceBancaire, de voir les comptes d&#8217;un propriétaire de l&#8217;AgenceBancaire,
+La classe Principal contient  le <tt>main()</tt>, qui déclare un objet Compte puis un objet Vehicule et appelle la méthode <tt>testAffichage()</tt> précédente avec en paramètre successivement ces deux objets.
 </span>
+</li>
+</ol>
 </li>
 <li>
 <span>
-de débiter/créditer les compte(s) de l&#8217;AgenceBancaire,
+Compléter le type du paramètre dans l’en-tête de la méthode <tt>testAffichage()</tt>. Rencontrez-vous des problèmes ? Pourquoi ?
 </span>
 </li>
-<li>
-<span>
-de lister tous les comptes de l&#8217;AgenceBancaire,
-</span>
-</li>
-<li>
-<span>
-de quitter l&#8217;application.
-</span>
-</li>
-</ul>
+</ol>
+</div></div>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
+</div><div class="slide">
+
+<div class="sect2">
+<h1 id="_rendre_les_objets_compte_affichables">3.2. Rendre les objets Compte "affichables"</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect2";nexttitle="3.2. Rendre les objets Compte "affichables"";slidefootnotes="";/*]]>*/</script>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Pour commencer, vous pouvez reprendre le début de code suivant contenant :</p>
+<p><strong>Questions :</strong></p>
 </div>
-<ul class="">
+<ol class="arabic">
 <li>
 <span>
-la méthode main(),
+Récupérer l’interface Displayable. Étudier cette interface.
 </span>
 </li>
 <li>
 <span>
-une méthode pour afficher le menu de l&#8217;application,
+Déclarer que la classe Compte implémente l’interface Displayable : <tt>class Compte implements Displayable { &#8230;</tt>
 </span>
 </li>
 <li>
 <span>
-une méthode de "temporisation" attendant la frappe de n&#8217;importe quel caractère.
+Compilez. Quelle est la remarque immédiate du compilateur ?
 </span>
 </li>
-</ul>
+<li>
+<span>
+Il faut "implémenter" l&#8217;interface, c&#8217;est-à-dire écrire la méthode <tt>displayObject()</tt> dans la classe Compte (utiliser la méthode locale <tt>afficher()</tt>).
+</span>
 <div class="listingblock">
 <div class="content"><!-- Generator: GNU source-highlight 3.1.5
 by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
-<pre><tt><span style="font-weight: bold"><span style="color: #000080">import</span></span> java<span style="color: #990000">.</span>util<span style="color: #990000">.</span>Locale<span style="color: #990000">;</span>
-<span style="font-weight: bold"><span style="color: #000080">import</span></span> java<span style="color: #990000">.</span>util<span style="color: #990000">.</span>Scanner<span style="color: #990000">;</span>
-
-<span style="font-weight: bold"><span style="color: #000080">import</span></span> tps<span style="color: #990000">.</span>banque<span style="color: #990000">.</span>Compte<span style="color: #990000">;</span>
-<span style="font-weight: bold"><span style="color: #000080">import</span></span> tps<span style="color: #990000">.</span>banque<span style="color: #990000">.</span>AgenceBancaire<span style="color: #990000">;</span>
-<span style="font-weight: bold"><span style="color: #000080">import</span></span> tps<span style="color: #990000">.</span>banque<span style="color: #990000">.</span>exception<span style="color: #990000">.</span>ABCompteDejaExistantException<span style="color: #990000">;</span>
-<span style="font-weight: bold"><span style="color: #000080">import</span></span> tps<span style="color: #990000">.</span>banque<span style="color: #990000">.</span>exception<span style="color: #990000">.</span>ABCompteInexistantException<span style="color: #990000">;</span>
-<span style="font-weight: bold"><span style="color: #000080">import</span></span> tps<span style="color: #990000">.</span>banque<span style="color: #990000">.</span>exception<span style="color: #990000">.</span>ABCompteNullException<span style="color: #990000">;</span>
-<span style="font-weight: bold"><span style="color: #000080">import</span></span> tps<span style="color: #990000">.</span>banque<span style="color: #990000">.</span>exception<span style="color: #990000">.</span>CompteException<span style="color: #990000">;</span>
-
-<span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">ClasseEssaiAgenceBancaire</span> <span style="color: #FF0000">{</span>
-
-        <span style="font-style: italic"><span style="color: #9A1900">/**</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * Affichage du menu de l'application</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900"> ag    AgenceBancaire pour récupérer le nom et la localisation</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         */</span></span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">afficherMenu</span></span><span style="color: #990000">(</span><span style="color: #008080">AgenceBancaire</span> ag<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Menu de "</span> <span style="color: #990000">+</span> ag<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getNomAgence</span></span><span style="color: #990000">()</span> <span style="color: #990000">+</span> <span style="color: #FF0000">" ("</span> <span style="color: #990000">+</span> ag<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getLocAgence</span></span><span style="color: #990000">()</span> <span style="color: #990000">+</span> <span style="color: #FF0000">")"</span><span style="color: #990000">);</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"c - Créer un nouveau compte dans l'agence"</span><span style="color: #990000">);</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"s - Supprimer un compte de l'agence (par son numéro)"</span><span style="color: #990000">);</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"l - Liste des comptes de l'agence"</span><span style="color: #990000">);</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"v - Voir un compte (par son numéro)"</span><span style="color: #990000">);</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"p - voir les comptes d'un Propriétaire (par son nom)"</span><span style="color: #990000">);</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"d - Déposer de l'argent sur un compte"</span><span style="color: #990000">);</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"r - Retirer de l'argent sur un compte"</span><span style="color: #990000">);</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"q - Quitter"</span><span style="color: #990000">);</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Choix -&gt; "</span><span style="color: #990000">);</span>
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">Compte</span> <span style="font-weight: bold"><span style="color: #0000FF">implements</span></span> Displayable <span style="color: #FF0000">{</span>
+        <span style="font-style: italic"><span style="color: #9A1900">// ...</span></span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">displayObject</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
         <span style="color: #FF0000">}</span>
-
-        <span style="font-style: italic"><span style="color: #9A1900">/**</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * Temporisation : Affiche un message et attend la frappe de n'importe quel caractère.</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         */</span></span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">tempo</span></span> <span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
-                <span style="color: #008080">Scanner</span> lect <span style="color: #990000">;</span>
-                <span style="color: #008080">String</span> s<span style="color: #990000">;</span>
-
-                lect <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Scanner</span></span> <span style="color: #990000">(</span>System<span style="color: #990000">.</span>in <span style="color: #990000">);</span>
-
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Tapper un car + return pour continuer ... "</span><span style="color: #990000">);</span>
-                s <span style="color: #990000">=</span> lect<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">next</span></span><span style="color: #990000">();</span> <span style="font-style: italic"><span style="color: #9A1900">// Inutile à stocker mais ...</span></span>
-        <span style="color: #FF0000">}</span>
-
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> argv<span style="color: #990000">[])</span> <span style="color: #FF0000">{</span>
-
-                <span style="color: #008080">String</span> choix<span style="color: #990000">;</span>
-
-                <span style="color: #009900">boolean</span> continuer <span style="color: #990000">;</span>
-                <span style="color: #008080">Scanner</span> lect<span style="color: #990000">;</span>
-                <span style="color: #008080">AgenceBancaire</span> monAg <span style="color: #990000">;</span>
-
-                lect <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Scanner</span></span> <span style="color: #990000">(</span> System<span style="color: #990000">.</span>in <span style="color: #990000">);</span>
-                lect<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">useLocale</span></span><span style="color: #990000">(</span>Locale<span style="color: #990000">.</span>US<span style="color: #990000">);</span>
-
-                monAg <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">AgenceBancaire</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Caisse Ep"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Pibrac"</span><span style="color: #990000">);</span>
-
-                continuer <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">true</span></span><span style="color: #990000">;</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">while</span></span> <span style="color: #990000">(</span>continuer<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                        ClasseEssaiAgenceBancaire<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficherMenu</span></span><span style="color: #990000">(</span>monAg<span style="color: #990000">);</span>
-                        choix <span style="color: #990000">=</span> lect<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">next</span></span><span style="color: #990000">();</span>
-                        choix <span style="color: #990000">=</span> choix<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">toLowerCase</span></span><span style="color: #990000">();</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">switch</span></span> <span style="color: #990000">(</span>choix<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                                <span style="font-weight: bold"><span style="color: #0000FF">case</span></span> <span style="color: #FF0000">"q"</span> <span style="color: #990000">:</span>
-                                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"ByeBye"</span><span style="color: #990000">);</span>
-                                        ClasseEssaiAgenceBancaire<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">tempo</span></span><span style="color: #990000">();</span>
-                                        continuer <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">false</span></span><span style="color: #990000">;</span>
-                                        <span style="font-weight: bold"><span style="color: #0000FF">break</span></span><span style="color: #990000">;</span>
-
-                                <span style="font-style: italic"><span style="color: #9A1900">// A CONTINUER ICI</span></span>
-
-                                <span style="font-weight: bold"><span style="color: #0000FF">default</span></span> <span style="color: #990000">:</span>
-                                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Erreur de saisie ..."</span><span style="color: #990000">);</span>
-                                        ClasseEssaiAgenceBancaire<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">tempo</span></span><span style="color: #990000">();</span>
-                                        <span style="font-weight: bold"><span style="color: #0000FF">break</span></span><span style="color: #990000">;</span>
-                        <span style="color: #FF0000">}</span>
-                <span style="color: #FF0000">}</span>
-
-        <span style="color: #FF0000">}</span>
-
+        <span style="font-style: italic"><span style="color: #9A1900">// ...</span></span>
 <span style="color: #FF0000">}</span></tt></pre></div></div>
+</li>
+<li>
+<span>
+Dans la classe Outils, définir la méthode statique <tt>testAffichage ()</tt> précédente comme prenant en paramètre un objet Displayable et faites lui afficher ce paramètre (appliquer au paramètre la méthode qui va bien pour les objets Displayable). Compiler cette classe. Ca marche ?
+</span>
+</li>
+<li>
+<span>
+Dans la méthode <tt>main()</tt>, déclarer un objet Compte et appeler la méthode <tt>testAffichage ()</tt> précédente avec en paramètre ce Compte (commenter la partie Véhicule). Le main() fonctionne-t-il ?
+</span>
+</li>
+</ol>
 </div></div>
 <script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect2">
-<h1 id="_développement_de_l_8217_application">2.2. Développement de l&#8217;application</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect2";nexttitle="2.2. Développement de l&#8217;application";slidefootnotes="";/*]]>*/</script>
+<h1 id="_rendre_les_objets_vehicule_affichables">3.3. Rendre les objets Vehicule "affichables"</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect2";nexttitle="3.3. Rendre les objets Vehicule "affichables"";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody">
+<div class="paragraph">
+<p><strong>Questions :</strong></p>
+</div>
 <ol class="arabic">
 <li>
 <span>
-A vous maintenant de rajouter et traiter les <tt>case</tt> qui manquent. Traiter une par une dans l&#8217;ordre chaque option du menu et tester à chaque fois.
+Déclarer que Vehicule implémente l’interface Displayable.
 </span>
 </li>
 <li>
 <span>
-Pour l&#8217;option  <tt>"p - voir les comptes d&#8217;un Propriétaire (par son nom)"</tt>, programmer une méthode statique :
+Dans la méthode <tt>main()</tt>, déclarer un objet Vehicule et appeler la méthode <tt>testAffichage ()</tt> précédente avec en paramètre ce Vehicule. Cela fonctionne-t-il ? Pourquoi ?
 </span>
-<div class="paragraph">
-<p><tt>public static void comptesDUnPropretaire (AgenceBancaire ag, String nomProprietaire)</tt></p>
-</div>
-<div class="paragraph">
-<p>réalisant le traitement associé.</p>
-</div>
 </li>
 <li>
 <span>
-Pour l&#8217;option  <tt>"d - Déposer de l&#8217;argent sur un compte"</tt>, programmer une méthode statique :
+Dans la classe Outils, modifier la méthode <tt>testAffichage ()</tt> pour appeler sur l’objet en paramètre la méthode <tt>getKilometrage ()</tt> sur son paramètre (sans utiliser de casting). Même question pour <tt>getNumCompte()</tt>. Compiler. Est-ce possible ? Pourquoi ?
 </span>
+</li>
+</ol>
+</div></div>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
+</div><div class="slide">
+
+<div class="sect2">
+<h1 id="_rendre_d_8217_autres_objets_affichables">3.4. Rendre d&#8217;autres objets "affichables"</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect2";nexttitle="3.4. Rendre d&#8217;autres objets "affichables"";slidefootnotes="";/*]]>*/</script>
+<div class="sectionbody">
 <div class="paragraph">
-<p><tt>public static void deposerSurUnCompte (AgenceBancaire ag, String numeroCompte, double montant)</tt></p>
+<p><strong>Questions :</strong></p>
 </div>
-<div class="paragraph">
-<p>réalisant le traitement associé.</p>
-</div>
+<ol class="arabic">
+<li>
+<span>
+Reprendre la classe Personne. Modifier cette classe pour implémenter Displayable et tester l’appel de la  méthode <tt>testAffichage ()</tt> avec un objet Personne.
+</span>
 </li>
 <li>
 <span>
-Pour l&#8217;option  <tt>"r - Retirer de l&#8217;argent sur un compte"</tt>, programmer une méthode statique :
+Reprendre les classes CompteDepot et CompteSecurise. On souhaite faire la même chose que pour Personne (tester les appels de la méthode <tt>testAffichage ()</tt> avec des paramètres CompteDepot et CompteSecurise). Que faut-il faire ? Que n’est-il pas nécessaire de faire ? Réfléchir un peu &#8230;
 </span>
-<div class="paragraph">
-<p><tt>public static void retirerSurUnCompte (AgenceBancaire ag, String numeroCompte, double montant)</tt></p>
-</div>
-<div class="paragraph">
-<p>réalisant le traitement associé.</p>
-</div>
 </li>
 </ol>
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
-<img alt="Note" src="data:image/png;base64,
+<img alt="Important" src="data:image/png;base64,
 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
-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" />
+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" />
 </td>
 <td class="content">
+<div class="title">A BIEN REMARQUER</div>
 <div class="paragraph">
-<p>Concernant les entrées sorties : voir aide sur le serveur webetud &#8594; classe Scanner (Rubrique "Nécessaire pour TPs").</p>
+<p><strong>Remarquez que, depuis un petit moment, la classe Outils est déjà définie et compilée, et vos objets lui sont passés en paramètres sans souci &#8230;</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Il n’avait pas été "prévu" de "recevoir a priori" des objets Compte, Vehicule, Personne, CompteDepot, CompteSecurise &#8230; en paramètre, MAIS l&#8217;interface Displayable donne à chacun de ces objets le comportement attendu (<tt>displayObject()</tt>).</strong></p>
 </div>
 </td>
 </tr></table>
 </div>
-<div class="paragraph">
-<p>Exemple d&#8217;exécution possible :</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre><tt>Menu de Caisse Ep (Pibrac)
-c - Créer un nouveau compte dans l'agence
-s - Supprimer un compte de l'agence (par son numéro)
-l - Liste des comptes de l'agence
-v - Voir un compte (par son numéro)
-p - voir les comptes d'un Propriétaire (par son nom)
-d - Déposer de l'argent sur un compte
-r - Retirer de l'argent sur un compte
-q - Quitter
-Choix -&gt; c
-
-Num compte -&gt; 1212
-Propriétaire -&gt; Prop12
-
-Ajout effectué
-Tapper un car + return pour continuer ... .
-
-Menu de Caisse Ep (Pibrac)
-...
-Choix -&gt; c
-
-Num compte -&gt; 1212
-Propriétaire -&gt; PropAutre
-
-Numéro de compte existant
-Erreur ajout Compte déja existant (1212) dans l'agence Caisse Ep(Pibrac)
-
-Tapper un car + return pour continuer ... .
-
-Menu de Caisse Ep (Pibrac)
-...
-Choix -&gt; d
-
-Num compte -&gt; 1212
-Montant à déposer -&gt; 456
-
-Solde avant dépôt: 0.0
-Montant déposé, solde : 456.0
-
-Tapper un car + return pour continuer ... .
-
-Menu de Caisse Ep (Pibrac)
-...
-Choix -&gt; d
-
-Num compte -&gt; 1212
-Montant à déposer -&gt; -89
-
-Solde avant dépôt: 456.0
-Erreur de dépot, solde inchangé : 456.0
-Erreur de somme négative lors d'un dépot sur 1212
-
-Tapper un car + return pour continuer ... .
-
-Menu de Caisse Ep (Pibrac)
-...
-Choix -&gt; s
-
-Num compte -&gt; 4545
-
-Numéro de compte inexistant
-Erreur suppression Compte inexistant (4545) dans l'agence Caisse Ep(Pibrac)
-
-Tapper un car + return pour continuer ... .
-
-Menu de Caisse Ep (Pibrac)
-...
-Choix -&gt; s
-
-Num compte -&gt; 1212
-Suppression effectuée
-
-Tapper un car + return pour continuer ... .
-
-Menu de Caisse Ep (Pibrac)
-...</tt></pre>
-</div></div>
 </div></div>
 <script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
 
 <div class="sect1">
-<h1 id="_éléments_de_solution">3. Éléments de Solution</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="3. Éléments de Solution";slidefootnotes="";/*]]>*/</script>
+<h1 id="_optionnel_des_tableaux_d_8217_objets_implémentant_une_interface">4. Optionnel : des tableaux "d&#8217;objets implémentant une interface"</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="4. Optionnel : des tableaux "d&#8217;objets implémentant une interface"";slidefootnotes="";/*]]>*/</script>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Questions :</strong></p>
+</div>
+<ol class="arabic">
+<li>
+<span>
+Dans la classe Outils, définir une méthode <tt>testAffichageTableau()</tt> prenant en paramètre un tableau d’objets Displayable, et permettant d’afficher tous les objets de ce tableau.
+</span>
+</li>
+<li>
+<span>
+Dans la méthode <tt>main()</tt>, créer un tableau d’objets Compte, un tableau d’objets Vehicule, et appeler la méthode <tt>testAffichageTableau ()</tt> successivement avec ces deux paramètres.
+</span>
+</li>
+</ol>
+</div></div>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
+</div><div class="slide">
+
+<div class="sect1">
+<h1 id="_solutions">5. Solutions</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="5. Solutions";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody">
 <div class="admonitionblock">
 <table><tr>
@@ -4649,216 +4537,320 @@ EoAjGf88yXMZEtJTDOcRVg59vR52wHrUMosL0Pr6+oJJMnhJJBu7N4xGwP8A4X8RE1D3pWkAAAAA
 SUVORK5CYII=" />
 </td>
 <td class="content">
-<div class="title">Solution AgenceBancaire (application)</div>
+<div class="title">Solutions</div>
 <div class="listingblock">
 <div class="content"><!-- Generator: GNU source-highlight 3.1.5
 by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
-<pre><tt><span style="font-weight: bold"><span style="color: #000080">import</span></span> java<span style="color: #990000">.</span>util<span style="color: #990000">.</span>Locale<span style="color: #990000">;</span>
-<span style="font-weight: bold"><span style="color: #000080">import</span></span> java<span style="color: #990000">.</span>util<span style="color: #990000">.</span>Scanner<span style="color: #990000">;</span>
-
-<span style="font-weight: bold"><span style="color: #000080">import</span></span> tps<span style="color: #990000">.</span>banque<span style="color: #990000">.</span>AgenceBancaire<span style="color: #990000">;</span>
-<span style="font-weight: bold"><span style="color: #000080">import</span></span> tps<span style="color: #990000">.</span>banque<span style="color: #990000">.</span>Compte<span style="color: #990000">;</span>
-<span style="font-weight: bold"><span style="color: #000080">import</span></span> tps<span style="color: #990000">.</span>banque<span style="color: #990000">.</span>exception<span style="color: #990000">.</span>ABCompteDejaExistantException<span style="color: #990000">;</span>
-<span style="font-weight: bold"><span style="color: #000080">import</span></span> tps<span style="color: #990000">.</span>banque<span style="color: #990000">.</span>exception<span style="color: #990000">.</span>ABCompteInexistantException<span style="color: #990000">;</span>
-<span style="font-weight: bold"><span style="color: #000080">import</span></span> tps<span style="color: #990000">.</span>banque<span style="color: #990000">.</span>exception<span style="color: #990000">.</span>ABCompteNullException<span style="color: #990000">;</span>
-<span style="font-weight: bold"><span style="color: #000080">import</span></span> tps<span style="color: #990000">.</span>banque<span style="color: #990000">.</span>exception<span style="color: #990000">.</span>CompteException<span style="color: #990000">;</span>
-
-<span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">ClasseApplicationAgenceBancaire</span> <span style="color: #FF0000">{</span>
-
-        <span style="font-style: italic"><span style="color: #9A1900">/**</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * Affichage du menu de l'application</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900"> ag    AgenceBancaire pour récupérer le nom et la localisation</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         */</span></span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">afficherMenu</span></span><span style="color: #990000">(</span><span style="color: #008080">AgenceBancaire</span> ag<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Menu de "</span> <span style="color: #990000">+</span> ag<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getNomAgence</span></span><span style="color: #990000">()</span> <span style="color: #990000">+</span> <span style="color: #FF0000">" ("</span> <span style="color: #990000">+</span> ag<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getLocAgence</span></span><span style="color: #990000">()</span> <span style="color: #990000">+</span> <span style="color: #FF0000">")"</span><span style="color: #990000">);</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"c - Créer un nouveau compte dans l'agence"</span><span style="color: #990000">);</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"s - Supprimer un compte de l'agence (par son numéro)"</span><span style="color: #990000">);</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"l - Liste des comptes de l'agence"</span><span style="color: #990000">);</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"v - Voir un compte (par son numéro)"</span><span style="color: #990000">);</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"p - voir les comptes d'un Propriétaire (par son nom)"</span><span style="color: #990000">);</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"d - Déposer de l'argent sur un compte"</span><span style="color: #990000">);</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"r - Retirer de l'argent sur un compte"</span><span style="color: #990000">);</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"q - Quitter"</span><span style="color: #990000">);</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Choix -&gt; "</span><span style="color: #990000">);</span>
-        <span style="color: #FF0000">}</span>
-
-        <span style="font-style: italic"><span style="color: #9A1900">/**</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * Temporisation : Affiche un message et attend la frappe de n'importe quel caractère.</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         */</span></span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">tempo</span></span> <span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
-                <span style="color: #008080">Scanner</span> lect <span style="color: #990000">;</span>
-                <span style="color: #008080">String</span> s<span style="color: #990000">;</span>
-
-                lect <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Scanner</span></span> <span style="color: #990000">(</span>System<span style="color: #990000">.</span>in <span style="color: #990000">);</span>
-
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Tapper un car + return pour continuer ... "</span><span style="color: #990000">);</span>
-                s <span style="color: #990000">=</span> lect<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">next</span></span><span style="color: #990000">();</span> <span style="font-style: italic"><span style="color: #9A1900">// Inutile à stocker mais ...</span></span>
-        <span style="color: #FF0000">}</span>
-
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> argv<span style="color: #990000">[])</span> <span style="color: #FF0000">{</span>
-
-                <span style="color: #008080">String</span> choix<span style="color: #990000">;</span>
-
-                <span style="color: #009900">boolean</span> continuer <span style="color: #990000">;</span>
-                <span style="color: #008080">Scanner</span> lect<span style="color: #990000">;</span>
-                <span style="color: #008080">AgenceBancaire</span> monAg <span style="color: #990000">;</span>
-
-                <span style="color: #008080">String</span> nom<span style="color: #990000">,</span> numero<span style="color: #990000">;</span>
-                <span style="color: #008080">Compte</span> c<span style="color: #990000">;</span>
-                <span style="color: #009900">double</span> montant<span style="color: #990000">;</span>
-
-                lect <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Scanner</span></span> <span style="color: #990000">(</span> System<span style="color: #990000">.</span>in <span style="color: #990000">);</span>
-                lect<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">useLocale</span></span><span style="color: #990000">(</span>Locale<span style="color: #990000">.</span>US<span style="color: #990000">);</span>
-
-                monAg <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">AgenceBancaire</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Caisse Ep"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Pibrac"</span><span style="color: #990000">);</span>
-
-                continuer <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">true</span></span><span style="color: #990000">;</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">while</span></span> <span style="color: #990000">(</span>continuer<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                        ClasseApplicationAgenceBancaire<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficherMenu</span></span><span style="color: #990000">(</span>monAg<span style="color: #990000">);</span>
-                        choix <span style="color: #990000">=</span> lect<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">next</span></span><span style="color: #990000">();</span>
-                        choix <span style="color: #990000">=</span> choix<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">toLowerCase</span></span><span style="color: #990000">();</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">switch</span></span> <span style="color: #990000">(</span>choix<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                                <span style="font-weight: bold"><span style="color: #0000FF">case</span></span> <span style="color: #FF0000">"q"</span> <span style="color: #990000">:</span>
-                                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"ByeBye"</span><span style="color: #990000">);</span>
-                                        ClasseApplicationAgenceBancaire<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">tempo</span></span><span style="color: #990000">();</span>
-                                        continuer <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">false</span></span><span style="color: #990000">;</span>
-                                        <span style="font-weight: bold"><span style="color: #0000FF">break</span></span><span style="color: #990000">;</span>
-                                <span style="font-weight: bold"><span style="color: #0000FF">case</span></span> <span style="color: #FF0000">"c"</span> <span style="color: #990000">:</span>
-                                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Num compte -&gt; "</span><span style="color: #990000">);</span>
-                                        numero <span style="color: #990000">=</span> lect<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">next</span></span><span style="color: #990000">();</span>
-                                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Propriétaire -&gt; "</span><span style="color: #990000">);</span>
-                                        nom <span style="color: #990000">=</span> lect<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">next</span></span><span style="color: #990000">();</span>
-                                        c <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span><span style="color: #990000">(</span>numero<span style="color: #990000">,</span> nom<span style="color: #990000">);</span>
-                                        <span style="font-weight: bold"><span style="color: #0000FF">try</span></span> <span style="color: #FF0000">{</span>
-                                                monAg<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">addCompte</span></span><span style="color: #990000">(</span>c<span style="color: #990000">);</span>
-                                                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Ajout effectué</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span><span style="color: #990000">);</span>
-                                        <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">ABCompteNullException</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                                                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Numéro de compte existant"</span><span style="color: #990000">);</span>
-                                                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>e<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getMessage</span></span><span style="color: #990000">());</span>
-                                        <span style="color: #FF0000">}</span>
-                                        <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">ABCompteDejaExistantException</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                                                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Numéro de compte existant"</span><span style="color: #990000">);</span>
-                                                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>e<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getMessage</span></span><span style="color: #990000">());</span>
-                                        <span style="color: #FF0000">}</span>
-                                        ClasseApplicationAgenceBancaire<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">tempo</span></span><span style="color: #990000">();</span>
-                                        <span style="font-weight: bold"><span style="color: #0000FF">break</span></span><span style="color: #990000">;</span>
-                                <span style="font-weight: bold"><span style="color: #0000FF">case</span></span> <span style="color: #FF0000">"s"</span> <span style="color: #990000">:</span>
-                                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Num compte -&gt; "</span><span style="color: #990000">);</span>
-                                        numero <span style="color: #990000">=</span> lect<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">next</span></span><span style="color: #990000">();</span>
-                                        <span style="font-weight: bold"><span style="color: #0000FF">try</span></span> <span style="color: #FF0000">{</span>
-                                                monAg<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">removeCompte</span></span><span style="color: #990000">(</span>numero<span style="color: #990000">);</span>
-                                                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Suppression effectuée</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span><span style="color: #990000">);</span>
-                                        <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">ABCompteInexistantException</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                                                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Numéro de compte inexistant"</span><span style="color: #990000">);</span>
-                                                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>e<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getMessage</span></span><span style="color: #990000">());</span>
-                                        <span style="color: #FF0000">}</span>
-                                        ClasseApplicationAgenceBancaire<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">tempo</span></span><span style="color: #990000">();</span>
-                                        <span style="font-weight: bold"><span style="color: #0000FF">break</span></span><span style="color: #990000">;</span>
-                                <span style="font-weight: bold"><span style="color: #0000FF">case</span></span> <span style="color: #FF0000">"l"</span> <span style="color: #990000">:</span>
-                                        monAg<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
-                                        ClasseApplicationAgenceBancaire<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">tempo</span></span><span style="color: #990000">();</span>
-                                        <span style="font-weight: bold"><span style="color: #0000FF">break</span></span><span style="color: #990000">;</span>
-                                <span style="font-weight: bold"><span style="color: #0000FF">case</span></span> <span style="color: #FF0000">"v"</span> <span style="color: #990000">:</span>
-                                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Num compte -&gt; "</span><span style="color: #990000">);</span>
-                                        numero <span style="color: #990000">=</span> lect<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">next</span></span><span style="color: #990000">();</span>
-                                        c <span style="color: #990000">=</span> monAg<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getCompte</span></span><span style="color: #990000">(</span>numero<span style="color: #990000">);</span>
-                                        <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>c<span style="color: #990000">==</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                                                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Compte inexistant ..."</span><span style="color: #990000">);</span>
-                                        <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">else</span></span> <span style="color: #FF0000">{</span>
-                                                c<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
-                                        <span style="color: #FF0000">}</span>
-                                        ClasseApplicationAgenceBancaire<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">tempo</span></span><span style="color: #990000">();</span>
-                                        <span style="font-weight: bold"><span style="color: #0000FF">break</span></span><span style="color: #990000">;</span>
-                                <span style="font-weight: bold"><span style="color: #0000FF">case</span></span> <span style="color: #FF0000">"p"</span> <span style="color: #990000">:</span>
-                                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Propriétaire -&gt; "</span><span style="color: #990000">);</span>
-                                        nom <span style="color: #990000">=</span> lect<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">next</span></span><span style="color: #990000">();</span>
-                                        ClasseApplicationAgenceBancaire<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">comptesDUnPropretaire</span></span> <span style="color: #990000">(</span>monAg<span style="color: #990000">,</span> nom<span style="color: #990000">);</span>
-                                        ClasseApplicationAgenceBancaire<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">tempo</span></span><span style="color: #990000">();</span>
-                                        <span style="font-weight: bold"><span style="color: #0000FF">break</span></span><span style="color: #990000">;</span>
-                                <span style="font-weight: bold"><span style="color: #0000FF">case</span></span> <span style="color: #FF0000">"d"</span> <span style="color: #990000">:</span>
-                                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Num compte -&gt; "</span><span style="color: #990000">);</span>
-                                        numero <span style="color: #990000">=</span> lect<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">next</span></span><span style="color: #990000">();</span>
-                                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Montant à déposer -&gt; "</span><span style="color: #990000">);</span>
-                                        montant <span style="color: #990000">=</span> lect<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">nextDouble</span></span><span style="color: #990000">();</span>
-                                        ClasseApplicationAgenceBancaire<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">deposerSurUnCompte</span></span><span style="color: #990000">(</span>monAg<span style="color: #990000">,</span> numero<span style="color: #990000">,</span> montant<span style="color: #990000">);</span>
-                                        ClasseApplicationAgenceBancaire<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">tempo</span></span><span style="color: #990000">();</span>
-                                        <span style="font-weight: bold"><span style="color: #0000FF">break</span></span><span style="color: #990000">;</span>
-                                <span style="font-weight: bold"><span style="color: #0000FF">case</span></span> <span style="color: #FF0000">"r"</span> <span style="color: #990000">:</span>
-                                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Num compte -&gt; "</span><span style="color: #990000">);</span>
-                                        numero <span style="color: #990000">=</span> lect<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">next</span></span><span style="color: #990000">();</span>
-                                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Montant à retirer -&gt; "</span><span style="color: #990000">);</span>
-                                        montant <span style="color: #990000">=</span> lect<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">nextDouble</span></span><span style="color: #990000">();</span>
-                                        ClasseApplicationAgenceBancaire<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">retirerSurUnCompte</span></span><span style="color: #990000">(</span>monAg<span style="color: #990000">,</span> numero<span style="color: #990000">,</span> montant<span style="color: #990000">);</span>
-                                        ClasseApplicationAgenceBancaire<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">tempo</span></span><span style="color: #990000">();</span>
-                                        <span style="font-weight: bold"><span style="color: #0000FF">break</span></span><span style="color: #990000">;</span>
-                                <span style="font-weight: bold"><span style="color: #0000FF">default</span></span> <span style="color: #990000">:</span>
-                                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Erreur de saisie ..."</span><span style="color: #990000">);</span>
-                                        ClasseApplicationAgenceBancaire<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">tempo</span></span><span style="color: #990000">();</span>
-                                        <span style="font-weight: bold"><span style="color: #0000FF">break</span></span><span style="color: #990000">;</span>
-                        <span style="color: #FF0000">}</span>
-                <span style="color: #FF0000">}</span>
-
-        <span style="color: #FF0000">}</span>
-
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">comptesDUnPropretaire</span></span> <span style="color: #990000">(</span><span style="color: #008080">AgenceBancaire</span> ag<span style="color: #990000">,</span> <span style="color: #008080">String</span> nomProprietaire<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                Compte <span style="color: #990000">[]</span>  t<span style="color: #990000">;</span>
-
-                t <span style="color: #990000">=</span> ag<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getComptesDe</span></span><span style="color: #990000">(</span>nomProprietaire<span style="color: #990000">);</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>t<span style="color: #990000">.</span>length <span style="color: #990000">==</span> <span style="color: #993399">0</span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"pas de compte à ce nom ..."</span><span style="color: #990000">);</span>
-                <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">else</span></span> <span style="color: #FF0000">{</span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  "</span> <span style="color: #990000">+</span> t<span style="color: #990000">.</span>length <span style="color: #990000">+</span> <span style="color: #FF0000">" comptes pour "</span> <span style="color: #990000">+</span> nomProprietaire<span style="color: #990000">);</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span><span style="color: #009900">int</span> i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>t<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span>
-                                t<span style="color: #990000">[</span>i<span style="color: #990000">].</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
-                <span style="color: #FF0000">}</span>
-        <span style="color: #FF0000">}</span>
-
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">deposerSurUnCompte</span></span> <span style="color: #990000">(</span><span style="color: #008080">AgenceBancaire</span> ag<span style="color: #990000">,</span> <span style="color: #008080">String</span> numeroCompte<span style="color: #990000">,</span> <span style="color: #009900">double</span> montant<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                <span style="color: #008080">Compte</span> c<span style="color: #990000">;</span>
-
-                c <span style="color: #990000">=</span> ag<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getCompte</span></span><span style="color: #990000">(</span>numeroCompte<span style="color: #990000">);</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>c<span style="color: #990000">==</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Compte inexistant ..."</span><span style="color: #990000">);</span>
-                <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">else</span></span> <span style="color: #FF0000">{</span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Solde avant dépôt: "</span><span style="color: #990000">+</span>c<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soldeCompte</span></span><span style="color: #990000">());</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">try</span></span> <span style="color: #FF0000">{</span>
-                                c<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">deposer</span></span><span style="color: #990000">(</span>montant<span style="color: #990000">);</span>
-                                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Montant déposé, solde : "</span><span style="color: #990000">+</span>c<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soldeCompte</span></span><span style="color: #990000">());</span>
-                        <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">CompteException</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Erreur de dépot, solde inchangé : "</span> <span style="color: #990000">+</span> c<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soldeCompte</span></span><span style="color: #990000">());</span>
-                                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>e<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getMessage</span></span><span style="color: #990000">());</span>
-                        <span style="color: #FF0000">}</span>
-                <span style="color: #FF0000">}</span>
-        <span style="color: #FF0000">}</span>
-
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">retirerSurUnCompte</span></span> <span style="color: #990000">(</span><span style="color: #008080">AgenceBancaire</span> ag<span style="color: #990000">,</span> <span style="color: #008080">String</span> numeroCompte<span style="color: #990000">,</span> <span style="color: #009900">double</span> montant<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                <span style="color: #008080">Compte</span> c<span style="color: #990000">;</span>
-
-                c <span style="color: #990000">=</span> ag<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getCompte</span></span><span style="color: #990000">(</span>numeroCompte<span style="color: #990000">);</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>c<span style="color: #990000">==</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Compte inexistant ..."</span><span style="color: #990000">);</span>
-                <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">else</span></span> <span style="color: #FF0000">{</span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Solde avant retrait : "</span> <span style="color: #990000">+</span> c<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soldeCompte</span></span><span style="color: #990000">());</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">try</span></span> <span style="color: #FF0000">{</span>
-                                c<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">retirer</span></span><span style="color: #990000">(</span>montant<span style="color: #990000">);</span>
-                                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Montant retiré, solde : "</span><span style="color: #990000">+</span>c<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soldeCompte</span></span><span style="color: #990000">());</span>
-                        <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">CompteException</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Erreur de dépot, solde inchangé : "</span> <span style="color: #990000">+</span> c<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soldeCompte</span></span><span style="color: #990000">());</span>
-                                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>e<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getMessage</span></span><span style="color: #990000">());</span>
-                        <span style="color: #FF0000">}</span>
-                <span style="color: #FF0000">}</span>
-
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">Compte</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">extends</span></span> Object
+        <span style="font-weight: bold"><span style="color: #0000FF">implements</span></span> Displayable <span style="font-style: italic"><span style="color: #9A1900">// ICI</span></span>
+<span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">displayObject</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span> <span style="font-style: italic"><span style="color: #9A1900">// OBLIGE de l'écrire sinon C° error</span></span>
+                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
         <span style="color: #FF0000">}</span>
 <span style="color: #FF0000">}</span>
-</tt></pre></div></div>
+
+<span style="font-style: italic"><span style="color: #9A1900">// Dans la classe Outils, modifier la méthode testAffichage ()</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">// pour appeler sur l’objet en paramètre la méthode getKilometrage () sur son paramètre (sans utiliser de casting).</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">// NOT OK car pas une méthode de Displayable</span></span>
+
+<span style="font-style: italic"><span style="color: #9A1900">// Même question pour getNumCompte(). Compiler. Est-ce possible ? Pourquoi ?</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">// NOT OK car pas une méthode de Displayable</span></span>
+
+<span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">Outils</span> <span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">testAffichage</span></span> <span style="color: #990000">(</span> <span style="color: #008080">Displayable</span> d<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                d<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">displayObject</span></span><span style="color: #990000">();</span>
+        <span style="color: #FF0000">}</span>
+
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">testAffichageTableau</span></span> <span style="color: #990000">(</span> <span style="color: #008080">Displayable</span> td<span style="color: #990000">[])</span> <span style="color: #FF0000">{</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"Aff tab : "</span> <span style="color: #990000">+</span> td<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getClass</span></span><span style="color: #990000">());</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span><span style="color: #009900">int</span> i <span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>td<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
+                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"---&gt;"</span><span style="color: #990000">);</span>
+                        td<span style="color: #990000">[</span>i<span style="color: #990000">].</span><span style="font-weight: bold"><span style="color: #000000">displayObject</span></span><span style="color: #990000">();</span>
+                <span style="color: #FF0000">}</span>
+        <span style="color: #FF0000">}</span>
+<span style="color: #FF0000">}</span>
+
+<span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">Principal</span>
+<span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span> <span style="color: #990000">(</span> String <span style="color: #990000">[]</span> argv <span style="color: #990000">)</span>
+        <span style="color: #FF0000">{</span>
+                <span style="color: #008080">Compte</span> c<span style="color: #990000">;</span>
+
+                c <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"0808"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Dupont"</span><span style="color: #990000">);</span>
+
+                Outils<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">testAffichage</span></span> <span style="color: #990000">(</span>c<span style="color: #990000">);</span>
+
+                <span style="color: #008080">Vehicule</span>  v<span style="color: #990000">;</span>
+
+                v <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Vehicule</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"0808"</span><span style="color: #990000">,</span> <span style="color: #993399">2000</span><span style="color: #990000">);</span>
+
+                Outils<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">testAffichage</span></span> <span style="color: #990000">(</span>v<span style="color: #990000">);</span>
+
+                <span style="color: #008080">CompteDepot</span> cd <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">CompteDepot</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"1212"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"erer"</span><span style="color: #990000">);</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">try</span></span> <span style="color: #FF0000">{</span>
+                        cd<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">deposer</span></span> <span style="color: #990000">(</span><span style="color: #993399">100</span><span style="color: #990000">);</span>
+                        cd<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">deposer</span></span> <span style="color: #990000">(</span><span style="color: #993399">100</span><span style="color: #990000">);</span>
+                        cd<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">retirer</span></span> <span style="color: #990000">(</span><span style="color: #993399">1000</span><span style="color: #990000">);</span>
+                <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">CompteException</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{}</span>
+
+
+                Outils<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">testAffichage</span></span><span style="color: #990000">(</span>cd<span style="color: #990000">);</span>
+
+                <span style="color: #008080">CompteSecurise</span> cs <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">CompteSecurise</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"1212"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"erer"</span><span style="color: #990000">,</span> <span style="color: #993399">1000</span><span style="color: #990000">);</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">try</span></span> <span style="color: #FF0000">{</span>
+                        cs<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">deposer</span></span> <span style="color: #990000">(</span><span style="color: #993399">100</span><span style="color: #990000">);</span>
+                        cs<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">deposer</span></span> <span style="color: #990000">(</span><span style="color: #993399">100</span><span style="color: #990000">);</span>
+                        cs<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">retirer</span></span> <span style="color: #990000">(</span><span style="color: #993399">1000</span><span style="color: #990000">);</span>
+                <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">CompteException</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{}</span>
+
+                Outils<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">testAffichage</span></span><span style="color: #990000">(</span>cs<span style="color: #990000">);</span>
+
+                <span style="color: #008080">Personne</span> p <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Personne</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"Durand"</span><span style="color: #990000">,</span> <span style="color: #993399">25</span><span style="color: #990000">);</span>
+
+                Outils<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">testAffichage</span></span><span style="color: #990000">(</span>p<span style="color: #990000">);</span>
+
+                <span style="color: #009900">int</span>  i<span style="color: #990000">;</span>
+                Compte <span style="color: #990000">[]</span> tabComptes<span style="color: #990000">;</span>
+                Vehicule <span style="color: #990000">[]</span> tabVehicules <span style="color: #990000">;</span>
+                tabComptes <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> Compte <span style="color: #990000">[</span><span style="color: #993399">5</span><span style="color: #990000">];</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>tabComptes<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span>
+                        tabComptes<span style="color: #990000">[</span>i<span style="color: #990000">]</span> <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"No "</span><span style="color: #990000">+</span>i<span style="color: #990000">,</span> <span style="color: #FF0000">"Prop "</span><span style="color: #990000">+</span>i<span style="color: #990000">);</span>
+                tabVehicules <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> Vehicule <span style="color: #990000">[</span><span style="color: #993399">5</span><span style="color: #990000">];</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>tabVehicules<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span>
+                        tabVehicules<span style="color: #990000">[</span>i<span style="color: #990000">]</span> <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Vehicule</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"Immat "</span><span style="color: #990000">+</span>i<span style="color: #990000">,</span> i<span style="color: #990000">);</span>
+
+                Personne <span style="color: #990000">[]</span> tabPersonnes<span style="color: #990000">;</span>
+                tabPersonnes <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> Personne <span style="color: #990000">[</span><span style="color: #993399">5</span><span style="color: #990000">];</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>tabPersonnes<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span>
+                        tabPersonnes<span style="color: #990000">[</span>i<span style="color: #990000">]</span> <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Personne</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"Nom "</span><span style="color: #990000">+</span>i<span style="color: #990000">,</span> i<span style="color: #990000">*</span><span style="color: #993399">10</span><span style="color: #990000">);</span>
+
+                Outils<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">testAffichageTableau</span></span> <span style="color: #990000">(</span>tabComptes<span style="color: #990000">);</span>
+                Outils<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">testAffichageTableau</span></span> <span style="color: #990000">(</span>tabPersonnes<span style="color: #990000">);</span>
+                Outils<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">testAffichageTableau</span></span> <span style="color: #990000">(</span>tabVehicules<span style="color: #990000">);</span>
+        <span style="color: #FF0000">}</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+</td>
+</tr></table>
+</div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Important" src="data:image/png;base64,
+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
+SUVORK5CYII=" />
+</td>
+<td class="content">
+<div class="title">Solutions</div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">Vehicule</span> <span style="font-weight: bold"><span style="color: #0000FF">implements</span></span> Displayable <span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">displayObject</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
+        <span style="color: #FF0000">}</span>
+<span style="color: #FF0000">}</span>
+<span style="font-style: italic"><span style="color: #9A1900">// + test dans Principal ci-dessus</span></span>
+
+<span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">Personne</span> <span style="font-weight: bold"><span style="color: #0000FF">implements</span></span> Displayable <span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">displayObject</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"Nom : "</span> <span style="color: #990000">+</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>nom <span style="color: #990000">+</span> <span style="color: #FF0000">"</span><span style="color: #CC33CC">\t\t</span><span style="color: #FF0000"> Age : "</span> <span style="color: #990000">+</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>age<span style="color: #990000">);</span>
+        <span style="color: #FF0000">}</span>
+<span style="color: #FF0000">}</span>
+<span style="font-style: italic"><span style="color: #9A1900">// + test dans Principal ci-dessus</span></span>
+
+<span style="font-style: italic"><span style="color: #9A1900">// CompteSecurise</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">// CompteDepot</span></span>
+
+<span style="font-style: italic"><span style="color: #9A1900">// =&gt; Heritent de Compte</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">// =&gt; Heritent du type Displayable</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">// =&gt; Heritent de displayObject()</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">//      =&gt; polymorphisme fait le reste : this.afficher() =&gt; méthode afficher() de this =&gt; CompteSecurise ou CompteDepot</span></span>
+
+<span style="font-style: italic"><span style="color: #9A1900">// + test dans Principal ci-dessus</span></span></tt></pre></div></div>
+</td>
+</tr></table>
+</div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Important" src="data:image/png;base64,
+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
+SUVORK5CYII=" />
+</td>
+<td class="content">
+<div class="title">Solutions</div>
+<div class="paragraph">
+<p>tableaux &#8658; voir Outils et Principal ci-dessus</p>
+</div>
 </td>
 </tr></table>
 </div>
 <div id="footer" style="position: absolute; left: 5%; top: 80%; width: 90%;">
 <div id="footer-text">
-Dernière mise à jour 2015-02-23 09:45:14 CET
+Dernière mise à jour 2015-02-25 08:43:03 CET
 </div>
 </div>
 </div></div>
