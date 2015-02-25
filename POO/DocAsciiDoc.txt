@@ -1,4 +1,6 @@
 
+Insérer un saut de page au print :
+pass::[<span style="page-break-before:always"></span>]
 
 Courte
 http://www.methods.co.nz/asciidoc/userguide.html

@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
 <meta name="generator" content="AsciiDoc 8.6.6" />
-<title>BPOO - Sujet TD 4</title>
+<title>BPOO - Sujet TD 4 - Eléments de solution</title>
 <style type="text/css">
 /* Shared CSS for AsciiDoc xhtml11 and html5 backends */
 
@@ -1383,7 +1383,7 @@ asciidoc.install(2);
 </head>
 <body class="article">
 <div id="header">
-<h1>BPOO - Sujet TD 4</h1>
+<h1>BPOO - Sujet TD 4 - Eléments de solution</h1>
 <span id="author">Dut/Info-S2/M2103</span><br />
 <div id="toc">
   <div id="toctitle">Table des matières</div>
@@ -1393,275 +1393,257 @@ asciidoc.install(2);
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
-<div class="tableblock" id="cartouche">
-<table rules="all"
-style="margin-left:0; margin-right:auto;"
-width="90%"
-frame="border"
-cellspacing="0" cellpadding="4">
-<col width="9%" />
-<col width="90%" />
-<tbody>
-<tr>
-<td align="left" valign="top"><p class="table">PreReq</p></td>
-<td align="left" valign="top"><p class="table">Cours 1 : approche objet. TD1 (références, tableaux). TD3 classes objets-encapsulation.</p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table">ObjTD</p></td>
-<td align="left" valign="top"><p class="table"><strong>Écrire une classe avec tableaux dynamiques - Encapsulation</strong>.</p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table">Durée</p></td>
-<td align="left" valign="top"><p class="table"><strong>1 séance</strong> de 1,5h</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_principes_de_stockage_de_données">1. Principes de stockage de données</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_stockage_de_données_en_mémoire_possibilités_du_langage">1.1. Stockage de données en mémoire / Possibilités du langage</h3>
-<div class="paragraph"><p>Pour stocker des données, ce qui est donné comme disponible au programmeur en Java est :</p></div>
+<div class="paragraph"><p><strong>3.2 Exercice : le faire &#8230;</strong></p></div>
+<div class="paragraph"><p>Code à ajouter.</p></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="color: #008080">Scanner</span> lect <span style="color: #990000">;</span>                                  <span style="font-style: italic"><span style="color: #9A1900">// TD 4 - Classe Pile</span></span>
+<span style="color: #009900">int</span> i<span style="color: #990000">,</span> nbValSuppl<span style="color: #990000">;</span>
+<span style="color: #009900">int</span> <span style="color: #990000">[]</span> tabCourant <span style="color: #990000">;</span>
+lect <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Scanner</span></span> <span style="color: #990000">(</span>System<span style="color: #990000">.</span>in<span style="color: #990000">)</span> <span style="color: #990000">;</span>
+lect<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">useLocale</span></span><span style="color: #990000">(</span>Locale<span style="color: #990000">.</span>US<span style="color: #990000">);</span>
+tabCourant <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="color: #009900">int</span> <span style="color: #990000">[</span><span style="color: #993399">5</span><span style="color: #990000">];</span>
+<span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span> i<span style="color: #990000">=</span><span style="color: #993399">0</span> <span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span> tabCourant<span style="color: #990000">.</span>length <span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
+        tabCourant<span style="color: #990000">[</span>i<span style="color: #990000">]</span> <span style="color: #990000">=</span> lect<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">nextInt</span></span><span style="color: #990000">();</span>  <span style="font-style: italic"><span style="color: #9A1900">// <img alt="1" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABjSURBVHja
+VY6xDcAwCAS/pPQaLim9QmajdOk2I2SNrMEIlARIoigU8Cek/4e7zdHaWOYOVwaoA6wOCw05Y7FB
+gE0tIWQ+sBcwKM8qoD/wB5wGL8hjfdzWrh01GRp1hInGjDoXwHgsFuzBVLQAAABDdEVYdFNvZnR3
+YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
+dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
+ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /> Remplissage</span></span>
+<span style="color: #FF0000">}</span>
+System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"   Nb Valeurs en plus ? : -&gt; "</span><span style="color: #990000">);</span>
+nbValSuppl <span style="color: #990000">=</span> lect<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">nextInt</span></span><span style="color: #990000">();</span>
+        <span style="font-style: italic"><span style="color: #9A1900">// A faire ici</span></span>
+        <span style="color: #009900">int</span><span style="color: #990000">[]</span> nouvTab <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="color: #009900">int</span> <span style="color: #990000">[</span>tabCourant<span style="color: #990000">.</span>length<span style="color: #990000">+</span>nbValSuppl<span style="color: #990000">];</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span>i<span style="color: #990000">&lt;</span> tabCourant<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
+                nouvTab<span style="color: #990000">[</span>i<span style="color: #990000">]</span> <span style="color: #990000">=</span> tabCourant<span style="color: #990000">[</span>i<span style="color: #990000">];</span>
+        <span style="color: #FF0000">}</span>
+
+        tabCourant <span style="color: #990000">=</span> nouvTab<span style="color: #990000">;</span> <span style="font-style: italic"><span style="color: #9A1900">// TRES IMPORTANT</span></span>
+<span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span> i<span style="color: #990000">=</span><span style="color: #993399">5</span> <span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span> tabCourant<span style="color: #990000">.</span>length <span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span> <span style="font-style: italic"><span style="color: #9A1900">// de 5 au nb de valeurs saisies</span></span>
+           tabCourant<span style="color: #990000">[</span>i<span style="color: #990000">]</span> <span style="color: #990000">=</span> lect<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">nextInt</span></span><span style="color: #990000">();</span>   <span style="font-style: italic"><span style="color: #9A1900">// <img alt="2" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABvSURBVAgd
+BcGhAcJADADAky8rsZXIyK7AGkgksiu8RNYyAiswAhIbiYwMd7rrsS3LdlS3zuC8EtkqrJ/8vRdR
+Js+PtSZTMHe+L8IAUXeGAZd8DYbArB3C5FbXiBNThSMzcxelM4DI1l0zxtge1f0HVNk1YLFij6sA
+AABDdEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlz
+dGljLmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAODBlYWU1MjljOTRhN2Y0N2Rl
+Y2NmYWRhMjhhY2I5ZGblb7ENAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /> Remplissage complémentaire</span></span>
+<span style="color: #FF0000">}</span>
+<span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span> i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span> tabCourant<span style="color: #990000">.</span>length <span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
+        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>tabCourant<span style="color: #990000">[</span>i<span style="color: #990000">]);</span>
+        <span style="font-style: italic"><span style="color: #9A1900">// Affichera les 5 valeurs saisies au départ <img alt="1" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABjSURBVHja
+VY6xDcAwCAS/pPQaLim9QmajdOk2I2SNrMEIlARIoigU8Cek/4e7zdHaWOYOVwaoA6wOCw05Y7FB
+gE0tIWQ+sBcwKM8qoD/wB5wGL8hjfdzWrh01GRp1hInGjDoXwHgsFuzBVLQAAABDdEVYdFNvZnR3
+YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
+dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
+ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
+        <span style="font-style: italic"><span style="color: #9A1900">// + les valeurs ajoutées en <img alt="2" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABvSURBVAgd
+BcGhAcJADADAky8rsZXIyK7AGkgksiu8RNYyAiswAhIbiYwMd7rrsS3LdlS3zuC8EtkqrJ/8vRdR
+Js+PtSZTMHe+L8IAUXeGAZd8DYbArB3C5FbXiBNThSMzcxelM4DI1l0zxtge1f0HVNk1YLFij6sA
+AABDdEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlz
+dGljLmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAODBlYWU1MjljOTRhN2Y0N2Rl
+Y2NmYWRhMjhhY2I5ZGblb7ENAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+<div class="paragraph"><p>Représentation mémoire.</p></div>
 <div class="olist arabic"><ol class="arabic">
 <li>
 <p>
-les types de base,
+Début du programme, en &lt;1&gt; par exemple
 </p>
+<div class="paragraph"><p><span class="image">
+<img alt="images/td4tabdyn.1.avantcreation.png" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAV8AAAB2CAIAAADgAwecAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAhASURBVHhe7dyvk9NOGMfxM1imMxgkEnmSqULy
+Z6A6yJM4JJK6k/wXxwwIDDMnTyJOIJFIJDyb3SS7m23vaS+bpH3er5nMNz+fJs9lP0375e7iHwCU
+kA4AykgHAGWkA4Ay0gFAGekAoIx0AFBGOgAoIx0AlJEOrfvt+mK9vY9mANvspYMb/LHNTdjQIh2A
+hs106Af/zWYQEKQD0LCeDv3icKbd3Bo8ZQBnjXTYlw7uyaLNhOw44OwZTwe3EJaG6ZDlgVvk8QGG
+mP9Wshvv5XTIRGEBnDvznyw65XTgYQF2kQ6tYTo0c1E+yCJhAUNIh1YhHZzmf3m2CAdYYi8dAOiQ
+DgDKSAcAZaQDgDLSAVOLvuit8zXvri+eRxB/ST3yybuz7tUofnBPSAdMKh6544/ifoTVSIemejts
+XU6M+iI3m75c8kqP1nbl4NMlHTCl+DdXasRDo1JZqbuNBmx6KSMb8RLkPKXSUQVJB0zJ36phodYI
+q5UOiaov4voySmO6BpMOWLr8Hj3ZdHAnXuMl3Kk3Ro0GcXQ6/Pjx4+asyQVeXl76rkNa4X/2c5Ab
+9vTTwZ11hdOOjdGYLmliB/XFpYOMH79wruQCpS9hwbxZW5He9ZWGcc10aIZczegJshh9tKN6QjqY
+M28r4ru01iiulg41Hxqkdhqb474Q6bAL6RCbvRXNGPPGHmnNqIqMWz868daIL5BWr9EZ0qGEdIjR
+CiiRDubQCiiRDubQCiiRDubQCiiRDubQCiiRDuZUbUXVf3X27NmzMDc2Kmf8P5kjHcyp2ooTLU7l
+jC/uJtLBlAnuqkrqFadyxhd3E+lgygR3VSX1ilM544u7iXQw5ZGt+Pv37/Pnz9++ffv79++wKjLB
+LVsDlTO+uJtIB1Me34o/f/58+PBBMuLq6irLiAlu2RqonPHF3UQ6mDJWKyQXJB1Wq5UkheSFXznB
+LVsDlTO+uJtIB1PGbYVkhHzK8BkhHzomuGVroHLGF3fTKaXDUb9qRjrEHt+Knz9/fv/+/fr6WhJB
+vH79+sWLF1JWPmtMcMvWQOWML+6mRaSDctgvJx12nIlbXfjzIPGv57a/nOt3jcS/tZtuHPP3eaVc
+mFO7vb39+PHjmzdvfApIHAjJBVkpMfHly5dXr15JNHz+/PmI4nr1ilM544u7iXQ4TD9wh2ciKbDe
+bLJzbA5oB7jLCb81uxa3oU+Ben+/XM47zCnIhwX/aHB1dSUpMPz/FLJStsqHC//Vw0HFD1WvOJUz
+vribFpAO/YBz/LhI/hpGO1T8iNp2m6LRtdt0zw4uHGRd+E9rx186zyoUC3p7Nh1O3wrJAnleePfu
+XVhOSRxIKMgjgwREWDXJLVsDlTO+uJuW/+zgNvYjqn8fVY6aydKhS4UuAYb649IKe67FVZvk2eHX
+r1/ySUE+IMiTwuXl5Wq1khl5fAibI5IIkgvv37/Pto7f50i94lTO+OJuWn469Fuz3fYf1ZooHeI1
+u+LBrW/3cfun8kvp9hgtGoSU898mysj33yAI/4WiJILMy/rr6+u7u7twwMCnT59evnx5e3sbliNS
+JMxVUK84lTO+uJuWmg7Z6Gm25rt179b7TJMO2emKfExnzwDlCrsyZbSAkHPw6eC/U/S6f7DwSFI8
+zFVQrziVM764mxaZDulyt5Ttlh9VNkk6uOV4BGfLbjE71eHJD9cEqhBUqnpXyYcRqV/JkydPwtzY
+qJyRn6P8NBeTDvn7Yzoe3MZmMR0/yvfUKdLBLaanEu3gznN4ooMscCvCbnJEv3+0fgTjtwJnajnp
+EMaQ44dMtyjW6zCQmoHSSwbXTiOnQ3YOzbgt5VQ3+uMrCdy+eZ3kctJjRosGIeXCHLDXktKhmirP
+DieLVkCJdDCHVkCJdDCHVkCJdDCHVkCJdDCHVkCJdDCHVkCJdDCHVkCJdDCHVkCJdDCHVkCJdDCH
+VkCJdDCHVkCJdDCHVkCJdDCHVkCJdDCHVkCJdDCHVkCJdDCHVkCJdDCHVkDJ3Shfv36V8XPG5AKf
+Pn0qowJCWuF/9sB+PDuYQyugRDqYQyugRDqYQyugRDqYQyugRDqYQyugRDqYQyugRDqYQyugRDqY
+QyugRDqYQyugRDqYQyugRDqYQyugRDqYQyugRDqYQyugRDqYQyugRDqYQyugRDqYQyugdGrpcL9d
+X6y392FJiXSI0QoozZcONxu5TYceGPqnlA7JFbYnXVw5KXndMAfsNV86dA4a8KeVDpu2sf1pF1dO
+inSA0t508Lfvtn+3625svy3o7vDsdm8X81GwY7dc8V3W79yfUunAgZnSIeYuJuqeV1xZ3dytwMl4
+MB2i+7e/mZsN7fp0dXHYJ8PAre4WRHZUSf96zVx3uOJQZ/50WFA4kA7QejAdSqP90PXJQBiMieyo
+IsVL7DFrOrhTHKRAceVESAcoHZUO+QCX5YeGrptvDmn37WVH9dyGSOklCuUK5kwHOcFhCBRXTmW2
+VuDUHJUOh66PFgqjOTsqSNd2S9nO5WNzsz47LA6tgNJR6dDMde9+MuDb+WjWL8SHN8uFx+nyCE9j
+xB3bLKY7J6+324zpULy48hVPZa5W4OQclw5hIYhv9BABzmabDYJm23Aw7xorUamL9TrsE72sUzpu
+iHSIzdUKnJy96XAuZkyHBaIVUCIdzKEVUCIdzKEVUCIdzKEVUCIdzKEVUCIdzKEVUCIdzKEVUCId
+zKEVUCIdzKEVUCIdzKEVUCIdzKEVUCIdzKEVUCIdzKEVUCIdzKEVUCIdzKEVUCIdzKEVUCIdzKEV
+UHI3yrdv32T8nDG5wNVqJaMCQlrhf/bAfryNACj59+8/s4jdYwT1SrcAAAAASUVORK5CYII=" />
+</span></p></div>
 </li>
 <li>
 <p>
-le type tableau d'éléments d&#8217;un type donné,
+Pendant la création (code ajouté)
 </p>
+<div class="paragraph"><p><span class="image">
+<img alt="images/td4tabdyn.2.pendantcreation.png" src="data:image/png;base64,
+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
+np6env4Hb+azJOVM8CQAAAAASUVORK5CYII=" />
+</span></p></div>
 </li>
 <li>
 <p>
-le type "classe(/structure)" : des objets en mémoire contenant des attributs.
+A la fin, après <tt>tab = nouvTab;</tt>, en, &lt;2&gt; par exemple
 </p>
+<div class="paragraph"><p><span class="image">
+<img alt="images/td4tabdyn.3.aprescreation.png" src="data:image/png;base64,
+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
+QmCC" />
+</span></p></div>
 </li>
 </ol></div>
-<div class="paragraph"><p>Pour stocker en mémoire "plusieurs" données, disons une "suite"/"séquence"/"liste"/&#8230; de données, il existe deux structures de programmation de base :</p></div>
-<div class="olist arabic"><ol class="arabic">
-<li>
-<p>
-le tableau,
-</p>
-</li>
-<li>
-<p>
-la structure chaînée (sous forme linéaire ou arborescente).
-</p>
-</li>
-</ol></div>
-</div>
-<div class="sect2">
-<h3 id="_structures_de_données">1.2. Structures de données</h3>
-<div class="paragraph"><p>En dehors de tout contexte particulier (langage et application), une structure de donnée définit :</p></div>
-<div class="olist arabic"><ol class="arabic">
-<li>
-<p>
-un ensemble d&#8217;informations organisées,
-</p>
-</li>
-<li>
-<p>
-l&#8217;organisation de ces informations,
-</p>
-</li>
-<li>
-<p>
-les opérations applicables sur ces informations &#8230; et leur résultat respectif.
-</p>
-</li>
-</ol></div>
-<div class="paragraph"><p>Exemples: pile, file, liste, ensemble, map (clef/valeur), arbre, graphe, &#8230;</p></div>
-<div class="paragraph"><p>Pour les utiliser, il faut <strong>construire</strong>/<strong>implémenter</strong> ces structures de données à partir des possibilités de chaque langage.</p></div>
-<div class="paragraph"><p>Une implantation d&#8217;une structure de donnée repose sur :</p></div>
-<div class="ulist"><ul>
-<li>
-<p>
-le choix d&#8217;une représentation mémoire,
-</p>
-</li>
-<li>
-<p>
-le choix d&#8217;une implémentation algorithmique des opérations de la structure de donnée.
-</p>
-</li>
-<li>
-<p>
-deux éléments fondamentaux à prendre en compte : espace mémoire - temps exécution/accès.
-</p>
-</li>
-</ul></div>
-<div class="paragraph"><p>Dans les environnements de développement, on trouve des bibliothèques (packages java) qui offrent diverses implémentations des structures de données.</p></div>
-<div class="paragraph"><p>Par exemple, en java on trouve au moins deux implémentations de la structure de donnée liste itérative :</p></div>
-<div class="ulist"><ul>
-<li>
-<p>
-ArrayList&lt;E&gt; : liste implantée sous forme de tableau,
-</p>
-</li>
-<li>
-<p>
-LinkedList&lt;E&gt; : liste implantée sous forme de structure doublement chaînée.
-</p>
-</li>
-</ul></div>
-<div class="paragraph"><p>On trouvera aussi :</p></div>
-<div class="ulist"><ul>
-<li>
-<p>
-Structure de donnée pile :
-</p>
-<div class="ulist"><ul>
-<li>
-<p>
-Stack&lt;E&gt; : pile implantée sous forme de tableau,
-</p>
-</li>
-<li>
-<p>
-et d&#8217;autres &#8230;
-</p>
-</li>
-</ul></div>
-</li>
-<li>
-<p>
-Structure de donnée file :
-</p>
-<div class="ulist"><ul>
-<li>
-<p>
-ArrayDeque&lt;E&gt; : file implantée sous forme de tableau.
-</p>
-</li>
-<li>
-<p>
-et d&#8217;autres &#8230;
-</p>
-</li>
-</ul></div>
-</li>
-<li>
-<p>
-Structure de donnée ensemble (collection sans doublons)
-</p>
-<div class="ulist"><ul>
-<li>
-<p>
-HashSet&lt;E&gt; : ensemble implanté sous forme de paires clef/valeur,
-</p>
-</li>
-<li>
-<p>
-TreeSet&lt;E&gt; : ensemble implanté  sous forme d&#8217;arbre balancé.
-</p>
-</li>
-</ul></div>
-</li>
-<li>
-<p>
-Structure de donnée map (association clef/valeur)
-</p>
-<div class="ulist"><ul>
-<li>
-<p>
-HashMap&lt;K,V&gt; : map implantée sous forme d&#8217;une table de hachage,
-</p>
-</li>
-<li>
-<p>
-TreeMap&lt;K,V&gt; : map implantée sous forme d&#8217;arbre balancé.
-</p>
-</li>
-</ul></div>
-</li>
-</ul></div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_but_du_td">2. But du TD</h2>
-<div class="sectionbody">
-<div class="paragraph"><p>Étudier comment implémenter des "tableaux dynamiques" ou "comment changer la taille d&#8217;un tableau sans perdre les éléments". Implémenter une pile de String avec un tableau dynamique. Permet d&#8217;illustrer UN mode d&#8217;implémentation d&#8217;une structure de donnée.</p></div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_principe_d_8217_un_tableau_dynamique">3. Principe d&#8217;un "tableau dynamique"</h2>
-<div class="sectionbody">
-<div class="paragraph"><p>Fonctionnement des tableaux en java :</p></div>
-<div class="ulist"><ul>
-<li>
-<p>
-Ils sont créés au run-time.
-</p>
-</li>
-<li>
-<p>
-Une fois créés : la taille ne peut pas être modifiée.
-</p>
-</li>
-<li>
-<p>
-Une variable tableau contient une <strong>référence</strong> du tableau (pas le tableau lui-même).
-</p>
-</li>
-</ul></div>
-<div class="sect2">
-<h3 id="_exercice_comment_agrandir_rétrécir_un_tableau">3.1. Exercice : comment "agrandir/rétrécir" un tableau ?</h3>
-<div class="paragraph"><p>Question : Soit un tableau rempli de longueur n, dont la référence est stockée dans la variable <tt>tabCourant</tt>.</p></div>
-<div class="paragraph"><p>Comment faire "évoluer" la taille du tableau rempli, par exemple l&#8217;agrandir (tabCourant donnera accès à un tableau "plus grand") ?</p></div>
-<div class="paragraph"><p>Réponse :</p></div>
-</div>
-<div class="sect2">
-<h3 id="_exercice_le_faire_8230">3.2. Exercice : le faire &#8230;</h3>
-<div class="paragraph"><p>Dans le programme joint, indiquer le code nécessaire à ajouter pour agrandir le tableau référencé par <tt>tabCourant</tt> :</p></div>
-<div class="ulist"><ul>
-<li>
-<p>
-il fait 5 éléments au départ,
-</p>
-</li>
-<li>
-<p>
-on y rentre 5 valeurs en &lt;1&gt;,
-</p>
-</li>
-<li>
-<p>
-il faudra l&#8217;agrandir de <tt>nbValSuppl</tt> éléments,
-</p>
-</li>
-<li>
-<p>
-à la fin il faudra afficher les 5 premières valeurs saisies en &lt;1&gt; et les <tt>nbValSuppl</tt> valeurs saisies en &lt;2&gt;.
-</p>
-</li>
-</ul></div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_classe_à_développer_pile_de_string">4. Classe à développer : Pile de String</h2>
-<div class="sectionbody">
-<div class="paragraph"><p>La pile :</p></div>
-<div class="ulist"><ul>
-<li>
-<p>
-Structure de donnée de type LIFO (Last In, First Out).
-</p>
-</li>
-<li>
-<p>
-Dernier élément "entré" dans la pile sera le premier "sorti".
-</p>
-</li>
-</ul></div>
-<div class="paragraph"><p>On souhaite définir une classe <strong>Pile de String</strong> dont l&#8217;implémentation est un tableau "dynamique" de la taille exacte du nombre d'éléments contenus dans la Pile. L&#8217;implantation proposée ici consiste à changer le tableau de stockage à chaque modification de la pile.</p></div>
+<span style="page-break-before:always"></span>
+<div class="paragraph"><p><strong>4.1 Implémentation mémoire de la Pile</strong></p></div>
 <div class="tableblock">
 <table rules="all"
 width="100%"
@@ -1671,308 +1653,342 @@ cellspacing="0" cellpadding="4">
 <col width="50%" />
 <thead>
 <tr>
-<th align="left" valign="top"> Diagramme UML complet de la classe Pile </th>
-<th align="left" valign="top"> Méthodes</th>
+<th align="left" valign="top"> Début et empiler() </th>
+<th align="left" valign="top"> depiler()</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left" valign="top"><p class="table"><span class="image">
-<img alt="images/classePile.png" src="data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAJgAAACkCAIAAADkGHCgAAANAElEQVR42u2dD0xV1x3HiUCJUYOr
-pDJlK6ITmXXU2iH+qbHajikR46iV/dVa4kJpZ8PG/BOLEgPtLAXLlGqJVrQgPNCHD2eZhgLDoeIf
-XNM0lJAx44izL2RijSHMve1rjju5u/ee+y689+6fx+/kl5fD8b7zjudzz597vuf8bsh/KARFCKEq
-IJAUCCQFAkmBQBJICrYDOfTPu7ebr5KZa0N3vvYVJHKpDkkiM9e+arnqH5BdJUW3m6vJjLeu4iJ/
-gkSOHs81MuPtH59WE8jgAdlYXN7e3t7Z2dnd3d3X1zcwMEAgbQnSses9l8vV1NTU0dEBlm63264g
-/z105dbZyotZuafnpjsiFrIpQMPMVRdfzUE6/jW4QR7bVlhVVeV0OsES7RKN0pYg/1b1oXPaytqE
-tNrs3Loj+090nDzxF9eJa/V1VQfrcrbXP/OSa3oqrglikEe3Fhw5cgQs0S7Rx/b29toM5L/ud7Rk
-ZNfGpdaWlTyEJ7IP33fGp/153Wu4PihB1uwsAsiKigqHw4FGid7VTiBB5dwPX3Ekr6trrdaiyOzC
-ifplP/90+fogYxkMIJvXveZIzgAh7xSZXasHy/PrsgikhUD+tfJgbdxKXW1R1i5npQXTeGlvkJiF
-npy2wsu4KLD68tKG6alBM4+1N8i///Fjx6w0JaTqjrp1WT+eHBMdGhYaE/etzYU585ctmPm9eNll
-rnkv9Z05pv0TIf8LERGPJSbOvHy5kqfLIgRy5PanTb/Gk4YMT82Vk2AWohbkIH/7VkdmjleQPF5R
-sXvu3FkaFxDIEdqpxB89fF78fzwZ2T9F5UY+HrmjbFdd56mP26vROlVB4vnyD/Fp+kHC0C5FLbK/
-v2XFikXh4WEpKQsQJ5DDsOrQ5EdP/RL75renoHLzDuRLE5/8zpPKrhXTV5RZJ8gHD67s27c1OXmO
-CGRW1tqbNxsRqa8v2bz5JwRyOCBDkpQD5JgxY5SNT2R6QLKAprZ48dNffHFSBDIqaiL/VnT0JALp
-a4tU7UVFD5T6W6QoXRrhITR0DIH0dYycGPUNVGVxbalXkCMYIzVARkaOp8mOP2etazamo3InTY7a
-9vu3MNlByv6Ggwt/sGhK7FQfZ63aIDFG3rjxCSLHj7/Dh1ICOfLnSDxEqj5+JD0/f2TPkTpBut3N
-mK9iKJ0zZwYfSgmkTys7eJT8Rc4r0787IzQsFBYbP+1nm9c7rjlpZYfWWgkkqR8Ecrh65InzDtIj
-bQySdggED0jasxNUIGW76KrDktkuulNxKy++moMnjaDfRRc8IEf5vlYCSSAJZFCC/LKkCDmSGW/s
-NJbfQJKZa/5rkXvfpaOKptiXJe/SGEljJIEkkGQEkoxAEkgCSSAf2eef1y1d+mxExGNjx0YsW/b9
-zz5zIHH16qX6t8mINp1KI8Myi+z2txnI+PjYysrCBw+uwGpqfhcbO8X3qpR+nUAaBDIycnxXl1N2
-jkLapPbt2zp79nRev/jcvTsbvMPDw86c2YeUmzcbk5KeioqaiCv5NSIqc+fOYj/X09MQHT0Jd8+F
-C0eRiNyeeOLxiord0h+SZdLXd3bJkmdw5bx5Cd3dp5By+nQp/gwNHTNnzozm5vJRDbKurgg1+MIL
-8wsKXm9tPaTcVIjKQnVL63fPnjeRAoqoRKSkpy8HWkTy8jZ5BYnvvv32rxApKsrJzV2PSELCtKam
-g4gAMNtMLMpkzZrnURhEcD2IsnsuP//hHp/Gxv1xcVNH+2QHVICwuPg3aFiHDu2SgWQUpfUrS0Ft
-spShocteQbLmiwhIsPHY7W7GfZCRkQKi0q8rM+FdBTvygZQDB3bgLszOfhkj/WjsWnl1yH51cPDS
-hAnjRMdFNepXP0iGsK3tMLpH9ie4Hj/+ztmzH9y48YkqSJSK/9D9+xdluaEt4j7ATVBenjeqWyRG
-O77/+tKlY+zEKEYdVmV6QK5d+yKq8tatcyCkB2RZ2XYk7t2by4dkdKp3757PzFwj/Tobg+/da09J
-WcBSVqxYxDpSvvkf/Fhni45EeupqlD5+pKY+h8EJFYfHD8xBkIghkx0d1QMScxC0qpiYyahT0bek
-1t/fgsvQo3Ku48aNRQFKS7dIf4KNwegh0H+yFHTL4Ifv8s3/mChhIobbDlcyorQg4AdDQ2EN2sfH
-D1oQMAdkVtZatBs0FAx716/XsN6SNU0eIZC0REcgCSSBJKNddGS0i4520dEuOtpFR0aTHTICSSAJ
-JIGkah0NILmrtpiYyWwDh1LrkFllZWFm5hpE8Ik4MbMKyEc+VZrL4+NjvWoX/f0tCQnT7t49jzg+
-Z8+ebrwrVALpZa8b20UhbZHKXU/5+Vls6w0zxJnkS2YVkPX1JYmJM2UglbuecI3UrxvifOsGmQl7
-dmQ7iRFiY6ewfYVSkMpdT+xTun1r7NgIwmatrlW5sUO560kGEkYgbQBSuesJHSlzgsoMcdYhk1ll
-1qoKUrnrCVz5NjgY4lu2bCBs9lsQwMMGmiDrb/EZFzeVefIns9/KTmVlYVbWWrb5iu1PJ6MlOgJJ
-IAkkGYEkI5AEkkASSAJJIMkIJBmBJJAEkkCSEUgyAkkgCSSBJCOQZASSQJqz+UqPGeYMiTkCvnOn
-TekCMj4+9tatc6LNY153qwT6+AqBVP+h7OyXpa7K2toOMxIjKJsxx1dM2Nfa3X0qMXEm37CKz4UL
-E8PDw/ApShGdDFH1pStz18vNqztdqSPgri5naupz/LsbNqQxB5/sX1GqpKSnJkwY53K9LyobN2OO
-r5gAcseOTEQKCl5ftWoJ25TM3OniMyVlgWqK6GSIqi9dmbtebnrc6UqLiuKx2+jevXYOlV2AHpiV
-EF8XlY2bMcdXTDj7wXyu4pO7kfOaIjoZoupLV+aul5sed7rSr7S2HmKYcRl3fy3yHKvMXHTqIUDH
-V0xokbwK2P9HWimiFNHJEJEvXRFIr+50ZV9hDXHjxtWyPJEVyubx5qvXyOMrJoBEb4l6RweL7ggp
-+JN3U6wjVaaIToaIfOmqgtTjTpc7AmaGcfeNNzKku6JZnunpy1H+np4GDMaisnEz5viKCbNWzAUw
-c1u69FnM5vnEAbft4sVPs+MAyhTRyRCRL11VkHrc6XJHwLwbxGSK99XSaRfKhgeS69drRGWTTnYM
-OL5CCwIBN2OOrxBII8yA4ysEkpboCCSBJCOQZNYAGYiXDxpsqqU13T2X0SAD8fJBg031TTGmu+cy
-emUnEC8f5KZ8OaCqkFJRsRs/Wlq6BTkgwl3iqabLZA1paQ3WN6wFMhAvH5TeEzI1Q1VIQU/Q09MA
-MPgtnq0oXSlrKFukFdxzGa1+eALw8kFuSjVDVUiR3ijKH5KlK2UNJUgruOcyukVKzV8vH9RQM0RC
-iipI1XSlrOEVpMcM91xGgwzEywe5KdUMkZCiH6RS1pApJB5ruOcy4fHD7y8f5KZUM0RCin6QSllD
-ppB4rOGey8YLAvzlg6NE3wg2kMqXD44SfYOW6GiJjkASSDICSRYsIEd2vmJYmQ83Qy5uGKze8P3Q
-7E8NacUeLdLv8siwMpSKGwarN7LbTkNaMXplB09+TP3o6WmIjp6E6hCd9FCer9A4xaGhabS2HoqM
-HI/flWYuOrAhlV9UxY2Aqjeq5ZHpLSJpxWiQe/a8ySqlqCgnN3e9xkkP5fkKjVMcGppGXt4m3C7I
-ih010X7NiFR+URU3AqreiJQW6WUiacVo9YPdj4igoGyA0TjpIVocV1UkRJrG4OAl5aK5hrIho6gq
-bgRIvREpLdLLRNKKCeoHELa1Hea3lcZJD9n5Co1THBorqKqZ61c2VMWNAKk3ovLILrMKyLKy7Ujh
-q8wigUJ5vkLjFIcGSPRXt2837dz5S2To8faaEVWQUnEjoOqNqDxSvUUkrZgwa8WkC7ee293MS6Yq
-UCjPV2ic4tAAiUrBlRjV2FET7deMqIKUihsBVW9E5ZHqLSJpJcgXBPzyYCAVN8xVbzSklSAHKbvl
-fRc3zFVvNKQVWqKjJToCSSDJCCRZkKof+uelPuoeFn/nuu3Vj+GCGbHuYfF3rttS/dDjeMrvuofH
-2u9ct6X6ocfxlN91D4+137luV/XDq+OpAOkeln1Vt13VD6+OpwKkexBIf6ofehxP+V338Fj7neu2
-VD/0OJ7yu+7hsfY714N2QcDvuofF37ketCD9rntY/J3rtERHS3QEkkCSWR1kV3ERciQz3lDz/gRJ
-Zq75AeTQna+/arnKrLG43LHrvWPbCo9uLUDWZMbZR0d9BSkN7e3tLperqqrqCAUzAmoe9Q8Kvb29
-PoHs7OzE7eB0OpFjBQVjA+ocNY/6B4W+vj6fQKJFd3R0IC/cFw4KxgbUOWoe9Q8KbrfbJ5C4EZAL
-7gi07iYKxgbUOWoe9Q8KAwMDPoHE93EvICP00d0UjA2oc9Q86h8UBgcHfQJJwUaBQBJICgSSgt/D
-fwEInwoFAbTECwAAAABJRU5ErkJggg==" />
-</span>  <span class="image">
-<img alt="images/classePileInterface.png" src="data:image/png;base64,
-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
-gaTg9fBfTpg/FRnM2sgAAAAASUVORK5CYII=" />
+<td align="left" valign="top"><p class="table">1) Avec un élément.<br />
+<span class="image">
+<img alt="images/td4.pile.10.png" src="data:image/png;base64,
+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" />
+</span><br /></p></td>
+<td align="left" valign="top"><p class="table">4) Après dépilement d&#8217;un élément<br />
+<span class="image">
+<img alt="images/td4.pile.40.png" src="data:image/png;base64,
+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" />
 </span></p></td>
-<td align="left" valign="top"><p class="table">Les méthodes :</p>
-<p class="table">* <tt>Pile()</tt> : Constructeur par défaut qui construit une pile vide (sans éléments).</p>
-<p class="table">* <tt>boolean estVide ()</tt> : retourne true si la pile est vide, false sinon.</p>
-<p class="table">* <tt>String sommet ()</tt> : donne accès au sommet de la pile, l'élément en "haut" de la pile (le dernier empilé).</p>
-<p class="table">&#8658; Précondition : sommet() valide ssi pilevide() == false. Lève une exception PileException si non respecté.</p>
-<p class="table">* <tt>void empiler (String elt)</tt> : permet d&#8217;ajouter un élément en "haut" de la pile.</p>
-<p class="table">* <tt>void depiler ()</tt> : enlève l'élément en "haut" de la pile.</p>
-<p class="table">&#8658; Précondition : depiler() valide ssi pilevide() == false. Lève une exception PileException si non respecté.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">2) Après empilement d&#8217;un nouvel élément<br />
+<span class="image">
+<img alt="images/td4.pile.20.png" src="data:image/png;base64,
+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
+RU5ErkJggg==" />
+</span><br /></p></td>
+<td align="left" valign="top"><p class="table">5) Après dépilement d&#8217;un élément<br />
+<span class="image">
+<img alt="images/td4.pile.50.png" src="data:image/png;base64,
+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
+q99vSiAAAAAASUVORK5CYII=" />
+</span></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">3) Après empilement d&#8217;un nouvel élément<br />
+<span class="image">
+<img alt="images/td4.pile.30.png" src="data:image/png;base64,
+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
+SUVORK5CYII=" />
+</span><br /></p></td>
+<td align="left" valign="top"><p class="table">6) Après dépilement d&#8217;un élément<br />
+<span class="image">
+<img alt="images/td4.pile.60.png" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAXUAAABWCAIAAAC/0JGzAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAoiSURBVHhe7Z0hdBs5EIYPBhYGBgYa+gUVBhYa
+BuUZBoYFBjassNDQLAEF99617xUUBAYEGAYaFBT2RtJIO5rdtde2pNjW/4GrpJUmu7PSZ61j5/75
+CwAAeYBfAAC5gF8AALmAXwAAuYBfAAC5gF8AALmAXwAAuYBfAAC5gF8AALmAXzyvDxf/XDy8igIA
+YDfq84vRh+T6kQ944BcAElGnXxp9PF63FAO/AJCI2v3SVNsFf9jT2ukAAFYCv6zyi9ndeKuocQCA
+tVTuF1PhWtsvyiimii0MABtQ/fu7wRjdflEI3QAA1lH981Gg2y/YsACwPfCLp+0XWxKGoSp0A8AG
+wC+eDr8Y7C+wPdALAJtQn18AAKWAXwAAuYBfAAC5gF8AALmAXwAAuYBfAAC5gF9AZno+EGCaOz4Q
+LT8P4D8O4LoK5OcE4oP4BMF+Ab+AbDRLv+0X8sjF9bUyjx3gFWFM446aZtFPfuvU1JpD0XiwB8Av
+IDPKDg6jF2rjfzyvDw9CDsEjKkJnQMeKQ+A9MH758ePH47FD1zgajfjVtHooFe72l6BrzQevxHuR
+iGZcHGGFQ0w07F/2CeMXWn6ucsTQNdLU40r1FE1F2weypU8wpt33Mf1jtF9CD8hlv4BfaqRoKlp+
+aetCW0HtQ7oj9FkJitkj4JcaKZoKbQdTlw5QdeuOeH+iI3S1MCSYznbQjXrTIPmDM/xSI0VToVyg
+dEKIDmrjwrRsYhq4G41o+ot2MAg1E5JPDPilRgqlwi53gVn5XU8wwR9WLzGmr44T7W/iMZDLZlDK
+uGRR1d2BX2oEqQAO+CUN8IsEqaiHt7e3y8vL+XzO9Rj4JQ3wiwSpqAqSy8jStgz8kgb4RYJUVEiw
+zNevX7kJfkkF/CJBKqrFWebs7MxZBn5JA/wiSZIKmqYUBxSAUs1J35nFYjGbzdy9I8vQf/mARVV3
+B36pkSSpQD6LsXuq//z5QxsWEsr5+flkMvlgoRYVOfk9NeHgl9pIkgrksxi7pHq5XN7f35+enn78
++PHp6enl5WU8Hl9eXr69vdFRFTn5PTXh4JfaSJIK5LMYW6eadii0T6ENy/PzM1WdaPD+bnrgF0mS
+VCCfxdgi1fRAdHV1NRqNaMNCVbVtCajIye+pCQe/1EaSVCCfxdgi1Z8+fSK/kGWoPJ/P1bYloCIn
+v6cm3F77JXw3JRS2An6RJElFsnwmusVHzKapvr29pa0KV+zvjNS2JaAiJ18jJtxe+EV/h631RbV9
+80vP+bjraB2Q38Lzl6YvObrm+GDir+1RRC7twMZB9PUmvsVHDCWLSwN4fn4+OztzO5e1fPjwwd0M
+B1X5QCL2yi/N3LLLMZ5/u02+lH5p1kn7fOjED+DPVtOpc2kHNg4SX2/yW3zEbJTq6XT6+fNnrrw3
+6fziJsdD8zpNc8cuDEYuHW4y+Pmk5laotgv+sGfQwiu0fzF6oTb+x7N3f7Y6SSoGBLG3Kdyfvutt
+F/xhz6BbfMRQCrg0gPF47H5btA+k9YuYCU4iUbVjlthBtj2aW6LaLsTB1Lg+yvgleKXncg3NuDjC
+iguxuewJtxVJUjEgiLmm5sTVFYZqu7DVLT5iNrpf9Iwz8OGoAGn90jV7HH1zJLRHHUyFa+0OUU9X
+Xb/2SvhFtvQJxrT7PqZ/TBxP9EgpF4IifvTc3d19+fJli1c8CsKlgUQZs5fmaqG9XXCYauIMHBbD
+U/3y8nJ+fs6VPeBd/GIqgjClBGE6hYFRQSF+UA8F/NI+L70m1D6kO0LXQuqz1bbQafzrIb/c3NyM
+RqOTkxPSDblmuVxyv5VQEC4NRCUo9S0+Yuj6ubSOyWRCN5Qre0B5v8QHQk31D7Q7mMLGiy2/X/Rp
+qbqpqgvUEbpaGBJMZ/uWdKaCNtXz+dx9OUXOUWr8+fMnVwQb57Pv6kJ7VEjp00NnYKpns9nw3xyV
+obxf4qUSnhdU/0BobzqYkph+VF0/F7P7xVTj0xAd1MaFURFcA3ejEdEVJt+/cKmLxWJBG5npdOqq
+JJfT09Pb21s1cQfkMz7x1vUyob3poK6Yqikv/+AYMnVpK0q3aX/e2XWU9wuvNubiojW3YkJ73EHG
+GLL0UvrFnInE/HhzPvo0whlHJ+swfXWcaH8Tj0m8uigil3ogldAuJnwoy/2NRXqwl9N3bRC+wnDu
+8R1sCO1xh01v8RFDCeBSD/RUS3J5enri+t6Qzi/7Tfr9yyEzJBX39/ej0YheFbluvyxHk5jaXRX5
+LMaKVJNTaLMZvmeUg7dnWj2O5+5PAfcDv9TIwFS4V8XxeBx+wUQbGaoSNJuRz2K0U00bTLoptKMk
+yPv53nP5/frf43+vv1vlgcAvNbJRKubz+XQ6pVdIemKip6S7uzuSzsnJCfJZjJBq8vtsNru5uXH3
+Iv8Dkdm7NJuWzQUDv9TIdqmgF0l6XHKTmyIQfd+aA2lx2SZotzKZTGjnku9pKIb8IoUS62YA8EuN
+bJeK5XJJmxeSy9XV1WKxQD6L8W6p1hsW+KUH+EWyaSqUWVwj8lmM90s19i/DgF8kw1NBz0RtszgS
+57Pvt9fgnf2C918GAL9IhqeCnvOn06kyi+PQ/bLy8zXqI0vuxDo+x0SooaFTuBhzZZrNrpQGcKk4
++P3RIOAXSZJUJM5nUb/wko+0EX64N4QXh+3ccWrcT/pFqiSMiH7YVtBoLr0HZg/DbPRsZIBfaiRJ
+KlYH0bqQ9Wgf4BtDBzUyqpqKR6xrGVDGE9UIdSyqattYXh+udRx/KqKjHRr+BlI4sOpMhkGjuXRo
+wC81kiQV64KY1RYcYNaYepCw2LVnD5iSXYKh4BBVGbFpjvpThXuYZkJEatAO4boZuWqYgLuJfq7F
+hNDRfd/AuuAtaAyXDg34pUaSpGJtEKEDaYYYs/jsemsXHKvabUjVPgilAOEXLYdOzI+Me9lhXF0V
+go+tia+hAVw6NOCXGkmSivVBggJoVUULyq9Pxh4LmlC+iNoV3E0eESNX0heN21eG8ZIIxuwI5miH
+8V27bdsD9efSoQG/1EiSVAwIYhYTLbFYL9yoa+2CI2pftyrNyhdjB+J8weNYHnEU+f5Lyy4aFeHx
+WvY0V2GAX44K+EWSJBWDgvBak6uJmsTiNR1stdGKaQoDbADXbpdmE4mqtqL/Twtc44XcHOuh3Y/P
+Ofwo28Mf9wdXxOUu0QgfSx0bCI3gUmp+/fpl/ohhBigyxYdfaiRJKoYFiVYX49eoofMPAIkO1w+i
+PR7qw3a1rfMLH3V09IliKleIeifcKfRRsXQ2BkCDuJQaEgGXUuMiwy81kiQVyGcxDtsv3759o+V3
+3NA1hm/9AkqFnQM7QXG4BDKTL9Ul/ALAFsAvxYBfQHXAL8WAX0B1wC/FgF9AdcAvxYBfQHXg/fJi
+JHk/vhP4BQCQC/gFAJAL+AUAkAv4BQCQC/gFAJAL+AUAkAv4BQCQi+/fv5MIckCRKT78AgDIw9+/
+/wMWPdc2KRL5qwAAAABJRU5ErkJggg==" />
+</span></p></td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="paragraph"><p>NB : noter que dans certains cas (livres, sites web, etc.), l&#8217;en-tête de depiler() pourrait être <tt><strong>String</strong> depiler ()</tt>, signifiant que depiler() pourrait ET enlever le sommet de la pile ET renvoyer la valeur de ce dernier.</p></div>
-<div class="sect2">
-<h3 id="_implémentation_mémoire">4.1. Implémentation mémoire</h3>
-<div class="paragraph"><p>Donner l&#8217;implémentation d&#8217;un objet Pile que l&#8217;on a créé avec une variable <tt>maPile</tt>
- NB : on ne représentera pas le contenu des éléments du tableau de la Pile qui sont des String</p></div>
-<div class="olist arabic"><ol class="arabic">
-<li>
-<p>
-Avec un élément.
-</p>
-</li>
-<li>
-<p>
-Après empilement d&#8217;un nouvel élément
-</p>
-</li>
-<li>
-<p>
-Après empilement d&#8217;un nouvel élément
-</p>
-</li>
-<li>
-<p>
-Après dépilement d&#8217;un élément
-</p>
-</li>
-<li>
-<p>
-Après dépilement d&#8217;un élément
-</p>
-</li>
-<li>
-<p>
-Après dépilement d&#8217;un élément
-</p>
-</li>
-</ol></div>
-<div class="admonitionblock">
-<table><tr>
-<td class="icon">
-<img alt="Note" src="data:image/png;base64,
-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" />
-</td>
-<td class="content">
-<div class="paragraph"><p>Java autorise de créer des tableaux de longueur 0 : un objet tableau qui existe et peut contenir 0 éléments (l&#8217;attribut length vaut 0).</p></div>
-</td>
-</tr></table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_codage">4.2. Codage</h3>
-<div class="paragraph"><p>Écrire les méthodes de la classe Pile implémentée par un tableau "dynamique" de la taille exacte du nombre d'éléments contenus dans la Pile.</p></div>
-<div class="paragraph"><p>En cas d&#8217;appel des méthodes hors préconditions, les méthodes lèveront une exception de type <tt>PileException</tt>.</p></div>
-<div class="admonitionblock">
-<table><tr>
-<td class="icon">
-<img alt="Note" src="data:image/png;base64,
-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" />
-</td>
-<td class="content">
-<div class="paragraph"><p>Java autorise de créer des tableaux de longueur 0 : un objet tableau qui existe et peut contenir 0 éléments (l&#8217;attribut length vaut 0).</p></div>
-</td>
-</tr></table>
-</div>
 </div>
 </div>
 </div>
@@ -1980,7 +1996,7 @@ lJga0LT8+uRGJ5P/2OBGpz/mT34Gmsy9nx36v3PoX1H4mIUGLCOSAAAAAElFTkSuQmCC" />
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2015-02-25 17:38:52 CET
+Dernière mise à jour 2015-02-25 17:37:39 CET
 </div>
 </div>
 </body>
