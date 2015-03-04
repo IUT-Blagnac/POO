@@ -13,10 +13,11 @@ class AgenceBancaire {
 	+ void addCompte(Compte pCompteAAjouter)
 	+ void removeCompte(String pNumCompte) 
 
-	+ void afficher() 
 	+ String toString()
-	---
-	- Compte trouveCompte(String pNC)
+	--------
+	+ void afficher() 
+	--------
+	- int trouveCompte(String pNC)
 }
 
 class Compte {
@@ -29,9 +30,10 @@ class Compte {
 	+ void setProprietaire(String pNomProp)
 	+ void retirer(double pSomme)
 	+ void deposer(double pSomme)
-	
-	+ void afficher()
+
 	+ String toString()
+	--------
+	+ void afficher() 
 }
 
 AgenceBancaire o- Compte

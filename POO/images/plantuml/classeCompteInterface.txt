@@ -12,8 +12,9 @@ class Compte {
 	+ void retirer(double pSomme)
 	+ void deposer(double pSomme)
 	
-	+ void afficher()
 	+ String toString()
+	---
+	+ void afficher()
 }
 
 @enduml

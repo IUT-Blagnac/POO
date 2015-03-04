@@ -5,7 +5,7 @@ class AgenceBancaire {
 	- String nom 
 	- String loc
 	- ArrayList<Compte> alCptes
-
+---
 	+ AgenceBancaire(String pNomAgence, String pLocAgence) 
 	
 	+ String getNomAgence()
@@ -17,10 +17,12 @@ class AgenceBancaire {
 	+ void addCompte(Compte pCompteAAjouter)
 	+ void removeCompte(String pNumCompte) 
 
-	+ void afficher() 
+	 
 	+ String toString()
-	
-	- Compte trouveCompte(String pNC)
+	---
+        + void afficher()
+	---
+	- int trouveCompte(String pNC)
 }
 
 @enduml

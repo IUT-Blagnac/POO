@@ -8,7 +8,7 @@ class Compte {
 	- double credits
 	- int nbDebits
 	- int nbCredits
-	
+	---
 	+ Compte() 
 	+ Compte(String pNumCompte, String pNomProp) 
 	
@@ -19,8 +19,8 @@ class Compte {
 	+ void retirer(double pSomme)
 	+ void deposer(double pSomme)
 	
-	+ void afficher()
 	+ String toString()
+	---
+	+ void afficher()
 }
-
 @enduml
