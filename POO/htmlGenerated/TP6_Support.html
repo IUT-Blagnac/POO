@@ -874,7 +874,7 @@ cellspacing="0" cellpadding="4">
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">À rendre</p></td>
-<td align="left" valign="top"><p class="table">Code source à déposer : Classe AgenceBancaire en 2 versions + réponses au questions éventuelles en commentaire en début de fichier.</p></td>
+<td align="left" valign="top"><p class="table">Code source à déposer : Classe AgenceBancaire en 2 versions (1 est optionnelle) + réponses au questions éventuelles en commentaire en début de fichier.</p></td>
 </tr>
 </tbody>
 </table>
@@ -891,7 +891,7 @@ cellspacing="0" cellpadding="4">
 <div class="ulist"><ul>
 <li>
 <p>
-Les Compte seront stockés dans un tableau de Compte dynamique bâti sur les principes vus en TD pour stocker les informations en tableau dynamique dans la classe <tt>Pile</tt>.
+Les Compte seront stockés dans un tableau "dynamique" de Compte  bâti sur les principes vus en TD pour stocker les informations en tableau "dynamique" dans la classe <tt>Pile</tt>.
 </p>
 </li>
 <li>
@@ -1545,7 +1545,7 @@ lJga0LT8+uRGJ5P/2OBGpz/mT34Gmsy9nx36v3PoX1H4mIUGLCOSAAAAAElFTkSuQmCC" />
 </td>
 <td class="content">
 <div class="paragraph"><p>On peut ajouter autant de méthode privée que désiré : <strong>cela ne change pas l&#8217;interface de la classe</strong>.</p></div>
-<div class="paragraph"><p>Vous pouvez ajouter d&#8217;autres méthodes private si vous le souhaitez (pour recopier une partie de tableau dans un autre, pour agrandir un tableau et le recopier ? autre ? &#8230;).</p></div>
+<div class="paragraph"><p>Vous pouvez ajouter d&#8217;autres méthodes private si vous le souhaitez (pour recopier une partie de tableau dans un autre, pour agrandir un tableau et le recopier, autre traitement &#8230;).</p></div>
 </td>
 </tr></table>
 </div>
@@ -1728,7 +1728,7 @@ lorsque nécessaire : ne réduire le tableau que lorsque il y a la moitié des �
 <div class="olist arabic"><ol class="arabic">
 <li>
 <p>
-<tt>tailleMin</tt> est fixé à 3 pour les tests, on pourra le modifier plus tard si besoin (100 par exemple).
+<tt>tailleMin</tt> est fixé à 3 pour les tests, on pourra le modifier plus tard si besoin (1000 par exemple).
 </p>
 </li>
 <li>
@@ -1981,7 +1981,7 @@ http://www.gnu.org/software/src-highlite -->
 <span style="font-style: italic"><span style="color: #9A1900"> * </span></span><span style="color: #009900">@version</span><span style="font-style: italic"><span style="color: #9A1900"> 7.02</span></span>
 <span style="font-style: italic"><span style="color: #9A1900"> *****************************/</span></span>
 
-<span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">AgenceBancaire</span> <span style="color: #FF0000">{</span>
+<span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">AgenceBancaireX</span> <span style="color: #FF0000">{</span>
         <span style="font-style: italic"><span style="color: #9A1900">// Attributs</span></span>
         <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">String</span> nom<span style="color: #990000">,</span> loc<span style="color: #990000">;</span>
         <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">Compte</span> tableauDesComptes<span style="color: #990000">[];</span> <span style="font-style: italic"><span style="color: #9A1900">// Tableau des comptes</span></span>
@@ -2053,9 +2053,10 @@ http://www.gnu.org/software/src-highlite -->
         <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #008080">Compte</span> <span style="font-weight: bold"><span style="color: #000000">getCompte</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> pNumCompte<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
                 <span style="font-style: italic"><span style="color: #9A1900">// A titre d'exemple : utilise une méthode privée définie en fin de</span></span>
                 <span style="font-style: italic"><span style="color: #9A1900">// classe</span></span>
-                <span style="color: #008080">Compte</span> c<span style="color: #990000">;</span>
-                c <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">trouveCompte</span></span><span style="color: #990000">(</span>pNumCompte<span style="color: #990000">);</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> c<span style="color: #990000">;</span>
+                <span style="color: #009900">int</span> rang<span style="color: #990000">;</span>
+                rang <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">trouveRangDeCompte</span></span><span style="color: #990000">(</span>pNumCompte<span style="color: #990000">);</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>rang <span style="color: #990000">!=</span> <span style="color: #990000">-</span><span style="color: #993399">1</span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span> <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>tableauDesComptes<span style="color: #990000">[</span>rang<span style="color: #990000">];</span> <span style="color: #FF0000">}</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">;</span>
         <span style="color: #FF0000">}</span>
 
         <span style="font-style: italic"><span style="color: #9A1900">/**</span></span>
@@ -2174,7 +2175,7 @@ http://www.gnu.org/software/src-highlite -->
         <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">addCompte</span></span><span style="color: #990000">(</span><span style="color: #008080">Compte</span> pCompteAAjouter<span style="color: #990000">)</span> <span style="font-weight: bold"><span style="color: #0000FF">throws</span></span> ABCompteNullException<span style="color: #990000">,</span> ABCompteDejaExistantException <span style="color: #FF0000">{</span>
                 <span style="color: #009900">int</span> taille<span style="color: #990000">,</span> i<span style="color: #990000">;</span>
                 <span style="color: #008080">Compte</span> t<span style="color: #990000">[];</span>
-                <span style="color: #008080">Compte</span> c<span style="color: #990000">;</span>
+                <span style="color: #009900">int</span> rang<span style="color: #990000">;</span>
 
                 <span style="font-style: italic"><span style="color: #9A1900">// Si null =&gt; refusé</span></span>
                 <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>pCompteAAjouter <span style="color: #990000">==</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
@@ -2183,10 +2184,10 @@ http://www.gnu.org/software/src-highlite -->
                 <span style="color: #FF0000">}</span>
 
                 <span style="font-style: italic"><span style="color: #9A1900">// On cherche un Compte de même numéro</span></span>
-                c <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">trouveCompte</span></span><span style="color: #990000">(</span>pCompteAAjouter<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getNumCompte</span></span><span style="color: #990000">());</span>
+                rang <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">trouveRangDeCompte</span></span><span style="color: #990000">(</span>pCompteAAjouter<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getNumCompte</span></span><span style="color: #990000">());</span>
 
                 <span style="font-style: italic"><span style="color: #9A1900">// Si trouvé</span></span>
-                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>c <span style="color: #990000">!=</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>rang <span style="color: #990000">!=</span> <span style="color: #990000">-</span><span style="color: #993399">1</span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
                         <span style="font-weight: bold"><span style="color: #0000FF">throw</span></span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">ABCompteDejaExistantException</span></span><span style="color: #990000">(</span>
                                         <span style="color: #FF0000">"Erreur ajout Compte déja existant ("</span>
                                         <span style="color: #990000">+</span> pCompteAAjouter<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getNumCompte</span></span><span style="color: #990000">()</span> <span style="color: #990000">+</span> <span style="color: #FF0000">") dans l'agence "</span>
@@ -2269,31 +2270,6 @@ http://www.gnu.org/software/src-highlite -->
                 <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> rang<span style="color: #990000">;</span>
         <span style="color: #FF0000">}</span>
 
-        <span style="font-style: italic"><span style="color: #9A1900">/**</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * Méthode privée de recherche d'un compte.</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * Cherche un compte dans alCptes ayant pour numéro de compte pNC.</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * Renvoie null si aucun compte n'est trouvé.</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         *</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900">      pNC  numéro du compte recherché</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@return</span><span style="font-style: italic"><span style="color: #9A1900">     l'objet compte (la référence de) trouvé ou null si non trouvé.</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         */</span></span>
-        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">Compte</span> <span style="font-weight: bold"><span style="color: #000000">trouveCompte</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> pNC<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                <span style="color: #008080">Compte</span> c<span style="color: #990000">,</span> cTemp<span style="color: #990000">;</span>
-                <span style="color: #009900">int</span> i<span style="color: #990000">,</span> nbC<span style="color: #990000">;</span>
-
-                <span style="font-style: italic"><span style="color: #9A1900">// On parcours le tableau des comptes de l'AgenceBancaire</span></span>
-                nbC <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>tableauDesComptes<span style="color: #990000">.</span>length<span style="color: #990000">;</span>
-                c <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">;</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span> i <span style="color: #990000">&lt;</span> nbC <span style="color: #990000">&amp;&amp;</span> c <span style="color: #990000">==</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
-                        cTemp <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>tableauDesComptes<span style="color: #990000">[</span>i<span style="color: #990000">];</span>
-                        <span style="font-style: italic"><span style="color: #9A1900">// Si un Compte a le même numéro que pNC</span></span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>cTemp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getNumCompte</span></span><span style="color: #990000">().</span><span style="font-weight: bold"><span style="color: #000000">equals</span></span><span style="color: #990000">(</span>pNC<span style="color: #990000">))</span> <span style="color: #FF0000">{</span>
-                                <span style="font-style: italic"><span style="color: #9A1900">// ... on le garde</span></span>
-                                c <span style="color: #990000">=</span> cTemp<span style="color: #990000">;</span>
-                        <span style="color: #FF0000">}</span>
-                <span style="color: #FF0000">}</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> c<span style="color: #990000">;</span>
-        <span style="color: #FF0000">}</span>
 <span style="color: #FF0000">}</span></tt></pre></div></div>
 </td>
 </tr></table>
@@ -2414,7 +2390,7 @@ http://www.gnu.org/software/src-highlite -->
 <span style="font-style: italic"><span style="color: #9A1900"> * </span></span><span style="color: #009900">@version</span><span style="font-style: italic"><span style="color: #9A1900"> 7.02</span></span>
 <span style="font-style: italic"><span style="color: #9A1900"> *****************************/</span></span>
 
-<span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">AgenceBancaire</span> <span style="color: #FF0000">{</span>
+<span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">AgenceBancaireF</span> <span style="color: #FF0000">{</span>
         <span style="font-style: italic"><span style="color: #9A1900">// Attributs</span></span>
         <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">String</span> nom<span style="color: #990000">,</span> loc<span style="color: #990000">;</span>
         <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">Compte</span> tableauDesComptes<span style="color: #990000">[];</span> <span style="font-style: italic"><span style="color: #9A1900">// Tableau des comptes</span></span>
@@ -2490,10 +2466,10 @@ http://www.gnu.org/software/src-highlite -->
         <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #008080">Compte</span> <span style="font-weight: bold"><span style="color: #000000">getCompte</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> pNumCompte<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
                 <span style="font-style: italic"><span style="color: #9A1900">// A titre d'exemple : utilise une méthode privée définie en fin de</span></span>
                 <span style="font-style: italic"><span style="color: #9A1900">// classe</span></span>
-                <span style="color: #008080">Compte</span> c<span style="color: #990000">;</span>
-
-                c <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">trouveCompte</span></span><span style="color: #990000">(</span>pNumCompte<span style="color: #990000">);</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> c<span style="color: #990000">;</span>
+                <span style="color: #009900">int</span> rang<span style="color: #990000">;</span>
+                rang <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">trouveRangDeCompte</span></span><span style="color: #990000">(</span>pNumCompte<span style="color: #990000">);</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>rang <span style="color: #990000">!=</span> <span style="color: #990000">-</span><span style="color: #993399">1</span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span> <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>tableauDesComptes<span style="color: #990000">[</span>rang<span style="color: #990000">];</span> <span style="color: #FF0000">}</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">;</span>
         <span style="color: #FF0000">}</span>
 
         <span style="font-style: italic"><span style="color: #9A1900">/**</span></span>
@@ -2613,6 +2589,7 @@ http://www.gnu.org/software/src-highlite -->
                 <span style="color: #009900">int</span> i<span style="color: #990000">;</span>
                 <span style="color: #008080">Compte</span> t<span style="color: #990000">[];</span>
                 <span style="color: #008080">Compte</span> c<span style="color: #990000">;</span>
+                <span style="color: #009900">int</span> rang<span style="color: #990000">;</span>
 
                 <span style="font-style: italic"><span style="color: #9A1900">// Si null =&gt; refusé</span></span>
                 <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>pCompteAAjouter <span style="color: #990000">==</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
@@ -2621,10 +2598,10 @@ http://www.gnu.org/software/src-highlite -->
                 <span style="color: #FF0000">}</span>
 
                 <span style="font-style: italic"><span style="color: #9A1900">// On cherche un Compte de même numéro</span></span>
-                c <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">trouveCompte</span></span><span style="color: #990000">(</span>pCompteAAjouter<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getNumCompte</span></span><span style="color: #990000">());</span>
+                rang <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">trouveRangDeCompte</span></span><span style="color: #990000">(</span>pCompteAAjouter<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getNumCompte</span></span><span style="color: #990000">());</span>
 
                 <span style="font-style: italic"><span style="color: #9A1900">// Si trouvé</span></span>
-                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>c <span style="color: #990000">!=</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>rang <span style="color: #990000">!=</span> <span style="color: #990000">-</span><span style="color: #993399">1</span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
                         <span style="font-weight: bold"><span style="color: #0000FF">throw</span></span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">ABCompteDejaExistantException</span></span><span style="color: #990000">(</span>
                                         <span style="color: #FF0000">"Erreur ajout Compte déja existant ("</span>
                                         <span style="color: #990000">+</span> pCompteAAjouter<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getNumCompte</span></span><span style="color: #990000">()</span> <span style="color: #990000">+</span> <span style="color: #FF0000">") dans l'agence "</span>
@@ -2715,32 +2692,6 @@ http://www.gnu.org/software/src-highlite -->
                 <span style="color: #FF0000">}</span>
                 <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> rang<span style="color: #990000">;</span>
         <span style="color: #FF0000">}</span>
-
-        <span style="font-style: italic"><span style="color: #9A1900">/**</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * Méthode privée de recherche d'un compte.</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * Cherche un compte dans alCptes ayant pour numéro de compte pNC.</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * Renvoie null si aucun compte n'est trouvé.</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         *</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900">      pNC  numéro du compte recherché</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@return</span><span style="font-style: italic"><span style="color: #9A1900">     l'objet compte (la référence de) trouvé ou null si non trouvé.</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         */</span></span>
-        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">Compte</span> <span style="font-weight: bold"><span style="color: #000000">trouveCompte</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> pNC<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                <span style="color: #008080">Compte</span> c<span style="color: #990000">,</span> cTemp<span style="color: #990000">;</span>
-                <span style="color: #009900">int</span> i<span style="color: #990000">,</span> nbC<span style="color: #990000">;</span>
-
-                <span style="font-style: italic"><span style="color: #9A1900">// On parcours le tableau des comptes de l'AgenceBancaire</span></span>
-                nbC <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>nbElements<span style="color: #990000">;</span>
-                c <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">;</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span> i <span style="color: #990000">&lt;</span> nbC <span style="color: #990000">&amp;&amp;</span> c <span style="color: #990000">==</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
-                        cTemp <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>tableauDesComptes<span style="color: #990000">[</span>i<span style="color: #990000">];</span>
-                        <span style="font-style: italic"><span style="color: #9A1900">// Si un Compte a le même numéro que pNC</span></span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>cTemp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getNumCompte</span></span><span style="color: #990000">().</span><span style="font-weight: bold"><span style="color: #000000">equals</span></span><span style="color: #990000">(</span>pNC<span style="color: #990000">))</span> <span style="color: #FF0000">{</span>
-                                <span style="font-style: italic"><span style="color: #9A1900">// ... on le garde</span></span>
-                                c <span style="color: #990000">=</span> cTemp<span style="color: #990000">;</span>
-                        <span style="color: #FF0000">}</span>
-                <span style="color: #FF0000">}</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> c<span style="color: #990000">;</span>
-        <span style="color: #FF0000">}</span>
 <span style="color: #FF0000">}</span></tt></pre></div></div>
 </td>
 </tr></table>
@@ -2751,7 +2702,7 @@ http://www.gnu.org/software/src-highlite -->
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2015-03-11 09:22:04 CET
+Dernière mise à jour 2015-03-11 13:47:12 CET
 </div>
 </div>
 </body>
