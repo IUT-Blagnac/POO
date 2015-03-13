@@ -1,7 +1,5 @@
 == Caisse Supermarché
 
-ifdef::backend-slidy2[>>>]
-
 === Enoncé
 
 Le déroulement normal d’utilisation d’une caisse de supermarché est le suivant :
@@ -27,7 +25,7 @@ Le déroulement normal d’utilisation d’une caisse de supermarché est le sui
 image:ex-seq-caisse-uc.png[width="40%"]
 
 //----------------------------------------------------- Correction -------------------------
-ifdef::correction[] 
+ifdef::correction[]
 
 === Source
 
@@ -37,6 +35,6 @@ http://fr.scribd.com/doc/8584444/Exercices-UML
 
 image:ex-seq-caisse.png[width="70%"]
 
-endif::correction[] 
+endif::correction[]
 
 //----------------------------------------------------- fin Correction -------------------------
