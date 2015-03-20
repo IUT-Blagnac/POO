@@ -772,7 +772,7 @@ cellspacing="0" cellpadding="4">
 </div>
 </div>
 <div class="sect1">
-<h2 id="_domaine_d_étude">1. Domaine d'étude</h2>
+<h2 id="_domaine_d_étude_implémenter_un_ensemble_ordonné_de_string">1. Domaine d'étude : implémenter un ensemble ordonné de String</h2>
 <div class="sectionbody">
 <div class="paragraph"><p>On s&#8217;intéresse dans ce TD à la mise en oeuvre d&#8217;une classe <strong>Ensemble ordonné</strong> de chaînes de caractères.</p></div>
 <div class="paragraph"><p>Un ensemble ordonné est une <strong>collection ordonnée qui n&#8217;accepte pas les doublons</strong>.</p></div>
@@ -973,17 +973,17 @@ AMfx8ZYkSYI90L87QNC71WolxgIK0Nf4W+GVUAX9QsCXDSwq8B//47GAh7AxjwdUQQPI4onGcI6G
 lJga0LT8+uRGJ5P/2OBGpz/mT34Gmsy9nx36v3PoX1H4mIUGLCOSAAAAAElFTkSuQmCC" />
 </td>
 <td class="content">
-<div class="paragraph"><p>une implémentation par ArrayList&lt;E&gt; serait plus simple à mettre en oeuvre mais relève de la même approche : un tableau agrandi "dynamique".</p></div>
+<div class="paragraph"><p>Une implémentation par ArrayList&lt;E&gt; serait plus simple à mettre en oeuvre mais relève de la même approche : un tableau "dynamique".</p></div>
 </td>
 </tr></table>
 </div>
 </li>
 </ul></div>
-<div class="paragraph"><p><strong>Question</strong> : Indiquer rapidement les avantages de chaque approche :</p></div>
+<div class="paragraph"><p><strong>Question</strong> : Indiquer rapidement les méthodes pour mettre en oeuvre les opérations (+avantages/inconvénients) dans chaque approche :</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
-pour l&#8217;insertion :
+pour l&#8217;insertion (add) :
 </p>
 <div class="ulist"><ul>
 <li>
@@ -1006,7 +1006,7 @@ Liste chaînée :
 </li>
 <li>
 <p>
-pour la suppression
+pour la suppression (remove) :
 </p>
 <div class="ulist"><ul>
 <li>
@@ -1056,6 +1056,8 @@ Liste chaînée :
 <div class="sect1">
 <h2 id="_mise_en_oeuvre_par_tableau_dynamique">3. Mise en oeuvre par tableau dynamique</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_principes">3.1. Principes</h3>
 <div class="paragraph"><p>On retient la mise ne oeuvre par tableau dynamique.</p></div>
 <div class="paragraph"><p>Le diagramme UML suivant indique la conception réalisée pour cette implémentation.</p></div>
 <div class="paragraph"><p><span class="image">
@@ -1339,95 +1341,32 @@ MgAAAABJRU5ErkJggg==" />
 </div></div>
 </li>
 </ol></div>
-<div class="tableblock">
-<table rules="all"
-width="100%"
-frame="border"
-cellspacing="0" cellpadding="4">
-<col width="100%" />
-<tbody>
-<tr>
-<td align="left" valign="top"><p class="table">-----</p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table"></p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table">// Tableau de longueur 0
-++</p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table"></p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table">-----</p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table">-----</p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table"></p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table">// Tableau de longueur 0
-++</p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table"></p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table">-----</p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table">-----</p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table"></p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table">// Tableau de longueur 0
-++</p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table"></p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table">-----</p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table">-----</p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table"></p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table">// Tableau de longueur 0
-++</p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table"></p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table">-----</p></td>
-</tr>
-</tbody>
-</table>
 </div>
-<div class="paragraph"><p><strong>Question</strong> : Ecrire les méthodes de la classe</p></div>
+<div class="sect2">
+<h3 id="_réalisation">3.2. Réalisation</h3>
+<div class="paragraph"><p>Certaines méthodes de la classe sont déjà données :</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
-On vous donne la méthode <tt>trouveRang(String s)</tt>
+On vous donne la méthode <tt>trouveRang(String s)</tt> en version non optimisée.
 </p>
 </li>
 <li>
 <p>
-Ecrire dans l&#8217;ordre : le constructeur, size, contains, add, toArray. remove a déjà été écrite en TP (Agence bancaire).
+On vous donne aussi : le constructeur, <tt>size</tt>, <tt>toArray</tt>.
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p><strong>Ecrire le corps des méthodes suivantes :</strong></p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<tt>contains</tt>, <tt>add</tt>, <tt>remove</tt>.
 </p>
 </li>
 <li>
 <p>
-Ecrire les méthodes qui renvoient <strong>un nouvel objet OrderedStringSet</strong> : union (receveur union paramètre), difference (receveur "moins" paramètre), intersect (receveur intersection paramètre)
+Ecrire les méthodes qui renvoient <strong>un nouvel objet OrderedStringSet</strong> : <tt>union</tt> (receveur union paramètre), <tt>difference</tt> (receveur "moins" paramètre), <tt>intersect</tt> (receveur intersection paramètre)
 </p>
 <div class="ulist"><ul>
 <li>
@@ -1437,14 +1376,20 @@ Ces méthodes sont elles des transformateurs ? des accesseurs (observateurs) ?
 </li>
 </ul></div>
 </li>
+<li>
+<p>
+Récrire <tt>trouveRang(String s)</tt> avec une recherche par dichotomie.
+</p>
+</li>
 </ul></div>
+</div>
 </div>
 </div>
 </div>
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2015-03-20 02:04:15 CET
+Dernière mise à jour 2015-03-20 10:40:58 CET
 </div>
 </div>
 </body>

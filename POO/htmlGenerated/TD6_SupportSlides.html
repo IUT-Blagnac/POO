@@ -4119,8 +4119,8 @@ cellspacing="0" cellpadding="4">
 </div><div class="slide">
 
 <div class="sect1">
-<h1 id="_domaine_d_étude">1. Domaine d'étude</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="1. Domaine d'étude";slidefootnotes="";/*]]>*/</script>
+<h1 id="_domaine_d_étude_implémenter_un_ensemble_ordonné_de_string">1. Domaine d'étude : implémenter un ensemble ordonné de String</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="1. Domaine d'étude : implémenter un ensemble ordonné de String";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody">
 <div class="paragraph">
 <div class="incremental">
@@ -4346,7 +4346,7 @@ lJga0LT8+uRGJ5P/2OBGpz/mT34Gmsy9nx36v3PoX1H4mIUGLCOSAAAAAElFTkSuQmCC" />
 <td class="content">
 <div class="paragraph">
 <div class="incremental">
-<p>une implémentation par ArrayList&lt;E&gt; serait plus simple à mettre en oeuvre mais relève de la même approche : un tableau agrandi "dynamique".</p>
+<p>Une implémentation par ArrayList&lt;E&gt; serait plus simple à mettre en oeuvre mais relève de la même approche : un tableau "dynamique".</p>
 </div>
 </div>
 </td>
@@ -4356,13 +4356,13 @@ lJga0LT8+uRGJ5P/2OBGpz/mT34Gmsy9nx36v3PoX1H4mIUGLCOSAAAAAElFTkSuQmCC" />
 </ul>
 <div class="paragraph">
 <div class="incremental">
-<p><strong>Question</strong> : Indiquer rapidement les avantages de chaque approche :</p>
+<p><strong>Question</strong> : Indiquer rapidement les méthodes pour mettre en oeuvre les opérations (+avantages/inconvénients) dans chaque approche :</p>
 </div>
 </div>
 <ul class=" incremental">
 <li>
 <span>
-pour l&#8217;insertion :
+pour l&#8217;insertion (add) :
 </span>
 <ul class=" incremental">
 <li>
@@ -4409,7 +4409,7 @@ Liste chaînée :
 </li>
 <li>
 <span>
-pour la suppression
+pour la suppression (remove) :
 </span>
 <ul class=" incremental">
 <li>
@@ -4764,6 +4764,68 @@ log2 (1 000 000 000) == 29.89</tt></pre>
 </td>
 </tr></table>
 </div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Note" src="data:image/png;base64,
+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" />
+</td>
+<td class="content">
+<div class="paragraph">
+<div class="incremental">
+<p>Pour les tabelaux dynamiques</p>
+</div>
+</div>
+</td>
+</tr></table>
+</div>
 </div></div>
 <script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
@@ -4771,6 +4833,14 @@ log2 (1 000 000 000) == 29.89</tt></pre>
 <div class="sect1">
 <h1 id="_mise_en_oeuvre_par_tableau_dynamique">3. Mise en oeuvre par tableau dynamique</h1>
 <script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="3. Mise en oeuvre par tableau dynamique";slidefootnotes="";/*]]>*/</script>
+<div class="sectionbody">
+</div></div>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
+</div><div class="slide">
+
+<div class="sect2">
+<h1 id="_principes">3.1. Principes</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect2";nexttitle="3.1. Principes";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody">
 <div class="paragraph">
 <div class="incremental">
@@ -5071,99 +5141,45 @@ MgAAAABJRU5ErkJggg==" />
 </div></div>
 </li>
 </ol>
-<div class="tableblock">
-<table rules="all"
-width="100%"
-frame="border"
-cellspacing="0" cellpadding="4">
-<col width="100%" />
-<tbody class="incremental">
-<tr>
-<td align="left" valign="top"><p class="table">-----</p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table"></p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table">// Tableau de longueur 0
-++</p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table"></p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table">-----</p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table">-----</p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table"></p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table">// Tableau de longueur 0
-++</p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table"></p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table">-----</p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table">-----</p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table"></p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table">// Tableau de longueur 0
-++</p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table"></p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table">-----</p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table">-----</p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table"></p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table">// Tableau de longueur 0
-++</p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table"></p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table">-----</p></td>
-</tr>
-</tbody>
-</table>
-</div>
+</div></div>
+<script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
+</div><div class="slide">
+
+<div class="sect2">
+<h1 id="_réalisation">3.2. Réalisation</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect2";nexttitle="3.2. Réalisation";slidefootnotes="";/*]]>*/</script>
+<div class="sectionbody">
 <div class="paragraph">
 <div class="incremental">
-<p><strong>Question</strong> : Ecrire les méthodes de la classe</p>
+<p>Certaines méthodes de la classe sont déjà données :</p>
 </div>
 </div>
 <ul class=" incremental">
 <li>
 <span>
-On vous donne la méthode <tt>trouveRang(String s)</tt>
+On vous donne la méthode <tt>trouveRang(String s)</tt> en version non optimisée.
 </span>
 </li>
 <li>
 <span>
-Ecrire dans l&#8217;ordre : le constructeur, size, contains, add, toArray. remove a déjà été écrite en TP (Agence bancaire).
+On vous donne aussi : le constructeur, <tt>size</tt>, <tt>toArray</tt>.
+</span>
+</li>
+</ul>
+<div class="paragraph">
+<div class="incremental">
+<p><strong>Ecrire le corps des méthodes suivantes :</strong></p>
+</div>
+</div>
+<ul class=" incremental">
+<li>
+<span>
+<tt>contains</tt>, <tt>add</tt>, <tt>remove</tt>.
 </span>
 </li>
 <li>
 <span>
-Ecrire les méthodes qui renvoient <strong>un nouvel objet OrderedStringSet</strong> : union (receveur union paramètre), difference (receveur "moins" paramètre), intersect (receveur intersection paramètre)
+Ecrire les méthodes qui renvoient <strong>un nouvel objet OrderedStringSet</strong> : <tt>union</tt> (receveur union paramètre), <tt>difference</tt> (receveur "moins" paramètre), <tt>intersect</tt> (receveur intersection paramètre)
 </span>
 <ul class=" incremental">
 <li>
@@ -5172,6 +5188,11 @@ Ces méthodes sont elles des transformateurs ? des accesseurs (observateurs) ?
 </span>
 </li>
 </ul>
+</li>
+<li>
+<span>
+Récrire <tt>trouveRang(String s)</tt> avec une recherche par dichotomie.
+</span>
 </li>
 </ul>
 <div class="admonitionblock">
@@ -5262,155 +5283,180 @@ SUVORK5CYII=" />
 </td>
 <td class="content">
 <div class="title">Réponse</div>
-<div class="paragraph">
-<div class="incremental">
-<p>La méthode <tt>void associerClient (Client cli)</tt> dans la classe Commande réalise le traitement :</p>
-</div>
-</div>
-<ul class=" incremental">
-<li>
-<span>
-Si le paramètre cli est null : défaire l&#8217;association :
-</span>
-<ul class=" incremental">
-<li>
-<span>
-Si la Commande est déjà associée à un Client : enlever la Commande de ce Client.
-</span>
-</li>
-<li>
-<span>
-Lier la Commande à null (setClient()).
-</span>
-</li>
-</ul>
-</li>
-<li>
-<span>
-Si le paramètre cli n&#8217;est pas null : construire une association :
-</span>
-<ul class=" incremental">
-<li>
-<span>
-Si la Commande est déjà associée à un Client : enlever la Commande de ce Client.
-</span>
-</li>
-<li>
-<span>
-Créer les liens pour associer la Commande et cli (setClient() et addCommande()).
-</span>
-</li>
-</ul>
-</li>
-</ul>
 <div class="listingblock">
 <div class="content"><!-- Generator: GNU source-highlight 3.1.5
 by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
-<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">Commande</span> <span style="color: #FF0000">{</span>
-        <span style="font-style: italic"><span style="color: #9A1900">// ...</span></span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">associerClient</span></span> <span style="color: #990000">(</span><span style="color: #008080">Client</span> cli<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-            <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>cli <span style="color: #990000">==</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span> <span style="color: #990000">)</span><span style="color: #FF0000">{</span> <span style="font-style: italic"><span style="color: #9A1900">// Défaire l'association</span></span>
-                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>leClient <span style="color: #990000">!=</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>leClient<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">removeCommande</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">);</span>
-                <span style="color: #FF0000">}</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setClient</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">);</span> <span style="font-style: italic"><span style="color: #9A1900">// Ou this.leClient = null ;</span></span>
-            <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">else</span></span> <span style="color: #FF0000">{</span> <span style="font-style: italic"><span style="color: #9A1900">// Créer l'association</span></span>
-                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>leClient <span style="color: #990000">!=</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>leClient<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">removeCommande</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">);</span>
-                <span style="color: #FF0000">}</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setClient</span></span><span style="color: #990000">(</span>cli<span style="color: #990000">);</span> <span style="font-style: italic"><span style="color: #9A1900">// Ou this.leClient = cli;</span></span>
-                cli<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">addCommande</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">);</span>
-            <span style="color: #FF0000">}</span>
-        <span style="color: #FF0000">}</span>
-<span style="color: #FF0000">}</span>
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">OrderedStringSet</span> <span style="color: #FF0000">{</span>
 
-<span style="font-style: italic"><span style="color: #9A1900">//A Noter : si l'association existait déjà =&gt; elle est "effacée" et "recréée".</span></span>
-</tt></pre></div></div>
-<div class="paragraph">
-<div class="incremental">
-<p>La méthode <tt>public void associerCommande (Commande comm)</tt> dans la classe Client réalise le traitement :</p>
-</div>
-</div>
-<ul class=" incremental">
-<li>
-<span>
-Si le paramètre comm est null : ne rien faire.
-</span>
-</li>
-<li>
-<span>
-Si comm est déjà enregistrée comme Commande de ce Client : ne rien faire.
-</span>
-</li>
-<li>
-<span>
-Si comm est associé à un Client : défaire cette association (removeCommande()).
-</span>
-</li>
-<li>
-<span>
-Créer les liens pour associer le Client et comm (setClient() et addCommande()).
-</span>
-</li>
-</ul>
-<div class="listingblock">
-<div class="content"><!-- Generator: GNU source-highlight 3.1.5
-by Lorenzo Bettini
-http://www.lorenzobettini.it
-http://www.gnu.org/software/src-highlite -->
-<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">Client</span> <span style="color: #FF0000">{</span>
-        <span style="font-style: italic"><span style="color: #9A1900">// ...</span></span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">associerCommande</span></span> <span style="color: #990000">(</span><span style="color: #008080">Commande</span> comm<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-            <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>comm <span style="color: #990000">!=</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span><span style="color: #990000">(!</span><span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>lesCommandes<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">contains</span></span><span style="color: #990000">(</span>comm<span style="color: #990000">))</span> <span style="color: #FF0000">{</span> <span style="font-style: italic"><span style="color: #9A1900">// Peut être enlevé</span></span>
-                                                                <span style="font-style: italic"><span style="color: #9A1900">// Efface et recrée l'association</span></span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>comm<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getClient</span></span><span style="color: #990000">()</span> <span style="color: #990000">!=</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span> <span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                                comm<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getClient</span></span><span style="color: #990000">().</span><span style="font-weight: bold"><span style="color: #000000">removeCommande</span></span><span style="color: #990000">(</span>comm<span style="color: #990000">);</span>
-                        <span style="color: #FF0000">}</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>lesCommandes<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">add</span></span> <span style="color: #990000">(</span> comm <span style="color: #990000">);</span> <span style="font-style: italic"><span style="color: #9A1900">// Ou this.addCommande(comm);</span></span>
-                        comm<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setClient</span></span> <span style="color: #990000">(</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span> <span style="color: #990000">);</span>
-                <span style="color: #FF0000">}</span>
-            <span style="color: #FF0000">}</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> String<span style="color: #990000">[]</span> valeurs<span style="color: #990000">;</span>
+
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #000000">OrderedStringSet</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>valeurs <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> String<span style="color: #990000">[</span><span style="color: #993399">0</span><span style="color: #990000">];</span>
         <span style="color: #FF0000">}</span>
-<span style="color: #FF0000">}</span></tt></pre></div></div>
-<div class="paragraph">
-<div class="incremental">
-<p>La méthode <tt>public void defaireAssoCommande (Commande comm)</tt> dans la classe Client :</p>
-</div>
-</div>
-<ul class=" incremental">
-<li>
-<span>
-Si le paramètre comm est null : ne rien faire.
-</span>
-</li>
-<li>
-<span>
-Si la comm N&#8217;est PAS enregistrée comme Commande de ce Client : ne rien faire.
-</span>
-</li>
-<li>
-<span>
-Défaire les liens entre le Client et comm (removeCommande() et setClient(null)).
-</span>
-</li>
-</ul>
-<div class="listingblock">
-<div class="content"><!-- Generator: GNU source-highlight 3.1.5
-by Lorenzo Bettini
-http://www.lorenzobettini.it
-http://www.gnu.org/software/src-highlite -->
-<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">Client</span> <span style="color: #FF0000">{</span>
-        <span style="font-style: italic"><span style="color: #9A1900">// ...</span></span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">defaireAssoCommande</span></span> <span style="color: #990000">(</span><span style="color: #008080">Commande</span> comm<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-            <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>comm <span style="color: #990000">!=</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>lesCommandes<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">contains</span></span><span style="color: #990000">(</span>comm<span style="color: #990000">))</span> <span style="color: #FF0000">{</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>lesCommandes<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">remove</span></span> <span style="color: #990000">(</span> comm <span style="color: #990000">);</span> <span style="font-style: italic"><span style="color: #9A1900">// Ou this.removeCommande(comm);</span></span>
-                        comm<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setClient</span></span> <span style="color: #990000">(</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span> <span style="color: #990000">);</span>
+
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">size</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>valeurs<span style="color: #990000">.</span>length<span style="color: #990000">;</span>
+        <span style="color: #FF0000">}</span>
+
+        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">trouveRang</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> s<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="color: #009900">int</span> deb<span style="color: #990000">,</span> fin<span style="color: #990000">,</span> milieu<span style="color: #990000">;</span>
+                deb <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span>
+                fin <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>valeurs<span style="color: #990000">.</span>length <span style="color: #990000">-</span> <span style="color: #993399">1</span><span style="color: #990000">;</span>
+
+                <span style="font-weight: bold"><span style="color: #0000FF">while</span></span> <span style="color: #990000">(</span>deb <span style="color: #990000">&lt;=</span> fin<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                        milieu <span style="color: #990000">=</span> <span style="color: #990000">(</span>deb <span style="color: #990000">+</span> fin<span style="color: #990000">)</span> <span style="color: #990000">/</span> <span style="color: #993399">2</span><span style="color: #990000">;</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>valeurs<span style="color: #990000">[</span>milieu<span style="color: #990000">].</span><span style="font-weight: bold"><span style="color: #000000">compareTo</span></span><span style="color: #990000">(</span>s<span style="color: #990000">)</span> <span style="color: #990000">==</span> <span style="color: #993399">0</span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                                <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> milieu<span style="color: #990000">;</span>
+                        <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">else</span></span> <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>valeurs<span style="color: #990000">[</span>milieu<span style="color: #990000">].</span><span style="font-weight: bold"><span style="color: #000000">compareTo</span></span><span style="color: #990000">(</span>s<span style="color: #990000">)</span> <span style="color: #990000">&lt;</span> <span style="color: #993399">0</span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                                deb <span style="color: #990000">=</span> milieu <span style="color: #990000">+</span> <span style="color: #993399">1</span><span style="color: #990000">;</span>
+                        <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">else</span></span> <span style="color: #FF0000">{</span>
+                                fin <span style="color: #990000">=</span> milieu <span style="color: #990000">-</span> <span style="color: #993399">1</span><span style="color: #990000">;</span>
+                        <span style="color: #FF0000">}</span>
                 <span style="color: #FF0000">}</span>
-            <span style="color: #FF0000">}</span>
+
+                <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="color: #990000">-</span><span style="color: #993399">1</span><span style="color: #990000">;</span>
+        <span style="color: #FF0000">}</span>
+
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">add</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> s<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="color: #009900">int</span> rang<span style="color: #990000">,</span> i<span style="color: #990000">,</span> j<span style="color: #990000">;</span>
+                <span style="color: #009900">boolean</span> insere<span style="color: #990000">;</span>
+
+                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>s <span style="color: #990000">==</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">return</span></span><span style="color: #990000">;</span>
+                <span style="color: #FF0000">}</span>
+
+                rang <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">trouveRang</span></span><span style="color: #990000">(</span>s<span style="color: #990000">);</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>rang <span style="color: #990000">!=</span> <span style="color: #990000">-</span><span style="color: #993399">1</span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span> <span style="font-style: italic"><span style="color: #9A1900">// Si existe : stop</span></span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">return</span></span><span style="color: #990000">;</span>
+                <span style="color: #FF0000">}</span>
+
+                <span style="color: #008080">String</span> nt<span style="color: #990000">[];</span>
+                <span style="font-style: italic"><span style="color: #9A1900">// Créer le tableau</span></span>
+                nt <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> String<span style="color: #990000">[</span><span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>valeurs<span style="color: #990000">.</span>length <span style="color: #990000">+</span> <span style="color: #993399">1</span><span style="color: #990000">];</span>
+
+                insere <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">false</span></span><span style="color: #990000">;</span>
+                j <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span> i <span style="color: #990000">&lt;</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>valeurs<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>insere<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                                <span style="font-style: italic"><span style="color: #9A1900">// Si déja placé : simple recopie</span></span>
+                                nt<span style="color: #990000">[</span>j<span style="color: #990000">]</span> <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>valeurs<span style="color: #990000">[</span>i<span style="color: #990000">];</span>
+                                j<span style="color: #990000">++;</span>
+                        <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">else</span></span> <span style="color: #FF0000">{</span>
+                                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>valeurs<span style="color: #990000">[</span>i<span style="color: #990000">].</span><span style="font-weight: bold"><span style="color: #000000">compareTo</span></span><span style="color: #990000">(</span>s<span style="color: #990000">)</span> <span style="color: #990000">&lt;</span> <span style="color: #993399">0</span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                                        <span style="font-style: italic"><span style="color: #9A1900">// Si après : recopie</span></span>
+                                        nt<span style="color: #990000">[</span>j<span style="color: #990000">]</span> <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>valeurs<span style="color: #990000">[</span>i<span style="color: #990000">];</span>
+                                        j<span style="color: #990000">++;</span>
+                                <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">else</span></span> <span style="color: #FF0000">{</span>
+                                        <span style="font-style: italic"><span style="color: #9A1900">// Si avant : insérer et recopier</span></span>
+                                        nt<span style="color: #990000">[</span>j<span style="color: #990000">]</span> <span style="color: #990000">=</span> s<span style="color: #990000">;</span>
+                                        j<span style="color: #990000">++;</span>
+                                        nt<span style="color: #990000">[</span>j<span style="color: #990000">]</span> <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>valeurs<span style="color: #990000">[</span>i<span style="color: #990000">];</span>
+                                        j<span style="color: #990000">++;</span>
+                                        insere <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">true</span></span><span style="color: #990000">;</span>
+                                <span style="color: #FF0000">}</span>
+                        <span style="color: #FF0000">}</span>
+                <span style="color: #FF0000">}</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(!</span>insere<span style="color: #990000">)</span> <span style="color: #FF0000">{</span> <span style="font-style: italic"><span style="color: #9A1900">// si pas encore insérer : le faire(dernier)</span></span>
+                        nt<span style="color: #990000">[</span>nt<span style="color: #990000">.</span>length <span style="color: #990000">-</span> <span style="color: #993399">1</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> s<span style="color: #990000">;</span>
+                <span style="color: #FF0000">}</span>
+
+                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>valeurs <span style="color: #990000">=</span> nt<span style="color: #990000">;</span>
+
+                <span style="font-style: italic"><span style="color: #9A1900">// Reinit iterateur</span></span>
+                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">initParcours</span></span><span style="color: #990000">();</span>
+        <span style="color: #FF0000">}</span>
+
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">remove</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> s<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="color: #009900">int</span> rang<span style="color: #990000">,</span> i<span style="color: #990000">,</span> j<span style="color: #990000">;</span>
+
+                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>s <span style="color: #990000">==</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">return</span></span><span style="color: #990000">;</span>
+                <span style="color: #FF0000">}</span>
+
+                rang <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">trouveRang</span></span><span style="color: #990000">(</span>s<span style="color: #990000">);</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>rang <span style="color: #990000">==</span> <span style="color: #990000">-</span><span style="color: #993399">1</span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                        <span style="font-style: italic"><span style="color: #9A1900">// Si n'existe pas : stop</span></span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">return</span></span><span style="color: #990000">;</span>
+                <span style="color: #FF0000">}</span>
+
+                <span style="color: #008080">String</span> nt<span style="color: #990000">[];</span>
+                <span style="font-style: italic"><span style="color: #9A1900">// Créer le tableau</span></span>
+                nt <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> String<span style="color: #990000">[</span><span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>valeurs<span style="color: #990000">.</span>length <span style="color: #990000">-</span> <span style="color: #993399">1</span><span style="color: #990000">];</span>
+
+                j <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span>
+                <span style="font-style: italic"><span style="color: #9A1900">// Recopier jusqu'à rang exclu</span></span>
+                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span> i <span style="color: #990000">&lt;</span> rang<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
+                        nt<span style="color: #990000">[</span>j<span style="color: #990000">]</span> <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>valeurs<span style="color: #990000">[</span>i<span style="color: #990000">];</span>
+                        j<span style="color: #990000">++;</span>
+                <span style="color: #FF0000">}</span>
+                <span style="font-style: italic"><span style="color: #9A1900">// Recopier à partir de (rang+1)</span></span>
+                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i <span style="color: #990000">=</span> rang <span style="color: #990000">+</span> <span style="color: #993399">1</span><span style="color: #990000">;</span> i <span style="color: #990000">&lt;</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>valeurs<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
+                        nt<span style="color: #990000">[</span>j<span style="color: #990000">]</span> <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>valeurs<span style="color: #990000">[</span>i<span style="color: #990000">];</span>
+                        j<span style="color: #990000">++;</span>
+                <span style="color: #FF0000">}</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>valeurs <span style="color: #990000">=</span> nt<span style="color: #990000">;</span>
+
+                <span style="font-style: italic"><span style="color: #9A1900">// Reinit iterateur</span></span>
+                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">initParcours</span></span><span style="color: #990000">();</span>
+        <span style="color: #FF0000">}</span>
+
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">boolean</span> <span style="font-weight: bold"><span style="color: #000000">contains</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> s<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>s <span style="color: #990000">==</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="font-weight: bold"><span style="color: #0000FF">false</span></span><span style="color: #990000">;</span>
+                <span style="color: #FF0000">}</span>
+
+                <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">trouveRang</span></span><span style="color: #990000">(</span>s<span style="color: #990000">)</span> <span style="color: #990000">!=</span> <span style="color: #990000">-</span><span style="color: #993399">1</span><span style="color: #990000">;</span>
+        <span style="color: #FF0000">}</span>
+
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> String<span style="color: #990000">[]</span> <span style="font-weight: bold"><span style="color: #000000">toArray</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
+                <span style="color: #008080">String</span> resultat<span style="color: #990000">[];</span>
+                resultat <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> String<span style="color: #990000">[</span><span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>valeurs<span style="color: #990000">.</span>length<span style="color: #990000">];</span>
+                <span style="color: #009900">int</span> i<span style="color: #990000">;</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span> i <span style="color: #990000">&lt;</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>valeurs<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
+                        resultat<span style="color: #990000">[</span>i<span style="color: #990000">]</span> <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>valeurs<span style="color: #990000">[</span>i<span style="color: #990000">];</span>
+                <span style="color: #FF0000">}</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> resultat<span style="color: #990000">;</span>
+        <span style="color: #FF0000">}</span>
+
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #008080">OrderedStringSet</span> <span style="font-weight: bold"><span style="color: #000000">union</span></span><span style="color: #990000">(</span><span style="color: #008080">OrderedStringSet</span> oss<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="color: #008080">OrderedStringSet</span> resultat <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">OrderedStringSet</span></span><span style="color: #990000">();</span>
+                String<span style="color: #990000">[]</span> temp<span style="color: #990000">;</span>
+
+                temp <span style="color: #990000">=</span> oss<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">toArray</span></span><span style="color: #990000">();</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span><span style="color: #009900">int</span> i <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span> i <span style="color: #990000">&lt;</span> temp<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
+                        resultat<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">add</span></span><span style="color: #990000">(</span>temp<span style="color: #990000">[</span>i<span style="color: #990000">]);</span>
+                <span style="color: #FF0000">}</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span><span style="color: #009900">int</span> i <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span> i <span style="color: #990000">&lt;</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>valeurs<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
+                        resultat<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">add</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>valeurs<span style="color: #990000">[</span>i<span style="color: #990000">]);</span>
+                <span style="color: #FF0000">}</span>
+
+                <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> resultat<span style="color: #990000">;</span>
+        <span style="color: #FF0000">}</span>
+
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #008080">OrderedStringSet</span> <span style="font-weight: bold"><span style="color: #000000">difference</span></span><span style="color: #990000">(</span><span style="color: #008080">OrderedStringSet</span> oss<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="color: #008080">OrderedStringSet</span> resultat <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">OrderedStringSet</span></span><span style="color: #990000">();</span>
+
+                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span><span style="color: #009900">int</span> i <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span> i <span style="color: #990000">&lt;</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>valeurs<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(!</span>oss<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">contains</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>valeurs<span style="color: #990000">[</span>i<span style="color: #990000">]))</span> <span style="color: #FF0000">{</span>
+                                resultat<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">add</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>valeurs<span style="color: #990000">[</span>i<span style="color: #990000">]);</span>
+                        <span style="color: #FF0000">}</span>
+                <span style="color: #FF0000">}</span>
+
+                <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> resultat<span style="color: #990000">;</span>
+        <span style="color: #FF0000">}</span>
+
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #008080">OrderedStringSet</span> <span style="font-weight: bold"><span style="color: #000000">intersect</span></span><span style="color: #990000">(</span><span style="color: #008080">OrderedStringSet</span> oss<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="color: #008080">OrderedStringSet</span> resultat <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">OrderedStringSet</span></span><span style="color: #990000">();</span>
+
+                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span><span style="color: #009900">int</span> i <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span> i <span style="color: #990000">&lt;</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>valeurs<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>oss<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">contains</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>valeurs<span style="color: #990000">[</span>i<span style="color: #990000">]))</span> <span style="color: #FF0000">{</span>
+                                resultat<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">add</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>valeurs<span style="color: #990000">[</span>i<span style="color: #990000">]);</span>
+                        <span style="color: #FF0000">}</span>
+                <span style="color: #FF0000">}</span>
+
+                <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> resultat<span style="color: #990000">;</span>
         <span style="color: #FF0000">}</span>
 <span style="color: #FF0000">}</span></tt></pre></div></div>
 </td>
@@ -5418,7 +5464,7 @@ http://www.gnu.org/software/src-highlite -->
 </div>
 <div id="footer" style="position: absolute; left: 5%; top: 80%; width: 90%;">
 <div id="footer-text">
-Dernière mise à jour 2015-03-20 02:04:15 CET
+Dernière mise à jour 2015-03-20 10:40:58 CET
 </div>
 </div>
 </div></div>
