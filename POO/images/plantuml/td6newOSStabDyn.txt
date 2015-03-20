@@ -1,0 +1,14 @@
+@startuml
+class OrderedStringSet {
+	-String[] tab
+	+OrderedStringSet()
+	+void add(String s)
+	+void remove(String s)
+	+boolean contains(String s)
+	+String[] toArray()
+	+OrderedStringSet union(OrderedStringSet oss)
+	+OrderedStringSet difference(OrderedStringSet oss)
+	+OrderedStringSet intersect(OrderedStringSet oss)
+	-int trouveRang(String s)
+}
+@enduml

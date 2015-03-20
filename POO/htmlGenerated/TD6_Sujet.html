@@ -756,11 +756,11 @@ cellspacing="0" cellpadding="4">
 <tbody>
 <tr>
 <td align="left" valign="top"><p class="table">PreReq</p></td>
-<td align="left" valign="top"><p class="table">Diagramme de classes, associations. Classes java. ArrayList</p></td>
+<td align="left" valign="top"><p class="table">Tableaux dynamiques, structures chaînées.</p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">ObjTD</p></td>
-<td align="left" valign="top"><p class="table"><strong>Définir une association en java</strong>.</p></td>
+<td align="left" valign="top"><p class="table"><strong>Mettre en oeuvre en java une classe Ensemble</strong>.</p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">Durée</p></td>
@@ -774,6 +774,176 @@ cellspacing="0" cellpadding="4">
 <div class="sect1">
 <h2 id="_domaine_d_étude">1. Domaine d'étude</h2>
 <div class="sectionbody">
+<div class="paragraph"><p>On s&#8217;intéresse dans ce TD à la mise en oeuvre d&#8217;une classe <strong>Ensemble ordonné</strong> de chaînes de caractères.</p></div>
+<div class="paragraph"><p>Un ensemble ordonné est une <strong>collection ordonnée qui n&#8217;accepte pas les doublons</strong>.</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Par exemple, un ensemble de String n&#8217;accepte qu&#8217;une seule fois la valeur "bonjour". Par contre "bonjour" et "BONjour" sont acceptées.
+</p>
+</li>
+<li>
+<p>
+L&#8217;ensemble constitué des trois valeurs "a", "d", "b", "c" sera ordonné en { "a", "b", "c", "d" }.
+</p>
+</li>
+<li>
+<p>
+On supposera dans tout l&#8217;exercice que la valeur null est refusée (non ajoutée, non enlevé, non recherchée).
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>Le diagramme UML suivant indique l&#8217;interface générale de la classe attendue.</p></div>
+<div class="paragraph"><p><span class="image">
+<img alt="images/td6newOSSgeneral.png" src="data:image/png;base64,
+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" />
+</span></p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_réflexion_sur_la_mise_en_oeuvre">2. Réflexion sur la mise en oeuvre.</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Dans un premier temps, on imagine deux implémentations :</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+par tableau dynamique (une implémentation par ArrayList&lt;E&gt; serait plus simple à mettre en oeuvre mais relève de la même approche : un tableau agrandi "dynamique"),
+</p>
+</li>
+<li>
+<p>
+par liste chaînée.
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>Indiquer rapidement les avantages de chaque approche :</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+pour l&#8217;insertion :
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Tableau dynamique : .
+</p>
+<div class="paragraph"><p>.</p></div>
+<div class="paragraph"><p>.</p></div>
+</li>
+<li>
+<p>
+Liste chaînée : .
+</p>
+<div class="paragraph"><p>.</p></div>
+<div class="paragraph"><p>.</p></div>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+pour la suppression
+</p>
+</li>
+</ul></div>
 <div class="paragraph"><p>On va s&#8217;intéresser à mettre en oeuvre de façon simple l&#8217;association suivante.</p></div>
 <div class="paragraph"><div class="title">Diagramme UML des classes mises en oeuvre (sans multiplicités)</div><p><span class="image">
 <img alt="images/td6.general.png" src="data:image/png;base64,
@@ -920,7 +1090,7 @@ cU8hMBQKgaFQCAyF0uXyf35WmyTx9Ys4AAAAAElFTkSuQmCC" />
 </div>
 </div>
 <div class="sect1">
-<h2 id="_principe">2. Principe</h2>
+<h2 id="_principe">3. Principe</h2>
 <div class="sectionbody">
 <div class="paragraph"><p>En TP, nous avons déjà travaillé le cas de l&#8217;association orientée (navigable dans un seul sens) ou agrégation dans le cas de la classe <tt>AgenceBancaire</tt> :</p></div>
 <div class="ulist"><ul>
@@ -956,7 +1126,7 @@ il faudra créer des méthodes permettant de maintenir les relations en "état c
 </div>
 </div>
 <div class="sect1">
-<h2 id="_premier_cas_association_0_1_8201_8212_8201_0_1">3. Premier cas : association 0..1&#8201;&#8212;&#8201;0..1</h2>
+<h2 id="_premier_cas_association_0_1_8201_8212_8201_0_1">4. Premier cas : association 0..1&#8201;&#8212;&#8201;0..1</h2>
 <div class="sectionbody">
 <div class="paragraph"><p>On fixe les multiplicités de l&#8217;association "Passer" à "0..1" et "0..1" comme indiqué sur le diagramme ci-dessous.</p></div>
 <div class="paragraph"><div class="title">Diagramme UML des classes mises en oeuvre (multiplicités 0..1)</div><p><span class="image">
@@ -1257,7 +1427,7 @@ gSLQVSAk8DO5OEEgyASxINns7GxUIadXeE5xI8hxMToJlIKgf4zJxQkCQSaIBcnm5+ejCjm9wnOK
 x91jYmJa1omQMzERciYmJkLOxMTk2vRf6XhNEXu2IzMAAAAASUVORK5CYII=" />
 </span></p></div>
 <div class="sect2">
-<h3 id="_une_version_incomplète">3.1. Une version incomplète</h3>
+<h3 id="_une_version_incomplète">4.1. Une version incomplète</h3>
 <div class="paragraph"><p>Cela donne la première version comme donnée sur la feuille jointe.</p></div>
 <div class="paragraph"><p>Soit le programme :</p></div>
 <div class="listingblock">
@@ -1287,7 +1457,7 @@ client1<span style="color: #990000">.</span><span style="font-weight: bold"><spa
 </ol></div>
 </div>
 <div class="sect2">
-<h3 id="_une_version_cohérente_maintient_des_liens">3.2. Une version cohérente : maintient des liens</h3>
+<h3 id="_une_version_cohérente_maintient_des_liens">4.2. Une version cohérente : maintient des liens</h3>
 <div class="paragraph"><p>Pour résoudre le problème et maintenir les liens cohérents : il faut que lors de l&#8217;association d&#8217;une Commande co à un Client cl :</p></div>
 <div class="ulist"><ul>
 <li>
@@ -1371,7 +1541,7 @@ Créer les liens pour associer la Commande et cli (setClient() et setCommande())
 </div>
 </div>
 <div class="sect1">
-<h2 id="_deuxième_cas_association_0_1_8201_8212_8201_0">4. Deuxième cas : association 0..1&#8201;&#8212;&#8201;0..*</h2>
+<h2 id="_deuxième_cas_association_0_1_8201_8212_8201_0">5. Deuxième cas : association 0..1&#8201;&#8212;&#8201;0..*</h2>
 <div class="sectionbody">
 <div class="paragraph"><p>On fixe les multiplicités de l&#8217;association "Passer" à "0..1" et "0..*" comme indiqué sur le diagramme ci-dessous.</p></div>
 <div class="paragraph"><div class="title">Diagramme UML des classes mises en oeuvre (multiplicités 0..1)</div><p><span class="image">
@@ -1781,7 +1951,7 @@ dans la classe Client, une nouvelle méthode : <tt>void defaireAssoCommande (Com
 </div>
 </div>
 <div class="sect1">
-<h2 id="_remarques_finales">5. Remarques finales</h2>
+<h2 id="_remarques_finales">6. Remarques finales</h2>
 <div class="sectionbody">
 <div class="paragraph"><p>Toutes les méthodes sont déclarées publiques et donc sont accessibles aux clients, en particulier <tt>setClient()</tt>, <tt>setCommande</tt>, et <tt>addCommande()/removeCommande()</tt> en version 0..*.</p></div>
 <div class="paragraph"><p>Notons que les clients de la classe DOIVENT maintenant utiliser UNIQUEMENT les méthodes <tt>associerClient()</tt> et <tt>associerCommande()</tt> (et <tt>defaireAssoCommande()</tt> en version 0..*).</p></div>
@@ -1810,7 +1980,7 @@ Trouver des algorithmes pour <tt>associerClient()</tt> et <tt>associerCommande()
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2014-03-24 17:04:00 CET
+Dernière mise à jour 2015-03-20 00:39:36 CET
 </div>
 </div>
 </body>
