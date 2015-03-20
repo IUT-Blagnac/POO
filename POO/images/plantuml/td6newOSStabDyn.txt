@@ -1,7 +1,8 @@
 @startuml
 class OrderedStringSet {
-	-String[] tab
+	-String[] valeurs
 	+OrderedStringSet()
+	+int size()
 	+void add(String s)
 	+void remove(String s)
 	+boolean contains(String s)
