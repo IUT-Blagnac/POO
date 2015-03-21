@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
 <head>
 <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
-<meta name="copyright" content="2015-03-20, IUT Blagnac *** Dut/Info-S2/M2103 *** Powered by AsciiDoc and W3C Slidy &amp;#169;" />
+<meta name="copyright" content="2015-03-21, IUT Blagnac *** Dut/Info-S2/M2103 *** Powered by AsciiDoc and W3C Slidy &amp;#169;" />
 <meta name="generator" content="AsciiDoc 8.6.6 / slidy2 backend 1.0.3" />
 <title>BPOO - Support TD 6</title>
 <style type="text/css">
@@ -4129,33 +4129,6 @@ cellspacing="0" cellpadding="4">
 </div>
 <div class="paragraph">
 <div class="incremental">
-<p>Un ensemble ordonné est une <strong>collection ordonnée qui n&#8217;accepte pas les doublons</strong>.</p>
-</div>
-</div>
-<ul class=" incremental">
-<li>
-<span>
-Par exemple, un ensemble de String n&#8217;accepte qu&#8217;une seule fois la valeur "bonjour". Par contre "bonjour" et "BONjour" sont acceptées.
-</span>
-</li>
-<li>
-<span>
-L&#8217;ensemble constitué des valeurs "a", "d", "b", "c" sera ordonné en { "a", "b", "c", "d" }.
-</span>
-</li>
-<li>
-<span>
-Après chaque ajout, l&#8217;ensemble est ordonné.
-</span>
-</li>
-<li>
-<span>
-<em>On supposera dans tout l&#8217;exercice que la valeur null est refusée (non ajoutée, non enlevé, non recherchée, sans levée d&#8217;exceptions pour simplifier).</em>
-</span>
-</li>
-</ul>
-<div class="paragraph">
-<div class="incremental">
 <p>Le diagramme UML suivant montre l&#8217;interface générale de la classe attendue.</p>
 </div>
 </div>
@@ -4272,6 +4245,50 @@ RU5ErkJggg==" />
 </span></p>
 </div>
 </div>
+<div class="paragraph">
+<div class="incremental">
+<p>Un ensemble ordonné est une <strong>collection ordonnée qui n&#8217;accepte pas les doublons</strong> :</p>
+</div>
+</div>
+<ul class=" incremental">
+<li>
+<span>
+Par exemple, un ensemble de String n&#8217;accepte qu&#8217;une seule fois la valeur "bonjour". Par contre "bonjour" et "BONjour" sont acceptées.
+</span>
+</li>
+<li>
+<span>
+L&#8217;ensemble constitué des valeurs "a", "d", "b", "c" sera ordonné en { "a", "b", "c", "d" }.
+</span>
+</li>
+<li>
+<span>
+Après chaque ajout, l&#8217;ensemble est ordonné.
+</span>
+</li>
+<li>
+<span>
+Une approche par programmation par contrats est utilisée : lors des opérations add/remove :
+</span>
+<ul class=" incremental">
+<li>
+<span>
+L&#8217;ajout d&#8217;une chaîne déjà présente ne réalise aucun ajout sans levée d&#8217;exception ; on aurait pu renvoyer un booléen.
+</span>
+</li>
+<li>
+<span>
+La suppression d&#8217;une chaîne non présente ne réalise aucune suppression sans levée d&#8217;exception ; on aurait pu renvoyer un booléen.
+</span>
+</li>
+<li>
+<span>
+<em>On supposera dans tout l&#8217;exercice que la valeur null est refusée (non ajoutée, non enlevé, non recherchée, sans levée d&#8217;exception).</em>
+</span>
+</li>
+</ul>
+</li>
+</ul>
 </div></div>
 <script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
@@ -5548,7 +5565,7 @@ http://www.gnu.org/software/src-highlite -->
 </div>
 <div id="footer" style="position: absolute; left: 5%; top: 80%; width: 90%;">
 <div id="footer-text">
-Dernière mise à jour 2015-03-20 18:00:22 CET
+Dernière mise à jour 2015-03-21 17:19:12 CET
 </div>
 </div>
 </div></div>

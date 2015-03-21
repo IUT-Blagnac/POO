@@ -832,29 +832,6 @@ cellspacing="0" cellpadding="4">
 <h2 id="_domaine_d_étude_implémenter_un_ensemble_ordonné_de_string">1. Domaine d'étude : implémenter un ensemble ordonné de String</h2>
 <div class="sectionbody">
 <div class="paragraph"><p>On s&#8217;intéresse dans ce TD à la mise en oeuvre d&#8217;une classe <strong>Ensemble ordonné</strong> de chaînes de caractères.</p></div>
-<div class="paragraph"><p>Un ensemble ordonné est une <strong>collection ordonnée qui n&#8217;accepte pas les doublons</strong>.</p></div>
-<div class="ulist"><ul>
-<li>
-<p>
-Par exemple, un ensemble de String n&#8217;accepte qu&#8217;une seule fois la valeur "bonjour". Par contre "bonjour" et "BONjour" sont acceptées.
-</p>
-</li>
-<li>
-<p>
-L&#8217;ensemble constitué des valeurs "a", "d", "b", "c" sera ordonné en { "a", "b", "c", "d" }.
-</p>
-</li>
-<li>
-<p>
-Après chaque ajout, l&#8217;ensemble est ordonné.
-</p>
-</li>
-<li>
-<p>
-<em>On supposera dans tout l&#8217;exercice que la valeur null est refusée (non ajoutée, non enlevé, non recherchée, sans levée d&#8217;exceptions pour simplifier).</em>
-</p>
-</li>
-</ul></div>
 <div class="paragraph"><p>Le diagramme UML suivant montre l&#8217;interface générale de la classe attendue.</p></div>
 <div class="paragraph"><p><span class="image">
 <img alt="images/td6newOSSgeneral.png" src="data:image/png;base64,
@@ -965,6 +942,46 @@ W8TpIiQkJPcS8YVYQ9whBjU3N3eIhERiskJsJq9ahYSE5F4ivhBriDvEoBs3bnSIhFSfeEyGaF7b
 iISE5F4ivhBriDvEoDt37nSIhEhISA4kkBAJCSREQgIJkZCQQEIkpK6b/geJkV8MN8Nk2AAAAABJ
 RU5ErkJggg==" />
 </span></p></div>
+<div class="paragraph"><p>Un ensemble ordonné est une <strong>collection ordonnée qui n&#8217;accepte pas les doublons</strong> :</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Par exemple, un ensemble de String n&#8217;accepte qu&#8217;une seule fois la valeur "bonjour". Par contre "bonjour" et "BONjour" sont acceptées.
+</p>
+</li>
+<li>
+<p>
+L&#8217;ensemble constitué des valeurs "a", "d", "b", "c" sera ordonné en { "a", "b", "c", "d" }.
+</p>
+</li>
+<li>
+<p>
+Après chaque ajout, l&#8217;ensemble est ordonné.
+</p>
+</li>
+<li>
+<p>
+Une approche par programmation par contrats est utilisée : lors des opérations add/remove :
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+L&#8217;ajout d&#8217;une chaîne déjà présente ne réalise aucun ajout sans levée d&#8217;exception ; on aurait pu renvoyer un booléen.
+</p>
+</li>
+<li>
+<p>
+La suppression d&#8217;une chaîne non présente ne réalise aucune suppression sans levée d&#8217;exception ; on aurait pu renvoyer un booléen.
+</p>
+</li>
+<li>
+<p>
+<em>On supposera dans tout l&#8217;exercice que la valeur null est refusée (non ajoutée, non enlevé, non recherchée, sans levée d&#8217;exception).</em>
+</p>
+</li>
+</ul></div>
+</li>
+</ul></div>
 </div>
 </div>
 <div class="sect1">
@@ -2113,7 +2130,7 @@ http://www.gnu.org/software/src-highlite -->
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2015-03-20 18:00:22 CET
+Dernière mise à jour 2015-03-21 17:19:12 CET
 </div>
 </div>
 </body>
