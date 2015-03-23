@@ -827,15 +827,7 @@ cellspacing="0" cellpadding="4">
 </div>
 </div>
 <div class="sect1">
-<h2 id="_modifs_a_faire_pour_2014_2015">1. MODIFS A FAIRE POUR 2014/2015</h2>
-<div class="sectionbody">
-<div class="paragraph"><p><strong>Revoir les méthodes get/set à créer éventuellement pour Sphere, Carre.</strong></p></div>
-<div class="paragraph"><p><strong>Ajouter affichage i sur tabFigures dans test final. Permet de se repérer.</strong></p></div>
-<div class="paragraph"><p><strong>Poser d&#8217;autres questions ?</strong></p></div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_objectif">2. Objectif</h2>
+<h2 id="_objectif">1. Objectif</h2>
 <div class="sectionbody">
 <div class="paragraph"><p>Le but de ce TP est de construire une hiérarchie simple de classes avec héritage et de tester les classes produites.</p></div>
 <div class="paragraph"><p>On suppose un espace en 3 dimensions dans lequel on veut définir des figures géométriques (rectangles, carrés, cercles, cylindres, sphères, &#8230;).</p></div>
@@ -1035,7 +1027,7 @@ oJwsFcI3r18hCJKFADMEAWYIgsSk/w8QX7RbY/OBzAAAAABJRU5ErkJggg==" />
 </div>
 </div>
 <div class="sect1">
-<h2 id="_mise_en_place_de_l_8217_environnement">3. Mise en place de l&#8217;environnement</h2>
+<h2 id="_mise_en_place_de_l_8217_environnement">2. Mise en place de l&#8217;environnement</h2>
 <div class="sectionbody">
 <div class="paragraph"><p>Récupérer les classes déjà écrites proposées sur le serveur :</p></div>
 <div class="ulist"><ul>
@@ -1055,13 +1047,72 @@ HeritageTestFG3D.java : fonction main() qui est à compléter.
 </p>
 </li>
 </ul></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Note" src="data:image/png;base64,
+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" />
+</td>
+<td class="content">
+<div class="paragraph"><p>Pas de programme de test (junit) pour ce TP ?</p></div>
+<div class="paragraph"><p>Pas d&#8217;inquiétude : bientôt c&#8217;est vous qui écrirez les tests.</p></div>
+</td>
+</tr></table>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_étude_des_classes_proposées">4. Étude des classes proposées</h2>
+<h2 id="_étude_des_classes_proposées">3. Étude des classes proposées</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_la_classe_formegraphique">4.1. La classe FormeGraphique</h3>
+<h3 id="_la_classe_formegraphique">3.1. La classe FormeGraphique</h3>
 <div class="paragraph"><p>La classe FormeGraphique définit une forme graphique par ses coordonnées x et y (entiers).</p></div>
 <div class="paragraph"><p>Étudier le code de la classe FormeGraphique. Elle définit :</p></div>
 <div class="olist arabic"><ol class="arabic">
@@ -1115,7 +1166,7 @@ une méthode afficher() qui affiche à l'écran le texte suivant (en gras : le t
 <div class="paragraph"><p>Le programme d&#8217;essai vous est fourni aussi.</p></div>
 </div>
 <div class="sect2">
-<h3 id="_la_classe_rectangle">4.2. La classe Rectangle</h3>
+<h3 id="_la_classe_rectangle">3.2. La classe Rectangle</h3>
 <div class="paragraph"><p>La classe Rectangle est une FormeGraphique comprenant les coordonnées du coin supérieur gauche sur le plan x et y (entiers), une hauteur et une largeur (entiers).</p></div>
 <div class="paragraph"><p>Étudier le code de la classe Rectangle et répondre aux questions suivantes (en commentaire dans le fichier) :</p></div>
 <div class="olist arabic"><ol class="arabic">
@@ -1201,15 +1252,69 @@ Les constructeurs de la classe Rectangle utilisables.
 </li>
 </ul></div>
 </li>
+<li>
+<p>
+Écrire un petit test de la classe dans la méthode main() déjà proposée.
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Créer un objet avec <strong>chaque</strong> constructeur défini dans la classe (x constructeurs &#8658; x création d&#8217;objets différentes).
+</p>
+</li>
+<li>
+<p>
+Pour chaque objet créé :
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Lui appliquer la méthode <tt>afficher()</tt>.
+</p>
+</li>
+<li>
+<p>
+Lui appliquer les méthodes transformateurs de la classe.
+</p>
+</li>
+<li>
+<p>
+Lui appliquer les méthodes transformateurs héritées.
+</p>
+</li>
+<li>
+<p>
+Lui appliquer la méthode <tt>afficher()</tt>.
+</p>
+</li>
+<li>
+<p>
+Lui appliquer les méthodes accesseurs de la classe (dans un System.out.println()).
+</p>
+</li>
+<li>
+<p>
+Lui appliquer les méthodes accesseurs héritées (dans un System.out.println()).
+</p>
+</li>
+</ul></div>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+Vérifier les valeurs affichées à l'écran ! Elles doivent être correctes.
+</p>
+</li>
 </ol></div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_travail_à_faire">5. Travail à faire</h2>
+<h2 id="_travail_à_faire">4. Travail à faire</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_code_à_écrire">5.1. Code à écrire</h3>
+<h3 id="_code_à_écrire">4.1. Code à écrire</h3>
 <div class="paragraph"><p><strong>Pour chaque classe demandée</strong>, une à la fois, dans l&#8217;ordre proposé :</p></div>
 <div class="olist arabic"><ol class="arabic">
 <li>
@@ -1288,7 +1393,7 @@ lJga0LT8+uRGJ5P/2OBGpz/mT34Gmsy9nx36v3PoX1H4mIUGLCOSAAAAAElFTkSuQmCC" />
 <div class="ulist"><ul>
 <li>
 <p>
-Créer un objet avec chaque constructeur défini dans la classe.
+Créer un objet avec <strong>chaque</strong> constructeur défini dans la classe (x constructeurs &#8658; x création d&#8217;objets différentes).
 </p>
 </li>
 <li>
@@ -1323,7 +1428,7 @@ Lui appliquer les méthodes accesseurs de la classe (dans un System.out.println(
 </li>
 <li>
 <p>
-Lui appliquer les méthodes accesseurs héritées.
+Lui appliquer les méthodes accesseurs héritées (dans un System.out.println()).
 </p>
 </li>
 </ul></div>
@@ -1397,9 +1502,9 @@ lJga0LT8+uRGJ5P/2OBGpz/mT34Gmsy9nx36v3PoX1H4mIUGLCOSAAAAAElFTkSuQmCC" />
 </ol></div>
 </div>
 <div class="sect2">
-<h3 id="_spécification_simple_des_classes_à_définir">5.2. Spécification (simple) des classes à définir</h3>
+<h3 id="_spécification_simple_des_classes_à_définir">4.2. Spécification (simple) des classes à définir</h3>
 <div class="sect3">
-<h4 id="_la_classe_cercle">5.2.1. La classe Cercle</h4>
+<h4 id="_la_classe_cercle">4.2.1. La classe Cercle</h4>
 <div class="paragraph"><p>La classe Cercle est une forme graphique comprenant les coordonnées du centre avec en plus un rayon (entier).</p></div>
 <div class="paragraph"><p>Écrire la classe Cercle. On définira :</p></div>
 <div class="olist arabic"><ol class="arabic">
@@ -1468,7 +1573,7 @@ Cercle : rayon 17</tt></pre>
 </ol></div>
 </div>
 <div class="sect3">
-<h4 id="_la_classe_cylindre">5.2.2. La classe Cylindre</h4>
+<h4 id="_la_classe_cylindre">4.2.2. La classe Cylindre</h4>
 <div class="paragraph"><p>La classe Cylindre est définie comme un cercle avec en plus une hauteur (entier).</p></div>
 <div class="paragraph"><p>Écrire la classe Cylindre. On définira :</p></div>
 <div class="olist arabic"><ol class="arabic">
@@ -1530,7 +1635,7 @@ Cylindre : hauteur 789</tt></pre>
 </ol></div>
 </div>
 <div class="sect3">
-<h4 id="_la_classe_sphere">5.2.3. La classe Sphere</h4>
+<h4 id="_la_classe_sphere">4.2.3. La classe Sphere</h4>
 <div class="paragraph"><p>La classe Sphere est définie comme un cercle et a une surface et un volume.</p></div>
 <div class="paragraph"><p>Écrire la classe Cercle. On définira :</p></div>
 <div class="olist arabic"><ol class="arabic">
@@ -1591,84 +1696,8 @@ Sphere : rayon sphère 17</tt></pre>
 </li>
 </ol></div>
 </div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_pour_aller_plus_loin">6. Pour aller plus loin</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_pour_en_arriver_au_polymorphisme">6.1. Pour en arriver au polymorphisme</h3>
-<div class="paragraph"><p>A la fin du main() que vous avez écrit :</p></div>
-<div class="olist arabic"><ol class="arabic">
-<li>
-<p>
-Vous devriez avoir créé 8 objets (8 new, 2 par classe).
-</p>
-</li>
-<li>
-<p>
-Insérer la déclaration suivante pour créer un tableau de 8 éléments de type FormeGraphique et y ranger les formes graphiques créées :
-</p>
-<div class="listingblock">
-<div class="content"><!-- Generator: GNU source-highlight 3.1.5
-by Lorenzo Bettini
-http://www.lorenzobettini.it
-http://www.gnu.org/software/src-highlite -->
-<pre><tt><span style="color: #008080">FormeGraphique</span> tabFormes<span style="color: #990000">[];</span>
-
-tabFormes <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> FormeGraphique <span style="color: #990000">[</span><span style="color: #993399">8</span><span style="color: #990000">];</span>
-
-tabFormes<span style="color: #990000">[</span><span style="color: #993399">0</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> fgUn<span style="color: #990000">;</span> <span style="font-style: italic"><span style="color: #9A1900">// variable référençant la première FormeGraphique créée</span></span>
-tabFormes<span style="color: #990000">[</span><span style="color: #993399">1</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> fgDeux<span style="color: #990000">;</span> <span style="font-style: italic"><span style="color: #9A1900">// variable référençant la deuxième FormeGraphique créée</span></span>
-tabFormes<span style="color: #990000">[</span><span style="color: #993399">2</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> cercleUn<span style="color: #990000">;</span> <span style="font-style: italic"><span style="color: #9A1900">// variable référençant le premier Cercle créé</span></span>
-<span style="color: #990000">..</span> <span style="font-style: italic"><span style="color: #9A1900">// continuer</span></span></tt></pre></div></div>
-</li>
-<li>
-<p>
-Continuer le programme précédent pour y mettre tous les objets créés.
-</p>
-</li>
-<li>
-<p>
-Compiler. ok ?
-</p>
-</li>
-<li>
-<p>
-Faire une boucle pour appliquer surface(), volume() et afficher() à chaque élément du tableau.
-</p>
-</li>
-<li>
-<p>
-Compiler. ok ?
-</p>
-</li>
-<li>
-<p>
-Quel est le résultat obtenu à l&#8217;exécution ? Quelles méthodes sont réellement appelées (classe de définition de la méthode appelée) ?
-</p>
-</li>
-<li>
-<p>
-Ajouter dans la boucle l&#8217;instruction suivante :
-</p>
-<div class="listingblock">
-<div class="content"><!-- Generator: GNU source-highlight 3.1.5
-by Lorenzo Bettini
-http://www.lorenzobettini.it
-http://www.gnu.org/software/src-highlite -->
-<pre><tt>System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>tabFormes<span style="color: #990000">[</span>i<span style="color: #990000">].</span><span style="font-weight: bold"><span style="color: #000000">getClass</span></span><span style="color: #990000">());</span></tt></pre></div></div>
-</li>
-<li>
-<p>
-Quel est le résultat ?
-</p>
-</li>
-</ol></div>
-</div>
-<div class="sect2">
-<h3 id="_la_classe_carre">6.2. La classe Carre</h3>
+<div class="sect3">
+<h4 id="_la_classe_carre">4.2.4. La classe Carre</h4>
 <div class="paragraph"><p>La classe Carre est un rectangle particulier de longueur égale à la hauteur, appelée côté.</p></div>
 <div class="paragraph"><p>Écrire la classe Carre. On définira :</p></div>
 <div class="olist arabic"><ol class="arabic">
@@ -1679,7 +1708,7 @@ un héritage éventuel pour la classe,
 </li>
 <li>
 <p>
-le(s) attribut(s) nécessaire(s),
+le(s) attribut(s) nécessaire(s), réfléchir &#8230;
 </p>
 </li>
 <li>
@@ -1695,6 +1724,11 @@ un constructeur paramétré permettant d&#8217;initialiser correctement un carr�
 <li>
 <p>
 une méthode accesseur (get) pour chaque attribut défini,
+</p>
+</li>
+<li>
+<p>
+une méthode getCote() permettant d&#8217;obtenir le cote d&#8217;un carré,
 </p>
 </li>
 <li>
@@ -1782,8 +1816,86 @@ lJga0LT8+uRGJ5P/2OBGpz/mT34Gmsy9nx36v3PoX1H4mIUGLCOSAAAAAElFTkSuQmCC" />
 </tr></table>
 </div>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_pour_terminer">5. Pour terminer</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="_utiliser_les_méthodes_de_la_super_classe">6.3. Utiliser les méthodes de la super-classe</h3>
+<h3 id="_pour_en_arriver_au_polymorphisme">5.1. Pour en arriver au polymorphisme</h3>
+<div class="paragraph"><p>A la fin du main() que vous avez écrit :</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Vous devriez avoir créé 12 objets (12 new, 2 par classe).
+</p>
+</li>
+<li>
+<p>
+Insérer la déclaration suivante pour créer un tableau de 12 éléments de type FormeGraphique et y ranger les formes graphiques créées :
+</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="color: #008080">FormeGraphique</span> tabFormes<span style="color: #990000">[];</span>
+
+tabFormes <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> FormeGraphique <span style="color: #990000">[</span><span style="color: #993399">12</span><span style="color: #990000">];</span>
+
+tabFormes<span style="color: #990000">[</span><span style="color: #993399">0</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> fgUn<span style="color: #990000">;</span> <span style="font-style: italic"><span style="color: #9A1900">// variable référençant la première FormeGraphique créée</span></span>
+tabFormes<span style="color: #990000">[</span><span style="color: #993399">1</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> fgDeux<span style="color: #990000">;</span> <span style="font-style: italic"><span style="color: #9A1900">// variable référençant la deuxième FormeGraphique créée</span></span>
+tabFormes<span style="color: #990000">[</span><span style="color: #993399">2</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> rectUn<span style="color: #990000">;</span> <span style="font-style: italic"><span style="color: #9A1900">// variable référençant le premier Rectangle créé</span></span>
+tabFormes<span style="color: #990000">[</span><span style="color: #993399">3</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> rectDeux<span style="color: #990000">;</span> <span style="font-style: italic"><span style="color: #9A1900">// variable référençant le deuxième Rectangle créé</span></span>
+tabFormes<span style="color: #990000">[</span><span style="color: #993399">4</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> carreUn<span style="color: #990000">;</span> <span style="font-style: italic"><span style="color: #9A1900">// variable référençant le premier Carré créé</span></span>
+<span style="color: #990000">..</span> <span style="font-style: italic"><span style="color: #9A1900">// continuer</span></span></tt></pre></div></div>
+</li>
+<li>
+<p>
+Continuer le programme précédent pour y mettre tous les objets créés.
+</p>
+</li>
+<li>
+<p>
+Compiler. ok ?
+</p>
+</li>
+<li>
+<p>
+Faire une boucle pour afficher l&#8217;indice courant (i), et appliquer surface(), volume() et appliquer afficher() à chaque élément du tableau.
+</p>
+</li>
+<li>
+<p>
+Compiler. ok ?
+</p>
+</li>
+<li>
+<p>
+Quel est le résultat obtenu à l&#8217;exécution ? Quelles méthodes sont réellement appelées (classe de définition de la méthode appelée) ?
+</p>
+</li>
+<li>
+<p>
+Ajouter dans la boucle l&#8217;instruction suivante :
+</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>tabFormes<span style="color: #990000">[</span>i<span style="color: #990000">].</span><span style="font-weight: bold"><span style="color: #000000">getClass</span></span><span style="color: #990000">());</span></tt></pre></div></div>
+</li>
+<li>
+<p>
+Quel est le résultat ?
+</p>
+</li>
+</ol></div>
+</div>
+<div class="sect2">
+<h3 id="_utiliser_les_méthodes_de_la_super_classe">5.2. Utiliser les méthodes de la super-classe</h3>
 <div class="paragraph"><p>Dans la classe Cylindre :</p></div>
 <div class="olist arabic"><ol class="arabic">
 <li>
@@ -1805,7 +1917,7 @@ En écrire une nouvelle version en utilisant la méthode surface() définie dans
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2015-02-25 08:44:44 CET
+Dernière mise à jour 2015-03-23 22:32:03 CET
 </div>
 </div>
 </body>
