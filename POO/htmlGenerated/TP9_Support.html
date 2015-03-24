@@ -887,7 +887,7 @@ cellspacing="0" cellpadding="4">
 <div class="sect1">
 <h2 id="_objectif">1. Objectif</h2>
 <div class="sectionbody">
-<div class="paragraph"><p>Le but de ce TP est de construire une hiérarchie classes avec héritage à partir de la classe Compte déjà construite et utilisée dans d&#8217;autres TPs.</p></div>
+<div class="paragraph"><p>Le but de ce TP est de construire une hiérarchie de classes avec héritage à partir de la classe Compte déjà construite et utilisée dans d&#8217;autres TPs.</p></div>
 <div class="paragraph"><p>On souhaite construire l&#8217;arborescence présentée figure ci-après.</p></div>
 <div class="exampleblock">
 <div class="content">
@@ -1372,18 +1372,25 @@ Fichiers de tests.
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_recommandations">3.1. Recommandations</h3>
-<div class="paragraph"><p><strong>ATTENTION : Respectez les noms exacts des classes et méthodes (cf en-têtes fournis interfaces). Un programme de test vous est proposé.</strong></p></div>
+<div class="paragraph"><p><strong>ATTENTION : Respectez les identificateurs exacts des classes et méthodes (cf en-têtes fournis dans les interfaces). Un programme de test vous est déjà écrit et utilise ces identificateurs.</strong></p></div>
 <div class="paragraph"><p>Pour chaque classe, écrire le code de la classe en faisant attention aux points suivants :</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
-On ne redéfinira pas la méthode <tt>soldeCompte()</tt> sur les sous-classes de Compte, en particulier sur CompteDepot. Elle devra calculer le bon solde telle qu’elle est définie dans la classe Compte. Elle y est définie final exprès (non redéfinissable).
+On NE redéfinira PAS la méthode <tt>soldeCompte()</tt> sur les sous-classes de Compte, en particulier sur CompteDepot. Elle devra calculer le bon solde telle qu’elle est définie dans la classe Compte. Elle y est définie final exprès (non redéfinissable).
 </p>
 </li>
 <li>
 <p>
 La définition du(es) constructeur(s). Écrire le minimum de lignes possibles.
 </p>
+<div class="ulist"><ul>
+<li>
+<p>
+cf. cours, appel du constructeur de la classe courante ou de la superclasse.
+</p>
+</li>
+</ul></div>
 </li>
 <li>
 <p>
@@ -1516,6 +1523,24 @@ On pourra étudier aussi la méthode toArray() de la classe ArrayList et on l’
 </ul></div>
 </li>
 </ul></div>
+<div class="paragraph"><p>Exemple, un CompteDepot sur lequel on dépose 300€ et on retire 100€ puis 50€, on aura 3 opérations (affichées par <tt>afficher()</tt> ou renvoyées par <tt>getOperations()</tt>) :</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+une <tt>"OPERATION DE CREDIT"</tt> de 300,
+</p>
+</li>
+<li>
+<p>
+une <tt>"OPERATION DE DEBIT"</tt> de 100,
+</p>
+</li>
+<li>
+<p>
+une <tt>"OPERATION DE DEBIT"</tt> de 50.
+</p>
+</li>
+</ul></div>
 </div>
 <div class="sect2">
 <h3 id="_classe_compteepargne">4.3. Classe CompteEpargne</h3>
@@ -1549,10 +1574,23 @@ Un taux d’intérêts est une valeur de type double entre 0 et 10 (pour des int
 </li>
 <li>
 <p>
-Les intérêts se calculent en appliquant ce taux au solde du compte si le solde est &gt;=0, ils sont nuls sinon.
+Les intérêts se calculent :
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+si le solde est &gt;=0 : en appliquant ce taux au solde du compte,
+</p>
+</li>
+<li>
+<p>
+sinon : les intérêts sont nuls.
 </p>
 </li>
 </ul></div>
+</li>
+</ul></div>
+<div class="paragraph"><p>L&#8217;ajout des intérêts sur le compte se fait par <tt>ajouterInterets()</tt>. La méthode <tt>interetsCompte()</tt> perme juste de connaître le montant courant des intérêts si ils étaient versés à ce moment là.</p></div>
 </div>
 <div class="sect2">
 <h3 id="_classe_comptesecurise">4.4. Classe CompteSecurise</h3>
@@ -2033,7 +2071,7 @@ Les objets Operation ne comportent aucune méthode transformateur donc ils ne so
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2015-02-25 08:44:36 CET
+Dernière mise à jour 2015-03-24 17:10:58 CET
 </div>
 </div>
 </body>
