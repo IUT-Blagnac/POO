@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
 <meta name="copyright" content="2015-03-31, IUT Blagnac *** Dut/Info-S2/M2103 *** Powered by AsciiDoc and W3C Slidy &amp;#169;" />
 <meta name="generator" content="AsciiDoc 8.6.6 / slidy2 backend 1.0.3" />
-<title>BPOO - Support TD 6</title>
+<title>BPOO - Support TD 7</title>
 <style type="text/css">
 /* Shared CSS for AsciiDoc xhtml11 and html5 backends */
 
@@ -4021,7 +4021,7 @@ setTimeout(w3c_slidy.hide_slides, 50);
 </head>
 <body class="article">
 <div id="header" class="slide">
-<h1>BPOO - Support TD 6</h1>
+<h1>BPOO - Support TD 7</h1>
 <span id="author">Dut/Info-S2/M2103</span><br />
 </div>
 <div class="slide">
@@ -5033,21 +5033,25 @@ NYPBYDAYTNUMBoPBYDCYqhkMBoPB8GX8Bxbibhlak0k/AAAAAElFTkSuQmCC" />
 <span>
 lier la Commande co au Client cl,
 </span>
-</li>
-<li>
-<span>
-lier le Client cl à la Commande co,
-</span>
-</li>
+<ul class=" incremental">
 <li>
 <span>
 si le Client cl était déjà associé une Commande, l&#8217;association de cette Commande vers cl doit être rompue,
 </span>
 </li>
+</ul>
+</li>
+<li>
+<span>
+lier le Client cl à la Commande co,
+</span>
+<ul class=" incremental">
 <li>
 <span>
 si la Commande co était déjà associé à un Client, l&#8217;association de ce Client vers co doit être rompue.
 </span>
+</li>
+</ul>
 </li>
 </ul>
 <div class="paragraph">
@@ -5855,23 +5859,23 @@ http://www.gnu.org/software/src-highlite -->
 <pre><tt><span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">Commande</span> <span style="color: #FF0000">{</span>
         <span style="font-style: italic"><span style="color: #9A1900">// ...</span></span>
         <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">desassocierClient</span></span> <span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
-            <span style="font-style: italic"><span style="color: #9A1900">// Défaire l'association</span></span>
-        <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>leClient <span style="color: #990000">!=</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>leClient<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">removeCommande</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">);</span>
-        <span style="color: #FF0000">}</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setClient</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">);</span> <span style="font-style: italic"><span style="color: #9A1900">// Ou this.leClient = null ;</span></span>
+                <span style="font-style: italic"><span style="color: #9A1900">// Défaire l'association</span></span>
+                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>leClient <span style="color: #990000">!=</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>leClient<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">removeCommande</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">);</span>
+                <span style="color: #FF0000">}</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setClient</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">);</span> <span style="font-style: italic"><span style="color: #9A1900">// Ou this.leClient = null ;</span></span>
         <span style="color: #FF0000">}</span>
 
         <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">associerClient</span></span> <span style="color: #990000">(</span><span style="color: #008080">Client</span> cli<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-            <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>cli <span style="color: #990000">==</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span> <span style="color: #990000">)</span><span style="color: #FF0000">{</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="color: #990000">;</span>
-            <span style="color: #FF0000">}</span>
-            <span style="font-style: italic"><span style="color: #9A1900">// Créer l'association</span></span>
-        <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>leClient <span style="color: #990000">!=</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>leClient<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">removeCommande</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">);</span>
-        <span style="color: #FF0000">}</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setClient</span></span><span style="color: #990000">(</span>cli<span style="color: #990000">);</span> <span style="font-style: italic"><span style="color: #9A1900">// Ou this.leClient = cli;</span></span>
-        cli<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">addCommande</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">);</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>cli <span style="color: #990000">==</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span> <span style="color: #990000">)</span><span style="color: #FF0000">{</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="color: #990000">;</span>
+                <span style="color: #FF0000">}</span>
+                <span style="font-style: italic"><span style="color: #9A1900">// Créer l'association</span></span>
+                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>leClient <span style="color: #990000">!=</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>leClient<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">removeCommande</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">);</span>
+                <span style="color: #FF0000">}</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setClient</span></span><span style="color: #990000">(</span>cli<span style="color: #990000">);</span> <span style="font-style: italic"><span style="color: #9A1900">// Ou this.leClient = cli;</span></span>
+                cli<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">addCommande</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">);</span>
         <span style="color: #FF0000">}</span>
 <span style="color: #FF0000">}</span>
 
@@ -6012,7 +6016,7 @@ Trouver des algorithmes pour <tt>associerClient()</tt> et <tt>associerCommande()
 </div>
 <div id="footer" style="position: absolute; left: 5%; top: 80%; width: 90%;">
 <div id="footer-text">
-Dernière mise à jour 2015-03-31 16:37:00 CEST
+Dernière mise à jour 2015-03-31 19:30:09 CEST
 </div>
 </div>
 </div></div>
