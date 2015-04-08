@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
 <head>
 <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
-<meta name="copyright" content="2015-02-25, Your computer *** Dut/Info-S2/M2103 *** Powered by AsciiDoc and W3C Slidy &amp;#169;" />
+<meta name="copyright" content="2015-03-24, Your computer *** Dut/Info-S2/M2103 *** Powered by AsciiDoc and W3C Slidy &amp;#169;" />
 <meta name="generator" content="AsciiDoc 8.6.6 / slidy2 backend 1.0.3" />
 <title>BPOO - Support TP 9</title>
 <style type="text/css">
@@ -4177,7 +4177,7 @@ cellspacing="0" cellpadding="4">
 <script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect1";nexttitle="1. Objectif";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Le but de ce TP est de construire une hiérarchie classes avec héritage à partir de la classe Compte déjà construite et utilisée dans d&#8217;autres TPs.</p>
+<p>Le but de ce TP est de construire une hiérarchie de classes avec héritage à partir de la classe Compte déjà construite et utilisée dans d&#8217;autres TPs.</p>
 </div>
 <div class="paragraph">
 <p>On souhaite construire l&#8217;arborescence présentée figure ci-après.</p>
@@ -4682,7 +4682,7 @@ Fichiers de tests.
 <script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect2";nexttitle="3.1. Recommandations";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>ATTENTION : Respectez les noms exacts des classes et méthodes (cf en-têtes fournis interfaces). Un programme de test vous est proposé.</strong></p>
+<p><strong>ATTENTION : Respectez les identificateurs exacts des classes et méthodes (cf en-têtes fournis dans les interfaces). Un programme de test vous est déjà écrit et utilise ces identificateurs.</strong></p>
 </div>
 <div class="paragraph">
 <p>Pour chaque classe, écrire le code de la classe en faisant attention aux points suivants :</p>
@@ -4690,13 +4690,20 @@ Fichiers de tests.
 <ul class="">
 <li>
 <span>
-On ne redéfinira pas la méthode <tt>soldeCompte()</tt> sur les sous-classes de Compte, en particulier sur CompteDepot. Elle devra calculer le bon solde telle qu’elle est définie dans la classe Compte. Elle y est définie final exprès (non redéfinissable).
+On NE redéfinira PAS la méthode <tt>soldeCompte()</tt> sur les sous-classes de Compte, en particulier sur CompteDepot. Elle devra calculer le bon solde telle qu’elle est définie dans la classe Compte. Elle y est définie final exprès (non redéfinissable).
 </span>
 </li>
 <li>
 <span>
 La définition du(es) constructeur(s). Écrire le minimum de lignes possibles.
 </span>
+<ul class="">
+<li>
+<span>
+cf. cours, appel du constructeur de la classe courante ou de la superclasse.
+</span>
+</li>
+</ul>
 </li>
 <li>
 <span>
@@ -4859,6 +4866,26 @@ On pourra étudier aussi la méthode toArray() de la classe ArrayList et on l’
 </ul>
 </li>
 </ul>
+<div class="paragraph">
+<p>Exemple, un CompteDepot sur lequel on dépose 300€ et on retire 100€ puis 50€, on aura 3 opérations (affichées par <tt>afficher()</tt> ou renvoyées par <tt>getOperations()</tt>) :</p>
+</div>
+<ul class="">
+<li>
+<span>
+une <tt>"OPERATION DE CREDIT"</tt> de 300,
+</span>
+</li>
+<li>
+<span>
+une <tt>"OPERATION DE DEBIT"</tt> de 100,
+</span>
+</li>
+<li>
+<span>
+une <tt>"OPERATION DE DEBIT"</tt> de 50.
+</span>
+</li>
+</ul>
 </div></div>
 <script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
@@ -4903,10 +4930,25 @@ Un taux d’intérêts est une valeur de type double entre 0 et 10 (pour des int
 </li>
 <li>
 <span>
-Les intérêts se calculent en appliquant ce taux au solde du compte si le solde est &gt;=0, ils sont nuls sinon.
+Les intérêts se calculent :
+</span>
+<ul class="">
+<li>
+<span>
+si le solde est &gt;=0 : en appliquant ce taux au solde du compte,
+</span>
+</li>
+<li>
+<span>
+sinon : les intérêts sont nuls.
 </span>
 </li>
 </ul>
+</li>
+</ul>
+<div class="paragraph">
+<p>L&#8217;ajout des intérêts sur le compte se fait par <tt>ajouterInterets()</tt>. La méthode <tt>interetsCompte()</tt> perme juste de connaître le montant courant des intérêts si ils étaient versés à ce moment là.</p>
+</div>
 </div></div>
 <script type="text/javascript">/*<![CDATA[*/if (slidefootnotes != ''){document.write("<hr/><p>"+slidefootnotes+"</p>");}/*]]>*/</script>
 </div><div class="slide">
@@ -5421,7 +5463,7 @@ Les objets Operation ne comportent aucune méthode transformateur donc ils ne so
 </div>
 <div id="footer" style="position: absolute; left: 5%; top: 80%; width: 90%;">
 <div id="footer-text">
-Dernière mise à jour 2015-02-25 08:44:36 CET
+Dernière mise à jour 2015-03-24 17:10:58 CET
 </div>
 </div>
 </div></div>
