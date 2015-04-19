@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
 <head>
 <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
-<meta name="copyright" content="2015-02-25, Your computer *** Dut/Info-S2/M2103 *** Powered by AsciiDoc and W3C Slidy &amp;#169;" />
+<meta name="copyright" content="2015-04-17, Your computer *** Dut/Info-S2/M2103 *** Powered by AsciiDoc and W3C Slidy &amp;#169;" />
 <meta name="generator" content="AsciiDoc 8.6.6 / slidy2 backend 1.0.3" />
 <title>BPOO - Support TP 11</title>
 <style type="text/css">
@@ -4647,7 +4647,7 @@ classe Compte.java telle qu&#8217;elle vous est livrée (commentée),
 </li>
 <li>
 <span>
-toutes les sous-classes développées au TP précédent (sous classes de Compte).
+toutes les sous-classes que vous avez développées au TP précédent (sous classes de Compte).
 </span>
 </li>
 <li>
@@ -4667,7 +4667,7 @@ les classes CompteException, Operation et SensOperation
 <ol class="arabic">
 <li>
 <span>
-<tt>javadoc</tt> est un outil développé par Sun Microsystems permettant de générer une documentation d&#8217;API en format HTML depuis les commentaires présents dans un code source en Java.
+<tt>javadoc</tt> est un outil développé par Sun Microsystems permettant de générer automatiquement une documentation d&#8217;API en format HTML depuis les commentaires présents dans un code source en Java (plusieurs fichiers sources java).
 </span>
 <ol class="loweralpha">
 <li>
@@ -4679,12 +4679,7 @@ NB : Il existe d&#8217;autres outils de génération de documentation suivant le
 </li>
 <li>
 <span>
-L’utilitaire javadoc permet de générer automatiquement la documentation d’un ensemble de classes java à partir des fichiers sources (.java).
-</span>
-</li>
-<li>
-<span>
-La documentation produite pour une classe est destinée aux futurs clients et sous-classes de cette classe :
+La documentation produite pour une classe est destinée aux futurs clients (programmeurs) et sous-classes de cette classe :
 </span>
 <ul class="">
 <li>
@@ -4695,6 +4690,23 @@ On y retrouvera donc les propriétés public et protected, de classe et d’inst
 <li>
 <span>
 Les propriétés privées et le code des méthodes, c’est-à-dire l’implémentation, ne se trouveront pas a priori dans la documentation (mais c&#8217;est possible).
+</span>
+</li>
+</ul>
+</li>
+<li>
+<span>
+La documentation produite pour une classe est destinée aux futurs clients (programmeurs) et sous-classes de cette classe :
+</span>
+<ul class="">
+<li>
+<span>
+La documentation explique le <strong>fonctionnement externe</strong> de la classe (vu de l&#8217;extérieur), PAS l&#8217;implémentation mise en oeuvre (en tout cas le moins possible)/
+</span>
+</li>
+<li>
+<span>
+La documentation doit permettre à un programmeur <strong>d&#8217;utiliser</strong> la classe, pas de faire la maintenance du code.
 </span>
 </li>
 </ul>
@@ -4777,12 +4789,12 @@ La réponse est un message du type "unknown command" &#8658; positionner le <tt>
 <ul class="">
 <li>
 <span>
-<tt>c1.java  [c2.java &#8230;]</tt> : pour la classe c1.java, et autres si précisées (*.java possible), les classes doivent exister dans le répertoire courant,
+<tt>c1.java  [c2.java &#8230;]</tt> : pour la classe c1.java, et autres si précisées (<tt>*.java</tt> possible), les classes doivent exister dans le répertoire courant,
 </span>
 </li>
 <li>
 <span>
-<tt>-d  rep</tt> : recommandé, la documentation est générée dans le répertoire rep (<tt>-d</tt> : directory),
+<tt>-d  rep</tt> : recommandé, la documentation est générée dans le répertoire rep (<tt>-d</tt> comme "directory"),
 </span>
 </li>
 <li>
@@ -4800,7 +4812,7 @@ La réponse est un message du type "unknown command" &#8658; positionner le <tt>
 <tt>-link URLDOC</tt> : optionnel, provoque la génération de liens hypertextes depuis la documentation générée vers une autre documentation située à URLDOC. L&#8217;URL peut être une URL classique ou bien un fichier local.
 </span>
 <div class="paragraph">
-<p>Exemple : <a href="http://java.sun.com/javase/6/docs/api/">http://java.sun.com/javase/6/docs/api/</a>. Cela fera que les noms de classes connues dans l&#8217;API Java (String, &#8230;) se présenteront comme des liens hypertextes vers la documentation générée.</p>
+<p>Exemple : <a href="http://docs.oracle.com/javase/7/docs/api/">http://docs.oracle.com/javase/7/docs/api/</a>. Cela fera que les noms de classes connues dans l&#8217;API Java (String, &#8230;) se présenteront comme des liens hypertextes vers la documentation générée.</p>
 </div>
 </li>
 </ul>
@@ -4825,6 +4837,13 @@ La réponse est un message du type "unknown command" &#8658; positionner le <tt>
 <span>
 <strong>générer la documentation de toutes vos classes du TP (hiérarchie de Compte + autres classes),</strong>
 </span>
+<ul class="">
+<li>
+<span>
+Exemple de commande :  <tt>javadoc  -version  -author  -link <a href="http://docs.oracle.com/javase/7/docs/api/">http://docs.oracle.com/javase/7/docs/api/</a>  -d  monRepertoire *.java</tt>
+</span>
+</li>
+</ul>
 </li>
 <li>
 <span>
@@ -5148,7 +5167,7 @@ http://www.gnu.org/software/src-highlite -->
 </div>
 <div id="footer" style="position: absolute; left: 5%; top: 80%; width: 90%;">
 <div id="footer-text">
-Dernière mise à jour 2015-02-25 08:43:51 CET
+Dernière mise à jour 2015-04-17 17:45:27 CEST
 </div>
 </div>
 </div></div>
