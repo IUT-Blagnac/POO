@@ -804,7 +804,7 @@ cellspacing="0" cellpadding="4">
 <tbody>
 <tr>
 <td align="left" valign="top"><p class="table">PreReq</p></td>
-<td align="left" valign="top"><p class="table">-</p></td>
+<td align="left" valign="top"><p class="table">Avoir fait le TP sur l&#8217;héritage de formes graphiques.</p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">ObjTP</p></td>
@@ -816,7 +816,7 @@ cellspacing="0" cellpadding="4">
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">À rendre</p></td>
-<td align="left" valign="top"><p class="table">Programme de test proposé + Cylindre.java de la dernière partie.</p></td>
+<td align="left" valign="top"><p class="table">Programme de test écrit + Cylindre.java de la dernière partie.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1041,7 +1041,7 @@ Le fichier de la classe à tester : Cylindre.java.
 </li>
 <li>
 <p>
-Les fichiers déjà écrit : FormeGraphique.java, Cercle.java nécessaires pour compiler Cylindre.java.
+Les fichiers déjà écrits : FormeGraphique.java, Cercle.java nécessaires pour compiler Cylindre.java.
 </p>
 </li>
 <li>
@@ -1070,7 +1070,7 @@ Ensuite seulement lancer Scite et ouvrir TestCylindre.java.
 </div>
 </div>
 <div class="sect1">
-<h2 id="_principes_des_tests">3. Principes des tests</h2>
+<h2 id="_principe_des_tests">3. Principe des tests</h2>
 <div class="sectionbody">
 <div class="paragraph"><p>Dans ce module (et aussi en S1), de nombreux programmes de tests automatiques JUnit vous ont été proposés pour développer vos classes.</p></div>
 <div class="paragraph"><p>Les tests automatiques permettent : de tester une unité "seule" : une classe en Java. On cherche à valider le code écrit pour la classe.</p></div>
@@ -1088,12 +1088,41 @@ ne garantissent pas le fonctionnement de l’intégralité du programme mais d&#
 </li>
 <li>
 <p>
-test d&#8217;assertions à vérifier sur différentes situations critiques couvrant l&#8217;ensemble des situations possibles,
+réalisent des tests d&#8217;assertions à vérifier sur différentes situations critiques couvrant l&#8217;ensemble des situations possibles,
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+assertion : vérifier que, compte tenu de ce qu&#8217;on attend, la classe testée produit des objets dans un état attendu.
 </p>
 </li>
 <li>
 <p>
-suite de tests indépendants,
+assertion :
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+vérifier qu&#8217;une condition soit vraie ou fausse,
+</p>
+</li>
+<li>
+<p>
+vérifier la valeur retournée par un observateur,
+</p>
+</li>
+<li>
+<p>
+vérifier qu&#8217;une exception attendue se produise bien,
+</p>
+</li>
+</ul></div>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+tests unitaires == suite de tests indépendants,
 </p>
 </li>
 <li>
@@ -1102,7 +1131,7 @@ attention : possibilité de bug dans les tests !!
 </p>
 </li>
 </ul></div>
-<div class="paragraph"><p>La mise en place de programmes de test peut être réaliser pour atteindre plusieurs objectifs, par exemple :</p></div>
+<div class="paragraph"><p>La mise en place de programmes de test peut être réalisée pour atteindre plusieurs objectifs, par exemple :</p></div>
 <div class="olist arabic"><ol class="arabic">
 <li>
 <p>
@@ -1111,7 +1140,7 @@ Maintenance logicielle :
 <div class="ulist"><ul>
 <li>
 <p>
-évolution des programmes au cours du temps &#8658; apparition de nouveaux bugs,
+évolution des programmes au cours du temps &#8658; empêcher l&#8217;apparition de nouveaux bugs,
 </p>
 </li>
 <li>
@@ -1157,7 +1186,7 @@ puis écriture de méthodes de la classe erronées qui font échouer le test : t
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_junit_c_8217_est_quoi">4.1. JUnit  c&#8217;est quoi</h3>
-<div class="paragraph"><p>JUnit c&#8217;est : un <strong>environnement</strong> pour programmer des tests unitaires qui propose un ensemble de méthodes, macros, classes, etc. De tels environnements existent aussi dans d’autres langages C++, C, C#, …</p></div>
+<div class="paragraph"><p>JUnit c&#8217;est : un <strong>environnement</strong> pour programmer des tests unitaires qui propose un ensemble de classes, méthodes, macros, etc facilitant leur écriture. De tels environnements existent aussi dans d’autres langages C++, C, C#, &#8230;</p></div>
 <div class="paragraph"><p>JUnit permet :</p></div>
 <div class="ulist"><ul>
 <li>
@@ -1167,7 +1196,7 @@ d’écrire les tests,
 </li>
 <li>
 <p>
-d’automatiser en partie leurs lancements,
+d’automatiser en partie leur lancement,
 </p>
 </li>
 <li>
@@ -1260,7 +1289,7 @@ de chaque transformateur dont les cas de préconditions attendues,
 <div class="olist arabic"><ol class="arabic">
 <li>
 <p>
-mettre un objet à tester dans un situation,
+on met  un objet à tester dans une situation/état particulier,
 </p>
 <div class="ulist"><ul>
 <li>
@@ -1272,7 +1301,7 @@ des lignes de codes pour créer un objet et y appliquer si besoin des méthodes 
 </li>
 <li>
 <p>
-vérifier que l&#8217;objet est bien dans l'état attendu,
+vérifier ensuite que l&#8217;objet est bien dans l'état attendu,
 </p>
 <div class="ulist"><ul>
 <li>
@@ -1283,65 +1312,6 @@ appliquer chaque accesseur pour vérifier que la valeur retournée est bien cell
 </ul></div>
 </li>
 </ol></div>
-<div class="admonitionblock">
-<table><tr>
-<td class="icon">
-<img alt="Note" src="data:image/png;base64,
-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" />
-</td>
-<td class="content">
-<div class="paragraph"><p>La méthodologie de test appliquée ici reste partielle.</p></div>
-<div class="paragraph"><p>L&#8217;objectif est de comprendre le principe.</p></div>
-</td>
-</tr></table>
-</div>
 </div>
 </div>
 </div>
@@ -1499,7 +1469,7 @@ czjqM2LYYQAAAEN0RVh0U29mdHdhcmUAQCgjKUltYWdlTWFnaWNrIDQuMi44IDk5LzA4LzAxIGNy
 aXN0eUBteXN0aWMuZXMuZHVwb250LmNvbZG6IbgAAAAqdEVYdFNpZ25hdHVyZQBkMjVkNzE3NmQ2
 N2EwMzhhZmMxYzU2NTU4ZTNkZmIxYf0Q9bUAAAAOdEVYdFBhZ2UAMTJ4MTIrMCswhG27fQAAAABJ
 RU5ErkJggg==" /></td><td>
-définition de l'état attendu de l&#8217;objet SANS appel des méthodes de l&#8217;objet
+définition de l'état attendu de l&#8217;objet SANS appel des méthodes de l&#8217;objet. Par exemple faire les calculs que devrait applique un observateur
 </td></tr>
 <tr><td><img alt="7" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABnSURBVAgd
 BcGhAYMwAATAk5FIVoiMxFYiI5kJWdkVKiNZgxWQlZHfO0lGr3X/zkRmX9ZlXZbtiRy+SXJr0wXW
@@ -1519,6 +1489,76 @@ RU5ErkJggg==" /></td><td>
 la méthode <tt>main()</tt> lance l’exécution de toutes les méthodes de test (toutes les méthodes dont le nom est <tt>test&#8230;</tt>) et affiche le rapport.
 </td></tr>
 </table></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Note" src="data:image/png;base64,
+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" />
+</td>
+<td class="content">
+<div class="paragraph"><p>Lors de son exécution, la méthode statique <tt>assertEquals(mess, val1, val2)</tt> : vérifie si <tt>val1.equals(val2)</tt> (<tt>==</tt> pour les valeurs de type de base)</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+si oui : la méthode de test continue normalement,
+</p>
+</li>
+<li>
+<p>
+si non : le message <tt>mess</tt> est affiché et la méthode de test est interrompue (mais le <tt>main()</tt> continue les autres tests).
+</p>
+</li>
+</ul></div>
+</td>
+</tr></table>
+</div>
 <div class="paragraph"><p><strong>Questions</strong> :</p></div>
 <div class="olist arabic"><ol class="arabic">
 <li>
@@ -1535,7 +1575,7 @@ la méthode <tt>main()</tt> lance l’exécution de toutes les méthodes de test
 <p>
 <strong>Écrire sur ce même modèle la méthode de test du constructeur paramétré de Cylindre en donnant à x, y, rayon et hauteur des valeurs différentes les unes des autres.</strong>
 </p>
-<div class="paragraph"><p>Rappels des calculs de surface/volume : <a href="http://webetud.iut-blagnac.fr/file.php/599/data/TPs_Resources/TP7/TP7_Sujet.html">cf ici TP7</a></p></div>
+<div class="paragraph"><p>Rappels des calculs de surface/volume : voir précédent</p></div>
 </li>
 </ol></div>
 <div class="admonitionblock">
@@ -1620,6 +1660,29 @@ vérifier son état.
 </li>
 </ul></div>
 <div class="paragraph"><p><strong>Question : Écrire les méthodes de test des transformateurs : setOrigineX, setOrigineY, setHauteur, setRayon. On utilisera le constructeur paramétré à chaque fois en donnant à x, y, rayon et hauteur des valeurs différentes les unes des autres.</strong></p></div>
+<div class="paragraph"><p>Conserver toujours la structure des méthodes de test :</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Initialisations : initialiser les variables utilisées pour la situation testée.
+</p>
+</li>
+<li>
+<p>
+Situation testée : appliquer les opérations permettant d&#8217;atteindre l'état que l&#8217;on veut vérifier (en général créer un(des) objet(s) et appliquer des transformateurs).
+</p>
+</li>
+<li>
+<p>
+Calcul des résultats attendus : calculer les valeurs que l&#8217;on attend lors des tests qui suivent SANS utiliser l&#8217;objet créé en 2.
+</p>
+</li>
+<li>
+<p>
+Tests : suite d&#8217;assertions vérifiant si l&#8217;objet créé en 2 est bien dans l'état calculé en 3 (en général une suite d&#8217;assertions vérifiant que les observateurs renvoient les bonnes valeurs).
+</p>
+</li>
+</ol></div>
 </div>
 </div>
 </div>
@@ -1684,7 +1747,7 @@ Bien noter que l&#8217;on teste les deux méthodes mises à jour : <tt>double su
 </div>
 <div class="sect2">
 <h3 id="_tester_la_classe_de_quelqu_8217_un_d_8217_autre">7.2. Tester la classe de quelqu&#8217;un d&#8217;autre</h3>
-<div class="paragraph"><p>Un programmeur à écrit la classe Cylindre (cf. fichier CylindreErronnee.java).</p></div>
+<div class="paragraph"><p>Un programmeur à écrit une autre version de la classe Cylindre (cf. fichier CylindreErronnee.java).</p></div>
 <div class="paragraph"><p><strong>Question</strong> : tester cette classe (copier/coller du code dans Cylindre.java) et débogguez la classe. NE PAS modifier le test qui est juste a priori. Indiquer en commentaire dans Cylindre.java les erreurs trouvées.</p></div>
 </div>
 </div>
@@ -1693,7 +1756,7 @@ Bien noter que l&#8217;on teste les deux méthodes mises à jour : <tt>double su
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2015-02-25 08:44:04 CET
+Dernière mise à jour 2015-04-17 17:08:05 CEST
 </div>
 </div>
 </body>

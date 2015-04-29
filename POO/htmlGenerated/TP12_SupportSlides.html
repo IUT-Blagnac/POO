@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
 <head>
 <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
-<meta name="copyright" content="2015-02-25, Your computer *** Dut/Info-S2/M2103 *** Powered by AsciiDoc and W3C Slidy &amp;#169;" />
+<meta name="copyright" content="2015-04-27, Your computer *** Dut/Info-S2/M2103 *** Powered by AsciiDoc and W3C Slidy &amp;#169;" />
 <meta name="generator" content="AsciiDoc 8.6.6 / slidy2 backend 1.0.3" />
 <title>BPOO - Support TP 12</title>
 <style type="text/css">
@@ -4156,7 +4156,7 @@ cellspacing="0" cellpadding="4">
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">Durée</p></td>
-<td align="left" valign="top"><p class="table"><strong>2 séance</strong> de 1,5h sur machine.</p></td>
+<td align="left" valign="top"><p class="table"><strong>2 séances</strong> de 1,5h sur machine.</p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">À rendre</p></td>
@@ -4687,14 +4687,9 @@ Si besoin : tp11-partie1 : contient les fichiers ci-dessus si vous n'êtes pas a
 <ol class="arabic">
 <li>
 <span>
-Dans la classe <strong><tt>Compte</tt></strong>
+Dans la classe <strong><tt>Compte</tt></strong>, déclarer une nouvelle méthode :
 </span>
 <ol class="loweralpha">
-<li>
-<span>
-Déclarer une nouvelle méthode :
-</span>
-<ol class="lowerroman">
 <li>
 <span>
 <tt>public void  afficherAvecSolde ()</tt>.
@@ -4709,9 +4704,9 @@ Elle affiche le Compte (méthode <tt>this.afficher()</tt>) et ajoute le solde à
 </li>
 <li>
 <span>
-Déclarer une autre méthode :
+Dans la classe <strong><tt>Compte</tt></strong>, déclarer une nouvelle méthode :
 </span>
-<ol class="lowerroman">
+<ol class="loweralpha">
 <li>
 <span>
 <tt>public void transferer (Compte c, double pSomme) throws CompteException</tt>.
@@ -4724,7 +4719,17 @@ Elle transfère (virement) pSomme euros de l&#8217;objet courant (retrait, <tt>t
 </li>
 <li>
 <span>
-Elle lève une exception <tt>CompteException</tt> si le dépôt ou le retrait sur un des deux comptes ne peut pas avoir lieu normalement. En fait elle "laisse" passer les exceptions levées par retirer() ou deposer().
+Elle lève une exception <tt>CompteException</tt>
+</span>
+<ol class="lowerroman">
+<li>
+<span>
+Si le <tt>Compte c</tt> vaut null.
+</span>
+</li>
+<li>
+<span>
+Si le dépôt ou le retrait sur un des deux comptes ne peut pas avoir lieu normalement. <strong>En fait elle "laisse" passer les exceptions levées par retirer() ou deposer()</strong>.
 </span>
 </li>
 </ol>
@@ -5695,9 +5700,13 @@ SUVORK5CYII=" />
 <div class="paragraph">
 <p>Le programme continue à fonctionner.</p>
 </div>
-<div class="paragraph">
-<p>Pour les classes héritant de CompteSecurise (CompteBancaire, CompteJeune), on ne peut pas utiliser dans ClasseApplicationAgenceBancaire la méthode <tt>isRetraitPossible()</tt> (à essayer si besoin). <strong>Expliquez pourquoi</strong>.</p>
-</div>
+<ol class="arabic">
+<li>
+<span>
+Pour les classes héritant de CompteSecurise (CompteBancaire, CompteJeune), on ne peut pas utiliser dans ClasseApplicationAgenceBancaire la méthode <tt>isRetraitPossible()</tt>. Essayer d&#8217;appeler <tt>isRetraitPossible()</tt> dans dans la méthode de retrait sur un Compte <tt>retirerSurUnCompte()</tt> pour vérifier. <strong>Expliquez pourquoi</strong>.
+</span>
+</li>
+</ol>
 <div class="paragraph">
 <p>&#8658; Car non définie dans la classe Compte.</p>
 </div>
@@ -5741,7 +5750,7 @@ http://www.gnu.org/software/src-highlite -->
 </div>
 <div id="footer" style="position: absolute; left: 5%; top: 80%; width: 90%;">
 <div id="footer-text">
-Dernière mise à jour 2015-02-25 08:43:21 CET
+Dernière mise à jour 2015-04-27 12:40:04 CEST
 </div>
 </div>
 </div></div>

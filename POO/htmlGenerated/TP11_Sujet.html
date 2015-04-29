@@ -1287,7 +1287,7 @@ classe Compte.java telle qu&#8217;elle vous est livrée (commentée),
 </li>
 <li>
 <p>
-toutes les sous-classes développées au TP précédent (sous classes de Compte).
+toutes les sous-classes que vous avez développées au TP précédent (sous classes de Compte).
 </p>
 </li>
 <li>
@@ -1304,7 +1304,7 @@ les classes CompteException, Operation et SensOperation
 <div class="olist arabic"><ol class="arabic">
 <li>
 <p>
-<tt>javadoc</tt> est un outil développé par Sun Microsystems permettant de générer une documentation d&#8217;API en format HTML depuis les commentaires présents dans un code source en Java.
+<tt>javadoc</tt> est un outil développé par Sun Microsystems permettant de générer automatiquement une documentation d&#8217;API en format HTML depuis les commentaires présents dans un code source en Java (plusieurs fichiers sources java).
 </p>
 <div class="olist loweralpha"><ol class="loweralpha">
 <li>
@@ -1316,12 +1316,7 @@ NB : Il existe d&#8217;autres outils de génération de documentation suivant le
 </li>
 <li>
 <p>
-L’utilitaire javadoc permet de générer automatiquement la documentation d’un ensemble de classes java à partir des fichiers sources (.java).
-</p>
-</li>
-<li>
-<p>
-La documentation produite pour une classe est destinée aux futurs clients et sous-classes de cette classe :
+La documentation produite pour une classe est destinée aux futurs clients (programmeurs) et sous-classes de cette classe :
 </p>
 <div class="ulist"><ul>
 <li>
@@ -1332,6 +1327,23 @@ On y retrouvera donc les propriétés public et protected, de classe et d’inst
 <li>
 <p>
 Les propriétés privées et le code des méthodes, c’est-à-dire l’implémentation, ne se trouveront pas a priori dans la documentation (mais c&#8217;est possible).
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+La documentation produite pour une classe est destinée aux futurs clients (programmeurs) et sous-classes de cette classe :
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+La documentation explique le <strong>fonctionnement externe</strong> de la classe (vu de l&#8217;extérieur), PAS l&#8217;implémentation mise en oeuvre (en tout cas le moins possible)/
+</p>
+</li>
+<li>
+<p>
+La documentation doit permettre à un programmeur <strong>d&#8217;utiliser</strong> la classe, pas de faire la maintenance du code.
 </p>
 </li>
 </ul></div>
@@ -1399,12 +1411,12 @@ La réponse est un message du type "unknown command" &#8658; positionner le <tt>
 <div class="ulist"><ul>
 <li>
 <p>
-<tt>c1.java  [c2.java &#8230;]</tt> : pour la classe c1.java, et autres si précisées (*.java possible), les classes doivent exister dans le répertoire courant,
+<tt>c1.java  [c2.java &#8230;]</tt> : pour la classe c1.java, et autres si précisées (<tt>*.java</tt> possible), les classes doivent exister dans le répertoire courant,
 </p>
 </li>
 <li>
 <p>
-<tt>-d  rep</tt> : recommandé, la documentation est générée dans le répertoire rep (<tt>-d</tt> : directory),
+<tt>-d  rep</tt> : recommandé, la documentation est générée dans le répertoire rep (<tt>-d</tt> comme "directory"),
 </p>
 </li>
 <li>
@@ -1421,7 +1433,7 @@ La réponse est un message du type "unknown command" &#8658; positionner le <tt>
 <p>
 <tt>-link URLDOC</tt> : optionnel, provoque la génération de liens hypertextes depuis la documentation générée vers une autre documentation située à URLDOC. L&#8217;URL peut être une URL classique ou bien un fichier local.
 </p>
-<div class="paragraph"><p>Exemple : <a href="http://java.sun.com/javase/6/docs/api/">http://java.sun.com/javase/6/docs/api/</a>. Cela fera que les noms de classes connues dans l&#8217;API Java (String, &#8230;) se présenteront comme des liens hypertextes vers la documentation générée.</p></div>
+<div class="paragraph"><p>Exemple : <a href="http://docs.oracle.com/javase/7/docs/api/">http://docs.oracle.com/javase/7/docs/api/</a>. Cela fera que les noms de classes connues dans l&#8217;API Java (String, &#8230;) se présenteront comme des liens hypertextes vers la documentation générée.</p></div>
 </li>
 </ul></div>
 </div>
@@ -1438,6 +1450,13 @@ La réponse est un message du type "unknown command" &#8658; positionner le <tt>
 <p>
 <strong>générer la documentation de toutes vos classes du TP (hiérarchie de Compte + autres classes),</strong>
 </p>
+<div class="ulist"><ul>
+<li>
+<p>
+Exemple de commande :  <tt>javadoc  -version  -author  -link <a href="http://docs.oracle.com/javase/7/docs/api/">http://docs.oracle.com/javase/7/docs/api/</a>  -d  monRepertoire *.java</tt>
+</p>
+</li>
+</ul></div>
 </li>
 <li>
 <p>
@@ -1635,7 +1654,7 @@ Développement de classes qui <strong>héritent</strong> de vos classes.
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2015-02-25 08:43:51 CET
+Dernière mise à jour 2015-04-17 17:45:27 CEST
 </div>
 </div>
 </body>

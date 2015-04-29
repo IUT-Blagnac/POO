@@ -870,7 +870,7 @@ cellspacing="0" cellpadding="4">
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">Durée</p></td>
-<td align="left" valign="top"><p class="table"><strong>2 séance</strong> de 1,5h sur machine.</p></td>
+<td align="left" valign="top"><p class="table"><strong>2 séances</strong> de 1,5h sur machine.</p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">À rendre</p></td>
@@ -1368,14 +1368,9 @@ Si besoin : tp11-partie1 : contient les fichiers ci-dessus si vous n'êtes pas a
 <div class="olist arabic"><ol class="arabic">
 <li>
 <p>
-Dans la classe <strong><tt>Compte</tt></strong>
+Dans la classe <strong><tt>Compte</tt></strong>, déclarer une nouvelle méthode :
 </p>
 <div class="olist loweralpha"><ol class="loweralpha">
-<li>
-<p>
-Déclarer une nouvelle méthode :
-</p>
-<div class="olist lowerroman"><ol class="lowerroman">
 <li>
 <p>
 <tt>public void  afficherAvecSolde ()</tt>.
@@ -1390,9 +1385,9 @@ Elle affiche le Compte (méthode <tt>this.afficher()</tt>) et ajoute le solde à
 </li>
 <li>
 <p>
-Déclarer une autre méthode :
+Dans la classe <strong><tt>Compte</tt></strong>, déclarer une nouvelle méthode :
 </p>
-<div class="olist lowerroman"><ol class="lowerroman">
+<div class="olist loweralpha"><ol class="loweralpha">
 <li>
 <p>
 <tt>public void transferer (Compte c, double pSomme) throws CompteException</tt>.
@@ -1405,7 +1400,17 @@ Elle transfère (virement) pSomme euros de l&#8217;objet courant (retrait, <tt>t
 </li>
 <li>
 <p>
-Elle lève une exception <tt>CompteException</tt> si le dépôt ou le retrait sur un des deux comptes ne peut pas avoir lieu normalement. En fait elle "laisse" passer les exceptions levées par retirer() ou deposer().
+Elle lève une exception <tt>CompteException</tt>
+</p>
+<div class="olist lowerroman"><ol class="lowerroman">
+<li>
+<p>
+Si le <tt>Compte c</tt> vaut null.
+</p>
+</li>
+<li>
+<p>
+Si le dépôt ou le retrait sur un des deux comptes ne peut pas avoir lieu normalement. <strong>En fait elle "laisse" passer les exceptions levées par retirer() ou deposer()</strong>.
 </p>
 </li>
 </ol></div>
@@ -2337,7 +2342,13 @@ SUVORK5CYII=" />
 <pre><tt>public abstract class CompteSecurise { ... }</tt></pre>
 </div></div>
 <div class="paragraph"><p>Le programme continue à fonctionner.</p></div>
-<div class="paragraph"><p>Pour les classes héritant de CompteSecurise (CompteBancaire, CompteJeune), on ne peut pas utiliser dans ClasseApplicationAgenceBancaire la méthode <tt>isRetraitPossible()</tt> (à essayer si besoin). <strong>Expliquez pourquoi</strong>.</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Pour les classes héritant de CompteSecurise (CompteBancaire, CompteJeune), on ne peut pas utiliser dans ClasseApplicationAgenceBancaire la méthode <tt>isRetraitPossible()</tt>. Essayer d&#8217;appeler <tt>isRetraitPossible()</tt> dans dans la méthode de retrait sur un Compte <tt>retirerSurUnCompte()</tt> pour vérifier. <strong>Expliquez pourquoi</strong>.
+</p>
+</li>
+</ol></div>
 <div class="paragraph"><p>&#8658; Car non définie dans la classe Compte.</p></div>
 <div class="listingblock">
 <div class="content"><!-- Generator: GNU source-highlight 3.1.5
@@ -2381,7 +2392,7 @@ http://www.gnu.org/software/src-highlite -->
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2015-02-25 08:43:21 CET
+Dernière mise à jour 2015-04-27 12:40:04 CEST
 </div>
 </div>
 </body>
