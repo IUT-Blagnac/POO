@@ -1,0 +1,97 @@
+@startuml
+title Cas d'Utilisation "Saisir Dossier"
+'------------------------ Participants (in order) -------------
+actor ":Employe" as Emp
+box "View" #LightBlue
+participant ":DlgSaisieDossier" as DlgSaisie
+participant ":DlgVehicules" as DlgVehicules
+participant ":DlgPrincipal" as DlgPrincipal
+end box
+box "Controler" #LightGreen
+participant ":CtrlPrincipal" as CtrlPrincipal
+participant ":CtrlSaisieDossier" as CtrlSaisir
+end box
+box "Model" #LightGrey
+'database BD
+participant "v:Vehicules" as V
+participant ":Dossiers" as D
+participant ":Tiers" as Tiers
+end box
+
+'------------------------
+== Initialisation ==
+
+Emp -> DlgPrincipal: listeVehicules
+DlgPrincipal -> CtrlPrincipal: getListe(Vehicules)
+'--------------- DataBase
+ref over CtrlPrincipal, V, D
+	Acces a la base
+end ref
+DlgPrincipal <-- CtrlPrincipal
+create DlgVehicules
+CtrlPrincipal -> DlgVehicules: new
+DlgVehicules --> Emp: listeVehicule
+'------------------------
+Emp -> DlgVehicules: choisirVehicule(v)
+DlgVehicules -> CtrlPrincipal: getDetails(v)
+CtrlPrincipal -> V: getDetails
+DlgVehicules --> Emp: afficherDetail
+'------------------------
+Emp -> DlgVehicules: saisirDossier
+
+== SaisirDossier ==
+
+create CtrlSaisir
+DlgVehicules -> CtrlSaisir: new
+create D
+CtrlSaisir -> D: new
+'--------------- DataBase
+ref over CtrlSaisir, V, D
+	Acces a la base
+end ref
+
+create DlgSaisie
+CtrlSaisir -> DlgSaisie: new
+CtrlSaisir -> DlgSaisie: afficherListeExperts
+
+DlgSaisie --> Emp: afficherListeExperts
+Emp -> DlgSaisie: saisirExpert(e)
+DlgSaisie -> CtrlSaisir: saisirExpert(e)
+CtrlSaisir -> D: setExpert(e)
+Emp -> DlgSaisie: saisirDetails(date, description, ...)
+DlgSaisie -> CtrlSaisir: saisirDetails(date, description, ...)
+CtrlSaisir -> D: setDetails(date, description, ...)
+
+'------------------------ LOOP
+loop Pour tous les tiers impliques
+Emp -> DlgSaisie: SaisirNumTiers
+DlgSaisie -> CtrlSaisir: checkTiers
+ref over CtrlSaisir, V, D
+	Acces a la base
+end ref
+DlgSaisie <-- CtrlSaisir
+DlgSaisie --> Emp
+'------------------------ ALT
+	alt Tiers Connu
+
+		Emp -> DlgSaisie: rattacherTiers
+    	DlgSaisie -> CtrlSaisir: rattacherTiers
+    	CtrlSaisir -> D: set Tiers
+	else
+		Emp -> DlgSaisie: saisirNouveauTiers
+        DlgSaisie -> CtrlSaisir: saisirNouveauTiers
+        create Tiers
+        CtrlSaisir -> Tiers: new
+    	CtrlSaisir -> D: set Tiers
+       
+end
+end
+Emp -> DlgSaisie: Valider
+DlgSaisie -> CtrlSaisir: Valider
+CtrlSaisir -> DlgSaisie: close
+destroy DlgSaisie
+CtrlSaisir -> DlgVehicules: close
+destroy DlgVehicules
+destroy CtrlSaisir
+@enduml
+		

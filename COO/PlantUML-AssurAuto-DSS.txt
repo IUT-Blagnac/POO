@@ -1,0 +1,31 @@
+@startuml
+title DSS "Saisir Dossier"
+actor ":Employe" as Emp
+participant ":Systeme" as Syst
+Emp -> Syst: ListeVehicules
+Syst --> Emp: listeVehicule
+'------------------------
+Emp -> Syst: ChoisirVehicule
+Syst --> Emp: AfficherDetail
+'------------------------
+Emp -> Syst: SaisirDossier
+Syst --> Emp: AfficherListeExperts
+Emp -> Syst: ChoisirExpert
+Emp -> Syst: SaisirDetails(date, description, ...)
+'------------------------ LOOP
+loop Pour tous les tiers impliques
+Emp -> Syst: SaisirNumTiers
+'------------------------ ALT
+	alt Tiers Connu
+
+		Emp -> Syst: rattacherTiers
+    
+	else
+
+		Emp -> Syst: saisirNouveauTiers
+       
+end
+end
+Emp -> Syst: Valider
+@enduml
+		
