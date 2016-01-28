@@ -1,0 +1,1328 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+<meta name="generator" content="AsciiDoc 8.6.6" />
+<title>BPOO - Doc à destination des intervenants TDs et TPs BPOO-JAVA</title>
+<style type="text/css">
+/* Shared CSS for AsciiDoc xhtml11 and html5 backends */
+
+/* Default font. */
+body {
+  font-family: Georgia,serif;
+}
+
+/* Title font. */
+h1, h2, h3, h4, h5, h6,
+div.title, caption.title,
+thead, p.table.header,
+#toctitle,
+#author, #revnumber, #revdate, #revremark,
+#footer {
+  font-family: Arial,Helvetica,sans-serif;
+}
+
+body {
+  margin: 1em 5% 1em 5%;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
+a:visited {
+  color: fuchsia;
+}
+
+em {
+  font-style: italic;
+  color: navy;
+}
+
+strong {
+  font-weight: bold;
+  color: #083194;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #527bbd;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+  line-height: 1.3;
+}
+
+h1, h2, h3 {
+  border-bottom: 2px solid silver;
+}
+h2 {
+  padding-top: 0.5em;
+}
+h3 {
+  float: left;
+}
+h3 + * {
+  clear: left;
+}
+h5 {
+  font-size: 1.0em;
+}
+
+div.sectionbody {
+  margin-left: 0;
+}
+
+hr {
+  border: 1px solid silver;
+}
+
+p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+ul, ol, li > p {
+  margin-top: 0;
+}
+ul > li     { color: #aaa; }
+ul > li > * { color: black; }
+
+pre {
+  padding: 0;
+  margin: 0;
+}
+
+#author {
+  color: #527bbd;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+#email {
+}
+#revnumber, #revdate, #revremark {
+}
+
+#footer {
+  font-size: small;
+  border-top: 2px solid silver;
+  padding-top: 0.5em;
+  margin-top: 4.0em;
+}
+#footer-text {
+  float: left;
+  padding-bottom: 0.5em;
+}
+#footer-badges {
+  float: right;
+  padding-bottom: 0.5em;
+}
+
+#preamble {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+div.imageblock, div.exampleblock, div.verseblock,
+div.quoteblock, div.literalblock, div.listingblock, div.sidebarblock,
+div.admonitionblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.admonitionblock {
+  margin-top: 2.0em;
+  margin-bottom: 2.0em;
+  margin-right: 10%;
+  color: #606060;
+}
+
+div.content { /* Block element content. */
+  padding: 0;
+}
+
+/* Block element titles. */
+div.title, caption.title {
+  color: #527bbd;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 1.0em;
+  margin-bottom: 0.5em;
+}
+div.title + * {
+  margin-top: 0;
+}
+
+td div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content + div.title {
+  margin-top: 0.0em;
+}
+
+div.sidebarblock > div.content {
+  background: #ffffee;
+  border: 1px solid #dddddd;
+  border-left: 4px solid #f0f0f0;
+  padding: 0.5em;
+}
+
+div.listingblock > div.content {
+  border: 1px solid #dddddd;
+  border-left: 5px solid #f0f0f0;
+  background: #f8f8f8;
+  padding: 0.5em;
+}
+
+div.quoteblock, div.verseblock {
+  padding-left: 1.0em;
+  margin-left: 1.0em;
+  margin-right: 10%;
+  border-left: 5px solid #f0f0f0;
+  color: #888;
+}
+
+div.quoteblock > div.attribution {
+  padding-top: 0.5em;
+  text-align: right;
+}
+
+div.verseblock > pre.content {
+  font-family: inherit;
+  font-size: inherit;
+}
+div.verseblock > div.attribution {
+  padding-top: 0.75em;
+  text-align: left;
+}
+/* DEPRECATED: Pre version 8.2.7 verse style literal block. */
+div.verseblock + div.attribution {
+  text-align: left;
+}
+
+div.admonitionblock .icon {
+  vertical-align: top;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #527bbd;
+  padding-right: 0.5em;
+}
+div.admonitionblock td.content {
+  padding-left: 0.5em;
+  border-left: 3px solid #dddddd;
+}
+
+div.exampleblock > div.content {
+  border-left: 3px solid #dddddd;
+  padding-left: 0.5em;
+}
+
+div.imageblock div.content { padding-left: 0; }
+span.image img { border-style: none; }
+a.image:visited { color: white; }
+
+dl {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+dt {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  font-style: normal;
+  color: navy;
+}
+dd > *:first-child {
+  margin-top: 0.1em;
+}
+
+ul, ol {
+    list-style-position: outside;
+}
+ol.arabic {
+  list-style-type: decimal;
+}
+ol.loweralpha {
+  list-style-type: lower-alpha;
+}
+ol.upperalpha {
+  list-style-type: upper-alpha;
+}
+ol.lowerroman {
+  list-style-type: lower-roman;
+}
+ol.upperroman {
+  list-style-type: upper-roman;
+}
+
+div.compact ul, div.compact ol,
+div.compact p, div.compact p,
+div.compact div, div.compact div {
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+}
+
+tfoot {
+  font-weight: bold;
+}
+td > div.verse {
+  white-space: pre;
+}
+
+div.hdlist {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+div.hdlist tr {
+  padding-bottom: 15px;
+}
+dt.hdlist1.strong, td.hdlist1.strong {
+  font-weight: bold;
+}
+td.hdlist1 {
+  vertical-align: top;
+  font-style: normal;
+  padding-right: 0.8em;
+  color: navy;
+}
+td.hdlist2 {
+  vertical-align: top;
+}
+div.hdlist.compact tr {
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.comment {
+  background: yellow;
+}
+
+.footnote, .footnoteref {
+  font-size: 0.8em;
+}
+
+span.footnote, span.footnoteref {
+  vertical-align: super;
+}
+
+#footnotes {
+  margin: 20px 0 20px 0;
+  padding: 7px 0 0 0;
+}
+
+#footnotes div.footnote {
+  margin: 0 0 5px 0;
+}
+
+#footnotes hr {
+  border: none;
+  border-top: 1px solid silver;
+  height: 1px;
+  text-align: left;
+  margin-left: 0;
+  width: 20%;
+  min-width: 100px;
+}
+
+div.colist td {
+  padding-right: 0.5em;
+  padding-bottom: 0.3em;
+  vertical-align: top;
+}
+div.colist td img {
+  margin-top: 0.3em;
+}
+
+@media print {
+  #footer-badges { display: none; }
+}
+
+#toc {
+  margin-bottom: 2.5em;
+}
+
+#toctitle {
+  color: #527bbd;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 1.0em;
+  margin-bottom: 0.1em;
+}
+
+div.toclevel1, div.toclevel2, div.toclevel3, div.toclevel4 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+div.toclevel2 {
+  margin-left: 2em;
+  font-size: 0.9em;
+}
+div.toclevel3 {
+  margin-left: 4em;
+  font-size: 0.9em;
+}
+div.toclevel4 {
+  margin-left: 6em;
+  font-size: 0.9em;
+}
+
+span.aqua { color: aqua; }
+span.black { color: black; }
+span.blue { color: blue; }
+span.fuchsia { color: fuchsia; }
+span.gray { color: gray; }
+span.green { color: green; }
+span.lime { color: lime; }
+span.maroon { color: maroon; }
+span.navy { color: navy; }
+span.olive { color: olive; }
+span.purple { color: purple; }
+span.red { color: red; }
+span.silver { color: silver; }
+span.teal { color: teal; }
+span.white { color: white; }
+span.yellow { color: yellow; }
+
+span.aqua-background { background: aqua; }
+span.black-background { background: black; }
+span.blue-background { background: blue; }
+span.fuchsia-background { background: fuchsia; }
+span.gray-background { background: gray; }
+span.green-background { background: green; }
+span.lime-background { background: lime; }
+span.maroon-background { background: maroon; }
+span.navy-background { background: navy; }
+span.olive-background { background: olive; }
+span.purple-background { background: purple; }
+span.red-background { background: red; }
+span.silver-background { background: silver; }
+span.teal-background { background: teal; }
+span.white-background { background: white; }
+span.yellow-background { background: yellow; }
+
+span.big { font-size: 2em; }
+span.small { font-size: 0.6em; }
+
+span.underline { text-decoration: underline; }
+span.overline { text-decoration: overline; }
+span.line-through { text-decoration: line-through; }
+
+
+/*
+ * xhtml11 specific
+ *
+ * */
+
+tt {
+  font-family: monospace;
+  font-size: inherit;
+  color: navy;
+}
+
+div.tableblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.tableblock > table {
+  border: 3px solid #527bbd;
+}
+thead, p.table.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+p.table {
+  margin-top: 0;
+}
+/* Because the table frame attribute is overriden by CSS in most browsers. */
+div.tableblock > table[frame="void"] {
+  border-style: none;
+}
+div.tableblock > table[frame="hsides"] {
+  border-left-style: none;
+  border-right-style: none;
+}
+div.tableblock > table[frame="vsides"] {
+  border-top-style: none;
+  border-bottom-style: none;
+}
+
+
+/*
+ * html5 specific
+ *
+ * */
+
+.monospaced {
+  font-family: monospace;
+  font-size: inherit;
+  color: navy;
+}
+
+table.tableblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+thead, p.tableblock.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+p.tableblock {
+  margin-top: 0;
+}
+table.tableblock {
+  border-width: 3px;
+  border-spacing: 0px;
+  border-style: solid;
+  border-color: #527bbd;
+  border-collapse: collapse;
+}
+th.tableblock, td.tableblock {
+  border-width: 1px;
+  padding: 4px;
+  border-style: solid;
+  border-color: #527bbd;
+}
+
+table.tableblock.frame-topbot {
+  border-left-style: hidden;
+  border-right-style: hidden;
+}
+table.tableblock.frame-sides {
+  border-top-style: hidden;
+  border-bottom-style: hidden;
+}
+table.tableblock.frame-none {
+  border-style: hidden;
+}
+
+th.tableblock.halign-left, td.tableblock.halign-left {
+  text-align: left;
+}
+th.tableblock.halign-center, td.tableblock.halign-center {
+  text-align: center;
+}
+th.tableblock.halign-right, td.tableblock.halign-right {
+  text-align: right;
+}
+
+th.tableblock.valign-top, td.tableblock.valign-top {
+  vertical-align: top;
+}
+th.tableblock.valign-middle, td.tableblock.valign-middle {
+  vertical-align: middle;
+}
+th.tableblock.valign-bottom, td.tableblock.valign-bottom {
+  vertical-align: bottom;
+}
+
+
+/*
+ * manpage specific
+ *
+ * */
+
+body.manpage h1 {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  border-top: 2px solid silver;
+  border-bottom: 2px solid silver;
+}
+body.manpage h2 {
+  border-style: none;
+}
+body.manpage div.sectionbody {
+  margin-left: 3em;
+}
+
+@media print {
+  body.manpage div#toc { display: none; }
+}
+</style>
+<script type="text/javascript">
+/*<![CDATA[*/
+var asciidoc = {  // Namespace.
+
+/////////////////////////////////////////////////////////////////////
+// Table Of Contents generator
+/////////////////////////////////////////////////////////////////////
+
+/* Author: Mihai Bazon, September 2002
+ * http://students.infoiasi.ro/~mishoo
+ *
+ * Table Of Content generator
+ * Version: 0.4
+ *
+ * Feel free to use this script under the terms of the GNU General Public
+ * License, as long as you do not remove or alter this notice.
+ */
+
+ /* modified by Troy D. Hanson, September 2006. License: GPL */
+ /* modified by Stuart Rackham, 2006, 2009. License: GPL */
+
+// toclevels = 1..4.
+toc: function (toclevels) {
+
+  function getText(el) {
+    var text = "";
+    for (var i = el.firstChild; i != null; i = i.nextSibling) {
+      if (i.nodeType == 3 /* Node.TEXT_NODE */) // IE doesn't speak constants.
+        text += i.data;
+      else if (i.firstChild != null)
+        text += getText(i);
+    }
+    return text;
+  }
+
+  function TocEntry(el, text, toclevel) {
+    this.element = el;
+    this.text = text;
+    this.toclevel = toclevel;
+  }
+
+  function tocEntries(el, toclevels) {
+    var result = new Array;
+    var re = new RegExp('[hH]([2-'+(toclevels+1)+'])');
+    // Function that scans the DOM tree for header elements (the DOM2
+    // nodeIterator API would be a better technique but not supported by all
+    // browsers).
+    var iterate = function (el) {
+      for (var i = el.firstChild; i != null; i = i.nextSibling) {
+        if (i.nodeType == 1 /* Node.ELEMENT_NODE */) {
+          var mo = re.exec(i.tagName);
+          if (mo && (i.getAttribute("class") || i.getAttribute("className")) != "float") {
+            result[result.length] = new TocEntry(i, getText(i), mo[1]-1);
+          }
+          iterate(i);
+        }
+      }
+    }
+    iterate(el);
+    return result;
+  }
+
+  var toc = document.getElementById("toc");
+  if (!toc) {
+    return;
+  }
+
+  // Delete existing TOC entries in case we're reloading the TOC.
+  var tocEntriesToRemove = [];
+  var i;
+  for (i = 0; i < toc.childNodes.length; i++) {
+    var entry = toc.childNodes[i];
+    if (entry.nodeName == 'div'
+     && entry.getAttribute("class")
+     && entry.getAttribute("class").match(/^toclevel/))
+      tocEntriesToRemove.push(entry);
+  }
+  for (i = 0; i < tocEntriesToRemove.length; i++) {
+    toc.removeChild(tocEntriesToRemove[i]);
+  }
+
+  // Rebuild TOC entries.
+  var entries = tocEntries(document.getElementById("content"), toclevels);
+  for (var i = 0; i < entries.length; ++i) {
+    var entry = entries[i];
+    if (entry.element.id == "")
+      entry.element.id = "_toc_" + i;
+    var a = document.createElement("a");
+    a.href = "#" + entry.element.id;
+    a.appendChild(document.createTextNode(entry.text));
+    var div = document.createElement("div");
+    div.appendChild(a);
+    div.className = "toclevel" + entry.toclevel;
+    toc.appendChild(div);
+  }
+  if (entries.length == 0)
+    toc.parentNode.removeChild(toc);
+},
+
+
+/////////////////////////////////////////////////////////////////////
+// Footnotes generator
+/////////////////////////////////////////////////////////////////////
+
+/* Based on footnote generation code from:
+ * http://www.brandspankingnew.net/archive/2005/07/format_footnote.html
+ */
+
+footnotes: function () {
+  // Delete existing footnote entries in case we're reloading the footnodes.
+  var i;
+  var noteholder = document.getElementById("footnotes");
+  if (!noteholder) {
+    return;
+  }
+  var entriesToRemove = [];
+  for (i = 0; i < noteholder.childNodes.length; i++) {
+    var entry = noteholder.childNodes[i];
+    if (entry.nodeName == 'div' && entry.getAttribute("class") == "footnote")
+      entriesToRemove.push(entry);
+  }
+  for (i = 0; i < entriesToRemove.length; i++) {
+    noteholder.removeChild(entriesToRemove[i]);
+  }
+
+  // Rebuild footnote entries.
+  var cont = document.getElementById("content");
+  var spans = cont.getElementsByTagName("span");
+  var refs = {};
+  var n = 0;
+  for (i=0; i<spans.length; i++) {
+    if (spans[i].className == "footnote") {
+      n++;
+      var note = spans[i].getAttribute("data-note");
+      if (!note) {
+        // Use [\s\S] in place of . so multi-line matches work.
+        // Because JavaScript has no s (dotall) regex flag.
+        note = spans[i].innerHTML.match(/\s*\[([\s\S]*)]\s*/)[1];
+        spans[i].innerHTML =
+          "[<a id='_footnoteref_" + n + "' href='#_footnote_" + n +
+          "' title='View footnote' class='footnote'>" + n + "</a>]";
+        spans[i].setAttribute("data-note", note);
+      }
+      noteholder.innerHTML +=
+        "<div class='footnote' id='_footnote_" + n + "'>" +
+        "<a href='#_footnoteref_" + n + "' title='Return to text'>" +
+        n + "</a>. " + note + "</div>";
+      var id =spans[i].getAttribute("id");
+      if (id != null) refs["#"+id] = n;
+    }
+  }
+  if (n == 0)
+    noteholder.parentNode.removeChild(noteholder);
+  else {
+    // Process footnoterefs.
+    for (i=0; i<spans.length; i++) {
+      if (spans[i].className == "footnoteref") {
+        var href = spans[i].getElementsByTagName("a")[0].getAttribute("href");
+        href = href.match(/#.*/)[0];  // Because IE return full URL.
+        n = refs[href];
+        spans[i].innerHTML =
+          "[<a href='#_footnote_" + n +
+          "' title='View footnote' class='footnote'>" + n + "</a>]";
+      }
+    }
+  }
+},
+
+install: function(toclevels) {
+  var timerId;
+
+  function reinstall() {
+    asciidoc.footnotes();
+    if (toclevels) {
+      asciidoc.toc(toclevels);
+    }
+  }
+
+  function reinstallAndRemoveTimer() {
+    clearInterval(timerId);
+    reinstall();
+  }
+
+  timerId = setInterval(reinstall, 500);
+  if (document.addEventListener)
+    document.addEventListener("DOMContentLoaded", reinstallAndRemoveTimer, false);
+  else
+    window.onload = reinstallAndRemoveTimer;
+}
+
+}
+asciidoc.install(2);
+/*]]>*/
+</script>
+</head>
+<body class="article">
+<div id="header">
+<h1>BPOO - Doc à destination des intervenants TDs et TPs BPOO-JAVA</h1>
+<span id="author">Dut/Info-S2/M2103</span><br />
+<div id="toc">
+  <div id="toctitle">Table des matières</div>
+  <noscript><p><b>JavaScript must be enabled in your browser to display the table of contents.</b></p></noscript>
+</div>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph"><p><strong><span class="big">TDs et TPs BPOO-JAVA - INFOS  GENERALES  POUR  LES  ENSEIGNANTS</span></strong></p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_en_cas_de_problème_salles_machines">1. En cas de problème salles machines</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Technicien : Jerôme LOPUSNIAC (ma-me-je) : 2° étage.</p></div>
+<div class="paragraph"><p>Clef accès salles : secrétariat ou enseignant.</p></div>
+<div class="paragraph"><p>Chaque salle dispose d&#8217;un retro et d&#8217;une machine prof.</p></div>
+<div class="paragraph"><p>Accès machine prof : mot de passe à demander à un enseignant.</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_utilisation_webetud_moodle">2. Utilisation webetud/moodle</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_adresse_site_http_webetud2_iut_blagnac_fr">2.1. Adresse site : "http://webetud2.iut-blagnac.fr"</h3>
+<div class="paragraph"><p>Adresse site : "http://webetud2.iut-blagnac.fr"</p></div>
+</div>
+<div class="sect2">
+<h3 id="_connexion">2.2. Connexion</h3>
+<div class="ulist"><ul>
+<li>
+<p>
+"Connexion" (bouton haut/droite)
+</p>
+</li>
+<li>
+<p>
+Selon votre cas : "Autres utilisateurs" ou "Utilisateurs CAS"
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Votre id
+</p>
+</li>
+<li>
+<p>
+Mot de passe
+</p>
+</li>
+</ul></div>
+</li>
+</ul></div>
+</div>
+<div class="sect2">
+<h3 id="_cours_bpoo_java_sous_moodle">2.3. Cours BPOO-Java sous moodle</h3>
+<div class="paragraph"><p><tt>Insister sur :</tt></p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Rendu régulier des TPs pour ne pas se laisser déborder
+</p>
+</li>
+<li>
+<p>
+Nécessité d’amener : sujet TP, supports de cours (en ligne sous moodle si besoin), papier, crayon.
+</p>
+</li>
+<li>
+<p>
+Pour les questions, renvoyer au cours ou au TD si besoin quitte à leur expliquer avec le support.
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Éventuellement, leur dire de revoir tel paragraphe de cours/TD.
+</p>
+</li>
+</ul></div>
+</li>
+</ol></div>
+<div class="paragraph"><p>Se connecter au site.</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Cours : Bases de la programmation orientée objets
+</p>
+</li>
+<li>
+<p>
+Au début du cours, section "RESERVE AUX PROFS"
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Réservé à nous (grisé)
+</p>
+</li>
+<li>
+<p>
+Vous y trouverez
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+des infos diverses : plannings, &#8230;
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+Répertoire TPs Profs en accès restreint
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+les sujets de TPs de chaque semaine et des éléments pour nous (choses à dire aux étudiants, &#8230;)
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Par TP
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+TPxxx_Profs.html == des informations diverses pour nous sur le déroulement de la séance
+</p>
+</li>
+<li>
+<p>
+TPxxx_Support.html == le support à projeter pour nous (sujet + compléments)
+</p>
+</li>
+<li>
+<p>
+éventuel : TPxxx_SupportSlides.html == le support en mode slides à l'écran sujet + compléments)
+</p>
+</li>
+</ul></div>
+</li>
+</ul></div>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+Répertoire TDs Profs en accès restreint
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+les sujets de TDs de chaque semaine et des éléments pour nous (choses à dire aux étudiants, &#8230;)
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Par TD
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+TDxxx_Profs.html == des informations diverses pour nous sur le déroulement de la séance
+</p>
+</li>
+<li>
+<p>
+TDxxx_Sujet.html (ou fichier .doc ou .pdf) == le sujet distribué aux étudiants
+</p>
+</li>
+<li>
+<p>
+TDxxx_Support.html == le support à projeter pour nous (sujet + compléments)
+</p>
+</li>
+<li>
+<p>
+éventuel : TDxxx_SupportSlides.html == le support en mode slides à l'écran sujet + compléments)
+</p>
+</li>
+</ul></div>
+</li>
+</ul></div>
+</li>
+</ul></div>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+Voir ce que voient les étudiants
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Administration &gt; Prendre le rôle &gt; Etudiant
+</p>
+</li>
+<li>
+<p>
+Ce qui est grisé en mode "Prof" leur est invisible.
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+Une section par TP
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+A priori le TP "en cours" vient toujours en premier (on les voit donc en ordre inverse).
+</p>
+</li>
+<li>
+<p>
+Le TP sera ouvert chaque semaine.
+</p>
+</li>
+<li>
+<p>
+Les TPs seront à rendre systématiquement pour le dimanche soir 23h55.
+</p>
+</li>
+<li>
+<p>
+Contenu de la section
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Un répertoire qui contient :
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+TDxxx_Sujet.html : le sujet du TP.
+</p>
+</li>
+<li>
+<p>
+Des fichiers .zip à télécharger et en général à dézipper dans leur répertoire de travail (indiqué dans le sujet).
+</p>
+</li>
+<li>
+<p>
+Des fichiers .jar à télécharger et à positionner dans leur répertoire de travail.
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+Un dépôt du TP.
+</p>
+</li>
+</ul></div>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+Sujets
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Eventuellement Distribués papier lorsque pas trop long : je préfère. Ça permet aux étudiants de suivre ET leur code ET le sujet.
+</p>
+</li>
+<li>
+<p>
+A voir à l&#8217;usage &#8230;
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+Pour voir les rendus de TPs : plusieurs solutions
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Par CR de TP
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Menu : Administration &#8594; Rapports &#8594; Activités du cours
+</p>
+</li>
+<li>
+<p>
+Choix d’un devoir
+</p>
+</li>
+<li>
+<p>
+Cliquer sur "Consulter/évaluer tous les travaux remis"
+</p>
+</li>
+<li>
+<p>
+Groupes visibles : choisir votre groupe
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Détails plus tard
+</p>
+</li>
+</ul></div>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+Par étudiant
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Menu de gauche Participants
+</p>
+</li>
+<li>
+<p>
+Choisir "Role Etudiant" et le groupe
+</p>
+</li>
+<li>
+<p>
+Cliquer sur un nom
+</p>
+</li>
+<li>
+<p>
+Puis Menu droite Administration &#8594; Profil de Xxxx &#8594; Rapport Complet
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Les rendus sont notés :
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Le travail a été remis en avance de &#8230;
+</p>
+</li>
+<li>
+<p>
+Le devoir est en retard de &#8230;
+</p>
+</li>
+<li>
+<p>
+Pas évalué
+</p>
+</li>
+</ul></div>
+</li>
+</ul></div>
+</li>
+</ul></div>
+</li>
+</ul></div>
+</li>
+</ol></div>
+</div>
+<div class="sect2">
+<h3 id="_cours_edts_appels">2.4. Cours EDTs - appels</h3>
+<div class="paragraph"><p>Dans le cours "Organisation_DUT_INFO_S2"</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Vous avez aussi plein d’informations sur cette page
+</p>
+</li>
+<li>
+<p>
+Section "Emplois du temps et groupes" &#8594; consulter les EDTs
+</p>
+</li>
+<li>
+<p>
+Section "Gestion des absences et des UAs"
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Lien "Feuille d&#8217;APPEL [réservé aux ENSEIGNANTS]"
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Clic &#8658; Ouvre une nouvelle fenêtre pour faire l’appel
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Choisir date et heure
+</p>
+</li>
+<li>
+<p>
+Choisir Matière  "M2103-Bases Prog. Or. Objet" ou "BPOO" - il y a un bouton haut/gauche pour revenir en arrière
+</p>
+</li>
+<li>
+<p>
+Choisir Groupe de TP (ex : "G1B")
+</p>
+</li>
+<li>
+<p>
+Cocher les absents si il y en a
+</p>
+</li>
+<li>
+<p>
+Cliquer en haut à droite ou bas de page : "Pas d’absent" si pas d’absent, "Enregistrer (x)" si il y a des absents
+</p>
+</li>
+<li>
+<p>
+Si fausse manip : revenir en arrière ou fermer fenêtre et refaire
+</p>
+</li>
+</ul></div>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+Les absents apparaissent en orange. Ils seront traités par le secrétariat dans les jours qui suivent (justificatif ok &#8594; vert, pas de justificatif &#8594; rouge)
+</p>
+</li>
+<li>
+<p>
+Tant qu’ils sont en orange, on peut les modifier (par exemple si arrivée en retard et accepté en TP) :
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Lien "Feuille d&#8217;APPEL [réservé aux ENSEIGNANTS]"
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Sous le calendrier, lien "les appels de X. Xxxxxx"
+</p>
+</li>
+<li>
+<p>
+Choisir une date/groupe
+</p>
+</li>
+<li>
+<p>
+Modifier et valider comme ci-dessus. Vous pouvez "annuler" les absences non encore traitées (en orange donc).
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+Autre option :
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Lien "Feuille d&#8217;APPEL [réservé aux ENSEIGNANTS]"
+</p>
+</li>
+<li>
+<p>
+Sous le calendrier et "les appels de Xxx", lien "Toutes les absences" (tous les étudiants depuis le début du semestre)
+</p>
+</li>
+<li>
+<p>
+Vous pouvez "annuler" celles que vous avez posées non encore traitées.
+</p>
+</li>
+</ul></div>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+Voir les absences de vos étudiants &#8594; Lien "BILAN des Absences et UAs" et naviguez en visu (des liens partout)
+</p>
+</li>
+</ul></div>
+</li>
+</ul></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_utilisation_des_salles">3. Utilisation des salles</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_serveur_de_fichier_étudiants">3.1. Serveur de fichier étudiants</h3>
+<div class="paragraph"><p>Rien de particulier encore. A priori sera mis en place un serveur de disques pour les étudiants.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_outils">3.2. Outils</h3>
+<div class="paragraph"><p>Outils de dév :</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Debuggueur (TP1 surtout) : sera fait avec Eclipse
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Eclipse sur le bureau des étudiants
+</p>
+</li>
+<li>
+<p>
+Glisser / déposer des sources sur un projet Eclipse puis pose de points d&#8217;arrêts puis Debug .
+</p>
+</li>
+<li>
+<p>
+Eclipse n&#8217;est pas utilisé pour développer (sera utilisé plus tard en IHM, fin de semestre, post BPOO)
+</p>
+</li>
+<li>
+<p>
+Sur les PCs IUT
+</p>
+</li>
+<li>
+<p>
+<strong>ON N&#8217;AIDE PAS LES ETUDIANTS à résoudre des pbs install Eclipse sur leur machine pour les TPs (il faudrait 4 jours)</strong>
+</p>
+</li>
+<li>
+<p>
+<strong>Attention : s&#8217;ils utilisent Eclipse, pb pour les .zip et .jar livrés</strong>
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+Développement avec Scite
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Editeur minimaliste avec menu Outils &#8594; Compiler / Exécuter
+</p>
+</li>
+</ul></div>
+</li>
+</ol></div>
+<div class="paragraph"><p>Compilation :</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Pour les tests unitaires JUnit, une manip sera ajoutée aux TPs correspondants. Les étudiants l&#8217;ont faite en S1 : copie d&#8217;un jar et d&#8217;un fichier de paramétrage de Scite à copie en local.
+</p>
+</li>
+<li>
+<p>
+cf. dans cours BPOO : section "Pour travailler en TP"
+</p>
+</li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes"><hr /></div>
+<div id="footer">
+<div id="footer-text">
+Dernière mise à jour 2016-01-28 20:21:19 CET
+</div>
+</div>
+</body>
+</html>
