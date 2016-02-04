@@ -2341,7 +2341,48 @@ http://www.gnu.org/software/src-highlite -->
 <h2 id="_utilisation_de_classe">3. Utilisation de classe</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="sujetdevinette">3.1. Exercice</h3>
+<h3 id="_exercice_pile">3.1. Exercice Pile</h3>
+<div class="paragraph"><p>Soit la classe Pile suivante dont on ne donne que les constructeurs et les méthodes (sans les corps) :</p></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">Pile</span> <span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> String<span style="color: #990000">[]</span> elements<span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #009900">int</span> indiceSommet <span style="color: #990000">=</span> <span style="color: #990000">-</span><span style="color: #993399">1</span><span style="color: #990000">;</span>
+
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #000000">Pile</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span> <span style="color: #990000">...</span> <span style="color: #FF0000">}</span>
+
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #000000">Pile</span></span><span style="color: #990000">(</span><span style="color: #009900">int</span> pfTaille<span style="color: #990000">)</span> <span style="color: #FF0000">{</span> <span style="color: #990000">...</span> <span style="color: #FF0000">}</span>
+
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">boolean</span> <span style="font-weight: bold"><span style="color: #000000">estVide</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span> <span style="color: #990000">...</span> <span style="color: #FF0000">}</span>
+
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">empiler</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> element<span style="color: #990000">)</span> <span style="font-weight: bold"><span style="color: #0000FF">throws</span></span> Exception <span style="color: #FF0000">{</span> <span style="color: #990000">...</span> <span style="color: #FF0000">}</span>
+
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">depiler</span></span><span style="color: #990000">()</span> <span style="font-weight: bold"><span style="color: #0000FF">throws</span></span> Exception <span style="color: #FF0000">{</span> <span style="color: #990000">...</span> <span style="color: #FF0000">}</span>
+
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #008080">String</span> <span style="font-weight: bold"><span style="color: #000000">sommet</span></span><span style="color: #990000">()</span> <span style="font-weight: bold"><span style="color: #0000FF">throws</span></span> Exception <span style="color: #FF0000">{</span> <span style="color: #990000">...</span> <span style="color: #FF0000">}</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+<div class="paragraph"><p>A faire :</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Étudier le code de la classe Pile.
+</p>
+</li>
+<li>
+<p>
+Ecrire (feuille jointe) un programme main() utilisant <strong>obligatoirement des objets <tt>Pile</tt></strong> permettant : a) de saisir 10 chaînes de caractères, b) qui sépare d&#8217;un côté celles plus petites que "moto" et de l&#8217;autre celles plus grandes, et c) qui affiche ces deux "sous-listes" dans l&#8217;ordre inverse de leur saisie.
+</p>
+<div class="paragraph"><p>Exemple : saisie de "a" "b" "n" "o" "p" "c" "m" "d" "e" "q" affichera :</p></div>
+<div class="paragraph"><p>&#8658; e d m c b a</p></div>
+<div class="paragraph"><p>&#8658; q p o n</p></div>
+</li>
+</ol></div>
+</div>
+<div class="sect2">
+<h3 id="sujetdevinette">3.2. Exercice Devinette</h3>
 <div class="paragraph"><p>Nous allons utiliser une classe Devinette pour jouer, <a href="#docdevinette">cf. ci-après</a>.</p></div>
 <div class="paragraph"><p>Au jeu de la "devinette" :</p></div>
 <div class="ulist"><ul>
@@ -2436,6 +2477,19 @@ Un objet Devinette, instance de la classe Devinette, est un objet qui :
 <p>
 lors de sa création, détermine des bornes min et max au jeu et choisit la valeur à chercher,
 </p>
+<div class="ulist"><ul>
+<li>
+<p>
+tirer au sort la borne supérieure (40&lt;&gt;50) et la borne inférieure (10&lt;&gt;20) du jeu.
+</p>
+</li>
+<li>
+<p>
+tirer au sort la valeur à rechercher entre les bornes choisies ci-dessus.&lt;BR&gt;
+ Exemple : borne inf 12, bone sup 47, valeur à chercher 22.&lt;BR&gt;
+</p>
+</li>
+</ul></div>
 </li>
 <li>
 <p>
@@ -2462,7 +2516,7 @@ dispose de méthodes permettant de jouer et d’interroger l’état de la parti
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2015-02-04 20:33:24 CET
+Dernière mise à jour 2016-02-04 15:47:04 CET
 </div>
 </div>
 </body>
