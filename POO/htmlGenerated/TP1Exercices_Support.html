@@ -3043,7 +3043,17 @@ Prenez le temps de comprendre la structure créée par les objets et le tableau 
 </li>
 <li>
 <p>
-Comprendre les lignes &lt;2&gt;, &lt;3&gt;, &lt;4&gt;
+Comprendre les lignes &lt;2&gt;, &lt;3&gt;, &lt;4&gt;.
+</p>
+</li>
+<li>
+<p>
+Expliquer le résultat obtenu en &lt;6&gt; (2 fois le même affichage et 2 fois la même référence d&#8217;objet).
+</p>
+</li>
+<li>
+<p>
+Combien d&#8217;objets Personne sont créés entre les lignes &lt;5&gt; et &lt;6&gt; ?
 </p>
 </li>
 </ol></div>
@@ -3067,6 +3077,34 @@ dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
 ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
                 <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>familleSkywalker<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span>
                         System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>PersonneOperations<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">toString</span></span><span style="color: #990000">(</span>familleSkywalker<span style="color: #990000">[</span>i<span style="color: #990000">]));</span>
+
+                <span style="font-style: italic"><span style="color: #9A1900">// Tests Supplémentaires</span></span>
+                <span style="color: #008080">Personne</span> p1<span style="color: #990000">,</span> p2<span style="color: #990000">;</span>    <span style="font-style: italic"><span style="color: #9A1900">// <img alt="5" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABwSURBVAgd
+BcGhAQMhEEXBJ1cisUgkclughNSDRCLPItNKSsCeXIn8mUHS4zn5vBIKt1pLtXaEHFdEdOplg8sA
+mHRwfX/DoJHBNfr7gJGhDJgBRof0gfVCY0NTL2fBRA4j7k7Ui8LBDOoRkpabtXmlPyNbNy/5rUKm
+AAAAQ3RFWHRTb2Z0d2FyZQBAKCMpSW1hZ2VNYWdpY2sgNC4yLjggOTkvMDgvMDEgY3Jpc3R5QG15
+c3RpYy5lcy5kdXBvbnQuY29tkbohuAAAACp0RVh0U2lnbmF0dXJlAGZlNjkwNDYzMzc5ZWIyNWU1
+NjJmY2M4Y2M5YjNjN2Uw37I5ngAAAA50RVh0UGFnZQAxMngxMiswKzCEbbt9AAAAAElFTkSuQmCC" /></span></span>
+                p1 <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Personne</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Marcel"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Duanrd"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"masculin"</span><span style="color: #990000">,</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">,</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">);</span>
+                p2 <span style="color: #990000">=</span> p1<span style="color: #990000">;</span>
+                PersonneOperations<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setNom</span></span><span style="color: #990000">(</span>p1<span style="color: #990000">,</span> <span style="color: #FF0000">"NouveauPrénom"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"NouveauNom"</span><span style="color: #990000">);</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>PersonneOperations<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">toString</span></span><span style="color: #990000">(</span>p2<span style="color: #990000">));</span>   <span style="font-style: italic"><span style="color: #9A1900">// <img alt="6" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAAB3SURBVAgd
+BcGhAYMwEIbRT56sjEVGRt4KkV2jkhWQSGRtJCPUIjMCFnny5N/3kHS+a+1DEsoOpYI/Qh1GPJfh
+yQlrlBIOBx2uUd2ARoEn5pwvMArcE4sVjA6/AXODxoBPLEt22EmHI3ODmigczKDeQsqvm7U9pT+z
+czjqM2LYYQAAAEN0RVh0U29mdHdhcmUAQCgjKUltYWdlTWFnaWNrIDQuMi44IDk5LzA4LzAxIGNy
+aXN0eUBteXN0aWMuZXMuZHVwb250LmNvbZG6IbgAAAAqdEVYdFNpZ25hdHVyZQBkMjVkNzE3NmQ2
+N2EwMzhhZmMxYzU2NTU4ZTNkZmIxYf0Q9bUAAAAOdEVYdFBhZ2UAMTJ4MTIrMCswhG27fQAAAABJ
+RU5ErkJggg==" /></span></span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>PersonneOperations<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">toString</span></span><span style="color: #990000">(</span>p1<span style="color: #990000">));</span>   <span style="font-style: italic"><span style="color: #9A1900">// <img alt="6" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAAB3SURBVAgd
+BcGhAYMwEIbRT56sjEVGRt4KkV2jkhWQSGRtJCPUIjMCFnny5N/3kHS+a+1DEsoOpYI/Qh1GPJfh
+yQlrlBIOBx2uUd2ARoEn5pwvMArcE4sVjA6/AXODxoBPLEt22EmHI3ODmigczKDeQsqvm7U9pT+z
+czjqM2LYYQAAAEN0RVh0U29mdHdhcmUAQCgjKUltYWdlTWFnaWNrIDQuMi44IDk5LzA4LzAxIGNy
+aXN0eUBteXN0aWMuZXMuZHVwb250LmNvbZG6IbgAAAAqdEVYdFNpZ25hdHVyZQBkMjVkNzE3NmQ2
+N2EwMzhhZmMxYzU2NTU4ZTNkZmIxYf0Q9bUAAAAOdEVYdFBhZ2UAMTJ4MTIrMCswhG27fQAAAABJ
+RU5ErkJggg==" /></span></span>
         <span style="color: #FF0000">}</span>
 
         <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> Personne<span style="color: #990000">[]</span> <span style="font-weight: bold"><span style="color: #000000">init</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
@@ -3310,7 +3348,13 @@ gg==" /></span></span>
         <span style="color: #FF0000">}</span>
 
         <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">setNom</span></span><span style="color: #990000">(</span><span style="color: #008080">Personne</span> pfPersonne<span style="color: #990000">,</span> <span style="color: #008080">String</span> pfNom<span style="color: #990000">,</span> <span style="color: #008080">String</span> pfPrenom<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                pfPersonne<span style="color: #990000">.</span>nom <span style="color: #990000">=</span> pfNom<span style="color: #990000">;</span> <span style="font-style: italic"><span style="color: #9A1900">// 4</span></span>
+                pfPersonne<span style="color: #990000">.</span>nom <span style="color: #990000">=</span> pfNom<span style="color: #990000">;</span> <span style="font-style: italic"><span style="color: #9A1900">// <img alt="4" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABsSURBVAgd
+BcERosNAGAbAwWAwWlwM5gqLxerDh3uNYLEazJWqweCPX2ckOZ+t9SOJVEebbVeko2ewlRPzlYG3
+jvO4B1YLr2uugcnicY9W+8Kk+0uSHKwOUAO72uD7Tyu5N6B9I6nPOk/rXskP6gY2ju5T29cAAABD
+dEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGlj
+LmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAOWY4MmZjYWM5ZTAzOWNiZGI3MjM4
+MGE0NTkxMzI0ZjWAu/h2AAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
                 pfPersonne<span style="color: #990000">.</span>prenom <span style="color: #990000">=</span> pfPrenom<span style="color: #990000">;</span>
         <span style="color: #FF0000">}</span>
 <span style="color: #FF0000">}</span></tt></pre></div></div>
@@ -4125,7 +4169,7 @@ N&#8217;oubliez-pas de vous déconnecter
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2015-02-11 17:02:53 CET
+Dernière mise à jour 2016-02-04 16:54:26 CET
 </div>
 </div>
 </body>

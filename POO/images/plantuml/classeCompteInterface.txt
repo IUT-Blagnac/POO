@@ -14,7 +14,7 @@ class Compte {
 	
 	+ String toString()
 	---
-	+ void afficher()
+	+ void afficher() // Special TP
 }
 
 @enduml

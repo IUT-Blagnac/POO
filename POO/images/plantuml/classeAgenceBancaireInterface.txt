@@ -15,7 +15,7 @@ class AgenceBancaire {
 
 	+ String toString()
 	---
-	+ void afficher() 
+	+ void afficher()  // Special TP
 }
 
 @enduml
