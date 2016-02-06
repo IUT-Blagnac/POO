@@ -1,4 +1,8 @@
 
+Linux
+sudo -s => rester sudo
+
+
 git branch : liste des branches
 
 
