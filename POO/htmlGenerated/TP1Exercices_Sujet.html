@@ -979,7 +979,7 @@ Exécuter pas à pas ce programme et indiquer ce qui est affiché (CR).
 </li>
 <li>
 <p>
-Quelles sont les valeurs de i en &lt;2&gt;, &lt;3&gt;, &lt;4&gt; ?
+Quelles sont les valeurs de i en &lt;2&gt;, &lt;3&gt;, &lt;4&gt; (CR) ?
 </p>
 </li>
 </ul></div>
@@ -1089,8 +1089,8 @@ RkWOKkVXIjB5X2ac8f8HA74K8I0SaJkAAAAASUVORK5CYII=" />
 </td>
 <td class="content">
 <div class="title">ATTENTION</div>
-<div class="paragraph"><p>A noter : le debugger affiche en face des variables tableaux "(id=..)" : c&#8217;est l&#8217;identifiant d&#8217;objet.
-Noter aussi que la séparation entre la pile et le tas n&#8217;est pas indiquée clairement. Mais les variables du sous-programme qui s&#8217;exécute sont dans la pile, les tableaux sont dans le tas.</p></div>
+<div class="paragraph"><p>A noter : le debugger affiche en face des variables tableaux "(id=..)" : c&#8217;est l&#8217;identifiant d&#8217;objet.</p></div>
+<div class="paragraph"><p>Noter aussi que la séparation entre la pile et le tas n&#8217;est pas indiquée clairement. Mais les variables du sous-programme qui s&#8217;exécute sont dans la pile, les tableaux sont dans le tas.</p></div>
 </td>
 </tr></table>
 </div>
@@ -1265,7 +1265,7 @@ Poser un point d&#8217;arrêt sur la ligne &lt;1&gt;.
 </li>
 <li>
 <p>
-Exécuter pas à pas ce programme et à chaque point &lt;2&gt; à &lt;8&gt;, indiquer dans le CR :
+Exécuter pas à pas ce programme et <strong>à chaque point &lt;2&gt; à &lt;8&gt;</strong>, indiquer dans le compte rendu (CR) :
 </p>
 <div class="ulist"><ul>
 <li>
@@ -1424,10 +1424,10 @@ Reprendre le code du début du tp (cf. ci-dessous);
 by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
-<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">double</span> <span style="font-weight: bold"><span style="color: #000000">plusPlus</span></span> <span style="color: #990000">(</span><span style="color: #009900">double</span> pFA<span style="color: #990000">,</span> <span style="color: #009900">int</span> pfD<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">double</span> <span style="font-weight: bold"><span style="color: #000000">plusPlus</span></span> <span style="color: #990000">(</span><span style="color: #009900">double</span> pfA<span style="color: #990000">,</span> <span style="color: #009900">int</span> pfD<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
         <span style="color: #009900">double</span> res<span style="color: #990000">;</span>
 
-        res <span style="color: #990000">=</span> pFA <span style="color: #990000">+</span> pfD <span style="color: #990000">+</span> <span style="color: #993399">1</span><span style="color: #990000">;</span>
+        res <span style="color: #990000">=</span> pfA <span style="color: #990000">+</span> pfD <span style="color: #990000">+</span> <span style="color: #993399">1</span><span style="color: #990000">;</span>
         <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> res<span style="color: #990000">;</span>
 <span style="color: #FF0000">}</span>
 <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> argv<span style="color: #990000">[])</span> <span style="color: #FF0000">{</span>
@@ -1472,7 +1472,7 @@ Exécuter pas à pas à partir du début du main jusqu'à &lt;2&gt;
 </li>
 <li>
 <p>
-A cet endroit quelles sont les valeurs de ageDebut et anneesEtudes ?
+A cet endroit quelles sont les valeurs de ageDebut et anneesEtudes (CR) ?
 </p>
 </li>
 <li>
@@ -1487,12 +1487,12 @@ A l&#8217;entrée dans le sous-programme :
 <div class="ulist"><ul>
 <li>
 <p>
-Quelles sont les valeurs de a et d ?
+Quelles sont les valeurs de pfA et pfD (CR) ?
 </p>
 </li>
 <li>
 <p>
-Pourquoi ?
+Pourquoi (CR) ?
 </p>
 </li>
 </ul></div>
@@ -1504,7 +1504,7 @@ Exécuter pas à pas jusqu'à revenir en &lt;3&gt;
 </li>
 <li>
 <p>
-Quelle valeur est affectée à ageFinEtudes ?
+Quelle valeur est affectée à ageFinEtudes (CR) ?
 </p>
 </li>
 </ol></div>
@@ -1519,12 +1519,12 @@ Modifier le programme ci-dessus pour changer dans ClasseEssai.plusPlus() :
 <div class="ulist"><ul>
 <li>
 <p>
-l&#8217;identificateur a par ageDebut
+l&#8217;identificateur pfA par ageDebut
 </p>
 </li>
 <li>
 <p>
-l&#8217;identificateur d par anneesEtudes
+l&#8217;identificateur pfD par anneesEtudes
 </p>
 </li>
 </ul></div>
@@ -1563,7 +1563,7 @@ Ré exécuter pas à pas comme ci-dessus.
 </li>
 <li>
 <p>
-Quelles sont les valeurs de ageDebut et anneesEtudes dans le main() après retour du sous-programme plusPlus() ? (en &lt;2&gt; par exemple).
+Quelles sont les valeurs de ageDebut et anneesEtudes dans le main() après retour du sous-programme plusPlus() (CR) ? (en &lt;2&gt; par exemple).
 </p>
 </li>
 </ul></div>
@@ -1667,7 +1667,7 @@ Poser un point d&#8217;arrêt en &lt;1&gt;
 </li>
 <li>
 <p>
-Exécuter pas à pas plusieurs fois si nécessaire et donner les informations suivantes dans le CR :
+Exécuter pas à pas plusieurs fois si nécessaire et donner les informations suivantes dans le compte rendu (CR) :
 </p>
 <div class="olist loweralpha"><ol class="loweralpha">
 <li>
@@ -1892,7 +1892,7 @@ Cas de "Padme" dont l&#8217;id (et la description) se retrouve en conjoint de "A
 </li>
 </ul></div>
 <div class="paragraph"><p>Notez que les numéros d&#8217;objets affichés sont différents des "id" affichés par le debugger. Ils sont néanmoins équivalents (identifiant unique).</p></div>
-<div class="paragraph"><p>Notez aussi que la valeur null est affichée en 0.</p></div>
+<div class="paragraph"><p>Notez aussi que la valeur null est affichée en 0 par l&#8217;instruction <tt>System.identityHashCode(&#8230;)</tt> alors que sinon "null" est affiché dans le debugger Eclipse ou sur la console lors d&#8217;un affichage normal (<tt>System.out.print(&#8230;)</tt>).</p></div>
 </td>
 </tr></table>
 </div>
@@ -2007,7 +2007,7 @@ Poser un point d&#8217;arrêt en &lt;1&gt;
 </li>
 <li>
 <p>
-Exécuter pas à pas plusieurs fois si nécessaire le programme et indiquer dans le compte rendu ce qu&#8217;affiche ce programme.
+Exécuter pas à pas plusieurs fois si nécessaire le programme et indiquer dans le compte rendu (CR) ce qu&#8217;affiche ce programme.
 </p>
 </li>
 <li>
@@ -2022,12 +2022,12 @@ Comprendre les lignes &lt;2&gt;, &lt;3&gt;, &lt;4&gt;.
 </li>
 <li>
 <p>
-Expliquer le résultat obtenu en &lt;6&gt; (2 fois le même affichage et 2 fois la même référence d&#8217;objet).
+Expliquer le résultat obtenu en &lt;6&gt; (2 fois le même affichage et 2 fois la même référence d&#8217;objet) (CR).
 </p>
 </li>
 <li>
 <p>
-Combien d&#8217;objets Personne sont créés entre les lignes &lt;5&gt; et &lt;6&gt; ?
+Combien d&#8217;objets Personne sont créés entre les lignes &lt;5&gt; et &lt;6&gt; (CR) ?
 </p>
 </li>
 </ol></div>
@@ -2216,17 +2216,17 @@ Prenez le temps de comprendre : relever le numéro d&#8217;objet :
 <div class="ulist"><ul>
 <li>
 <p>
-de schmi en &lt;2&gt;
+de schmi en &lt;2&gt; (CR)
 </p>
 </li>
 <li>
 <p>
-de pfPersonne en &lt;3&gt; dans testChangeObjet()
+de pfPersonne en &lt;3&gt; dans testChangeObjet() (CR)
 </p>
 </li>
 <li>
 <p>
-de pfPersonne en &lt;4&gt; dans setNom()
+de pfPersonne en &lt;4&gt; dans setNom() (CR)
 </p>
 </li>
 </ul></div>
@@ -2354,12 +2354,12 @@ Exécuter pas à pas plusieurs fois si nécessaire le programme et indiquer dans
 <div class="ulist"><ul>
 <li>
 <p>
-Dans quel cas (unique) estPresent() renvoie true ?  (valeurs du tableau et valeur recherchée)
+Dans quel cas (unique) estPresent() renvoie true (CR) ?  (valeurs du tableau et valeur recherchée)
 </p>
 </li>
 <li>
 <p>
-Quel bug se cache dans estPresent() compte tenu de l&#8217;objectif fixé plus haut ? Corriger estPresent().
+Quel bug se cache dans estPresent() compte tenu de l&#8217;objectif fixé plus haut (CR) ? Corriger estPresent().
 </p>
 </li>
 <li>
@@ -2423,7 +2423,7 @@ ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
 </div>
 <div class="sect2">
 <h3 id="_exercice_un_cas_connu">8.2. Exercice : un cas connu</h3>
-<div class="paragraph"><p>Par une (ou plusieurs) exécution pas à pas, trouver ce que fait le sous-programme mystère() &#8230; quel serait le nom approprié et l&#8217;algorithme mis en oeuvre ?</p></div>
+<div class="paragraph"><p>Par une (ou plusieurs) exécution pas à pas, trouver ce que fait le sous-programme mystère() &#8230; quel serait le nom approprié et l&#8217;algorithme mis en oeuvre (CR) ?</p></div>
 <div class="olist arabic"><ol class="arabic">
 <li>
 <p>
@@ -2478,7 +2478,7 @@ http://www.gnu.org/software/src-highlite -->
 </div>
 <div class="sect2">
 <h3 id="_exercice_nouveau_mais_simple">8.3. Exercice : nouveau mais simple</h3>
-<div class="paragraph"><p>Par une (ou plusieurs) exécution pas à pas, trouver ce que fait le sous-programme mystère2() &#8230; quel serait le nom approprié ?</p></div>
+<div class="paragraph"><p>Par une (ou plusieurs) exécution pas à pas, trouver ce que fait le sous-programme mystère2() &#8230; quel serait le nom approprié (CR) ?</p></div>
 <div class="olist arabic"><ol class="arabic">
 <li>
 <p>
@@ -2571,7 +2571,7 @@ ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></span></span>
 </div>
 <div class="sect2">
 <h3 id="_exercice_un_cas_plus_dur">8.4. Exercice : un cas plus dur</h3>
-<div class="paragraph"><p>Par une (ou plusieurs) exécution pas à pas, trouver ce que fait le sous-programme mystère3() &#8230; quel serait le nom approprié ?</p></div>
+<div class="paragraph"><p>Par une (ou plusieurs) exécution pas à pas, trouver ce que fait le sous-programme mystère3() &#8230; quel serait le nom approprié (CR) ?</p></div>
 <div class="olist arabic"><ol class="arabic">
 <li>
 <p>
@@ -2646,7 +2646,7 @@ N&#8217;oubliez-pas de vous déconnecter
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2016-02-04 16:54:26 CET
+Dernière mise à jour 2016-02-08 13:32:48 CET
 </div>
 </div>
 </body>
