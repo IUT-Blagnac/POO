@@ -870,7 +870,7 @@ cellspacing="0" cellpadding="4">
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">Durée</p></td>
-<td align="left" valign="top"><p class="table"><strong>2 séance</strong> de 1,5h sur machine.</p></td>
+<td align="left" valign="top"><p class="table"><strong>2 séances</strong> de 1,5h sur machine.</p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">À rendre</p></td>
@@ -944,7 +944,7 @@ AMfx8ZYkSYI90L87QNC71WolxgIK0Nf4W+GVUAX9QsCXDSwq8B//47GAh7AxjwdUQQPI4onGcI6G
 lJga0LT8+uRGJ5P/2OBGpz/mT34Gmsy9nx36v3PoX1H4mIUGLCOSAAAAAElFTkSuQmCC" />
 </td>
 <td class="content">
-<div class="paragraph"><p>La documentation de la classe ArrayList est accessible depuis <a href="http://docs.oracle.com/javase/7/docs/api/">documentation java</a> et se trouve ici : <a href="http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html">documentation ArrayList&lt;E&gt;</a>.</p></div>
+<div class="paragraph"><p>La documentation de la classe ArrayList&lt;E&gt; est accessible depuis <a href="http://docs.oracle.com/javase/7/docs/api/">documentation java</a> et se trouve ici : <a href="http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html">documentation ArrayList&lt;E&gt;</a>.</p></div>
 </td>
 </tr></table>
 </div>
@@ -1697,12 +1697,71 @@ Enfin <tt>removeCompte()</tt> ne peut être testée sans les 2 précédentes.
 </div>
 </div>
 <div class="sect1">
-<h2 id="_vous_avez_fini_optionnel">4. Vous avez fini ? (optionnel)</h2>
+<h2 id="_pour_aller_plus_loin_8230">4. Pour aller plus loin &#8230;</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_la_méthode_tostring_et_sa_réécriture">4.1. La Méthode toString() et sa réécriture.</h3>
+<div class="paragraph"><p>La méthode toString() est écrite dans la classe <tt>AgenceBancaire</tt>.</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Pour voir le résultat produit, dans un main(), essayer le code suivant :
+</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="color: #008080">AgenceBancaire</span> monAg <span style="color: #990000">;</span>
+<span style="color: #008080">Compte</span> c<span style="color: #990000">;</span>
+monAg <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">AgenceBancaire</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Caisse Ep"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Pibrac"</span><span style="color: #990000">);</span>
+
+System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span>monAg<span style="color: #990000">);</span>
+
+<span style="font-weight: bold"><span style="color: #0000FF">try</span></span> <span style="color: #FF0000">{</span>
+        c <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"0101"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"prop1"</span><span style="color: #990000">);</span>
+        monAg<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">addCompte</span></span><span style="color: #990000">(</span>c<span style="color: #990000">);</span>
+        c <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"0202"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"prop2"</span><span style="color: #990000">);</span>
+        monAg<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">addCompte</span></span><span style="color: #990000">(</span>c<span style="color: #990000">);</span>
+        c <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"0303"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"prop2"</span><span style="color: #990000">);</span>
+        monAg<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">addCompte</span></span><span style="color: #990000">(</span>c<span style="color: #990000">);</span>
+<span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">ABCompteNullException</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span>e<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getMessage</span></span><span style="color: #990000">());</span>
+<span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">ABCompteDejaExistantException</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span>e<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getMessage</span></span><span style="color: #990000">());</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+</li>
+<li>
+<p>
+Modifier <tt>AgenceBancaire</tt> et mettez en commentaire la déclaration de la méthode toString().
+</p>
+</li>
+<li>
+<p>
+Relancez le test. Qu&#8217;est ce qui s&#8217;affiche ? Conclusion que l&#8217;on peut tirer pour tout objet Java quelle que soit sa classe ?
+</p>
+</li>
+<li>
+<p>
+Pourquoi à votre avais le code suivant :
+</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="color: #008080">String</span> s <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">String</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"Bonjour"</span><span style="color: #990000">);</span>
+System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span>s<span style="color: #990000">);</span></tt></pre></div></div>
+<div class="paragraph"><p>va afficher "Bonjour" et non pas "String@45792589" ? Qu&#8217;est ce qui a été écrit dans le code de la classe String ?</p></div>
+</li>
+</ul></div>
+</div>
+<div class="sect2">
+<h3 id="_reprogrammer_tt_public_compte_getcomptesde_string_pnomproprietaire_tt">4.2. Reprogrammer <tt>public Compte[] getComptesDe(String pNomProprietaire)</tt>.</h3>
 <div class="olist arabic"><ol class="arabic">
 <li>
 <p>
-Reprogrammez la méthode  <tt>public Compte[] getComptesDe(String pNomProprietaire)</tt> :
+Reprogrammer la méthode  <tt>public Compte[] getComptesDe(String pNomProprietaire)</tt> selon la spécification suivante :
 </p>
 <div class="ulist"><ul>
 <li>
@@ -1725,14 +1784,14 @@ Créer un tableau de Compte pour le résultat de la taille nécessaire.
 Remplir le tableau à partir de <tt>alCptes</tt> en optimisant le parcours au vu de la recherche effectuée.
 </p>
 </li>
-</ul></div>
-</li>
-</ul></div>
-</li>
 <li>
 <p>
-Tous les tests (en particulier JUnit) doivent fonctionner.
+Au final, tous les tests (en particulier JUnit) doivent fonctionner.
 </p>
+</li>
+</ul></div>
+</li>
+</ul></div>
 </li>
 <li>
 <p>
@@ -1769,6 +1828,7 @@ Une agence gère en moyenne 36000 comptes.
 </ul></div>
 </li>
 </ol></div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -2293,7 +2353,25 @@ EoAjGf88yXMZEtJTDOcRVg59vR52wHrUMosL0Pr6+oJJMnhJJBu7N4xGwP8A4X8RE1D3pWkAAAAA
 SUVORK5CYII=" />
 </td>
 <td class="content">
-<div class="title">Solution exo optionnel</div>
+<div class="title">Solution exo "pour aller plusloin"</div>
+<div class="paragraph"><p>toString() :</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+toString() standard affiche : <a href="mailto:AgenceBancaire@45454545">AgenceBancaire@45454545</a>
+</p>
+</li>
+<li>
+<p>
+Tout objet Java a en standard une méthode toString() qui affiche : <a href="mailto:NomClasse@refobjet">NomClasse@refobjet</a>
+</p>
+</li>
+<li>
+<p>
+Dans String, la méthode toString() est réécrite pour ne pas affciher <a href="mailto:String@454545">String@454545</a> par défaut mais plutôt le contenu de la chaine.
+</p>
+</li>
+</ul></div>
 <div class="paragraph"><p>Calculs :</p></div>
 <div class="olist arabic"><ol class="arabic">
 <li>
@@ -2405,7 +2483,7 @@ http://www.gnu.org/software/src-highlite -->
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2015-03-12 14:50:25 CET
+Dernière mise à jour 2016-02-15 11:56:45 CET
 </div>
 </div>
 </body>
