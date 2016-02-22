@@ -3,7 +3,7 @@ skinparam classAttributeIconSize 0
 
 class Pile {
 	- String[] values
-	
+
 	+ Pile() 
 	
 	+ boolean estVide ()
