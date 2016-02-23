@@ -888,6 +888,34 @@ lJga0LT8+uRGJ5P/2OBGpz/mT34Gmsy9nx36v3PoX1H4mIUGLCOSAAAAAElFTkSuQmCC" />
 </td>
 </tr></table>
 </div>
+<div class="paragraph"><p>Pour démarrer : créer un nouveau programme java :</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Lancer Scite.
+</p>
+</li>
+<li>
+<p>
+Créer un classe, par exemple <tt>TP4Exo1</tt>.
+</p>
+</li>
+<li>
+<p>
+Enregistrer le fichier avec le bon nom de fichier.
+</p>
+</li>
+<li>
+<p>
+Ajouter la méthode main().
+</p>
+</li>
+<li>
+<p>
+Ca doit compiler (afficher "Hello World" pour tester) &#8230;
+</p>
+</li>
+</ol></div>
 <div class="paragraph"><p>En parallèle de la lecture de la documentation et/ou du support de cours, on testera les différentes méthodes de la classe ArrayList&lt;E&gt; :</p></div>
 <div class="olist arabic"><ol class="arabic">
 <li>
@@ -908,7 +936,7 @@ Faire quelques ajouts de chaînes de caractères en fin de <tt>alChaines</tt> av
 </li>
 <li>
 <p>
-Afficher la taille de <tt>alChaines</tt> (cf. support de cours).
+Afficher la taille (ou nombre d’éléments contenus) de <tt>alChaines</tt> (cf. support de cours).
 </p>
 </li>
 <li>
@@ -918,7 +946,7 @@ Par une boucle : afficher les éléments de <tt>alChaines</tt> (cf. support de c
 </li>
 <li>
 <p>
-Faire quelques ajouts en fin, au début, au milieu. Regarder les méthodes et surcharges associées de <tt>add()</tt> (cf. support de cours). Après chaque ajout, afficher le nombre d’éléments réellement contenus dans <tt>alChaines</tt>.
+Faire quelques ajouts en fin, au début, au milieu. Regarder les méthodes et surcharges associées de <tt>add()</tt> (cf. support de cours). Après chaque ajout, afficher la taille de <tt>alChaines</tt>.
 </p>
 </li>
 <li>
@@ -953,7 +981,7 @@ Tester la méthode <tt>toString()</tt> sur <tt>alChaines</tt>.
 </li>
 <li>
 <p>
-Faire quelques suppressions : premier élément, dernier élément, au milieu. (cf. support de cours). Après chaque suppression, afficher le nombre d’éléments réellement contenus dans <tt>alChaines</tt>.
+Faire quelques suppressions : premier élément, dernier élément, au milieu. (cf. support de cours). Après chaque suppression, afficher la taille (nombre d’éléments contenus) de <tt>alChaines</tt>.
 </p>
 </li>
 <li>
@@ -968,20 +996,14 @@ Afficher les éléments de <tt>alChaines</tt> et sa taille.
 </li>
 <li>
 <p>
-Étudier la documentation de la méthode trimToSize(). A quoi sert-elle ?
+Étudier la documentation de la méthode <tt>trimToSize()</tt>. A quoi sert-elle ? (Eventuellement étudier la méthode &#8230; et afficher son résultat avant ET après <tt>trimToSize()</tt>).
 </p>
 </li>
 </ol></div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_mise_en_oeuvre_des_arraylist">2. Mise en oeuvre des ArrayList</h2>
-<div class="sectionbody">
-<div class="paragraph"><p>Pour les curieux (tous en somme), copier/coller dans Eclipse votre programme et regarder les attributs de l&#8217;objet <tt>alChaines</tt> en mode debug (cf. TP 1 - Debug Eclipse). Que représentent les attributs <tt>elementData</tt> et <tt>size</tt> ?</p></div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_manipuler_une_arraylist_lt_compte_gt">3. Manipuler une ArrayList&lt;Compte&gt;</h2>
+<h2 id="_manipuler_une_arraylist_lt_compte_gt">2. Manipuler une ArrayList&lt;Compte&gt;</h2>
 <div class="sectionbody">
 <div class="paragraph"><p>Reprendre le programme suivant ET récupérer les packages du TP précédent (tps.banque, &#8230;).</p></div>
 <div class="paragraph"><p>Le programme principal :</p></div>
@@ -1022,9 +1044,35 @@ affiche les comptes de ce propriétaire.
 <div class="paragraph"><p><strong>A faire : écrire le code de la méthode :</strong></p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>public static ArrayList&lt;Compte&gt; getComptesDe (String pNomProprietaire, ArrayList&lt;Compte&gt; pComptes)</tt></pre>
+<pre><tt>public static ArrayList&lt;Compte&gt; getComptesDe (String pNomProprietaire, ArrayList&lt;Compte&gt; pALComptes)</tt></pre>
 </div></div>
-<div class="paragraph"><p>Son rôle est de renvoyer une ArrayList de Compte contenant les comptes du paramètre <tt>pComptes</tt> dont le nom de propriétaire est <tt>pNomProprietaire</tt>.*</p></div>
+<div class="paragraph"><p>Son rôle est de renvoyer une ArrayList de Compte contenant les comptes de <tt>pALComptes</tt> dont le nom de propriétaire est <tt>pNomProprietaire</tt>.*</p></div>
+<div class="paragraph"><p>Exemple d&#8217;exécution :</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>Les comptes existants
+  9 comptes
+    Num. : 01010101 - Prop. : Lepoisson-Benoit - Debit 0.0 E / Credit 0.0 E / NbOps 0
+    Num. : 02020202 - Prop. : Tabaniol-Alphonse - Debit 0.0 E / Credit 0.0 E / NbOps 0
+    Num. : 03030303 - Prop. : Aidelaine-Gilles - Debit 0.0 E / Credit 0.0 E / NbOps 0
+    Num. : 04040404 - Prop. : Sanfraper-André - Debit 0.0 E / Credit 0.0 E / NbOps 0
+    Num. : 05050505 - Prop. : Tabaniol-Alphonse - Debit 0.0 E / Credit 0.0 E / NbOps 0
+    Num. : 06060606 - Prop. : Bondeparme-Jean - Debit 0.0 E / Credit 0.0 E / NbOps 0
+    Num. : 07070707 - Prop. : Sailair-Jacques - Debit 0.0 E / Credit 0.0 E / NbOps 0
+    Num. : 08080808 - Prop. : Saidimanche-Damien - Debit 0.0 E / Credit 0.0 E / NbOps 0
+    Num. : 09090909 - Prop. : Tabaniol-Alphonse - Debit 0.0 E / Credit 0.0 E / NbOps 0
+Nom de propriétaire -&gt; Lepoisson-Benoit
+Ses comptes :
+  1 comptes
+    Num. : 01010101 - Prop. : Lepoisson-Benoit - Debit 0.0 E / Credit 0.0 E / NbOps 0
+Nom de propriétaire -&gt; Tabaniol-Alphonse
+Ses comptes :
+  3 comptes
+    Num. : 02020202 - Prop. : Tabaniol-Alphonse - Debit 0.0 E / Credit 0.0 E / NbOps 0
+    Num. : 05050505 - Prop. : Tabaniol-Alphonse - Debit 0.0 E / Credit 0.0 E / NbOps 0
+    Num. : 09090909 - Prop. : Tabaniol-Alphonse - Debit 0.0 E / Credit 0.0 E / NbOps 0
+Nom de propriétaire -&gt;</tt></pre>
+</div></div>
 <div class="listingblock">
 <div class="content"><!-- Generator: GNU source-highlight 3.1.5
 by Lorenzo Bettini
@@ -1038,12 +1086,12 @@ http://www.gnu.org/software/src-highlite -->
 
         <span style="font-style: italic"><span style="color: #9A1900">/**</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         * Recherche les comptes du propriétaire pNomProprietaire</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * dans la liste de comptes pComptes.</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900"> pNomProprietaire      Propriétaire recherché</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900"> pComptes      Liste dans laquelle les comptes sont recherchés</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@return</span><span style="font-style: italic"><span style="color: #9A1900">      Liste des compte de pComtes ayant pour propriétaire pNomProprietaire. Liste vide si aucun compte trouvé.</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * dans la liste de comptes pALComptes.</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900">       pNomProprietaire        Propriétaire recherché</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900">       pALComptes      Liste dans laquelle les comptes sont recherchés</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@return</span><span style="font-style: italic"><span style="color: #9A1900">      Liste des compte de pALComptes ayant pour propriétaire pNomProprietaire. Liste vide si aucun compte trouvé.</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         */</span></span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #008080">ArrayList&lt;Compte&gt; getComptesDe (String pNomProprietaire, ArrayList&lt;Compte&gt;</span> pComptes<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #008080">ArrayList&lt;Compte&gt; getComptesDe (String pNomProprietaire, ArrayList&lt;Compte&gt;</span> pALComptes<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
                 <span style="font-style: italic"><span style="color: #9A1900">// A ecrire</span></span>
 
         <span style="color: #FF0000">}</span>
@@ -1100,11 +1148,17 @@ http://www.gnu.org/software/src-highlite -->
 </div>
 </div>
 <div class="sect1">
+<h2 id="_mise_en_oeuvre_des_arraylist">3. Mise en oeuvre des ArrayList</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Pour les curieux (tous en somme), copier/coller dans Eclipse votre programme et regarder les attributs de l&#8217;objet <tt>alChaines</tt> en mode debug (cf. TP 1 - Debug Eclipse). Que représentent les attributs <tt>elementData</tt> et <tt>size</tt> ?</p></div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_pour_aller_plus_loin_optionnel">4. Pour aller plus loin (optionnel)</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_le_forall_ou_foreach">4.1. Le 'forall" ou "foreach"</h3>
-<div class="paragraph"><p>Que pensez vous que va réaliser la syntaxe suivante ? (A tester bien sur).</p></div>
+<div class="paragraph"><p>Que pensez vous que va réaliser la syntaxe suivante ? (A tester bien sur dans votre programme de test d&#8217;ArrayList&lt;String&gt;).</p></div>
 <div class="listingblock">
 <div class="content"><!-- Generator: GNU source-highlight 3.1.5
 by Lorenzo Bettini
@@ -1115,7 +1169,7 @@ http://www.gnu.org/software/src-highlite -->
 </div>
 <div class="sect2">
 <h3 id="_parcourir_une_arraylist_lt_e_gt">4.2. Parcourir une ArrayList&lt;E&gt;</h3>
-<div class="paragraph"><p>On essaiera d’utiliser la méthode <tt>iterator()</tt> de la classe ArrayList dans le test sur ArrayList&lt;String&gt;.</p></div>
+<div class="paragraph"><p>On essaiera d’utiliser la méthode <tt>iterator()</tt> de la classe <tt>ArrayList</tt> dans le test sur ArrayList&lt;String&gt;.</p></div>
 <div class="olist arabic"><ol class="arabic">
 <li>
 <p>
@@ -1124,7 +1178,7 @@ Cette méthode renvoie un objet de type <tt>Iterator&lt;E&gt;</tt>. Étudier les
 </li>
 <li>
 <p>
-On utilisera l’objet renvoyé par la méthode <tt>iterator()</tt> :
+On utilisera l’objet renvoyé par la méthode <tt>iterator()</tt> (de <tt>ArrayList</tt>) :
 </p>
 <div class="ulist"><ul>
 <li>
@@ -1156,7 +1210,7 @@ On utilisera cette variable pour afficher le contenu de <tt>alChaines</tt>.
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2015-02-25 18:28:50 CET
+Dernière mise à jour 2016-02-23 11:20:39 CET
 </div>
 </div>
 </body>
