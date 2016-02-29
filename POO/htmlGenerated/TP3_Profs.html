@@ -956,21 +956,45 @@ A priori en une séance.
 </li>
 <li>
 <p>
-Les try catch ont été vus en S1. Les aider sans doute en leur donnant la structure de base.
+Les aider à comprendre et à démarrer :
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+expliquer le principe sur la trace d&#8217;exécution
+</p>
+</li>
+<li>
+<p>
+expliquer : dans la boucle : on crée un compte ET on le met (addCompte()) dans l&#8217;agence &#8230;
+</p>
+</li>
+<li>
+<p>
+expliquer : à chaque redémarrage : banque "vide" (il faudrait sauvegarder les datas &#8230;)
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+Les try catch ont été vus en S1 et au TP précédent. Les aider sans doute en leur donnant la structure de base.
 </p>
 <div class="listingblock">
 <div class="content"><!-- Generator: GNU source-highlight 3.1.5
 by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
-<pre><tt>        <span style="font-weight: bold"><span style="color: #0000FF">try</span></span> <span style="color: #FF0000">{</span>
-                cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">deposer</span></span><span style="color: #990000">(</span><span style="color: #993399">1</span><span style="color: #990000">);</span>
-                cDeux<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">deposer</span></span><span style="color: #990000">(</span><span style="color: #993399">1000</span><span style="color: #990000">);</span>
-        <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">CompteException</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>e<span style="color: #990000">);</span> <span style="color: #008080">ou</span> System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>e<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getMesage</span></span><span style="color: #990000">());</span>
-        <span style="color: #FF0000">}</span></tt></pre></div></div>
-<div class="paragraph"><p>Au départ :</p></div>
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">try</span></span> <span style="color: #FF0000">{</span>
+        cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">deposer</span></span><span style="color: #990000">(</span><span style="color: #993399">1</span><span style="color: #990000">);</span>
+        cDeux<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">deposer</span></span><span style="color: #990000">(</span><span style="color: #993399">1000</span><span style="color: #990000">);</span>
+<span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">CompteException</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>e<span style="color: #990000">);</span> <span style="color: #008080">ou</span> System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>e<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getMesage</span></span><span style="color: #990000">());</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
 </li>
+</ul></div>
+<div class="paragraph"><p>Au départ :</p></div>
+<div class="ulist"><ul>
 <li>
 <p>
 Attention au dézippage du fichier au bon endroit &#8594; dans le répertoire de travail.
@@ -1019,19 +1043,9 @@ AgenceBancaire.class
 <li>
 <p>
 exception
+<strong><strong></strong></strong> CompteException.class
+<strong><strong></strong></strong> &#8230;
 </p>
-<div class="ulist"><ul>
-<li>
-<p>
-CompteException.class
-</p>
-</li>
-<li>
-<p>
-&#8230;
-</p>
-</li>
-</ul></div>
 </li>
 </ul></div>
 </li>
@@ -1068,7 +1082,7 @@ Devinette.class
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2016-02-29 11:54:25 CET
+Dernière mise à jour 2016-02-29 12:37:30 CET
 </div>
 </div>
 </body>
