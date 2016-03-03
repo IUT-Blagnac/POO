@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
 <head>
 <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
-<meta name="copyright" content="2016-02-22, Your computer *** Dut/Info-S2/M2103 *** Powered by AsciiDoc and W3C Slidy &amp;#169;" />
+<meta name="copyright" content="2016-03-02, Your computer *** Dut/Info-S2/M2103 *** Powered by AsciiDoc and W3C Slidy &amp;#169;" />
 <meta name="generator" content="AsciiDoc 8.6.6 / slidy2 backend 1.0.3" />
 <title>BPOO - Support TP 3</title>
 <style type="text/css">
@@ -4399,13 +4399,13 @@ http://www.gnu.org/software/src-highlite -->
 
                 continuer <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">true</span></span><span style="color: #990000">;</span>
                 <span style="font-weight: bold"><span style="color: #0000FF">while</span></span> <span style="color: #990000">(</span>continuer<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                        ClasseEssaiAgenceBancaire<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficherMenu</span></span><span style="color: #990000">(</span>monAg<span style="color: #990000">);</span>
+                        ClasseApplicationAgenceBancaire<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficherMenu</span></span><span style="color: #990000">(</span>monAg<span style="color: #990000">);</span>
                         choix <span style="color: #990000">=</span> lect<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">next</span></span><span style="color: #990000">();</span>
                         choix <span style="color: #990000">=</span> choix<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">toLowerCase</span></span><span style="color: #990000">();</span>
                         <span style="font-weight: bold"><span style="color: #0000FF">switch</span></span> <span style="color: #990000">(</span>choix<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
                                 <span style="font-weight: bold"><span style="color: #0000FF">case</span></span> <span style="color: #FF0000">"q"</span> <span style="color: #990000">:</span>
                                         System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"ByeBye"</span><span style="color: #990000">);</span>
-                                        ClasseEssaiAgenceBancaire<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">tempo</span></span><span style="color: #990000">();</span>
+                                        ClasseApplicationAgenceBancaire<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">tempo</span></span><span style="color: #990000">();</span>
                                         continuer <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">false</span></span><span style="color: #990000">;</span>
                                         <span style="font-weight: bold"><span style="color: #0000FF">break</span></span><span style="color: #990000">;</span>
 
@@ -4413,7 +4413,7 @@ http://www.gnu.org/software/src-highlite -->
 
                                 <span style="font-weight: bold"><span style="color: #0000FF">default</span></span> <span style="color: #990000">:</span>
                                         System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Erreur de saisie ..."</span><span style="color: #990000">);</span>
-                                        ClasseEssaiAgenceBancaire<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">tempo</span></span><span style="color: #990000">();</span>
+                                        ClasseApplicationAgenceBancaire<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">tempo</span></span><span style="color: #990000">();</span>
                                         <span style="font-weight: bold"><span style="color: #0000FF">break</span></span><span style="color: #990000">;</span>
                         <span style="color: #FF0000">}</span>
                 <span style="color: #FF0000">}</span>
@@ -4795,7 +4795,7 @@ http://www.gnu.org/software/src-highlite -->
                                                 monAg<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">addCompte</span></span><span style="color: #990000">(</span>c<span style="color: #990000">);</span>
                                                 System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Ajout effectué</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span><span style="color: #990000">);</span>
                                         <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">ABCompteNullException</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                                                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Numéro de compte existant"</span><span style="color: #990000">);</span>
+                                                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Ajout impossible ... signaler l'erreur à l'administrateur ..."</span><span style="color: #990000">);</span>
                                                 System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>e<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getMessage</span></span><span style="color: #990000">());</span>
                                         <span style="color: #FF0000">}</span>
                                         <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">ABCompteDejaExistantException</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
@@ -4918,7 +4918,7 @@ http://www.gnu.org/software/src-highlite -->
 </div>
 <div id="footer" style="position: absolute; left: 5%; top: 80%; width: 90%;">
 <div id="footer-text">
-Dernière mise à jour 2016-02-22 19:55:53 CET
+Dernière mise à jour 2016-03-02 12:28:45 CET
 </div>
 </div>
 </div></div>
