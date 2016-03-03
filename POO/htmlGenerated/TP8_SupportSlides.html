@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
 <head>
 <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
-<meta name="copyright" content="2015-03-23, Your computer *** Dut/Info-S2/M2103 *** Powered by AsciiDoc and W3C Slidy &amp;#169;" />
+<meta name="copyright" content="2016-03-03, Your computer *** Dut/Info-S2/M2103 *** Powered by AsciiDoc and W3C Slidy &amp;#169;" />
 <meta name="generator" content="AsciiDoc 8.6.6 / slidy2 backend 1.0.3" />
 <title>BPOO - Support TP 8</title>
 <style type="text/css">
@@ -4156,7 +4156,7 @@ cellspacing="0" cellpadding="4">
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">Durée</p></td>
-<td align="left" valign="top"><p class="table"><strong>2 séance</strong> de 1,5h sur machine.</p></td>
+<td align="left" valign="top"><p class="table"><strong>2 séances</strong> de 1,5h sur machine.</p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">À rendre</p></td>
@@ -4929,7 +4929,7 @@ lJga0LT8+uRGJ5P/2OBGpz/mT34Gmsy9nx36v3PoX1H4mIUGLCOSAAAAAElFTkSuQmCC" />
 <script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect3";nexttitle="4.2.1. La classe Cercle";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody">
 <div class="paragraph">
-<p>La classe Cercle est une forme graphique comprenant les coordonnées du centre avec en plus un rayon (entier).</p>
+<p>La classe Cercle est une forme graphique comprenant les coordonnées du centre avec en plus un rayon (double).</p>
 </div>
 <div class="paragraph">
 <p>Écrire la classe Cercle. On définira :</p>
@@ -5013,7 +5013,7 @@ Cercle : rayon 17</tt></pre>
 <script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect3";nexttitle="4.2.2. La classe Cylindre";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody">
 <div class="paragraph">
-<p>La classe Cylindre est définie comme un cercle avec en plus une hauteur (entier).</p>
+<p>La classe Cylindre est définie comme un cercle avec en plus une hauteur (double).</p>
 </div>
 <div class="paragraph">
 <p>Écrire la classe Cylindre. On définira :</p>
@@ -5631,6 +5631,20 @@ http://www.gnu.org/software/src-highlite -->
         <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">getCote</span></span> <span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
                 <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getLongueur</span></span><span style="color: #990000">();</span>
         <span style="color: #FF0000">}</span>
+
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">setCote</span></span> <span style="color: #990000">(</span><span style="color: #009900">int</span> cote<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">super</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setLargeur</span></span><span style="color: #990000">(</span>cote<span style="color: #990000">);</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">super</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setLongueur</span></span><span style="color: #990000">(</span>cote<span style="color: #990000">);</span>
+        <span style="color: #FF0000">}</span>
+
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">setLargeur</span></span><span style="color: #990000">(</span><span style="color: #009900">int</span> largeur<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setCote</span></span><span style="color: #990000">(</span>largeur<span style="color: #990000">);</span>
+        <span style="color: #FF0000">}</span>
+
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">setLongueur</span></span><span style="color: #990000">(</span><span style="color: #009900">int</span> longueur<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setCote</span></span><span style="color: #990000">(</span>longueur<span style="color: #990000">);</span>
+        <span style="color: #FF0000">}</span>
+
         <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
                 <span style="font-weight: bold"><span style="color: #0000FF">super</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
                 System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Carré : côté "</span><span style="color: #990000">+</span><span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getLongueur</span></span><span style="color: #990000">());</span>
@@ -5832,6 +5846,21 @@ http://www.gnu.org/software/src-highlite -->
                 System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Surface : "</span> <span style="color: #990000">+</span> carreDeux<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">surface</span></span><span style="color: #990000">());</span>
                 System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Volume : "</span> <span style="color: #990000">+</span> carreDeux<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">volume</span></span><span style="color: #990000">());</span>
 
+                <span style="color: #008080">Carre</span> carreTrois<span style="color: #990000">;</span>
+                carreTrois <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Carre</span></span> <span style="color: #990000">(</span><span style="color: #993399">1</span><span style="color: #990000">,</span> <span style="color: #993399">1</span><span style="color: #990000">,</span> <span style="color: #993399">10</span><span style="color: #990000">);</span>
+                carreTrois<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Surface : "</span> <span style="color: #990000">+</span> carreTrois<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">surface</span></span><span style="color: #990000">());</span> <span style="font-style: italic"><span style="color: #9A1900">// Surface :100.0</span></span>
+                carreTrois<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setLargeur</span></span><span style="color: #990000">(</span><span style="color: #993399">20</span><span style="color: #990000">);</span>
+                carreTrois<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Surface : "</span> <span style="color: #990000">+</span> carreTrois<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">surface</span></span><span style="color: #990000">());</span> <span style="font-style: italic"><span style="color: #9A1900">// Surface : 400.0</span></span>
+                carreTrois<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setLongueur</span></span><span style="color: #990000">(</span><span style="color: #993399">30</span><span style="color: #990000">);</span>
+                carreTrois<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Surface : "</span> <span style="color: #990000">+</span> carreTrois<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">surface</span></span><span style="color: #990000">());</span> <span style="font-style: italic"><span style="color: #9A1900">// Surface : 900.0</span></span>
+                carreTrois<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setCote</span></span><span style="color: #990000">(</span><span style="color: #993399">40</span><span style="color: #990000">);</span>
+                carreTrois<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Surface : "</span> <span style="color: #990000">+</span> carreTrois<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">surface</span></span><span style="color: #990000">());</span> <span style="font-style: italic"><span style="color: #9A1900">// Surface : 1600.0</span></span>
+
+
                 <span style="font-style: italic"><span style="color: #9A1900">// Pour aller plus loin</span></span>
 
                 <span style="color: #008080">FormeGraphique</span> tabFormes<span style="color: #990000">[];</span>
@@ -5865,7 +5894,7 @@ http://www.gnu.org/software/src-highlite -->
 </div>
 <div id="footer" style="position: absolute; left: 5%; top: 80%; width: 90%;">
 <div id="footer-text">
-Dernière mise à jour 2015-03-23 22:32:03 CET
+Dernière mise à jour 2016-03-03 18:54:24 CET
 </div>
 </div>
 </div></div>
