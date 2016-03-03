@@ -1226,7 +1226,7 @@ Le fichier junit.jar : il contient la librairie JUnit pour les tests.
 </div>
 </div>
 <div class="sect1">
-<h2 id="_implémentation_de_la_solution">3. Implémentation de la solution</h2>
+<h2 id="_analyse_de_la_solution_à_construire">3. Analyse de la solution à construire</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_solution_envisagée">3.1. Solution envisagée</h3>
@@ -1252,7 +1252,7 @@ Chaque retrait de compte rétrécira ce tableau de un élément.
 <div class="paragraph"><p>On s&#8217;autorisera à utiliser une ArrayList dans la méthode <tt>public Compte[] getComptesDe(String pNomProprietaire)</tt></p></div>
 </div>
 <div class="sect2">
-<h3 id="_préparation_de_la_mise_en_oeuvre">3.2. Préparation de la mise en oeuvre</h3>
+<h3 id="_analyse_de_la_mise_en_oeuvre">3.2. Analyse de la mise en oeuvre</h3>
 <div class="sect3">
 <h4 id="_modification_des_attributs">3.2.1. Modification des attributs</h4>
 <div class="paragraph"><p>Dans la classe AgenceBancaire :</p></div>
@@ -1329,7 +1329,7 @@ lJga0LT8+uRGJ5P/2OBGpz/mT34Gmsy9nx36v3PoX1H4mIUGLCOSAAAAAElFTkSuQmCC" />
 </div>
 </div>
 <div class="sect3">
-<h4 id="_analyse_de_la_solution_à_mettre_en_oeuvre">3.2.2. Analyse de la solution à mettre en oeuvre</h4>
+<h4 id="_analyse_du_travail_à_faire">3.2.2. Analyse du travail à faire</h4>
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
@@ -1390,7 +1390,7 @@ TJ48OTMzM+ycYt8VFZDEhDqGXlNQUJCXl4e2/L0G7sK9eIJYi0Mh2E8i/69DZEKXwX8tULJxQIEi
 </td>
 </tr></table>
 </div>
-<div class="paragraph"><p>Parcourez le code écrit en version précédente. Réfléchir à ce qui sera modifié, en particulier dans les méthodes :</p></div>
+<div class="paragraph"><p><strong>Parcourez le code écrit en version précédente. Réfléchir à ce qui sera modifié, en particulier dans les méthodes :</strong></p></div>
 <div class="olist arabic"><ol class="arabic">
 <li>
 <p>
@@ -1471,8 +1471,13 @@ Enfin :
 </ol></div>
 </div>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_implémentation_de_la_solution">4. Implémentation de la solution</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="_codage_todo">3.3. Codage : TODO</h3>
+<h3 id="_codage_todo">4.1. Codage : TODO</h3>
 <div class="paragraph"><p>A vous de jouer : modifier la classe pour réaliser l&#8217;implémentation demandée.</p></div>
 <div class="admonitionblock">
 <table><tr>
@@ -1594,7 +1599,7 @@ lJga0LT8+uRGJ5P/2OBGpz/mT34Gmsy9nx36v3PoX1H4mIUGLCOSAAAAAElFTkSuQmCC" />
 </div>
 </div>
 <div class="sect2">
-<h3 id="_tests_de_la_classe">3.4. Tests de la classe</h3>
+<h3 id="_tests_de_la_classe">4.2. Tests de la classe</h3>
 <div class="paragraph"><p>Testez votre classe :</p></div>
 <div class="olist arabic"><ol class="arabic">
 <li>
@@ -1745,10 +1750,10 @@ Enfin <tt>removeCompte()</tt> ne peut être testée sans les 2 précédentes.
 </div>
 </div>
 <div class="sect1">
-<h2 id="_deuxième_implémentation_de_solution_optionnelle">4. Deuxième implémentation de solution (optionnelle)</h2>
+<h2 id="_deuxième_implémentation_de_solution_optionnelle">5. Deuxième implémentation de solution (optionnelle)</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_solution_envisagée_2">4.1. Solution envisagée</h3>
+<h3 id="_solution_envisagée_2">5.1. Solution envisagée</h3>
 <div class="paragraph"><p>On souhaite maintenant faire une nouvelle version de la classe AgenceBancaire, toujours basée sur des tableaux dynamiques. Cette fois on stockera les comptes dans un tableau "avec de la marge". L&#8217;idée est de :</p></div>
 <div class="olist arabic"><ol class="arabic">
 <li>
@@ -1814,9 +1819,9 @@ d&#8217;autre part la taille effective du tableau (3, 6, 12, 24, &#8230;)
 </ol></div>
 </div>
 <div class="sect2">
-<h3 id="_analyse_de_la_mise_en_oeuvre">4.2. Analyse de la mise en oeuvre</h3>
+<h3 id="_analyse_de_la_mise_en_oeuvre_2">5.2. Analyse de la mise en oeuvre</h3>
 <div class="sect3">
-<h4 id="_attributs_nécessaires">4.2.1. Attributs nécessaires</h4>
+<h4 id="_attributs_nécessaires">5.2.1. Attributs nécessaires</h4>
 <div class="paragraph"><p>Réfléchir aux attributs à ajouter pour cette solution (2 devraient suffire). Les déclarer (toujours en private !).</p></div>
 <div class="admonitionblock">
 <table><tr>
@@ -1881,17 +1886,17 @@ lJga0LT8+uRGJ5P/2OBGpz/mT34Gmsy9nx36v3PoX1H4mIUGLCOSAAAAAElFTkSuQmCC" />
 </div>
 </div>
 <div class="sect3">
-<h4 id="_analyse_de_la_solution_à_mettre_en_oeuvre_2">4.2.2. Analyse de la solution à mettre en oeuvre</h4>
+<h4 id="_analyse_de_la_solution_à_mettre_en_oeuvre">5.2.2. Analyse de la solution à mettre en oeuvre</h4>
 <div class="paragraph"><p>Une bonne démarche consiste à réfléchir 10'-15' avant de commencer.</p></div>
 <div class="paragraph"><p>Parcourez le code écrit en version précédente. Réfléchir à ce qui sera modifié.</p></div>
 </div>
-<div class="sect3">
-<h4 id="_codage_todo_2">4.2.3. Codage : TODO</h4>
-<div class="paragraph"><p>A vous de jouer : modifier la classe pour réaliser l&#8217;implémentation demandée.</p></div>
-</div>
 </div>
 <div class="sect2">
-<h3 id="_tests">4.3. Tests</h3>
+<h3 id="_codage_todo_2">5.3. Codage : TODO</h3>
+<div class="paragraph"><p>A vous de jouer : modifier la classe pour réaliser l&#8217;implémentation demandée.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_tests">5.4. Tests</h3>
 <div class="paragraph"><p>Testez votre classe :</p></div>
 <div class="olist arabic"><ol class="arabic">
 <li>
@@ -1909,7 +1914,7 @@ Elle doit passer avec succès (complet) les tests JUnit.
 </div>
 </div>
 <div class="sect1">
-<h2 id="_solutions">5. Solutions</h2>
+<h2 id="_solutions">6. Solutions</h2>
 <div class="sectionbody">
 <div class="admonitionblock">
 <table><tr>
@@ -2745,7 +2750,7 @@ http://www.gnu.org/software/src-highlite -->
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2016-02-23 14:35:36 CET
+Dernière mise à jour 2016-03-03 18:06:00 CET
 </div>
 </div>
 </body>

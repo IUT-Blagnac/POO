@@ -870,7 +870,7 @@ cellspacing="0" cellpadding="4">
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">Durée</p></td>
-<td align="left" valign="top"><p class="table"><strong>2 séance</strong> de 1,5h sur machine.</p></td>
+<td align="left" valign="top"><p class="table"><strong>2 séances</strong> de 1,5h sur machine.</p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">À rendre</p></td>
@@ -1335,7 +1335,7 @@ Le fichier junit.jar : il contient la librairie JUnit pour les tests.
 </div>
 </div>
 <div class="sect1">
-<h2 id="_implémentation_de_la_solution">3. Implémentation de la solution</h2>
+<h2 id="_analyse_de_la_solution_à_construire">3. Analyse de la solution à construire</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_solution_envisagée">3.1. Solution envisagée</h3>
@@ -1343,7 +1343,7 @@ Le fichier junit.jar : il contient la librairie JUnit pour les tests.
 <div class="paragraph"><p>On s&#8217;autorisera à utiliser une ArrayList dans la méthode <tt>public Compte[] getComptesDe(String pNomProprietaire)</tt></p></div>
 </div>
 <div class="sect2">
-<h3 id="_préparation_de_la_mise_en_oeuvre">3.2. Préparation de la mise en oeuvre</h3>
+<h3 id="_analyse_de_la_mise_en_oeuvre">3.2. Analyse de la mise en oeuvre</h3>
 <div class="sect3">
 <h4 id="_modification_des_attributs">3.2.1. Modification des attributs</h4>
 <div class="paragraph"><p>Dans la classe AgenceBancaire :</p></div>
@@ -1425,10 +1425,69 @@ lJga0LT8+uRGJ5P/2OBGpz/mT34Gmsy9nx36v3PoX1H4mIUGLCOSAAAAAElFTkSuQmCC" />
 </div>
 </div>
 <div class="sect3">
-<h4 id="_analyse_de_la_solution_à_mettre_en_oeuvre">3.2.2. Analyse de la solution à mettre en oeuvre</h4>
-<div class="paragraph"><p>Une bonne démarche consiste à réfléchir 10'-15' avant de commencer.</p></div>
+<h4 id="_analyse_du_travail_à_faire">3.2.2. Analyse du travail à faire</h4>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Important" src="data:image/png;base64,
+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" />
+</td>
+<td class="content">
+<div class="paragraph"><p><strong>Une bonne démarche consiste à réfléchir 10'-15' avant de commencer.</strong></p></div>
+</td>
+</tr></table>
+</div>
 <div class="paragraph"><p>La méthode <tt>afficher()</tt> est déjà écrite afin de vous aider. La classe ne compile pas car il faut déclarer les attributs nécessaires.</p></div>
-<div class="paragraph"><p>Parcourez le code (quasi vide) de la classe et réfléchir à ce qui sera à programmer, en particulier dans les méthodes :</p></div>
+<div class="paragraph"><p><strong>Parcourez le code (quasi vide) de la classe et réfléchir à ce qui sera à programmer, en particulier dans les méthodes :</strong></p></div>
 <div class="olist arabic"><ol class="arabic">
 <li>
 <p>
@@ -1602,8 +1661,13 @@ Compte pas trouvé.
 </ol></div>
 </div>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_implémentation_de_la_solution">4. Implémentation de la solution</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="_codage_todo">3.3. Codage : TODO</h3>
+<h3 id="_codage_todo">4.1. Codage : TODO</h3>
 <div class="paragraph"><p>A vous de jouer : modifiez la classe pour réaliser l&#8217;implémentation demandée.</p></div>
 <div class="admonitionblock">
 <table><tr>
@@ -1666,7 +1730,7 @@ RkWOKkVXIjB5X2ac8f8HA74K8I0SaJkAAAAASUVORK5CYII=" />
 </div>
 </div>
 <div class="sect2">
-<h3 id="_tests_de_la_classe">3.4. Tests de la classe</h3>
+<h3 id="_tests_de_la_classe">4.2. Tests de la classe</h3>
 <div class="paragraph"><p>Testez votre classe :</p></div>
 <div class="olist arabic"><ol class="arabic">
 <li>
@@ -1817,10 +1881,10 @@ Enfin <tt>removeCompte()</tt> ne peut être testée sans les 2 précédentes.
 </div>
 </div>
 <div class="sect1">
-<h2 id="_amélioration_de_la_solution">4. Amélioration de la solution</h2>
+<h2 id="_amélioration_de_la_solution">5. Amélioration de la solution</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_besoin_du_client">4.1. Besoin du client</h3>
+<h3 id="_besoin_du_client">5.1. Besoin du client</h3>
 <div class="paragraph"><p>Le client (directeur d&#8217;une agence) nous fait la remarque suivante : comme les clients connaissent en général leur numéro de compte, les options du menu les plus utilisées sont celles qui permettent de faire des opérations sur un Compte à partir de son numéro :</p></div>
 <div class="ulist"><ul>
 <li>
@@ -1846,12 +1910,12 @@ r - Retirer de l&#8217;argent sur un compte
 </ul></div>
 </div>
 <div class="sect2">
-<h3 id="_amélioration_envisagée">4.2. Amélioration envisagée</h3>
+<h3 id="_amélioration_envisagée">5.2. Amélioration envisagée</h3>
 <div class="paragraph"><p>En remarquant que tous les numéros de Compte sont différents dans un objet AgenceBancaire par construction même de la classe, on peut les stocker dans l&#8217;ordre des numéros pour accélérer ainsi les recherches des numéros inexistants (fautes de frappe) et les suppressions.</p></div>
 <div class="paragraph"><p>NB : dans une vraie agence bancaire, les numéros de comptes suivent une logique de numérotation. L&#8217;approche est donc intéressante même si elle n&#8217;est pas parfaite.</p></div>
 </div>
 <div class="sect2">
-<h3 id="_codage_todo_2">4.3. Codage : TODO</h3>
+<h3 id="_codage_todo_2">5.3. Codage : TODO</h3>
 <div class="paragraph"><p>Après un moment de réflexion : mettez en oeuvre la solution ci-dessus :</p></div>
 <div class="olist arabic"><ol class="arabic">
 <li>
@@ -1904,7 +1968,7 @@ Lors de l&#8217;ajout, traiter tous les cas possibles : ajout dans une liste vid
 </div>
 </div>
 <div class="sect1">
-<h2 id="_solutions">5. Solutions</h2>
+<h2 id="_solutions">6. Solutions</h2>
 <div class="sectionbody">
 <div class="admonitionblock">
 <table><tr>
@@ -2906,7 +2970,7 @@ http://www.gnu.org/software/src-highlite -->
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2015-03-17 17:49:46 CET
+Dernière mise à jour 2016-03-03 18:07:34 CET
 </div>
 </div>
 </body>
