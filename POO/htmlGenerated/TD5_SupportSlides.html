@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
 <head>
 <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
-<meta name="copyright" content="2016-03-03, IUT Blagnac *** Dut/Info-S2/M2103 *** Powered by AsciiDoc and W3C Slidy &amp;#169;" />
+<meta name="copyright" content="2016-03-09, IUT Blagnac *** Dut/Info-S2/M2103 *** Powered by AsciiDoc and W3C Slidy &amp;#169;" />
 <meta name="generator" content="AsciiDoc 8.6.6 / slidy2 backend 1.0.3" />
 <title>BPOO - Support TD 5</title>
 <style type="text/css">
@@ -6115,47 +6115,54 @@ http://www.gnu.org/software/src-highlite -->
 
         <span style="font-style: italic"><span style="color: #9A1900">// PARTIE 1 - PARTIE 1 - PARTIE 1 - PARTIE 1</span></span>
 
-        <span style="font-style: italic"><span style="color: #9A1900">// déclarer la variable debutChaine et des variables Cellule : pCel1, pCel2, temp, nouvCel</span></span>
+        <span style="font-style: italic"><span style="color: #9A1900">// déclarer debutChaine et des variables Cellule : pCel1, pCel2, pCel3, temp, nouvCel</span></span>
 
         <span style="color: #008080">Cellule</span> debutChaine<span style="color: #990000">;</span>
-        <span style="color: #008080">Cellule</span> pCel1<span style="color: #990000">,</span> pCel2<span style="color: #990000">,</span> temp<span style="color: #990000">,</span> nouvCel<span style="color: #990000">,</span> temp2<span style="color: #990000">;</span>
+        <span style="color: #008080">Cellule</span> pCel1<span style="color: #990000">,</span> pCel2<span style="color: #990000">,</span> pCel3<span style="color: #990000">,</span> temp<span style="color: #990000">,</span> nouvCel<span style="color: #990000">,</span> temp2<span style="color: #990000">;</span>
 
-        <span style="font-style: italic"><span style="color: #9A1900">// créer la cellule contenant 45.5 en utilisant la variable debutChaine</span></span>
+        <span style="font-style: italic"><span style="color: #9A1900">// créer la cellule contenant 45.5 en utilisant la variable pCel1</span></span>
 
-        debutChaine <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Cellule</span></span><span style="color: #990000">(</span><span style="color: #993399">45.5</span><span style="color: #990000">,</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">);</span>
+        pCel1 <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Cellule</span></span><span style="color: #990000">(</span><span style="color: #993399">45.5</span><span style="color: #990000">,</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">);</span>
 
-        <span style="font-style: italic"><span style="color: #9A1900">// créer la cellule contenant 55.5 en utilisant la variable pCel1</span></span>
+        <span style="font-style: italic"><span style="color: #9A1900">// créer la cellule contenant 55.5 en utilisant la variable pCel2</span></span>
 
-        pCel1 <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Cellule</span></span> <span style="color: #990000">(</span><span style="color: #993399">55.5</span><span style="color: #990000">,</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">);</span>
+        pCel2 <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Cellule</span></span> <span style="color: #990000">(</span><span style="color: #993399">55.5</span><span style="color: #990000">,</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">);</span>
 
         <span style="font-style: italic"><span style="color: #9A1900">// relier les cellules contenant 45.5 et 55.5</span></span>
 
-        debutChaine<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setSuivant</span></span><span style="color: #990000">(</span>pCel1<span style="color: #990000">);</span>
+        pCel1<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setSuivant</span></span><span style="color: #990000">(</span>pCel2<span style="color: #990000">);</span>
 
-        <span style="font-style: italic"><span style="color: #9A1900">// créer la cellule contenant 65.5 en utilisant la variable pCel2</span></span>
+        <span style="font-style: italic"><span style="color: #9A1900">// créer la cellule contenant 65.5 en utilisant la variable pCel3</span></span>
 
-        pCel2 <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Cellule</span></span> <span style="color: #990000">(</span><span style="color: #993399">65.5</span><span style="color: #990000">,</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">);</span>
+        pCel3 <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Cellule</span></span> <span style="color: #990000">(</span><span style="color: #993399">65.5</span><span style="color: #990000">,</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">);</span>
 
         <span style="font-style: italic"><span style="color: #9A1900">// relier les cellules contenant 55.5 et 65.5</span></span>
 
-        pCel1<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setSuivant</span></span><span style="color: #990000">(</span>pCel2<span style="color: #990000">);</span>
+        pCel2<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setSuivant</span></span><span style="color: #990000">(</span>pCel3<span style="color: #990000">);</span>
 
         <span style="font-style: italic"><span style="color: #9A1900">// initialiser correctement le champ suiv de la Cellule contenant 65.5</span></span>
         <span style="font-style: italic"><span style="color: #9A1900">// pour que la structure  chaînée soit correcte (c'est la dernière cellule de la structure )</span></span>
 
-        pCel2<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setSuivant</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">);</span>
+        pCel3<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setSuivant</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">);</span> <span style="font-style: italic"><span style="color: #9A1900">// Mais fait au constructeur</span></span>
 
-        <span style="font-style: italic"><span style="color: #9A1900">// afficher les différentes valeurs contenues dans la structure  chaînée dans l'ordre des Cellules</span></span>
-        <span style="font-style: italic"><span style="color: #9A1900">// en utilisant debutChaine et les valeurs de pCel1 et pCel2,</span></span>
+
+        <span style="font-style: italic"><span style="color: #9A1900">// initialiser la variable debutChaine pour qu’elle contienne la référence de la première</span></span>
+        <span style="font-style: italic"><span style="color: #9A1900">// cellule de la chaîne que vous venez de créer</span></span>
+
+        debutChaine <span style="color: #990000">=</span> pCel1<span style="color: #990000">;</span>
+
+        <span style="font-style: italic"><span style="color: #9A1900">// afficher les différentes valeurs contenues dans la structure  chaînée dans l'ordre</span></span>
+        <span style="font-style: italic"><span style="color: #9A1900">// des Cellules en utilisant les valeurs de pCel1, pCel2 et pCel3,</span></span>
+
 
         System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">();</span>
-        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>debutChaine<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getContenu</span></span><span style="color: #990000">());</span>
         System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>pCel1<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getContenu</span></span><span style="color: #990000">());</span>
         System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>pCel2<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getContenu</span></span><span style="color: #990000">());</span>
+        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>pCel3<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getContenu</span></span><span style="color: #990000">());</span>
 
         <span style="font-style: italic"><span style="color: #9A1900">// afficher les différentes valeurs contenues dans la structure  chaînée dans l'ordre des Cellules</span></span>
         <span style="font-style: italic"><span style="color: #9A1900">// en utilisant debutChaine et éventuellement un autre pointeur de Cellule et en utilisant une boucle</span></span>
-        <span style="font-style: italic"><span style="color: #9A1900">// NE PAS se servir des valeurs de pCel1 et pCel2</span></span>
+        <span style="font-style: italic"><span style="color: #9A1900">// NE PAS se servir des valeurs de pCel1, pCel2 et pCel3</span></span>
 
         System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">();</span>
         temp <span style="color: #990000">=</span> debutChaine <span style="color: #990000">;</span>
@@ -6165,6 +6172,10 @@ http://www.gnu.org/software/src-highlite -->
         <span style="color: #FF0000">}</span>
 
         <span style="font-style: italic"><span style="color: #9A1900">// PARTIE 2 - PARTIE 2 - PARTIE 2 - PARTIE 2</span></span>
+
+        pCel1 <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">;</span>
+        pCel2 <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">;</span>
+        pCel3 <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">;</span>
 
         <span style="font-style: italic"><span style="color: #9A1900">// en utilisant les variables nécessaires : ajouter l'élément 35.5 avant la cellule contenant 45.5 sans utiliser pCel1 et pCel2 (mises à null entre temps)</span></span>
 
@@ -6491,7 +6502,7 @@ Liste chaînée : parcours des (i-1) éléments précédents.
 </div>
 <div id="footer" style="position: absolute; left: 5%; top: 80%; width: 90%;">
 <div id="footer-text">
-Dernière mise à jour 2016-03-03 17:47:41 CET
+Dernière mise à jour 2016-03-09 15:58:28 CET
 </div>
 </div>
 </div></div>
