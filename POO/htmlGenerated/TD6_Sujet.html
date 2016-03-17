@@ -764,7 +764,7 @@ cellspacing="0" cellpadding="4">
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">Durée</p></td>
-<td align="left" valign="top"><p class="table"><strong>1 séances</strong> de 1,5h</p></td>
+<td align="left" valign="top"><p class="table"><strong>2 séance</strong> de 1,5h</p></td>
 </tr>
 </tbody>
 </table>
@@ -899,7 +899,7 @@ L&#8217;ensemble constitué des valeurs "a", "d", "b", "c" sera ordonné en { "a
 </li>
 <li>
 <p>
-Après chaque ajout, l&#8217;ensemble est ordonné.
+Après chaque ajout, l&#8217;ensemble est ordonné lorsqu&#8217;on appelle <tt>toArray()</tt>.
 </p>
 </li>
 <li>
@@ -925,6 +925,75 @@ La suppression d&#8217;une chaîne non présente ne réalise aucune suppression 
 </ul></div>
 </li>
 </ul></div>
+<div class="paragraph"><p>Exemple d&#8217;utilisation :</p></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>String<span style="color: #990000">[]</span> res<span style="color: #990000">;</span>
+
+<span style="color: #008080">OrderedStringSet</span> oss<span style="color: #990000">,</span> oss2<span style="color: #990000">,</span> oss3<span style="color: #990000">;</span>
+
+oss <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">OrderedStringSet</span></span><span style="color: #990000">();</span>
+  res <span style="color: #990000">=</span> oss<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">toArray</span></span><span style="color: #990000">();</span>   <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span><span style="color: #008080">String</span> s <span style="color: #990000">:</span> res<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  "</span> <span style="color: #990000">+</span> s<span style="color: #990000">);</span><span style="color: #FF0000">}</span>
+  <span style="font-style: italic"><span style="color: #9A1900">//  (Rien)</span></span>
+
+oss<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">add</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"S3"</span><span style="color: #990000">);</span>
+  res <span style="color: #990000">=</span> oss<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">toArray</span></span><span style="color: #990000">();</span>   <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span><span style="color: #008080">String</span> s <span style="color: #990000">:</span> res<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  "</span> <span style="color: #990000">+</span> s<span style="color: #990000">);</span><span style="color: #FF0000">}</span>
+  <span style="font-style: italic"><span style="color: #9A1900">//  "S3"</span></span>
+
+oss<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">add</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"S1"</span><span style="color: #990000">);</span>
+oss<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">add</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"S2"</span><span style="color: #990000">);</span>
+  res <span style="color: #990000">=</span> oss<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">toArray</span></span><span style="color: #990000">();</span>   <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span><span style="color: #008080">String</span> s <span style="color: #990000">:</span> res<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  "</span> <span style="color: #990000">+</span> s<span style="color: #990000">);</span><span style="color: #FF0000">}</span>
+  <span style="font-style: italic"><span style="color: #9A1900">//  "S1"  "S2"  "S3"</span></span>
+
+oss<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">add</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"S1"</span><span style="color: #990000">);</span>
+oss<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">add</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"S2"</span><span style="color: #990000">);</span>
+oss<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">add</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"S4"</span><span style="color: #990000">);</span>
+oss<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">add</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">);</span>
+  res <span style="color: #990000">=</span> oss<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">toArray</span></span><span style="color: #990000">();</span>   <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span><span style="color: #008080">String</span> s <span style="color: #990000">:</span> res<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  "</span> <span style="color: #990000">+</span> s<span style="color: #990000">);</span><span style="color: #FF0000">}</span>
+  <span style="font-style: italic"><span style="color: #9A1900">//  "S1"  "S2"  "S3"  "S4"</span></span>
+
+System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span> oss<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">contains</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"S2"</span><span style="color: #990000">)</span> <span style="color: #990000">);</span> <span style="font-style: italic"><span style="color: #9A1900">// true</span></span>
+System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span> oss<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">contains</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"S4"</span><span style="color: #990000">)</span> <span style="color: #990000">);</span> <span style="font-style: italic"><span style="color: #9A1900">// true</span></span>
+System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span> oss<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">contains</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"toto"</span><span style="color: #990000">)</span> <span style="color: #990000">);</span> <span style="font-style: italic"><span style="color: #9A1900">// false</span></span>
+System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span> oss<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">contains</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"s1"</span><span style="color: #990000">)</span> <span style="color: #990000">);</span> <span style="font-style: italic"><span style="color: #9A1900">// false</span></span>
+System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span> oss<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">contains</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">)</span> <span style="color: #990000">);</span> <span style="font-style: italic"><span style="color: #9A1900">// false</span></span>
+
+oss<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">remove</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">);</span>
+oss<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">remove</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"s2"</span><span style="color: #990000">);</span>
+oss<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">remove</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"toto"</span><span style="color: #990000">);</span>
+  res <span style="color: #990000">=</span> oss<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">toArray</span></span><span style="color: #990000">();</span>   <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span><span style="color: #008080">String</span> s <span style="color: #990000">:</span> res<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  "</span> <span style="color: #990000">+</span> s<span style="color: #990000">);</span><span style="color: #FF0000">}</span>
+  <span style="font-style: italic"><span style="color: #9A1900">//  "S1"  "S2"  "S3"  "S4"</span></span>
+
+oss<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">remove</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"S2"</span><span style="color: #990000">);</span>
+  res <span style="color: #990000">=</span> oss<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">toArray</span></span><span style="color: #990000">();</span>   <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span><span style="color: #008080">String</span> s <span style="color: #990000">:</span> res<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  "</span> <span style="color: #990000">+</span> s<span style="color: #990000">);</span><span style="color: #FF0000">}</span>
+  <span style="font-style: italic"><span style="color: #9A1900">//  "S1"  "S3"  "S4"</span></span>
+
+oss<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">remove</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"S1"</span><span style="color: #990000">);</span>
+oss<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">remove</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"S4"</span><span style="color: #990000">);</span>
+oss<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">remove</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"S3"</span><span style="color: #990000">)</span>
+  res <span style="color: #990000">=</span> oss<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">toArray</span></span><span style="color: #990000">();</span>   <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span><span style="color: #008080">String</span> s <span style="color: #990000">:</span> res<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  "</span> <span style="color: #990000">+</span> s<span style="color: #990000">);</span><span style="color: #FF0000">}</span>
+  <span style="font-style: italic"><span style="color: #9A1900">//  (Rien)</span></span>
+
+oss2 <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">OrderedStringSet</span></span><span style="color: #990000">();</span>
+oss2<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">add</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"S1"</span><span style="color: #990000">);</span> oss2<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">add</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"S2"</span><span style="color: #990000">);</span> oss2<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">add</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"S3"</span><span style="color: #990000">);</span>
+
+oss3 <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">OrderedStringSet</span></span><span style="color: #990000">();</span>
+oss3<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">add</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"S1"</span><span style="color: #990000">);</span> oss3<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">add</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"S3"</span><span style="color: #990000">);</span> oss3<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">add</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"S4"</span><span style="color: #990000">);</span>
+
+oss <span style="color: #990000">=</span> oss2<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">union</span></span><span style="color: #990000">(</span>oss3<span style="color: #990000">);</span>
+  res <span style="color: #990000">=</span> oss<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">toArray</span></span><span style="color: #990000">();</span>   <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span><span style="color: #008080">String</span> s <span style="color: #990000">:</span> res<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  "</span> <span style="color: #990000">+</span> s<span style="color: #990000">);</span><span style="color: #FF0000">}</span>
+  <span style="font-style: italic"><span style="color: #9A1900">//  "S1"  "S2"  "S3"  "S4"</span></span>
+
+oss <span style="color: #990000">=</span> oss2<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">intersect</span></span><span style="color: #990000">(</span>oss3<span style="color: #990000">);</span>
+  res <span style="color: #990000">=</span> oss<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">toArray</span></span><span style="color: #990000">();</span>   <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span><span style="color: #008080">String</span> s <span style="color: #990000">:</span> res<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  "</span> <span style="color: #990000">+</span> s<span style="color: #990000">);</span><span style="color: #FF0000">}</span>
+  <span style="font-style: italic"><span style="color: #9A1900">//  "S1"  "S3"</span></span>
+
+oss <span style="color: #990000">=</span> oss2<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">difference</span></span><span style="color: #990000">(</span>oss3<span style="color: #990000">);</span>
+  res <span style="color: #990000">=</span> oss<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">toArray</span></span><span style="color: #990000">();</span>   <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span><span style="color: #008080">String</span> s <span style="color: #990000">:</span> res<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  "</span> <span style="color: #990000">+</span> s<span style="color: #990000">);</span><span style="color: #FF0000">}</span>
+  <span style="font-style: italic"><span style="color: #9A1900">//  "S2"</span></span></tt></pre></div></div>
 </div>
 </div>
 <div class="sect1">
@@ -1080,7 +1149,7 @@ Liste chaînée :
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_principes">3.1. Principes</h3>
-<div class="paragraph"><p>On retient une mise en oeuvre par tableau dynamique.</p></div>
+<div class="paragraph"><p>On retient une mise en oeuvre par tableau dynamique en stockant les données de façon ordonnée.</p></div>
 <div class="paragraph"><p>Le diagramme UML suivant montre la conception réalisée pour cette implémentation.</p></div>
 <div class="paragraph"><p><span class="image">
 <img alt="images/td6newOSStabDyn.png" src="data:image/png;base64,
@@ -1375,7 +1444,7 @@ On vous donne la méthode <tt>trouveRang(String s)</tt> en version non optimisé
 </li>
 <li>
 <p>
-On vous donne aussi : le constructeur, <tt>size</tt>, <tt>toArray</tt>.
+On vous donne aussi : le constructeur, <tt>size</tt>, <tt>toArray()</tt>.
 </p>
 </li>
 </ul></div>
@@ -1401,6 +1470,16 @@ Ces méthodes sont elles des transformateurs ? des accesseurs (observateurs) ?
 <li>
 <p>
 Récrire <tt>trouveRang(String s)</tt> avec une recherche par dichotomie.
+</p>
+</li>
+<li>
+<p>
+Récrire <tt>add(String s)</tt> en réutilisant une recherche par dichotomie pour : a) soit trouver la chaîne et donc sortir de la fonction, b) soit trouver le rang où insérer la chaîne puis réaliser l&#8217;insertion.
+</p>
+</li>
+<li>
+<p>
+Pourquoi <tt>toArray()</tt> renvoie une copie du tableau interne et non le tableau lui-même ?
 </p>
 </li>
 </ul></div>
@@ -1486,7 +1565,7 @@ Compares two strings lexicographically. The comparison is based on the Unicode v
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2015-03-21 17:19:12 CET
+Dernière mise à jour 2016-03-17 16:58:22 CET
 </div>
 </div>
 </body>
