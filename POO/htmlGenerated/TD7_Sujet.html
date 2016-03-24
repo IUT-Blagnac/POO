@@ -764,7 +764,7 @@ cellspacing="0" cellpadding="4">
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table">Durée</p></td>
-<td align="left" valign="top"><p class="table"><strong>1 séances</strong> de 1,5h</p></td>
+<td align="left" valign="top"><p class="table"><strong>1 séance</strong> de 1,5h</p></td>
 </tr>
 </tbody>
 </table>
@@ -775,7 +775,7 @@ cellspacing="0" cellpadding="4">
 <h2 id="_domaine_d_étude">1. Domaine d'étude</h2>
 <div class="sectionbody">
 <div class="paragraph"><p>On va s&#8217;intéresser à mettre en oeuvre de façon simple l&#8217;association suivante.</p></div>
-<div class="paragraph"><div class="title">Diagramme UML des classes mises en oeuvre (sans multiplicités)</div><p><span class="image">
+<div class="paragraph"><div class="title">Diagramme UML des classes mises en oeuvre (sans multiplicités, définies ensuite)</div><p><span class="image">
 <img alt="images/td6.general.png" src="data:image/png;base64,
 iVBORw0KGgoAAAANSUhEUgAAARAAAAEICAIAAAAY7Ty0AAAANXRFWHRjb3B5bGVmdABHZW5lcmF0
 ZWQgYnkgaHR0cDovL3BsYW50dW1sLnNvdXJjZWZvcmdlLm5ldDpnVRsAAAEjelRYdHBsYW50dW1s
@@ -1343,7 +1343,7 @@ dans la classe Client, une nouvelle méthode duale <tt>public void desassocierCo
 <div class="ulist"><ul>
 <li>
 <p>
-Si cli est associé à une Commande : défaire cette association (lier cette Commande à null (setClient())).
+Si le client <tt>cli</tt> est déjà associé à une Commande (appelons la <tt>com</tt>) : défaire cette association (lier <tt>com</tt> à null (setClient())).
 </p>
 </li>
 <li>
@@ -1353,7 +1353,7 @@ Si la Commande est déjà associée à un Client : défaire cette association (l
 </li>
 <li>
 <p>
-Créer les liens pour associer la Commande et cli (setClient() et setCommande()).
+Créer les liens pour associer la Commande et <tt>cli</tt> (setClient() et setCommande()).
 </p>
 </li>
 </ul></div>
@@ -1584,12 +1584,12 @@ trois méthodes :
 <div class="ulist"><ul>
 <li>
 <p>
-<tt>void addCommande(Commande comm)</tt> : lie le Client à la nouvelle Commande <tt>comm</tt> (ajoute la Commande <tt>comm</tt> à <tt>lesCommandes</tt>),
+<tt>void addCommande(Commande comm)</tt> : lie le Client à la nouvelle Commande <tt>comm</tt> : ajoute la Commande <tt>comm</tt> à <tt>lesCommandes</tt>,
 </p>
 </li>
 <li>
 <p>
-<tt>void removeCommande (Commande comm)</tt> : enlève le lien du Client à la Commande <tt>comm</tt> (retire la Commande <tt>comm</tt> de <tt>lesCommandes</tt>),
+<tt>void removeCommande (Commande comm)</tt> : enlève le lien du Client à la Commande <tt>comm</tt> : retire la Commande <tt>comm</tt> de <tt>lesCommandes</tt>,
 </p>
 </li>
 <li>
@@ -1818,7 +1818,7 @@ Trouver des algorithmes pour <tt>associerClient()</tt> et <tt>associerCommande()
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2015-03-31 19:30:09 CEST
+Dernière mise à jour 2016-03-23 18:33:30 CET
 </div>
 </div>
 </body>
