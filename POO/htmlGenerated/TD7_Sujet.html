@@ -939,6 +939,11 @@ les objets <tt>Compte</tt> <strong>ne sont pas</strong> reliés à une <tt>Agenc
 <div class="ulist"><ul>
 <li>
 <p>
+une association UML se traduit dans un programme par des "liens" entre objets (java : référence(s) vers d&#8217;autre(s) objet(s)).
+</p>
+</li>
+<li>
+<p>
 pour la navigabilité : stocker les "liens" d&#8217;une classe vers une autre par un attribut, et ce dans les deux classes,
 </p>
 </li>
@@ -949,7 +954,7 @@ selon la multiplicité : l&#8217;attribut aura un type particulier : objet, tabl
 </li>
 <li>
 <p>
-il faudra créer des méthodes permettant de maintenir les relations en "état cohérent" par rapport aux multiplicités.
+il faudra créer des méthodes permettant de maintenir les "liens" en "état cohérent" par rapport aux multiplicités.
 </p>
 </li>
 </ul></div>
@@ -1179,7 +1184,7 @@ deux méthodes :
 </ul></div>
 </li>
 </ul></div>
-<div class="paragraph"><p>Deux objets Client cl1 et Commande co1 sont reliés si et seulement si :</p></div>
+<div class="paragraph"><p>Deux objets Client cl1 et Commande co1 sont associés si et seulement si :</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
@@ -1320,26 +1325,40 @@ si la Commande co était déjà associé à un Client, l&#8217;association de ce
 <div class="ulist"><ul>
 <li>
 <p>
-dans la classe Commande, une nouvelle méthode <tt>void associerClient (Client cli)</tt>, qui créera correctement l&#8217;association,
+dans la classe Commande :
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+une nouvelle méthode <tt>void associerClient (Client cli)</tt>, qui créera correctement l&#8217;association,
 </p>
 </li>
 <li>
 <p>
-dans la classe Client, une nouvelle méthode duale <tt>public void associerCommande (Commande comm)</tt>, qui créera correctement l&#8217;association,
-</p>
-</li>
-<li>
-<p>
-dans la classe Commande, une nouvelle méthode <tt>void desassocierClient ()</tt>, qui défera correctement l&#8217;association,
-</p>
-</li>
-<li>
-<p>
-dans la classe Client, une nouvelle méthode duale <tt>public void desassocierCommande ()</tt>, qui défera correctement l&#8217;association.
+une nouvelle méthode <tt>void desassocierClient ()</tt>, qui défera correctement l&#8217;association,
 </p>
 </li>
 </ul></div>
-<div class="paragraph"><p>La méthode <tt>void associerClient (Client cli)</tt> dans la classe Commande réalise le traitement :</p></div>
+</li>
+<li>
+<p>
+Dans la classe Client :
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+une nouvelle méthode <tt>public void associerCommande (Commande comm)</tt>, qui créera correctement l&#8217;association,
+</p>
+</li>
+<li>
+<p>
+une nouvelle méthode <tt>public void desassocierCommande ()</tt>, qui défera correctement l&#8217;association.
+</p>
+</li>
+</ul></div>
+</li>
+</ul></div>
+<div class="paragraph"><p>Dans la classe Commande, la méthode <tt>void associerClient (Client cli)</tt> réalise le traitement :</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
@@ -1357,7 +1376,7 @@ Créer les liens pour associer la Commande et <tt>cli</tt> (setClient() et setCo
 </p>
 </li>
 </ul></div>
-<div class="paragraph"><p>La méthode <tt>void desassocierClient ()</tt> dans la classe Commande réalise le traitement :</p></div>
+<div class="paragraph"><p>Dans la classe Commande, la méthode <tt>void desassocierClient ()</tt> réalise le traitement :</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
@@ -1818,7 +1837,7 @@ Trouver des algorithmes pour <tt>associerClient()</tt> et <tt>associerCommande()
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2016-03-23 18:33:30 CET
+Dernière mise à jour 2016-03-24 12:09:42 CET
 </div>
 </div>
 </body>
