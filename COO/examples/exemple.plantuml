@@ -1,0 +1,16 @@
+@startuml
+'-----------------
+'hide members
+hide circle
+hide methods
+'-----------------
+	class j as "Joueur" {
+		nom
+		prenom
+		adr
+	}
+	class b as "Blessure"
+j "0..*"--"0..*" b
+	
+@enduml
+	
