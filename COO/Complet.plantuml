@@ -1,0 +1,37 @@
+@startuml
+hide methods
+package m {
+  class BonCommande {
+  	-{static} long serialVersionUID
+  	-long ref
+  	-String motif
+  	-String obs
+  	-double montant
+  }
+  interface Serializable {
+  }
+
+  Serializable <|.. BonCommande
+
+  class Facture {
+  	-{static} long serialVersionUID
+  	-String lieu
+  	-Date date
+  	-int numJournee
+  }
+  Serializable <|.. Facture
+
+  class Client {
+  	-{static} long serialVersionUID
+  	-String nom
+  	-String adresse
+  	-int postal
+  	-String ville
+  }
+
+  Serializable <|.. Client
+
+  Facture --> "bc *" BonCommande
+  Facture --> "0..1 client" Client
+}
+@enduml

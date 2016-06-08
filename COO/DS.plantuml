@@ -1,0 +1,24 @@
+@startuml
+
+participant ":Appelant" as a
+participant "b:B" as b
+participant "c:C" as c
+activate a
+a -> b : methode1(p)
+activate b
+b->c:methode2()
+activate c
+c --> b
+deactivate c
+
+b->c:methode3(p)
+activate c
+c --> b
+deactivate c
+
+b-->a
+deactivate b
+
+deactivate a
+
+@enduml

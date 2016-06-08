@@ -1,0 +1,30 @@
+@startuml
+hide methods
+  class BonCommande {
+  	{static} long serialVersionUID
+  	long ref
+  	String motif
+  	String obs
+  	double montant
+  }
+
+  class Facture {
+  	{static} long serialVersionUID
+  	String lieu
+  	Date date
+  	int numJournee
+    Client client
+  	ArrayList<BonCommande> bc
+  }
+
+  class Client {
+  	{static} long serialVersionUID
+  	String nom
+  	String adresse
+  	int postal
+  	String ville
+  }
+
+  Facture --> "bc *" BonCommande
+  Facture --> "0..1 client" Client
+@enduml

@@ -35,10 +35,6 @@
         <stop stop-opacity="1" stop-color="rgb(232,238,247)" offset="0%"/>
         <stop stop-opacity="1" stop-color="rgb(183,201,227)" offset="100%"/>
       </linearGradient>
-      <linearGradient x1="335.5" gradientUnits="userSpaceOnUse" x2="415.5" y1="311.5" y2="351.5" id="linearGradient9" spreadMethod="reflect">
-        <stop stop-opacity="1" stop-color="rgb(232,238,247)" offset="0%"/>
-        <stop stop-opacity="1" stop-color="rgb(183,201,227)" offset="100%"/>
-      </linearGradient>
       <clipPath clipPathUnits="userSpaceOnUse" id="clipPath1">
         <path d="M0 0 L446 0 L446 402 L0 402 L0 0 Z"/>
       </clipPath>
@@ -145,13 +141,6 @@
       <path fill="none" d="M200.0195 39.22 C177.1445 18.5 200.0195 0 237.5345 13.32 C237.5345 0 299.7545 0 299.7545 13.32 C337.2695 0 360.1445 18.5 337.2695 34.78 C360.1445 55.5 337.2695 74 308.9045 60.68 C299.7545 74 237.5345 74 246.6845 60.68 C200.0195 74 177.1445 55.5 200.0195 39.22 Z" clip-path="url(#clipPath2)"/>
       <text x="206.2598" xml:space="preserve" y="34.4688" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">Expression du besoin</text>
       <text x="210.417" xml:space="preserve" y="48.6016" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">(cahier des charges)</text>
-    </g>
-    <g fill="url(#linearGradient9)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,15,15)" stroke="url(#linearGradient9)">
-      <path d="M335.5 311.5 L415.5 311.5 L415.5 351.5 L335.5 351.5 Z" stroke="none" clip-path="url(#clipPath2)"/>
-    </g>
-    <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,15,15)" stroke-linecap="butt">
-      <path fill="none" d="M335.5 311.5 L415.5 311.5 L415.5 351.5 L335.5 351.5 Z" clip-path="url(#clipPath2)"/>
-      <text x="367.9121" xml:space="preserve" y="336.0352" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">10</text>
     </g>
     <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,15,15)" stroke-linecap="butt">
       <path fill="none" d="M176.8307 169.2461 L218.4644 189.7568" clip-path="url(#clipPath2)"/>

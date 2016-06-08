@@ -1,0 +1,15 @@
+@startuml
+hide methods
+package m{
+class BonCommande {
+	-{static} long serialVersionUID
+	-long ref
+	-String motif
+	-String obs
+	-double montant
+}
+interface Serializable {
+}
+Serializable <|.. BonCommande
+}
+@enduml

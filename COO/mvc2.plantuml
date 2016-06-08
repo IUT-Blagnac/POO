@@ -1,0 +1,30 @@
+@startuml
+hide methods
+hide attributes
+
+package v{
+	class MainWindow
+	class ClientWindow
+	class HistoryWindow
+}
+package m{
+  class Client
+  class Facture
+  class BonCommande
+}
+package c{
+	class Controleur {
+	}
+}
+Controleur - "1" MainWindow
+Controleur - "1" ClientWindow
+Controleur - "1" HistoryWindow
+Controleur -> "1" Facture
+Controleur -> "*" Client
+Controleur -> "*" BonCommande
+
+v ..> c
+c ..> v
+c ..> m
+
+@enduml
