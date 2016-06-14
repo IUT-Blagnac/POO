@@ -148,6 +148,9 @@
     <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,15,15)" stroke-linecap="butt">
       <path d="M169.6543 165.7107 L178.2093 175.4991 L177.7278 169.688 L182.6285 166.5286 Z" stroke="none" clip-path="url(#clipPath2)"/>
       <path d="M225.6408 193.2923 L217.0858 183.5039 L217.5673 189.3149 L212.6665 192.4744 Z" clip-path="url(#clipPath2)" stroke="none"/>
+      <path fill="none" d="M177.614 145.4221 L333.3147 143.5461" clip-path="url(#clipPath2)"/>
+      <path d="M169.6146 145.5184 L181.674 150.3735 L178.614 145.41 L181.5535 140.3742 Z" clip-path="url(#clipPath2)" stroke="none"/>
+      <path d="M341.3141 143.4498 L329.2548 138.5947 L332.3148 143.5582 L329.3752 148.594 Z" clip-path="url(#clipPath2)" stroke="none"/>
       <path fill="none" d="M346.3391 163.0122 L304.7153 188.7969" clip-path="url(#clipPath2)"/>
       <path d="M297.9145 193.0098 L310.7488 190.9409 L305.5654 188.2702 L305.4827 182.4399 Z" clip-path="url(#clipPath2)" stroke="none"/>
       <path fill="none" d="M105.436 165.9861 L74.0416 191.9048" clip-path="url(#clipPath2)"/>

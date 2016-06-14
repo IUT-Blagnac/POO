@@ -1,0 +1,16 @@
+@startuml
+hide attribute
+hide circle
+
+abstract class ModeleDeMessagePredefini
+class ModeleAnnonceEmbouteillage extends ModeleDeMessagePredefini {
+public Message creerMessage();
+public ModeleAnnonceEmbouteillage(GPS);
+public String getIntitule();
+}
+class GPS{
+public Position getPositionCourante();
+public getVitesseCourante();
+}
+ModeleAnnonceEmbouteillage --> "1 gps" GPS
+@enduml
