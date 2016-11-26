@@ -220,10 +220,5 @@
 :revisions: Questions de révision
 :is: Ingénierie Système(((IS)))
 :lis: l'Ingénierie Système(((IS)))
-
-ifndef::uk[]
-:stakeholders: parties prenantes
-endif::uk[]
-
 :satisfy: +<<satisfy>>+
 :verify: +<<verify>>+
