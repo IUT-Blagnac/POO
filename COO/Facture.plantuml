@@ -1,0 +1,16 @@
+@startuml
+hide methods
+package m {
+class Facture {
+	-{static} long serialVersionUID
+	-String lieu
+	-Date date
+	-int numJournee
+	-Client client
+	-ArrayList<BonCommande> bc
+}
+interface Serializable {
+}
+Serializable <|.. Facture
+}
+@enduml

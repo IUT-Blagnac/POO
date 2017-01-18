@@ -1,5 +1,5 @@
 :definitions:
-:slidesurl: http://jmbhome.herokuapp.com/talks
+:slidesurl: http://jmbhome.github.io/talks
 
 //Layouts
 :standHeight: 250
@@ -8,12 +8,23 @@
 
 // raccourcis sites
 :aadl: http://www.aadl.info/[AADL]indexterm:[AADL]
+:android: https://www.android.com/[Android icon:android[]]
+:androidstudio: https://developer.android.com/sdk/index.html[Android Studio]
+
+:as: {androidstudio}
+:ant: http://ant.apache.org/[ant]
+:argouml: link:http://argouml.tigris.org/[ArgoUML]
 :artisan: http://www.artisansw.com/[Artisan]
 :asciidoc: http://www.methods.co.nz/asciidoc[AsciiDoc]indexterm:[AsciiDoc]
 :aspectj: http://www.eclipse.org/aspectj/[AspectJ]
 :dasciidoc: http://www.methods.co.nz/asciidoc[d'AsciiDoc]indexterm:[AsciiDoc]
 :asciidoctorlink: http://asciidoctor.org/[Asciidoctor]indexterm:[Asciidoctor]
 :asciidoclet: link:https://github.com/asciidoctor/asciidoclet/[Asciidoclet]
+:awestruct: http://awestruct.org[Awestruct]
+:balsamiq: https://balsamiq.com/[Balsamiq]
+:mybalsamiq: https://iutblagnac.mybalsamiq.com
+:bootstrap: link:http://getbootstrap.com/[Bootstrap]
+:cantine: link:http://lacantine-toulouse.org/[La Cantine]
 :cea: http://www-list.cea.fr/[CEA LIST]
 :cdo: http://www.eclipse.org/cdo/[CDO]
 :cucumber: link:http://cukes.info/[Cucumber]
@@ -24,24 +35,31 @@
 :docbook: http://www.docbook.org/[DocBook]
 :doors: http://www-03.ibm.com/software/products/fr/fr/ratidoor/[DOORS(TM)]
 :ea: http://www.sparxsystems.com.au/products/mdg/tech/sysml/index.html[Enterprise Architect]
-:eclipse: http://www.eclipse.org[eclipse]indexterm:[eclipse]
+:eclipse: http://www.eclipse.org[Eclipse]indexterm:[Eclipse]
 :eclipseDocStyleGuide: https://wiki.eclipse.org/Eclipse_Doc_Style_Guide[Eclipse Doc Style Guide]
 :emf: https://www.eclipse.org/modeling/emf/[EMF]
 :form-l: http://www.ep.liu.se/ecp/096/130/ecp14096130.pdf[FORM-L]
+:foundation: http://foundation.zurb.com/[Foundation]
 :gemoc: http://gemoc.org/[GEMOC]
-:git: link:http://git-scm.com/[Git]
+:giturl: http://git-scm.com/
+:git: link:{giturl}[icon:git[]]
 :github: link:https://github.com/[GitHub]
+:gitlab: icon:gitlab[]link:https://gitlab.com/[GitLab]
 :gherkin: link:http://cukes.info/gherkin.html[Gherkin]
+:googlemaps: https://www.google.fr/maps[Google Maps]
+:gradle: http://www.gradle.org/[Gradle]
 :grafcet: http://fr.wikipedia.org/wiki/Grafcet[Grafcet]
 :gvle: link:http://www.vle-project.org/wiki/GVLE[GVLE]
 :idm2014: link:http://devlog.cnrs.fr/idm2014orga[IDM'2014]
 :inra: link:http://www.inra.fr/[INRA]
+:ivy: http://ant.apache.org/ivy/[Ivy]
 :java: https://www.java.com/fr/[Java]
 :javadoc: link:http://fr.wikipedia.org/wiki/Javadoc[Javadoc]
 :knxweb: http://www.knx.fr/[KNX]
 :magicDraw: http://www.nomagic.com/[MagicDraw]
 :marte: http://www.omgmarte.org/[MARTE]indexterm:[MARTE]
 :matlab: http://fr.mathworks.com/[MatLab]
+:maven: http://maven.apache.org/[Maven]
 :mbsepack: http://www.phoenix-int.com/software/mbse-pak.php[MBSE Pack]
 :mediawiki: https://www.mediawiki.org[MediaWiki]
 :mercurial: link:http://mercurial.selenic.com/[Mercurial]
@@ -58,17 +76,18 @@
 :obeo: link:http://www.obeo.fr/[Obeo]
 :pandoc: http://johnmacfarlane.net/pandoc/[Pandoc]
 :papyrus: http://www.eclipse.org/papyrus/[Papyrus]
+:p4e: https://wiki.eclipse.org/Papyrus_for_Education[Papyrus4Education]
 :papyrusversion: 1.0.1
 :plantumlweb: http://plantuml.sourceforge.net/[plantUML]
-:plantuml: http://plantuml.sourceforge.net/[plantUML]
+:plantuml: link:http://plantuml.sourceforge.net/[plantUML]
 :polarsys: http://polarsys.org/[Polarsys]
 :ptolemy: link:http://ptolemy.eecs.berkeley.edu/[Ptolemy]
 :rapportPotier: http://www.industrie.gouv.fr/logiciel-embarque/Rapport-BGLE-final.pdf[Rapport Potier]
 :rcp: http://wiki.eclipse.org/index.php/Rich_Client_Platform[RCP]
+:readz: https://readthedocs.org/[Readthedocs]
 :record: link:http://record.toulouse.inra.fr/[RECORD]
 :redmine: http://www.redmine.org/[redmine]
 :remodd: http://www.cs.colostate.edu/remodd/v1/[ReMoDD]
-:reqif: http://www.omg.org/spec/ReqIF/[ReqIF]
 :reqcycle: http://www.eclipse.org/community/eclipse_newsletter/2014/april/article3.php[ReqCycle]
 :reqtify: Reqtify
 :rhapsody: http://www-142.ibm.com/software/products/us/en/ratirhap[Rhapsody]indexterm:[Rhapsody]
@@ -76,6 +95,8 @@
 :rtaw: http://www.realtimeatwork.com/[RTaW]indexterm:[RTaW]
 :ruby: https://www.ruby-lang.org[Ruby]
 :sart: http://fr.wikipedia.org/wiki/Structured_Analysis_for_Real_Time[SADT/SART]
+:scrum: link:http://fr.wikipedia.org/wiki/Scrum_(m%C3%A9thode)[Scrum]
+:staruml: link:http://staruml.io/[StarUML]
 :semco: http://www.semcomdt.org/[SEMCO]
 :simulink: http://fr.mathworks.com/products/simulink/?nocookie=true[Simulink]
 :sirius: link:https://www.eclipse.org/proposals/modeling.sirius/[Sirius]
@@ -83,14 +104,16 @@
 :sosym: http://www.sosym.org/[SoSyM]
 :svn: link:https://subversion.apache.org/[Subversion]
 :sym: http://www.omg.org/spec/SyM/[SysML-Modelica]
-:sysml: http://www.omgsysml.org/[SysML(TM)]indexterm:[SysML]
+:sysml: link:http://www.omgsysml.org/[SysML(TM)]indexterm:[SysML]
 :sysmltrends: http://www.google.fr/trends/explore#q=sysml[SysML Trends]
 :topcased: http://www.topcased.org[TOPCASED]indexterm:[Topcased]
 :travis: link:https://travis-ci.org/[Travis]
+:tuleap: link:https://tuleap-campus.org/[Tuleap-Campus]
 :uml: http://www.uml.org/[UML(TM)]indexterm:[UML(TM)]
 :duml: http://www.uml.org/[d'UML(TM)]indexterm:[UML(TM)]
 :umlspec: http://www.omg.org/spec/UML/2.4.1/Infrastructure/PDF/[UML 2.4.2 Specifictation]
 :umple: http://cruise.eecs.uottawa.ca/umple/[Umple]
+:visualSNI: http://sourceforge.net/projects/visual-sni/[VisualSNI]
 :vle: http://www.vle-project.org/wiki/Main_Page[VLE]
 :wikirover: https://polarsys.org/wiki/Rover_Demo_Master_DL_UPS[Rover Demo Wiki]
 :xtext: http://www.eclipse.org/Xtext/[Xtext]
@@ -103,9 +126,13 @@
 :ambler: http://www.agilemodeling.com/[Scott W. Ambler]
 :ap: André Péninou
 :bc: mailto:benoit.combemale@irisa.fr[Benoît Combemale]
+:bh: mailto:brahim.haimd@irit.fr[Brahim Hamid]
 :cabot: http://jordicabot.com/[Jordi Cabot]
 :cb: mailto:cedric.brun@obeo.fr[Cédric Brun]
 :cealist: http://www-list.cea.fr/[CEA Tech List]
+:chantalMorand: mailto:morand@irit.fr[Chantal Morand]
+:cimi: http://www.cimi.univ-toulouse.fr/fr[CiMi]
+:dan: https://github.com/mojavelinux[Dan Allen]
 :dl: http://www.dept-info.ups-tlse.fr/index.php?option=com_content&view=article&id=294&Itemid=697&lang=fr[Master DL-SI]
 :dulas: mailto:jcdulas@phoenix-int.com[Jean-Charles Dulas]
 :eia: http://www.eciaonline.org/eiastandards/[EIA](((EIA)))
@@ -116,6 +143,8 @@
 :ieee: http://www.ieee.org/[IEEE](((IEEE)))
 :incose: http://www.incose.org/[INCOSE]indexterm:[INCOSE](((INCOSE)))
 :iso: http://www.iso.org/[ISO](((ISO)))
+:io: mailto:iulian.ober@irit.fr[Iulian Ober]
+:ileana: mailto:ileana.ober@irit.fr[Ileana Ober]
 :irit: http://www.irit.fr[IRIT](((IRIT)))
 :lirit: http://www.irit.fr[l'IRIT](((IRIT)))
 :iut: http://www.iut-blagnac.fr/[IUT de Blagnac]
@@ -124,6 +153,7 @@
 :jmb: mailto:bruel@irit.fr[Jean-Michel Bruel]
 :jmi: Jean-Michel Inglebert
 :jmimail: jean-michel.inglebert@univ-tlse2.fr
+:jordi: {cabot}
 :karina: Karina Aguilar
 :loic: mailto:loic.fejoz@realtimeatwork.com[Loïc Féjoz]
 :nasa: http://www.nasa.gov/[NASA]
@@ -139,11 +169,12 @@
 :rdp: Réseaux de Petri
 :scrum: link:http://fr.wikipedia.org/wiki/Scrum_(m%C3%A9thode)[Scrum]
 :sd: mailto:saadia.dhouib@cea.fr[Saâdia Dhouib]
-:sei: http://www.sei.cmu.edu/[SEI]
+:se: mailto:sophie.ebersold@irit.fr[Sophie Ebersold]
 :sysmlfrance: http://www.sysml-france.fr[SysML-France]indexterm:[SysML-France]
 :tim: mailto:Tim.Weilkiens@oose.de[Tim Weilkiens]
-:univ-tlse: http://www.univ-toulouse.fr[Université de Toulouse]
-:luniv-tlse: http://www.univ-toulouse.fr[l'Univesité de Toulouse]
+:univ-tlse-url: http://www.univ-toulouse.fr
+:univ-tlse: {univ-tlse-url}[Université de Toulouse]
+:luniv-tlse: {univ-tlse-url}[l'Univesité de Toulouse]
 :univ-tlse2: http://www.univ-tlse2.fr[Université de Toulouse II - Le Mirail]
 :luniv-tlse2: http://www.univ-tlse2.fr[l'Université de Toulouse II - Le Mirail]
 :uag: http://www.uag.mx/[Universitad Autónoma de Guadalajara]
@@ -154,6 +185,8 @@
 :lups: http://www.univ-tlse3.fr[l'UPS]
 :upsti: http://www.upsti.fr/[UPSTI]
 :lupsti: http://www.upsti.fr/[l'UPSTI]
+:comue: {univ-tlse-url}[COMUE]
+:ttt: http://www.toulouse-tech-transfer.com/[Toulouse Tech Transfer]
 
 //------- Normes et Références
 :arp4754a: http://sunnyday.mit.edu/16.355/arp4754a.pdf[ARP4754A]
@@ -187,8 +220,5 @@
 :revisions: Questions de révision
 :is: Ingénierie Système(((IS)))
 :lis: l'Ingénierie Système(((IS)))
-ifndef::uk[]
-:stakeholders: parties prenantes
-endif::uk[]
 :satisfy: +<<satisfy>>+
 :verify: +<<verify>>+

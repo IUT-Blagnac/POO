@@ -1,16 +1,55 @@
 @startuml
+hide circle
+'hide method
 
-class Produits {
-        idPro
-        designation
-        poids
-}
-class Fournisseurs {
-        idFour
-        raisonSociale
+class assure as "Assuré" {
+        numéro
+        nom
+        prénom
+        dateNaissance
         adresse
+        datePermis
+        '---
+        majoration()
+}
+class vehicule as "Véhicule" {
+	immatriculation
+	puissanceFiscale
+	'---
+	bonusMalus()
+}
+enum type as "TypeContrat"
+
+class modele as "Modele"
+class cat as "Catégorie"
+class Prime {
+	montant
+}
+cat - type
+(cat,type) .. Prime
+
+vehicule -- "1" modele
+modele "*" - "1" cat 
+class assurance as "Assurance" {
+	raisonSociale
+	téléphone
+	adresse
+}
+class vt as "Véhicules Tiers" {
+	immatriculation
+	propriétaire
+}
+class dossier as "Dossier" {
+	dateOuverture
+	descriptionAccident
+	expert
 }
 
-Produits "0..*" -- "0..*" Fournisseurs : Fournir
+vehicule --> "1" type
+assure "1..1" - "0..*" vehicule : posseder
+assure "*" -- assurance
+assurance -- vt
+dossier "0..*" -- "0..*" vt
+dossier "0..*" -- "1..*" vehicule
 
 @enduml

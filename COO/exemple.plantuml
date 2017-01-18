@@ -1,0 +1,16 @@
+ @startuml
+ hide circle
+ hide method
+ hide attribute
+
+"ClasseA" <|-- "ClasseB"
+note as N1
+  2
+end note
+
+class 1 << Requirement >>
+mix_usecase "S'identifier"
+1 <.. "S'identifier" : << satisfy >>
+
+
+@enduml
