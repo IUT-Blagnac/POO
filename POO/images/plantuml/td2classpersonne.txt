@@ -6,13 +6,13 @@ class Personne {
 	- int age
 	
 	+ Personne () 
-	+ Personne (String pNom)
-	+ Personne (String pNom, int pAge)
+	+ Personne (String pfNom)
+	+ Personne (String pfNom, int pfAge)
 		   
 	+ String getNom ()
 	+ int getAge () 
-	+ void setNom (String nouvNom)
-	+ void setAge (int nouvAge)
+	+ void setNom (String pfNouvNom)
+	+ void setAge (int pfNouvAge)
 	+ String toString()
 }
 
