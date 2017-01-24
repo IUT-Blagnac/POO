@@ -875,11 +875,11 @@ http://www.gnu.org/software/src-highlite -->
 <span style="font-style: italic"><span style="color: #9A1900">* Calcul de la puissance puiss de la valeur v (calcul de v puissance puiss).</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">* Ne fonctionne que si puiss &gt;= 0</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">*</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">* </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900">    v      valeur dont on cherche la puissance</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">* </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900">    puiss  puissance à laquelle on va élever v</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">* </span></span><span style="color: #009900">@return</span><span style="font-style: italic"><span style="color: #9A1900">   v élevé à la puissance puiss</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">* </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900">    pfV      valeur dont on cherche la puissance</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">* </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900">    pfPuiss  puissance à laquelle on va élever pfV</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">* </span></span><span style="color: #009900">@return</span><span style="font-style: italic"><span style="color: #9A1900">   pfV élevé à la puissance pfPuiss</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">**/</span></span>
-<span style="color: #009900">double</span>  <span style="font-weight: bold"><span style="color: #000000">puissance</span></span> <span style="color: #990000">(</span><span style="color: #009900">double</span> v<span style="color: #990000">,</span> <span style="color: #009900">int</span> puiss<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+<span style="color: #009900">double</span>  <span style="font-weight: bold"><span style="color: #000000">puissance</span></span> <span style="color: #990000">(</span><span style="color: #009900">double</span> pfV<span style="color: #990000">,</span> <span style="color: #009900">int</span> pfPuiss<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
         <span style="color: #009900">double</span> resultat <span style="color: #990000">;</span>
         <span style="color: #990000">...</span>
         <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> resultat<span style="color: #990000">;</span>
@@ -913,7 +913,7 @@ Q : <tt>double  puissance (double v, int puiss)</tt>
 by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
-<pre><tt><span style="color: #009900">double</span> x<span style="color: #990000">;</span>
+<pre><tt><span style="color: #009900">double</span> x<span style="color: #990000">;</span>                     <span style="font-style: italic"><span style="color: #9A1900">// Rappel : double  puissance (double pfV, int pfPuiss)</span></span>
 x <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">puissance</span></span> <span style="color: #990000">(</span><span style="color: #993399">10.5</span><span style="color: #990000">,</span> <span style="color: #993399">1</span><span style="color: #990000">+</span><span style="color: #993399">1</span><span style="color: #990000">);</span></tt></pre></div></div>
 <div class="ulist"><ul>
 <li>
@@ -1040,7 +1040,7 @@ Q : <tt>double  puissance (double v, int puiss)</tt>
 by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
-<pre><tt><span style="color: #009900">double</span> x<span style="color: #990000">;</span>
+<pre><tt><span style="color: #009900">double</span> x<span style="color: #990000">;</span>                     <span style="font-style: italic"><span style="color: #9A1900">// Rappel : double  puissance (double pfV, int pfPuiss)</span></span>
 x <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">puissance</span></span> <span style="color: #990000">(</span><span style="color: #993399">10.5</span><span style="color: #990000">,</span> <span style="color: #993399">2</span><span style="color: #990000">,</span> <span style="color: #993399">2</span><span style="color: #990000">+</span><span style="color: #993399">2</span><span style="color: #990000">);</span>
 x <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">puissance</span></span> <span style="color: #990000">(</span><span style="color: #993399">10.5</span><span style="color: #990000">);</span></tt></pre></div></div>
 <div class="ulist"><ul>
@@ -1168,7 +1168,7 @@ Q : <tt>double  puissance (double v, int puiss)</tt>
 by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
-<pre><tt><span style="color: #009900">double</span> x<span style="color: #990000">;</span>
+<pre><tt><span style="color: #009900">double</span> x<span style="color: #990000">;</span>                     <span style="font-style: italic"><span style="color: #9A1900">// Rappel : double  puissance (double pfV, int pfPuiss)</span></span>
 x <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">puissance</span></span> <span style="color: #990000">(</span><span style="color: #993399">10</span><span style="color: #990000">,</span> <span style="color: #993399">2</span><span style="color: #990000">);</span></tt></pre></div></div>
 <div class="ulist"><ul>
 <li>
@@ -1295,7 +1295,7 @@ Q : <tt>double  puissance (double v, int puiss)</tt>
 by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
-<pre><tt><span style="color: #009900">double</span> x<span style="color: #990000">;</span>
+<pre><tt><span style="color: #009900">double</span> x<span style="color: #990000">;</span>                     <span style="font-style: italic"><span style="color: #9A1900">// Rappel : double  puissance (double pfV, int pfPuiss)</span></span>
 x <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">puissance</span></span> <span style="color: #990000">(</span><span style="color: #993399">10.5</span><span style="color: #990000">,</span> <span style="color: #993399">2.5</span><span style="color: #990000">);</span></tt></pre></div></div>
 <div class="ulist"><ul>
 <li>
@@ -1920,86 +1920,95 @@ un/des constructeurs (public) pour construire des objets.
 <div class="paragraph"><p>Exemple :</p></div>
 <div class="paragraph"><p><span class="image">
 <img alt="images/td2classpersonne.png" src="data:image/png;base64,
-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" />
+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
+c7fIAAAAAElFTkSuQmCC" />
 </span></p></div>
 <div class="listingblock">
 <div class="content"><!-- Generator: GNU source-highlight 3.1.5
@@ -2014,14 +2023,14 @@ http://www.gnu.org/software/src-highlite -->
 
         <span style="font-style: italic"><span style="color: #9A1900">// Constructeurs</span></span>
         <span style="font-weight: bold"><span style="color: #0000FF">public</span></span>  <span style="font-weight: bold"><span style="color: #000000">Personne</span></span> <span style="color: #990000">()</span>  <span style="color: #FF0000">{</span> <span style="color: #990000">...</span> <span style="color: #FF0000">}</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span>  <span style="font-weight: bold"><span style="color: #000000">Personne</span></span> <span style="color: #990000">(</span><span style="color: #008080">String</span> pNom<span style="color: #990000">)</span>   <span style="color: #FF0000">{</span> <span style="color: #990000">...</span> <span style="color: #FF0000">}</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span>  <span style="font-weight: bold"><span style="color: #000000">Personne</span></span> <span style="color: #990000">(</span><span style="color: #008080">String</span> pNom<span style="color: #990000">,</span> <span style="color: #009900">int</span> pAge<span style="color: #990000">)</span> <span style="color: #FF0000">{</span> <span style="color: #990000">...</span> <span style="color: #FF0000">}</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span>  <span style="font-weight: bold"><span style="color: #000000">Personne</span></span> <span style="color: #990000">(</span><span style="color: #008080">String</span> pfNom<span style="color: #990000">)</span>   <span style="color: #FF0000">{</span> <span style="color: #990000">...</span> <span style="color: #FF0000">}</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span>  <span style="font-weight: bold"><span style="color: #000000">Personne</span></span> <span style="color: #990000">(</span><span style="color: #008080">String</span> pfNom<span style="color: #990000">,</span> <span style="color: #009900">int</span> pfAge<span style="color: #990000">)</span> <span style="color: #FF0000">{</span> <span style="color: #990000">...</span> <span style="color: #FF0000">}</span>
 
         <span style="font-style: italic"><span style="color: #9A1900">// Méthodes</span></span>
         <span style="font-weight: bold"><span style="color: #0000FF">public</span></span>  <span style="color: #008080">String</span> <span style="font-weight: bold"><span style="color: #000000">getNom</span></span> <span style="color: #990000">()</span> <span style="color: #FF0000">{</span> <span style="color: #990000">...</span> <span style="color: #FF0000">}</span>
         <span style="font-weight: bold"><span style="color: #0000FF">public</span></span>  <span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">getAge</span></span> <span style="color: #990000">()</span>   <span style="color: #FF0000">{</span> <span style="color: #990000">...</span> <span style="color: #FF0000">}</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span>  <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">setNom</span></span> <span style="color: #990000">(</span><span style="color: #008080">String</span> nouvNom<span style="color: #990000">)</span> <span style="color: #FF0000">{</span> <span style="color: #990000">...</span> <span style="color: #FF0000">}</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span>  <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">setAge</span></span> <span style="color: #990000">(</span><span style="color: #009900">int</span> nouvAge<span style="color: #990000">)</span>  <span style="color: #FF0000">{</span> <span style="color: #990000">...</span> <span style="color: #FF0000">}</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span>  <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">setNom</span></span> <span style="color: #990000">(</span><span style="color: #008080">String</span> pfNouvNom<span style="color: #990000">)</span> <span style="color: #FF0000">{</span> <span style="color: #990000">...</span> <span style="color: #FF0000">}</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span>  <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">setAge</span></span> <span style="color: #990000">(</span><span style="color: #009900">int</span> pfNouvAge<span style="color: #990000">)</span>  <span style="color: #FF0000">{</span> <span style="color: #990000">...</span> <span style="color: #FF0000">}</span>
         <span style="font-weight: bold"><span style="color: #0000FF">public</span></span>  <span style="color: #008080">String</span> <span style="font-weight: bold"><span style="color: #000000">toString</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span> <span style="color: #990000">...</span> <span style="color: #FF0000">}</span>
 <span style="color: #FF0000">}</span> <span style="font-style: italic"><span style="color: #9A1900">// Fin Classe Personne</span></span></tt></pre></div></div>
 <div class="paragraph"><p>Principes de syntaxe :</p></div>
@@ -2122,10 +2131,10 @@ http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
 <pre><tt><span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">ClasseEssai</span>
 <span style="color: #FF0000">{</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span>  <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span> <span style="color: #990000">(</span><span style="color: #008080">String</span>  argv<span style="color: #990000">[])</span> <span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span>  <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span> <span style="color: #990000">(</span>String<span style="color: #990000">[]</span>  argv<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
                 <span style="color: #009900">int</span> i<span style="color: #990000">;</span>
                 <span style="color: #008080">Personne</span>  p1<span style="color: #990000">,</span> p2<span style="color: #990000">,</span> p3<span style="color: #990000">;</span>
-                <span style="color: #008080">Personne</span> tabPers <span style="color: #990000">[];</span>
+                Personne<span style="color: #990000">[]</span>  tabPers<span style="color: #990000">;</span>
 
                 p1 <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Personne</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"Jean"</span><span style="color: #990000">,</span> <span style="color: #993399">39</span><span style="color: #990000">);</span>
                 p2 <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Personne</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"Jean"</span><span style="color: #990000">,</span> <span style="color: #993399">39</span><span style="color: #990000">);</span>
@@ -2171,15 +2180,17 @@ http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
 <pre><tt><span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">Pile</span> <span style="color: #FF0000">{</span>
         <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> String<span style="color: #990000">[]</span> elements<span style="color: #990000">;</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #009900">int</span> indiceSommet <span style="color: #990000">=</span> <span style="color: #990000">-</span><span style="color: #993399">1</span><span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #009900">int</span> indiceSommet<span style="color: #990000">;</span>
 
         <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #000000">Pile</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span> <span style="color: #990000">...</span> <span style="color: #FF0000">}</span>
-
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #000000">Pile</span></span><span style="color: #990000">(</span><span style="color: #009900">int</span> pfTaille<span style="color: #990000">)</span> <span style="color: #FF0000">{</span> <span style="color: #990000">...</span> <span style="color: #FF0000">}</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #000000">Pile</span></span><span style="color: #990000">(</span><span style="color: #009900">int</span> pfTaille<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>elements <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> String <span style="color: #990000">[</span>pfTaille<span style="color: #990000">];</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>indiceSommet <span style="color: #990000">=</span> <span style="color: #990000">-</span><span style="color: #993399">1</span>
+        <span style="color: #FF0000">}</span>
 
         <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">boolean</span> <span style="font-weight: bold"><span style="color: #000000">estVide</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span> <span style="color: #990000">...</span> <span style="color: #FF0000">}</span>
 
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">empiler</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> element<span style="color: #990000">)</span> <span style="font-weight: bold"><span style="color: #0000FF">throws</span></span> Exception <span style="color: #FF0000">{</span> <span style="color: #990000">...</span> <span style="color: #FF0000">}</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">empiler</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> pfElement<span style="color: #990000">)</span> <span style="font-weight: bold"><span style="color: #0000FF">throws</span></span> Exception <span style="color: #FF0000">{</span> <span style="color: #990000">...</span> <span style="color: #FF0000">}</span>
 
         <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">depiler</span></span><span style="color: #990000">()</span> <span style="font-weight: bold"><span style="color: #0000FF">throws</span></span> Exception <span style="color: #FF0000">{</span> <span style="color: #990000">...</span> <span style="color: #FF0000">}</span>
 
@@ -2303,7 +2314,7 @@ by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
 <pre><tt><span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">Test</span> <span style="color: #FF0000">{</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span> <span style="color: #990000">(</span><span style="color: #008080">String</span> argv<span style="color: #990000">[])</span> <span style="font-weight: bold"><span style="color: #0000FF">throws</span></span> Exception <span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span> <span style="color: #990000">(</span>String<span style="color: #990000">[]</span>  argv<span style="color: #990000">)</span> <span style="font-weight: bold"><span style="color: #0000FF">throws</span></span> Exception <span style="color: #FF0000">{</span>
                 <span style="color: #008080">Scanner</span> sc <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Scanner</span></span><span style="color: #990000">(</span>System<span style="color: #990000">.</span>in<span style="color: #990000">);</span>
                 <span style="color: #008080">String</span> ch<span style="color: #990000">;</span>
 
@@ -2322,8 +2333,8 @@ http://www.gnu.org/software/src-highlite -->
                 System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">();</span>
                 <span style="font-weight: bold"><span style="color: #0000FF">while</span></span> <span style="color: #990000">(!</span> moins<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">estVide</span></span><span style="color: #990000">())</span> <span style="color: #FF0000">{</span>
                         ch <span style="color: #990000">=</span> moins<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">sommet</span></span><span style="color: #990000">();</span>
-                        moins<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">depiler</span></span><span style="color: #990000">();</span>
                         System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>ch<span style="color: #990000">);</span>
+                        moins<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">depiler</span></span><span style="color: #990000">();</span>
                 <span style="color: #FF0000">}</span>
 
                 System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">();</span>
@@ -2635,7 +2646,7 @@ http://www.gnu.org/software/src-highlite -->
 
                 <span style="font-style: italic"><span style="color: #9A1900">// d.soumettreCoup (20); // Plantage car partie finie ...</span></span>
         <span style="color: #FF0000">}</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span> <span style="color: #990000">(</span><span style="color: #008080">String</span> argv<span style="color: #990000">[])</span> <span style="font-weight: bold"><span style="color: #0000FF">throws</span></span> ErreurExecutionDevinette
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span> <span style="color: #990000">(</span>String<span style="color: #990000">[]</span>  argv<span style="color: #990000">)</span> <span style="font-weight: bold"><span style="color: #0000FF">throws</span></span> ErreurExecutionDevinette
         <span style="color: #FF0000">{</span>
                 System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Exo 1"</span><span style="color: #990000">);</span>
                 TestDevinette<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">main1</span></span><span style="color: #990000">();</span>
@@ -3076,7 +3087,7 @@ DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&n
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2016-02-06 01:57:15 CET
+Dernière mise à jour 2017-01-19 23:50:05 CET
 </div>
 </div>
 </body>
