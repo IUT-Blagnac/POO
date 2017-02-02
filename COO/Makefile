@@ -1,7 +1,7 @@
 #-----------------------------------------------------
 MAIN=cours
-ICONSDIR=images/icons
-IMAGESDIR=images
+ICONSDIR=.
+IMAGESDIR=./images
 #STYLE=/Users/bruel/Dropbox/Public/dev/asciidoc/stylesheets/golo-jmb.css
 #STYLE=/Users/bruel/dev/asciidoctor/asciidoctor-stylesheet-factory/stylesheets/jmb.css
 #ASCIIDOC=asciidoc -a icons -a iconsdir=$(ICONSDIR) -a stylesheet=$(STYLE) -a imagesdir=$(IMAGESDIR) -a data-uri
