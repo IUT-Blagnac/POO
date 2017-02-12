@@ -8,7 +8,7 @@ class Pile {
 	
 	+ boolean estVide ()
 	+ String sommet ()
-	+ void empiler (String elt)
+	+ void empiler (String pElt)
 	+ void depiler ()
 }
 
