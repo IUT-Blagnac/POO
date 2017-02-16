@@ -17,11 +17,11 @@ class Magasin {
         if ( reponse.equals("N") || reponse.equals("n")) { fini = true ; }
     }
   }
-  public static int[] stockCategories(Article[] tab){
+  public static int[] stockCategories(Article[] pfTab){
     int[] resultat = new int[5] ;
-    for (int indice = 0; indice < tab.length; indice = indice + 1){
-        resultat[0] = resultat[0] + tab[indice].quantite ;
-        resultat[tab[indice].categorie] = resultat[tab[indice].categorie] + tab[indice].quantite ;
+    for (int indice = 0; indice < pfTab.length; indice = indice + 1){
+        resultat[0] = resultat[0] + pfTab[indice].quantite ;
+        resultat[pfTab[indice].categorie] = resultat[pfTab[indice].categorie] + pfTab[indice].quantite ;
     }
     return(resultat);
   }

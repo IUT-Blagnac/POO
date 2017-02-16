@@ -1,10 +1,11 @@
+package tps.banque;
 
 import java.util.ArrayList;
 
 import tps.banque.exception.ABCompteDejaExistantException;
 import tps.banque.exception.ABCompteInexistantException;
 import tps.banque.exception.ABCompteNullException;
-import tps.banque.Compte;
+
 
 /************************************************************
  * La classe AgenceBancaire permet de gérer une agence bancaire comme un ensemble de Comptes.<BR>
@@ -12,11 +13,11 @@ import tps.banque.Compte;
  * Exemple : agence "Agence Caisse Epargne" à "Pibrac".<BR>
  * Chaque Compte de l'AgenceBancaire a un numéro unique (vérification faite lors de l'ajout d'un Compte).<BR>
  * 
- * @author X. XXXX.
- * @version y.zz
+ * @author André Péninou.
+ * @version 7.02
  *****************************/
 
-public class AgenceBancaire {
+public class AgenceBancaireS {
 	// Attributs
 	private String nom, loc;
 	private ArrayList<Compte> alCptes;
@@ -26,15 +27,15 @@ public class AgenceBancaire {
 	 * Permet de créer une AgenceBancaire en donnant son nom et sa ville.<BR>
 	 * L'AgenceBancaire est initialisée avec 0 comptes.<BR>
 	 * 
-	 * @param pNomAgence
+	 * @param pfNomAgence
 	 *            Le nom de l'AgenceBancaire.
-	 * @param pLocAgence
+	 * @param pfLocAgence
 	 *            La ville de localisation de l'AgenceBancaire.
 	 */
 
-	public AgenceBancaire(String pNomAgence, String pLocAgence) {
-		this.nom = pNomAgence;
-		this.loc = pLocAgence;
+	public AgenceBancaire(String pfNomAgence, String pfLocAgence) {
+		this.nom = pfNomAgence;
+		this.loc = pfLocAgence;
 		this.alCptes = new ArrayList<Compte>();
 	}
 
@@ -74,46 +75,51 @@ public class AgenceBancaire {
 	/**
 	 * Permet de retrouver un Compte de l'AgenceBancaire à partir de son numéro de
 	 * compte (unique).<BR>
-	 * Renvoie null si le Compte de numéro de compte pNumCompte n'est pas
+	 * Renvoie null si le Compte de numéro de compte donné n'est pas
 	 * trouvé.<BR>
 	 * <BR>
 	 * 
-	 * @param pNumCompte
+	 * @param pfNumCompte
 	 *            Le numéro du Compte recherché.
 	 * @see AgenceBancaire#addCompte(Compte)
 	 * @return Le Compte de numéro pNumCompte, null si le compte n'est pas
 	 *         trouvé.
 	 */
 
-	public Compte getCompte(String pNumCompte) {
+	public Compte getCompte(String pfNumCompte) {
 		// A titre d'exemple : utilise une méthode privée définie en fin de
 		// classe
-		return this.trouveCompte(pNumCompte);
+		int rang = this.trouveCompte(pfNumCompte);
+		if (rang != -1) {
+			return this.alCptes.get(rang);
+		}
+		return null;
 	}
 
 	/**
 	 * Permet de retrouver les Comptes de l'AgenceBancaire correspondant à un nom de
 	 * propriétaire donné.<BR>
 	 * Renvoie un tableau du nombre de Comptes ayant pour propriétaire
-	 * pNomProprietaire (et contenant les dits Comptes...).<BR>
+	 * le nom de priopriétaire donné (et contenant les Comptes correspondants...).<BR>
 	 * Si aucun Compte n'est trouvé, renvoie un tableau de longueur 0.<BR>
 	 * <BR>
 	 * 
-	 * @param pNomProprietaire
+	 * @param pfNomProprietaire
 	 *            Le nom du propriétaire de Compte dont on veut les Comptes.
 	 * @see AgenceBancaire#addCompte(Compte)
 	 * @return Un tableau des Comptes ayant pour propriétaire pNomProprietaire,
 	 *         un tableau de longueur 0 si aucun compte n'est trouvé.
 	 */
 
-	public Compte[] getComptesDe(String pNomProprietaire) {
+	public Compte[] getComptesDe(String pfNomProprietaire) {
 		/*
-		 * Méthode Créer une ArrayList de Compte temporaire : alTemp. 
-		 * Parcourir this.alCptes Si un compe appartient au proprietaire 
-		 * 	=> le garder dans alTemp.
-		 * Si alTemp pas vide : recopier tous les comptes de alTemp dans
+		 * Méthode : créer une ArrayList de Compte temporaire : alTemp. 
+		 * Parcourir this.alCptes.
+		 * 	Si un compe appartient au proprietaire 
+		 * 		=> le garder dans alTemp.
+		 * Si alTemp non vide : recopier tous les comptes de alTemp dans
 		 * un nouveau tableau qui sera renvoyé 
-		 * Sinon Créer un tableau de 0 éléments.
+		 * Sinon créer un tableau de 0 éléments.
 		 */
 
 		Compte t[], cTemp;
@@ -127,7 +133,7 @@ public class AgenceBancaire {
 		nbC = this.alCptes.size();
 		for (i = 0; i < nbC; i++) {
 			cTemp = alCptes.get(i);
-			if (cTemp.getProprietaire().equals(pNomProprietaire)) {
+			if (cTemp.getProprietaire().equals(pfNomProprietaire)) {
 				alTemp.add(cTemp);
 			}
 		}
@@ -146,13 +152,15 @@ public class AgenceBancaire {
 			 * cf. doc ArrayList / T[] toArray(T[])
 			 */
 		} else {
+			// ... pas de compte dans un tableau vide
 			t = new Compte[0];
 		}
 		return t;
 	}
 
-	/*	Autre solution possible : sans ArrayList temporaire
-	 	public Compte[] getComptesDe (String pNomProprietaire)
+		/*
+		// Autre solution possible : sans ArrayList temporaire
+	 	public Compte[] getComptesDeZ (String pfNomProprietaire)
 		{
 			Compte t[], cTemp;
 			int nbC, nbCCourants, i, j;
@@ -165,7 +173,7 @@ public class AgenceBancaire {
 			for (i=0; i<nbCCourants; i++)
 			{
 				cTemp = alCptes.get(i);
-				if (cTemp.getProprietaire().equals(pNomProprietaire)) {
+				if (cTemp.getProprietaire().equals(pfNomProprietaire)) {
 					nbC++;
 				}
 			}
@@ -181,7 +189,7 @@ public class AgenceBancaire {
 				for (i=0; i<nbCCourants; i++)
 				{
 					cTemp = alCptes.get(i);
-					if (cTemp.getProprietaire().equals(pNomProprietaire)) {
+					if (cTemp.getProprietaire().equals(pfNomProprietaire)) {
 						t[j++] = cTemp;
 					}
 				}
@@ -192,7 +200,8 @@ public class AgenceBancaire {
 	
 			return t;
 		}
-	 */
+		*/
+	 
 
 	/**
 	 * Permet d'afficher une AgenceBancaire -<B> SPECIAL TP.</B><BR>
@@ -233,89 +242,100 @@ public class AgenceBancaire {
 	
 	/**
 	 * Permet d'ajouter un Compte à l'AgenceBancaire.<BR>
-	 * Le Compte pCompteAAjouter est ajouté à l'AgenceBancaire s'il n'existe pas déjà un Compte
-	 * ayant le même numéro de compte que pCompteAAjouter 
-	 * (identique en numéro de compte à pCompteAAjouter.getNumCompte()).<BR>
+	 * Le Compte est ajouté à l'AgenceBancaire s'il n'existe pas déjà un Compte
+	 * ayant le même numéro de compte  
+	 * (identique en numéro de compte, cf. méthode getNumCompte() de la classe Compte).<BR>
 	 * Si on appelle la méthode avec null en paramètre, la méthode lève une exception.<BR>
 	 * 
-	 * @param pCompteAAjouter
+	 * @param pfCompteAAjouter
 	 *            Le Compte à ajouter à l'AgenceBancaire.
 	 * @throws ABCompteNullException  lorsque pCompteAAjouter == null	
 	 * @throws ABCompteDejaExistantException  lorsque un compte de numéro pCompteAAjouter.getNumCompte() existe déjà dans l'AgenceBancaire.
 	 * @see AgenceBancaire#removeCompte(String)
 	 */
 
-	public void addCompte(Compte pCompteAAjouter) throws ABCompteNullException, ABCompteDejaExistantException {
-		Compte c;
-
+	public void addCompte(Compte pfCompteAAjouter) throws ABCompteNullException, ABCompteDejaExistantException {
+		int rang; 
+		
 		// Si null => refusé
-		if (pCompteAAjouter == null) {
+		if (pfCompteAAjouter == null) {
 			throw new ABCompteNullException("Erreur ajout Compte 'null' dans l'agence " 
 					+ this.nom + " (" + this.loc + ")");
 		}
 
 		// On cherche un Compte de même numéro
-		c = this.trouveCompte(pCompteAAjouter.getNumCompte());
+		rang = this.trouveCompte(pfCompteAAjouter.getNumCompte());
 
-		// Si pas trouvé
-		if (c == null) {
-			// ... on ajoute le Compte
-			this.alCptes.add(pCompteAAjouter);
-		} else {
+		// Si trouvé
+		if (rang != -1) {
+			// => refusé
 			throw new ABCompteDejaExistantException(
 					"Erreur ajout Compte déja existant ("
-					+ pCompteAAjouter.getNumCompte() + ") dans l'agence " 
+					+ pfCompteAAjouter.getNumCompte() + ") dans l'agence " 
 					+ this.nom + " (" + this.loc + ")");
+		} else {
+			// sinon ... on ajoute le Compte
+			this.alCptes.add(pfCompteAAjouter);
+
 		}
 	}
 
 	/**
 	 * Permet de supprimer un Compte de l'AgenceBancaire, à partir de son numéro.<BR>
-	 * Le Compte (unique) de numéro pNumCompte est retiré de l'AgenceBancaire s'il est
+	 * Le Compte (unique) du numéro donné est retiré de l'AgenceBancaire s'il est
 	 * trouvé.<BR>
 	 * Une exception est levée si le compte n'est pas trouvé.<BR>
 	 * 
-	 * @param pNumCompte
+	 * @param pfNumCompte
 	 *            Le numéro du Compte à supprimer de l'AgenceBancaire.
 	 * @throws ABCompteInexistantException	Lorsque aucun compte de numéro pNumCompte ne peut être trouvé.
 	 * @see AgenceBancaire#addCompte(Compte)
 	 */
-	public void removeCompte(String pNumCompte) throws ABCompteInexistantException{
-		Compte c;
+	
+	public void removeCompte(String pfNumCompte) throws ABCompteInexistantException{
+		int rang;
 
 		// On cherche un Compte de même numéro
-		c = this.trouveCompte(pNumCompte);
+		rang = this.trouveCompte(pfNumCompte);
 
-		// Si trouvé ...
-		if (c != null) {
-			// ... on enlève ce Compte
-			this.alCptes.remove(c);
-		} else {
+		// Si pas trouvé ...
+		if (rang == -1) {
+			// ... erreur
 			throw new ABCompteInexistantException(
 					"Erreur suppression Compte inexistant ("
-					+ pNumCompte+ ") dans l'agence " 
+					+ pfNumCompte+ ") dans l'agence " 
 					+ this.nom + " (" + this.loc + ")");
+		} else {
+			// ... on enlève ce Compte
+			this.alCptes.remove(rang);
 		}
 	}
 
-	/*
-	 * Exemple de methode privée. En partie inutile ici (pourrait se faire dans
-	 * getCompte() et appeler getCompte() ailleurs).
-	 */
-	private Compte trouveCompte(String pNC) {
-		Compte c = null, cTemp;
-		int i, nbC;
 
+	/**
+	 * Méthode privée de recherche du Compte de la Cellule contenant un compte.
+	 * Cherche la cellule contenant un compte ayant pour numéro le numéro en paramètre.
+	 * Renvoie null si aucun compte n'est trouvé.
+	 *
+	 * @param      pfNC  numéro du compte recherché
+	 * @return     la cellule contenant l'objet Compte trouvé ayant pour numéro pNC ou null si non trouvé. 
+	 */
+	
+	private int trouveCompte(String pfNC) {
+		Compte cTemp;
+		int i, nbC;
+		int rang; 
 		// On parcours l'ArrayList de l'AgenceBancaire
 		nbC = this.alCptes.size();
-		for (i = 0; i < nbC && c == null; i++) {
+		rang = -1;
+		for (i = 0; i < nbC && rang == -1; i++) {
 			cTemp = alCptes.get(i);
 			// Si un Compte a le même numéro que pNC
-			if (cTemp.getNumCompte().equals(pNC)) {
-				// ... on le garde
-				c = cTemp;
+			if (cTemp.getNumCompte().equals(pfNC)) {
+				// ... on garde son rang
+				rang = i;
 			}
 		}
-		return c;
+		return rang;
 	}
 }

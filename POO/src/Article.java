@@ -4,17 +4,17 @@ class Article {
     int categorie ;
     int quantite ;
     
-    Article(String pNom, int pNumero){
-        nom = pNom ;
-        numero = pNumero ;
+    Article(String pfNom, int pfNumero){
+        nom = pfNom ;
+        numero = pfNumero ;
         categorie = 1 ;
         quantite = 1 ;
     }
-    Article(String pNom, int pNumero, int pCategorie, int pQuantite){
-        nom = pNom ;
-        numero = pNumero ;
-        categorie = pCategorie ;
-        quantite = pQuantite ;
+    Article(String pfNom, int pfNumero, int pfCategorie, int pfQuantite){
+        nom = pfNom ;
+        numero = pfNumero ;
+        categorie = pfCategorie ;
+        quantite = pfQuantite ;
     }
     
     boolean enStock(){
@@ -29,13 +29,13 @@ class Article {
         quantite = quantite + 1 ;
         return(quantite);
     }
-    int vendre(int combien) throws Exception{
-        if (quantite >= combien) { throw new Exception("stock insuffisant"); }
-        quantite = quantite - combien ;
+    int vendre(int pfCombien) throws Exception{
+        if (quantite < pfCombien) { throw new Exception("stock insuffisant"); }
+        quantite = quantite - pfCombien ;
         return(quantite);
     }
-    int reprendre(int combien){
-        quantite = quantite + combien ;
+    int reprendre(int pfCombien){
+        quantite = quantite + pfCombien ;
         return(quantite);
     }
 }
