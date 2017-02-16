@@ -8,19 +8,20 @@ class Compte {
 	- double credits
 	- int nbDebits
 	- int nbCredits
-	
+____	
 	+ Compte() 
-	+ Compte(String pNumCompte, String pNomProp) 
+	+ Compte(String pfNumCompte, String pfNomProp) 
 	
 	+ String getNumCompte()
 	+ String getProprietaire()
 	+ double soldeCompte()
-	+ void setProprietaire(String pNomProp)
-	+ void retirer(double pSomme)
-	+ void deposer(double pSomme)
+	+ void setProprietaire(String pfNomProp)
+	+ void retirer(double pfMontant)
+	+ void deposer(double pfMontant)
 	
-	+ void afficher()
 	+ String toString()
+....
+	+ void afficher() // Spécial TPs
 }
 
 class CompteMoneo {

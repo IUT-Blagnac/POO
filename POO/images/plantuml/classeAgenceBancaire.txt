@@ -5,24 +5,24 @@ class AgenceBancaire {
 	- String nom 
 	- String loc
 	- ArrayList<Compte> alCptes
----
-	+ AgenceBancaire(String pNomAgence, String pLocAgence) 
+____
+	+ AgenceBancaire(String pfNomAgence, String pfLocAgence) 
 	
 	+ String getNomAgence()
 	+ String getLocAgence() 
 	+ int getNbComptes() 
-	+ Compte getCompte(String pNumCompte) 
-	+ Compte[] getComptesDe(String pNomProprietaire) 
+	+ Compte getCompte(String pfNumCompte) 
+	+ Compte[] getComptesDe(String pfNomProprietaire) 
 	
-	+ void addCompte(Compte pCompteAAjouter)
-	+ void removeCompte(String pNumCompte) 
+	+ void addCompte(Compte pfCompteAAjouter)
+	+ void removeCompte(String pfNumCompte) 
 
 	 
 	+ String toString()
-	---
-        + void afficher()
-	---
-	- int trouveCompte(String pNC)
+....
+        + void afficher()  // Spécial TPs
+....
+	- int trouveCompte(String pfNC)
 }
 
 @enduml

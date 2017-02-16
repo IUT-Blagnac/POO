@@ -5,29 +5,35 @@ class Vehicule {
 	- String  marque
 	- int  noSerie
 	- int  km
+____	
 	+ Vehicule  ()
-	+ Vehicule  (String  pMarque,  int  pSerie)
+	+ Vehicule  (String  pfMarque,  int  pfSerie)
 	+ String  getMarque()
 	+ int  getNoSerie()
 	+ int  getKm()
-	+ void  setNoSerie(int  pSerie)
-    + void  rouler  (int  nbKm)
-	+ void  afficher  ()
+	+ void  setNoSerie(int  pfSerie)
+	+ void  rouler  (int  pfNbKm)
+....	
+	+ void  afficher  () // Spécial TPs
 }
 
 class Voiture {
 	-  String  noImmat
+____	
 	+ Voiture()
-	+ Voiture(String  pMarque,  int  pSerie,  String  pImmat)
+	+ Voiture(String  pfMarque,  int  pfSerie,  String  pfImmat)
 	+ String  getNumeroImmat  ()  
-	+ void  setNumeroImmat  (String pImmat)
-	+ void  afficher  ()
+	+ void  setNumeroImmat  (String pfImmat)
+....	
+	+ void  afficher  () // Spécial TPs
 } 
 
 class  MonoSpace {
+____
 	+  Monospace () 
 	+ void  afficher  ()
-	+ void  afficher  (int decalage)
+....	
+	+ void  afficher  () // Spécial TPs
 } 
 
 class AutreVehicule {

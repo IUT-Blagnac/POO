@@ -5,12 +5,12 @@ class Cellule {
 	- double contenu 
 	- Cellule suivant
 
-	+ Cellule (double pVal, Cellule pSuiv) 
+	+ Cellule (double pfVal, Cellule pfSuiv) 
 	
 	+ double getContenu ()
 	+ Cellule getSuivant ()
-	+ void setContenu (double pVal)
-	+ void setSuivant (Cellule pSuiv)
+	+ void setContenu (double pfVal)
+	+ void setSuivant (Cellule pfSuiv)
 }
 
 @enduml

@@ -6,9 +6,9 @@ class Vehicule {
 	- int puissance ;
 	- int distParcourue ;
 	- double consommation ;
-	
+____	
    + Vehicule ()
-   + Vehicule (String pImmat, int pPuiss)
+   + Vehicule (String pfImmat, int pfPuiss)
    
    + String getImmat ()
    + int getPuissance ()
@@ -16,53 +16,50 @@ class Vehicule {
    + double coutTotal () 
    + double coutSuppl ()
    
-   + void rouler (int pKm)
-   + void setConso (double pConso)
-   + void setPuissance (int pPuiss)
-   + void setImmat (String pImmat)
-   
-   + void afficher ()
+   + void rouler (int pfKm)
+   + void setConso (double pfConso)
+   + void setPuissance (int pfPuiss)
+   + void setImmat (String pfImmat)
+....	
+   + void  afficher  () // Spécial TPs  
 }
 
 class Voiture {
 	- double tauxUsure;
 	- String marque;
-
+____
 	+ Voiture ()
-	+ Voiture (String pImmat, int pPuiss)
-	+ Voiture (String pImmat, int pPuiss, 
-		String pMarque, double pTauxUsure)
+	+ Voiture (String pfImmat, int pfPuiss)
+	+ Voiture (String pIfmmat, int pfPuiss, String pfMarque, double pfTauxUsure)
 
    + double getTauxUsure () 
    + String getMarque () 
    + double coutTotal ()  
    + double coutSuppl () 
 
-   + void setTauxUsure (double pTauxUsure)
-   + void setMarque (String pMarque)
-
-   + void afficher ()   
+   + void setTauxUsure (double pfTauxUsure)
+   + void setMarque (String pfMarque)
+....	
+   + void  afficher  () // Spécial TPs  
 } 
 
 class  Camion {
 
 	- int chargeUtile;
 	- double ratio ;
-
+____
 	+ Camion ()
-   + Camion (String pImmat, int pPuiss)
-   + Camion (String pImmat, int pPuiss, 
-   int pChargeU, double pRatio)
+   + Camion (String pfImmat, int pfPuiss)
+   + Camion (String pfImmat, int pfPuiss, int pfChargeU, double pfRatio)
 
    + double getRatio () 
    + double coutTotal ()   
    + double coutSuppl ()  
 
-   + void setRatio (double pRatio) 
-   + void setChargeU (int pChargeU) 
-
-   + void afficher ()   
-
+   + void setRatio (double pfRatio) 
+   + void setChargeU (int pfChargeU) 
+....	
+   + void  afficher  () // Spécial TPs  
 } 
 
 Vehicule <|-- Voiture

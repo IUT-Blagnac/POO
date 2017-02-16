@@ -6,7 +6,7 @@ class Pile {
 	
 	+ boolean estVide ()
 	+ String sommet ()
-	+ void empiler (String pElt)
+	+ void empiler (String pfElt)
 	+ void depiler ()
 }
 
