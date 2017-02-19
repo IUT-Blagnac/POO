@@ -2,38 +2,38 @@
 skinparam classAttributeIconSize 0
 
 class AgenceBancaire {
-	+ AgenceBancaire(String pNomAgence, String pLocAgence) 
+	+ AgenceBancaire(String pfNomAgence, String pfLocAgence) 
 	
 	+ String getNomAgence()
 	+ String getLocAgence() 
 	+ int getNbComptes() 
-	+ Compte getCompte(String pNumCompte) 
-	+ Compte[] getComptesDe(String pNomProprietaire) 
+	+ Compte getCompte(String pfNumCompte) 
+	+ Compte[] getComptesDe(String pfNomProprietaire) 
 	
-	+ void addCompte(Compte pCompteAAjouter)
-	+ void removeCompte(String pNumCompte) 
+	+ void addCompte(Compte pfCompteAAjouter)
+	+ void removeCompte(String pfNumCompte) 
 
 	+ String toString()
-	--------
-	+ void afficher() 
-	--------
-	- int trouveCompte(String pNC)
+....
+	+ void afficher() // Spécial TPs
+....
+	- int trouveCompte(String pfNC)
 }
 
 class Compte {
 	+ Compte() 
-	+ Compte(String pNumCompte, String pNomProp) 
+	+ Compte(String pfNumCompte, String pfNomProp) 
 	
 	+ String getNumCompte()
 	+ String getProprietaire()
 	+ double soldeCompte()
-	+ void setProprietaire(String pNomProp)
-	+ void retirer(double pSomme)
-	+ void deposer(double pSomme)
+	+ void setProprietaire(String pfNomProp)
+	+ void retirer(double pfMontant)
+	+ void deposer(double pfMontant)
 
 	+ String toString()
-	--------
-	+ void afficher() 
+....
+	+ void afficher() // Spécial TPs
 }
 
 AgenceBancaire o- Compte

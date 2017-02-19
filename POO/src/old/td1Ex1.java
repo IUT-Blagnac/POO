@@ -1,4 +1,4 @@
-public static void main(String argv[]) {
+public static void main(String[] argv) {
 	int i, j, k ;
 	double d, e, f
 	i = 1; // <1>

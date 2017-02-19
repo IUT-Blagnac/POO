@@ -937,7 +937,7 @@ http://www.gnu.org/software/src-highlite -->
 
 <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">ClasseEssaiCompte</span>
 <span style="color: #FF0000">{</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span> <span style="color: #990000">(</span><span style="color: #008080">String</span> argv<span style="color: #990000">[])</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span> <span style="color: #990000">(</span>String<span style="color: #990000">[]</span> argv<span style="color: #990000">)</span>
         <span style="color: #FF0000">{</span>
                 <span style="color: #008080">Compte</span> cUn <span style="color: #990000">;</span>
                 <span style="font-style: italic"><span style="color: #9A1900">// ...</span></span>
@@ -1013,113 +1013,127 @@ lJga0LT8+uRGJ5P/2OBGpz/mT34Gmsy9nx36v3PoX1H4mIUGLCOSAAAAAElFTkSuQmCC" />
 <div class="paragraph"><p>Repérer les méthodes générant des exceptions.</p></div>
 <div class="paragraph"><div class="title">Diagramme UML de l&#8217;interface de la classe Compte</div><p><span class="image">
 <img alt="images/classeCompteInterface.png" src="data:image/png;base64,
-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" />
+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" />
 </span></p></div>
 </div>
 <div class="sect2">
 <h3 id="_utiliser_la_classe_compte">2.2. Utiliser la classe Compte</h3>
+<div class="sect3">
+<h4 id="_premiers_essais">2.2.1. Premiers essais</h4>
 <div class="paragraph"><p><strong>Mettre les explications et compte rendus demandés en commentaire au fil du code dans les fichiers sources.</strong></p></div>
 <div class="paragraph"><p>Ecrire le programme réalisant les actions suivantes en le testant pas à pas à chaque demande d&#8217;affichage (compilation/run) :</p></div>
 <div class="olist arabic"><ol class="arabic">
@@ -1130,22 +1144,185 @@ Créer un programme Java <tt>ClasseEssaiCompte.java</tt> comportant une méthode
 </li>
 <li>
 <p>
+Déclarer une variable <tt>cUn</tt> de type <tt>Compte</tt> : une référence vers un <tt>Compte</tt>. (Ne pas faire de new !! ca serait une initialisation)
+</p>
+</li>
+<li>
+<p>
+Créer un <tt>Compte</tt> avec un numéro de compte"010101" et un propriétaire "Lepoisson Benoit" à l&#8217;aide de <tt>cUn</tt>.
+</p>
+</li>
+<li>
+<p>
+Appliquer la méthode <tt>afficher()</tt> à <tt>cUn</tt>. Que se passe-t-il ? Expliquer pourquoi.
+</p>
+</li>
+<li>
+<p>
+Utiliser <strong>toutes</strong> méthodes disponibles sur la classe <tt>Compte</tt>. Pour retirer() et deposer(), ajouter l&#8217;import nécessaire pour la classe <tt>CompteException</tt> (package <tt>tps.banque.exception</tt>). Le code suivant pourra vous aider :
+</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">try</span></span> <span style="color: #FF0000">{</span>
+        cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">deposer</span></span><span style="color: #990000">(</span> <span style="color: #990000">...</span> <span style="color: #990000">);</span>
+        <span style="color: #990000">...</span>
+<span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">CompteException</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Erreur ..."</span><span style="color: #990000">);</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+</li>
+<li>
+<p>
+Appliquer la méthode <tt>afficher()</tt> à <tt>cUn</tt>.
+</p>
+</li>
+<li>
+<p>
+Essayer de retirer <tt>-100</tt> euros du compte <tt>cUn</tt>. Que se passe-t-il ?
+</p>
+</li>
+<li>
+<p>
+Essayer de déposer <tt>-100</tt> euros du compte <tt>cUn</tt>. Que se passe-t-il ?
+</p>
+</li>
+<li>
+<p>
+Essayer l&#8217;instruction suivante :
+</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>cUn<span style="color: #990000">);</span></tt></pre></div></div>
+<div class="paragraph"><p>Quel est le résultat ? (voir l&#8217;aide sur toString()).</p></div>
+</li>
+<li>
+<p>
+Essayer l&#8217;instruction suivante :
+</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>System<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">identityHashCode</span></span><span style="color: #990000">(</span>cUn<span style="color: #990000">));</span></tt></pre></div></div>
+<div class="paragraph"><p>Quel est le résultat ?</p></div>
+</li>
+<li>
+<p>
+Affecter à <tt>cUn</tt> la valeur <tt>null</tt>.
+</p>
+</li>
+<li>
+<p>
+Essayer l&#8217;instruction suivante :
+</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>System<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">identityHashCode</span></span><span style="color: #990000">(</span>cUn<span style="color: #990000">));</span></tt></pre></div></div>
+<div class="paragraph"><p>Quel est le résultat ?</p></div>
+</li>
+<li>
+<p>
+Appliquer la méthode <tt>afficher()</tt> à <tt>cUn</tt>. Que se passe-t-il ? Expliquer.
+</p>
+</li>
+</ol></div>
+</div>
+<div class="sect3">
+<h4 id="_toujours_plus_plusieurs_variables_et_plusieurs_objets">2.2.2. Toujours plus : plusieurs variables et plusieurs objets</h4>
+<div class="paragraph"><p><strong>Mettre les explications et compte rendus demandés en commentaire au fil du code dans les fichiers sources.</strong></p></div>
+<div class="paragraph"><p>Ecrire le programme réalisant les actions suivantes en le testant pas à pas à chaque demande d&#8217;affichage (compilation/run) :</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Faire une nouvelle méthode main() dans <tt>ClasseEssaiCompte.java</tt> sur le modèle décrit en <a href="#Preambule">Préambule</a> (renommer le main existant en mainExo1 par exemple) .
+</p>
+</li>
+<li>
+<p>
 Déclarer deux variables <tt>cUn</tt> et <tt>cDeux</tt> "de type <tt>Compte</tt>" : références vers un <tt>Compte</tt>. (Ne pas faire de new !! ca serait une initialisation)
 </p>
 </li>
 <li>
 <p>
-Appliquer la méthode <tt>afficher()</tt> à <tt>cUn</tt>. Que se passe-t-il ?
+Appliquer la méthode <tt>afficher()</tt> à <tt>cUn</tt>. Que se passe-t-il ? Expliquer pourquoi.
 </p>
 </li>
 <li>
 <p>
-Créer un <tt>Compte</tt> à l&#8217;aide de <tt>cUn</tt> au nom de "Jean". Créer un autre <tt>Compte</tt> à l&#8217;aide de <tt>cDeux</tt> au nom de "Marie".
+Créer un <tt>Compte</tt> à l&#8217;aide de <tt>cUn</tt> de numéro "010101" au nom de "Jean". Créer un autre <tt>Compte</tt> à l&#8217;aide de <tt>cDeux</tt> de numéro "020202" au nom de "Marie".
 </p>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Note" src="data:image/png;base64,
+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" />
+</td>
+<td class="content">
+<div class="paragraph"><p>Prendre l&#8217;habitude de séparer déclaration de variable objet et création d&#8217;objet !</p></div>
+<div class="paragraph"><p>Toutes les variables d&#8217;un programme ne servent pas à créer des objets obligatoirement.</p></div>
+</td>
+</tr></table>
+</div>
 </li>
 <li>
 <p>
-Afficher <tt>cUn</tt> et <tt>cDeux</tt>. Afficher aussi les références par <tt>identityHashCode()</tt>. Conclusion …
+Afficher <tt>cUn</tt> et <tt>cDeux</tt>. Afficher aussi les références contenues par <tt>identityHashCode()</tt>. Conclusion &#8230;
 </p>
 <div class="listingblock">
 <div class="content"><!-- Generator: GNU source-highlight 3.1.5
@@ -1154,18 +1331,6 @@ http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
 <pre><tt>System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>System<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">identityHashCode</span></span><span style="color: #990000">(</span>cUn<span style="color: #990000">));</span>
 System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>System<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">identityHashCode</span></span><span style="color: #990000">(</span>cDeux<span style="color: #990000">));</span></tt></pre></div></div>
-</li>
-<li>
-<p>
-Essayer la syntaxe suivante :
-</p>
-<div class="listingblock">
-<div class="content"><!-- Generator: GNU source-highlight 3.1.5
-by Lorenzo Bettini
-http://www.lorenzobettini.it
-http://www.gnu.org/software/src-highlite -->
-<pre><tt>System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>cUn<span style="color: #990000">);</span></tt></pre></div></div>
-<div class="paragraph"><p>Quel est le résultat ? (voir l&#8217;aide sur <tt>toString()</tt>).</p></div>
 </li>
 <li>
 <p>
@@ -1183,7 +1348,7 @@ http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
 <pre><tt><span style="font-weight: bold"><span style="color: #0000FF">try</span></span> <span style="color: #FF0000">{</span>
         cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">deposer</span></span><span style="color: #990000">(</span> <span style="color: #990000">...</span> <span style="color: #990000">);</span>
-        cDeux<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">deposer</span></span><span style="color: #990000">(</span> <span style="color: #990000">...</span> <span style="color: #990000">);</span>
+        <span style="color: #990000">...</span>
 <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">CompteException</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
         System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>e<span style="color: #990000">);</span>
 <span style="color: #FF0000">}</span></tt></pre></div></div>
@@ -1220,7 +1385,7 @@ Essayer de déposer <tt>-100</tt> euros sur le compte <tt>cDeux</tt>. Que se pas
 </li>
 <li>
 <p>
-Afficher <tt>cUn</tt> et <tt>cDeux</tt> ainsi que les soldes. Afficher aussi les références par <tt>identityHashCode()</tt>. Conclusion …
+Afficher <tt>cUn</tt> et <tt>cDeux</tt> ainsi que les soldes. Afficher aussi les références contenues par <tt>identityHashCode()</tt>. Conclusion &#8230;
 </p>
 </li>
 <li>
@@ -1230,7 +1395,37 @@ Déposer 1000€ sur <tt>cUn</tt>. Afficher <tt>cUn</tt> et <tt>cDeux</tt> ainsi
 </li>
 <li>
 <p>
-Déposer 2000€ sur l’objet <tt>Compte</tt> <strong>ayant pour propriétaire "Marie"</strong> que vous avez créé au début de cet exercice. Y arrivez-vous ?
+Déclarer deux variables <tt>cTrois</tt> et <tt>cQuatre</tt> "de type <tt>Compte</tt>" : références vers un <tt>Compte</tt>. (Ne pas faire de new !! ca serait une initialisation)
+</p>
+</li>
+<li>
+<p>
+<strong>Affecter</strong> la variable <tt>cUn</tt> à la variable <tt>cTrois</tt> et à <tt>cQuatre</tt>.
+</p>
+</li>
+<li>
+<p>
+Afficher <tt>cUn</tt>, <tt>cDeux</tt>, <tt>cTrois</tt> et <tt>cQuatre</tt> ainsi que les soldes. Que constatez vous ? Expliquer ?
+</p>
+</li>
+<li>
+<p>
+Afficher les références contenues dans <tt>cUn</tt>, <tt>cDeux</tt>, <tt>cTrois</tt> et <tt>cQuatre</tt> par <tt>identityHashCode()</tt>. Conclusion &#8230;
+</p>
+</li>
+<li>
+<p>
+Déposer 500 € sur <tt>cTrois</tt> et retirer 200 € sur <tt>cQuatre</tt>. Que pensez vous qu&#8217;il va se passer ? A quelles valeurs de début/crédit vont donner accès <tt>cUn</tt> et <tt>cDeux</tt> ? Pourquoi ?
+</p>
+</li>
+<li>
+<p>
+Afficher <tt>cUn</tt>, <tt>cDeux</tt>, <tt>cTrois</tt> et <tt>cQuatre</tt> ainsi que les soldes. Que constatez vous ? Expliquer ?
+</p>
+</li>
+<li>
+<p>
+Déposer 2000€ sur l’objet <tt>Compte</tt> <strong>ayant pour propriétaire "Marie"</strong> que vous avez créé au début de cet exercice. Y arrivez-vous ? Pourquoi ? Qu&#8217;avez vous perdu en chemin ?
 </p>
 </li>
 <li>
@@ -1261,6 +1456,7 @@ Afficher <tt>cDeux</tt> ainsi que le solde. Expliquer le résultat obtenu.
 </p>
 </li>
 </ol></div>
+</div>
 </div>
 </div>
 </div>
@@ -1331,136 +1527,151 @@ lJga0LT8+uRGJ5P/2OBGpz/mT34Gmsy9nx36v3PoX1H4mIUGLCOSAAAAAElFTkSuQmCC" />
 <div class="paragraph"><p>Repérer les méthodes générant des exceptions.</p></div>
 <div class="paragraph"><div class="title">Diagramme UML de l&#8217;interface de la classe AgenceBancaire</div><p><span class="image">
 <img alt="images/classeAgenceBancaireInterface.png" src="data:image/png;base64,
-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
-/wFCcNzQWwAOrwAAAABJRU5ErkJggg==" />
+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
+nJM1VG3dguriSq+V6SGodoHiEcC1a8dwvPZSd/ic0iLQNS/bHLMt889IzskaqrZuQXVxpdfKasgg
+7QLFXBqDi+LiFfZSd/ic0iKwR3xC082XTw4Yyfm6sKS0dQuqLWBQX9o52WK0COwpUvfPtsxJIzlf
+ayht3YJqC9h9m7wwaTFaBPLDWEIIpU4IpU6pE0KpU+qEUOphb9mmfuPtxyPoUNm6mR6F+FxMfDQe
+wUZy4kijo3uhte0PtjvP9u2vmS6zdal1XSRbtulvnsPf1s1mY1z6kK6VACLDSE5u39RUgqMIz1e2
+LrWui2TLNhuph62tm+7pTa25NBFxl5GcT21l+GpYra1pPnplDEdnc2aPH9+BHfGvxMT+qI/aIDKT
+iLGui2TLNhuph62tm+7pTVea64zkfGorkU9t7Ubx9ataW9N89LY1HJ3NmcU4CImI4M6I+4XaIDKT
+iLGui2TLNhuph62tm+7pzVTq7jKS86mtRMAQQw5qZN1M89HbVj8WqzPb1taEewRmZNC8lU/BiLGu
+i2TLNl+lHg62bh7N05vpAN5dRnI+tZXNxWOaj1XO6rFYnVncB8vL1zc0fIDBv0HqaqGRYV0XyZZt
+NlIPW1s33dObzA3puLzEf91lJOdTW9lcPKb5GCqjH4vNmYWMMXRHVXNzs6ykHjHWdZFs2WYj9bC1
+ddM9vZm+bHOXkZxPbWUjddN8DJXRj8XmzG7ZkhcXF4uGKipabiX1iLGui2TLNm9etoWbrZvf9Ewj
+uZBUxqXWdZFs2YaNxfYy4gpbN7/pgUZyIamMS63r+GEsIfwwllInhFKn1Amh1AkhlDohhFInhFDq
+hBBKnRBCqRNCqVPqhFDqlDohlDqlTgilTgih1AkhlDohhFInhFDqhBBKnRBKPbykbr+WYHd2d9L1
+mvSg5gmpyzcV6VnN+SpVVRXgLOC3y3Tvz7WX7eBSF2s9tFcPiNSddL2melALrcs3FbnmrPNVmjlz
+CiQnvcF0mR7AdnCpizVXSl09JaNHjxDuxFpa9g8ceDsuNVNHXJ6fVgLu2zeuru5dw0nVXW3pG+sp
+TrpeUz2oOVmu2uY2ntUcrtKVK40JCf06O0/edtvPEJeVNE23cfOmHl2X7vqk0zWPO12suV7qGzYs
+FhooKFgqfCeYOuISwzO5vr9B6rqrLX1jPcVJ12uqBzUny1Xb3MazmsNVKix8TSxlO2/ek4jLEk3T
+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
+AElFTkSuQmCC" />
 </span></p></div>
 </div>
 <div class="sect2">
@@ -1523,12 +1734,34 @@ Afficher <tt>monAg</tt>.
 </li>
 <li>
 <p>
+Question "one shot"
+</p>
+<div class="olist loweralpha"><ol class="loweralpha">
+<li>
+<p>
+On souhaite tenter trois opérations :
+</p>
+<div class="olist lowerroman"><ol class="lowerroman">
+<li>
+<p>
 Rechercher à partir de <tt>monAg</tt> le compte "0101" et l&#8217;afficher.
 </p>
 </li>
 <li>
 <p>
-Déposer 1000€ sur ce compte. Tenter quelque chose comme (question précédente, celle-ci et suivante) :
+Déposer 1000€ sur ce compte.
+</p>
+</li>
+<li>
+<p>
+Rechercher à nouveau à partir de <tt>monAg</tt> le compte "0101" et l&#8217;afficher (copier/coller du code précédent).
+</p>
+</li>
+</ol></div>
+</li>
+<li>
+<p>
+En gros : tenter quelque chose comme (question précédente, celle-ci et suivante). Bilan ?
 </p>
 <div class="listingblock">
 <div class="content"><!-- Generator: GNU source-highlight 3.1.5
@@ -1539,16 +1772,13 @@ http://www.gnu.org/software/src-highlite -->
 c <span style="color: #990000">=</span> monAg<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getCompte</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"0101"</span><span style="color: #990000">);</span>
 c<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
 <span style="font-style: italic"><span style="color: #9A1900">//</span></span>
-c<span style="color: #990000">.</span> <span style="color: #990000">...</span> <span style="font-style: italic"><span style="color: #9A1900">// modifier le compte référencé par c (deposer 1000€)</span></span>
+c<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">deposer</span></span> <span style="color: #990000">(</span><span style="color: #993399">1000</span><span style="color: #990000">);</span>  <span style="font-style: italic"><span style="color: #9A1900">// modifier le compte référencé par c (deposer 1000€)</span></span>
 c<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
 <span style="font-style: italic"><span style="color: #9A1900">//</span></span>
 c <span style="color: #990000">=</span> monAg<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getCompte</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"0101"</span><span style="color: #990000">);</span>
 c<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span></tt></pre></div></div>
 </li>
-<li>
-<p>
-Rechercher à nouveau à partir de <tt>monAg</tt> le compte "0101" et l&#8217;afficher (copier/coller du code précédent). Bilan ?
-</p>
+</ol></div>
 </li>
 <li>
 <p>
@@ -1887,11 +2117,13 @@ http://www.gnu.org/software/src-highlite -->
 <span style="font-weight: bold"><span style="color: #000080">import</span></span> tps<span style="color: #990000">.</span>utils<span style="color: #990000">.</span>Keyboard<span style="color: #990000">;</span>
 
 <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">ClasseEssaiCompteComplet</span> <span style="color: #FF0000">{</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> argv<span style="color: #990000">[])</span> <span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">(</span>String<span style="color: #990000">[]</span> argv<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
                 ClasseEssaiCompteComplet<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">main1TestComptes</span></span><span style="color: #990000">();</span>
         <span style="color: #FF0000">}</span>
 
         <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main1TestComptes</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
+
+                <span style="font-style: italic"><span style="color: #9A1900">// Ne correspond pas exactement à la version demandée mais pas loin</span></span>
 
                 System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Partie 1"</span><span style="color: #990000">);</span>
 
@@ -1990,7 +2222,7 @@ http://www.gnu.org/software/src-highlite -->
                         cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">deposer</span></span><span style="color: #990000">(</span><span style="color: #993399">1</span><span style="color: #990000">);</span>
                         cDeux<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">deposer</span></span><span style="color: #990000">(</span><span style="color: #993399">1000</span><span style="color: #990000">);</span>
 
-                        <span style="font-style: italic"><span style="color: #9A1900">// 5) Afficher cUn et cDeux. Conclusion …</span></span>
+                        <span style="font-style: italic"><span style="color: #9A1900">// 5) Afficher cUn et cDeux. Conclusion ...</span></span>
                         System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">();</span>
                         System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Apres depot 1 et 1000"</span><span style="color: #990000">);</span>
                         cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
@@ -2003,7 +2235,7 @@ http://www.gnu.org/software/src-highlite -->
                         cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">retirer</span></span><span style="color: #990000">(</span><span style="color: #993399">1</span><span style="color: #990000">);</span>
                         cDeux<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">retirer</span></span><span style="color: #990000">(</span><span style="color: #993399">1000</span><span style="color: #990000">);</span>
 
-                        <span style="font-style: italic"><span style="color: #9A1900">// 7) Afficher cUn et cDeux. Conclusion …</span></span>
+                        <span style="font-style: italic"><span style="color: #9A1900">// 7) Afficher cUn et cDeux. Conclusion ...</span></span>
                         System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">();</span>
                         System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Apres retrait 1 et 1000"</span><span style="color: #990000">);</span>
                         cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
@@ -2017,7 +2249,7 @@ http://www.gnu.org/software/src-highlite -->
                         <span style="font-style: italic"><span style="color: #9A1900">// 8) Affecter cUn à cDeux (cDeux = cUn;).</span></span>
                         cDeux <span style="color: #990000">=</span> cUn<span style="color: #990000">;</span>
 
-                        <span style="font-style: italic"><span style="color: #9A1900">// 9) Afficher cUn et cDeux. Conclusion …</span></span>
+                        <span style="font-style: italic"><span style="color: #9A1900">// 9) Afficher cUn et cDeux. Conclusion ...</span></span>
                         System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">();</span>
                         System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Apres Affectation"</span><span style="color: #990000">);</span>
                         cUn<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
@@ -2029,7 +2261,7 @@ http://www.gnu.org/software/src-highlite -->
                         Keyboard<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">readForWait</span></span><span style="color: #990000">();</span>
 
                         <span style="font-style: italic"><span style="color: #9A1900">// 10) Déposer 2000€ sur le Compte ayant pour propriétaire Marie.</span></span>
-                        <span style="font-style: italic"><span style="color: #9A1900">// Conclusion …</span></span>
+                        <span style="font-style: italic"><span style="color: #9A1900">// Conclusion ...</span></span>
                         <span style="font-style: italic"><span style="color: #9A1900">// Impossible, la référence est perdue ...</span></span>
 
                 <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">CompteException</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
@@ -2136,7 +2368,7 @@ by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
 <pre><tt><span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">ClasseEssaiAgenceBancaire</span> <span style="color: #FF0000">{</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> argv<span style="color: #990000">[])</span> <span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">(</span>String<span style="color: #990000">[]</span> argv<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
 
                 <span style="color: #008080">AgenceBancaire</span> monAg <span style="color: #990000">;</span>
 
@@ -2388,7 +2620,7 @@ http://www.gnu.org/software/src-highlite -->
 
                 d<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soumettreCoup</span></span> <span style="color: #990000">(</span><span style="color: #993399">20</span><span style="color: #990000">);</span> <span style="font-style: italic"><span style="color: #9A1900">// Plantage car partie finie ...</span></span>
         <span style="color: #FF0000">}</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span> <span style="color: #990000">(</span><span style="color: #008080">String</span> argv<span style="color: #990000">[])</span> <span style="font-weight: bold"><span style="color: #0000FF">throws</span></span> ErreurExecutionDevinette
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span> <span style="color: #990000">(</span>String<span style="color: #990000">[]</span> argv<span style="color: #990000">)</span> <span style="font-weight: bold"><span style="color: #0000FF">throws</span></span> ErreurExecutionDevinette
         <span style="color: #FF0000">{</span>
                 System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Exo 1"</span><span style="color: #990000">);</span>
                 ClasseEssaiDevinette<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">main1</span></span><span style="color: #990000">();</span>
@@ -2406,7 +2638,7 @@ http://www.gnu.org/software/src-highlite -->
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2016-02-04 19:44:47 CET
+Dernière mise à jour 2017-02-16 15:45:51 CET
 </div>
 </div>
 </body>

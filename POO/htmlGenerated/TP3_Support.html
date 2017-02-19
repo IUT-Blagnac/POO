@@ -925,7 +925,7 @@ Pour utiliser ces classes dans vos programmes:
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_objectif">2.1. Objectif</h3>
-<div class="paragraph"><p>L&#8217;objectif est d'écrire un programme permettant de gérer les comptes d&#8217;une <tt>AgenceBancaire</tt>. L&#8217;application permettra :</p></div>
+<div class="paragraph"><p>L&#8217;objectif est d'écrire un programme à destination des employés d&#8217;une agence bancaire et permettant de gérer les comptes d&#8217;une <tt>AgenceBancaire</tt>. L&#8217;application permettra :</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
@@ -1050,8 +1050,8 @@ http://www.gnu.org/software/src-highlite -->
 <span style="font-style: italic"><span style="color: #9A1900">         * Affichage du menu de l'application</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900"> ag    AgenceBancaire pour récupérer le nom et la localisation</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         */</span></span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">afficherMenu</span></span><span style="color: #990000">(</span><span style="color: #008080">AgenceBancaire</span> ag<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Menu de "</span> <span style="color: #990000">+</span> ag<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getNomAgence</span></span><span style="color: #990000">()</span> <span style="color: #990000">+</span> <span style="color: #FF0000">" ("</span> <span style="color: #990000">+</span> ag<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getLocAgence</span></span><span style="color: #990000">()</span> <span style="color: #990000">+</span> <span style="color: #FF0000">")"</span><span style="color: #990000">);</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">afficherMenu</span></span><span style="color: #990000">(</span><span style="color: #008080">AgenceBancaire</span> pfAg<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Menu de "</span> <span style="color: #990000">+</span> pfAg<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getNomAgence</span></span><span style="color: #990000">()</span> <span style="color: #990000">+</span> <span style="color: #FF0000">" ("</span> <span style="color: #990000">+</span> pfAg<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getLocAgence</span></span><span style="color: #990000">()</span> <span style="color: #990000">+</span> <span style="color: #FF0000">")"</span><span style="color: #990000">);</span>
                 System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"c - Créer un nouveau compte dans l'agence"</span><span style="color: #990000">);</span>
                 System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"s - Supprimer un compte de l'agence (par son numéro)"</span><span style="color: #990000">);</span>
                 System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"l - Liste des comptes de l'agence"</span><span style="color: #990000">);</span>
@@ -1073,13 +1073,13 @@ http://www.gnu.org/software/src-highlite -->
                 lect <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Scanner</span></span> <span style="color: #990000">(</span>System<span style="color: #990000">.</span>in <span style="color: #990000">);</span>
 
                 System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Tapper un car + return pour continuer ... "</span><span style="color: #990000">);</span>
-                s <span style="color: #990000">=</span> lect<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">next</span></span><span style="color: #990000">();</span> <span style="font-style: italic"><span style="color: #9A1900">// Inutile à stocker mais ...</span></span>
+                s <span style="color: #990000">=</span> lect<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">next</span></span><span style="color: #990000">();</span> <span style="font-style: italic"><span style="color: #9A1900">// Inutile à stocker mais c'est l'usage normal ...</span></span>
         <span style="color: #FF0000">}</span>
 
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> argv<span style="color: #990000">[])</span> <span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">(</span>String<span style="color: #990000">[]</span> argv<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
 
                 <span style="color: #008080">String</span> choix<span style="color: #990000">;</span>
-
+                <span style="color: #008080">String</span> nom<span style="color: #990000">,</span> numero<span style="color: #990000">;</span>
                 <span style="color: #009900">boolean</span> continuer <span style="color: #990000">;</span>
                 <span style="color: #008080">Scanner</span> lect<span style="color: #990000">;</span>
                 <span style="color: #008080">AgenceBancaire</span> monAg <span style="color: #990000">;</span>
@@ -1099,6 +1099,24 @@ http://www.gnu.org/software/src-highlite -->
                                         System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"ByeBye"</span><span style="color: #990000">);</span>
                                         ClasseApplicationAgenceBancaire<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">tempo</span></span><span style="color: #990000">();</span>
                                         continuer <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">false</span></span><span style="color: #990000">;</span>
+                                        <span style="font-weight: bold"><span style="color: #0000FF">break</span></span><span style="color: #990000">;</span>
+
+                                <span style="font-weight: bold"><span style="color: #0000FF">case</span></span> <span style="color: #FF0000">"c"</span> <span style="color: #990000">:</span>
+                                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Num compte -&gt; "</span><span style="color: #990000">);</span>
+                                        numero <span style="color: #990000">=</span> lect<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">next</span></span><span style="color: #990000">();</span>
+                                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Propriétaire -&gt; "</span><span style="color: #990000">);</span>
+                                        nom <span style="color: #990000">=</span> lect<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">next</span></span><span style="color: #990000">();</span>
+
+                                        <span style="font-style: italic"><span style="color: #9A1900">// A FAIRE ICI :</span></span>
+                                        <span style="font-style: italic"><span style="color: #9A1900">// Créer un compte avec le numéro et le nom saisis</span></span>
+
+                                        <span style="font-style: italic"><span style="color: #9A1900">// Ajouter ce compte à la Banque et traiter les exceptions possibles</span></span>
+                                        <span style="font-style: italic"><span style="color: #9A1900">// Avec un message "pertinent" pour l'utilisateur "banquier"</span></span>
+
+
+
+
+                                        ClasseApplicationAgenceBancaire<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">tempo</span></span><span style="color: #990000">();</span>
                                         <span style="font-weight: bold"><span style="color: #0000FF">break</span></span><span style="color: #990000">;</span>
 
                                 <span style="font-style: italic"><span style="color: #9A1900">// A CONTINUER ICI</span></span>
@@ -1127,21 +1145,21 @@ A vous maintenant de rajouter et traiter les <tt>case</tt> qui manquent. Traiter
 <p>
 Pour l&#8217;option  <tt>"p - voir les comptes d&#8217;un Propriétaire (par son nom)"</tt>, programmer une méthode statique :
 </p>
-<div class="paragraph"><p><tt>public static void comptesDUnPropretaire (AgenceBancaire ag, String nomProprietaire)</tt></p></div>
+<div class="paragraph"><p><tt>public static void comptesDUnPropretaire (AgenceBancaire pfAg, String pfNomProprietaire)</tt></p></div>
 <div class="paragraph"><p>réalisant le traitement associé.</p></div>
 </li>
 <li>
 <p>
 Pour l&#8217;option  <tt>"d - Déposer de l&#8217;argent sur un compte"</tt>, programmer une méthode statique :
 </p>
-<div class="paragraph"><p><tt>public static void deposerSurUnCompte (AgenceBancaire ag, String numeroCompte, double montant)</tt></p></div>
+<div class="paragraph"><p><tt>public static void deposerSurUnCompte (AgenceBancaire pfAg, String pfNumeroCompte, double pfMontant)</tt></p></div>
 <div class="paragraph"><p>réalisant le traitement associé.</p></div>
 </li>
 <li>
 <p>
 Pour l&#8217;option  <tt>"r - Retirer de l&#8217;argent sur un compte"</tt>, programmer une méthode statique :
 </p>
-<div class="paragraph"><p><tt>public static void retirerSurUnCompte (AgenceBancaire ag, String numeroCompte, double montant)</tt></p></div>
+<div class="paragraph"><p><tt>public static void retirerSurUnCompte (AgenceBancaire pfAg, String pfNumeroCompte, double pfMontant)</tt></p></div>
 <div class="paragraph"><p>réalisant le traitement associé.</p></div>
 </li>
 </ol></div>
@@ -1215,70 +1233,70 @@ p - voir les comptes d'un Propriétaire (par son nom)
 d - Déposer de l'argent sur un compte
 r - Retirer de l'argent sur un compte
 q - Quitter
-Choix -&gt; c
+Choix -&gt; c (saisie utilisateur)
 
-Num compte -&gt; 1212
-Propriétaire -&gt; Prop12
+Num compte -&gt; 1212 (saisie utilisateur)
+Propriétaire -&gt; Prop12 (saisie utilisateur)
 
 Ajout effectué
-Tapper un car + return pour continuer ... .
+Tapper un car + return pour continuer ... . (saisie utilisateur)
 
 Menu de Caisse Ep (Pibrac)
 ...
-Choix -&gt; c
+Choix -&gt; c (saisie utilisateur)
 
-Num compte -&gt; 1212
-Propriétaire -&gt; PropAutre
+Num compte -&gt; 1212 (saisie utilisateur)
+Propriétaire -&gt; PropAutre (saisie utilisateur)
 
 Numéro de compte existant
 Erreur ajout Compte déja existant (1212) dans l'agence Caisse Ep(Pibrac)
 
-Tapper un car + return pour continuer ... .
+Tapper un car + return pour continuer ... . (saisie utilisateur)
 
 Menu de Caisse Ep (Pibrac)
 ...
-Choix -&gt; d
+Choix -&gt; d (saisie utilisateur)
 
-Num compte -&gt; 1212
-Montant à déposer -&gt; 456
+Num compte -&gt; 1212 (saisie utilisateur)
+Montant à déposer -&gt; 456 (saisie utilisateur)
 
 Solde avant dépôt: 0.0
 Montant déposé, solde : 456.0
 
-Tapper un car + return pour continuer ... .
+Tapper un car + return pour continuer ... . (saisie utilisateur)
 
 Menu de Caisse Ep (Pibrac)
 ...
-Choix -&gt; d
+Choix -&gt; d (saisie utilisateur)
 
-Num compte -&gt; 1212
-Montant à déposer -&gt; -89
+Num compte -&gt; 1212 (saisie utilisateur)
+Montant à déposer -&gt; -89 (saisie utilisateur)
 
 Solde avant dépôt: 456.0
 Erreur de dépot, solde inchangé : 456.0
 Erreur de somme négative lors d'un dépot sur 1212
 
-Tapper un car + return pour continuer ... .
+Tapper un car + return pour continuer ... . (saisie utilisateur)
 
 Menu de Caisse Ep (Pibrac)
 ...
-Choix -&gt; s
+Choix -&gt; s (saisie utilisateur)
 
-Num compte -&gt; 4545
+Num compte -&gt; 4545 (saisie utilisateur)
 
 Numéro de compte inexistant
 Erreur suppression Compte inexistant (4545) dans l'agence Caisse Ep(Pibrac)
 
-Tapper un car + return pour continuer ... .
+Tapper un car + return pour continuer ... . (saisie utilisateur)
 
 Menu de Caisse Ep (Pibrac)
 ...
-Choix -&gt; s
+Choix -&gt; s (saisie utilisateur)
 
-Num compte -&gt; 1212
+Num compte -&gt; 1212 (saisie utilisateur)
 Suppression effectuée
 
-Tapper un car + return pour continuer ... .
+Tapper un car + return pour continuer ... . (saisie utilisateur)
 
 Menu de Caisse Ep (Pibrac)
 ...</tt></pre>
@@ -1396,10 +1414,10 @@ http://www.gnu.org/software/src-highlite -->
 
         <span style="font-style: italic"><span style="color: #9A1900">/**</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         * Affichage du menu de l'application</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900"> ag    AgenceBancaire pour récupérer le nom et la localisation</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900"> pfAg  AgenceBancaire pour récupérer le nom et la localisation</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         */</span></span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">afficherMenu</span></span><span style="color: #990000">(</span><span style="color: #008080">AgenceBancaire</span> ag<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Menu de "</span> <span style="color: #990000">+</span> ag<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getNomAgence</span></span><span style="color: #990000">()</span> <span style="color: #990000">+</span> <span style="color: #FF0000">" ("</span> <span style="color: #990000">+</span> ag<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getLocAgence</span></span><span style="color: #990000">()</span> <span style="color: #990000">+</span> <span style="color: #FF0000">")"</span><span style="color: #990000">);</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">afficherMenu</span></span><span style="color: #990000">(</span><span style="color: #008080">AgenceBancaire</span> pfAg<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Menu de "</span> <span style="color: #990000">+</span> pfAg<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getNomAgence</span></span><span style="color: #990000">()</span> <span style="color: #990000">+</span> <span style="color: #FF0000">" ("</span> <span style="color: #990000">+</span> pfAg<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getLocAgence</span></span><span style="color: #990000">()</span> <span style="color: #990000">+</span> <span style="color: #FF0000">")"</span><span style="color: #990000">);</span>
                 System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"c - Créer un nouveau compte dans l'agence"</span><span style="color: #990000">);</span>
                 System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"s - Supprimer un compte de l'agence (par son numéro)"</span><span style="color: #990000">);</span>
                 System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"l - Liste des comptes de l'agence"</span><span style="color: #990000">);</span>
@@ -1421,10 +1439,10 @@ http://www.gnu.org/software/src-highlite -->
                 lect <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Scanner</span></span> <span style="color: #990000">(</span>System<span style="color: #990000">.</span>in <span style="color: #990000">);</span>
 
                 System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Tapper un car + return pour continuer ... "</span><span style="color: #990000">);</span>
-                s <span style="color: #990000">=</span> lect<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">next</span></span><span style="color: #990000">();</span> <span style="font-style: italic"><span style="color: #9A1900">// Inutile à stocker mais ...</span></span>
+                s <span style="color: #990000">=</span> lect<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">next</span></span><span style="color: #990000">();</span> <span style="font-style: italic"><span style="color: #9A1900">// Inutile à stocker mais c'est l'usage normal ...</span></span>
         <span style="color: #FF0000">}</span>
 
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> argv<span style="color: #990000">[])</span> <span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">(</span>String<span style="color: #990000">[]</span> argv<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
 
                 <span style="color: #008080">String</span> choix<span style="color: #990000">;</span>
 
@@ -1462,7 +1480,7 @@ http://www.gnu.org/software/src-highlite -->
                                                 monAg<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">addCompte</span></span><span style="color: #990000">(</span>c<span style="color: #990000">);</span>
                                                 System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Ajout effectué</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span><span style="color: #990000">);</span>
                                         <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">ABCompteNullException</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                                                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Ajout impossible ... signaler l'erreur à l'administrateur ..."</span><span style="color: #990000">);</span>
+                                                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Numéro de compte existant"</span><span style="color: #990000">);</span>
                                                 System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>e<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getMessage</span></span><span style="color: #990000">());</span>
                                         <span style="color: #FF0000">}</span>
                                         <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">ABCompteDejaExistantException</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
@@ -1529,29 +1547,45 @@ http://www.gnu.org/software/src-highlite -->
 
         <span style="color: #FF0000">}</span>
 
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">comptesDUnPropretaire</span></span> <span style="color: #990000">(</span><span style="color: #008080">AgenceBancaire</span> ag<span style="color: #990000">,</span> <span style="color: #008080">String</span> nomProprietaire<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+        <span style="font-style: italic"><span style="color: #9A1900">/**</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * Permet d'afficher tous les comptes d'un propriétaire dans une agence. </span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * Affiche à l'écran les comptes trouvés, un message si saucun compte n'existe pour le propriétaire.</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         *</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900"> pfAg               agence dans laquelle les comptes sont cherchés.</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900"> pfNomProprietaire  nom du propriétaire dont on cherche les comptes.</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         */</span></span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">comptesDUnPropretaire</span></span> <span style="color: #990000">(</span><span style="color: #008080">AgenceBancaire</span> pfAg<span style="color: #990000">,</span> <span style="color: #008080">String</span> pfNomProprietaire<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
                 Compte <span style="color: #990000">[]</span>  t<span style="color: #990000">;</span>
 
-                t <span style="color: #990000">=</span> ag<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getComptesDe</span></span><span style="color: #990000">(</span>nomProprietaire<span style="color: #990000">);</span>
+                t <span style="color: #990000">=</span> pfAg<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getComptesDe</span></span><span style="color: #990000">(</span>pfNomProprietaire<span style="color: #990000">);</span>
                 <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>t<span style="color: #990000">.</span>length <span style="color: #990000">==</span> <span style="color: #993399">0</span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
                         System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"pas de compte à ce nom ..."</span><span style="color: #990000">);</span>
                 <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">else</span></span> <span style="color: #FF0000">{</span>
-                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  "</span> <span style="color: #990000">+</span> t<span style="color: #990000">.</span>length <span style="color: #990000">+</span> <span style="color: #FF0000">" comptes pour "</span> <span style="color: #990000">+</span> nomProprietaire<span style="color: #990000">);</span>
+                        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"  "</span> <span style="color: #990000">+</span> t<span style="color: #990000">.</span>length <span style="color: #990000">+</span> <span style="color: #FF0000">" comptes pour "</span> <span style="color: #990000">+</span> pfNomProprietaire<span style="color: #990000">);</span>
                         <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span><span style="color: #009900">int</span> i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>t<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span>
                                 t<span style="color: #990000">[</span>i<span style="color: #990000">].</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
                 <span style="color: #FF0000">}</span>
         <span style="color: #FF0000">}</span>
 
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">deposerSurUnCompte</span></span> <span style="color: #990000">(</span><span style="color: #008080">AgenceBancaire</span> ag<span style="color: #990000">,</span> <span style="color: #008080">String</span> numeroCompte<span style="color: #990000">,</span> <span style="color: #009900">double</span> montant<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+        <span style="font-style: italic"><span style="color: #9A1900">/**</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * Réalise un dépot sur le compte d'une agence. </span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * Recherche le compte dans l'agence à partir de son numéro et réalise le dépôt.</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * Affiche un message si dépôt réussi, si dépôt impossible ou si compte non trouvé.</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         *</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900"> pfAg            agence dans laquelle le comptes est cherché.</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900"> pfNumeroCompte  numéro du compte sur lequel est fait le dépôt.</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900"> pfMontant       montant du dépôt à effectuer.</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         */</span></span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">deposerSurUnCompte</span></span> <span style="color: #990000">(</span><span style="color: #008080">AgenceBancaire</span> pfAg<span style="color: #990000">,</span> <span style="color: #008080">String</span> pfNumeroCompte<span style="color: #990000">,</span> <span style="color: #009900">double</span> pfMontant<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
                 <span style="color: #008080">Compte</span> c<span style="color: #990000">;</span>
 
-                c <span style="color: #990000">=</span> ag<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getCompte</span></span><span style="color: #990000">(</span>numeroCompte<span style="color: #990000">);</span>
+                c <span style="color: #990000">=</span> pfAg<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getCompte</span></span><span style="color: #990000">(</span>pfNumeroCompte<span style="color: #990000">);</span>
                 <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>c<span style="color: #990000">==</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
                         System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Compte inexistant ..."</span><span style="color: #990000">);</span>
                 <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">else</span></span> <span style="color: #FF0000">{</span>
                         System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Solde avant dépôt: "</span><span style="color: #990000">+</span>c<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soldeCompte</span></span><span style="color: #990000">());</span>
                         <span style="font-weight: bold"><span style="color: #0000FF">try</span></span> <span style="color: #FF0000">{</span>
-                                c<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">deposer</span></span><span style="color: #990000">(</span>montant<span style="color: #990000">);</span>
+                                c<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">deposer</span></span><span style="color: #990000">(</span>pfMontant<span style="color: #990000">);</span>
                                 System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Montant déposé, solde : "</span><span style="color: #990000">+</span>c<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soldeCompte</span></span><span style="color: #990000">());</span>
                         <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">CompteException</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
                                 System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Erreur de dépot, solde inchangé : "</span> <span style="color: #990000">+</span> c<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soldeCompte</span></span><span style="color: #990000">());</span>
@@ -1560,16 +1594,25 @@ http://www.gnu.org/software/src-highlite -->
                 <span style="color: #FF0000">}</span>
         <span style="color: #FF0000">}</span>
 
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">retirerSurUnCompte</span></span> <span style="color: #990000">(</span><span style="color: #008080">AgenceBancaire</span> ag<span style="color: #990000">,</span> <span style="color: #008080">String</span> numeroCompte<span style="color: #990000">,</span> <span style="color: #009900">double</span> montant<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+        <span style="font-style: italic"><span style="color: #9A1900">/**</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * Réalise un retrait sur le compte d'une agence. </span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * Recherche le compte dans l'agence à partir de son numéro et réalise le retrait.</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * Affiche un message si retrait réussi, si retrait impossible ou si compte non trouvé.</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         *</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900"> pfAg            agence dans laquelle le comptes est cherché.</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900"> pfNumeroCompte  numéro du compte sur lequel est fait le retrait.</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900"> pfMontant       montant du retrait à effectuer.</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         */</span></span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">retirerSurUnCompte</span></span> <span style="color: #990000">(</span><span style="color: #008080">AgenceBancaire</span> pfAg<span style="color: #990000">,</span> <span style="color: #008080">String</span> pfNumeroCompte<span style="color: #990000">,</span> <span style="color: #009900">double</span> pfMontant<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
                 <span style="color: #008080">Compte</span> c<span style="color: #990000">;</span>
 
-                c <span style="color: #990000">=</span> ag<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getCompte</span></span><span style="color: #990000">(</span>numeroCompte<span style="color: #990000">);</span>
+                c <span style="color: #990000">=</span> pfAg<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getCompte</span></span><span style="color: #990000">(</span>pfNumeroCompte<span style="color: #990000">);</span>
                 <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>c<span style="color: #990000">==</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
                         System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Compte inexistant ..."</span><span style="color: #990000">);</span>
                 <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">else</span></span> <span style="color: #FF0000">{</span>
                         System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Solde avant retrait : "</span> <span style="color: #990000">+</span> c<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soldeCompte</span></span><span style="color: #990000">());</span>
                         <span style="font-weight: bold"><span style="color: #0000FF">try</span></span> <span style="color: #FF0000">{</span>
-                                c<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">retirer</span></span><span style="color: #990000">(</span>montant<span style="color: #990000">);</span>
+                                c<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">retirer</span></span><span style="color: #990000">(</span>pfMontant<span style="color: #990000">);</span>
                                 System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Montant retiré, solde : "</span><span style="color: #990000">+</span>c<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soldeCompte</span></span><span style="color: #990000">());</span>
                         <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">CompteException</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
                                 System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Erreur de dépot, solde inchangé : "</span> <span style="color: #990000">+</span> c<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">soldeCompte</span></span><span style="color: #990000">());</span>
@@ -1589,7 +1632,7 @@ http://www.gnu.org/software/src-highlite -->
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2016-03-02 12:28:45 CET
+Dernière mise à jour 2017-02-16 16:11:09 CET
 </div>
 </div>
 </body>

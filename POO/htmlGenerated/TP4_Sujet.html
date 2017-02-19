@@ -1044,9 +1044,9 @@ affiche les comptes de ce propriétaire.
 <div class="paragraph"><p><strong>A faire : écrire le code de la méthode :</strong></p></div>
 <div class="literalblock">
 <div class="content">
-<pre><tt>public static ArrayList&lt;Compte&gt; getComptesDe (String pNomProprietaire, ArrayList&lt;Compte&gt; pALComptes)</tt></pre>
+<pre><tt>public static ArrayList&lt;Compte&gt; getComptesDe (String pfNomProprietaire, ArrayList&lt;Compte&gt; pfALComptes)</tt></pre>
 </div></div>
-<div class="paragraph"><p>Son rôle est de renvoyer une ArrayList de Compte contenant les comptes de <tt>pALComptes</tt> dont le nom de propriétaire est <tt>pNomProprietaire</tt>.*</p></div>
+<div class="paragraph"><p>Son rôle est de renvoyer une ArrayList de Compte contenant les comptes de <tt>pfALComptes</tt> dont le nom de propriétaire est <tt>pfNomProprietaire</tt>.</p></div>
 <div class="paragraph"><p>Exemple d&#8217;exécution :</p></div>
 <div class="listingblock">
 <div class="content">
@@ -1084,31 +1084,34 @@ http://www.gnu.org/software/src-highlite -->
 
 <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">ClasseEssaiArrayListCompte</span> <span style="color: #FF0000">{</span>
 
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> Compte<span style="color: #990000">[]</span> tabDeComptesTests <span style="color: #990000">=</span> <span style="color: #FF0000">{</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"01010101"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Lepoisson-Benoit"</span><span style="color: #990000">),</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"02020202"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Tabaniol-Alphonse"</span><span style="color: #990000">),</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"03030303"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Aidelaine-Gilles"</span><span style="color: #990000">),</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"04040404"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Sanfraper-André"</span><span style="color: #990000">),</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"05050505"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Tabaniol-Alphonse"</span><span style="color: #990000">),</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"06060606"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Bondeparme-Jean"</span><span style="color: #990000">),</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"07070707"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Sailair-Jacques"</span><span style="color: #990000">),</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"08080808"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Saidimanche-Damien"</span><span style="color: #990000">),</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"09090909"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Tabaniol-Alphonse"</span><span style="color: #990000">)</span>
+        <span style="color: #FF0000">}</span><span style="color: #990000">;</span>
+
+
         <span style="font-style: italic"><span style="color: #9A1900">/**</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * Recherche les comptes du propriétaire pNomProprietaire</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * dans la liste de comptes pALComptes.</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900">       pNomProprietaire        Propriétaire recherché</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900">       pALComptes      Liste dans laquelle les comptes sont recherchés</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * Recherche les comptes du propriétaire pfNomProprietaire</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * dans la liste de comptes pfALComptes.</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900"> pfNomProprietaire     Propriétaire recherché</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900"> pfALComptes   Liste dans laquelle les comptes sont recherchés</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@return</span><span style="font-style: italic"><span style="color: #9A1900">      Liste des compte de pALComptes ayant pour propriétaire pNomProprietaire. Liste vide si aucun compte trouvé.</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         */</span></span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #008080">ArrayList&lt;Compte&gt; getComptesDe (String pNomProprietaire, ArrayList&lt;Compte&gt;</span> pALComptes<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                <span style="font-style: italic"><span style="color: #9A1900">// A ecrire</span></span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #008080">ArrayList&lt;Compte&gt; getComptesDe (String pfNomProprietaire, ArrayList&lt;Compte&gt;</span> pfALComptes<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
 
+                <span style="font-style: italic"><span style="color: #9A1900">// A FAIRE ICI :</span></span>
+
+                <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">;</span>  <span style="font-style: italic"><span style="color: #9A1900">// A modifier</span></span>
         <span style="color: #FF0000">}</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">(</span>String<span style="color: #990000">[]</span> arguments<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                <span style="font-style: italic"><span style="color: #9A1900">// Liste de comptes pour les tests</span></span>
-                Compte<span style="color: #990000">[]</span> tab <span style="color: #990000">=</span> <span style="color: #FF0000">{</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"01010101"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Lepoisson-Benoit"</span><span style="color: #990000">),</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"02020202"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Tabaniol-Alphonse"</span><span style="color: #990000">),</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"03030303"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Aidelaine-Gilles"</span><span style="color: #990000">),</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"04040404"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Sanfraper-André"</span><span style="color: #990000">),</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"05050505"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Tabaniol-Alphonse"</span><span style="color: #990000">),</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"06060606"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Bondeparme-Jean"</span><span style="color: #990000">),</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"07070707"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Sailair-Jacques"</span><span style="color: #990000">),</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"08080808"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Saidimanche-Damien"</span><span style="color: #990000">),</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"09090909"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Tabaniol-Alphonse"</span><span style="color: #990000">)</span>
-                <span style="color: #FF0000">}</span><span style="color: #990000">;</span>
 
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">(</span>String<span style="color: #990000">[]</span> args<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
                 <span style="color: #009900">int</span> i<span style="color: #990000">,</span> taille<span style="color: #990000">;</span>
                 <span style="color: #008080">ArrayList&lt;Compte&gt;</span> listeComptes<span style="color: #990000">;</span>
                 <span style="color: #008080">ArrayList&lt;Compte&gt;</span> resultatsProprietaire<span style="color: #990000">;</span>
@@ -1117,8 +1120,8 @@ http://www.gnu.org/software/src-highlite -->
 
                 listeComptes <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> ArrayList<span style="color: #990000">&lt;</span>Compte<span style="color: #990000">&gt;();</span>
 
-                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span><span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>tab<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
-                        listeComptes<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">add</span></span><span style="color: #990000">(</span>tab<span style="color: #990000">[</span>i<span style="color: #990000">]);</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span><span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>ClasseEssaiArrayListCompte<span style="color: #990000">.</span>tabDeComptesTests<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
+                        listeComptes<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">add</span></span><span style="color: #990000">(</span>ClasseEssaiArrayListCompte<span style="color: #990000">.</span>tabDeComptesTests<span style="color: #990000">[</span>i<span style="color: #990000">]);</span>
                 <span style="color: #FF0000">}</span>
 
                 System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Les comptes existants"</span><span style="color: #990000">);</span>
@@ -1150,7 +1153,7 @@ http://www.gnu.org/software/src-highlite -->
 <div class="sect1">
 <h2 id="_mise_en_oeuvre_des_arraylist">3. Mise en oeuvre des ArrayList</h2>
 <div class="sectionbody">
-<div class="paragraph"><p>Pour les curieux (tous en somme), copier/coller dans Eclipse votre programme et regarder les attributs de l&#8217;objet <tt>alChaines</tt> en mode debug (cf. TP 1 - Debug Eclipse). Que représentent les attributs <tt>elementData</tt> et <tt>size</tt> ?</p></div>
+<div class="paragraph"><p>Pour les curieux (tous en somme), copier/coller dans Eclipse votre programme et regarder les attributs de l&#8217;objet <tt>alChaines</tt> de l&#8217;exercice de départ en mode debug (cf. TP 1 - Debug Eclipse). Que représentent les attributs <tt>elementData</tt> et <tt>size</tt> ?</p></div>
 </div>
 </div>
 <div class="sect1">
@@ -1210,7 +1213,7 @@ On utilisera cette variable pour afficher le contenu de <tt>alChaines</tt>.
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2016-03-02 12:27:04 CET
+Dernière mise à jour 2017-02-16 16:24:59 CET
 </div>
 </div>
 </body>

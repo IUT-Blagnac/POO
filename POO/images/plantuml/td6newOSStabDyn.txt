@@ -1,15 +1,20 @@
 @startuml
+
+skinparam classAttributeIconSize 0
+
 class OrderedStringSet {
 	-String[] valeurs
+____
 	+OrderedStringSet()
 	+int size()
-	+void add(String s)
-	+void remove(String s)
-	+boolean contains(String s)
+	+void add(String pfCh)
+	+void remove(String pfCh)
+	+boolean contains(String pfCh)
 	+String[] toArray()
-	+OrderedStringSet union(OrderedStringSet oss)
-	+OrderedStringSet difference(OrderedStringSet oss)
-	+OrderedStringSet intersect(OrderedStringSet oss)
-	-int trouveRang(String s)
+	+OrderedStringSet union(OrderedStringSet pfOss)
+	+OrderedStringSet difference(OrderedStringSet pfOss)
+	+OrderedStringSet intersect(OrderedStringSet pfOss)
+....
+	-int trouveRang(String pfCh)
 }
 @enduml

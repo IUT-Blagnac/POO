@@ -3,14 +3,14 @@
 skinparam classAttributeIconSize 0
 
 class Commande {
-	+ Commande(String id, Date d)
+	+ Commande(String pfId, Date pfDate)
 	+ void afficherInfos()
 	+ boolean getEtat()
 }
 
 
 class Client {
-	+ Client(String id, String nom, String adr, String tel)
+	+ Client(String pfId, String pfNom, String pfAdr, String pfTel)
 	+ void afficherCommandes()
 }
 

@@ -3,17 +3,17 @@ skinparam classAttributeIconSize 0
 
 class Compte {
 	+ Compte() 
-	+ Compte(String pNumCompte, String pNomProp) 
+	+ Compte(String pfNumCompte, String pfNomProp) 
 	
 	+ String getNumCompte()
 	+ String getProprietaire()
 	+ double soldeCompte()
-	+ void setProprietaire(String pNomProp)
-	+ void retirer(double pSomme)
-	+ void deposer(double pSomme)
+	+ void setProprietaire(String pfNomProp)
+	+ void retirer(double pfMontant)
+	+ void deposer(double pfMontant)
 	
 	+ String toString()
-	---
+....
 	+ void afficher() // Special TP
 }
 
