@@ -1261,7 +1261,7 @@ Chaque retrait de compte rétrécira ce tableau de un élément.
 </p>
 </li>
 </ol></div>
-<div class="paragraph"><p>On s&#8217;autorisera à utiliser en variable locale une ArrayList dans la méthode <tt>public Compte[] getComptesDe(String pNomProprietaire)</tt>.</p></div>
+<div class="paragraph"><p>On s&#8217;autorisera à utiliser en variable locale une ArrayList dans la méthode <tt>public Compte[] getComptesDe(String pfNomProprietaire)</tt>.</p></div>
 </div>
 <div class="sect2">
 <h3 id="_analyse_de_la_mise_en_oeuvre">3.2. Analyse de la mise en oeuvre</h3>
@@ -1421,7 +1421,7 @@ D&#8217;une part :
 </li>
 <li>
 <p>
-<tt>Compte getCompte(String pNumCompte)</tt>
+<tt>Compte getCompte(String pfNumCompte)</tt>
 </p>
 </li>
 </ol></div>
@@ -1448,12 +1448,12 @@ D&#8217;autre part :
 </li>
 <li>
 <p>
-<tt>Compte[] getComptesDe(String pNomProprietaire)</tt> (rappel : on s’autorisera à utiliser une ArrayList dans cette méthode)
+<tt>Compte[] getComptesDe(String pfNomProprietaire)</tt> (rappel : on s’autorisera à utiliser en variable locale une ArrayList dans cette méthode)
 </p>
 </li>
 <li>
 <p>
-<tt>int trouveCompte(String pNC)</tt> (private).
+<tt>int trouveCompte(String pfNC)</tt> (private).
 </p>
 </li>
 </ol></div>
@@ -1465,17 +1465,17 @@ Enfin :
 <div class="olist loweralpha"><ol class="loweralpha">
 <li>
 <p>
-<tt>AgenceBancaire(String pNomAgence, String pLocAgence)</tt>
+<tt>AgenceBancaire(String pfNomAgence, String pfLocAgence)</tt>
 </p>
 </li>
 <li>
 <p>
-<tt>void addCompte(Compte pCompteAAjouter)</tt>
+<tt>void addCompte(Compte pfCompteAAjouter)</tt>
 </p>
 </li>
 <li>
 <p>
-<tt>void removeCompte(String pNumCompte)</tt>
+<tt>void removeCompte(String pfNumCompte)</tt>
 </p>
 </li>
 </ol></div>
@@ -2044,7 +2044,7 @@ http://www.gnu.org/software/src-highlite -->
 <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">AgenceBancaireX</span> <span style="color: #FF0000">{</span>
         <span style="font-style: italic"><span style="color: #9A1900">// Attributs</span></span>
         <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">String</span> nom<span style="color: #990000">,</span> loc<span style="color: #990000">;</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">Compte</span> tableauDesComptes<span style="color: #990000">[];</span> <span style="font-style: italic"><span style="color: #9A1900">// Tableau des comptes</span></span>
+        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> Compte<span style="color: #990000">[]</span> tableauDesComptes<span style="color: #990000">;</span> <span style="font-style: italic"><span style="color: #9A1900">// Tableau des comptes</span></span>
 
         <span style="font-style: italic"><span style="color: #9A1900">/**</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         * Constructeur paramétré.</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
@@ -2145,7 +2145,7 @@ http://www.gnu.org/software/src-highlite -->
 <span style="font-style: italic"><span style="color: #9A1900">                 * Sinon créer un tableau de 0 éléments.</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">                 */</span></span>
 
-                <span style="color: #008080">Compte</span> t<span style="color: #990000">[],</span> cTemp<span style="color: #990000">;</span>
+                Compte<span style="color: #990000">[]</span> t<span style="color: #990000">,</span> cTemp<span style="color: #990000">;</span>
                 <span style="color: #008080">ArrayList&lt;Compte&gt;</span> alTemp<span style="color: #990000">;</span> <span style="font-style: italic"><span style="color: #9A1900">// ArrayList de Compte temporaire</span></span>
                 <span style="color: #009900">int</span> nbC<span style="color: #990000">,</span> nbCTemp<span style="color: #990000">,</span> i<span style="color: #990000">;</span>
 
@@ -2234,7 +2234,7 @@ http://www.gnu.org/software/src-highlite -->
 
         <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">addCompte</span></span><span style="color: #990000">(</span><span style="color: #008080">Compte</span> pCompteAAjouter<span style="color: #990000">)</span> <span style="font-weight: bold"><span style="color: #0000FF">throws</span></span> ABCompteNullException<span style="color: #990000">,</span> ABCompteDejaExistantException <span style="color: #FF0000">{</span>
                 <span style="color: #009900">int</span> taille<span style="color: #990000">,</span> i<span style="color: #990000">;</span>
-                <span style="color: #008080">Compte</span> t<span style="color: #990000">[];</span>
+                Compte<span style="color: #990000">[]</span> t<span style="color: #990000">;</span>
                 <span style="color: #009900">int</span> rang<span style="color: #990000">;</span>
 
                 <span style="font-style: italic"><span style="color: #9A1900">// Si null =&gt; refusé</span></span>
@@ -2277,7 +2277,7 @@ http://www.gnu.org/software/src-highlite -->
         <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">removeCompte</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> pNumCompte<span style="color: #990000">)</span> <span style="font-weight: bold"><span style="color: #0000FF">throws</span></span> ABCompteInexistantException<span style="color: #FF0000">{</span>
                 <span style="color: #009900">int</span> rangCompte <span style="color: #990000">;</span>
                 <span style="color: #009900">int</span> taille<span style="color: #990000">,</span> i<span style="color: #990000">,</span> j<span style="color: #990000">;</span>
-                <span style="color: #008080">Compte</span> t<span style="color: #990000">[];</span>
+                Compte<span style="color: #990000">[]</span> t<span style="color: #990000">;</span>
 
                 <span style="font-style: italic"><span style="color: #9A1900">// On cherche un Compte de même numéro</span></span>
                 rangCompte <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">trouveRangDeCompte</span></span><span style="color: #990000">(</span>pNumCompte<span style="color: #990000">);</span>
@@ -2453,7 +2453,7 @@ http://www.gnu.org/software/src-highlite -->
 <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">AgenceBancaireF</span> <span style="color: #FF0000">{</span>
         <span style="font-style: italic"><span style="color: #9A1900">// Attributs</span></span>
         <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">String</span> nom<span style="color: #990000">,</span> loc<span style="color: #990000">;</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">Compte</span> tableauDesComptes<span style="color: #990000">[];</span> <span style="font-style: italic"><span style="color: #9A1900">// Tableau des comptes</span></span>
+        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> Compte<span style="color: #990000">[]</span> tableauDesComptes<span style="color: #990000">;</span> <span style="font-style: italic"><span style="color: #9A1900">// Tableau des comptes</span></span>
         <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="font-weight: bold"><span style="color: #0000FF">final</span></span> <span style="color: #009900">int</span> tailleMin <span style="color: #990000">=</span> <span style="color: #993399">3</span><span style="color: #990000">;</span> <span style="font-style: italic"><span style="color: #9A1900">// Taille minimum</span></span>
         <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #009900">int</span> tailleCourante<span style="color: #990000">,</span> nbElements<span style="color: #990000">;</span>
 
@@ -2558,7 +2558,7 @@ http://www.gnu.org/software/src-highlite -->
 <span style="font-style: italic"><span style="color: #9A1900">                 * Sinon créer un tableau de 0 éléments.</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">                 */</span></span>
 
-                <span style="color: #008080">Compte</span> t<span style="color: #990000">[],</span> cTemp<span style="color: #990000">;</span>
+                Compte<span style="color: #990000">[]</span> t<span style="color: #990000">,</span> cTemp<span style="color: #990000">;</span>
                 <span style="color: #008080">ArrayList&lt;Compte&gt;</span> alTemp<span style="color: #990000">;</span> <span style="font-style: italic"><span style="color: #9A1900">// ArrayList de Compte temporaire</span></span>
                 <span style="color: #009900">int</span> nbC<span style="color: #990000">,</span> nbCTemp<span style="color: #990000">,</span> i<span style="color: #990000">;</span>
 
@@ -2647,7 +2647,7 @@ http://www.gnu.org/software/src-highlite -->
 
         <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">addCompte</span></span><span style="color: #990000">(</span><span style="color: #008080">Compte</span> pCompteAAjouter<span style="color: #990000">)</span> <span style="font-weight: bold"><span style="color: #0000FF">throws</span></span> ABCompteNullException<span style="color: #990000">,</span> ABCompteDejaExistantException <span style="color: #FF0000">{</span>
                 <span style="color: #009900">int</span> i<span style="color: #990000">;</span>
-                <span style="color: #008080">Compte</span> t<span style="color: #990000">[];</span>
+                Compte<span style="color: #990000">[]</span> t<span style="color: #990000">;</span>
                 <span style="color: #008080">Compte</span> c<span style="color: #990000">;</span>
                 <span style="color: #009900">int</span> rang<span style="color: #990000">;</span>
 
@@ -2698,7 +2698,7 @@ http://www.gnu.org/software/src-highlite -->
         <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">removeCompte</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> pNumCompte<span style="color: #990000">)</span> <span style="font-weight: bold"><span style="color: #0000FF">throws</span></span> ABCompteInexistantException<span style="color: #FF0000">{</span>
                 <span style="color: #009900">int</span> rangCompte <span style="color: #990000">;</span>
                 <span style="color: #009900">int</span> i<span style="color: #990000">;</span>
-                <span style="color: #008080">Compte</span> t<span style="color: #990000">[];</span>
+                Compte<span style="color: #990000">[]</span> t<span style="color: #990000">;</span>
 
                 <span style="font-style: italic"><span style="color: #9A1900">// On cherche un Compte de même numéro</span></span>
                 rangCompte <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">trouveRangDeCompte</span></span><span style="color: #990000">(</span>pNumCompte<span style="color: #990000">);</span>
@@ -2762,7 +2762,7 @@ http://www.gnu.org/software/src-highlite -->
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2017-03-04 20:35:25 CET
+Dernière mise à jour 2017-03-05 17:22:54 CET
 </div>
 </div>
 </body>

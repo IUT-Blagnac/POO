@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
 <head>
 <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
-<meta name="copyright" content="2017-03-02, Your computer *** Dut/Info-S2/M2103 *** Powered by AsciiDoc and W3C Slidy &amp;#169;" />
+<meta name="copyright" content="2017-03-05, Your computer *** Dut/Info-S2/M2103 *** Powered by AsciiDoc and W3C Slidy &amp;#169;" />
 <meta name="generator" content="AsciiDoc 8.6.6 / slidy2 backend 1.0.3" />
 <title>BPOO - Support TP 5</title>
 <style type="text/css">
@@ -4713,7 +4713,7 @@ http://www.gnu.org/software/src-highlite -->
 <ol class="arabic">
 <li>
 <span>
-<tt>public Compte[] getComptesDe(String pNomProprietaire)</tt>
+<tt>public Compte[] getComptesDe(String pfNomProprietaire)</tt>
 </span>
 </li>
 <li>
@@ -4825,7 +4825,7 @@ Cela s&#8217;appelle un "bouchon", qui renvoie une mauvaise valeur ici en l&#821
 <ol class="arabic">
 <li>
 <span>
-<tt>public AgenceBancaire(String pNomAgence, String pLocAgence)</tt> : le constructeur, en 3 lignes.
+<tt>public AgenceBancaire(String pfNomAgence, String pfLocAgence)</tt> : le constructeur, en 3 lignes.
 </span>
 <div class="admonitionblock">
 <table><tr>
@@ -4969,7 +4969,7 @@ RkWOKkVXIjB5X2ac8f8HA74K8I0SaJkAAAAASUVORK5CYII=" />
 <ol class="arabic">
 <li>
 <span>
-<strong>La méthode <tt>private int trouveCompte(String pNC)</tt>, méthode privée utilisée plusieurs fois par la suite</strong>. Elle permet de retrouver le rang d&#8217;un compte à partir de son numéro de compte.
+<strong>La méthode <tt>private int trouveCompte(String pfNC)</tt>, méthode privée utilisée plusieurs fois par la suite</strong>. Elle permet de retrouver le rang d&#8217;un compte à partir de son numéro de compte.
 </span>
 <ul class="">
 <li>
@@ -4986,12 +4986,12 @@ On optimisera la boucle de recherche (sortie dès que solution trouvée). Et on 
 </li>
 <li>
 <span>
-<tt>public Compte getCompte(String pNumCompte)</tt> : facile à écrire maintenant.
+<tt>public Compte getCompte(String pfNumCompte)</tt> : facile à écrire maintenant.
 </span>
 </li>
 <li>
 <span>
-<tt>public void addCompte(Compte pCompteAAjouter) throws ABCompteNullException, ABCompteDejaExistantException</tt>
+<tt>public void addCompte(Compte pfCompteAAjouter) throws ABCompteNullException, ABCompteDejaExistantException</tt>
 </span>
 <ul class="">
 <li>
@@ -5008,7 +5008,7 @@ Réutiliser <tt>trouveCompte()</tt>.
 </li>
 <li>
 <span>
-<tt>public void removeCompte(String pNumCompte) throws ABCompteInexistantException</tt>
+<tt>public void removeCompte(String pfNumCompte) throws ABCompteInexistantException</tt>
 </span>
 <ul class="">
 <li>
@@ -5285,16 +5285,16 @@ System<span style="color: #990000">.</span>out<span style="color: #990000">.</sp
 </div><div class="slide">
 
 <div class="sect2">
-<h1 id="_reprogrammer_tt_public_compte_getcomptesde_string_pnomproprietaire_tt">5.2. Reprogrammer <tt>public Compte[] getComptesDe(String pNomProprietaire)</tt>.</h1>
-<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect2";nexttitle="5.2. Reprogrammer <tt>public Compte[] getComptesDe(String pNomProprietaire)</tt>.";slidefootnotes="";/*]]>*/</script>
+<h1 id="_reprogrammer_tt_public_compte_getcomptesde_string_pfomproprietaire_tt">5.2. Reprogrammer <tt>public Compte[] getComptesDe(String pfomProprietaire)</tt>.</h1>
+<script type="text/javascript">/*<![CDATA[*/subslide=1;nextclass="sect2";nexttitle="5.2. Reprogrammer <tt>public Compte[] getComptesDe(String pfomProprietaire)</tt>.";slidefootnotes="";/*]]>*/</script>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Dans la version initialement fournie, <tt>public Compte[] getComptesDe(String pNomProprietaire)</tt> utilise une ArrayList temporaire (variable <tt>alTemp</tt>). Le but ici est de réécrire la méthode SANS stocker les comptes dans cette ArrayList temporaire.</p>
+<p>Dans la version initialement fournie, <tt>public Compte[] getComptesDe(String pfNomProprietaire)</tt> utilise une ArrayList temporaire (variable <tt>alTemp</tt>). Le but ici est de réécrire la méthode SANS stocker les comptes dans cette ArrayList temporaire.</p>
 </div>
 <ol class="arabic">
 <li>
 <span>
-Reprogrammer la méthode  <tt>public Compte[] getComptesDe(String pNomProprietaire)</tt> selon la spécification suivante :
+Reprogrammer la méthode  <tt>public Compte[] getComptesDe(String pfNomProprietaire)</tt> selon la spécification suivante :
 </span>
 <ul class="">
 <li>
@@ -6018,7 +6018,7 @@ http://www.gnu.org/software/src-highlite -->
 </div>
 <div id="footer" style="position: absolute; left: 5%; top: 80%; width: 90%;">
 <div id="footer-text">
-Dernière mise à jour 2017-03-02 17:46:00 CET
+Dernière mise à jour 2017-03-05 17:10:48 CET
 </div>
 </div>
 </div></div>

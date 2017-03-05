@@ -1319,7 +1319,7 @@ http://www.gnu.org/software/src-highlite -->
 <div class="olist arabic"><ol class="arabic">
 <li>
 <p>
-<tt>public Compte[] getComptesDe(String pNomProprietaire)</tt>
+<tt>public Compte[] getComptesDe(String pfNomProprietaire)</tt>
 </p>
 </li>
 <li>
@@ -1419,7 +1419,7 @@ Cela s&#8217;appelle un "bouchon", qui renvoie une mauvaise valeur ici en l&#821
 <div class="olist arabic"><ol class="arabic">
 <li>
 <p>
-<tt>public AgenceBancaire(String pNomAgence, String pLocAgence)</tt> : le constructeur, en 3 lignes.
+<tt>public AgenceBancaire(String pfNomAgence, String pfLocAgence)</tt> : le constructeur, en 3 lignes.
 </p>
 <div class="admonitionblock">
 <table><tr>
@@ -1557,7 +1557,7 @@ RkWOKkVXIjB5X2ac8f8HA74K8I0SaJkAAAAASUVORK5CYII=" />
 <div class="olist arabic"><ol class="arabic">
 <li>
 <p>
-<strong>La méthode <tt>private int trouveCompte(String pNC)</tt>, méthode privée utilisée plusieurs fois par la suite</strong>. Elle permet de retrouver le rang d&#8217;un compte à partir de son numéro de compte.
+<strong>La méthode <tt>private int trouveCompte(String pfNC)</tt>, méthode privée utilisée plusieurs fois par la suite</strong>. Elle permet de retrouver le rang d&#8217;un compte à partir de son numéro de compte.
 </p>
 <div class="ulist"><ul>
 <li>
@@ -1574,12 +1574,12 @@ On optimisera la boucle de recherche (sortie dès que solution trouvée). Et on 
 </li>
 <li>
 <p>
-<tt>public Compte getCompte(String pNumCompte)</tt> : facile à écrire maintenant.
+<tt>public Compte getCompte(String pfNumCompte)</tt> : facile à écrire maintenant.
 </p>
 </li>
 <li>
 <p>
-<tt>public void addCompte(Compte pCompteAAjouter) throws ABCompteNullException, ABCompteDejaExistantException</tt>
+<tt>public void addCompte(Compte pfCompteAAjouter) throws ABCompteNullException, ABCompteDejaExistantException</tt>
 </p>
 <div class="ulist"><ul>
 <li>
@@ -1596,7 +1596,7 @@ Réutiliser <tt>trouveCompte()</tt>.
 </li>
 <li>
 <p>
-<tt>public void removeCompte(String pNumCompte) throws ABCompteInexistantException</tt>
+<tt>public void removeCompte(String pfNumCompte) throws ABCompteInexistantException</tt>
 </p>
 <div class="ulist"><ul>
 <li>
@@ -1847,12 +1847,12 @@ System<span style="color: #990000">.</span>out<span style="color: #990000">.</sp
 </ul></div>
 </div>
 <div class="sect2">
-<h3 id="_reprogrammer_tt_public_compte_getcomptesde_string_pnomproprietaire_tt">5.2. Reprogrammer <tt>public Compte[] getComptesDe(String pNomProprietaire)</tt>.</h3>
-<div class="paragraph"><p>Dans la version initialement fournie, <tt>public Compte[] getComptesDe(String pNomProprietaire)</tt> utilise une ArrayList temporaire (variable <tt>alTemp</tt>). Le but ici est de réécrire la méthode SANS stocker les comptes dans cette ArrayList temporaire.</p></div>
+<h3 id="_reprogrammer_tt_public_compte_getcomptesde_string_pfomproprietaire_tt">5.2. Reprogrammer <tt>public Compte[] getComptesDe(String pfomProprietaire)</tt>.</h3>
+<div class="paragraph"><p>Dans la version initialement fournie, <tt>public Compte[] getComptesDe(String pfNomProprietaire)</tt> utilise une ArrayList temporaire (variable <tt>alTemp</tt>). Le but ici est de réécrire la méthode SANS stocker les comptes dans cette ArrayList temporaire.</p></div>
 <div class="olist arabic"><ol class="arabic">
 <li>
 <p>
-Reprogrammer la méthode  <tt>public Compte[] getComptesDe(String pNomProprietaire)</tt> selon la spécification suivante :
+Reprogrammer la méthode  <tt>public Compte[] getComptesDe(String pfNomProprietaire)</tt> selon la spécification suivante :
 </p>
 <div class="ulist"><ul>
 <li>
@@ -1926,7 +1926,7 @@ Une agence gère en moyenne 36000 comptes.
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2017-03-02 17:46:00 CET
+Dernière mise à jour 2017-03-05 17:10:48 CET
 </div>
 </div>
 </body>

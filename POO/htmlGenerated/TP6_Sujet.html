@@ -1203,7 +1203,7 @@ Chaque retrait de compte rétrécira ce tableau de un élément.
 </p>
 </li>
 </ol></div>
-<div class="paragraph"><p>On s&#8217;autorisera à utiliser en variable locale une ArrayList dans la méthode <tt>public Compte[] getComptesDe(String pNomProprietaire)</tt>.</p></div>
+<div class="paragraph"><p>On s&#8217;autorisera à utiliser en variable locale une ArrayList dans la méthode <tt>public Compte[] getComptesDe(String pfNomProprietaire)</tt>.</p></div>
 </div>
 <div class="sect2">
 <h3 id="_analyse_de_la_mise_en_oeuvre">3.2. Analyse de la mise en oeuvre</h3>
@@ -1363,7 +1363,7 @@ D&#8217;une part :
 </li>
 <li>
 <p>
-<tt>Compte getCompte(String pNumCompte)</tt>
+<tt>Compte getCompte(String pfNumCompte)</tt>
 </p>
 </li>
 </ol></div>
@@ -1390,12 +1390,12 @@ D&#8217;autre part :
 </li>
 <li>
 <p>
-<tt>Compte[] getComptesDe(String pNomProprietaire)</tt> (rappel : on s’autorisera à utiliser une ArrayList dans cette méthode)
+<tt>Compte[] getComptesDe(String pfNomProprietaire)</tt> (rappel : on s’autorisera à utiliser en variable locale une ArrayList dans cette méthode)
 </p>
 </li>
 <li>
 <p>
-<tt>int trouveCompte(String pNC)</tt> (private).
+<tt>int trouveCompte(String pfNC)</tt> (private).
 </p>
 </li>
 </ol></div>
@@ -1407,17 +1407,17 @@ Enfin :
 <div class="olist loweralpha"><ol class="loweralpha">
 <li>
 <p>
-<tt>AgenceBancaire(String pNomAgence, String pLocAgence)</tt>
+<tt>AgenceBancaire(String pfNomAgence, String pfLocAgence)</tt>
 </p>
 </li>
 <li>
 <p>
-<tt>void addCompte(Compte pCompteAAjouter)</tt>
+<tt>void addCompte(Compte pfCompteAAjouter)</tt>
 </p>
 </li>
 <li>
 <p>
-<tt>void removeCompte(String pNumCompte)</tt>
+<tt>void removeCompte(String pfNumCompte)</tt>
 </p>
 </li>
 </ol></div>
@@ -1871,7 +1871,7 @@ Elle doit passer avec succès (complet) les tests JUnit.
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2017-03-04 20:35:25 CET
+Dernière mise à jour 2017-03-05 17:22:54 CET
 </div>
 </div>
 </body>
