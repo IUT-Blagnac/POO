@@ -1460,9 +1460,9 @@ http://www.gnu.org/software/src-highlite -->
         <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #009900">double</span> contenu<span style="color: #990000">;</span>
         <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">Cellule</span> suivant<span style="color: #990000">;</span>
 
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #000000">Cellule</span></span> <span style="color: #990000">(</span><span style="color: #009900">double</span> pVal<span style="color: #990000">,</span> <span style="color: #008080">Cellule</span> pSuiv<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>contenu <span style="color: #990000">=</span> pVal<span style="color: #990000">;</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>suivant <span style="color: #990000">=</span> pSuiv<span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #000000">Cellule</span></span> <span style="color: #990000">(</span><span style="color: #009900">double</span> pfVal<span style="color: #990000">,</span> <span style="color: #008080">Cellule</span> pfSuiv<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>contenu <span style="color: #990000">=</span> pfVal<span style="color: #990000">;</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>suivant <span style="color: #990000">=</span> pfSuiv<span style="color: #990000">;</span>
         <span style="color: #FF0000">}</span>
         <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">double</span> <span style="font-weight: bold"><span style="color: #000000">getContenu</span></span> <span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
                 <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>contenu<span style="color: #990000">;</span>
@@ -1470,11 +1470,11 @@ http://www.gnu.org/software/src-highlite -->
         <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #008080">Cellule</span> <span style="font-weight: bold"><span style="color: #000000">getSuivant</span></span> <span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
                 <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>suivant<span style="color: #990000">;</span>
         <span style="color: #FF0000">}</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">setContenu</span></span> <span style="color: #990000">(</span><span style="color: #009900">double</span> pVal<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>contenu <span style="color: #990000">=</span> pVal<span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">setContenu</span></span> <span style="color: #990000">(</span><span style="color: #009900">double</span> pfVal<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>contenu <span style="color: #990000">=</span> pfVal<span style="color: #990000">;</span>
         <span style="color: #FF0000">}</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">setSuivant</span></span> <span style="color: #990000">(</span><span style="color: #008080">Cellule</span> pSuiv<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>suivant <span style="color: #990000">=</span> pSuiv<span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">setSuivant</span></span> <span style="color: #990000">(</span><span style="color: #008080">Cellule</span> pfSuiv<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>suivant <span style="color: #990000">=</span> pfSuiv<span style="color: #990000">;</span>
         <span style="color: #FF0000">}</span>
 <span style="color: #FF0000">}</span></tt></pre></div></div>
 </div>
@@ -2007,7 +2007,7 @@ Accès élément i.
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2017-02-15 18:49:57 CET
+Dernière mise à jour 2017-03-05 16:56:56 CET
 </div>
 </div>
 </body>

@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
 <meta name="generator" content="AsciiDoc 8.6.6" />
-<title>BPOO - Sujet TD 5</title>
+<title>BPOO - Sujet TD 5 - Eléments de solution</title>
 <style type="text/css">
 /* Shared CSS for AsciiDoc xhtml11 and html5 backends */
 
@@ -1383,7 +1383,7 @@ asciidoc.install(2);
 </head>
 <body class="article">
 <div id="header">
-<h1>BPOO - Sujet TD 5</h1>
+<h1>BPOO - Sujet TD 5 - Eléments de solution</h1>
 <span id="author">Dut/Info-S2/M2103</span><br />
 <div id="toc">
   <div id="toctitle">Table des matières</div>
@@ -1393,341 +1393,13 @@ asciidoc.install(2);
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
-<div class="tableblock" id="cartouche">
-<table rules="all"
-style="margin-left:0; margin-right:auto;"
-width="90%"
-frame="border"
-cellspacing="0" cellpadding="4">
-<col width="9%" />
-<col width="90%" />
-<tbody>
-<tr>
-<td align="left" valign="top"><p class="table">PreReq</p></td>
-<td align="left" valign="top"><p class="table">TD1 : implantations mémoires, TD3 classes objets-encapsulation, TP2 : Utilisation d&#8217;objets.</p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table">ObjTD</p></td>
-<td align="left" valign="top"><p class="table"><strong>Stockage de données : listes chaînées</strong>.</p></td>
-</tr>
-<tr>
-<td align="left" valign="top"><p class="table">Durée</p></td>
-<td align="left" valign="top"><p class="table"><strong>2 séances</strong> de 1,5h</p></td>
-</tr>
-</tbody>
-</table>
-</div>
+<div class="paragraph"><p><strong>Eléments de solution du TD (voir sujet en parallèle)</strong></p></div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_principes">1. Principes</h2>
+<h2 id="_exemple_de_liste_chaînée">1. Exemple de liste chaînée</h2>
 <div class="sectionbody">
-<div class="paragraph"><p>Une structure autoréferrentielle (parfois appelée structure récursive) correspond à une structure dont au moins un des champs contient une référence vers une structure de même type.</p></div>
-<div class="paragraph"><p>De cette façon on crée des éléments <strong>cellule</strong> (appelés parfois noeuds ou liens) contenant des données, mais, contrairement à un tableau, celles-ci peuvent être éparpillées en mémoire et reliées entre elles par des liens logiques (des références), c&#8217;est-à-dire un ou plusieurs champs dans chaque structure contenant la référence d&#8217;une ou plusieurs structures de même type.</p></div>
-<div class="paragraph"><p>Plusieurs cas sont possibles :</p></div>
-<div class="ulist"><ul>
-<li>
-<p>
-Lorsque la structure contient des données et une référence vers la structure suivante : on parle de structure/liste chaînée.
-</p>
-</li>
-<li>
-<p>
-Lorsque la structure contient des données, une référence vers la structure suivante, et une référence vers la structure précédente : on parle de structure/liste chaînée double.
-</p>
-</li>
-<li>
-<p>
-Lorsque la structure contient des données, une référence vers une première structure suivante, et une référence vers une seconde, on parle d&#8217;arbre binaire.
-</p>
-</li>
-</ul></div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_listes_chaînées">2. Listes chaînées</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_définition">2.1. Définition</h3>
-<div class="paragraph"><p>On va considérer uniquement ici les structures chaînées de type liste simplement chaînée.</p></div>
-<div class="olist arabic"><ol class="arabic">
-<li>
-<p>
-Pour gérer de telles listes, il faut :
-</p>
-<div class="ulist"><ul>
-<li>
-<p>
-des éléments <strong>cellule</strong> contenant une valeur (contenu) et une référence vers la <strong>cellule suivante</strong>,
-</p>
-</li>
-<li>
-<p>
-repérer a minima la première <strong>cellule</strong> de la chaîne.
-</p>
-</li>
-</ul></div>
-</li>
-<li>
-<p>
-Exemple de liste chaînée contenant des réels :
-</p>
-<div class="paragraph"><p><span class="image">
-<img alt="images/td5listechainee2.png" src="data:image/png;base64,
-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" />
-</span></p></div>
-<div class="paragraph"><p>On a donc des <strong>cellules</strong> reliées entre elles comme des maillons d&#8217;un chaîne.</p></div>
-</li>
-<li>
-<p>
-Attention : importance de la valeur <strong>null</strong> de la dernière Cellule &#8594; repère la fin de la chaîne (dernier maillon).
-</p>
-</li>
-<li>
-<p>
-Attention : <tt>debutChaine</tt> est ici une variable "externe" à la structure chaînée. Il faut nécessairement repérer <strong>au moins</strong> le début de la structure chaînée (une variable, un attribut d&#8217;une classe plus tard, &#8230;).
-</p>
-</li>
-</ol></div>
-<div class="admonitionblock">
-<table><tr>
-<td class="icon">
-<img alt="Important" src="data:image/png;base64,
-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" />
-</td>
-<td class="content">
-<div class="paragraph"><p>A noter :</p></div>
-<div class="ulist"><ul>
-<li>
-<p>
-Liste chaînée fait penser à liste et ArrayList &#8658; on attendrait des méthodes
-</p>
-</li>
-<li>
-<p>
-On présente plutôt ici des <strong>structures</strong> chaînées, sans opération spécifique définie (ajout, retrait, &#8230;).
-</p>
-</li>
-<li>
-<p>
-Par abus de langage, on parlera de "listes" chaînées
-</p>
-</li>
-</ul></div>
-</td>
-</tr></table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_exemple">2.2. Exemple</h3>
-<div class="paragraph"><p>Question : Proposer un schéma de cette liste (barrer les cellules inutiles) avec :</p></div>
+<div class="paragraph"><p>Exemple :</p></div>
 <div class="olist arabic"><ol class="arabic">
 <li>
 <p>
@@ -1738,564 +1410,6 @@ Un élément 35.5 de plus au début.
 <p>
 Un élément 75.5 de plus en fin.
 </p>
-<div class="paragraph"><p><span class="image">
-<img alt="images/td5listechaineeVidePourReponses.png" src="data:image/png;base64,
-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" />
-</span></p></div>
-</li>
-<li>
-<p>
-L'élément 35.5 en moins.
-</p>
-</li>
-<li>
-<p>
-L'élément 55.5 en moins.
-</p>
-</li>
-<li>
-<p>
-L'élément 75.5 en moins.
-</p>
-<div class="paragraph"><p><span class="image">
-<img alt="images/td5listechaineeVidePourReponses.png" src="data:image/png;base64,
-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" />
-</span></p></div>
-</li>
-<li>
-<p>
-Comment représenter une liste chaînée ne comportant aucune valeur ?
-</p>
-<div class="paragraph"><p><span class="image">
-<img alt="images/td5listechaineeVidePourReponses.png" src="data:image/png;base64,
-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" />
-</span></p></div>
-</li>
-</ol></div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_utiliser_manuellement_une_liste_chaînée">3. Utiliser "manuellement" une liste chaînée</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_la_classe_cellule">3.1. La classe Cellule</h3>
-<div class="paragraph"><p>Afin de pouvoir gérer les cellules d&#8217;une liste chaînée, on propose la classe ci-dessous :</p></div>
-<div class="paragraph"><div class="title">Diagramme UML de la classe Cellule</div><p><span class="image">
-<img alt="images/classeCellule.png" src="data:image/png;base64,
-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" />
-</span></p></div>
-<div class="listingblock">
-<div class="title">Source java de la classe Cellule</div>
-<div class="content"><!-- Generator: GNU source-highlight 3.1.5
-by Lorenzo Bettini
-http://www.lorenzobettini.it
-http://www.gnu.org/software/src-highlite -->
-<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">Cellule</span> <span style="color: #FF0000">{</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #009900">double</span> contenu<span style="color: #990000">;</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">Cellule</span> suivant<span style="color: #990000">;</span>
-
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #000000">Cellule</span></span> <span style="color: #990000">(</span><span style="color: #009900">double</span> pfVal<span style="color: #990000">,</span> <span style="color: #008080">Cellule</span> pfSuiv<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>contenu <span style="color: #990000">=</span> pfVal<span style="color: #990000">;</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>suivant <span style="color: #990000">=</span> pfSuiv<span style="color: #990000">;</span>
-        <span style="color: #FF0000">}</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">double</span> <span style="font-weight: bold"><span style="color: #000000">getContenu</span></span> <span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>contenu<span style="color: #990000">;</span>
-        <span style="color: #FF0000">}</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #008080">Cellule</span> <span style="font-weight: bold"><span style="color: #000000">getSuivant</span></span> <span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>suivant<span style="color: #990000">;</span>
-        <span style="color: #FF0000">}</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">setContenu</span></span> <span style="color: #990000">(</span><span style="color: #009900">double</span> pfVal<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>contenu <span style="color: #990000">=</span> pfVal<span style="color: #990000">;</span>
-        <span style="color: #FF0000">}</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">setSuivant</span></span> <span style="color: #990000">(</span><span style="color: #008080">Cellule</span> pfSuiv<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>suivant <span style="color: #990000">=</span> pfSuiv<span style="color: #990000">;</span>
-        <span style="color: #FF0000">}</span>
-<span style="color: #FF0000">}</span></tt></pre></div></div>
-</div>
-<div class="sect2">
-<h3 id="_utiliser_la_classe_cellule">3.2. Utiliser la classe Cellule</h3>
-<div class="paragraph"><p>Écrire le programme simple proposé en annexe.</p></div>
-<div class="paragraph"><p>En utilisant trois variables, la partie 1 doit permettre de construire :</p></div>
-<div class="paragraph"><p><span class="image">
-<img alt="images/td5listechainee2.png" src="data:image/png;base64,
-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" />
-</span></p></div>
-<div class="paragraph"><p>En ne conservant que l&#8217;information <tt>debutChaine</tt>, la partie 2 doit permettre de construire :</p></div>
 <div class="paragraph"><p><span class="image">
 <img alt="images/td5listechainee1.png" src="data:image/png;base64,
 iVBORw0KGgoAAAANSUhEUgAAAgIAAAC5CAIAAADVtcAEAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
@@ -2447,7 +1561,21 @@ mcdZvtPnBtHKDriIKpuYbqGn+jPzOMt3+twgWtkBF1FlE9Mt9FR/Zh5n+U6fG0QrO+AiqmxiuoWe
 BgghZNbwGCCEkFnDY4AQQmYNjwFCCJk1PAYIIWTW8BgghJAZ89df/wdbuJ41kNhLAwAAAABJRU5E
 rkJggg==" />
 </span></p></div>
-<div class="paragraph"><p>En ne conservant que l&#8217;information <tt>debutChaine</tt>, la partie 3 doit permettre de construire :</p></div>
+</li>
+<li>
+<p>
+L'élément 35.5 en moins.
+</p>
+</li>
+<li>
+<p>
+L'élément 55.5 en moins.
+</p>
+</li>
+<li>
+<p>
+L'élément 75.5 en moins.
+</p>
 <div class="paragraph"><p><span class="image">
 <img alt="images/td5listechainee3.png" src="data:image/png;base64,
 iVBORw0KGgoAAAANSUhEUgAAAf0AAACvCAIAAAB4n5CXAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
@@ -2597,65 +1725,320 @@ JyC1fTM175MIvb8t9H6Ixga93wm9P1Xo/W2h90M0Nuj9Tuj9qULvbwu9H6KxQe93Qu9PFXp/W+j9
 EI0Ner8Ten+q0PvbQu+HaGzQ+53Q+1OF3t8Wej9EY4Pe74Tenyr0/rZ8+vQJnThb8PJDR4yNg4MD
 eI20gC4KnTVaZj49mzCnLb1PCCFz4r///g/Nyoj9gOt29gAAAABJRU5ErkJggg==" />
 </span></p></div>
-<div class="paragraph"><p>Enfin, chercher un algorithme permettant la suppression d&#8217;un élément (ou valeur, appelons-la <tt>valASup</tt>) n&#8217;importe où dans la structure chaînée et éventuellement absent de la structure. Il faudra réfléchir :</p></div>
-<div class="ulist"><ul>
-<li>
-<p>
-au cas où l'élément n&#8217;est pas dans la structure chaînée,
-</p>
 </li>
 <li>
 <p>
-au cas où l'élément est présent et est le premier de la structure chaînée,
+Comment représenter une liste chaînée ne comportant aucune valeur ?
 </p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>debutChaine <span style="color: #008080">vaut</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">;</span> <span style="font-style: italic"><span style="color: #9A1900">// debutChaine ne référence aucune Cellule</span></span></tt></pre></div></div>
 </li>
-<li>
-<p>
-au cas où l'élément est présent et est "au milieu" de la structure chaînée,
-</p>
-</li>
-<li>
-<p>
-au cas où l'élément est présent et est le dernier de la structure chaînée (mais est ce bien un cas particulier ?).
-</p>
-</li>
-</ul></div>
-</div>
+</ol></div>
+<span style="page-break-before:always"></span>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_différence_tableau_dynamique_lt_gt_liste_chaînée_simple">4. Différence tableau "dynamique" &lt;&gt; liste chaînée simple</h2>
+<h2 id="_utiliser_manuellement_une_liste_chaînée">2. Utiliser "manuellement" une liste chaînée</h2>
 <div class="sectionbody">
-<div class="paragraph"><p>Donner les différences entre tableaux "dynamiques" et listes chaînées simples dans les situations suivantes :</p></div>
-<div class="olist arabic"><ol class="arabic">
-<li>
-<p>
-Ajout d&#8217;un élément en fin.
-</p>
-</li>
-<li>
-<p>
-Ajout au début.
-</p>
-</li>
-<li>
-<p>
-Suppression d&#8217;un élément (début, milieu, fin).
-</p>
-</li>
-<li>
-<p>
-Accès élément i.
-</p>
-</li>
-</ol></div>
+<div class="sect2">
+<h3 id="_la_classe_cellule">2.1. La classe Cellule</h3>
+<div class="paragraph"><p>Afin de pouvoir gérer les cellules d&#8217;une liste chaînée, on propose la classe ci-dessous :</p></div>
+<div class="paragraph"><div class="title">Diagramme UML de la classe Cellule</div><p><span class="image">
+<img alt="images/classeCellule.png" src="data:image/png;base64,
+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" />
+</span></p></div>
+</div>
+<div class="sect2">
+<h3 id="_utiliser_la_classe_cellule">2.2. Utiliser la classe Cellule</h3>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">TestCelluleManuel</span> <span style="color: #FF0000">{</span>
+  <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span> <span style="color: #990000">(</span>String<span style="color: #990000">[]</span> argv<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+
+        <span style="font-style: italic"><span style="color: #9A1900">// PARTIE 1 - PARTIE 1 - PARTIE 1 - PARTIE 1</span></span>
+
+        <span style="font-style: italic"><span style="color: #9A1900">// déclarer debutChaine et des variables Cellule : pCel1, pCel2, pCel3, temp, nouvCel</span></span>
+
+        <span style="color: #008080">Cellule</span> debutChaine<span style="color: #990000">;</span>
+        <span style="color: #008080">Cellule</span> pCel1<span style="color: #990000">,</span> pCel2<span style="color: #990000">,</span> pCel3<span style="color: #990000">,</span> temp<span style="color: #990000">,</span> nouvCel<span style="color: #990000">,</span> temp2<span style="color: #990000">;</span>
+
+        <span style="font-style: italic"><span style="color: #9A1900">// créer la cellule contenant 45.5 en utilisant la variable pCel1</span></span>
+
+        pCel1 <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Cellule</span></span><span style="color: #990000">(</span><span style="color: #993399">45.5</span><span style="color: #990000">,</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">);</span>
+
+        <span style="font-style: italic"><span style="color: #9A1900">// créer la cellule contenant 55.5 en utilisant la variable pCel2</span></span>
+
+        pCel2 <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Cellule</span></span> <span style="color: #990000">(</span><span style="color: #993399">55.5</span><span style="color: #990000">,</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">);</span>
+
+        <span style="font-style: italic"><span style="color: #9A1900">// relier les cellules contenant 45.5 et 55.5</span></span>
+
+        pCel1<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setSuivant</span></span><span style="color: #990000">(</span>pCel2<span style="color: #990000">);</span>
+
+        <span style="font-style: italic"><span style="color: #9A1900">// créer la cellule contenant 65.5 en utilisant la variable pCel3</span></span>
+
+        pCel3 <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Cellule</span></span> <span style="color: #990000">(</span><span style="color: #993399">65.5</span><span style="color: #990000">,</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">);</span>
+
+        <span style="font-style: italic"><span style="color: #9A1900">// relier les cellules contenant 55.5 et 65.5</span></span>
+
+        pCel2<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setSuivant</span></span><span style="color: #990000">(</span>pCel3<span style="color: #990000">);</span>
+
+        <span style="font-style: italic"><span style="color: #9A1900">// initialiser correctement le champ suiv de la Cellule contenant 65.5</span></span>
+        <span style="font-style: italic"><span style="color: #9A1900">// pour que la structure  chaînée soit correcte (c'est la dernière cellule de la structure )</span></span>
+
+        pCel3<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setSuivant</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">);</span> <span style="font-style: italic"><span style="color: #9A1900">// Mais fait au constructeur</span></span>
+
+
+        <span style="font-style: italic"><span style="color: #9A1900">// initialiser la variable debutChaine pour qu’elle contienne la référence de la première</span></span>
+        <span style="font-style: italic"><span style="color: #9A1900">// cellule de la chaîne que vous venez de créer</span></span>
+
+        debutChaine <span style="color: #990000">=</span> pCel1<span style="color: #990000">;</span>
+
+        <span style="font-style: italic"><span style="color: #9A1900">// afficher les différentes valeurs contenues dans la structure  chaînée dans l'ordre</span></span>
+        <span style="font-style: italic"><span style="color: #9A1900">// des Cellules en utilisant les valeurs de pCel1, pCel2 et pCel3,</span></span>
+
+
+        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">();</span>
+        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>pCel1<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getContenu</span></span><span style="color: #990000">());</span>
+        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>pCel2<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getContenu</span></span><span style="color: #990000">());</span>
+        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>pCel3<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getContenu</span></span><span style="color: #990000">());</span>
+
+        <span style="font-style: italic"><span style="color: #9A1900">// afficher les différentes valeurs contenues dans la structure  chaînée dans l'ordre des Cellules</span></span>
+        <span style="font-style: italic"><span style="color: #9A1900">// en utilisant debutChaine et éventuellement un autre pointeur de Cellule et en utilisant une boucle</span></span>
+        <span style="font-style: italic"><span style="color: #9A1900">// NE PAS se servir des valeurs de pCel1, pCel2 et pCel3</span></span>
+
+        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">();</span>
+        temp <span style="color: #990000">=</span> debutChaine <span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">while</span></span> <span style="color: #990000">(</span>temp <span style="color: #990000">!=</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>temp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getContenu</span></span><span style="color: #990000">());</span>
+                temp <span style="color: #990000">=</span> temp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getSuivant</span></span><span style="color: #990000">();</span>
+        <span style="color: #FF0000">}</span>
+
+        <span style="font-style: italic"><span style="color: #9A1900">// PARTIE 2 - PARTIE 2 - PARTIE 2 - PARTIE 2</span></span>
+
+        pCel1 <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">;</span>
+        pCel2 <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">;</span>
+        pCel3 <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">;</span>
+
+        <span style="font-style: italic"><span style="color: #9A1900">// en utilisant les variables nécessaires : ajouter l'élément 35.5 avant la cellule contenant 45.5 sans utiliser pCel1 et pCel2 (mises à null entre temps)</span></span>
+
+        temp <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Cellule</span></span> <span style="color: #990000">(</span><span style="color: #993399">35.5</span><span style="color: #990000">,</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">);</span>
+        temp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setSuivant</span></span><span style="color: #990000">(</span>debutChaine<span style="color: #990000">);</span>
+        debutChaine <span style="color: #990000">=</span> temp<span style="color: #990000">;</span>
+
+        <span style="font-style: italic"><span style="color: #9A1900">// en utilisant les variables nécessaires : ajouter l'élément 75.5 à la fin de la structure</span></span>
+        <span style="font-style: italic"><span style="color: #9A1900">// SANS utiliser la valeur de pCel2 (mise à null entre temps)</span></span>
+
+        nouvCel <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Cellule</span></span> <span style="color: #990000">(</span><span style="color: #993399">75.5</span><span style="color: #990000">,</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">);</span>
+        temp <span style="color: #990000">=</span> debutChaine <span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">while</span></span> <span style="color: #990000">(</span>temp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getSuivant</span></span><span style="color: #990000">()</span> <span style="color: #990000">!=</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                temp <span style="color: #990000">=</span> temp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getSuivant</span></span><span style="color: #990000">();</span>
+        <span style="color: #FF0000">}</span>
+        temp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setSuivant</span></span><span style="color: #990000">(</span>nouvCel<span style="color: #990000">);</span>
+
+        <span style="font-style: italic"><span style="color: #9A1900">// afficher les différentes valeurs contenues dans la structure chaînée</span></span>
+
+        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">();</span>
+        temp <span style="color: #990000">=</span> debutChaine <span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">while</span></span> <span style="color: #990000">(</span>temp <span style="color: #990000">!=</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>temp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getContenu</span></span><span style="color: #990000">());</span>
+                temp <span style="color: #990000">=</span> temp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getSuivant</span></span><span style="color: #990000">();</span>
+        <span style="color: #FF0000">}</span>
+
+        <span style="font-style: italic"><span style="color: #9A1900">// PARTIE 3 - PARTIE 3 - PARTIE 3 - PARTIE 3</span></span>
+
+        <span style="font-style: italic"><span style="color: #9A1900">// supprimer la cellule contenant 55.5.</span></span>
+        <span style="font-style: italic"><span style="color: #9A1900">// on supposera ne pas "connaître" sa position. Il faut donc chercher la cellule.</span></span>
+        <span style="font-style: italic"><span style="color: #9A1900">// on sait que ce n'est pas la première et on sait qu’elle existe !!</span></span>
+
+        temp <span style="color: #990000">=</span> debutChaine <span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">while</span></span> <span style="color: #990000">(</span>temp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getSuivant</span></span><span style="color: #990000">().</span><span style="font-weight: bold"><span style="color: #000000">getContenu</span></span><span style="color: #990000">()</span> <span style="color: #990000">!=</span> <span style="color: #993399">55.5</span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                temp <span style="color: #990000">=</span> temp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getSuivant</span></span><span style="color: #990000">();</span>
+        <span style="color: #FF0000">}</span>
+        temp2 <span style="color: #990000">=</span> temp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getSuivant</span></span><span style="color: #990000">();</span> <span style="font-style: italic"><span style="color: #9A1900">// Cellule contenant 55.5</span></span>
+        temp2 <span style="color: #990000">=</span> temp2<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getSuivant</span></span><span style="color: #990000">();</span> <span style="font-style: italic"><span style="color: #9A1900">// Cellule suivante de la cellule contenant 55.5</span></span>
+        temp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setSuivant</span></span><span style="color: #990000">(</span>temp2<span style="color: #990000">);</span>
+
+        <span style="font-style: italic"><span style="color: #9A1900">// supprimer la cellule contenant 75.5.</span></span>
+        <span style="font-style: italic"><span style="color: #9A1900">// on supposera ne pas "connaître" sa position. Il faut donc chercher la cellule.</span></span>
+        <span style="font-style: italic"><span style="color: #9A1900">// on sait que ce n'est pas la première et on sait qu’elle existe !!</span></span>
+        <span style="font-style: italic"><span style="color: #9A1900">// est ce si différent que ci-dessus ?</span></span>
+
+        temp <span style="color: #990000">=</span> debutChaine <span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">while</span></span> <span style="color: #990000">(</span>temp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getSuivant</span></span><span style="color: #990000">().</span><span style="font-weight: bold"><span style="color: #000000">getContenu</span></span><span style="color: #990000">()</span> <span style="color: #990000">!=</span> <span style="color: #993399">75.5</span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                temp <span style="color: #990000">=</span> temp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getSuivant</span></span><span style="color: #990000">();</span>
+        <span style="color: #FF0000">}</span>
+        temp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setSuivant</span></span><span style="color: #990000">(</span>temp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getSuivant</span></span><span style="color: #990000">().</span><span style="font-weight: bold"><span style="color: #000000">getSuivant</span></span><span style="color: #990000">());</span>
+
+        <span style="font-style: italic"><span style="color: #9A1900">// supprimer la cellule contenant 35.5 (une ligne)</span></span>
+
+        debutChaine <span style="color: #990000">=</span> debutChaine<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getSuivant</span></span><span style="color: #990000">();</span>
+
+        <span style="font-style: italic"><span style="color: #9A1900">// afficher les différentes valeurs contenues dans la structure chaînée</span></span>
+
+        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">();</span>
+        temp <span style="color: #990000">=</span> debutChaine <span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">while</span></span> <span style="color: #990000">(</span>temp <span style="color: #990000">!=</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>temp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getContenu</span></span><span style="color: #990000">());</span>
+                temp <span style="color: #990000">=</span> temp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getSuivant</span></span><span style="color: #990000">();</span>
+        <span style="color: #FF0000">}</span>
+
+        <span style="font-style: italic"><span style="color: #9A1900">//Enfin, chercher un algorithme permettant la suppression d’un élément (ou valeur, appelons-la valASup) n’importe où dans la structure chaînée et éventuellement absent de la structure.</span></span>
+
+        <span style="color: #009900">float</span> valASup<span style="color: #990000">;</span>
+        <span style="color: #008080">Cellule</span> pred<span style="color: #990000">;</span>
+        <span style="color: #009900">boolean</span> trouve<span style="color: #990000">;</span>
+
+        <span style="font-style: italic"><span style="color: #9A1900">// SOLUTION 1 :</span></span>
+
+        valASup <span style="color: #990000">=</span> <span style="font-style: italic"><span style="color: #9A1900">// A Définir ... ;</span></span>
+
+        temp <span style="color: #990000">=</span> debutChaine<span style="color: #990000">;</span>
+        pred <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">;</span>
+        trouve <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">false</span></span><span style="color: #990000">;</span>
+
+        <span style="font-weight: bold"><span style="color: #0000FF">while</span></span> <span style="color: #990000">(</span>temp <span style="color: #990000">!=</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span> <span style="color: #990000">&amp;&amp;</span> <span style="color: #990000">!</span> trouve<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>temp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getContenu</span></span><span style="color: #990000">()</span> <span style="color: #990000">==</span> valASup<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                        trouve <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">true</span></span><span style="color: #990000">;</span>
+                <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">else</span></span> <span style="color: #FF0000">{</span>
+                        pred <span style="color: #990000">=</span> temp<span style="color: #990000">;</span>
+                        temp <span style="color: #990000">=</span> temp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getSuivant</span></span><span style="color: #990000">();</span>
+                <span style="color: #FF0000">}</span>
+        <span style="color: #FF0000">}</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>trouve<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>pred <span style="color: #990000">==</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                        debutChaine <span style="color: #990000">=</span> debutChaine<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getSuivant</span></span><span style="color: #990000">();</span>
+                <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">else</span></span> <span style="color: #FF0000">{</span>
+                        pred<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setSuivant</span></span><span style="color: #990000">(</span>temp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getSuivant</span></span><span style="color: #990000">());</span>
+                <span style="color: #FF0000">}</span>
+        <span style="color: #FF0000">}</span>
+
+        <span style="font-style: italic"><span style="color: #9A1900">// SOLUTION 2 :</span></span>
+
+        valASup <span style="color: #990000">=</span> <span style="font-style: italic"><span style="color: #9A1900">// A Définir ... ;</span></span>
+
+        <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>debutChaine <span style="color: #990000">!=</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>debutChaine<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getContenu</span></span><span style="color: #990000">()</span> <span style="color: #990000">==</span> valASup<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                        debutChaine <span style="color: #990000">=</span> debutChaine<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getSuivant</span></span><span style="color: #990000">();</span>
+                <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">else</span></span> <span style="color: #FF0000">{</span>
+                        trouve <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">false</span></span><span style="color: #990000">;</span>
+                        temp <span style="color: #990000">=</span> debutChaine<span style="color: #990000">;</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">while</span></span> <span style="color: #990000">(</span>temp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getSuivant</span></span><span style="color: #990000">()</span> <span style="color: #990000">!=</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span> <span style="color: #990000">&amp;&amp;</span> <span style="color: #990000">!</span> trouve<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>temp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getSuivant</span></span><span style="color: #990000">().</span><span style="font-weight: bold"><span style="color: #000000">getContenu</span></span><span style="color: #990000">()</span> <span style="color: #990000">==</span> valASup<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                                        trouve <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">true</span></span><span style="color: #990000">;</span>
+                                <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">else</span></span> <span style="color: #FF0000">{</span>
+                                        temp <span style="color: #990000">=</span> temp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getSuivant</span></span><span style="color: #990000">();</span>
+                                <span style="color: #FF0000">}</span>
+                        <span style="color: #FF0000">}</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>trouve<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                                temp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">setSuivant</span></span><span style="color: #990000">(</span>temp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getSuivant</span></span><span style="color: #990000">().</span><span style="font-weight: bold"><span style="color: #000000">getSuivant</span></span><span style="color: #990000">());</span>
+                        <span style="color: #FF0000">}</span>
+                <span style="color: #FF0000">}</span>
+
+        <span style="color: #FF0000">}</span>
+
+        <span style="font-style: italic"><span style="color: #9A1900">// Affichage</span></span>
+
+        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">();</span>
+        temp <span style="color: #990000">=</span> debutChaine <span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">while</span></span> <span style="color: #990000">(</span>temp <span style="color: #990000">!=</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>temp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getContenu</span></span><span style="color: #990000">());</span>
+                temp <span style="color: #990000">=</span> temp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getSuivant</span></span><span style="color: #990000">();</span>
+        <span style="color: #FF0000">}</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+</div>
 </div>
 </div>
 </div>
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2017-03-05 16:56:56 CET
+Dernière mise à jour 2017-03-02 18:04:12 CET
 </div>
 </div>
 </body>
