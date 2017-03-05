@@ -1285,7 +1285,7 @@ Que réalise la ligne <tt>super.afficher();</tt> dans la méthode <tt>afficher()
 </li>
 <li>
 <p>
-Que réalise la ligne <tt>super(pX, pY);</tt> au début du constructeur <tt>public Rectangle(int pX, int pY, int pLarg, int pLong)</tt> ?
+Que réalise la ligne <tt>super(pfX, pfY);</tt> au début du constructeur <tt>public Rectangle(int pfX, int pfY, int pfLarg, int pfLong)</tt> ?
 </p>
 </li>
 <li>
@@ -1620,7 +1620,7 @@ redéfinir la méthode <tt>surface()</tt> de calcul de la surface d&#8217;un Cer
 <div class="ulist"><ul>
 <li>
 <p>
-utiliser la constante &Pi; de la classe Math : Math.PI,
+utiliser la constante &Pi; de la classe Math : <tt>Math.PI</tt>,
 </p>
 </li>
 </ul></div>
@@ -1899,7 +1899,7 @@ System<span style="color: #990000">.</span>out<span style="color: #990000">.</sp
 <div class="ulist"><ul>
 <li>
 <p>
-Définir la méthode <tt>void setCote(int pCote)</tt> dans la classe Carre.
+Définir la méthode <tt>void setCote(int pfCote)</tt> dans la classe Carre.
 </p>
 </li>
 <li>
@@ -1994,7 +1994,8 @@ Ajouter dans la boucle l&#8217;instruction suivante :
 by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
-<pre><tt>System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>tabFormes<span style="color: #990000">[</span>i<span style="color: #990000">].</span><span style="font-weight: bold"><span style="color: #000000">getClass</span></span><span style="color: #990000">());</span></tt></pre></div></div>
+<pre><tt>System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>System<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">identityHashCode</span></span><span style="color: #990000">(</span>tabFormes<span style="color: #990000">[</span>i<span style="color: #990000">]));</span>
+System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>tabFormes<span style="color: #990000">[</span>i<span style="color: #990000">].</span><span style="font-weight: bold"><span style="color: #000000">getClass</span></span><span style="color: #990000">());</span></tt></pre></div></div>
 </li>
 <li>
 <p>
@@ -2535,7 +2536,7 @@ http://www.gnu.org/software/src-highlite -->
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2017-03-05 17:46:12 CET
+Dernière mise à jour 2017-03-05 17:52:05 CET
 </div>
 </div>
 </body>
