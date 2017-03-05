@@ -5470,6 +5470,9 @@ http://www.gnu.org/software/src-highlite -->
 <span style="font-weight: bold"><span style="color: #000080">import</span></span> tps<span style="color: #990000">.</span>banque<span style="color: #990000">.</span>exception<span style="color: #990000">.</span>ABCompteInexistantException<span style="color: #990000">;</span>
 <span style="font-weight: bold"><span style="color: #000080">import</span></span> tps<span style="color: #990000">.</span>banque<span style="color: #990000">.</span>exception<span style="color: #990000">.</span>ABCompteNullException<span style="color: #990000">;</span>
 
+
+<span style="font-style: italic"><span style="color: #9A1900">// V ARRAYLLIST OK</span></span>
+
 <span style="font-style: italic"><span style="color: #9A1900">/************************************************************</span></span>
 <span style="font-style: italic"><span style="color: #9A1900"> * La classe AgenceBancaire permet de gérer une agence bancaire comme un ensemble de Comptes.</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
 <span style="font-style: italic"><span style="color: #9A1900"> * Une AgenceBancaire a un nom, une localisation (ville) et gère un ensemble de Comptes.</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
@@ -5480,7 +5483,7 @@ http://www.gnu.org/software/src-highlite -->
 <span style="font-style: italic"><span style="color: #9A1900"> * </span></span><span style="color: #009900">@version</span><span style="font-style: italic"><span style="color: #9A1900"> 7.02</span></span>
 <span style="font-style: italic"><span style="color: #9A1900"> *****************************/</span></span>
 
-<span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">AgenceBancaire</span> <span style="color: #FF0000">{</span>
+<span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">AgenceBancaireS</span> <span style="color: #FF0000">{</span>
         <span style="font-style: italic"><span style="color: #9A1900">// Attributs</span></span>
         <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">String</span> nom<span style="color: #990000">,</span> loc<span style="color: #990000">;</span>
         <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #008080">ArrayList&lt;Compte&gt;</span> alCptes<span style="color: #990000">;</span>
@@ -5490,15 +5493,15 @@ http://www.gnu.org/software/src-highlite -->
 <span style="font-style: italic"><span style="color: #9A1900">         * Permet de créer une AgenceBancaire en donnant son nom et sa ville.</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         * L'AgenceBancaire est initialisée avec 0 comptes.</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         *</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900"> pNomAgence</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900"> pfNomAgence</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         *            Le nom de l'AgenceBancaire.</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900"> pLocAgence</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900"> pfLocAgence</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         *            La ville de localisation de l'AgenceBancaire.</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         */</span></span>
 
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #000000">AgenceBancaire</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> pNomAgence<span style="color: #990000">,</span> <span style="color: #008080">String</span> pLocAgence<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>nom <span style="color: #990000">=</span> pNomAgence<span style="color: #990000">;</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>loc <span style="color: #990000">=</span> pLocAgence<span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #000000">AgenceBancaire</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> pfNomAgence<span style="color: #990000">,</span> <span style="color: #008080">String</span> pfLocAgence<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>nom <span style="color: #990000">=</span> pfNomAgence<span style="color: #990000">;</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>loc <span style="color: #990000">=</span> pfLocAgence<span style="color: #990000">;</span>
                 <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>alCptes <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> ArrayList<span style="color: #990000">&lt;</span>Compte<span style="color: #990000">&gt;();</span>
         <span style="color: #FF0000">}</span>
 
@@ -5538,21 +5541,21 @@ http://www.gnu.org/software/src-highlite -->
         <span style="font-style: italic"><span style="color: #9A1900">/**</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         * Permet de retrouver un Compte de l'AgenceBancaire à partir de son numéro de</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         * compte (unique).</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * Renvoie null si le Compte de numéro de compte pNumCompte n'est pas</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * Renvoie null si le Compte de numéro de compte donné n'est pas</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         * trouvé.</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         *</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900"> pNumCompte</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900"> pfNumCompte</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         *            Le numéro du Compte recherché.</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@see</span><span style="font-style: italic"><span style="color: #9A1900"> AgenceBancaire#addCompte(Compte)</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@return</span><span style="font-style: italic"><span style="color: #9A1900"> Le Compte de numéro pNumCompte, null si le compte n'est pas</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         *         trouvé.</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         */</span></span>
 
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #008080">Compte</span> <span style="font-weight: bold"><span style="color: #000000">getCompte</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> pNumCompte<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #008080">Compte</span> <span style="font-weight: bold"><span style="color: #000000">getCompte</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> pfNumCompte<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
                 <span style="font-style: italic"><span style="color: #9A1900">// A titre d'exemple : utilise une méthode privée définie en fin de</span></span>
                 <span style="font-style: italic"><span style="color: #9A1900">// classe</span></span>
-                <span style="color: #009900">int</span> rang <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">trouveCompte</span></span><span style="color: #990000">(</span>pNumCompte<span style="color: #990000">);</span>
+                <span style="color: #009900">int</span> rang <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">trouveCompte</span></span><span style="color: #990000">(</span>pfNumCompte<span style="color: #990000">);</span>
                 <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>rang <span style="color: #990000">!=</span> <span style="color: #990000">-</span><span style="color: #993399">1</span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
                         <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>alCptes<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">get</span></span><span style="color: #990000">(</span>rang<span style="color: #990000">);</span>
                 <span style="color: #FF0000">}</span>
@@ -5563,18 +5566,18 @@ http://www.gnu.org/software/src-highlite -->
 <span style="font-style: italic"><span style="color: #9A1900">         * Permet de retrouver les Comptes de l'AgenceBancaire correspondant à un nom de</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         * propriétaire donné.</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         * Renvoie un tableau du nombre de Comptes ayant pour propriétaire</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * pNomProprietaire (et contenant les dits Comptes...).</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * le nom de priopriétaire donné (et contenant les Comptes correspondants...).</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         * Si aucun Compte n'est trouvé, renvoie un tableau de longueur 0.</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         *</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900"> pNomProprietaire</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900"> pfNomProprietaire</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         *            Le nom du propriétaire de Compte dont on veut les Comptes.</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@see</span><span style="font-style: italic"><span style="color: #9A1900"> AgenceBancaire#addCompte(Compte)</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@return</span><span style="font-style: italic"><span style="color: #9A1900"> Un tableau des Comptes ayant pour propriétaire pNomProprietaire,</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         *         un tableau de longueur 0 si aucun compte n'est trouvé.</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         */</span></span>
 
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> Compte<span style="color: #990000">[]</span> <span style="font-weight: bold"><span style="color: #000000">getComptesDe</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> pNomProprietaire<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> Compte<span style="color: #990000">[]</span> <span style="font-weight: bold"><span style="color: #000000">getComptesDe</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> pfNomProprietaire<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
                 <span style="font-style: italic"><span style="color: #9A1900">/*</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">                 * Méthode : créer une ArrayList de Compte temporaire : alTemp.</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">                 * Parcourir this.alCptes.</span></span>
@@ -5596,7 +5599,7 @@ http://www.gnu.org/software/src-highlite -->
                 nbC <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>alCptes<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">size</span></span><span style="color: #990000">();</span>
                 <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span> i <span style="color: #990000">&lt;</span> nbC<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
                         cTemp <span style="color: #990000">=</span> alCptes<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">get</span></span><span style="color: #990000">(</span>i<span style="color: #990000">);</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>cTemp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getProprietaire</span></span><span style="color: #990000">().</span><span style="font-weight: bold"><span style="color: #000000">equals</span></span><span style="color: #990000">(</span>pNomProprietaire<span style="color: #990000">))</span> <span style="color: #FF0000">{</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>cTemp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getProprietaire</span></span><span style="color: #990000">().</span><span style="font-weight: bold"><span style="color: #000000">equals</span></span><span style="color: #990000">(</span>pfNomProprietaire<span style="color: #990000">))</span> <span style="color: #FF0000">{</span>
                                 alTemp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">add</span></span><span style="color: #990000">(</span>cTemp<span style="color: #990000">);</span>
                         <span style="color: #FF0000">}</span>
                 <span style="color: #FF0000">}</span>
@@ -5621,8 +5624,9 @@ http://www.gnu.org/software/src-highlite -->
                 <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> t<span style="color: #990000">;</span>
         <span style="color: #FF0000">}</span>
 
-        <span style="font-style: italic"><span style="color: #9A1900">/*      Autre solution possible : sans ArrayList temporaire</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">                public Compte[] getComptesDe (String pNomProprietaire)</span></span>
+                <span style="font-style: italic"><span style="color: #9A1900">/*</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">                // Autre solution possible : sans ArrayList temporaire</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">                public Compte[] getComptesDeZ (String pfNomProprietaire)</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">                {</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">                        Compte t[], cTemp;</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">                        int nbC, nbCCourants, i, j;</span></span>
@@ -5635,7 +5639,7 @@ http://www.gnu.org/software/src-highlite -->
 <span style="font-style: italic"><span style="color: #9A1900">                        for (i=0; i&lt;nbCCourants; i++)</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">                        {</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">                                cTemp = alCptes.get(i);</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">                                if (cTemp.getProprietaire().equals(pNomProprietaire)) {</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">                                if (cTemp.getProprietaire().equals(pfNomProprietaire)) {</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">                                        nbC++;</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">                                }</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">                        }</span></span>
@@ -5651,7 +5655,7 @@ http://www.gnu.org/software/src-highlite -->
 <span style="font-style: italic"><span style="color: #9A1900">                                for (i=0; i&lt;nbCCourants; i++)</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">                                {</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">                                        cTemp = alCptes.get(i);</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">                                        if (cTemp.getProprietaire().equals(pNomProprietaire)) {</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">                                        if (cTemp.getProprietaire().equals(pfNomProprietaire)) {</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">                                                t[j++] = cTemp;</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">                                        }</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">                                }</span></span>
@@ -5662,7 +5666,8 @@ http://www.gnu.org/software/src-highlite -->
 
 <span style="font-style: italic"><span style="color: #9A1900">                        return t;</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">                }</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         */</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">                */</span></span>
+
 
         <span style="font-style: italic"><span style="color: #9A1900">/**</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         * Permet d'afficher une AgenceBancaire -</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;B&gt;</span></span><span style="font-style: italic"><span style="color: #9A1900"> SPECIAL TP.</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;/B&gt;&lt;BR&gt;</span></span>
@@ -5703,67 +5708,68 @@ http://www.gnu.org/software/src-highlite -->
 
         <span style="font-style: italic"><span style="color: #9A1900">/**</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         * Permet d'ajouter un Compte à l'AgenceBancaire.</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * Le Compte pCompteAAjouter est ajouté à l'AgenceBancaire s'il n'existe pas déjà un Compte</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * ayant le même numéro de compte que pCompteAAjouter</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * (identique en numéro de compte à pCompteAAjouter.getNumCompte()).</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * Le Compte est ajouté à l'AgenceBancaire s'il n'existe pas déjà un Compte</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * ayant le même numéro de compte</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * (identique en numéro de compte, cf. méthode getNumCompte() de la classe Compte).</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         * Si on appelle la méthode avec null en paramètre, la méthode lève une exception.</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         *</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900"> pCompteAAjouter</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900"> pfCompteAAjouter</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         *            Le Compte à ajouter à l'AgenceBancaire.</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@throws</span><span style="font-style: italic"><span style="color: #9A1900"> ABCompteNullException  lorsque pCompteAAjouter == null</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@throws</span><span style="font-style: italic"><span style="color: #9A1900"> ABCompteDejaExistantException  lorsque un compte de numéro pCompteAAjouter.getNumCompte() existe déjà dans l'AgenceBancaire.</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@see</span><span style="font-style: italic"><span style="color: #9A1900"> AgenceBancaire#removeCompte(String)</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         */</span></span>
 
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">addCompte</span></span><span style="color: #990000">(</span><span style="color: #008080">Compte</span> pCompteAAjouter<span style="color: #990000">)</span> <span style="font-weight: bold"><span style="color: #0000FF">throws</span></span> ABCompteNullException<span style="color: #990000">,</span> ABCompteDejaExistantException <span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">addCompte</span></span><span style="color: #990000">(</span><span style="color: #008080">Compte</span> pfCompteAAjouter<span style="color: #990000">)</span> <span style="font-weight: bold"><span style="color: #0000FF">throws</span></span> ABCompteNullException<span style="color: #990000">,</span> ABCompteDejaExistantException <span style="color: #FF0000">{</span>
                 <span style="color: #009900">int</span> rang<span style="color: #990000">;</span>
 
                 <span style="font-style: italic"><span style="color: #9A1900">// Si null =&gt; refusé</span></span>
-                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>pCompteAAjouter <span style="color: #990000">==</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>pfCompteAAjouter <span style="color: #990000">==</span> <span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
                         <span style="font-weight: bold"><span style="color: #0000FF">throw</span></span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">ABCompteNullException</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Erreur ajout Compte 'null' dans l'agence "</span>
                                         <span style="color: #990000">+</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>nom <span style="color: #990000">+</span> <span style="color: #FF0000">" ("</span> <span style="color: #990000">+</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>loc <span style="color: #990000">+</span> <span style="color: #FF0000">")"</span><span style="color: #990000">);</span>
                 <span style="color: #FF0000">}</span>
 
                 <span style="font-style: italic"><span style="color: #9A1900">// On cherche un Compte de même numéro</span></span>
-                rang <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">trouveCompte</span></span><span style="color: #990000">(</span>pCompteAAjouter<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getNumCompte</span></span><span style="color: #990000">());</span>
+                rang <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">trouveCompte</span></span><span style="color: #990000">(</span>pfCompteAAjouter<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getNumCompte</span></span><span style="color: #990000">());</span>
 
                 <span style="font-style: italic"><span style="color: #9A1900">// Si trouvé</span></span>
                 <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>rang <span style="color: #990000">!=</span> <span style="color: #990000">-</span><span style="color: #993399">1</span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
                         <span style="font-style: italic"><span style="color: #9A1900">// =&gt; refusé</span></span>
                         <span style="font-weight: bold"><span style="color: #0000FF">throw</span></span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">ABCompteDejaExistantException</span></span><span style="color: #990000">(</span>
                                         <span style="color: #FF0000">"Erreur ajout Compte déja existant ("</span>
-                                        <span style="color: #990000">+</span> pCompteAAjouter<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getNumCompte</span></span><span style="color: #990000">()</span> <span style="color: #990000">+</span> <span style="color: #FF0000">") dans l'agence "</span>
+                                        <span style="color: #990000">+</span> pfCompteAAjouter<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getNumCompte</span></span><span style="color: #990000">()</span> <span style="color: #990000">+</span> <span style="color: #FF0000">") dans l'agence "</span>
                                         <span style="color: #990000">+</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>nom <span style="color: #990000">+</span> <span style="color: #FF0000">" ("</span> <span style="color: #990000">+</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>loc <span style="color: #990000">+</span> <span style="color: #FF0000">")"</span><span style="color: #990000">);</span>
                 <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">else</span></span> <span style="color: #FF0000">{</span>
                         <span style="font-style: italic"><span style="color: #9A1900">// sinon ... on ajoute le Compte</span></span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>alCptes<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">add</span></span><span style="color: #990000">(</span>pCompteAAjouter<span style="color: #990000">);</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>alCptes<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">add</span></span><span style="color: #990000">(</span>pfCompteAAjouter<span style="color: #990000">);</span>
 
                 <span style="color: #FF0000">}</span>
         <span style="color: #FF0000">}</span>
 
         <span style="font-style: italic"><span style="color: #9A1900">/**</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         * Permet de supprimer un Compte de l'AgenceBancaire, à partir de son numéro.</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * Le Compte (unique) de numéro pNumCompte est retiré de l'AgenceBancaire s'il est</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * Le Compte (unique) du numéro donné est retiré de l'AgenceBancaire s'il est</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         * trouvé.</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         * Une exception est levée si le compte n'est pas trouvé.</span></span><span style="font-weight: bold"><span style="color: #0000FF">&lt;BR&gt;</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         *</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900"> pNumCompte</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900"> pfNumCompte</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         *            Le numéro du Compte à supprimer de l'AgenceBancaire.</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@throws</span><span style="font-style: italic"><span style="color: #9A1900"> ABCompteInexistantException  Lorsque aucun compte de numéro pNumCompte ne peut être trouvé.</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@see</span><span style="font-style: italic"><span style="color: #9A1900"> AgenceBancaire#addCompte(Compte)</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         */</span></span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">removeCompte</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> pNumCompte<span style="color: #990000">)</span> <span style="font-weight: bold"><span style="color: #0000FF">throws</span></span> ABCompteInexistantException<span style="color: #FF0000">{</span>
+
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">removeCompte</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> pfNumCompte<span style="color: #990000">)</span> <span style="font-weight: bold"><span style="color: #0000FF">throws</span></span> ABCompteInexistantException<span style="color: #FF0000">{</span>
                 <span style="color: #009900">int</span> rang<span style="color: #990000">;</span>
 
                 <span style="font-style: italic"><span style="color: #9A1900">// On cherche un Compte de même numéro</span></span>
-                rang <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">trouveCompte</span></span><span style="color: #990000">(</span>pNumCompte<span style="color: #990000">);</span>
+                rang <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">trouveCompte</span></span><span style="color: #990000">(</span>pfNumCompte<span style="color: #990000">);</span>
 
                 <span style="font-style: italic"><span style="color: #9A1900">// Si pas trouvé ...</span></span>
                 <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>rang <span style="color: #990000">==</span> <span style="color: #990000">-</span><span style="color: #993399">1</span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
                         <span style="font-style: italic"><span style="color: #9A1900">// ... erreur</span></span>
                         <span style="font-weight: bold"><span style="color: #0000FF">throw</span></span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">ABCompteInexistantException</span></span><span style="color: #990000">(</span>
                                         <span style="color: #FF0000">"Erreur suppression Compte inexistant ("</span>
-                                        <span style="color: #990000">+</span> pNumCompte<span style="color: #990000">+</span> <span style="color: #FF0000">") dans l'agence "</span>
+                                        <span style="color: #990000">+</span> pfNumCompte<span style="color: #990000">+</span> <span style="color: #FF0000">") dans l'agence "</span>
                                         <span style="color: #990000">+</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>nom <span style="color: #990000">+</span> <span style="color: #FF0000">" ("</span> <span style="color: #990000">+</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>loc <span style="color: #990000">+</span> <span style="color: #FF0000">")"</span><span style="color: #990000">);</span>
                 <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">else</span></span> <span style="color: #FF0000">{</span>
                         <span style="font-style: italic"><span style="color: #9A1900">// ... on enlève ce Compte</span></span>
@@ -5773,14 +5779,15 @@ http://www.gnu.org/software/src-highlite -->
 
 
         <span style="font-style: italic"><span style="color: #9A1900">/**</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * Méthode privée de recherche d'un compte.</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * Cherche le rang d'un compte dans alCptes ayant pour numéro de compte pNC.</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * Renvoie -1 si aucun compte n'est trouvé.</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * Méthode privée de recherche du Compte de la Cellule contenant un compte.</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * Cherche la cellule contenant un compte ayant pour numéro le numéro en paramètre.</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * Renvoie null si aucun compte n'est trouvé.</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         *</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900">      pNC  numéro dui compte recherché</span></span>
-<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@return</span><span style="font-style: italic"><span style="color: #9A1900">     le rang de l'objet compte de numéro pNC ou -1 si non trouvé.</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@param</span><span style="font-style: italic"><span style="color: #9A1900">      pfNC  numéro du compte recherché</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">         * </span></span><span style="color: #009900">@return</span><span style="font-style: italic"><span style="color: #9A1900">     la cellule contenant l'objet Compte trouvé ayant pour numéro pNC ou null si non trouvé.</span></span>
 <span style="font-style: italic"><span style="color: #9A1900">         */</span></span>
-        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">trouveCompte</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> pNC<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+
+        <span style="font-weight: bold"><span style="color: #0000FF">private</span></span> <span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">trouveCompte</span></span><span style="color: #990000">(</span><span style="color: #008080">String</span> pfNC<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
                 <span style="color: #008080">Compte</span> cTemp<span style="color: #990000">;</span>
                 <span style="color: #009900">int</span> i<span style="color: #990000">,</span> nbC<span style="color: #990000">;</span>
                 <span style="color: #009900">int</span> rang<span style="color: #990000">;</span>
@@ -5790,7 +5797,7 @@ http://www.gnu.org/software/src-highlite -->
                 <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span> i <span style="color: #990000">&lt;</span> nbC <span style="color: #990000">&amp;&amp;</span> rang <span style="color: #990000">==</span> <span style="color: #990000">-</span><span style="color: #993399">1</span><span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
                         cTemp <span style="color: #990000">=</span> alCptes<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">get</span></span><span style="color: #990000">(</span>i<span style="color: #990000">);</span>
                         <span style="font-style: italic"><span style="color: #9A1900">// Si un Compte a le même numéro que pNC</span></span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>cTemp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getNumCompte</span></span><span style="color: #990000">().</span><span style="font-weight: bold"><span style="color: #000000">equals</span></span><span style="color: #990000">(</span>pNC<span style="color: #990000">))</span> <span style="color: #FF0000">{</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>cTemp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getNumCompte</span></span><span style="color: #990000">().</span><span style="font-weight: bold"><span style="color: #000000">equals</span></span><span style="color: #990000">(</span>pfNC<span style="color: #990000">))</span> <span style="color: #FF0000">{</span>
                                 <span style="font-style: italic"><span style="color: #9A1900">// ... on garde son rang</span></span>
                                 rang <span style="color: #990000">=</span> i<span style="color: #990000">;</span>
                         <span style="color: #FF0000">}</span>
@@ -5973,7 +5980,7 @@ Total : <strong>72012</strong>
 by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
-<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">public</span></span> Compte<span style="color: #990000">[]</span> <span style="font-weight: bold"><span style="color: #000000">getComptesDe</span></span> <span style="color: #990000">(</span><span style="color: #008080">String</span> pNomProprietaire<span style="color: #990000">)</span>
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">public</span></span> Compte<span style="color: #990000">[]</span> <span style="font-weight: bold"><span style="color: #000000">getComptesDe</span></span> <span style="color: #990000">(</span><span style="color: #008080">String</span> pfNomProprietaire<span style="color: #990000">)</span>
 <span style="color: #FF0000">{</span>
         <span style="color: #008080">Compte</span> t<span style="color: #990000">[],</span> cTemp<span style="color: #990000">;</span>
         <span style="color: #009900">int</span> nbC<span style="color: #990000">,</span> nbCCourants<span style="color: #990000">,</span> i<span style="color: #990000">,</span> j<span style="color: #990000">;</span>
@@ -5986,7 +5993,7 @@ http://www.gnu.org/software/src-highlite -->
         <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>nbCCourants<span style="color: #990000">;</span> i<span style="color: #990000">++)</span>
         <span style="color: #FF0000">{</span>
                 cTemp <span style="color: #990000">=</span> alCptes<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">get</span></span><span style="color: #990000">(</span>i<span style="color: #990000">);</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>cTemp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getProprietaire</span></span><span style="color: #990000">().</span><span style="font-weight: bold"><span style="color: #000000">equals</span></span><span style="color: #990000">(</span>pNomProprietaire<span style="color: #990000">))</span> <span style="color: #FF0000">{</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>cTemp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getProprietaire</span></span><span style="color: #990000">().</span><span style="font-weight: bold"><span style="color: #000000">equals</span></span><span style="color: #990000">(</span>pfNomProprietaire<span style="color: #990000">))</span> <span style="color: #FF0000">{</span>
                         nbC<span style="color: #990000">++;</span>
                 <span style="color: #FF0000">}</span>
         <span style="color: #FF0000">}</span>
@@ -6002,7 +6009,7 @@ http://www.gnu.org/software/src-highlite -->
                 <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span>i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>nbCCourants<span style="color: #990000">;</span> i<span style="color: #990000">++)</span>
                 <span style="color: #FF0000">{</span>
                         cTemp <span style="color: #990000">=</span> alCptes<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">get</span></span><span style="color: #990000">(</span>i<span style="color: #990000">);</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>cTemp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getProprietaire</span></span><span style="color: #990000">().</span><span style="font-weight: bold"><span style="color: #000000">equals</span></span><span style="color: #990000">(</span>pNomProprietaire<span style="color: #990000">))</span> <span style="color: #FF0000">{</span>
+                        <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span>cTemp<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getProprietaire</span></span><span style="color: #990000">().</span><span style="font-weight: bold"><span style="color: #000000">equals</span></span><span style="color: #990000">(</span>pfNomProprietaire<span style="color: #990000">))</span> <span style="color: #FF0000">{</span>
                                 t<span style="color: #990000">[</span>j<span style="color: #990000">++]</span> <span style="color: #990000">=</span> cTemp<span style="color: #990000">;</span>
                         <span style="color: #FF0000">}</span>
                 <span style="color: #FF0000">}</span>
@@ -6018,7 +6025,7 @@ http://www.gnu.org/software/src-highlite -->
 </div>
 <div id="footer" style="position: absolute; left: 5%; top: 80%; width: 90%;">
 <div id="footer-text">
-Dernière mise à jour 2017-03-05 17:10:48 CET
+Dernière mise à jour 2017-03-05 17:38:37 CET
 </div>
 </div>
 </div></div>
