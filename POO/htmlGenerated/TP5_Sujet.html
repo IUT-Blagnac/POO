@@ -1778,33 +1778,38 @@ Enfin <tt>removeCompte()</tt> ne peut être testée sans les 2 précédentes.
 <div class="ulist"><ul>
 <li>
 <p>
-Pour voir le résultat produit, dans un main(), essayer le code suivant :
+Pour voir le résultat produit, dans un main() (à créer dans une classe à part), essayer le code suivant :
 </p>
 <div class="listingblock">
 <div class="content"><!-- Generator: GNU source-highlight 3.1.5
 by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
-<pre><tt><span style="color: #008080">AgenceBancaire</span> monAg <span style="color: #990000">;</span>
+<pre><tt><span style="color: #008080">AgenceBancaire</span> monAg<span style="color: #990000">;</span>
 <span style="color: #008080">Compte</span> c<span style="color: #990000">;</span>
 monAg <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">AgenceBancaire</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Caisse Ep"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Pibrac"</span><span style="color: #990000">);</span>
 
-System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span>monAg<span style="color: #990000">);</span>
+System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>monAg<span style="color: #990000">);</span>
 
 <span style="font-weight: bold"><span style="color: #0000FF">try</span></span> <span style="color: #FF0000">{</span>
-        c <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"0101"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"prop1"</span><span style="color: #990000">);</span>
+        c <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"0101"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"prop1"</span><span style="color: #990000">);</span>
         monAg<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">addCompte</span></span><span style="color: #990000">(</span>c<span style="color: #990000">);</span>
-        c <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"0202"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"prop2"</span><span style="color: #990000">);</span>
+        c <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"0202"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"prop2"</span><span style="color: #990000">);</span>
         monAg<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">addCompte</span></span><span style="color: #990000">(</span>c<span style="color: #990000">);</span>
-        c <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"0303"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"prop2"</span><span style="color: #990000">);</span>
+        c <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"0303"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"prop2"</span><span style="color: #990000">);</span>
         monAg<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">addCompte</span></span><span style="color: #990000">(</span>c<span style="color: #990000">);</span>
 <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">ABCompteNullException</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span>e<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getMessage</span></span><span style="color: #990000">());</span>
+        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Exception ..."</span><span style="color: #990000">);</span>
+        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>e<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getMessage</span></span><span style="color: #990000">());</span>
 <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">catch</span></span> <span style="color: #990000">(</span><span style="color: #008080">ABCompteDejaExistantException</span> e<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span>e<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getMessage</span></span><span style="color: #990000">());</span>
+        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Exception ..."</span><span style="color: #990000">);</span>
+        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>e<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getMessage</span></span><span style="color: #990000">());</span>
 <span style="color: #FF0000">}</span>
 
-System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span>monAg<span style="color: #990000">);</span></tt></pre></div></div>
+System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"println d'un objet AgenceBancaire"</span><span style="color: #990000">);</span>
+System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span>monAg<span style="color: #990000">);</span>
+System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"println de toString() d'un objet AgenceBancaire"</span><span style="color: #990000">);</span>
+System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span>monAg<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">toString</span></span><span style="color: #990000">());</span></tt></pre></div></div>
 </li>
 <li>
 <p>
@@ -1926,7 +1931,7 @@ Une agence gère en moyenne 36000 comptes.
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2017-03-05 17:38:37 CET
+Dernière mise à jour 2017-03-07 16:05:34 CET
 </div>
 </div>
 </body>
