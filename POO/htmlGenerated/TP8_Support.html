@@ -897,11 +897,11 @@ cellspacing="0" cellpadding="4">
 <img alt="images/tp7.1.png" src="data:image/png;base64,
 iVBORw0KGgoAAAANSUhEUgAAAUQAAAEaCAIAAADmDLkWAAAANXRFWHRjb3B5bGVmdABHZW5lcmF0
 ZWQgYnkgaHR0cDovL3BsYW50dW1sLnNvdXJjZWZvcmdlLm5ldDpnVRsAAAEUelRYdHBsYW50dW1s
-AAB4nG2QXU+DMBSGrz2/4lxuFyx0iGSLF1PC/IgkZqBemsJOXCO02BaMX/9dBmxmi1dNnvfN+7Rd
-GMu1rcsCzKuQFde8xLzgxlxYq0VWW7rJlUzEJ6EL0CW4VLqkK82rjXirCb/gZ5eEpPOCTg7QRyHk
-Wnc13EFMqg0dsxXllsuX4giHXO+bR+bzb8cZnNAfAxqcB7BX/juxN8PfHfqhrRsAFiTX2z+C+4JL
-+xDfYUPaCCUxmPnBKG2HlpQhmyKbzZk39xmGUYpTl3ljuOUNH6XxGJMIV7W0oiSMZCO0kiVJ2+V4
-rWxSKdv1zk6dS2ExId1a8DEGNgkm7rPPnIx58NQ+Tb0bDH4BEIKNkfacJ3kAACeJSURBVHja7Z0L
+AAB4nG2QS0+DQBSF195fcZftgobpQ2zjokqoj0hiCurSDPTGToQZnBkwvv67FGhNiatJvnNyvplZ
+Gsu1LfMMzKuQBdc8xzTjxlxYq0VSWrpJlYzEJ6EL0CS4UjqnK82LrXgrCb/gZ5/4pNOMTo7QRybk
+Rjc13EOMii312ZpSy+VL1sM+14dmz3z+7TidE9qjQ53zCLbKfycOZvi7Qzu0cwPAkuRm90dwn3Fp
+H8I7rEgboSR685k3iOuhFSXIxsjmCzZZzBj6QYxjl02GcMsrPojDIUYBrktpRU4YyEpoJXOStsnx
+WtmoULbpnU6dS2ExIl1b8DEENjobuc+MMSdhU3iq36beDXq/nI+NwPblGlUAACeJSURBVHja7Z0L
 WBT1/v95xI7Hn3XUovKYR1HxUmrW+ZliVppxRIUENBVvaUalqYckPXlLTf96OomQmgiacdNld9ll
 l4UWDoRo5BKrgoYpkonmQSPyUbwSWv0/nOk3jXtjgZndmdn3+/k+PMPs7Fze83nN53uZmfX6FYIg
 WcgLFkAQYIYgCDBDEASYIQgCzBAEmCEIAswQL2q4fLWm8AiKu0rDlWuAGeJHFE9Kr6Eo7io/7D8C
@@ -1270,7 +1270,7 @@ La méthode <tt>afficher()</tt> est-elle une nouvelle méthode par rapport à Fo
 </li>
 <li>
 <p>
-La méthode <tt>volume()</tt> existe-elle pour els objets de type Rectangle ? Si oui : quelle valeur renverra-t-elle ? Si non : pourquoi ?
+La méthode <tt>volume()</tt> existe-elle pour les objets de type Rectangle ? Si oui : quelle valeur renverra-t-elle ? Si non : pourquoi ?
 </p>
 </li>
 <li>
@@ -1285,7 +1285,7 @@ Que réalise la ligne <tt>super.afficher();</tt> dans la méthode <tt>afficher()
 </li>
 <li>
 <p>
-Que réalise la ligne <tt>super(pX, pY);</tt> au début du constructeur <tt>public Rectangle(int pX, int pY, int pLarg, int pLong)</tt> ?
+Que réalise la ligne <tt>super(pfX, pfY);</tt> au début du constructeur <tt>public Rectangle(int pfX, int pfY, int pfLarg, int pfLong)</tt> ?
 </p>
 </li>
 <li>
@@ -1448,8 +1448,8 @@ AMfx8ZYkSYI90L87QNC71WolxgIK0Nf4W+GVUAX9QsCXDSwq8B//47GAh7AxjwdUQQPI4onGcI6G
 lJga0LT8+uRGJ5P/2OBGpz/mT34Gmsy9nx36v3PoX1H4mIUGLCOSAAAAAElFTkSuQmCC" />
 </td>
 <td class="content">
-<div class="paragraph"><p>On ne traitera pas les préconditions avec levée d&#8217;exceptions dans ce sujet.</p></div>
-<div class="paragraph"><p>Vous pouvez mettre les préconditions existantes en commentaire dans le code produit.</p></div>
+<div class="paragraph"><p>On ne traitera pas les préconditions en programmation défensive (avec levée d&#8217;exceptions) dans ce sujet.</p></div>
+<div class="paragraph"><p>On les traitera en programmation par contrats : vous devrez mettre les préconditions existantes en commentaire dans le code produit.</p></div>
 </td>
 </tr></table>
 </div>
@@ -1561,8 +1561,8 @@ AMfx8ZYkSYI90L87QNC71WolxgIK0Nf4W+GVUAX9QsCXDSwq8B//47GAh7AxjwdUQQPI4onGcI6G
 lJga0LT8+uRGJ5P/2OBGpz/mT34Gmsy9nx36v3PoX1H4mIUGLCOSAAAAAElFTkSuQmCC" />
 </td>
 <td class="content">
-<div class="paragraph"><p>Au besoin : commenter au fur et à mesure le code écrit pour tester chaque classe dans le main().</p></div>
-<div class="paragraph"><p><strong>MAIS NE PAS L&#8217;EFFACER, SERA UTILE A LA FIN !!</strong></p></div>
+<div class="paragraph"><p>Au besoin : commenter au fur et à mesure le code déjà écrit pour tester chaque classe dans le main().</p></div>
+<div class="paragraph"><p><strong>MAIS NE PAS L&#8217;EFFACER &#8658; IL SERA UTILE A LA FIN !!</strong></p></div>
 </td>
 </tr></table>
 </div>
@@ -1620,7 +1620,7 @@ redéfinir la méthode <tt>surface()</tt> de calcul de la surface d&#8217;un Cer
 <div class="ulist"><ul>
 <li>
 <p>
-utiliser la constante &Pi; de la classe Math : Math.PI,
+utiliser la constante &Pi; de la classe Math : <tt>Math.PI</tt>,
 </p>
 </li>
 </ul></div>
@@ -1899,7 +1899,7 @@ System<span style="color: #990000">.</span>out<span style="color: #990000">.</sp
 <div class="ulist"><ul>
 <li>
 <p>
-Définir la méthode <tt>void setCote(int pCote)</tt> dans la classe Carre.
+Définir la méthode <tt>void setCote(int pfCote)</tt> dans la classe Carre.
 </p>
 </li>
 <li>
@@ -1967,7 +1967,7 @@ Continuer le programme précédent pour y mettre tous les objets créés.
 </li>
 <li>
 <p>
-Compiler. ok ?
+Compiler. OK ?
 </p>
 </li>
 <li>
@@ -1994,17 +1994,24 @@ Ajouter dans la boucle l&#8217;instruction suivante :
 by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
-<pre><tt>System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>tabFormes<span style="color: #990000">[</span>i<span style="color: #990000">].</span><span style="font-weight: bold"><span style="color: #000000">getClass</span></span><span style="color: #990000">());</span></tt></pre></div></div>
+<pre><tt>System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>System<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">identityHashCode</span></span><span style="color: #990000">(</span>tabFormes<span style="color: #990000">[</span>i<span style="color: #990000">]));</span>
+System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span>tabFormes<span style="color: #990000">[</span>i<span style="color: #990000">].</span><span style="font-weight: bold"><span style="color: #000000">getClass</span></span><span style="color: #990000">());</span></tt></pre></div></div>
 </li>
 <li>
 <p>
 Quel est le résultat ?
 </p>
 </li>
+<li>
+<p>
+A Noter : nous n&#8217;avions jusqu'à aujourd&#8217;hui jamais mis d&#8217;objets de nature différente dans un même tableau&#8230; Qu&#8217;ont en commun tous les objets pour que l&#8217;on puisse les ranger dans le tableau <tt>tabFormes</tt> ?
+</p>
+</li>
 </ol></div>
 </div>
 <div class="sect2">
-<h3 id="_utiliser_les_méthodes_de_la_super_classe">5.2. Utiliser les méthodes de la super-classe</h3>
+<h3 id="_utiliser_les_méthodes_de_la_super_classe_et_encapsulation">5.2. Utiliser les méthodes de la super-classe et encapsulation</h3>
+<div class="paragraph"><p>L&#8217;encapsulation permet d'écrire le corps d&#8217;une classe à la convenance du programmeur qui réalise l&#8217;implémentation, et indépendamment du client qui utilise la classe.</p></div>
 <div class="paragraph"><p>Dans la classe Cylindre :</p></div>
 <div class="olist arabic"><ol class="arabic">
 <li>
@@ -2015,6 +2022,11 @@ Mettre en commentaire le corps de la méthode surface() et volume()
 <li>
 <p>
 En écrire une nouvelle version en utilisant la méthode surface() définie dans la classe Cercle. Bien regarder les formules de calcul utilisées.
+</p>
+</li>
+<li>
+<p>
+tester avec le programme de test, tout doit fonctionner à l&#8217;identique.
 </p>
 </li>
 </ol></div>
@@ -2125,15 +2137,15 @@ http://www.gnu.org/software/src-highlite -->
                 <span style="font-weight: bold"><span style="color: #0000FF">super</span></span><span style="color: #990000">();</span>
                 <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>rayon <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span>
         <span style="color: #FF0000">}</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #000000">Cercle</span></span> <span style="color: #990000">(</span><span style="color: #009900">int</span> pX<span style="color: #990000">,</span> <span style="color: #009900">int</span> pY<span style="color: #990000">,</span> <span style="color: #009900">double</span> pRayon<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">super</span></span><span style="color: #990000">(</span>pX<span style="color: #990000">,</span> pY<span style="color: #990000">);</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>rayon <span style="color: #990000">=</span> pRayon<span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #000000">Cercle</span></span> <span style="color: #990000">(</span><span style="color: #009900">int</span> pfX<span style="color: #990000">,</span> <span style="color: #009900">int</span> pfY<span style="color: #990000">,</span> <span style="color: #009900">double</span> pfRayon<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">super</span></span><span style="color: #990000">(</span>pfX<span style="color: #990000">,</span> pfY<span style="color: #990000">);</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>rayon <span style="color: #990000">=</span> pfRayon<span style="color: #990000">;</span>
         <span style="color: #FF0000">}</span>
         <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">double</span> <span style="font-weight: bold"><span style="color: #000000">getRayon</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
                 <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> rayon<span style="color: #990000">;</span>
         <span style="color: #FF0000">}</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">setRayon</span></span><span style="color: #990000">(</span><span style="color: #009900">double</span> pRayon<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>rayon <span style="color: #990000">=</span> pRayon<span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">setRayon</span></span><span style="color: #990000">(</span><span style="color: #009900">double</span> pfRayon<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>rayon <span style="color: #990000">=</span> pfRayon<span style="color: #990000">;</span>
         <span style="color: #FF0000">}</span>
         <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">double</span> <span style="font-weight: bold"><span style="color: #000000">surface</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
                 <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> Math<span style="color: #990000">.</span>PI <span style="color: #990000">*</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>rayon <span style="color: #990000">*</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>rayon<span style="color: #990000">;</span>
@@ -2142,7 +2154,8 @@ http://www.gnu.org/software/src-highlite -->
                 <span style="font-weight: bold"><span style="color: #0000FF">super</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
                 System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Cercle : rayon "</span> <span style="color: #990000">+</span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>rayon<span style="color: #990000">);</span>
         <span style="color: #FF0000">}</span>
-<span style="color: #FF0000">}</span></tt></pre></div></div>
+<span style="color: #FF0000">}</span>
+</tt></pre></div></div>
 <div class="listingblock">
 <div class="title">Solution classe Cylindre</div>
 <div class="content"><!-- Generator: GNU source-highlight 3.1.5
@@ -2157,17 +2170,17 @@ http://www.gnu.org/software/src-highlite -->
                 <span style="font-weight: bold"><span style="color: #0000FF">super</span></span><span style="color: #990000">();</span>
                 <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>hauteur <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span>
         <span style="color: #FF0000">}</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #000000">Cylindre</span></span><span style="color: #990000">(</span><span style="color: #009900">int</span> pX<span style="color: #990000">,</span> <span style="color: #009900">int</span> pY<span style="color: #990000">,</span> <span style="color: #009900">double</span> pRayon<span style="color: #990000">,</span> <span style="color: #009900">double</span> pHauteur<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">super</span></span><span style="color: #990000">(</span>pX<span style="color: #990000">,</span> pY<span style="color: #990000">,</span> pRayon<span style="color: #990000">);</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>hauteur <span style="color: #990000">=</span> pHauteur<span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #000000">Cylindre</span></span><span style="color: #990000">(</span><span style="color: #009900">int</span> pfX<span style="color: #990000">,</span> <span style="color: #009900">int</span> pfY<span style="color: #990000">,</span> <span style="color: #009900">double</span> pfRayon<span style="color: #990000">,</span> <span style="color: #009900">double</span> pfHauteur<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">super</span></span><span style="color: #990000">(</span>pfX<span style="color: #990000">,</span> pfY<span style="color: #990000">,</span> pfRayon<span style="color: #990000">);</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span>hauteur <span style="color: #990000">=</span> pfHauteur<span style="color: #990000">;</span>
         <span style="color: #FF0000">}</span>
 
         <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">double</span> <span style="font-weight: bold"><span style="color: #000000">getHauteur</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
                 <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> hauteur<span style="color: #990000">;</span>
         <span style="color: #FF0000">}</span>
 
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">setHauteur</span></span> <span style="color: #990000">(</span><span style="color: #009900">double</span> pHauteur<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                hauteur <span style="color: #990000">=</span> pHauteur<span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">setHauteur</span></span> <span style="color: #990000">(</span><span style="color: #009900">double</span> pfHauteur<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                hauteur <span style="color: #990000">=</span> pfHauteur<span style="color: #990000">;</span>
         <span style="color: #FF0000">}</span>
 
         <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">double</span> <span style="font-weight: bold"><span style="color: #000000">surface</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
@@ -2199,8 +2212,8 @@ http://www.gnu.org/software/src-highlite -->
                 <span style="font-weight: bold"><span style="color: #0000FF">super</span></span><span style="color: #990000">();</span>
         <span style="color: #FF0000">}</span>
 
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #000000">Sphere</span></span><span style="color: #990000">(</span><span style="color: #009900">int</span> pX<span style="color: #990000">,</span> <span style="color: #009900">int</span> pY<span style="color: #990000">,</span> <span style="color: #009900">double</span> pRayon<span style="color: #990000">)</span>    <span style="color: #FF0000">{</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">super</span></span><span style="color: #990000">(</span>pX<span style="color: #990000">,</span> pY<span style="color: #990000">,</span> pRayon<span style="color: #990000">);</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #000000">Sphere</span></span><span style="color: #990000">(</span><span style="color: #009900">int</span> pfX<span style="color: #990000">,</span> <span style="color: #009900">int</span> pfY<span style="color: #990000">,</span> <span style="color: #009900">double</span> pfRayon<span style="color: #990000">)</span>         <span style="color: #FF0000">{</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">super</span></span><span style="color: #990000">(</span>pfX<span style="color: #990000">,</span> pfY<span style="color: #990000">,</span> pfRayon<span style="color: #990000">);</span>
         <span style="color: #FF0000">}</span>
 
         <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">double</span> <span style="font-weight: bold"><span style="color: #000000">surface</span></span><span style="color: #990000">()</span>         <span style="color: #FF0000">{</span>
@@ -2214,7 +2227,7 @@ http://www.gnu.org/software/src-highlite -->
 
         <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
                 <span style="font-weight: bold"><span style="color: #0000FF">super</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Sphere : rayon sphère "</span><span style="color: #990000">+</span><span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getRayon</span></span><span style="color: #990000">());</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Sphere : rayon "</span><span style="color: #990000">+</span><span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getRayon</span></span><span style="color: #990000">());</span>
         <span style="color: #FF0000">}</span>
 <span style="color: #FF0000">}</span></tt></pre></div></div>
 <div class="listingblock">
@@ -2223,7 +2236,29 @@ http://www.gnu.org/software/src-highlite -->
 by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
-<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">Carre</span> <span style="font-weight: bold"><span style="color: #0000FF">extends</span></span> Rectangle <span style="color: #FF0000">{</span>
+<pre><tt>
+<span style="font-style: italic"><span style="color: #9A1900">// Carre  A PB</span></span>
+
+<span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">Carre</span> <span style="font-weight: bold"><span style="color: #0000FF">extends</span></span> Rectangle <span style="color: #FF0000">{</span>
+
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #000000">Carre</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">super</span></span><span style="color: #990000">();</span>
+        <span style="color: #FF0000">}</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #000000">Carre</span></span><span style="color: #990000">(</span><span style="color: #009900">int</span> pfX<span style="color: #990000">,</span> <span style="color: #009900">int</span> pfY<span style="color: #990000">,</span> <span style="color: #009900">int</span> pfCote<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">super</span></span><span style="color: #990000">(</span>pfX<span style="color: #990000">,</span> pfY<span style="color: #990000">,</span> pfCote<span style="color: #990000">,</span> pfCote<span style="color: #990000">);</span>
+        <span style="color: #FF0000">}</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">getCote</span></span> <span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getLongueur</span></span><span style="color: #990000">();</span>
+        <span style="color: #FF0000">}</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">super</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">afficher</span></span><span style="color: #990000">();</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Carré : côté "</span><span style="color: #990000">+</span><span style="font-weight: bold"><span style="color: #0000FF">this</span></span><span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getLongueur</span></span><span style="color: #990000">());</span>
+        <span style="color: #FF0000">}</span>
+<span style="color: #FF0000">}</span>
+
+<span style="font-style: italic"><span style="color: #9A1900">// Carre SOL</span></span>
+
+<span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">Carre</span> <span style="font-weight: bold"><span style="color: #0000FF">extends</span></span> Rectangle <span style="color: #FF0000">{</span>
 
         <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #000000">Carre</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
                 <span style="font-weight: bold"><span style="color: #0000FF">super</span></span><span style="color: #990000">();</span>
@@ -2483,7 +2518,7 @@ http://www.gnu.org/software/src-highlite -->
                 tabFormes<span style="color: #990000">[</span><span style="color: #993399">10</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> sphereUn<span style="color: #990000">;</span>
                 tabFormes<span style="color: #990000">[</span><span style="color: #993399">11</span><span style="color: #990000">]</span> <span style="color: #990000">=</span> sphereDeux<span style="color: #990000">;</span>
 
-                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span><span style="color: #009900">int</span> i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span><span style="color: #993399">8</span><span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span><span style="color: #009900">int</span> i<span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>tabFormes<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
                         System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"Rang "</span><span style="color: #990000">+</span> i <span style="color: #990000">+</span> <span style="color: #FF0000">" : "</span><span style="color: #990000">);</span>
                         System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"surface : "</span> <span style="color: #990000">+</span> tabFormes<span style="color: #990000">[</span>i<span style="color: #990000">].</span><span style="font-weight: bold"><span style="color: #000000">surface</span></span><span style="color: #990000">()</span> <span style="color: #990000">+</span> <span style="color: #FF0000">" "</span><span style="color: #990000">);</span>
                         System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"volume : "</span> <span style="color: #990000">+</span> tabFormes<span style="color: #990000">[</span>i<span style="color: #990000">].</span><span style="font-weight: bold"><span style="color: #000000">volume</span></span><span style="color: #990000">()</span> <span style="color: #990000">+</span> <span style="color: #FF0000">" "</span><span style="color: #990000">);</span>
@@ -2501,7 +2536,7 @@ http://www.gnu.org/software/src-highlite -->
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2016-03-09 17:50:20 CET
+Dernière mise à jour 2017-03-05 17:52:05 CET
 </div>
 </div>
 </body>
