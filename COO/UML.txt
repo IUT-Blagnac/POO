@@ -11,13 +11,13 @@ Nous allons aborder les points suivants :
 - Processus de développement
 - Conception logicielle
 
-ifdef::slides[:leveloffset: -2]
+ifdef::slides[:leveloffset: -1]
 
 ==== Pourquoi l'orienté objet ?
 
 - Prendre en compte tout le système
 - Ce que fait le système + comment il est organisé pour le faire
-- Quelques concepts fondamentaux : 
+- Quelques concepts fondamentaux :
 * les objets
 * les messages
 * les classes

@@ -11,7 +11,7 @@ image:plantuml-cd.png[]
 [NOTE]
 ====
 Nous parlons pour l'instant de _classe_, si vous êtes familié avec
-le langage C vous pouvez parler de _structure_. 
+le langage C vous pouvez parler de _structure_.
 Pour l'instant considérons que les 2 sont équivalents.
 ====
 
@@ -40,10 +40,8 @@ différents diagrammes.
 Exemple de convention d’écriture suivante : +
 
 - 1ère lettre d'une classe toujours en majuscule (la classe +Comptes+ par exemple)
-- mise au pluriel des noms
+- Pas de pluriel au nom des classes
 ====
-
-image:pluriels.png[]
 
 ===== Classes et objets
 
@@ -57,8 +55,8 @@ image:object.png[]
 
 ===== Attributs
 
-Un *attribut* est une propriété représentative d’un objet 
-(nom d’une personne, couleur d’une voiture, moyenne d’un étudiant...). 
+Un *attribut* est une propriété représentative d’un objet
+(nom d’une personne, couleur d’une voiture, moyenne d’un étudiant...).
 
 Pour chaque objet d’une classe, un attribut possède une valeur particulière.
 
@@ -72,7 +70,7 @@ ifdef::slides[<<<]
 ====
 Nous utiliserons la convention d’écriture suivante pour les attributs : +
 
-- 1ère lettre en minuscule. 
+- 1ère lettre en minuscule.
 - pour les noms composés, on mettra en majuscule la première lettre de chaque mot, sauf pour le premier.
 ====
 
@@ -80,7 +78,7 @@ Nous utiliserons la convention d’écriture suivante pour les attributs : +
 ====
 Les noms des attributs de type booléen seront précédés du préfixe +est+ (_is_ en anglais).
 
-Exemples : 
+Exemples :
 
 - +estMajeur+ vaut +VRAI+ si une personne est majeure et +FAUX+ si elle est mineure
 - +estCadre+ vaut +VRAI+ si une personne est cadre et +FAUX+ sinon
@@ -97,13 +95,13 @@ if (estMajeur)
 
 =====  Identifiant
 
-Un *identifiant* est un attribut particulier d’une classe dont les valeurs représentent 
+Un *identifiant* est un attribut particulier d’une classe dont les valeurs représentent
 sans ambiguïté chaque objet de la classe.
 
 [TIP]
 .Choix d’un identifiant
 ====
-Il faut prendre un attribut non ambigu (le nom d’une personne ne convient pas) et court (le numéro de sécu est trop long). 
+Il faut prendre un attribut non ambigu (le nom d’une personne ne convient pas) et court (le numéro de sécu est trop long).
 ====
 
 ifdef::slides[<<<]
@@ -119,7 +117,7 @@ Vous approfondirez (ou avez déjà abordé) cette notion en Base de donnée.
 
 =====  Association
 
-Une *association* est un ensemble de liens permanents existant entre les objets de deux ou plusieurs classes. 
+Une *association* est un ensemble de liens permanents existant entre les objets de deux ou plusieurs classes.
 On dira qu’une association lie plusieurs classes ou que les classes *participent* à l’association.
 
 [NOTE]
@@ -139,18 +137,18 @@ ifdef::slides[<<<]
 
 Exemple d’association binaire 
 
-Soient les classes +Fournisseurs+ et +Produits+. 
+Soient les classes +Fournisseurs+ et +Produits+.
 On veut indiquer quels sont les produits susceptibles d’être fournis par chaque fournisseur et quels sont les fournisseurs susceptibles de fournir chaque produit.
 
 image:prod-fourn.png[width="40%"]
 
 ifdef::slides[<<<]
 
-Nom d’une association : 
+Nom d’une association :
 
 Afin de clarifier les informations, il est important de nommer les associations. +
 Il existe trois façons de nommer une association :
- 
+
 - un verbe à l’infinitif (e.g., +Fournir+)
 - un verbe conjugué avec un sens de lecture : +Fournit >+  ou  +< Est fourni par+
 - un rôle (placé à une extrémité de l’association)
