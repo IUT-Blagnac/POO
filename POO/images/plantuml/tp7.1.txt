@@ -2,6 +2,17 @@
 skinparam classAttributeIconSize 0
 
 class FormeGraphique {
+	-int origine_x
+	-int origine_y
+	+FormeGraphique()
+	+FormeGraphique(int pfX, int pfY)
+	+int getOrigineX()
+	+int getOrigineY()
+	+void setOrigineX(int pfX)
+	+void setOrigineY(int pfY)
+	+double surface()
+	+double volume()
+	+void afficher()
 }
 
 class Cercle	 {
@@ -14,16 +25,42 @@ class  Sphere {
 } 
 
 class  Rectangle {
+	-int largeur
+	-int longueur
+	+Rectangle()
+	+Rectangle(int pfX, int pfY, int pfLarg, int pfLong)
+	+int getLargeur()
+	+int getLongueur()
+	+void setLargeur(int pfLargeur)
+	+void setLongueur(int pfLongueur)
+	+double surface()
+	+void afficher()
 } 
 
 class  Carre {
+	+Carre()
+	+Carre(int pfX, int pfY, int pfCote)
+	+int getCote()
+	+void setCote(int pfCote)
+	+void setLargeur(int pfLargeur)
+	+void setLongueur(int pfLongueur)
+	+void afficher()
 } 
+
+class Cube {
+	+Cube()
+	+Cube(int pfX, int pfY, int pfCote)
+	+double surface()
+	+double volume()
+	+void afficher()
+}
 
 FormeGraphique <|-- Cercle
 Cercle <|-- Cylindre
 Cercle <|-- Sphere
 FormeGraphique <|-- Rectangle
 Rectangle <|-- Carre
+Carre <|--  Cube
 
 
 @enduml

@@ -1,0 +1,29 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class FormeGraphique {
+}
+
+class Cercle	 {
+}
+
+class Cylindre {
+} 
+
+class  Sphere {
+} 
+
+class  Rectangle {
+} 
+
+class  Carre {
+} 
+
+FormeGraphique <|-- Cercle
+Cercle <|-- Cylindre
+Cercle <|-- Sphere
+FormeGraphique <|-- Rectangle
+Rectangle <|-- Carre
+
+
+@enduml
