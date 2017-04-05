@@ -16,4 +16,16 @@ public class Cube_V0_OK extends Carre {
 		super.afficher();
 		System.out.println("Cube");
 	}
+	public double surfaceSurLaHauteur () {
+		return 4*super.surface();
+	}
+	public double diagonaleCube () {
+		return this.getCote()*Math.sqrt(3.0);
+	}
+	public void setHauteur (int pfHauteur) {
+		this.setCote(pfHauteur);
+	}
+	public int getHauteur () {
+		return this.getCote(); 
+	}
 }
