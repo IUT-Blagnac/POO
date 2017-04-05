@@ -1,5 +1,7 @@
 @startuml
 
+' Objets 
+
 object "Commande : 111@111" as co1  {
 	idCde : "comm1"
 	leClient : 333@333

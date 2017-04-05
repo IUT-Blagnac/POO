@@ -2,6 +2,8 @@
 
 skinparam classAttributeIconSize 0
 
+' DC UML
+
 class Commande {
 	+ Commande(String pfId, Date pfDate)
 	+ void afficherInfos()

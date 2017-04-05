@@ -1,5 +1,7 @@
 @startuml
 
+' Objets
+
 object "Commande : 666@666" as co1  {
 	idCde : "comm1"
 	leClient : 333@333
@@ -24,8 +26,8 @@ object "Client : 333@333" as cl1 {
 	...
 }
 
-co3 - cl1
-cl1 - co1
-cl1 -- co2
+co3 . cl1
+cl1 . co1
+cl1 .. co2
 
 @enduml
