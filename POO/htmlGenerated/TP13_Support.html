@@ -1221,23 +1221,27 @@ http://www.gnu.org/software/src-highlite -->
 <span style="font-style: italic"><span style="color: #9A1900">// NOT OK car pas une méthode de Displayable</span></span>
 
 <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">Outils</span> <span style="color: #FF0000">{</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">testAffichage</span></span> <span style="color: #990000">(</span> <span style="color: #008080">Displayable</span> d<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                d<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">displayObject</span></span><span style="color: #990000">();</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">testAffichage</span></span> <span style="color: #990000">(</span> <span style="color: #008080">Displayable</span> pfD<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                pfD<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">displayObject</span></span><span style="color: #990000">();</span>
         <span style="color: #FF0000">}</span>
 
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">testAffichageTableau</span></span> <span style="color: #990000">(</span> <span style="color: #008080">Displayable</span> td<span style="color: #990000">[])</span> <span style="color: #FF0000">{</span>
-                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"Aff tab : "</span> <span style="color: #990000">+</span> td<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getClass</span></span><span style="color: #990000">());</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span><span style="color: #009900">int</span> i <span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>td<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">testAffichageTableau</span></span> <span style="color: #990000">(</span> Displayable<span style="color: #990000">[]</span>  pfTd<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"Aff tab : "</span> <span style="color: #990000">+</span> pfTd<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getClass</span></span><span style="color: #990000">());</span>
+                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span><span style="color: #009900">int</span> i <span style="color: #990000">=</span><span style="color: #993399">0</span><span style="color: #990000">;</span> i<span style="color: #990000">&lt;</span>pfTd<span style="color: #990000">.</span>length<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
                         System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"---&gt;"</span><span style="color: #990000">);</span>
-                        td<span style="color: #990000">[</span>i<span style="color: #990000">].</span><span style="font-weight: bold"><span style="color: #000000">displayObject</span></span><span style="color: #990000">();</span>
+                        pfTd<span style="color: #990000">[</span>i<span style="color: #990000">].</span><span style="font-weight: bold"><span style="color: #000000">displayObject</span></span><span style="color: #990000">();</span>
                 <span style="color: #FF0000">}</span>
         <span style="color: #FF0000">}</span>
 <span style="color: #FF0000">}</span>
 
 <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">class</span></span> <span style="color: #008080">Principal</span>
 <span style="color: #FF0000">{</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span> <span style="color: #990000">(</span> String <span style="color: #990000">[]</span> argv <span style="color: #990000">)</span>
-        <span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span> <span style="color: #990000">(</span> String <span style="color: #990000">[]</span> argv <span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+                <span style="font-style: italic"><span style="color: #9A1900">/* On voudrait pouvoir passer en paramètre</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">                 *      à la méthode Outils.testAffichage ()</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">                 *      autant un Compte qu'une Voiture ...</span></span>
+<span style="font-style: italic"><span style="color: #9A1900">                 */</span></span>
+
                 <span style="color: #008080">Compte</span> c<span style="color: #990000">;</span>
 
                 c <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Compte</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"0808"</span><span style="color: #990000">,</span> <span style="color: #FF0000">"Dupont"</span><span style="color: #990000">);</span>
@@ -1513,7 +1517,7 @@ SUVORK5CYII=" />
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Dernière mise à jour 2015-02-25 10:22:59 CET
+Dernière mise à jour 2017-04-27 16:11:37 CEST
 </div>
 </div>
 </body>
