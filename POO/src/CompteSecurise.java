@@ -2,7 +2,7 @@ public class CompteSecurise extends CompteDepot {
 	private double debitAutorise;
 
 	public CompteSecurise() {
-		this("Pas de numero", "Pas de proprietaire");
+		this("Pas de numéro", "Pas de propriétaire");
 	}
 
 	public CompteSecurise(String pfNumCompte, String pfNomProp) {

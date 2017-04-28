@@ -2,7 +2,7 @@ public class CompteJeune extends CompteSecurise {
 	// Constructeurs
 	public CompteJeune() // Constructeur par defaut
 	{
-		this("Pas de numero", "Pas de proprietaire");
+		this("Pas de numéro", "Pas de propriétaire");
 	}
 
 	public CompteJeune(String pfNumCompte, String pfNomProp) {

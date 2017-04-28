@@ -3,12 +3,12 @@ public class CompteMoneo extends Compte {
 
 	// Constructeurs
 	public CompteMoneo() {
-		this("Pas de numero moneo");
+		this("Pas de numéro monéo");
 	}
 
 	public CompteMoneo(String pfNoCarteMoneo) // Constructeur par defaut
 	{
-		this("Pas de numero", "Pas de proprietaire", pfNoCarteMoneo);
+		this("Pas de numéro", "Pas de propriétaire", pfNoCarteMoneo);
 	}
 
 	public CompteMoneo(String pfNumCompte, String pfNomProp, String pfNoCarteMoneo) {

@@ -6,7 +6,7 @@ public class CompteBancaire extends CompteSecurise {
 	// Constructeurs
 	public CompteBancaire() // Constructeur par defaut
 	{
-		this("Pas de numero", "Pas de proprietaire", "Pas de numero CJ");
+		this("Pas de numéro", "Pas de propriétaire", "Pas de numéro CJ");
 	}
 
 	public CompteBancaire(String pfNumCompte, String pfNomProp,

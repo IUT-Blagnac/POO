@@ -4,7 +4,7 @@ public class CompteDepot extends Compte {
 	private ArrayList<Operation> alOperations;
 
 	public CompteDepot() {
-		this("Pas de numero", "Pas de proprietaire");
+		this("Pas de numéro", "Pas de propriétaire");
 	}
 
 	public CompteDepot(String pfNumCompte, String pfNomProp) {

@@ -7,7 +7,7 @@ public class CompteEpargne extends CompteDepot {
 	// Constructeurs
 	public CompteEpargne()// Constructeur par defaut
 	{
-		this("Pas de numero", "Pas de proprietaire", 0);
+		this("Pas de numéro", "Pas de propriétaire", 0);
 	}
 
 	public CompteEpargne(String pfNumCompte, String pfNomProp, double pfTxInterets) {
