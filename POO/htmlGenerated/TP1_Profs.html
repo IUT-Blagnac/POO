@@ -1,0 +1,1299 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+<meta name="generator" content="AsciiDoc 8.6.6" />
+<title>BPOO - DEROULEMENT SEANCE PROF TP 1</title>
+<style type="text/css">
+/* Shared CSS for AsciiDoc xhtml11 and html5 backends */
+
+/* Default font. */
+body {
+  font-family: Georgia,serif;
+}
+
+/* Title font. */
+h1, h2, h3, h4, h5, h6,
+div.title, caption.title,
+thead, p.table.header,
+#toctitle,
+#author, #revnumber, #revdate, #revremark,
+#footer {
+  font-family: Arial,Helvetica,sans-serif;
+}
+
+body {
+  margin: 1em 5% 1em 5%;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
+a:visited {
+  color: fuchsia;
+}
+
+em {
+  font-style: italic;
+  color: navy;
+}
+
+strong {
+  font-weight: bold;
+  color: #083194;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #527bbd;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+  line-height: 1.3;
+}
+
+h1, h2, h3 {
+  border-bottom: 2px solid silver;
+}
+h2 {
+  padding-top: 0.5em;
+}
+h3 {
+  float: left;
+}
+h3 + * {
+  clear: left;
+}
+h5 {
+  font-size: 1.0em;
+}
+
+div.sectionbody {
+  margin-left: 0;
+}
+
+hr {
+  border: 1px solid silver;
+}
+
+p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+ul, ol, li > p {
+  margin-top: 0;
+}
+ul > li     { color: #aaa; }
+ul > li > * { color: black; }
+
+pre {
+  padding: 0;
+  margin: 0;
+}
+
+#author {
+  color: #527bbd;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+#email {
+}
+#revnumber, #revdate, #revremark {
+}
+
+#footer {
+  font-size: small;
+  border-top: 2px solid silver;
+  padding-top: 0.5em;
+  margin-top: 4.0em;
+}
+#footer-text {
+  float: left;
+  padding-bottom: 0.5em;
+}
+#footer-badges {
+  float: right;
+  padding-bottom: 0.5em;
+}
+
+#preamble {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+div.imageblock, div.exampleblock, div.verseblock,
+div.quoteblock, div.literalblock, div.listingblock, div.sidebarblock,
+div.admonitionblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.admonitionblock {
+  margin-top: 2.0em;
+  margin-bottom: 2.0em;
+  margin-right: 10%;
+  color: #606060;
+}
+
+div.content { /* Block element content. */
+  padding: 0;
+}
+
+/* Block element titles. */
+div.title, caption.title {
+  color: #527bbd;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 1.0em;
+  margin-bottom: 0.5em;
+}
+div.title + * {
+  margin-top: 0;
+}
+
+td div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content + div.title {
+  margin-top: 0.0em;
+}
+
+div.sidebarblock > div.content {
+  background: #ffffee;
+  border: 1px solid #dddddd;
+  border-left: 4px solid #f0f0f0;
+  padding: 0.5em;
+}
+
+div.listingblock > div.content {
+  border: 1px solid #dddddd;
+  border-left: 5px solid #f0f0f0;
+  background: #f8f8f8;
+  padding: 0.5em;
+}
+
+div.quoteblock, div.verseblock {
+  padding-left: 1.0em;
+  margin-left: 1.0em;
+  margin-right: 10%;
+  border-left: 5px solid #f0f0f0;
+  color: #888;
+}
+
+div.quoteblock > div.attribution {
+  padding-top: 0.5em;
+  text-align: right;
+}
+
+div.verseblock > pre.content {
+  font-family: inherit;
+  font-size: inherit;
+}
+div.verseblock > div.attribution {
+  padding-top: 0.75em;
+  text-align: left;
+}
+/* DEPRECATED: Pre version 8.2.7 verse style literal block. */
+div.verseblock + div.attribution {
+  text-align: left;
+}
+
+div.admonitionblock .icon {
+  vertical-align: top;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #527bbd;
+  padding-right: 0.5em;
+}
+div.admonitionblock td.content {
+  padding-left: 0.5em;
+  border-left: 3px solid #dddddd;
+}
+
+div.exampleblock > div.content {
+  border-left: 3px solid #dddddd;
+  padding-left: 0.5em;
+}
+
+div.imageblock div.content { padding-left: 0; }
+span.image img { border-style: none; }
+a.image:visited { color: white; }
+
+dl {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+dt {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  font-style: normal;
+  color: navy;
+}
+dd > *:first-child {
+  margin-top: 0.1em;
+}
+
+ul, ol {
+    list-style-position: outside;
+}
+ol.arabic {
+  list-style-type: decimal;
+}
+ol.loweralpha {
+  list-style-type: lower-alpha;
+}
+ol.upperalpha {
+  list-style-type: upper-alpha;
+}
+ol.lowerroman {
+  list-style-type: lower-roman;
+}
+ol.upperroman {
+  list-style-type: upper-roman;
+}
+
+div.compact ul, div.compact ol,
+div.compact p, div.compact p,
+div.compact div, div.compact div {
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+}
+
+tfoot {
+  font-weight: bold;
+}
+td > div.verse {
+  white-space: pre;
+}
+
+div.hdlist {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+div.hdlist tr {
+  padding-bottom: 15px;
+}
+dt.hdlist1.strong, td.hdlist1.strong {
+  font-weight: bold;
+}
+td.hdlist1 {
+  vertical-align: top;
+  font-style: normal;
+  padding-right: 0.8em;
+  color: navy;
+}
+td.hdlist2 {
+  vertical-align: top;
+}
+div.hdlist.compact tr {
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.comment {
+  background: yellow;
+}
+
+.footnote, .footnoteref {
+  font-size: 0.8em;
+}
+
+span.footnote, span.footnoteref {
+  vertical-align: super;
+}
+
+#footnotes {
+  margin: 20px 0 20px 0;
+  padding: 7px 0 0 0;
+}
+
+#footnotes div.footnote {
+  margin: 0 0 5px 0;
+}
+
+#footnotes hr {
+  border: none;
+  border-top: 1px solid silver;
+  height: 1px;
+  text-align: left;
+  margin-left: 0;
+  width: 20%;
+  min-width: 100px;
+}
+
+div.colist td {
+  padding-right: 0.5em;
+  padding-bottom: 0.3em;
+  vertical-align: top;
+}
+div.colist td img {
+  margin-top: 0.3em;
+}
+
+@media print {
+  #footer-badges { display: none; }
+}
+
+#toc {
+  margin-bottom: 2.5em;
+}
+
+#toctitle {
+  color: #527bbd;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 1.0em;
+  margin-bottom: 0.1em;
+}
+
+div.toclevel1, div.toclevel2, div.toclevel3, div.toclevel4 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+div.toclevel2 {
+  margin-left: 2em;
+  font-size: 0.9em;
+}
+div.toclevel3 {
+  margin-left: 4em;
+  font-size: 0.9em;
+}
+div.toclevel4 {
+  margin-left: 6em;
+  font-size: 0.9em;
+}
+
+span.aqua { color: aqua; }
+span.black { color: black; }
+span.blue { color: blue; }
+span.fuchsia { color: fuchsia; }
+span.gray { color: gray; }
+span.green { color: green; }
+span.lime { color: lime; }
+span.maroon { color: maroon; }
+span.navy { color: navy; }
+span.olive { color: olive; }
+span.purple { color: purple; }
+span.red { color: red; }
+span.silver { color: silver; }
+span.teal { color: teal; }
+span.white { color: white; }
+span.yellow { color: yellow; }
+
+span.aqua-background { background: aqua; }
+span.black-background { background: black; }
+span.blue-background { background: blue; }
+span.fuchsia-background { background: fuchsia; }
+span.gray-background { background: gray; }
+span.green-background { background: green; }
+span.lime-background { background: lime; }
+span.maroon-background { background: maroon; }
+span.navy-background { background: navy; }
+span.olive-background { background: olive; }
+span.purple-background { background: purple; }
+span.red-background { background: red; }
+span.silver-background { background: silver; }
+span.teal-background { background: teal; }
+span.white-background { background: white; }
+span.yellow-background { background: yellow; }
+
+span.big { font-size: 2em; }
+span.small { font-size: 0.6em; }
+
+span.underline { text-decoration: underline; }
+span.overline { text-decoration: overline; }
+span.line-through { text-decoration: line-through; }
+
+
+/*
+ * xhtml11 specific
+ *
+ * */
+
+tt {
+  font-family: monospace;
+  font-size: inherit;
+  color: navy;
+}
+
+div.tableblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.tableblock > table {
+  border: 3px solid #527bbd;
+}
+thead, p.table.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+p.table {
+  margin-top: 0;
+}
+/* Because the table frame attribute is overriden by CSS in most browsers. */
+div.tableblock > table[frame="void"] {
+  border-style: none;
+}
+div.tableblock > table[frame="hsides"] {
+  border-left-style: none;
+  border-right-style: none;
+}
+div.tableblock > table[frame="vsides"] {
+  border-top-style: none;
+  border-bottom-style: none;
+}
+
+
+/*
+ * html5 specific
+ *
+ * */
+
+.monospaced {
+  font-family: monospace;
+  font-size: inherit;
+  color: navy;
+}
+
+table.tableblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+thead, p.tableblock.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+p.tableblock {
+  margin-top: 0;
+}
+table.tableblock {
+  border-width: 3px;
+  border-spacing: 0px;
+  border-style: solid;
+  border-color: #527bbd;
+  border-collapse: collapse;
+}
+th.tableblock, td.tableblock {
+  border-width: 1px;
+  padding: 4px;
+  border-style: solid;
+  border-color: #527bbd;
+}
+
+table.tableblock.frame-topbot {
+  border-left-style: hidden;
+  border-right-style: hidden;
+}
+table.tableblock.frame-sides {
+  border-top-style: hidden;
+  border-bottom-style: hidden;
+}
+table.tableblock.frame-none {
+  border-style: hidden;
+}
+
+th.tableblock.halign-left, td.tableblock.halign-left {
+  text-align: left;
+}
+th.tableblock.halign-center, td.tableblock.halign-center {
+  text-align: center;
+}
+th.tableblock.halign-right, td.tableblock.halign-right {
+  text-align: right;
+}
+
+th.tableblock.valign-top, td.tableblock.valign-top {
+  vertical-align: top;
+}
+th.tableblock.valign-middle, td.tableblock.valign-middle {
+  vertical-align: middle;
+}
+th.tableblock.valign-bottom, td.tableblock.valign-bottom {
+  vertical-align: bottom;
+}
+
+
+/*
+ * manpage specific
+ *
+ * */
+
+body.manpage h1 {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  border-top: 2px solid silver;
+  border-bottom: 2px solid silver;
+}
+body.manpage h2 {
+  border-style: none;
+}
+body.manpage div.sectionbody {
+  margin-left: 3em;
+}
+
+@media print {
+  body.manpage div#toc { display: none; }
+}
+</style>
+<script type="text/javascript">
+/*<![CDATA[*/
+var asciidoc = {  // Namespace.
+
+/////////////////////////////////////////////////////////////////////
+// Table Of Contents generator
+/////////////////////////////////////////////////////////////////////
+
+/* Author: Mihai Bazon, September 2002
+ * http://students.infoiasi.ro/~mishoo
+ *
+ * Table Of Content generator
+ * Version: 0.4
+ *
+ * Feel free to use this script under the terms of the GNU General Public
+ * License, as long as you do not remove or alter this notice.
+ */
+
+ /* modified by Troy D. Hanson, September 2006. License: GPL */
+ /* modified by Stuart Rackham, 2006, 2009. License: GPL */
+
+// toclevels = 1..4.
+toc: function (toclevels) {
+
+  function getText(el) {
+    var text = "";
+    for (var i = el.firstChild; i != null; i = i.nextSibling) {
+      if (i.nodeType == 3 /* Node.TEXT_NODE */) // IE doesn't speak constants.
+        text += i.data;
+      else if (i.firstChild != null)
+        text += getText(i);
+    }
+    return text;
+  }
+
+  function TocEntry(el, text, toclevel) {
+    this.element = el;
+    this.text = text;
+    this.toclevel = toclevel;
+  }
+
+  function tocEntries(el, toclevels) {
+    var result = new Array;
+    var re = new RegExp('[hH]([2-'+(toclevels+1)+'])');
+    // Function that scans the DOM tree for header elements (the DOM2
+    // nodeIterator API would be a better technique but not supported by all
+    // browsers).
+    var iterate = function (el) {
+      for (var i = el.firstChild; i != null; i = i.nextSibling) {
+        if (i.nodeType == 1 /* Node.ELEMENT_NODE */) {
+          var mo = re.exec(i.tagName);
+          if (mo && (i.getAttribute("class") || i.getAttribute("className")) != "float") {
+            result[result.length] = new TocEntry(i, getText(i), mo[1]-1);
+          }
+          iterate(i);
+        }
+      }
+    }
+    iterate(el);
+    return result;
+  }
+
+  var toc = document.getElementById("toc");
+  if (!toc) {
+    return;
+  }
+
+  // Delete existing TOC entries in case we're reloading the TOC.
+  var tocEntriesToRemove = [];
+  var i;
+  for (i = 0; i < toc.childNodes.length; i++) {
+    var entry = toc.childNodes[i];
+    if (entry.nodeName == 'div'
+     && entry.getAttribute("class")
+     && entry.getAttribute("class").match(/^toclevel/))
+      tocEntriesToRemove.push(entry);
+  }
+  for (i = 0; i < tocEntriesToRemove.length; i++) {
+    toc.removeChild(tocEntriesToRemove[i]);
+  }
+
+  // Rebuild TOC entries.
+  var entries = tocEntries(document.getElementById("content"), toclevels);
+  for (var i = 0; i < entries.length; ++i) {
+    var entry = entries[i];
+    if (entry.element.id == "")
+      entry.element.id = "_toc_" + i;
+    var a = document.createElement("a");
+    a.href = "#" + entry.element.id;
+    a.appendChild(document.createTextNode(entry.text));
+    var div = document.createElement("div");
+    div.appendChild(a);
+    div.className = "toclevel" + entry.toclevel;
+    toc.appendChild(div);
+  }
+  if (entries.length == 0)
+    toc.parentNode.removeChild(toc);
+},
+
+
+/////////////////////////////////////////////////////////////////////
+// Footnotes generator
+/////////////////////////////////////////////////////////////////////
+
+/* Based on footnote generation code from:
+ * http://www.brandspankingnew.net/archive/2005/07/format_footnote.html
+ */
+
+footnotes: function () {
+  // Delete existing footnote entries in case we're reloading the footnodes.
+  var i;
+  var noteholder = document.getElementById("footnotes");
+  if (!noteholder) {
+    return;
+  }
+  var entriesToRemove = [];
+  for (i = 0; i < noteholder.childNodes.length; i++) {
+    var entry = noteholder.childNodes[i];
+    if (entry.nodeName == 'div' && entry.getAttribute("class") == "footnote")
+      entriesToRemove.push(entry);
+  }
+  for (i = 0; i < entriesToRemove.length; i++) {
+    noteholder.removeChild(entriesToRemove[i]);
+  }
+
+  // Rebuild footnote entries.
+  var cont = document.getElementById("content");
+  var spans = cont.getElementsByTagName("span");
+  var refs = {};
+  var n = 0;
+  for (i=0; i<spans.length; i++) {
+    if (spans[i].className == "footnote") {
+      n++;
+      var note = spans[i].getAttribute("data-note");
+      if (!note) {
+        // Use [\s\S] in place of . so multi-line matches work.
+        // Because JavaScript has no s (dotall) regex flag.
+        note = spans[i].innerHTML.match(/\s*\[([\s\S]*)]\s*/)[1];
+        spans[i].innerHTML =
+          "[<a id='_footnoteref_" + n + "' href='#_footnote_" + n +
+          "' title='View footnote' class='footnote'>" + n + "</a>]";
+        spans[i].setAttribute("data-note", note);
+      }
+      noteholder.innerHTML +=
+        "<div class='footnote' id='_footnote_" + n + "'>" +
+        "<a href='#_footnoteref_" + n + "' title='Return to text'>" +
+        n + "</a>. " + note + "</div>";
+      var id =spans[i].getAttribute("id");
+      if (id != null) refs["#"+id] = n;
+    }
+  }
+  if (n == 0)
+    noteholder.parentNode.removeChild(noteholder);
+  else {
+    // Process footnoterefs.
+    for (i=0; i<spans.length; i++) {
+      if (spans[i].className == "footnoteref") {
+        var href = spans[i].getElementsByTagName("a")[0].getAttribute("href");
+        href = href.match(/#.*/)[0];  // Because IE return full URL.
+        n = refs[href];
+        spans[i].innerHTML =
+          "[<a href='#_footnote_" + n +
+          "' title='View footnote' class='footnote'>" + n + "</a>]";
+      }
+    }
+  }
+},
+
+install: function(toclevels) {
+  var timerId;
+
+  function reinstall() {
+    asciidoc.footnotes();
+    if (toclevels) {
+      asciidoc.toc(toclevels);
+    }
+  }
+
+  function reinstallAndRemoveTimer() {
+    clearInterval(timerId);
+    reinstall();
+  }
+
+  timerId = setInterval(reinstall, 500);
+  if (document.addEventListener)
+    document.addEventListener("DOMContentLoaded", reinstallAndRemoveTimer, false);
+  else
+    window.onload = reinstallAndRemoveTimer;
+}
+
+}
+asciidoc.install(2);
+/*]]>*/
+</script>
+</head>
+<body class="article">
+<div id="header">
+<h1>BPOO - DEROULEMENT SEANCE PROF TP 1</h1>
+<span id="author">Dut/Info-S2/M2103</span><br />
+<div id="toc">
+  <div id="toctitle">Table des matières</div>
+  <noscript><p><b>JavaScript must be enabled in your browser to display the table of contents.</b></p></noscript>
+</div>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Important" src="data:image/png;base64,
+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" />
+</td>
+<td class="content">
+<div class="title">Version corrigée</div>
+<div class="paragraph"><p>Cette version comporte des indications pour les réponses aux exercices.</p></div>
+</td>
+</tr></table>
+</div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Important" src="data:image/png;base64,
+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
+h04nvXoAAAAASUVORK5CYII=" />
+</td>
+<td class="content">
+<div class="tableblock" id="cartouche">
+<table rules="all"
+style="margin-left:0; margin-right:auto;"
+width="90%"
+frame="border"
+cellspacing="0" cellpadding="4">
+<col width="9%" />
+<col width="90%" />
+<tbody>
+<tr>
+<td align="left" valign="top"><p class="table">PreReq</p></td>
+<td align="left" valign="top"><p class="table">TD1. S1, notion de type, variables simples, tableaux.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">ObjTP</p></td>
+<td align="left" valign="top"><p class="table"><strong>Apprendre à utiliser un debugger</strong>.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">Durée</p></td>
+<td align="left" valign="top"><p class="table"><strong>2 séances</strong> de 1,5h sur machine</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">À rendre</p></td>
+<td align="left" valign="top"><p class="table">CR à remplir</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr></table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_préambule">1. Préambule</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Dans ce premier TP nous allons principalement viser à utiliser un outil de deboggage (déboggueur ou débugguer) afin de :</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+comprendre des programmes déjà écrits,
+</p>
+</li>
+<li>
+<p>
+corriger des incohérences algorithmiques de programmes déjà écrits,
+</p>
+</li>
+<li>
+<p>
+déverminer des programmes déjà écrits,
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>Pour cela nous allons utilsier l&#8217;IDE <a href="http://www.eclipse.org/">eclipse</a> (version Indigo SR2, téléchargeable ici <a href="http://www.eclipse.org/downloads/packages/eclipse-ide-java-developers/indigosr2">Eclipse Indigo sr2</a>).
+Mais les autres TPs se feront sous Scite car l&#8217;usage est plus simple pour les TPs (liens JUnit, liens avec des fichiers .class existants, disponibilité chez vous, sauvegardes des programmes développés, &#8230;)</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Important" src="data:image/png;base64,
+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
+h04nvXoAAAAASUVORK5CYII=" />
+</td>
+<td class="content">
+<div class="paragraph"><p>Eclipse est un Environnement Intégré de Développement. Un tel outil :</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+permet de travailler dans plusieurs langages,
+</p>
+</li>
+<li>
+<p>
+offre plusieurs outils travaillant simultanément (fenêtres synchronisées, &#8230;),
+</p>
+</li>
+<li>
+<p>
+permet de développer des projets très complexes,
+</p>
+</li>
+<li>
+<p>
+s&#8217;interface avec des outils externes (svn, git, Maven, &#8230;),
+</p>
+</li>
+<li>
+<p>
+et plus encore.
+</p>
+</li>
+</ul></div>
+</td>
+</tr></table>
+</div>
+<div class="sect2">
+<h3 id="_lancement">1.1. Lancement</h3>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Lancer Eclipse depuis le bureau.
+</p>
+</li>
+<li>
+<p>
+Il ouvre un <strong>workspace</strong>, espace de travail où Eclipse range les fichiers.
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Si Eclipse demande où est le workspace &#8594; Indiquer E:\Eclipse
+</p>
+<div class="paragraph"><p><strong>TODO : Image écran</strong></p></div>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+Créer un <strong>projet</strong>
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+File &gt; New &gt; Java Project
+</p>
+</li>
+<li>
+<p>
+Donner un nom de projet &#8594; <tt>testDebug</tt>
+</p>
+</li>
+<li>
+<p>
+Valider
+</p>
+<div class="paragraph"><p><strong>TODO : Image écran</strong></p></div>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+Créer une classe de base <strong>ClasseEssai</strong> dans laquelle on fera par la suite des copier coller pour les tests.
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+File &gt; New &gt; Class
+</p>
+</li>
+<li>
+<p>
+Donner un nom de classe &#8594; <tt>ClasseEssai</tt>
+</p>
+</li>
+<li>
+<p>
+Valider
+</p>
+<div class="paragraph"><p><strong>TODO : Image écran</strong></p></div>
+</li>
+</ul></div>
+</li>
+</ol></div>
+<div class="paragraph"><p>A partir de maintenant :</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+copier/coller le code à tester dans la classe ClasseEssai,
+</p>
+</li>
+<li>
+<p>
+faire les tests : run ou debug.
+</p>
+</li>
+</ul></div>
+</div>
+<div class="sect2">
+<h3 id="_premier_test">1.2. Premier Test</h3>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Ecrire une méthode main() affichant "Hello World" pour tester.
+</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">(</span>String<span style="color: #990000">[]</span> argv<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">println</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"Hello World"</span><span style="color: #990000">);</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+</li>
+<li>
+<p>
+Sauvegarder.
+</p>
+</li>
+<li>
+<p>
+Chercher comment compiler &#8594; s&#8217;est déjà fait à la sauvegarde.
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Modifier le code pour générer une erreur de compilation.
+</p>
+</li>
+<li>
+<p>
+Sauvegarder &#8594; croix rouge au niveau de l&#8217;erreur.
+</p>
+</li>
+<li>
+<p>
+Corriger le code et sauvegarder à nouveau.
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+Exécuter : cliquer sur le petit icône vert (une flèche)
+</p>
+</li>
+<li>
+<p>
+Fenêtre "Console" &#8594; le résultat.
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+La fenêtre "Console" n&#8217;apparaît pas ? &#8594; Menu Window &gt; Show View &gt; Console
+</p>
+</li>
+</ul></div>
+</li>
+</ol></div>
+</div>
+<div class="sect2">
+<h3 id="_second_test_et_debug">1.3. Second test et Debug</h3>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Modifier le code de la classe comme suit.
+</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">double</span> <span style="font-weight: bold"><span style="color: #000000">plusPlus</span></span> <span style="color: #990000">(</span><span style="color: #009900">double</span> a<span style="color: #990000">,</span> <span style="color: #009900">int</span> d<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+        <span style="color: #009900">double</span> res<span style="color: #990000">;</span>
+
+        res <span style="color: #990000">=</span> a <span style="color: #990000">+</span> d <span style="color: #990000">+</span> <span style="color: #993399">1</span><span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> res<span style="color: #990000">;</span>
+<span style="color: #FF0000">}</span>
+<span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">static</span></span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">(</span>String<span style="color: #990000">[]</span> argv<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+        <span style="color: #009900">double</span> ageDebut<span style="color: #990000">;</span>
+        <span style="color: #009900">int</span> anneesEtudes<span style="color: #990000">;</span>
+        <span style="color: #009900">double</span> ageFinEtudes<span style="color: #990000">;</span>
+
+        <span style="color: #008080">Scanner</span> s <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #0000FF">new</span></span> <span style="font-weight: bold"><span style="color: #000000">Scanner</span></span> <span style="color: #990000">(</span>System<span style="color: #990000">.</span>in<span style="color: #990000">);</span>
+
+        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"Votre age de début d'études : "</span><span style="color: #990000">);</span>
+        ageDebut <span style="color: #990000">=</span> s<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">nextDouble</span></span><span style="color: #990000">();</span>
+        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"Nombre d'années d'études : "</span><span style="color: #990000">);</span>
+        anneesEtudes <span style="color: #990000">=</span> s<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">nextInt</span></span><span style="color: #990000">();</span>
+        ageFinEtudes <span style="color: #990000">=</span> ClasseEssai<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">plusPlus</span></span> <span style="color: #990000">(</span>ageDebut<span style="color: #990000">,</span> anneesEtudes<span style="color: #990000">);</span>
+        System<span style="color: #990000">.</span>out<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">print</span></span> <span style="color: #990000">(</span><span style="color: #FF0000">"Votre age en fin de parcours détudes : "</span> <span style="color: #990000">+</span> ageFinEtudes<span style="color: #990000">);</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.5
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-style: italic"><span style="color: #9A1900">// Ne pas oublier :</span></span>
+
+<span style="font-weight: bold"><span style="color: #000080">import</span></span> java<span style="color: #990000">.</span>util<span style="color: #990000">.</span>Scanner<span style="color: #990000">;</span></tt></pre></div></div>
+</li>
+<li>
+<p>
+Sauvegarder.
+</p>
+</li>
+<li>
+<p>
+Exécuter.
+</p>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Important" src="data:image/png;base64,
+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
+h04nvXoAAAAASUVORK5CYII=" />
+</td>
+<td class="content">
+<div class="paragraph"><p>Nous allons maintenant débugguer cette application. Il s&#8217;agira de pouvoir :</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+mettre un <strong>point d&#8217;arrêt</strong> ou plusieurs dans le programme?
+</p>
+</li>
+<li>
+<p>
+à partir de cet endroit on pourra au runtime :
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+consulter l'état des variables du sous-programme en cours d&#8217;exécution?
+</p>
+</li>
+<li>
+<p>
+avancer dans l&#8217;exécution ?
+</p>
+</li>
+</ul></div>
+</li>
+</ul></div>
+</td>
+</tr></table>
+</div>
+</li>
+<li>
+<p>
+suite
+</p>
+</li>
+</ol></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_avant_de_partir">2. Avant de partir</h2>
+<div class="sectionbody">
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Enregistrer vos programmes sous <strong>hardy</strong>
+</p>
+</li>
+<li>
+<p>
+Déposer le compte rendu
+</p>
+</li>
+<li>
+<p>
+N&#8217;oubliez-pas de vous déconnecter
+</p>
+</li>
+</ol></div>
+</div>
+</div>
+</div>
+<div id="footnotes"><hr /></div>
+<div id="footer">
+<div id="footer-text">
+Dernière mise à jour 2017-02-15 18:50:08 CET
+</div>
+</div>
+</body>
+</html>
