@@ -1,0 +1,16 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class Devinette {
+	+ Devinette()
+	+ int getBas()
+	+ int getHaut()
+	+ int getNbCoupsJoues()
+	+ boolean isDernierCoupGagnant()
+	+ boolean isDernierCoupTropBas()
+	+ boolean isDernierCoupTropHaut()
+	+ boolean isValeurDansBornes(int val)
+	+ void soumettreCoup(int valeurJouee)	
+}
+
+@enduml
