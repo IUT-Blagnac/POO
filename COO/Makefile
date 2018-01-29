@@ -94,11 +94,16 @@ roadmap.html: $(MAIN).$(EXT)
 	@echo '==> Compiling asciidoc files with Asciidoctor to generate HTML'
 	$(DOCTOR) -a compact -a theme=compact -b html5 -a numbered -a eleve \
 	-a data-uri $< -o $@
+	$(DOCTOR) -b html5 -a numbered -a eleve -a linkcss! -r asciidoctor-diagram $<
 
 %-prof.html: %.$(EXT) $(DEP)
 	@echo '==> Compiling asciidoc files with Asciidoctor to generate HTML'
-	$(DOCTOR) -a prof -a correction -a theme=compact -b html5 -a numbered \
+	$(DOCTOR) -a prof -a correction -a theme=compact -b html5 -r asciidoctor-diagram \
 	-a data-uri $< -o $@
+
+%.pdf: %.$(EXT) $(DEP)
+	@echo '==> Compiling asciidoc files with Asciidoctor to generate HTML'
+	asciidoctor-pdf -a theme=compact -r asciidoctor-diagram $< -o $@
 
 deploy:
 	cp main.html index.html
