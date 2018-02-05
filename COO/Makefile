@@ -103,7 +103,7 @@ roadmap.html: $(MAIN).$(EXT)
 
 %.pdf: %.$(EXT) $(DEP)
 	@echo '==> Compiling asciidoc files with Asciidoctor to generate HTML'
-	asciidoctor-pdf -a theme=compact -r asciidoctor-diagram $< -o $@
+	asciidoctor-pdf  -a icons=font -a imagesdir=$(IMAGESDIR) -a source-highlighter=$(HIGHLIGHT) -a theme=compact -r asciidoctor-diagram $< -o $@
 
 deploy:
 	cp main.html index.html
@@ -112,8 +112,8 @@ deploy:
 	git co master index.html
 	git push
 
-cours2:
-	$(DOCTOR) -a toc2 -b html5 -a numbered -a stylesheet=$(STYLE) -a data-uri -o cours2.html wip.asc
+cours:
+	$(DOCTOR) -a toc2 -b html5 -a numbered -a stylesheet=$(STYLE) -o cours.html cours.asc
 
 test:
 	$(DOCTOR) -a toc2 -b html5 -a numbered -a stylesheet=$(STYLE) -o wip2.html wip.asc

@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 1.5.5">
+<meta name="generator" content="Asciidoctor 1.5.6.1">
 <meta name="author" content="Jean-Michel Bruel">
-<meta name="copyright" content="{date=2017-03-14}, Your computer *** Jean-Michel Bruel *** Powered by AsciiDoc and W3C Slidy &amp;#169;">
+<meta name="copyright" content="{date=2018-02-04}, Your computer *** Jean-Michel Bruel *** Powered by AsciiDoc and W3C Slidy &amp;#169;">
 <title>DUT-Info/S2/M2104 (COO) : Support de cours</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
@@ -91,13 +91,12 @@ strong,b{font-weight:bold;line-height:inherit}
 small{font-size:60%;line-height:inherit}
 code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
 ul,ol,dl{font-size:1em;line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
-ul,ol,ul.no-bullet,ol.no-bullet{margin-left:1.5em}
+ul,ol{margin-left:1.5em}
 ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0;font-size:1em}
 ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
 ul.square{list-style-type:square}
 ul.circle{list-style-type:circle}
 ul.disc{list-style-type:disc}
-ul.no-bullet{list-style:none}
 ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
 dl dt{margin-bottom:.3125em;font-weight:bold}
 dl dd{margin-bottom:1.25em}
@@ -133,7 +132,11 @@ strong strong{font-weight:400}
 kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background-color:#f7f7f7;border:1px solid #ccc;-webkit-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em white inset;box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em #fff inset;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
 .keyseq kbd:first-child{margin-left:0}
 .keyseq kbd:last-child{margin-right:0}
-.menuseq,.menu{color:rgba(0,0,0,.8)}
+.menuseq,.menuref{color:#000}
+.menuseq b:not(.caret),.menuref{font-weight:inherit}
+.menuseq{word-spacing:-.02em}
+.menuseq b.caret{font-size:1.25em;line-height:.8}
+.menuseq i.caret{font-weight:bold;text-align:center;width:.45em}
 b.button:before,b.button:after{position:relative;top:-1px;font-weight:400}
 b.button:before{content:"[";padding:0 3px 0 2px}
 b.button:after{content:"]";padding:0 2px 0 3px}
@@ -200,7 +203,7 @@ table.tableblock>caption.title{white-space:nowrap;overflow:visible;max-width:0}
 table.tableblock #preamble>.sectionbody>.paragraph:first-of-type p{font-size:inherit}
 .admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
 .admonitionblock>table td.icon{text-align:center;width:80px}
-.admonitionblock>table td.icon img{max-width:none}
+.admonitionblock>table td.icon img{max-width:initial}
 .admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
 .admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #ddddd8;color:rgba(0,0,0,.6)}
 .admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
@@ -256,13 +259,13 @@ table.pyhltable .linenodiv{background:none!important;padding-right:0!important}
 table.tableblock{max-width:100%;border-collapse:separate}
 table.tableblock td>.paragraph:last-child p>p:last-child,table.tableblock th>p:last-child,table.tableblock td>p:last-child{margin-bottom:0}
 table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
-table.grid-all th.tableblock,table.grid-all td.tableblock{border-width:0 1px 1px 0}
-table.grid-all tfoot>tr>th.tableblock,table.grid-all tfoot>tr>td.tableblock{border-width:1px 1px 0 0}
-table.grid-cols th.tableblock,table.grid-cols td.tableblock{border-width:0 1px 0 0}
-table.grid-all *>tr>.tableblock:last-child,table.grid-cols *>tr>.tableblock:last-child{border-right-width:0}
-table.grid-rows th.tableblock,table.grid-rows td.tableblock{border-width:0 0 1px 0}
-table.grid-all tbody>tr:last-child>th.tableblock,table.grid-all tbody>tr:last-child>td.tableblock,table.grid-all thead:last-child>tr>th.tableblock,table.grid-rows tbody>tr:last-child>th.tableblock,table.grid-rows tbody>tr:last-child>td.tableblock,table.grid-rows thead:last-child>tr>th.tableblock{border-bottom-width:0}
-table.grid-rows tfoot>tr>th.tableblock,table.grid-rows tfoot>tr>td.tableblock{border-width:1px 0 0 0}
+table.grid-all>thead>tr>.tableblock,table.grid-all>tbody>tr>.tableblock{border-width:0 1px 1px 0}
+table.grid-all>tfoot>tr>.tableblock{border-width:1px 1px 0 0}
+table.grid-cols>*>tr>.tableblock{border-width:0 1px 0 0}
+table.grid-rows>thead>tr>.tableblock,table.grid-rows>tbody>tr>.tableblock{border-width:0 0 1px 0}
+table.grid-rows>tfoot>tr>.tableblock{border-width:1px 0 0 0}
+table.grid-all>*>tr>.tableblock:last-child,table.grid-cols>*>tr>.tableblock:last-child{border-right-width:0}
+table.grid-all>tbody>tr:last-child>.tableblock,table.grid-all>thead:last-child>tr>.tableblock,table.grid-rows>tbody>tr:last-child>.tableblock,table.grid-rows>thead:last-child>tr>.tableblock{border-bottom-width:0}
 table.frame-all{border-width:1px}
 table.frame-sides{border-width:0 1px}
 table.frame-topbot{border-width:1px 0}
@@ -283,10 +286,12 @@ ul li ol{margin-left:1.5em}
 dl dd{margin-left:1.125em}
 dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
 ol>li p,ul>li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
-ul.unstyled,ol.unnumbered,ul.checklist,ul.none{list-style-type:none}
-ul.unstyled,ol.unnumbered,ul.checklist{margin-left:.625em}
-ul.checklist li>p:first-child>.fa-square-o:first-child,ul.checklist li>p:first-child>.fa-check-square-o:first-child{width:1em;font-size:.85em}
-ul.checklist li>p:first-child>input[type="checkbox"]:first-child{width:1em;position:relative;top:1px}
+ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
+ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
+ul.unstyled,ol.unstyled{margin-left:0}
+ul.checklist{margin-left:.625em}
+ul.checklist li>p:first-child>.fa-square-o:first-child,ul.checklist li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
+ul.checklist li>p:first-child>input[type="checkbox"]:first-child{margin-right:.25em}
 ul.inline{margin:0 auto .625em auto;margin-left:-1.375em;margin-right:0;padding:0;list-style:none;overflow:hidden}
 ul.inline>li{list-style:none;float:left;margin-left:1.375em;display:block}
 ul.inline>li>*{display:block}
@@ -303,7 +308,8 @@ ol.lowergreek{list-style-type:lower-greek}
 td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
 td.hdlist1{font-weight:bold;padding-bottom:1.25em}
 .literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
-.colist>table tr>td:first-of-type{padding:0 .75em;line-height:1}
+.colist>table tr>td:first-of-type{padding:.4em .75em 0 .75em;line-height:1;vertical-align:top}
+.colist>table tr>td:first-of-type img{max-width:initial}
 .colist>table tr>td:last-of-type{padding:.25em 0}
 .thumb,.th{line-height:0;display:inline-block;border:solid 4px #fff;-webkit-box-shadow:0 0 0 1px #ddd;box-shadow:0 0 0 1px #ddd}
 .imageblock.left,.imageblock[style*="float: left"]{margin:.25em .625em 1.25em 0}
@@ -366,6 +372,7 @@ div.unbreakable{page-break-inside:avoid}
 .yellow{color:#bfbf00}
 .yellow-background{background-color:#fafa00}
 span.icon>.fa{cursor:default}
+a span.icon>.fa{cursor:inherit}
 .admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
 .admonitionblock td.icon .icon-note:before{content:"\f05a";color:#19407c}
 .admonitionblock td.icon .icon-tip:before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
@@ -427,8 +434,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 .listingblock .pygments .tok-err { border: 1px solid #FF0000 } /* Error */
 .listingblock .pygments .tok-k { color: #008000; font-weight: bold } /* Keyword */
 .listingblock .pygments .tok-o { color: #666666 } /* Operator */
+.listingblock .pygments .tok-ch { color: #408080; font-style: italic } /* Comment.Hashbang */
 .listingblock .pygments .tok-cm { color: #408080; font-style: italic } /* Comment.Multiline */
 .listingblock .pygments .tok-cp { color: #BC7A00 } /* Comment.Preproc */
+.listingblock .pygments .tok-cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
 .listingblock .pygments .tok-c1 { color: #408080; font-style: italic } /* Comment.Single */
 .listingblock .pygments .tok-cs { color: #408080; font-style: italic } /* Comment.Special */
 .listingblock .pygments .tok-gd { color: #A00000 } /* Generic.Deleted */
@@ -468,8 +477,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 .listingblock .pygments .tok-mh { color: #666666 } /* Literal.Number.Hex */
 .listingblock .pygments .tok-mi { color: #666666 } /* Literal.Number.Integer */
 .listingblock .pygments .tok-mo { color: #666666 } /* Literal.Number.Oct */
+.listingblock .pygments .tok-sa { color: #BA2121 } /* Literal.String.Affix */
 .listingblock .pygments .tok-sb { color: #BA2121 } /* Literal.String.Backtick */
 .listingblock .pygments .tok-sc { color: #BA2121 } /* Literal.String.Char */
+.listingblock .pygments .tok-dl { color: #BA2121 } /* Literal.String.Delimiter */
 .listingblock .pygments .tok-sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .listingblock .pygments .tok-s2 { color: #BA2121 } /* Literal.String.Double */
 .listingblock .pygments .tok-se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -480,9 +491,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 .listingblock .pygments .tok-s1 { color: #BA2121 } /* Literal.String.Single */
 .listingblock .pygments .tok-ss { color: #19177C } /* Literal.String.Symbol */
 .listingblock .pygments .tok-bp { color: #008000 } /* Name.Builtin.Pseudo */
+.listingblock .pygments .tok-fm { color: #0000FF } /* Name.Function.Magic */
 .listingblock .pygments .tok-vc { color: #19177C } /* Name.Variable.Class */
 .listingblock .pygments .tok-vg { color: #19177C } /* Name.Variable.Global */
 .listingblock .pygments .tok-vi { color: #19177C } /* Name.Variable.Instance */
+.listingblock .pygments .tok-vm { color: #19177C } /* Name.Variable.Magic */
 .listingblock .pygments .tok-il { color: #666666 } /* Literal.Number.Integer.Long */
 </style>
 </head>
@@ -496,7 +509,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#__span_class_icon_i_class_fa_fa_map_signs_i_span_plan">1. <span class="icon"><i class="fa fa-map-signs"></i></span> Plan</a></li>
+<li><a href="#_span_class_icon_i_class_fa_fa_map_signs_i_span_plan">1. <span class="icon"><i class="fa fa-map-signs"></i></span> Plan</a></li>
 <li><a href="#_avant_propos">2. Avant-propos</a>
 <ul class="sectlevel2">
 <li><a href="#_À_qui_est_destiné_ce_document">2.1. À qui est destiné ce document?</a></li>
@@ -525,9 +538,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel2">
 <li><a href="#_données_et_variables">6.1. Données et variables</a></li>
 <li><a href="#_en_merise">6.2. En Merise</a></li>
-<li><a href="#_diagramme_de_classe">6.3. Diagramme de classe</a></li>
-<li><a href="#_pour_dessiner_rapidement_de_l_uml">6.4. Pour dessiner rapidement de l&#8217;UML</a></li>
-<li><a href="#_exercices_de_révision">6.5. Exercices de révision</a></li>
+<li><a href="#_diagramme_de_classe">Diagramme de classe</a></li>
+<li><a href="#_pour_dessiner_rapidement_de_l_uml">Pour dessiner rapidement de l&#8217;UML</a></li>
+<li><a href="#_exercices_de_révision">Exercices de révision</a></li>
 </ul>
 </li>
 <li><a href="#UC">7. Diagramme des Cas d&#8217;Utilisation</a>
@@ -567,7 +580,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="__span_class_icon_i_class_fa_fa_map_signs_i_span_plan">1. <span class="icon"><i class="fa fa-map-signs"></i></span> Plan</h2>
+<h2 id="_span_class_icon_i_class_fa_fa_map_signs_i_span_plan">1. <span class="icon"><i class="fa fa-map-signs"></i></span> Plan</h2>
 <div class="sectionbody">
 <!-- toc disabled -->
 </div>
@@ -1504,13 +1517,15 @@ Mais les modèles de données de Merise ont été remplacés dans la pratique pa
 </table>
 </div>
 <div class="sect2">
-<h3 id="_diagramme_de_classe">6.3. Diagramme de classe</h3>
+<h3 id="_diagramme_de_classe">Diagramme de classe</h3>
 <div class="paragraph">
 <p>Nous souhaitons représenter les données manipulées par le système, ainsi
 que les relations entre ces données.</p>
 </div>
-<div class="paragraph">
-<p><span class="image"><img src="data:image/png;base64,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" alt="plantuml cd"></span></p>
+<div class="imageblock">
+<div class="content">
+<img src="data:image/png;base64,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" alt="plantuml cd" width="70" height="96">
+</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1529,13 +1544,15 @@ Pour l&#8217;instant considérons que les 2 sont équivalents.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_concept_de_strong_classe_strong">6.3.1. Concept de <strong>Classe</strong></h4>
+<h4 id="_concept_de_strong_classe_strong">Concept de <strong>Classe</strong></h4>
 <div class="paragraph">
 <p>Une <strong>classe</strong> est une représentation unique servant à caractériser
 un ensemble d’<strong>objets</strong> jouant un rôle identique et décrits par les mêmes <strong>attributs</strong>.</p>
 </div>
-<div class="paragraph">
-<p><span class="image"><img src="data:image/png;base64,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" alt="classe"></span></p>
+<div class="imageblock">
+<div class="content">
+<img src="data:image/png;base64,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" alt="plantuml cd">
+</div>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -1569,7 +1586,7 @@ différents diagrammes.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>1ère lettre d&#8217;une classe toujours en majuscule (la classe Comptes par exemple)</p>
+<p>1ère lettre d&#8217;une classe toujours en majuscule (la classe Compte par exemple)</p>
 </li>
 <li>
 <p>Pas de pluriel au nom des classes</p>
@@ -1582,7 +1599,7 @@ différents diagrammes.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_classes_et_objets">6.3.2. Classes et objets</h4>
+<h4 id="_classes_et_objets">Classes et objets</h4>
 <div class="paragraph">
 <p>En programmation on parle de type et de variable. Même si c&#8217;est un raccourci très rapide
 nous pouvons pour l&#8217;instant faire le parallèle entre les notions de classe et d'objet.</p>
@@ -1595,7 +1612,7 @@ nous pouvons pour l&#8217;instant faire le parallèle entre les notions de class
 </div>
 </div>
 <div class="sect3">
-<h4 id="_attributs">6.3.3. Attributs</h4>
+<h4 id="_attributs">Attributs</h4>
 <div class="paragraph">
 <p>Un <strong>attribut</strong> est une propriété représentative d’un objet
 (nom d’une personne, couleur d’une voiture, moyenne d’un étudiant&#8230;&#8203;).</p>
@@ -1633,13 +1650,6 @@ nous pouvons pour l&#8217;instant faire le parallèle entre les notions de class
 </tr>
 </table>
 </div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
 <div class="paragraph">
 <p>Les noms des attributs de type booléen seront précédés du préfixe est (<em>is</em> en anglais).</p>
 </div>
@@ -1649,10 +1659,10 @@ nous pouvons pour l&#8217;instant faire le parallèle entre les notions de class
 <div class="ulist">
 <ul>
 <li>
-<p>estMajeur vaut VRAI si une personne est majeure et FAUX si elle est mineure</p>
+<p><code>estMajeur</code> vaut <code>VRAI</code> si une personne est majeure et <code>FAUX</code> si elle est mineure</p>
 </li>
 <li>
-<p>estCadre vaut VRAI si une personne est cadre et FAUX sinon</p>
+<p>estCadre vaut <code>VRAI</code> si une personne est cadre et <code>FAUX</code> sinon</p>
 </li>
 </ul>
 </div>
@@ -1662,17 +1672,13 @@ interprétables, comme :</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">estMajeur</span><span class="tok-o">)</span>
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">estMajeur</span><span class="tok-o">)</span>
 	<span class="tok-o">...</span></code></pre>
 </div>
 </div>
-</td>
-</tr>
-</table>
-</div>
 </div>
 <div class="sect3">
-<h4 id="_identifiant">6.3.4. Identifiant</h4>
+<h4 id="_identifiant">Identifiant</h4>
 <div class="paragraph">
 <p>Un <strong>identifiant</strong> est un attribut particulier d’une classe dont les valeurs représentent
 sans ambiguïté chaque objet de la classe.</p>
@@ -1714,7 +1720,7 @@ sans ambiguïté chaque objet de la classe.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_association">6.3.5. Association</h4>
+<h4 id="_association">Association</h4>
 <div class="paragraph">
 <p>Une <strong>association</strong> est un ensemble de liens permanents existant entre les objets de deux ou plusieurs classes.
 On dira qu’une association lie plusieurs classes ou que les classes <strong>participent</strong> à l’association.</p>
@@ -1824,7 +1830,7 @@ de l&#8217;association) qui peuvent être en association avec un objet donné (d
 </div>
 </div>
 <div class="sect3">
-<h4 id="_représentation">6.3.6. Représentation</h4>
+<h4 id="_représentation">Représentation</h4>
 <div class="paragraph">
 <p>Représentation des classes</p>
 </div>
@@ -1845,7 +1851,7 @@ de l&#8217;association) qui peuvent être en association avec un objet donné (d
 </div>
 </div>
 <div class="sect3">
-<h4 id="_classe_association">6.3.7. Classe association</h4>
+<h4 id="_classe_association">Classe association</h4>
 <div class="paragraph">
 <p>Certains attributs ne dépendent pas d&#8217;une seule classe, mais de plusieurs.
 Exemple : le prix d&#8217;un produit selon le fournisseur qui le propose.</p>
@@ -1862,7 +1868,7 @@ Exemple : le prix d&#8217;un produit selon le fournisseur qui le propose.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_pour_dessiner_rapidement_de_l_uml">6.4. Pour dessiner rapidement de l&#8217;UML</h3>
+<h3 id="_pour_dessiner_rapidement_de_l_uml">Pour dessiner rapidement de l&#8217;UML</h3>
 <div class="paragraph">
 <p>Les schémas de cette section sont écrits en utilisant le langage <a href="http://plantuml.sourceforge.net/">PlantUML</a>.</p>
 </div>
@@ -1905,7 +1911,7 @@ Produits "0..*" -- "0..*" Fournisseurs : Fournir
 </div>
 </div>
 <div class="sect2">
-<h3 id="_exercices_de_révision">6.5. Exercices de révision</h3>
+<h3 id="_exercices_de_révision">Exercices de révision</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2081,19 +2087,19 @@ généralement un diagramme de séquence à un cas d&#8217;utilisation (clic dro
 <div class="ulist">
 <ul>
 <li>
-<p>\&lt;&lt;metaclass&gt;&gt;</p>
+<p>&lt;&lt;metaclass&gt;&gt;</p>
 </li>
 <li>
-<p>\&lt;&lt;utility&gt;&gt;</p>
+<p>&lt;&lt;utility&gt;&gt;</p>
 </li>
 <li>
-<p>\&lt;&lt;process&gt;&gt;</p>
+<p>&lt;&lt;process&gt;&gt;</p>
 </li>
 <li>
-<p>\&lt;&lt;thread&gt;&gt;</p>
+<p>&lt;&lt;thread&gt;&gt;</p>
 </li>
 <li>
-<p>\&lt;&lt;powertype&gt;&gt;</p>
+<p>&lt;&lt;powertype&gt;&gt;</p>
 </li>
 </ul>
 </div>
@@ -2105,11 +2111,11 @@ généralement un diagramme de séquence à un cas d&#8217;utilisation (clic dro
 <h4 id="_relations_entre_uc">7.1.3. Relations entre UC</h4>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">Extension (\&lt;&lt;extend&gt;&gt;)</dt>
+<dt class="hdlist1">Extension (&lt;&lt;extend&gt;&gt;)</dt>
 <dd>
 <p>Indique que l’UC source est <strong>éventuellement</strong> exécutée en complément de l’UC destination (cas particulier, erreur&#8230;&#8203;)</p>
 </dd>
-<dt class="hdlist1">Inclusion (\&lt;&lt;include&gt;&gt;)</dt>
+<dt class="hdlist1">Inclusion (&lt;&lt;include&gt;&gt;)</dt>
 <dd>
 <p>Indique qu’un UC est inclus <strong>obligatoirement</strong> dans un autre UC (notion de sous-programme par exemple)</p>
 </dd>
@@ -2321,7 +2327,7 @@ Int getKilometrage( );</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span class="tok-kn">package</span> <span class="tok-n">Catalogue</span><span class="tok-o">;</span>
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-kn">package</span> <span class="tok-nn">Catalogue</span><span class="tok-o">;</span>
 <span class="tok-kn">import</span> <span class="tok-nn">java.util.Date</span><span class="tok-o">;</span>
 
 <span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">Catalogue</span> <span class="tok-o">{</span>
@@ -2347,7 +2353,7 @@ Int getKilometrage( );</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span class="tok-kd">public</span> <span class="tok-kd">abstract</span> <span class="tok-kd">class</span> <span class="tok-nc">Personne</span> <span class="tok-o">{</span>
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-kd">public</span> <span class="tok-kd">abstract</span> <span class="tok-kd">class</span> <span class="tok-nc">Personne</span> <span class="tok-o">{</span>
 	<span class="tok-kd">private</span> <span class="tok-n">String</span> <span class="tok-n">nom</span><span class="tok-o">;</span>
 	<span class="tok-kd">private</span> <span class="tok-n">String</span> <span class="tok-n">prenom</span><span class="tok-o">;</span>
 	<span class="tok-kd">protected</span> <span class="tok-n">Date</span> <span class="tok-n">dateNaissance</span><span class="tok-o">;</span>
@@ -2374,14 +2380,14 @@ Int getKilometrage( );</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">A1</span> <span class="tok-o">{</span>
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">A1</span> <span class="tok-o">{</span>
 	<span class="tok-kd">private</span> <span class="tok-n">B1</span> <span class="tok-n">leB1</span><span class="tok-o">;</span>
 <span class="tok-o">}</span>
 <span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">A2</span> <span class="tok-o">{</span>
 	<span class="tok-kd">private</span> <span class="tok-n">B2</span> <span class="tok-n">lesB2</span><span class="tok-o">[</span> <span class="tok-o">];</span>
 <span class="tok-o">}</span>
 <span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">A3</span> <span class="tok-o">{</span>
-	<span class="tok-kd">private</span> <span class="tok-n">List</span> <span class="tok-n">lesB3</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-nf">ArrayList</span><span class="tok-o">();</span>
+	<span class="tok-kd">private</span> <span class="tok-n">List</span> <span class="tok-n">lesB3</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">ArrayList</span><span class="tok-o">();</span>
 <span class="tok-o">}</span></code></pre>
 </div>
 </div>
@@ -2394,7 +2400,7 @@ Int getKilometrage( );</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span class="tok-kn">package</span> <span class="tok-n">Bibliotheque</span><span class="tok-o">;</span>
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-kn">package</span> <span class="tok-nn">Bibliotheque</span><span class="tok-o">;</span>
 <span class="tok-kn">import</span> <span class="tok-nn">Catalogue</span><span class="tok-o">;</span>
 
 <span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">Bibliotheque</span> <span class="tok-o">{</span>
@@ -2419,7 +2425,7 @@ Int getKilometrage( );</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">Emploi</span> <span class="tok-o">{</span>
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">Emploi</span> <span class="tok-o">{</span>
 	<span class="tok-kd">private</span> <span class="tok-n">String</span> <span class="tok-n">titre</span>
 	<span class="tok-kd">private</span> <span class="tok-n">Double</span> <span class="tok-n">salaire</span><span class="tok-o">;</span>
 	<span class="tok-kd">private</span> <span class="tok-n">Employe</span> <span class="tok-n">salarie</span><span class="tok-o">;</span>
@@ -2680,7 +2686,7 @@ Pour l&#8217;instant ce document est libre d&#8217;utilisation et géré par la 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-03-14 13:26:44 CET
+Last updated 2018-02-04 20:51:39 CET
 </div>
 </div>
 </body>
