@@ -8,7 +8,7 @@ La prime annuelle versée par chaque assuré pour un véhicule est calculée en 
 
 En début d'année (le 15 janvier), un certain nombre de traitements batch devront être exécutés pour calculer les primes et éditer les avis d'échéance des clients triés par département. Un avis d'échéance concerne un assuré et comporte son numéro d’assuré, son nom, son adresse, la date d'obtention de son permis de conduire, l'indication éventuelle « jeune conducteur », le montant total de sa prime et la liste des véhicules assurés. Pour chaque véhicule assuré sont indiqués la marque, le genre, la puissance fiscale, le type de contrat souscrit, la catégorie de tarif, la prime de base, la majoration éventuelle, le pourcentage de bonus-malus et le montant à payer (on n'envisagera pas ici les calculs de TVA).
 
-Les assurés ont jusqu'au 15 février pour régler leur prime. Les paiements sont enregistrés en mode transactionnel (interactif) au fur et à mesure de leur arrivée entre le 15 janvier et le 15 février par du personnel intérimaire habilité à effectuer cette opération. Les relances pour non-paiement ne sont pas envisagées ici. 
+Les assurés ont jusqu'au 15 février pour régler leur prime. Les paiements sont enregistrés en mode transactionnel (interactif) au fur et à mesure de leur arrivée entre le 15 janvier et le 15 février par du personnel intérimaire habilité à effectuer cette opération. Les relances pour non-paiement ne sont pas envisagées ici.
 
 Tous les vendredis, des employés saisissent les dossiers d'accidents constitués dans la semaine en enregistrant les propriétés suivantes : identification du véhicule de l'assuré impliqué dans l'accident, expert nommé, date d'ouverture du dossier, description sommaire de l'accident, autres véhicules impliqués dans l'accident (tiers). L'un des tiers peut être un assuré de la même compagnie. On parlera alors de « tiers interne ». Dans le cas contraire (« tiers externe ») et s’il n’est pas déjà connu, il faut saisir les propriétés du véhicule et de son propriétaire ainsi que la compagnie d'assurances qui l'assure (toutes les compagnies existantes sont répertoriées avec leur raison sociale, leur téléphone et leur adresse). Remarquons qu'un même assuré peut avoir plusieurs dossiers en cours concernant le même véhicule et/ou des véhicules différents.
 
@@ -21,13 +21,13 @@ Les chargés de dossier devront réaliser les traitements suivants afin de trait
 - le chèque d'indemnisation éventuel de l'assuré aura été émis,
 - le chèque de paiement des honoraires de l'expert aura été émis.
 
-ifdef::slides[:leveloffset: -1] 
+ifdef::slides[:leveloffset: -1]
 === Questions
 
 1.	Réaliser le diagramme des UC après avoir défini les acteurs principaux et secondaires.
-2.	A partir du jeu d’essai donné par l’enseignant au tableau, construire le Diagramme des Classes métier (sans les méthodes).
+2.	À partir du jeu d’essai donné en annexe, construire le Diagramme des Classes métier (sans les méthodes).
 3.	Construire le SNI (à partir des 2 diag. précédents)
-4.	Construire un diagramme de Paquetages respectant l’architecture MVC puis réaliser un diagramme de classes pour chaque paquetage (M, V et C). 
+4.	Construire un diagramme de Paquetages respectant l’architecture MVC puis réaliser un diagramme de classes pour chaque paquetage (M, V et C).
 5.	Construire le diagramme de séquence système pour l’UC « Saisie des dossiers accidents ».
 6.	Construire le diagramme de séquence de l’UC « Saisie des dossiers accidents ».
 7.	Compléter le diagramme des classes participantes de cet UC
@@ -40,7 +40,7 @@ Voici un exemple : Le dossier accident D34 correspond à un même accident entre
 image::assurauto.png[width="60%",alt="Exemple"]
 
 //----------------------------------------------------- Correction -------------------------
-ifdef::correction[] 
+ifdef::correction[]
 :leveloffset: 1
 == Correction
 
@@ -62,8 +62,8 @@ Les cas d'utilisation :
 
 - UC01 (+EnvEch+) : Envoi des avis d'échéance le 15 janvier (Batch)
 - UC02 (+SPrimes+): Saisie des paiements des primes (entre le 15/01 et le 15/02))
-- UC03 (+SDoss+): Saisie des dossiers accidents 
-- UC04 (+GesDoss+): Gestion des dossiers accidents 
+- UC03 (+SDoss+): Saisie des dossiers accidents
+- UC04 (+GesDoss+): Gestion des dossiers accidents
 
 image::assurauto-uc.png[width="70%",alt="uc"]
 
@@ -107,11 +107,11 @@ include::PlantUML-AssurAuto-DSS.txt[]
 
 === Construire le diagramme de séquence de l’UC « Saisie des dossiers accidents ».
 
-Pour l’implémentation, on a choisi de créer une base de données avec une table pour chaque classe métier. 
+Pour l’implémentation, on a choisi de créer une base de données avec une table pour chaque classe métier.
 
-Pour le package +IHM+, on pourra créer des classes Java (JFrame ou JDialog). 
+Pour le package +IHM+, on pourra créer des classes Java (JFrame ou JDialog).
 
-Pour le package +Application+, on pourra créer des classes java standard. 
+Pour le package +Application+, on pourra créer des classes java standard.
 
 [NOTE]
 =====
@@ -133,7 +133,6 @@ include::PlantUML-AssurAuto-DS.txt[]
 image::assurauto-dcp.png[width="60%",alt="Exemple"]
 
 :leveloffset: 0
-endif::correction[] 
+endif::correction[]
 
 //----------------------------------------------------- fin Correction -------------------------
-

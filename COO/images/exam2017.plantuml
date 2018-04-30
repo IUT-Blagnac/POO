@@ -1,0 +1,24 @@
+@startuml
+
+' definitions
+' -----------
+hide circle
+hide empty methods
+hide empty attributes
+
+interface Odwal
+abstract Dwael
+class Schpounz {
+	float glymph
+}
+Schpounz *--> "myXorgs 0..*" Xorg
+class Xorg {
+	int shlup
+}
+Xorg "*" - "1" Dwael
+Xorg "*"-->"*" Uhgt
+class Uhgt implements Odwal
+Dwael<|--Dwaelum
+Dwael<|--Dwaelix
+
+@enduml

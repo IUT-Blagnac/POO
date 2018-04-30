@@ -32,6 +32,7 @@
 :deckjsite: http://houqp.github.io/asciidoc-deckjs/[deckjs]
 :deckjsweb: http://houqp.github.io/asciidoc-deckjs/[deckjs]
 :devs: link:http://fr.wikipedia.org/wiki/Discrete_Event_System_Specification[DEVS]
+:discord: https://discordapp.com/[Discord]
 :docbook: http://www.docbook.org/[DocBook]
 :doors: http://www-03.ibm.com/software/products/fr/fr/ratidoor/[DOORS(TM)]
 :ea: http://www.sparxsystems.com.au/products/mdg/tech/sysml/index.html[Enterprise Architect]
