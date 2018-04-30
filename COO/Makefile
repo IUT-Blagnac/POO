@@ -71,7 +71,6 @@ pattern/%.png: pattern/%.plantuml
 $(OUTPUT)/%.slides.html: %.$(EXT)
 	@echo '==> Compiling asciidoc files to generate Deckjs'
 	$(ASCIIDOCTOR) -b dzslides \
-	-a stylesheet=../../font-awesome-4.5.0/css/font-awesome.min.css \
 	-T $(DZSLIDES) -E slim \
 	-a slides \
 	-r asciidoctor-diagram \
