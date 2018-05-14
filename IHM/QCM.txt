@@ -1,0 +1,32 @@
+//QCM sur la partie Modelisation (au format GIFT)
+
+::Q1:: SNI signifie : {
+=Schéma de Navigation d'Interface
+~Schéma Navigationnel d'IHM
+~Séquence de Navigation et d'Interaction
+}
+
+::Q2:: On fait toujours un SNI à paritr d'un diagramme de classe UML {F}
+
+::Q3:: Les menus (diamands) ne se trouvent que sous les collections d'objets {F}
+
+::Q4:: Pour un diagramme de classe donné, il n'existe qu'un seul SNI possible {F}
+
+::Q5:: En général, si l'on considère un SNI comme un graphe, à chaque noeud de graphe, on fera correspndre une maquette d'écran {T}
+
+::Q6:: Parmi ces liens entre éléments de SNI, lesquels peuvent correspondre à une association UML 1--* entre
+une classe A (côté 1) et une classe B (côté *) {
+   ~%-100%Collection de A -> Objet B
+   ~%50%Collection de A -> Collection de B
+   ~%50%Objet A -> Collection de B
+   ~%-100%Objet A -> Objet B
+}
+
+::Q7:: Balsamiq est un outil de dessin d'écran {T}
+
+::Q8:: Balsamiq permet de générer du code Android {F}
+
+::Q9:: On fait toujours le SNI avant les maquettes d'écrans {F}
+
+::Q10:: Il est primordial de vérifier la cohérence entre la navigation 
+dans un SNI et celle dans le diagramme de classe correspondant {T}
