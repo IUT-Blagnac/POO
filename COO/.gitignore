@@ -3,4 +3,10 @@
 *.html
 images/diag-*.png
 *.css
+Projets2018
+*.log
+deck.js
+../*.html
+../IHM/*.html
+
 
