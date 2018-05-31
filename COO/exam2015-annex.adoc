@@ -1,0 +1,24 @@
+= Annexes Exam 2015 BCOO
+
+:numbered!:
+
+== BonCommande.java
+
+[source,java]
+-----
+include::BonCommande.java[]
+-----
+
+== Facture.java
+
+[source,java]
+-----
+include::Facture.java[]
+-----
+
+== getPayeArtisan.java
+
+[source,java]
+-----
+include::getPayeArtisan.java[]
+-----
