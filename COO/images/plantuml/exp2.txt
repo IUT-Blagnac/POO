@@ -1,17 +1,21 @@
 @startuml
 
-class Produits {
-	idPro
+class Produit {
 	designation
 	poids
 }
-class Fournisseurs {
-	idFour
+class Fournisseur {
 	raisonSociale
 	adresse
 }
 
-Produits "0..*" -- "0..*" Fournisseurs : Fournir
+Produit "0..*" -- "0..*" Fournisseur
+(Produit, Fournisseur) . Fournir	
+
+class Fournir {
+	prixAchat
+}
+
 hide class circle
 hide class methods
 

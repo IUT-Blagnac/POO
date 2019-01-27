@@ -1,5 +1,5 @@
 @startuml
-class Voyages {
+class Voyage {
 	libelle
 	destination
 	depart
@@ -16,43 +16,43 @@ class TourOperator {
 	prixMoyenVoyages()
 }
 
-class Options {
+class Option {
 	libelle
 	getLibelle()
 }
 
-Voyages "1..*" --- "1" TourOperator : Proposer
+Voyage "1..*" --- "1" TourOperator : Proposer
 
-Voyages "0..*" -- "0..*" Options
+Voyage "0..*" -- "0..*" Option
 
-Voyages "1" -- "0..*" Commandes : Commander
+Voyage "1" -- "0..*" Commande : Commander
 
-class Commandes {
+class Commande {
 	date
 	etat
 	afficherDetails()
 	getEtat()
 }
 
-class Voyageurs {
+class Voyageur {
 	nom
 	prenom
 	sexe
 	dateNaissance
 }
 
-class Clients {
+class Client {
 	nom
 	adresse
 	telephone
 	afficherCommandes()
 }
 
-Commandes "1..*" -- "1..*" Voyageurs : Concerner
+Commande "1..*" -- "1..*" Voyageur : Concerner
 
-Clients "1" -- "1..*" Commandes : Passer
+Client "1" -- "1..*" Commande : Passer
 
-(Voyages, Options) . PayerOption
+(Voyage, Option) . PayerOption
 
 class PayerOption {
 	montant

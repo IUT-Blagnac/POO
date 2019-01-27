@@ -1,0 +1,10 @@
+@startuml
+class Client {
+idClient
+nom
+prenom
+soldeCompte
+}
+hide circle
+hide empty methods
+@enduml
