@@ -1,22 +1,63 @@
 @startuml
 
-class Produit {
-	designation
-	poids
-}
-class Fournisseur {
-	raisonSociale
-	adresse
-}
+class TO as "TourOperator"
 
-Produit "0..*" -- "0..*" Fournisseur
-(Produit, Fournisseur) . Fournir	
-
-class Fournir {
-	prixAchat
+class TO {
+idTO
+nom
+adresse
 }
 
+class Voyage {
+idVoyage
+libelle
+lieuDepart
+lieuArrivee
+dateDepart
+dateArrivee
+prixBase
+}
+
+class Option {
+'prix
+libelle
+}
+
+Option -- Voyage
+(Option, Voyage) . Cout
+
+class Cout {
+prix
+}
+Voyage "*" -- "1" TO
+class Client {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'-----------------------------
 hide class circle
-hide class methods
+hide empty methods
+hide empty attributes
+
+'Produit "0..*" -- "0..*" Fournisseur
+'(Produit, Fournisseur) . Fournir	
+
 
 @enduml
