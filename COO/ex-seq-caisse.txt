@@ -22,7 +22,7 @@ Le déroulement normal d’utilisation d’une caisse de supermarché est le sui
 
 - Modéliser le _use case_ +PayerCourses+ à l’aide d’un diagramme de séquence en ne prenant en compte que le cas du paiement en liquide.
 
-image:ex-seq-caisse-uc.png[width="40%"]
+image:ex-seq-caisse-uc.png[width="40%",pdfwidth="70%"]
 
 //----------------------------------------------------- Correction -------------------------
 ifdef::correction[]

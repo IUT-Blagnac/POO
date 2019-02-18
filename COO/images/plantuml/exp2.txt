@@ -1,6 +1,6 @@
 @startuml
 
-class TO as "TourOperator"
+class TO as "TourOperators"
 
 class TO {
 idTO
