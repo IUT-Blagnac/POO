@@ -8,7 +8,6 @@ On ne se préoccupe pas du paradigme MVC pour cet exercice.
 A partir du diagramme des classes simplifié de la société IUT présenté ci-dessous
 on se propose de rajouter les méthodes et les attributs permettant de répondre aux besoins
 supplémentaires exprimés par les utilisateurs.
-
 Les besoins exprimés sont les suivants :
 
 - Renseigner la date de fin de chantier (clôture d’un chantier).
@@ -22,11 +21,11 @@ d’un modèle.
 - Obtenir le montant des rémunérations d’un artisan pour un chantier donné sur lequel il
 a travaillé.
 
-image::td2.png["Société IUT",width="80%"]
+image::td2.png["Société IUT",width="80%",pdfwidth="50%"]
 
 ifdef::slides[:leveloffset: -1]
 
-=== Questions
+//=== Questions
 
 . Rajouter les attributs et les méthodes nécessaires sur le diagramme de classes.
 . Ecrire le code Java de la méthode +getPayeArtisan(...)+.

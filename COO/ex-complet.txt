@@ -37,7 +37,7 @@ ifdef::slides[:leveloffset: -1]
 Voici un exemple : Le dossier accident D34 correspond à un même accident entre 2 assurés de la MAIF, ce qui donne lieu à 1 seul dossier pour plusieurs véhicules (notion de « tiers interne »). D75 est un accident sans tiers. D12 et D98 sont des accidents différents avec un même tiers externe.
 
 
-image::assurauto.png[width="60%",alt="Exemple"]
+image::assurauto.png[width="60%",alt="Exemple",pdfwidth="100%"]
 
 //----------------------------------------------------- Correction -------------------------
 ifdef::correction[]

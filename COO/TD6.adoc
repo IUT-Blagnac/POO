@@ -1,7 +1,7 @@
 :moduleTitle: BCOO
 :authorDefault:  Dut/Info-S2/M2104
 // include::lib/globals.asc[] // temporairement
-:tdnum: TD 7
+:tdnum: TD 6
 
 ifdef::eleve[]
 :doctitle:  {moduleTitle} - Sujet {tdnum}
@@ -54,27 +54,11 @@ endif::prof[]
 |======================
 | {pre}		|
 1.	Je connais les conventions d’écriture du Diagramme de séquences
-2.  Je connais le paradigme MVC vu en cours
+2.  Je sais écrire des méthodes Java et les attribuer aux bonnes classes.
 | {objtd}	| Faire des diagrammes de séquences proche du code
-| {duree}	| *2 (ou 3 si besoin) séances* de 1,5h
+| {duree}	| *1 séance* de 1,5h
 |======================
 
 // // | {depot}	| -
 
-== Rappel des concepts importants
-
-Le paradigme **M**odèle-**V**ue-**C**ontrôleur, ou *MVC* (de l'anglais _Model-View-Controller_) est une architecture logicielle qui divise l’application en trois éléments importants (cf. <<mvc,MVC ci-dessous>>) :
-
-*le modèle*::
-	chargé de gérer les élements d'information (comme la base de donnée)
-*les vues*::
- 	interfaces entre l'application et l'utilisateur
-*les contrôleurs*::
-	chargés de faire le lien entre vues et modèle.
-
-[[mvc]]
-.Séparation des préoccupations dans le MVC
-image::mvc.png["MVC",width="50%",pdfwidth="70%"]
-
-
-include::ex-complet.txt[]
+include::ex-seq-chantier.txt[]
