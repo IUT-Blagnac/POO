@@ -2,7 +2,7 @@
 //  Created by Jean-Michel Bruel on 2018-04-30.
 //  Copyright (c) 2018 IRIT/U. Toulouse. All rights reserved.
 // ------------------------------------------
-:title: *Projet* BCOO 2018
+:title: *Projet* BCOO 2019
 // ------------------------------------------
 :doctype: article
 :description:
@@ -56,7 +56,7 @@ endif::definitions[]
 :slidesurl: http://jmbhome.heroku.com/talks
 :images: images
 
-= *Projet* BCOO 2018
+= *Projet* BCOO 2019
 Jean-Michel Bruel - {localdate}
 
 // ------------------------------------------ plan
@@ -70,10 +70,10 @@ ifdef::slides[:leveloffset: -1]
 === icon:map-signs[] Déroulement du projet
 
 [{incremental}]
-- Outils pour le projet [detail]#(2 semaines)#
-- Semaine IHM 
-- Rétro-Ingénierie [detail]#(2 semaines)#
-- Conception [detail]#(3 semaines)#
+- Outils pour le projet [detail]#(2 semaines 16 & 19)#
+- Semaine IHM [detail]#(semaine 20)#
+- Rétro-Ingénierie [detail]#(2 semaines 19 & 21)#
+- Conception [detail]#(3 semaines 23, 24 & 25)#
 
 ifdef::slides[:leveloffset: 0]
 
