@@ -1,0 +1,131 @@
+:moduleTitle: BCOO
+:authorDefault:  Dut/Info-S2/M2104
+// include::lib/globals.asc[] // temporairement
+:tdnum: TD 8
+
+ifdef::eleve[]
+:doctitle:  {moduleTitle} - Sujet {tdnum}
+endif::eleve[]
+ifdef::prof[]
+:doctitle: {moduleTitle} - Support {tdnum}
+endif::prof[]
+ifdef::todoprof[]
+:doctitle: {moduleTitle} - DEROULEMENT SEANCE PROF {tdnum}
+endif::todoprof[]
+
+= {doctitle}
+:Author:  {authorDefault}
+:lang: fr
+:slideshowlocation: IUT Blagnac
+:copyright: {date={localdate}}, {slideshowlocation} *** {author} *** Powered by AsciiDoc and W3C Slidy &#169;
+:incremental:
+:source-highlighter: pygments
+:numbered: true
+:iconsdir: icons/
+:icons: true
+:dessins: /Users/bruel/Dropbox/Public/dev/ACSI/dessins
+
+// eleve : sujet pour élèves
+// prof : support prof pour séance
+// todoprof : support AVEC EXPLICATIOSN DEROULEMENT pour profs
+
+//----------- définitions --------------
+:sitecours: http://webetud.iut-blagnac.fr/[Support de Cours]
+:pre: PreReq
+:objtd: ObjTD
+:duree: Durée
+:depot: À rendre
+:lien: Lien
+:img: img
+
+:asciidoc: http://www.methods.co.nz/asciidoc[AsciiDoc]
+:gitlab: icon:gitlab[] Gitlab
+:gitlabIUT: https://gitlab.iut-blagnac.fr/
+:git: link:{giturl}[icon:git[]]
+:plantuml: http://plantuml.com/fr/[plantUML]
+:jmb: mailto:jbruel@gmail.com[JMB]
+:tortoise: https://tortoisegit.org/[Tortoise]
+:asciidoctor: http://asciidoctor.org[Asciidoctor]
+:eclipse: https://www.eclipse.org/[eclipse]
+:yed: https://www.yworks.com/products/yed[yEd]
+
+//-------------------- Warning si correction -----------
+ifdef::prof[]
+[CAUTION]
+.Version corrigée
+=====
+Cette version comporte des indications pour les
+réponses aux exercices.
+=====
+endif::prof[]
+
+//-------------------- Cartouche d'en-tête -----------
+[[cartouche]]
+[align="left",cols="1,10",width="90%"]
+|======================
+| {pre}		|
+1.	Je connais la modélisation UML
+2.  J'ai conscience qu'il me faut des outils pour travailler en groupe
+| {objtd}	| Manipuler les outils {git}, {gitLab}, {plantuml} et {asciidoc}
+| {duree}	| *2 séances* de 1,5h de TP sur machine
+|======================
+
+// // | {depot}	| -
+
+== Organisation des groupes
+
+Validez la constitution de votre groupe auprès de votre enseignant de TD/TP.
+
+NOTE: Cette année c'est lui qui fait les groupes aléatoirement!
+
+== Installation et vérification
+
+. Vérifiez (si vous utilisez les machines de l'IUT) ou installez les outils suivants :
+
+- {git} (version `2.17`). 
+NOTE: Ouvrez le terminal "GitBash" sur les machines Windows de l'IUT pour vérifier votre version de git (aucune importance si ce n'est pas la toute dernière).
+- Pour les utilisateurs Windows : {tortoise}
+- http://asciidoctor.org[Asciidoctor] (version `2.0.6`).
+
+== icon:gitlab[] Gitlab
+
+. Connectez-vous sur {gitlabIUT} (icon:users[] tous les membres du groupe)
++
+[NOTE]
+=====
+- L'accès se fait avec vos comptes _Active Directory_ donnés par le prof.
+- Si le serveur est indisponible ou vos comptes pas encore créés, utilisez un dépôt git de votre choix, ou bien passez cette étape pour l'instant.
+=====
++
+. icon:users[] Découvrez l'environnement, les menus et configurez votre profil
+. icon:users[] Désignez un chef de projet icon:user-md[] pour cette séance.
+. icon:user-md[] Le Chef de Projet créé un dépôt respectant la nomenclature : `COO2019-G[1|2|3|4][1|2|3|...]`.
+  Où le 1er numéro est le numéro du groupe de TD (entre 1 et 4),
+  suivi d'un numéro de groupe (6 groupes de 4 étudiants max par groupe TP) donné par le prof.
+. icon:user-md[] Le Chef de Projet ajoute tous les autres membres du groupe, ainsi que le prof de TD/TP icon:male[], ainsi que {jmb} (utilisateur `jmbruel`,
+  en tant que Product Owner).
+. Remplissez les champs pour votre projet (description, etc.)
+. Rédigez un `README.adoc` d'accueil pour votre projet (composition de votre équipe, liens divers, etc.)
++
+NOTE: Cf. <<doc>>.
+
+== Versionner du code
+
+Vous allez maintenant utiliser le dépôt {git} créé sur {gitlab} pour versionner votre code et tester les commandes {git} de base.
+
+Suivez le petit tutoriel suivant et faites des tests en utilisant les commandes en ligne (gitbash sous windows) puis les commandes {tortoise}.
+
+[[doc]]
+== Faire les docs en ASCIIDOC 
+
+En consultant la documentation {asciidoc}, complétez votre fichier `README.adoc`.
+
+== Utilisation de plantUML
+
+Testez {plantuml} en utilisant {eclipse} ou directement en ligne : https://www.planttext.com/.
+
+== SNI
+
+En utilisant le ligiciel de dessin de votre choix, réalisez un SNI de l'application _What's On_.
+
+NOTE: Il existe un plugin {eclipse} pour le sni, mais personnellement, j'utilise {yed} (vous pouvez télécharger un exemple link:TourOperator-SNI.graphml[ici], et même dessiner sans rien installer en utilisant l'éditeur en ligne : https://www.yworks.com/yed-live/).
