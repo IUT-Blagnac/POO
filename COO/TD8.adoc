@@ -113,12 +113,23 @@ NOTE: Cf. <<doc>>.
 
 Vous allez maintenant utiliser le dépôt {git} créé sur {gitlab} pour versionner votre code et tester les commandes {git} de base.
 
-Suivez le petit tutoriel suivant et faites des tests en utilisant les commandes en ligne (gitbash sous windows) puis les commandes {tortoise}.
+Suivez le petit tutoriel suivant : http://rogerdudler.github.io/git-guide/.
+Faites des tests en utilisant les commandes en ligne (gitbash sous windows) puis les commandes {tortoise}.
+
+Et pour ceux qui veulent aller plus loin en s'amusant : https://learngitbranching.js.org/
+
+.Résumé des commandes {git} à connaitre
+image::git-resume.png[width=80%]
 
 [[doc]]
 == Faire les docs en ASCIIDOC 
 
+image::zen-screenshot2.png[]
+
+
 En consultant la documentation {asciidoc}, complétez votre fichier `README.adoc`.
+
+NOTE: Pour vous inspirer, vous pouvez regarder link:TD8.adoc[le source de ce TD]!
 
 == Utilisation de plantUML
 
@@ -129,3 +140,13 @@ Testez {plantuml} en utilisant {eclipse} ou directement en ligne : https://www.p
 En utilisant le ligiciel de dessin de votre choix, réalisez un SNI de l'application _What's On_.
 
 NOTE: Il existe un plugin {eclipse} pour le sni, mais personnellement, j'utilise {yed} (vous pouvez télécharger un exemple link:TourOperator-SNI.graphml[ici], et même dessiner sans rien installer en utilisant l'éditeur en ligne : https://www.yworks.com/yed-live/).
+
+:numbered!:
+== Liens utiles
+
+- Explications sur {git} en français : https://openclassrooms.com/fr/courses/1233741-gerez-vos-codes-source-avec-git
+- Un site interactif pour apprendre les branches en {git} (pas au programme de ce semestre) : https://learngitbranching.js.org/
+- Le guide de {tortoise} spécifique à {git} : https://tortoisegit.org/docs/tortoisegit/
+
+
+
