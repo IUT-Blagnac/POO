@@ -1,3 +1,4 @@
+
 :definitions:
 :slidesurl: http://jmbhome.github.io/talks
 

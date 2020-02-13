@@ -1,0 +1,16 @@
+@startuml
+hide circle
+class Personne {
+nom
+prenom
+dateNaissance
+static ageMajorite = 18
+calculerDureePret(); {abstract}
+setAgeMajorite();
+}
+class Adherent extends Personne {
+id
+calculerDureePret();
+getAge();
+}
+@enduml

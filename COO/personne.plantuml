@@ -1,0 +1,6 @@
+digraph { 
+  Caractéristique -> Opération [label="calcul"]
+  Caractéristique -> Attribut [label="mémoire"]
+  Opération -> Méthode [label="pas de résultat"]
+  Opération -> Fonction [label="retourne un résultat"]
+} 

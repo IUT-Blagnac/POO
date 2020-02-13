@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="233px" preserveAspectRatio="none" style="width:305px;height:233px;" version="1.1" viewBox="0 0 305 233" width="305px" zoomAndPan="magnify"><defs><filter height="300%" id="f19olmzyecmlp4" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--class Personne--><rect fill="#FEFECE" filter="url(#f19olmzyecmlp4)" height="70.998" id="Personne" style="stroke: #A80036; stroke-width: 1.5;" width="59" x="6" y="8"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="53" x="9" y="24.6016">Personne</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="64" y1="32.1328" y2="32.1328"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="42" x="12" y="46.7676">numero</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="24" x="12" y="59.7227">nom</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="42" x="12" y="72.6777">adresse</text><!--class Employe--><rect fill="#FEFECE" filter="url(#f19olmzyecmlp4)" height="58.043" id="Employe" style="stroke: #A80036; stroke-width: 1.5;" width="65" x="100" y="14.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="49" x="108" y="31.1016">Employe</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="101" x2="164" y1="38.6328" y2="38.6328"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="35" x="106" y="53.2676">salaire</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="53" x="106" y="66.2227">numINSEE</text><!--class CompteBancaire--><rect fill="#FEFECE" filter="url(#f19olmzyecmlp4)" height="70.998" id="CompteBancaire" style="stroke: #A80036; stroke-width: 1.5;" width="100" x="194.5" y="145.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="94" x="197.5" y="162.1016">CompteBancaire</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="195.5" x2="293.5" y1="169.6328" y2="169.6328"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="42" x="200.5" y="184.2676">numero</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="29" x="200.5" y="197.2227">solde</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="78" x="200.5" y="210.1777">dateOuverture</text><!--class Banque--><rect fill="#FEFECE" filter="url(#f19olmzyecmlp4)" height="70.998" id="Banque" style="stroke: #A80036; stroke-width: 1.5;" width="54" x="209.5" y="8"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="43" x="215" y="24.6016">Banque</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="210.5" x2="262.5" y1="32.1328" y2="32.1328"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="42" x="215.5" y="46.7676">numero</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="35" x="215.5" y="59.7227">capital</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="42" x="215.5" y="72.6777">adresse</text><!--class Agence--><rect fill="#FEFECE" filter="url(#f19olmzyecmlp4)" height="83.9531" id="Agence" style="stroke: #A80036; stroke-width: 1.5;" width="54" x="105.5" y="139"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="42" x="111.5" y="155.6016">Agence</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="106.5" x2="158.5" y1="163.1328" y2="163.1328"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="42" x="111.5" y="177.7676">numero</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="24" x="111.5" y="190.7227">nom</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="42" x="111.5" y="203.6777">adresse</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="21" x="111.5" y="216.6328">ville</text><!--link Employe to Agence--><path d="M132.5,72.6602 C132.5,91.8952 132.5,117.4021 132.5,138.8345 " fill="none" id="Employe-Agence" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="6" x="125.8438" y="93.2772">*</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="24" x="106.5125" y="128.2066">0..1</text><!--link Personne to Employe--><path d="M85.1598,43.5 C90.0503,43.5 94.9407,43.5 99.8312,43.5 " fill="none" id="Personne-Employe" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="85.0547,50.4999,65.0547,43.5,85.0547,36.4999,85.0547,50.4999" style="stroke: #A80036; stroke-width: 1.0;"/><!--link Banque to Agence--><path d="M201.46,89.8269 C187.8632,107.8035 172.5291,128.0769 159.7791,144.9339 " fill="none" id="Banque-Agence" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="209.4467,79.2676,202.637,81.64,202.2078,88.8383,209.0175,86.4659,209.4467,79.2676" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="8" x="193.4893" y="84.1196">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="6" x="167.5381" y="131.3842">*</text><!--link Banque to CompteBancaire--><path d="M238.581,79.2676 C239.6644,97.8873 240.9938,120.7371 242.1181,140.0611 " fill="none" id="Banque-CompteBancaire" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="242.4294,145.4115,245.8999,136.1944,242.139,140.4199,237.9134,136.659,242.4294,145.4115" style="stroke: #A80036; stroke-width: 1.0;"/><!--link Agence to CompteBancaire--><path d="M159.625,181 C169.5065,181 179.3881,181 189.2696,181 " fill="none" id="Agence-CompteBancaire" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="#A80036" points="194.437,181,185.437,177,189.437,181,185.437,185,194.437,181" style="stroke: #A80036; stroke-width: 1.0;"/><!--
+@startuml
+
+hide circle
+hide empty members
+hide methods
+hide footbox
+
+
+class Personne{
+    numero
+    nom
+    adresse
+}
+
+class Employe{
+    salaire
+    numINSEE
+}
+
+class CompteBancaire{
+    numero
+    solde
+    dateOuverture
+}
+
+class Banque{
+    numero
+    capital
+    adresse
+}
+
+class Agence{
+    numero
+    nom
+    adresse
+    ville
+}
+
+Employe "*"- -"0..1" Agence
+Personne <|- Employe
+Banque "1"*- -"*" Agence
+Banque - -> CompteBancaire
+Agence .> CompteBancaire
+@enduml
+
+PlantUML version 1.2019.06(Fri May 24 19:10:25 CEST 2019)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_152-b16
+Operating System: Mac OS X
+OS Version: 10.14.5
+Default Encoding: UTF-8
+Language: fr
+Country: FR
+--></g></svg>

@@ -103,7 +103,7 @@ NOTE: Ouvrez le terminal "GitBash" sur les machines Windows de l'IUT pour vérif
   Où le 1er numéro est le numéro du groupe de TD (entre 1 et 4),
   suivi d'un numéro de groupe (6 groupes de 4 étudiants max par groupe TP) donné par le prof.
 . icon:user-md[] Le Chef de Projet ajoute tous les autres membres du groupe, ainsi que le prof de TD/TP icon:male[], ainsi que {jmb} (utilisateur `jmbruel`,
-  en tant que Product Owner).
+  en tant que `Maintainer`).
 . Remplissez les champs pour votre projet (description, etc.)
 . Rédigez un `README.adoc` d'accueil pour votre projet (composition de votre équipe, liens divers, etc.)
 +
@@ -126,7 +126,6 @@ image::git-resume.png[width=80%]
 
 image::zen-screenshot2.png[]
 
-
 En consultant la documentation {asciidoc}, complétez votre fichier `README.adoc`.
 
 NOTE: Pour vous inspirer, vous pouvez regarder link:TD8.adoc[le source de ce TD]!
@@ -137,7 +136,7 @@ Testez {plantuml} en utilisant {eclipse} ou directement en ligne : https://www.p
 
 == SNI
 
-En utilisant le ligiciel de dessin de votre choix, réalisez un SNI de l'application _What's On_.
+En utilisant le logiciel de dessin de votre choix, réalisez un SNI de l'application _What's On_.
 
 NOTE: Il existe un plugin {eclipse} pour le sni, mais personnellement, j'utilise {yed} (vous pouvez télécharger un exemple link:TourOperator-SNI.graphml[ici], et même dessiner sans rien installer en utilisant l'éditeur en ligne : https://www.yworks.com/yed-live/).
 
