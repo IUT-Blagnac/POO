@@ -1,0 +1,30 @@
+@startuml
+
+hide circle
+hide empty methods
+hide empty attributes
+
+class A as "       "
+class B as "       "
+class C as "       "
+class D as "       "
+class E as "       "
+class F as "       "
+class G as "       "
+class H as "       "
+class I as "       "
+class J as "       "
+class K as "       "
+class L as "       "
+
+A ...> B
+A -[hidden] C
+C ----- D
+C -[hidden] E
+E ---> F
+E -[hidden] G
+G <|--- H
+G -[hidden] I
+I <|... J
+K *--- L
+@enduml

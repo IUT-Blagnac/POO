@@ -26,12 +26,21 @@ un ensemble d’*objets* jouant un rôle identique et décrits par les mêmes *a
 
 image::plantuml-cd.svg[width=20%]
 
-[WARNING]
-====
-Une classe n'est pas un ensemble d'objets!
-====
 
-ifdef::slides[===== Concept de *Classe* (suite)]
+ifdef::slides[]
+[{topic}]
+===== Une classe est-elle un ensemble d'objets ?
+
+[{incremental}]
+- Au sens tableau / stockage mémoire du terme => *NON* 
+- Au sens mathématiques / ensembliste (comme N ou R) => *OUI* 
+
+endif::slides[]
+
+ifdef::slides[]
+[{topic}]
+===== Concept de *Classe* (suite)
+endif::slides[]
 
 Afin de faciliter la lisibilité des diagrammes, il est d'usage d'adopter une certaine
 façon de nommer les différents éléments. Ceci permet d'avoir une homogénéité dans les
@@ -257,6 +266,7 @@ Vous pouvez tester en ligne : http://www.plantuml.com/plantuml/ ou encore télé
 [[plantumlecl]]
 image:plantuml-eclipse.png[width=600,height=600]
 
+//// 
 [{topic}]
 ==== Exercices de révision
 
@@ -276,6 +286,33 @@ ifdef::slides[===== !]
 3. Un clavier possède des touches
 4. Un portable a un 0 ou 1 propriétaire qui a lui même un nom et un prénom
 5. Un portable a un prix d'achat et une valeur actuelle (souvent différente)
+////
 
-:leveloffset: 0
+[{topic}]
+==== Les relations/associations
+
+image::associations.svg[width=100%]
+
+
+[{topic}]
+==== Démo
+
+- plantUML
+- Umple
+
+[{topic}]
+==== Time for a quizz!
+
+//----------------------------- Question ------------------
+.*QUESTION*
+[WARNING]
+====
+- Connectez-vous sur : http://www.socrative.com/ (*student login*)
+- Ou téléchargez l'application pour étudiant image:socrative2.png[width=10%]
+- Choisissez la room *44918d67*
+====
+
+image::socrative1.png[width=50%,link=http://www.socrative.com/]
+
+
 
