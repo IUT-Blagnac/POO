@@ -24,13 +24,12 @@ Les chargés de dossier devront réaliser les traitements suivants afin de trait
 ifdef::slides[:leveloffset: -1]
 === Questions
 
-1.	Réaliser le diagramme des UC après avoir défini les acteurs principaux et secondaires.
-2.	À partir du jeu d’essai donné en annexe, construire le Diagramme des Classes métier (sans les méthodes).
-3.	Construire le SNI (à partir des 2 diag. précédents)
-4.	Construire un diagramme de Paquetages respectant l’architecture MVC puis réaliser un diagramme de classes pour chaque paquetage (M, V et C).
-5.	Construire le diagramme de séquence système pour l’UC « Saisie des dossiers accidents ».
-6.	Construire le diagramme de séquence de l’UC « Saisie des dossiers accidents ».
-7.	Compléter le diagramme des classes participantes de cet UC
+.	Réaliser le diagramme des UC après avoir défini les acteurs principaux et secondaires.
+.	À partir du jeu d’essai donné en annexe, construire le Diagramme des Classes métier (sans les méthodes).
+.	Construire un diagramme de Paquetages respectant l’architecture MVC puis réaliser un diagramme de classes pour chaque paquetage (M, V et C).
+.	Construire le diagramme de séquence système pour l’UC « Saisie des dossiers accidents ».
+.	Construire le diagramme de séquence de l’UC « Saisie des dossiers accidents ».
+.	Compléter le diagramme des classes participantes de cet UC
 
 === Annexe : exemple de jeu de données
 

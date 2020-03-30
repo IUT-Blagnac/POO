@@ -1,0 +1,177 @@
+:moduleTitle: BCOO
+:authorDefault:  Dut/Info-S2/M2104
+// include::lib/globals.asc[] // temporairement
+:tdnum: TD 3
+
+ifdef::eleve[]
+:doctitle:  {moduleTitle} - Sujet {tdnum}
+endif::eleve[]
+ifdef::prof[]
+:doctitle: {moduleTitle} - Support {tdnum}
+endif::prof[]
+ifdef::todoprof[]
+:doctitle: {moduleTitle} - DEROULEMENT SEANCE PROF {tdnum}
+endif::todoprof[]
+
+= {doctitle}
+:Author:  {authorDefault}
+:lang: fr
+:slideshowlocation: IUT Blagnac
+:copyright: {date={localdate}}, {slideshowlocation} *** {author} *** Powered by AsciiDoc and W3C Slidy &#169;
+:incremental:
+:source-highlighter: pygments
+:numbered: true
+:iconsdir: icons/
+:icons: true
+
+// eleve : sujet pour élèves
+// prof : support prof pour séance
+// todoprof : support AVEC EXPLICATIOSN DEROULEMENT pour profs
+
+//----------- définitions --------------
+:sitecours: http://webetud.iut-blagnac.fr/[Support de Cours]
+:pre: PreReq
+:objtd: ObjTD
+:duree: Durée
+:depot: À rendre
+:lien: Lien
+:img: img
+
+//-------------------- Warning si correction -----------
+ifdef::prof[]
+[CAUTION]
+.Version corrigée
+=====
+Cette version comporte des indications pour les
+réponses aux exercices.
+=====
+endif::prof[]
+
+//-------------------- Cartouche d'en-tête -----------
+[[cartouche]]
+[align="left",cols="1,10a",width="90%"]
+|======================
+| {pre}		|
+.  Je sais analyser un problème et capturer dans un texte complexe les éléments qui concernent le modèle de données (classes,
+attributs, associations, ...),
+.	Je connais les conventions d’écriture du Diagramme de Classes.
+| {objtd}	| Appréhender un cahier des charge complexe
+| {duree}	| *2 séance(s)* de 1,5h (selon le niveau initial en UML)
+|======================
+
+// // | {depot}	| -
+== Gestion des stages
+
+=== Cahier des charges
+
+On traite de la gestion des stages en entreprise des étudiants de 2ème année d’IUT.
+
+On recense les demandes de stages effectuées par des entreprises (lieu du stage, dates du stage, entreprise, nom du tuteur d’entreprise, thème du stage). Une entreprise (nom, adresse, siège social) peut proposer plusieurs stages. Chaque stage proposé correspond à une promotion (les étudiants de R&T 2ème année n’ont pas les mêmes stages proposés que les étudiants d’Info 2ème année).
+
+Chaque étudiant  de 2ème année (numINE, nom, prenom, moyenne générale) appartient à un groupe de TP (ex : g3A). À un groupe de TP on associe un groupe de TD (ex : g3). Chaque groupe de TD est spécifique à une promotion (ex : R&T2). À chaque stage attribué, on fait correspondre un enseignant (nom, prenom, spécialité) qui joue le rôle de tuteur pédagogique. À la fin du stage, une note est attribuée.
+
+=== Question
+
+Réalisez le diagramme de classes du domaine. Voyez-vous plusieurs façons de stocker les notes d'élèves pour leurs stages respectifs ?
+
+//----------------------------------------------------- Correction -------------------------
+ifdef::prof[]
+
+=== Correction
+
+image::td7-1.png[width="80%"]
+
+
+----
+Note: L'attribut note peut se placer à deux endroits:
+. si on donne une note à un élève unique pour toute sa scolarité, on peut placer un attribut noteEtuStage dans la classe "Etudiant"
+. si on donne une note à un stage, on peut placer l'attibut noteStageEtu dans la classe "Stage".
+----
+endif::prof[]
+
+//----------------------------------------------------- fin Correction -------------------------
+
+== Organisme de Formation
+
+=== Cahier des charges
+
+L’entreprise InfoTraining propose un catalogue de formations (ex : Formation UML Avancé, code UM-AV). Chaque formation (code, thème, prix, nb jours, pré-requis, nb stagiaires maxi) comprend plusieurs sessions.
+
+Une session précise le nom du formateur, les dates et le lieu de la session (ex : M. Dupont animera la session UML Avancé du 12 au 15 mars à l’IUT de Blagnac, salle 113). Les futurs stagiaires s’inscrivent à une session, dans la limite des places disponibles.
+
+Chaque stagiaire (nomS, prenomS) rédige un commentaire d’évaluation à la fin du stage. L’organisme de formation dispose de plusieurs salles de formation situées dans des bâtiments différents.
+
+=== Question
+
+Réalisez le diagramme de classes du domaine.
+
+//----------------------------------------------------- Correction -------------------------
+ifdef::prof[]
+
+=== Correction
+
+image::td7-2.png[width="50%"]
+
+endif::prof[]
+
+//----------------------------------------------------- fin Correction -------------------------
+
+== Location d'appartement
+
+=== Cahier des charges
+
+Un syndic de gestion de copropriétés loue un ensemble d'appartements (numéro) pour le compte de leurs propriétaires (nom, prénom, adresse). Les appartements sont situés dans différents immeubles (ex : Batiment B ‘les Pyrénées’), eux-mêmes situés dans plusieurs résidences de la région (ex : Résidence ‘les Amarantes’). Chaque résidence dispose d’un concierge (nom, numTph). Chaque immeuble d'une résidence comprend plusieurs appartements et appartient à une certaine catégorie (Confort, Standing, Grand Standing, Luxe...). Un appartement est d'un certain type qui est fonction du nombre de pièces habitables (Studio, T1, T1-bis, T2...).
+Un appartement appartient à un ou plusieurs propriétaires (4 maximum) et un même propriétaire peut posséder plusieurs appartements. Dans le cas d'une multipropriété, chaque propriétaire possède une part de l'appartement (pourcentage). Chaque appartement est occupé par au plus un locataire (nom, prenom, âge, dates du bail de location). Certains appartements sont inoccupés. Un locataire ne peut louer qu'un seul appartement.
+
+=== Question
+
+Réalisez le diagramme de classes du domaine.
+
+//----------------------------------------------------- Correction -------------------------
+ifdef::prof[]
+
+=== Correction
+
+image::td7-3.png[width="80%"]
+
+endif::prof[]
+
+//----------------------------------------------------- fin Correction -------------------------
+<<<
+
+== Tableau de service des Navigants AirFrance
+
+=== Enoncé
+
+L’équipage d’un avion est toujours constitué d’un pilote, d’un copilote et de plusieurs personnels navigants et commerciaux (PNC). Chacune de ces personnes est identifiée par son nom et sa fonction. L’équipage d’un avion est reconstitué pour chacun de ses vols.
+
+Chaque membre d’équipage doit être opérationnel sur deux catégories d’avions (par exemple, le PNC Richard est opérationnel sur Airbus A320 et Boeing 747). Chaque catégorie d’avions requiert un nombre de PNC dans son équipage oscillant entre un minimum et un maximum (par exemple, les PNC des Airbus A320 doivent être entre six et huit, et ceux d’un B747 entre 12 et 16)footnote:[Pour simplifier, le tableau ci-dessous n’en représente que quelques-uns.].
+
+Voici ci-dessous un extrait du tableau de service de quelques employés de la compagnie AIR FRANCE.
+
+image::airfranceplanning.png[width=80%,pdfwidth=80%]
+
+L’objectif du système à modéliser est de constituer le tableau de service. Les membres de l’équipage peuvent visualiser les vols sur lesquels ils sont affectés. L’administrateur du système peut créer et supprimer des entités dans le système. Le manager peut ajouter et supprimer des personnes dans un équipage pour un vol donné (un vol est désigné par un numéro de vol et une date). Les données du vol sont archivées après le vol pour une annéefootnote:[En raison du temps limité, nous ignorons la tenue à jour de la localisation des équipages et le décompte de leurs temps de vol et de repos.].
+
+=== Questions
+
+. Faire la liste des classes et de leurs attributs (un tableau par exemple).
+. Réaliser le diagramme de classe correspondant.
+. (pour vous entrainer à la maison) Réalisez le SNI permettant de répondre aux attentes du système.
+
+//----------------------------------------------------- Correction -------------------------
+ifdef::prof[]
+=== Correction
+
+
+[IMPORTANT]
+.Solution image:icons/solution.png[]
+====
+
+La correction (plus complète) se trouve ici :
+
+http://www-inf.it-sudparis.eu/COURS/CSC4002/EnLigne/EnoncesTP/ETP13-14/index.html
+====
+endif::prof[]
+
+//----------------------------------------------------- fin Correction -------------------------
