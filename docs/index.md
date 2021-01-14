@@ -1,8 +1,8 @@
 ## POO/COO du S2 de l'IUT de Blagnac
 
-## BCOO (M2105) 
+## BCOO (M2104) 
 
-Supports de cours et de TD de(mailto:jbruel@gmail.com)[JMB]
+Supports de cours et de TD de [JMB](mailto:jbruel@gmail.com)
 
 |:-:|:-------------:|:--------------------:|:------------------:|:--------------------:|------------------------------------|
 | # | Cours/TD/TP   |   HTML               |   PDF              |   Correction         | Détails                            |
