@@ -1,37 +1,11 @@
-## Welcome to GitHub Pages
+## Bienvenue sur la page des supports de cours POO/COO du S2 de l'IUT de Blagnac
 
-You can use the [editor on GitHub](https://github.com/IUT-Blagnac/POO/edit/master/docs/index.md) to maintain and preview the content for your website in Markdown files.
+## COO
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+| # | Type  (TD/TP) |   HTML               |   PDF              |   Correction         | Détails                           |
+|:-:|:-------------:|:--------------------:|:------------------:|:--------------------:|-----------------------------------|
+| 0 | TD            | [TD0.html](TD0.html) | [TD0.pdf](TD0.pdf) | [TD0.html](TD0.html) | Initiation aux modèles de classes |
 
-### Markdown
+## Contributions
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/IUT-Blagnac/POO/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Le présent fichier est obtenu automatiquement (via GitHub Pages et [Jekyll](https://jekyllrb.com/)) à partir [de ce fichier source](https://github.com/IUT-Blagnac/POO/edit/master/docs/index.md).
