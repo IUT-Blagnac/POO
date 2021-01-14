@@ -1,6 +1,6 @@
 ## POO/COO du S2 de l'IUT de Blagnac
 
-## COO ((mailto:jbruel@gmail/com)[JMB]
+## COO (mailto:jbruel@gmail.com)[JMB]
 
 |:-:|:-------------:|:--------------------:|:------------------:|:--------------------:|------------------------------------|
 | # | Type  (TD/TP) |   HTML               |   PDF              |   Correction         | Détails                            |
