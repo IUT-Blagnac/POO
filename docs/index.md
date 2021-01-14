@@ -17,6 +17,6 @@ Le présent fichier est obtenu automatiquement (via GitHub Pages et [Jekyll](htt
 
 ### About
 
-<p>{{ site.name }} {{ site.time | date: '%Y-%M-%D' }} | 
+<p>{{ site.name }} {{ site.time }} --  
 [licence Creative Commons Paternité - Partage à l'Identique 3.0 non transposé](http://creativecommons.org/licenses/by-sa/3.0/).
 </p>
