@@ -1,9 +1,11 @@
 ## POO/COO du S2 de l'IUT de Blagnac
 
-## COO (mailto:jbruel@gmail.com)[JMB]
+## BCOO (M2105) 
+
+Supports de cours et de TD de(mailto:jbruel@gmail.com)[JMB]
 
 |:-:|:-------------:|:--------------------:|:------------------:|:--------------------:|------------------------------------|
-| # | Type  (TD/TP) |   HTML               |   PDF              |   Correction         | Détails                            |
+| # | Cours/TD/TP   |   HTML               |   PDF              |   Correction         | Détails                            |
 |:-:|:-------------:|:--------------------:|:------------------:|:--------------------:|------------------------------------|
 | 0 | TD            | [TD0.html](TD0.html) | [TD0.pdf](TD0.pdf) | N/A                  | Initiation aux modèles de classes  |
 | 1 | TD            | [TD1.html](TD1.html) | [TD1.pdf](TD1.pdf) | N/A                  | Premiers diagrammes de classes UML |
