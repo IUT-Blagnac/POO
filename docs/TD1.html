@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.12">
+<meta name="author" content="Dut/Info-S2/M2104">
+<meta name="copyright" content="{date=2021-01-14}, IUT Blagnac *** Dut/Info-S2/M2104 *** Powered by AsciiDoc and W3C Slidy &amp;#169;">
+<title>BCOO - Sujet TD 1</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<style>
+/* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+/* Uncomment @import statement to use as custom stylesheet */
+/*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}
+audio,video{display:inline-block}
+audio:not([controls]){display:none;height:0}
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
+a{background:none}
+a:focus{outline:thin dotted}
+a:active,a:hover{outline:0}
+h1{font-size:2em;margin:.67em 0}
+abbr[title]{border-bottom:1px dotted}
+b,strong{font-weight:bold}
+dfn{font-style:italic}
+hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}
+mark{background:#ff0;color:#000}
+code,kbd,pre,samp{font-family:monospace;font-size:1em}
+pre{white-space:pre-wrap}
+q{quotes:"\201C" "\201D" "\2018" "\2019"}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-.5em}
+sub{bottom:-.25em}
+img{border:0}
+svg:not(:root){overflow:hidden}
+figure{margin:0}
+fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
+legend{border:0;padding:0}
+button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}
+button,input{line-height:normal}
+button,select{text-transform:none}
+button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+textarea{overflow:auto;vertical-align:top}
+table{border-collapse:collapse;border-spacing:0}
+*,*::before,*::after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
+html,body{font-size:100%}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto;tab-size:4;word-wrap:anywhere;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+a:hover{cursor:pointer}
+img,object,embed{max-width:100%;height:auto}
+object,embed{height:100%}
+img{-ms-interpolation-mode:bicubic}
+.left{float:left!important}
+.right{float:right!important}
+.text-left{text-align:left!important}
+.text-right{text-align:right!important}
+.text-center{text-align:center!important}
+.text-justify{text-align:justify!important}
+.hide{display:none}
+img,object,svg{display:inline-block;vertical-align:middle}
+textarea{height:auto;min-height:50px}
+select{width:100%}
+.subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0}
+a{color:#2156a5;text-decoration:underline;line-height:inherit}
+a:hover,a:focus{color:#1d4b8f}
+a img{border:0}
+p{font-family:inherit;font-weight:400;font-size:1em;line-height:1.6;margin-bottom:1.25em;text-rendering:optimizeLegibility}
+p aside{font-size:.875em;line-height:1.35;font-style:italic}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;font-style:normal;color:#ba3925;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
+h1 small,h2 small,h3 small,#toctitle small,.sidebarblock>.content>.title small,h4 small,h5 small,h6 small{font-size:60%;color:#e99b8f;line-height:0}
+h1{font-size:2.125em}
+h2{font-size:1.6875em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.375em}
+h4,h5{font-size:1.125em}
+h6{font-size:1em}
+hr{border:solid #dddddf;border-width:1px 0 0;clear:both;margin:1.25em 0 1.1875em;height:0}
+em,i{font-style:italic;line-height:inherit}
+strong,b{font-weight:bold;line-height:inherit}
+small{font-size:60%;line-height:inherit}
+code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
+ul,ol,dl{font-size:1em;line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
+ul,ol{margin-left:1.5em}
+ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0;font-size:1em}
+ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
+ul.square{list-style-type:square}
+ul.circle{list-style-type:circle}
+ul.disc{list-style-type:disc}
+ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
+dl dt{margin-bottom:.3125em;font-weight:bold}
+dl dd{margin-bottom:1.25em}
+abbr,acronym{text-transform:uppercase;font-size:90%;color:rgba(0,0,0,.8);border-bottom:1px dotted #ddd;cursor:help}
+abbr{text-transform:none}
+blockquote{margin:0 0 1.25em;padding:.5625em 1.25em 0 1.1875em;border-left:1px solid #ddd}
+blockquote cite{display:block;font-size:.9375em;color:rgba(0,0,0,.6)}
+blockquote cite::before{content:"\2014 \0020"}
+blockquote cite a,blockquote cite a:visited{color:rgba(0,0,0,.6)}
+blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
+@media screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
+h1{font-size:2.75em}
+h2{font-size:2.3125em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
+h4{font-size:1.4375em}}
+table{background:#fff;margin-bottom:1.25em;border:solid 1px #dedede;word-wrap:normal}
+table thead,table tfoot{background:#f7f8f7}
+table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
+table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
+table tr.even,table tr.alt{background:#f8f8f7}
+table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{line-height:1.6}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
+h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
+.center{margin-left:auto;margin-right:auto}
+.stretch{width:100%}
+.clearfix::before,.clearfix::after,.float-group::before,.float-group::after{content:" ";display:table}
+.clearfix::after,.float-group::after{clear:both}
+:not(pre).nobreak{word-wrap:normal}
+:not(pre).nowrap{white-space:nowrap}
+:not(pre).pre-wrap{white-space:pre-wrap}
+:not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed}
+pre{color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;line-height:1.45;text-rendering:optimizeSpeed}
+pre code,pre pre{color:inherit;font-size:inherit;line-height:inherit}
+pre>code{display:block}
+pre.nowrap,pre.nowrap pre{white-space:pre;word-wrap:normal}
+em em{font-style:normal}
+strong strong{font-weight:400}
+.keyseq{color:rgba(51,51,51,.8)}
+kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background:#f7f7f7;border:1px solid #ccc;-webkit-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em white inset;box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em #fff inset;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
+.keyseq kbd:first-child{margin-left:0}
+.keyseq kbd:last-child{margin-right:0}
+.menuseq,.menuref{color:#000}
+.menuseq b:not(.caret),.menuref{font-weight:inherit}
+.menuseq{word-spacing:-.02em}
+.menuseq b.caret{font-size:1.25em;line-height:.8}
+.menuseq i.caret{font-weight:bold;text-align:center;width:.45em}
+b.button::before,b.button::after{position:relative;top:-1px;font-weight:400}
+b.button::before{content:"[";padding:0 3px 0 2px}
+b.button::after{content:"]";padding:0 2px 0 3px}
+p a>code:hover{color:rgba(0,0,0,.9)}
+#header,#content,#footnotes,#footer{width:100%;margin-left:auto;margin-right:auto;margin-top:0;margin-bottom:0;max-width:62.5em;*zoom:1;position:relative;padding-left:.9375em;padding-right:.9375em}
+#header::before,#header::after,#content::before,#content::after,#footnotes::before,#footnotes::after,#footer::before,#footer::after{content:" ";display:table}
+#header::after,#content::after,#footnotes::after,#footer::after{clear:both}
+#content{margin-top:1.25em}
+#content::before{content:none}
+#header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
+#header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #dddddf}
+#header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
+#header .details{border-bottom:1px solid #dddddf;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:-ms-flexbox;display:-webkit-flex;display:flex;-ms-flex-flow:row wrap;-webkit-flex-flow:row wrap;flex-flow:row wrap}
+#header .details span:first-child{margin-left:-.125em}
+#header .details span.email a{color:rgba(0,0,0,.85)}
+#header .details br{display:none}
+#header .details br+span::before{content:"\00a0\2013\00a0"}
+#header .details br+span.author::before{content:"\00a0\22c5\00a0";color:rgba(0,0,0,.85)}
+#header .details br+span#revremark::before{content:"\00a0|\00a0"}
+#header #revnumber{text-transform:capitalize}
+#header #revnumber::after{content:"\00a0"}
+#content>h1:first-child:not([class]){color:rgba(0,0,0,.85);border-bottom:1px solid #dddddf;padding-bottom:8px;margin-top:0;padding-top:1rem;margin-bottom:1.25rem}
+#toc{border-bottom:1px solid #e7e7e9;padding-bottom:.5em}
+#toc>ul{margin-left:.125em}
+#toc ul.sectlevel0>li>a{font-style:italic}
+#toc ul.sectlevel0 ul.sectlevel1{margin:.5em 0}
+#toc ul{font-family:"Open Sans","DejaVu Sans",sans-serif;list-style-type:none}
+#toc li{line-height:1.3334;margin-top:.3334em}
+#toc a{text-decoration:none}
+#toc a:active{text-decoration:underline}
+#toctitle{color:#7a2518;font-size:1.2em}
+@media screen and (min-width:768px){#toctitle{font-size:1.375em}
+body.toc2{padding-left:15em;padding-right:0}
+#toc.toc2{margin-top:0!important;background:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #e7e7e9;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
+#toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
+#toc.toc2>ul{font-size:.9em;margin-bottom:0}
+#toc.toc2 ul ul{margin-left:0;padding-left:1em}
+#toc.toc2 ul.sectlevel0 ul.sectlevel1{padding-left:0;margin-top:.5em;margin-bottom:.5em}
+body.toc2.toc-right{padding-left:0;padding-right:15em}
+body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #e7e7e9;left:auto;right:0}}
+@media screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
+#toc.toc2{width:20em}
+#toc.toc2 #toctitle{font-size:1.375em}
+#toc.toc2>ul{font-size:.95em}
+#toc.toc2 ul ul{padding-left:1.25em}
+body.toc2.toc-right{padding-left:0;padding-right:20em}}
+#content #toc{border-style:solid;border-width:1px;border-color:#e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;-webkit-border-radius:4px;border-radius:4px}
+#content #toc>:first-child{margin-top:0}
+#content #toc>:last-child{margin-bottom:0}
+#footer{max-width:none;background:rgba(0,0,0,.8);padding:1.25em}
+#footer-text{color:rgba(255,255,255,.8);line-height:1.44}
+#content{margin-bottom:.625em}
+.sect1{padding-bottom:.625em}
+@media screen and (min-width:768px){#content{margin-bottom:1.25em}
+.sect1{padding-bottom:1.25em}}
+.sect1:last-child{padding-bottom:0}
+.sect1+.sect1{border-top:1px solid #e7e7e9}
+#content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{position:absolute;z-index:1001;width:1.5ex;margin-left:-1.5ex;display:block;text-decoration:none!important;visibility:hidden;text-align:center;font-weight:400}
+#content h1>a.anchor::before,h2>a.anchor::before,h3>a.anchor::before,#toctitle>a.anchor::before,.sidebarblock>.content>.title>a.anchor::before,h4>a.anchor::before,h5>a.anchor::before,h6>a.anchor::before{content:"\00A7";font-size:.85em;display:block;padding-top:.1em}
+#content h1:hover>a.anchor,#content h1>a.anchor:hover,h2:hover>a.anchor,h2>a.anchor:hover,h3:hover>a.anchor,#toctitle:hover>a.anchor,.sidebarblock>.content>.title:hover>a.anchor,h3>a.anchor:hover,#toctitle>a.anchor:hover,.sidebarblock>.content>.title>a.anchor:hover,h4:hover>a.anchor,h4>a.anchor:hover,h5:hover>a.anchor,h5>a.anchor:hover,h6:hover>a.anchor,h6>a.anchor:hover{visibility:visible}
+#content h1>a.link,h2>a.link,h3>a.link,#toctitle>a.link,.sidebarblock>.content>.title>a.link,h4>a.link,h5>a.link,h6>a.link{color:#ba3925;text-decoration:none}
+#content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
+details,.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
+details>summary:first-of-type{cursor:pointer;display:list-item;outline:none;margin-bottom:.75em}
+.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:1rem;font-style:italic}
+table.tableblock.fit-content>caption.title{white-space:nowrap;width:0}
+.paragraph.lead>p,#preamble>.sectionbody>[class="paragraph"]:first-of-type p{font-size:1.21875em;line-height:1.6;color:rgba(0,0,0,.85)}
+table.tableblock #preamble>.sectionbody>[class="paragraph"]:first-of-type p{font-size:inherit}
+.admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
+.admonitionblock>table td.icon{text-align:center;width:80px}
+.admonitionblock>table td.icon img{max-width:none}
+.admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
+.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6);word-wrap:anywhere}
+.admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
+.exampleblock>.content{border-style:solid;border-width:1px;border-color:#e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;-webkit-border-radius:4px;border-radius:4px}
+.exampleblock>.content>:first-child{margin-top:0}
+.exampleblock>.content>:last-child{margin-bottom:0}
+.sidebarblock{border-style:solid;border-width:1px;border-color:#dbdbd6;margin-bottom:1.25em;padding:1.25em;background:#f3f3f2;-webkit-border-radius:4px;border-radius:4px}
+.sidebarblock>:first-child{margin-top:0}
+.sidebarblock>:last-child{margin-bottom:0}
+.sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
+.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
+.literalblock pre,.listingblock>.content>pre{-webkit-border-radius:4px;border-radius:4px;overflow-x:auto;padding:1em;font-size:.8125em}
+@media screen and (min-width:768px){.literalblock pre,.listingblock>.content>pre{font-size:.90625em}}
+@media screen and (min-width:1280px){.literalblock pre,.listingblock>.content>pre{font-size:1em}}
+.literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class="highlight"],.listingblock>.content>pre[class^="highlight "]{background:#f7f7f8}
+.literalblock.output pre{color:#f7f7f8;background:rgba(0,0,0,.9)}
+.listingblock>.content{position:relative}
+.listingblock code[data-lang]::before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:inherit;opacity:.5}
+.listingblock:hover code[data-lang]::before{display:block}
+.listingblock.terminal pre .command::before{content:attr(data-prompt);padding-right:.5em;color:inherit;opacity:.5}
+.listingblock.terminal pre .command:not([data-prompt])::before{content:"$"}
+.listingblock pre.highlightjs{padding:0}
+.listingblock pre.highlightjs>code{padding:1em;-webkit-border-radius:4px;border-radius:4px}
+.listingblock pre.prettyprint{border-width:0}
+.prettyprint{background:#f7f7f8}
+pre.prettyprint .linenums{line-height:1.45;margin-left:2em}
+pre.prettyprint li{background:none;list-style-type:inherit;padding-left:0}
+pre.prettyprint li code[data-lang]::before{opacity:1}
+pre.prettyprint li:not(:first-child) code[data-lang]::before{display:none}
+table.linenotable{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.linenotable td[class]{color:inherit;vertical-align:top;padding:0;line-height:inherit;white-space:normal}
+table.linenotable td.code{padding-left:.75em}
+table.linenotable td.linenos{border-right:1px solid currentColor;opacity:.35;padding-right:.5em}
+pre.pygments .lineno{border-right:1px solid currentColor;opacity:.35;display:inline-block;margin-right:.75em}
+pre.pygments .lineno::before{content:"";margin-right:-.125em}
+.quoteblock{margin:0 1em 1.25em 1.5em;display:table}
+.quoteblock:not(.excerpt)>.title{margin-left:-1.5em;margin-bottom:.75em}
+.quoteblock blockquote,.quoteblock p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
+.quoteblock blockquote{margin:0;padding:0;border:0}
+.quoteblock blockquote::before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+.quoteblock blockquote>.paragraph:last-child p{margin-bottom:0}
+.quoteblock .attribution{margin-top:.75em;margin-right:.5ex;text-align:right}
+.verseblock{margin:0 1em 1.25em}
+.verseblock pre{font-family:"Open Sans","DejaVu Sans",sans;font-size:1.15rem;color:rgba(0,0,0,.85);font-weight:300;text-rendering:optimizeLegibility}
+.verseblock pre strong{font-weight:400}
+.verseblock .attribution{margin-top:1.25rem;margin-left:.5ex}
+.quoteblock .attribution,.verseblock .attribution{font-size:.9375em;line-height:1.45;font-style:italic}
+.quoteblock .attribution br,.verseblock .attribution br{display:none}
+.quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.025em;color:rgba(0,0,0,.6)}
+.quoteblock.abstract blockquote::before,.quoteblock.excerpt blockquote::before,.quoteblock .quoteblock blockquote::before{display:none}
+.quoteblock.abstract blockquote,.quoteblock.abstract p,.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{line-height:1.6;word-spacing:0}
+.quoteblock.abstract{margin:0 1em 1.25em;display:block}
+.quoteblock.abstract>.title{margin:0 0 .375em;font-size:1.15em;text-align:center}
+.quoteblock.excerpt>blockquote,.quoteblock .quoteblock{padding:0 0 .25em 1em;border-left:.25em solid #dddddf}
+.quoteblock.excerpt,.quoteblock .quoteblock{margin-left:0}
+.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{color:inherit;font-size:1.0625rem}
+.quoteblock.excerpt .attribution,.quoteblock .quoteblock .attribution{color:inherit;text-align:left;margin-right:0}
+p.tableblock:last-child{margin-bottom:0}
+td.tableblock>.content{margin-bottom:1.25em;word-wrap:anywhere}
+td.tableblock>.content>:last-child{margin-bottom:-1.25em}
+table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
+table.grid-all>*>tr>*{border-width:1px}
+table.grid-cols>*>tr>*{border-width:0 1px}
+table.grid-rows>*>tr>*{border-width:1px 0}
+table.frame-all{border-width:1px}
+table.frame-ends{border-width:1px 0}
+table.frame-sides{border-width:0 1px}
+table.frame-none>colgroup+*>:first-child>*,table.frame-sides>colgroup+*>:first-child>*{border-top-width:0}
+table.frame-none>:last-child>:last-child>*,table.frame-sides>:last-child>:last-child>*{border-bottom-width:0}
+table.frame-none>*>tr>:first-child,table.frame-ends>*>tr>:first-child{border-left-width:0}
+table.frame-none>*>tr>:last-child,table.frame-ends>*>tr>:last-child{border-right-width:0}
+table.stripes-all tr,table.stripes-odd tr:nth-of-type(odd),table.stripes-even tr:nth-of-type(even),table.stripes-hover tr:hover{background:#f8f8f7}
+th.halign-left,td.halign-left{text-align:left}
+th.halign-right,td.halign-right{text-align:right}
+th.halign-center,td.halign-center{text-align:center}
+th.valign-top,td.valign-top{vertical-align:top}
+th.valign-bottom,td.valign-bottom{vertical-align:bottom}
+th.valign-middle,td.valign-middle{vertical-align:middle}
+table thead th,table tfoot th{font-weight:bold}
+tbody tr th{background:#f7f8f7}
+tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
+p.tableblock>code:only-child{background:none;padding:0}
+p.tableblock{font-size:1em}
+ol{margin-left:1.75em}
+ul li ol{margin-left:1.5em}
+dl dd{margin-left:1.125em}
+dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
+ol>li p,ul>li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
+ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
+ul.unstyled,ol.unstyled{margin-left:0}
+ul.checklist{margin-left:.625em}
+ul.checklist li>p:first-child>.fa-square-o:first-child,ul.checklist li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
+ul.checklist li>p:first-child>input[type="checkbox"]:first-child{margin-right:.25em}
+ul.inline{display:-ms-flexbox;display:-webkit-box;display:flex;-ms-flex-flow:row wrap;-webkit-flex-flow:row wrap;flex-flow:row wrap;list-style:none;margin:0 0 .625em -1.25em}
+ul.inline>li{margin-left:1.25em}
+.unstyled dl dt{font-weight:400;font-style:normal}
+ol.arabic{list-style-type:decimal}
+ol.decimal{list-style-type:decimal-leading-zero}
+ol.loweralpha{list-style-type:lower-alpha}
+ol.upperalpha{list-style-type:upper-alpha}
+ol.lowerroman{list-style-type:lower-roman}
+ol.upperroman{list-style-type:upper-roman}
+ol.lowergreek{list-style-type:lower-greek}
+.hdlist>table,.colist>table{border:0;background:none}
+.hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
+td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
+td.hdlist1{font-weight:bold;padding-bottom:1.25em}
+td.hdlist2{word-wrap:anywhere}
+.literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
+.colist td:not([class]):first-child{padding:.4em .75em 0;line-height:1;vertical-align:top}
+.colist td:not([class]):first-child img{max-width:none}
+.colist td:not([class]):last-child{padding:.25em 0}
+.thumb,.th{line-height:0;display:inline-block;border:solid 4px #fff;-webkit-box-shadow:0 0 0 1px #ddd;box-shadow:0 0 0 1px #ddd}
+.imageblock.left{margin:.25em .625em 1.25em 0}
+.imageblock.right{margin:.25em 0 1.25em .625em}
+.imageblock>.title{margin-bottom:0}
+.imageblock.thumb,.imageblock.th{border-width:6px}
+.imageblock.thumb>.title,.imageblock.th>.title{padding:0 .125em}
+.image.left,.image.right{margin-top:.25em;margin-bottom:.25em;display:inline-block;line-height:0}
+.image.left{margin-right:.625em}
+.image.right{margin-left:.625em}
+a.image{text-decoration:none;display:inline-block}
+a.image object{pointer-events:none}
+sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
+sup.footnote a,sup.footnoteref a{text-decoration:none}
+sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
+#footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
+#footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em;border-width:1px 0 0}
+#footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;margin-bottom:.2em}
+#footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none;margin-left:-1.05em}
+#footnotes .footnote:last-of-type{margin-bottom:0}
+#content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
+.gist .file-data>table{border:0;background:#fff;width:100%;margin-bottom:0}
+.gist .file-data>table td.line-data{width:99%}
+div.unbreakable{page-break-inside:avoid}
+.big{font-size:larger}
+.small{font-size:smaller}
+.underline{text-decoration:underline}
+.overline{text-decoration:overline}
+.line-through{text-decoration:line-through}
+.aqua{color:#00bfbf}
+.aqua-background{background:#00fafa}
+.black{color:#000}
+.black-background{background:#000}
+.blue{color:#0000bf}
+.blue-background{background:#0000fa}
+.fuchsia{color:#bf00bf}
+.fuchsia-background{background:#fa00fa}
+.gray{color:#606060}
+.gray-background{background:#7d7d7d}
+.green{color:#006000}
+.green-background{background:#007d00}
+.lime{color:#00bf00}
+.lime-background{background:#00fa00}
+.maroon{color:#600000}
+.maroon-background{background:#7d0000}
+.navy{color:#000060}
+.navy-background{background:#00007d}
+.olive{color:#606000}
+.olive-background{background:#7d7d00}
+.purple{color:#600060}
+.purple-background{background:#7d007d}
+.red{color:#bf0000}
+.red-background{background:#fa0000}
+.silver{color:#909090}
+.silver-background{background:#bcbcbc}
+.teal{color:#006060}
+.teal-background{background:#007d7d}
+.white{color:#bfbfbf}
+.white-background{background:#fafafa}
+.yellow{color:#bfbf00}
+.yellow-background{background:#fafa00}
+span.icon>.fa{cursor:default}
+a span.icon>.fa{cursor:inherit}
+.admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
+.admonitionblock td.icon .icon-note::before{content:"\f05a";color:#19407c}
+.admonitionblock td.icon .icon-tip::before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
+.admonitionblock td.icon .icon-warning::before{content:"\f071";color:#bf6900}
+.admonitionblock td.icon .icon-caution::before{content:"\f06d";color:#bf3400}
+.admonitionblock td.icon .icon-important::before{content:"\f06a";color:#bf0000}
+.conum[data-value]{display:inline-block;color:#fff!important;background:rgba(0,0,0,.8);-webkit-border-radius:50%;border-radius:50%;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value] *{color:#fff!important}
+.conum[data-value]+b{display:none}
+.conum[data-value]::after{content:attr(data-value)}
+pre .conum[data-value]{position:relative;top:-.125em}
+b.conum *{color:inherit!important}
+.conum:not([data-value]):empty{display:none}
+dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
+h1,h2,p,td.content,span.alt{letter-spacing:-.01em}
+p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
+p,blockquote,dt,td.content,span.alt{font-size:1.0625rem}
+p{margin-bottom:1.25rem}
+.sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
+.exampleblock>.content{background:#fffef7;border-color:#e0e0dc;-webkit-box-shadow:0 1px 4px #e0e0dc;box-shadow:0 1px 4px #e0e0dc}
+.print-only{display:none!important}
+@page{margin:1.25cm .75cm}
+@media print{*{-webkit-box-shadow:none!important;box-shadow:none!important;text-shadow:none!important}
+html{font-size:80%}
+a{color:inherit!important;text-decoration:underline!important}
+a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
+a[href^="http:"]:not(.bare)::after,a[href^="https:"]:not(.bare)::after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
+abbr[title]::after{content:" (" attr(title) ")"}
+pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
+thead{display:table-header-group}
+svg{max-width:100%}
+p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
+h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+#header,#content,#footnotes,#footer{max-width:none}
+#toc,.sidebarblock,.exampleblock>.content{background:none!important}
+#toc{border-bottom:1px solid #dddddf!important;padding-bottom:0!important}
+body.book #header{text-align:center}
+body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em}
+body.book #header .details{border:0!important;display:block;padding:0!important}
+body.book #header .details span:first-child{margin-left:0!important}
+body.book #header .details br{display:block}
+body.book #header .details br+span::before{content:none!important}
+body.book #toc{border:0!important;text-align:left!important;padding:0!important;margin:0!important}
+body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-break-before:always}
+.listingblock code[data-lang]::before{display:block}
+#footer{padding:0 .9375em}
+.hide-on-print{display:none!important}
+.print-only{display:block!important}
+.hide-for-print{display:none!important}
+.show-for-print{display:inherit!important}}
+@media print,amzn-kf8{#header>h1:first-child{margin-top:1.25rem}
+.sect1{padding:0!important}
+.sect1+.sect1{border:0}
+#footer{background:none}
+#footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
+@media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+pre.pygments .hll { background-color: #ffffcc }
+pre.pygments  { background: #f8f8f8; }
+pre.pygments .tok-c { color: #408080; font-style: italic } /* Comment */
+pre.pygments .tok-err { border: 1px solid #FF0000 } /* Error */
+pre.pygments .tok-k { color: #008000; font-weight: bold } /* Keyword */
+pre.pygments .tok-o { color: #666666 } /* Operator */
+pre.pygments .tok-ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+pre.pygments .tok-cm { color: #408080; font-style: italic } /* Comment.Multiline */
+pre.pygments .tok-cp { color: #BC7A00 } /* Comment.Preproc */
+pre.pygments .tok-cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+pre.pygments .tok-c1 { color: #408080; font-style: italic } /* Comment.Single */
+pre.pygments .tok-cs { color: #408080; font-style: italic } /* Comment.Special */
+pre.pygments .tok-gd { color: #A00000 } /* Generic.Deleted */
+pre.pygments .tok-ge { font-style: italic } /* Generic.Emph */
+pre.pygments .tok-gr { color: #FF0000 } /* Generic.Error */
+pre.pygments .tok-gh { color: #000080; font-weight: bold } /* Generic.Heading */
+pre.pygments .tok-gi { color: #00A000 } /* Generic.Inserted */
+pre.pygments .tok-go { color: #888888 } /* Generic.Output */
+pre.pygments .tok-gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+pre.pygments .tok-gs { font-weight: bold } /* Generic.Strong */
+pre.pygments .tok-gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+pre.pygments .tok-gt { color: #0044DD } /* Generic.Traceback */
+pre.pygments .tok-kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+pre.pygments .tok-kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+pre.pygments .tok-kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+pre.pygments .tok-kp { color: #008000 } /* Keyword.Pseudo */
+pre.pygments .tok-kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+pre.pygments .tok-kt { color: #B00040 } /* Keyword.Type */
+pre.pygments .tok-m { color: #666666 } /* Literal.Number */
+pre.pygments .tok-s { color: #BA2121 } /* Literal.String */
+pre.pygments .tok-na { color: #7D9029 } /* Name.Attribute */
+pre.pygments .tok-nb { color: #008000 } /* Name.Builtin */
+pre.pygments .tok-nc { color: #0000FF; font-weight: bold } /* Name.Class */
+pre.pygments .tok-no { color: #880000 } /* Name.Constant */
+pre.pygments .tok-nd { color: #AA22FF } /* Name.Decorator */
+pre.pygments .tok-ni { color: #999999; font-weight: bold } /* Name.Entity */
+pre.pygments .tok-ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+pre.pygments .tok-nf { color: #0000FF } /* Name.Function */
+pre.pygments .tok-nl { color: #A0A000 } /* Name.Label */
+pre.pygments .tok-nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+pre.pygments .tok-nt { color: #008000; font-weight: bold } /* Name.Tag */
+pre.pygments .tok-nv { color: #19177C } /* Name.Variable */
+pre.pygments .tok-ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+pre.pygments .tok-w { color: #bbbbbb } /* Text.Whitespace */
+pre.pygments .tok-mb { color: #666666 } /* Literal.Number.Bin */
+pre.pygments .tok-mf { color: #666666 } /* Literal.Number.Float */
+pre.pygments .tok-mh { color: #666666 } /* Literal.Number.Hex */
+pre.pygments .tok-mi { color: #666666 } /* Literal.Number.Integer */
+pre.pygments .tok-mo { color: #666666 } /* Literal.Number.Oct */
+pre.pygments .tok-sa { color: #BA2121 } /* Literal.String.Affix */
+pre.pygments .tok-sb { color: #BA2121 } /* Literal.String.Backtick */
+pre.pygments .tok-sc { color: #BA2121 } /* Literal.String.Char */
+pre.pygments .tok-dl { color: #BA2121 } /* Literal.String.Delimiter */
+pre.pygments .tok-sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+pre.pygments .tok-s2 { color: #BA2121 } /* Literal.String.Double */
+pre.pygments .tok-se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+pre.pygments .tok-sh { color: #BA2121 } /* Literal.String.Heredoc */
+pre.pygments .tok-si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+pre.pygments .tok-sx { color: #008000 } /* Literal.String.Other */
+pre.pygments .tok-sr { color: #BB6688 } /* Literal.String.Regex */
+pre.pygments .tok-s1 { color: #BA2121 } /* Literal.String.Single */
+pre.pygments .tok-ss { color: #19177C } /* Literal.String.Symbol */
+pre.pygments .tok-bp { color: #008000 } /* Name.Builtin.Pseudo */
+pre.pygments .tok-fm { color: #0000FF } /* Name.Function.Magic */
+pre.pygments .tok-vc { color: #19177C } /* Name.Variable.Class */
+pre.pygments .tok-vg { color: #19177C } /* Name.Variable.Global */
+pre.pygments .tok-vi { color: #19177C } /* Name.Variable.Instance */
+pre.pygments .tok-vm { color: #19177C } /* Name.Variable.Magic */
+pre.pygments .tok-il { color: #666666 } /* Literal.Number.Integer.Long */
+</style>
+</head>
+<body class="article toc2 toc-left">
+<div id="header">
+<h1>BCOO - Sujet TD 1</h1>
+<div class="details">
+<span id="author" class="author">Dut/Info-S2/M2104</span><br>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_rappel_du_cours">1. Rappel du cours</a></li>
+<li><a href="#_diagrammes_de_classes_simples">2. Diagrammes de classes simples</a></li>
+<li><a href="#_tour_opérateur">3. Tour-opérateur</a>
+<ul class="sectlevel2">
+<li><a href="#_enoncé">3.1. Enoncé</a></li>
+<li><a href="#_exercices">3.2. Exercices</a></li>
+</ul>
+</li>
+<li><a href="#_reverse_java_uml">4. Reverse Java &#8594; UML</a>
+<ul class="sectlevel2">
+<li><a href="#_enoncé_2">4.1. Enoncé</a></li>
+<li><a href="#_exercice">4.2. Exercice</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<table id="cartouche" class="tableblock frame-all grid-all" style="width: 90%;">
+<colgroup>
+<col style="width: 9.0909%;">
+<col style="width: 90.9091%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PreReq</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Je sais programmer, j&#8217;ai conscience qu&#8217;il faut réfléchir avant de se lancer dans le codage. J&#8217;ai des notions de structure de données.</p>
+</li>
+<li>
+<p>Je connais les concepts principaux du Diagramme de Classes : classe, attribut, attribut dérivé, identifiant, association, composition, multiplicité, classe-association.</p>
+</li>
+<li>
+<p>Je connais les conventions d’écriture du Diagramme de Classes</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ObjTD</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Comprendre ce qu&#8217;est un <strong>modèle</strong>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Durée</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>1 ou 2 séance(s)</strong> de 1,5h (selon le niveau initial en UML)</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_rappel_du_cours">1. Rappel du cours</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Dans le diagramme de classe suivant, repérez les différents éléments :</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>classe</p>
+</li>
+<li>
+<p>nom de classe</p>
+</li>
+<li>
+<p>attribut</p>
+</li>
+<li>
+<p>association</p>
+</li>
+<li>
+<p>cardinalité</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="data:image/png;base64,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" alt="dc1" width="200" height="200">
+</div>
+</div>
+<div class="paragraph">
+<p>Quel type élément n&#8217;avez-vous identifiéssur le diagramme ? Saurez-vous trouver son nom ?</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_diagrammes_de_classes_simples">2. Diagrammes de classes simples</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Réalisez les diagrammes de classes suivants :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Examens</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Les étudiants possèdent un numéro d&#8217;étudiant, un nom, un prénom, une date de naissance. Ils suivent des cours (titre, code du module),</p>
+</li>
+<li>
+<p>Les examens concernent un cours donné. Chaque examen a lieu à une certaine date et possède un coefficient,</p>
+</li>
+<li>
+<p>Une note est attribuée à un étudiant, par examen,</p>
+</li>
+<li>
+<p>Les cours sont enseignés par un enseignant (nom, prénom).</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Ordinateurs portables</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Un portable possède un clavier,</p>
+</li>
+<li>
+<p>Un clavier peut-être de type "azerty" ou "querty",</p>
+</li>
+<li>
+<p>Un clavier possède des touches,</p>
+</li>
+<li>
+<p>Un portable a éventuellement un propriétaire qui a lui même un nom et un prénom,</p>
+</li>
+<li>
+<p>Un portable a un prix d’achat et une valeur actuelle (souvent différente).</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_tour_opérateur">3. Tour-opérateur</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_enoncé">3.1. Enoncé</h3>
+<div class="paragraph">
+<p>Des tour-operateurs (Fram, Jet-Tours, Nouvelles Frontières…) proposent des voyages. Chaque TO est caractérisé par un identifiant, un nom et une adresse.</p>
+</div>
+<div class="paragraph">
+<p>Chaque voyage est rattaché à un seul TO et est défini par un identifiant, un libellé, un lieu de départ et de destination, une date de départ et d’arrivée ainsi qu’un prix de base.</p>
+</div>
+<div class="paragraph">
+<p>Différentes options (chambre climatisée, pension complète, voyages en 1ère classe&#8230;&#8203;) peuvent être choisies pour les différents voyages avec un montant différent selon celui-ci (par exemple l’option « Pension complète » coûtera plus cher pour un voyage à Paris que pour un voyage au Vietnam).</p>
+</div>
+<div class="paragraph">
+<p>Des clients (identifiant, nom, prenom, adresse) passent des commandes pour des voyages, chaque commande ne concernant qu’un voyage. Une commande est définie par un numéro, une date et un état. À chaque commande est rattachée un certain nombre de voyageurs caractérisés par un identifiant, un nom, un prénom, un sexe et une date de naissance.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_exercices">3.2. Exercices</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Réalisez le Diagramme de Classes de ce cas d’étude</p>
+</li>
+<li>
+<p>Ajoutez aux classes les méthodes qui permettront de réaliser les fonctionnalités attendues suivantes :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Calculer le prix d&#8217;un Voyage</p>
+</li>
+<li>
+<p>Calculer le prix moyen d&#8217;un voyage pour un Tour-opérateur</p>
+</li>
+<li>
+<p>Afficher la liste des options d&#8217;un Voyage</p>
+</li>
+<li>
+<p>Afficher la liste des commandes en cours (à venir) d&#8217;un Client</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_reverse_java_uml">4. Reverse Java &#8594; UML</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_enoncé_2">4.1. Enoncé</h3>
+<div class="paragraph">
+<p>Soient les codes Java suivants :</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Les codes complets ont été générés automatiquement, ils sont donc très "verbeux"&#8230;&#8203;</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">Accident.java (version complète <a href="../examples/accidents/Accident.java">ici</a>)</div>
+<div class="content">
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-kn">package</span> <span class="tok-nn">accidents</span><span class="tok-o">;</span>
+<span class="tok-kn">import</span> <span class="tok-nn">java.sql.Date</span><span class="tok-o">;</span>
+<span class="tok-kn">import</span> <span class="tok-nn">java.sql.Time</span><span class="tok-o">;</span>
+
+<span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">Accident</span>
+<span class="tok-o">{</span>
+  <span class="tok-kd">private</span> <span class="tok-n">String</span> <span class="tok-n">id</span><span class="tok-o">;</span>
+  <span class="tok-kd">private</span> <span class="tok-n">String</span> <span class="tok-n">description</span><span class="tok-o">;</span>
+  <span class="tok-kd">private</span> <span class="tok-n">Date</span> <span class="tok-n">date</span><span class="tok-o">;</span>
+  <span class="tok-kd">private</span> <span class="tok-n">Time</span> <span class="tok-n">time</span><span class="tok-o">;</span>
+  <span class="tok-kd">private</span> <span class="tok-n">String</span> <span class="tok-n">other_details</span><span class="tok-o">;</span>
+
+  <span class="tok-kd">private</span> <span class="tok-n">Employee</span> <span class="tok-n">employee</span><span class="tok-o">;</span>
+  <span class="tok-kd">private</span> <span class="tok-n">AccidentType</span> <span class="tok-n">accidentType</span><span class="tok-o">;</span>
+  <span class="tok-kd">private</span> <span class="tok-n">SeriousnessLevel</span> <span class="tok-n">seriousnessLevel</span><span class="tok-o">;</span>
+
+  <span class="tok-kd">public</span> <span class="tok-nf">Accident</span><span class="tok-o">(</span><span class="tok-n">String</span> <span class="tok-n">aId</span><span class="tok-o">,</span> <span class="tok-n">String</span> <span class="tok-n">aDescription</span><span class="tok-o">,</span> <span class="tok-n">Date</span> <span class="tok-n">aDate</span><span class="tok-o">,</span> <span class="tok-n">Time</span> <span class="tok-n">aTime</span><span class="tok-o">,</span> <span class="tok-n">String</span> <span class="tok-n">aOther_details</span><span class="tok-o">,</span> <span class="tok-n">Employee</span> <span class="tok-n">aEmployee</span><span class="tok-o">,</span> <span class="tok-n">AccidentType</span> <span class="tok-n">aAccidentType</span><span class="tok-o">,</span> <span class="tok-n">SeriousnessLevel</span> <span class="tok-n">aSeriousnessLevel</span><span class="tok-o">)</span>
+  <span class="tok-o">{</span> <span class="tok-o">...</span> <span class="tok-o">}</span>
+  <span class="tok-c1">// gettes and setters</span>
+  <span class="tok-o">...</span> 
+  <span class="tok-kd">public</span> <span class="tok-n">Employee</span> <span class="tok-nf">getEmployee</span><span class="tok-o">(){</span> <span class="tok-o">...</span> <span class="tok-o">}</span>
+  <span class="tok-kd">public</span> <span class="tok-n">AccidentType</span> <span class="tok-nf">getAccidentType</span><span class="tok-o">(){</span> <span class="tok-o">...</span> <span class="tok-o">}</span>
+  <span class="tok-kd">public</span> <span class="tok-n">SeriousnessLevel</span> <span class="tok-nf">getSeriousnessLevel</span><span class="tok-o">(){</span> <span class="tok-o">...</span> <span class="tok-o">}</span>
+  <span class="tok-kd">public</span> <span class="tok-kt">boolean</span> <span class="tok-nf">setEmployee</span><span class="tok-o">(</span><span class="tok-n">Employee</span> <span class="tok-n">aEmployee</span><span class="tok-o">){</span> <span class="tok-o">...</span> <span class="tok-o">}</span>
+  <span class="tok-kd">public</span> <span class="tok-kt">boolean</span> <span class="tok-nf">setAccidentType</span><span class="tok-o">(</span><span class="tok-n">AccidentType</span> <span class="tok-n">aNewAccidentType</span><span class="tok-o">){</span> <span class="tok-o">...</span> <span class="tok-o">}</span>
+  <span class="tok-kd">public</span> <span class="tok-kt">boolean</span> <span class="tok-nf">setSeriousnessLevel</span><span class="tok-o">(</span><span class="tok-n">SeriousnessLevel</span> <span class="tok-n">aNewSeriousnessLevel</span><span class="tok-o">){</span> <span class="tok-o">...</span> <span class="tok-o">}</span>
+<span class="tok-o">}</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">AccidentType.java (version complète <a href="../examples/accidents/AccidentType.java">ici</a>)</div>
+<div class="content">
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-kn">package</span> <span class="tok-nn">accidents</span><span class="tok-o">;</span>
+<span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">AccidentType</span>
+<span class="tok-o">{</span>
+  <span class="tok-kd">private</span> <span class="tok-n">String</span> <span class="tok-n">code</span><span class="tok-o">;</span>
+  <span class="tok-kd">private</span> <span class="tok-n">String</span> <span class="tok-n">description</span><span class="tok-o">;</span>
+
+  <span class="tok-kd">public</span> <span class="tok-nf">AccidentType</span><span class="tok-o">(</span><span class="tok-n">String</span> <span class="tok-n">aCode</span><span class="tok-o">,</span> <span class="tok-n">String</span> <span class="tok-n">aDescription</span><span class="tok-o">){</span> <span class="tok-o">...</span> <span class="tok-o">}</span>
+  <span class="tok-o">...</span>
+<span class="tok-o">}</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Employee.java (version complète <a href="../examples/accidents/Employee.java">ici</a>)</div>
+<div class="content">
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-kn">package</span> <span class="tok-nn">accidents</span><span class="tok-o">;</span>
+<span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">Employee</span>
+<span class="tok-o">{</span>
+  <span class="tok-kd">private</span> <span class="tok-n">String</span> <span class="tok-n">id</span><span class="tok-o">;</span>
+  <span class="tok-kd">private</span> <span class="tok-n">String</span> <span class="tok-n">department</span><span class="tok-o">;</span>
+  <span class="tok-kd">private</span> <span class="tok-n">String</span> <span class="tok-n">name</span><span class="tok-o">;</span>
+  <span class="tok-kd">private</span> <span class="tok-n">String</span> <span class="tok-n">supervisor</span><span class="tok-o">;</span>
+  <span class="tok-kd">private</span> <span class="tok-n">String</span> <span class="tok-n">other_employee_details</span><span class="tok-o">;</span>
+
+  <span class="tok-kd">private</span> <span class="tok-n">List</span><span class="tok-o">&lt;</span><span class="tok-n">Accident</span><span class="tok-o">&gt;</span> <span class="tok-n">accidents</span><span class="tok-o">;</span>
+
+  <span class="tok-kd">public</span> <span class="tok-nf">Employee</span><span class="tok-o">(</span><span class="tok-n">String</span> <span class="tok-n">aId</span><span class="tok-o">,</span> <span class="tok-n">String</span> <span class="tok-n">aDepartment</span><span class="tok-o">,</span> <span class="tok-n">String</span> <span class="tok-n">aName</span><span class="tok-o">,</span> <span class="tok-o">...){</span> <span class="tok-o">...</span> <span class="tok-o">}</span>
+  <span class="tok-kd">public</span> <span class="tok-n">Accident</span> <span class="tok-nf">getAccident</span><span class="tok-o">(</span><span class="tok-kt">int</span> <span class="tok-n">index</span><span class="tok-o">){</span> <span class="tok-o">...</span> <span class="tok-o">}</span>
+  <span class="tok-kd">public</span> <span class="tok-n">List</span><span class="tok-o">&lt;</span><span class="tok-n">Accident</span><span class="tok-o">&gt;</span> <span class="tok-nf">getAccidents</span><span class="tok-o">(){</span> <span class="tok-o">...</span> <span class="tok-o">}</span>
+  <span class="tok-kd">public</span> <span class="tok-kt">int</span> <span class="tok-nf">numberOfAccidents</span><span class="tok-o">(){</span> <span class="tok-o">...</span> <span class="tok-o">}</span>
+  <span class="tok-kd">public</span> <span class="tok-kt">boolean</span> <span class="tok-nf">hasAccidents</span><span class="tok-o">(){</span> <span class="tok-o">...</span> <span class="tok-o">}</span>
+  <span class="tok-kd">public</span> <span class="tok-kt">int</span> <span class="tok-nf">indexOfAccident</span><span class="tok-o">(</span><span class="tok-n">Accident</span> <span class="tok-n">aAccident</span><span class="tok-o">){</span> <span class="tok-o">...</span> <span class="tok-o">}</span>
+  <span class="tok-kd">public</span> <span class="tok-kd">static</span> <span class="tok-kt">int</span> <span class="tok-nf">minimumNumberOfAccidents</span><span class="tok-o">(){</span><span class="tok-k">return</span> <span class="tok-mi">0</span><span class="tok-o">;}</span>
+  <span class="tok-kd">public</span> <span class="tok-n">Accident</span> <span class="tok-nf">addAccident</span><span class="tok-o">(</span><span class="tok-n">String</span> <span class="tok-n">aId</span><span class="tok-o">,</span> <span class="tok-n">String</span> <span class="tok-n">aDescription</span><span class="tok-o">,</span> <span class="tok-n">Date</span> <span class="tok-n">aDate</span><span class="tok-o">,</span> <span class="tok-o">...){</span> <span class="tok-o">...</span> <span class="tok-o">}</span>
+  <span class="tok-kd">public</span> <span class="tok-kt">boolean</span> <span class="tok-nf">addAccident</span><span class="tok-o">(</span><span class="tok-n">Accident</span> <span class="tok-n">aAccident</span><span class="tok-o">){</span> <span class="tok-o">...</span> <span class="tok-o">}</span>
+  <span class="tok-kd">public</span> <span class="tok-kt">boolean</span> <span class="tok-nf">removeAccident</span><span class="tok-o">(</span><span class="tok-n">Accident</span> <span class="tok-n">aAccident</span><span class="tok-o">){</span> <span class="tok-o">...</span> <span class="tok-o">}</span>
+<span class="tok-o">}</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">SeriousnessLevel.java (version complète <a href="../examples/accidents/SeriousnessLevel.java">ici</a>)</div>
+<div class="content">
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-kn">package</span> <span class="tok-nn">accidents</span><span class="tok-o">;</span>
+
+<span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">SeriousnessLevel</span>
+<span class="tok-o">{</span>
+  <span class="tok-kd">private</span> <span class="tok-n">String</span> <span class="tok-n">code</span><span class="tok-o">;</span>
+  <span class="tok-kd">private</span> <span class="tok-n">String</span> <span class="tok-n">description</span><span class="tok-o">;</span>
+
+  <span class="tok-kd">public</span> <span class="tok-nf">SeriousnessLevel</span><span class="tok-o">(</span><span class="tok-n">String</span> <span class="tok-n">aCode</span><span class="tok-o">,</span> <span class="tok-n">String</span> <span class="tok-n">aDescription</span><span class="tok-o">){</span> <span class="tok-o">...</span> <span class="tok-o">}</span>  
+<span class="tok-o">}</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_exercice">4.2. Exercice</h3>
+<div class="paragraph">
+<p>Réalisez le Diagramme de Classes correspondant (avec associations et méthodes)</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2021-01-14 11:32:45 +0100
+</div>
+</div>
+</body>
+</html>
