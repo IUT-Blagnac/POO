@@ -6,7 +6,7 @@
 | # | Type  (TD/TP) |   HTML               |   PDF              |   Correction         | Détails                            |
 |:-:|:-------------:|:--------------------:|:------------------:|:--------------------:|------------------------------------|
 | 0 | TD            | [TD0.html](TD0.html) | [TD0.pdf](TD0.pdf) | N/A                  | Initiation aux modèles de classes  |
-| 1 | TD            | [TD1.html](TD0.html) | [TD1.pdf](TD0.pdf) | N/A                  | Premiers diagrammes de classes UML |
+| 1 | TD            | [TD1.html](TD1.html) | [TD1.pdf](TD1.pdf) | N/A                  | Premiers diagrammes de classes UML |
 |:-:|:-------------:|:--------------------:|:------------------:|:--------------------:|------------------------------------|
 
 ### Contributions
