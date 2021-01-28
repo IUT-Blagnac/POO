@@ -1,25 +1,14 @@
-ifndef::slides[:leveloffset: -1]
-ifdef::slides[:leveloffset: -2]
-
+:slides:
 [{topic}]
-==== Diagramme de classe
+== Diagramme de classe
 
 Nous souhaitons représenter les données manipulées par le système, ainsi
 que les relations entre ces données.
 
 image::plantuml-cd.svg[width=20%]
 
-[NOTE]
-====
-Nous parlons pour l'instant de _classe_, si vous êtes familié avec
-le langage C vous pouvez parler de _structure_.
-Pour l'instant considérons que les 2 sont équivalents.
-====
 
-ifdef::slides[:leveloffset: -3]
-
-[{topic}]
-===== Concept de *Classe*
+=== Concept de *Classe*
 
 Une *classe* est une représentation unique servant à caractériser
 un ensemble d’*objets* jouant un rôle identique et décrits par les mêmes *attributs*.
@@ -27,20 +16,15 @@ un ensemble d’*objets* jouant un rôle identique et décrits par les mêmes *a
 image::plantuml-cd.svg[width=20%]
 
 
-ifdef::slides[]
 [{topic}]
-===== Une classe est-elle un ensemble d'objets ?
+=== Une classe est-elle un ensemble d'objets ?
 
 [{incremental}]
 - Au sens tableau / stockage mémoire du terme => *NON* 
 - Au sens mathématiques / ensembliste (comme N ou R) => *OUI* 
 
-endif::slides[]
-
-ifdef::slides[]
 [{topic}]
-===== Concept de *Classe* (suite)
-endif::slides[]
+=== Concept de *Classe* (suite)
 
 Afin de faciliter la lisibilité des diagrammes, il est d'usage d'adopter une certaine
 façon de nommer les différents éléments. Ceci permet d'avoir une homogénéité dans les
@@ -56,7 +40,7 @@ Exemple de convention d’écriture suivante : +
 
 
 [{topic}]
-===== Classes et objets
+=== Classes et objets
 
 En programmation on parle de +type+ et de +variable+. Même si c'est un raccourci très rapide
 nous pouvons pour l'instant faire le parallèle entre les notions de +classe+ et d'+objet+.
@@ -67,7 +51,7 @@ image:object.svg[width=40%]
 
 
 [{topic}]
-===== Attributs
+=== Attributs
 
 Un *attribut* est une propriété représentative d’un objet
 (nom d’une personne, couleur d’une voiture, moyenne d’un étudiant...).
@@ -78,7 +62,7 @@ Exemples :
 
 image:plantuml-cd.svg[width=20%]
 
-ifdef::slides[===== !]
+ifdef::slides[=== !]
 
 [NOTE]
 ====
@@ -88,7 +72,7 @@ Nous utiliserons la convention d’écriture suivante pour les attributs : +
 - pour les noms composés, on mettra en majuscule la première lettre de chaque mot, sauf pour le premier.
 ====
 
-ifdef::slides[===== !]
+ifdef::slides[=== !]
 
 Les noms des attributs de type booléen seront précédés du préfixe +est+ (_is_ en anglais).
 
@@ -97,7 +81,7 @@ Exemples :
 - `estMajeur` vaut `VRAI` si une personne est majeure et `FAUX` si elle est mineure
 - +estCadre+ vaut `VRAI` si une personne est cadre et `FAUX` sinon
 
-ifdef::slides[===== !]
+ifdef::slides[=== !]
 
 L'intérêt de cette convention permet d'écrire directement des instructions facilement
 interprétables, comme :
@@ -109,18 +93,18 @@ if (estMajeur)
 -----
 
 [{topic}]
-=====  Identifiant
+===  Identifiant
 
 Un *identifiant* est un attribut particulier d’une classe dont les valeurs représentent
 sans ambiguïté chaque objet de la classe.
 
 [TIP]
 .Choix d’un identifiant
-====
+===
 Il faut prendre un attribut non ambigu (le nom d’une personne ne convient pas) et court (le numéro de sécu est trop long).
-====
+===
 
-ifdef::slides[===== !]
+ifdef::slides[=== !]
 
 image:id.svg[30%]
 
@@ -134,7 +118,7 @@ Vous approfondirez (ou avez déjà abordé) cette notion en Base de donnée.
 
 
 [{topic}]
-=====  Association
+===  Association
 
 Une *association* est un ensemble de liens permanents existant entre les objets de deux ou plusieurs classes.
 On dira qu’une association lie plusieurs classes ou que les classes *participent* à l’association.
@@ -145,14 +129,14 @@ On dira qu’une association lie plusieurs classes ou que les classes *participe
 Dans l'exercice sur l'Agence de Voyage, une fiche +client+ est liée à une ou plusieurs +commandes+ en cours.
 ====
 
-ifdef::slides[===== !]
+ifdef::slides[=== !]
 
 Dimension d’une association :
 
 Nombre de classes mises en jeu par l’association +
 (binaire : 2, ternaire : 3, n-aire : n)
 
-ifdef::slides[===== !]
+ifdef::slides[=== !]
 
 Exemple d’association binaire 
 
@@ -161,7 +145,7 @@ On veut indiquer quels sont les produits susceptibles d’être fournis par chaq
 
 image:prod-fourn.png[width="40%"]
 
-ifdef::slides[===== !]
+ifdef::slides[=== !]
 
 Nom d’une association :
 
@@ -177,7 +161,7 @@ Il existe trois façons de nommer une association :
 Un nom d’association commencera par une majuscule comme les noms de classes.
 ====
 
-ifdef::slides[===== !]
+ifdef::slides[=== !]
 
 Cardinalité :
 
@@ -189,7 +173,7 @@ de l'association) qui peuvent être en association avec un objet donné (de l'au
 Attention, dans une cardinalité +M..N+, +M+ doit toujours être inférieur ou égal à +N+.  Exemple : +3..10+.
 ====
 
-ifdef::slides[===== !]
+ifdef::slides[=== !]
 
 Cardinalités classiques :
 
@@ -198,7 +182,7 @@ Cardinalités classiques :
 - +1+ : signifie +[1..1]+
 
 [{topic}]
-=====  Représentation
+===  Représentation
 
 Représentation des classes
 
@@ -207,7 +191,7 @@ Le compartiment supérieur contient le *nom* de la classe et le compartiment inf
 
 image:plantuml-cd.svg[width=20%]
 
-ifdef::slides[===== !]
+ifdef::slides[=== !]
 
 Représentation des associations
 
@@ -216,14 +200,14 @@ Une association binaire est représentée par un trait reliant deux classes. Le 
 image:exp2.svg[width=20%]
 
 [{topic}]
-=====  Classe association
+===  Classe association
 
 Certains attributs ne dépendent pas d'une seule classe, mais de plusieurs.
 Exemple : le prix d'un produit selon le fournisseur qui le propose.
 
 image:class-assoc.svg[width=200]
 
-ifdef::slides[===== !]
+ifdef::slides[=== !]
 
 Pour les représenter, ils seront placés dans une *classe-association* reliée au  trait de liaison par un trait en pointillés. Le nom de l'association sera alors placé dans la classe-association.
 
@@ -232,9 +216,11 @@ image:class-assoc.svg[width=200]
 ifdef::slides[:leveloffset: -2]
 
 [{topic}]
-==== Pour dessiner rapidement de l'UML
+=== Pour dessiner rapidement de l'UML
 
 Les schémas de cette section sont écrits en utilisant le langage http://plantuml.sourceforge.net/[PlantUML].
+
+ifdef::slides[=== !]
 
 Par exemple le schéma précédent a été réalisé à partir du code suivant :
 
@@ -256,19 +242,17 @@ class Fournir {
 }
 -----
 
-ifdef::slides[===== !]
+ifdef::slides[=== !]
 
 [NOTE]
 ====
-Vous pouvez tester en ligne : http://www.plantuml.com/plantuml/ ou encore télécharger le [plugin eclipse] (cf. <<plantumlecl,illustration>> ci-dessous)
+Vous pouvez tester en ligne : http://www.plantuml.com/plantuml/ ou encore télécharger un plugin (e.g., eclipse).
 ====
 
-[[plantumlecl]]
 image:plantuml-eclipse.png[width=600,height=600]
 
-//// 
 [{topic}]
-==== Exercices de révision
+=== Exercices de révision
 
 - Réalisez le diagramme de classes suivant :
 
@@ -277,7 +261,7 @@ image:plantuml-eclipse.png[width=600,height=600]
 3. Pour chaque examen un étudiant à une note.
 4. Les cours sont enseignés par un enseignant (nom, prénom)
 
-ifdef::slides[===== !]
+ifdef::slides[=== !]
 
 - Réalisez le diagramme de classes suivant :
 
@@ -286,22 +270,22 @@ ifdef::slides[===== !]
 3. Un clavier possède des touches
 4. Un portable a un 0 ou 1 propriétaire qui a lui même un nom et un prénom
 5. Un portable a un prix d'achat et une valeur actuelle (souvent différente)
-////
+
 
 [{topic}]
-==== Les relations/associations
+=== Les relations/associations
 
 image::associations.svg[width=100%]
 
 
 [{topic}]
-==== Démo
+=== Démo
 
 - plantUML
 - Umple
 
 [{topic}]
-==== Time for a quizz!
+=== Time for a quizz!
 
 //----------------------------- Question ------------------
 .*QUESTION*
@@ -309,7 +293,7 @@ image::associations.svg[width=100%]
 ====
 - Connectez-vous sur : http://www.socrative.com/ (*student login*)
 - Ou téléchargez l'application pour étudiant image:socrative2.png[width=10%]
-- Choisissez la room *44918d67*
+- Choisissez la room *JMB42*
 ====
 
 image::socrative1.png[width=50%,link=http://www.socrative.com/]
