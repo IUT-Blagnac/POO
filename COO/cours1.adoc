@@ -1,0 +1,126 @@
+// ------------------------------------------
+//  Created by Jean-Michel Bruel on 2012-10-19.
+//  Copyright (c) 2019 IRIT/U. Toulouse. All rights reserved.
+// ------------------------------------------
+:title: Conception Orientée Objet
+// ------------------------------------------
+:Author: jean-michel.bruel@univ-tlse2.fr
+:Author Initials: JMB
+//:Email: jean-michel.bruel@univ-tlse2.fr
+:Revision: 1.20
+:localdate: {sys: date +%d/%m/%Y}
+:Date: {localdate}
+:startdate: 2012-10-19
+:imagesdir: images
+:icons: font
+:toc: left
+:base: http://jmbruel.github.io/teachingMaterials/
+:website: http://bit.ly/jmb-teaching
+:baseURL: http://github.com/jmbruel/teachingMaterials
+:graduation-icon: pass:[<i class="fa fa-graduation-cap"></i>]
+:cogs-icon: pass:[<i class="fa fa-cogs"></i>]
+:beginner: icon:star-o[]
+:advanced: icon:star-half-o[]
+:expert: icon:star[]
+:dollar: icon:dollar[]
+:giturl: http://git-scm.com/
+:git: link:{giturl}[icon:git[]]
+:us-icon: image:icons/usa.svg[width=20%]
+:fr-icon: image:icons/france.svg[width=20%]
+// ------------------------------------------ definitions
+ifndef::definitions[]
+include::../definitions.txt[]
+endif::definitions[]
+:androidicon: Android icon:android[]
+:iosicon: http://www.apple.com/fr/ios/[iOS icon:apple[]]
+:bitlysiteurl: {website}
+:images: images
+= Base de la Conception Orientée Objet
+Jean-Michel Bruel - {localdate}
+
+:incremental: %step
+// ------------------------------------------ plan
+== icon:book[] Au programme aujourd'hui
+
+[{incremental}]
+- Avant-propos
+//- icon:warning[] [detail]#Organisation & règles !#
+- icon:warning[] [detail]#Stages & Groupe anglais#
+- Diagramme de classes UML
+//- icon:warning[] [detail]#Cours raccourci exceptionnellement !#
+
+// ------------------------------------------ wrap up
+:numbered:
+[{intro}]
+== Avant-propos
+
+[{topic}]
+=== icon:graduation-cap[] Who am I ?
+
+[{incremental}]
+* *Responsable* du cours COO [detail]#(c'est moi qui fait le sujet d'exam!)#
+* jean-michel.bruel@univ-tlse2.fr
+* jbruel@gmail.com
+* Responsable des stages
+* 06.07.65.19.70 [detail]#(portable DUT Info)#
+* image:discord.png[width=6%] https://discord.gg/
+
+
+[{topic}]
+=== Suivre les cours... icon:mobile[] icon:tablet[] icon:laptop[]
+
+{bitlysiteurl}
+
+
+// [{topic}]
+// === icon:map-signs[] Règles
+
+// [{incremental}]
+// * Ordi / Smartphones => OK icon:thumbs-up[]
+// * Boissons fermées => OK icon:thumbs-up[]
+// * Nourriture / gobelets [detail]#(/ bières...)# => NOK icon:thumbs-down[]
+// * Non présence => OK icon:thumbs-up[] [detail]#(avec un bémol!)#
+// * Retard = Après moi!
+// * Dormir => OK [detail]#(mais au fond)# icon:thumbs-up[]
+// * On parle de tout [detail]#ce qui peut intéresser le groupe#
+
+[{topic}]
+== Hors sujet
+
+[{incremental}]
+* Stages
+* Groupe anglais
+
+[{intro}]
+== **U**nified **M**odeling **L**anguage
+
+[{topic}]
+=== Modéliser les données
+
+Le *diagramme de classe* {uml} permet 
+
+[{incremental}]
+- de modéliser les données 
+- future base de donnée (e.g.,  `PHP`/`MySQL`)
+- objets manipulés (e.g., programme Java)
+
+
+[{topic}]
+===  Données et variables
+
+Commençons par un parallèle avec les données manipulées en programmation :
+
+Une *donnée* (e.g., *37.2*) est brute.
+
+Elle n'a de signification que lorsqu'elle devient une *information*
+(e.g., "*température* de 37.2 degrés Celcius").
+
+include::DC.adoc[]
+
+
+ifdef::slides[]
+// ------------------------------------------ The end
+[{intro}]
+== *The End* {nbsp} {nbsp} {nbsp} [detail]#(for me!)#
+
+endif::slides[]
