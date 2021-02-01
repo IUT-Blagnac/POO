@@ -12,6 +12,11 @@ Supports de cours et de TD de [JMB](mailto:jbruel@gmail.com)
 | 1 | TD            | [TD1.html](TD1.html) | [TD1.pdf](TD1.pdf) | N/A                  | Premiers diagrammes de classes UML |
 |:-:|:-------------:|:--------------------:|:------------------:|:--------------------:|------------------------------------|
 
+### Quelques liens utiles :
+
+- Mon éditeur préféré (à cause du SVG) : [https://plantuml-editor.kkeisuke.com/](https://plantuml-editor.kkeisuke.com/)
+- Il y a aussi celui-ci qui marche bien : [https://liveuml.com/](https://liveuml.com/)
+
 ### Contributions
 
 Le présent fichier est obtenu automatiquement (via GitHub Pages et [Jekyll](https://jekyllrb.com/)) à partir [de ce fichier source](https://github.com/IUT-Blagnac/POO/edit/master/docs/index.md).
