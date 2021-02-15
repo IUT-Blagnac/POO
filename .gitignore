@@ -3,8 +3,10 @@ Makefile
 .DS_Store
 **/*.class
 POO/src/WSPCE_S2/.metadata/**
-/COO/TD*.html
+COO/TD*.html
 projet2019
 Gemfile.lock
-.old
+**/*.old
 cours.html.old
+Projet2020
+Retro2020-G3.xlsx

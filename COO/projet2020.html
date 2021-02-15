@@ -470,11 +470,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_attendus">4.2. Attendus</a></li>
 </ul>
 </li>
-<li><a href="#_analyse_et_conception">5. Analyse et Conception</a></li>
-<li><a href="#_analyse_et_conception_2">6. Analyse et Conception</a></li>
-<li><a href="#_devoirs_maison">7. Devoirs maison</a></li>
-<li><a href="#_dépot_gitlab">8. Dépot Gitlab</a></li>
-<li><a href="#_jouer_avec_git">9. Jouer avec Git</a></li>
+<li><a href="#_analyse_et_conception">5. Analyse et Conception</a>
+<ul class="sectlevel2">
+<li><a href="#_contexte_2">5.1. Contexte</a></li>
+<li><a href="#_attendus_2">5.2. Attendus</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -632,7 +633,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 Il devra se trouver dans un répertoire <code>/retro/doc/</code> et s&#8217;appeler <code>index.html</code>.</p>
 </div>
 <div class="paragraph">
-<p>La date (prévisionnelle) de rendu pour ce 1er projet est le <strong>vendredi 8 mai</strong> à minuit.</p>
+<p>La date (prévisionnelle) de rendu pour ce 1er projet est le <strong>vendredi 22 mai</strong> à minuit.</p>
 </div>
 </div>
 </div>
@@ -640,70 +641,163 @@ Il devra se trouver dans un répertoire <code>/retro/doc/</code> et s&#8217;appe
 <div class="sect1">
 <h2 id="_analyse_et_conception">5. Analyse et Conception</h2>
 <div class="sectionbody">
-
-</div>
-</div>
-<div class="sect1">
-<h2 id="_analyse_et_conception_2">6. Analyse et Conception</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_contexte_2">5.1. Contexte</h3>
 <div class="paragraph">
-<p>Pour plus tard ;-)</p>
+<p>Ce deuxième projet noté va consister, pour votre groupe, à faire la modélisation d&#8217;un programme futur dont vous n&#8217;avez pas à développer le code, mais dont vous avez à analyser les besoins et concevoir l&#8217;architecture de l&#8217;application à développer (comme si le codage allait être sous-traité).</p>
 </div>
+<div class="paragraph">
+<p>Le client de ce projet est le département informatique, qui sera représenté par votre encadrant de TP (vous pouvez aussi poser des questions au client via le forum <code>#faq-client</code> du groupe discord BCOO).</p>
 </div>
+<div class="paragraph">
+<p>Le département informatique souhaite que les étudiants connaissent mieux leurs enseignants et vacataires.
+Il souhaite donc se doter d&#8217;une application qui présente simplement (<em>Cover Flow</em> par exemple) les enseignants, comme on feuillète un catalogue.</p>
 </div>
-<div class="sect1">
-<h2 id="_devoirs_maison">7. Devoirs maison</h2>
-<div class="sectionbody">
-
+<div class="paragraph">
+<p>La liste des fonctionnalités attendues est donné ci-dessous :</p>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Toutes ces fonctionnalités ne pourront peut-être pas être traitées dans le temps imparti.
+Vous pourrez reprendre ce tableau dans votre rendu de projet pour lister les fonctionnalités traitées.
+</td>
+</tr>
+</table>
 </div>
-<div class="sect1">
-<h2 id="_dépot_gitlab">8. Dépot Gitlab</h2>
-<div class="sectionbody">
+<table class="tableblock frame-all grid-all" style="width: 90%;">
+<colgroup>
+<col style="width: 8.3333%;">
+<col style="width: 8.3333%;">
+<col style="width: 83.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Priorité<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Fonctionnalité attendue</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Pouvoir parcourir simplement toutes les "fiches" présentant les personnes qui enseignent au DUT Informatique et à la Licence Pro APSIO.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Les fiches devront à minima contenir le nom, prénom, initiales, (surnom éventuellement), une photo (ou avatar), un descriptif succinct, la liste des formation (DUT/LP) et modules (M2104-BCOO par exemple) où il ou elle intervient.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">S</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>On devra pouvoir filtrer les fiches par formation et/ou par module.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">S</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Les personnes pourront accéder à leur fiche pour en modifier les renseignements principaux (pas les modules enseignés par exemple).</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">S</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>L&#8217;application devra avoir une interface de paramétrage pour que les secrétariats ou les responsables d&#8217;années puisse définir quel personne enseigne dans quel module pour l&#8217;année en cours.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">C</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Un maximum d&#8217;information seront "clickables" (dans une fiche, clicker sur le nom d&#8217;un module permettra d&#8217;accéder aux pages moodle de ce module par exemple, ou clicker sur le nom du laboratoire d&#8217;un enseignant-chercheur ouvrira les pages web de ce laboratoire, &#8230;&#8203;).</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">C</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>L&#8217;application doit être fluide et rapide à manipuler.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Quelques informations métiers à prendre en compte :</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>Dépôt public sur <a href="https://gitlab.com" class="bare">https://gitlab.com</a> ou <a href="https://framagit.org/" class="bare">https://framagit.org/</a></p>
+<p>On distinguera les enseignants (qui viennent généralement du secondaire et qui ne sont généralement pas associé à un laboratoire de recherche) et les enseignants-chercheurs (qui sont nécessairement liés à un laboratoire de recherche). Ceci pour que dans la présentation, un onglet ou un encart concerne ses activités de recherche s&#8217;il s&#8217;agit d&#8217;un enseignant-chercheur.</p>
 </li>
 <li>
-<p>Nom du projet: BC002020-G[X][A|B]-CeQueVousVoulez (exemple : BCOO-G3A-LesPokemons)</p>
+<p>On distinguera également l&#8217;appartenance au département informatique (la fiche étant renseignée par notre secrétaire). Pour les autres (appelés vacataires), ils renseigneront eux-même leur fiche.</p>
 </li>
-<li>
-<p>Prenez en main Gitlab :</p>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_attendus_2">5.2. Attendus</h3>
+<div class="paragraph">
+<p>Vous devrez donc réaliser :</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>Créez des Issues</p>
+<p>Un diagramme (au moins) des cas d&#8217;utilisation qui liste les grands types de fonctionalités attendues ainsi que les différents acteurs</p>
 </li>
 <li>
-<p>Modifiez le README</p>
+<p>Des maquettes d&#8217;écran correspondant à la future application (n&#8217;hésitez pas à interroger votre client très tôt pour avoir son aval)</p>
+</li>
+<li>
+<p>Un diagramme de classe (au moins) qui permet de se rendre compte des classes métiers (importantes) qu&#8217;il faudra développer, leur liens entre elles, ainsi éventuellement que la structure de votre (futur) code.</p>
+</li>
+<li>
+<p>Un diagramme de séquence (au moins) pour l&#8217;une des fonctionalités attendues qui permettra d&#8217;en détailler l&#8217;algorithme.</p>
+</li>
+<li>
+<p>Un SNI (facultatif et donc uniquement bonus) qui permet d&#8217;expliquer comment vous lieé vos classes et vos maquettes d&#8217;écran.</p>
+</li>
+<li>
+<p>Uniquement si vous avez le temps (facultatif et donc uniquement bonus) vous pouvez proposer une application minimaliste (java ou web) correspondant à votre architecture.</p>
 </li>
 </ul>
 </div>
-</li>
-</ul>
+<div class="paragraph">
+<p>Vous utiliserez votre projet GitLab pour travailler en groupe, vous répartir les tâches et versionner votre rapport de conception.</p>
+</div>
+<div class="paragraph">
+<p>Vous devrez rendre votre dossier de conception sous la forme d&#8217;un document HTML généré par Asciidoc.
+Il devra se trouver dans un répertoire <code>/analyse/doc/</code> et s&#8217;appeler <code>index.html</code>.</p>
+</div>
+<div class="paragraph">
+<p>La date (non négociable) de rendu pour ce 1er projet est le <strong>dimanche 21 juin</strong> à minuit.</p>
 </div>
 </div>
 </div>
-<div class="sect1">
-<h2 id="_jouer_avec_git">9. Jouer avec Git</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Clonez votre dépôt</p>
-</li>
-<li>
-<p>Essayez le cycle modifier / <code>git add</code> / <code>git commit</code> / <code>git push</code></p>
-</li>
-</ul>
 </div>
 </div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. <strong>M</strong>ust (obligatoire), <strong>S</strong>hould (souhait fort, mais pas vital), <strong>C</strong>ould (optionnel)
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-20 08:23:59 +0200
+Last updated 2020-06-06 16:41:56 +0200
 </div>
 </div>
 </body>
