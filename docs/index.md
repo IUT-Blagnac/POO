@@ -10,6 +10,7 @@ Supports de cours et de TD de [JMB](mailto:jbruel@gmail.com)
 | 1 | Cours         | [Introduction](bcoo.html) | N/A | N/A                  | Introduction aux classes et diagrammes de classes (DC)  |
 | 0 | TD            | [TD0.html](TD0.html) | [TD0.pdf](TD0.pdf) | N/A                  | Initiation aux modèles de classes  |
 | 1 | TD            | [TD1.html](TD1.html) | [TD1.pdf](TD1.pdf) | N/A                  | Premiers diagrammes de classes UML |
+| 2 | TD            | [TD2.html](TD2.html) | [TD2.pdf](TD2.pdf) | N/A                  | Diagrammes de classes UML évolués  |
 |:-:|:-------------:|:--------------------:|:------------------:|:--------------------:|------------------------------------|
 
 ### Quelques liens utiles :
