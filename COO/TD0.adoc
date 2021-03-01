@@ -341,7 +341,7 @@ class Ligne {
 addPoint(Point);
 getPoints();
 }
-Ligne --> "0..2" Point
+Ligne --> "2..2" Point
 -----
 
 On pourra aussi parler de navigation entre objets au passage...
