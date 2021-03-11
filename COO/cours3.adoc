@@ -1,0 +1,432 @@
+// ------------------------------------------
+//  Created by Jean-Michel Bruel on 2012-10-19.
+//  Copyright (c) 2019 IRIT/U. Toulouse. All rights reserved.
+// ------------------------------------------
+:title: Conception Orientée Objet
+// ------------------------------------------
+:Author: jean-michel.bruel@univ-tlse2.fr
+:Author Initials: JMB
+//:Email: jean-michel.bruel@univ-tlse2.fr
+:Revision: 1.20
+:localdate: {sys: date +%d/%m/%Y}
+:Date: {localdate}
+:startdate: 2012-10-19
+:imagesdir: images
+:icons: font
+:toc: left
+:base: http://jmbruel.github.io/teachingMaterials/
+:website: http://bit.ly/jmb-teaching
+:baseURL: http://github.com/jmbruel/teachingMaterials
+:graduation-icon: pass:[<i class="fa fa-graduation-cap"></i>]
+:cogs-icon: pass:[<i class="fa fa-cogs"></i>]
+:beginner: icon:star-o[]
+:advanced: icon:star-half-o[]
+:expert: icon:star[]
+:dollar: icon:dollar[]
+:giturl: http://git-scm.com/
+:git: link:{giturl}[icon:git[]]
+:us-icon: image:icons/usa.svg[width=20%]
+:fr-icon: image:icons/france.svg[width=20%]
+// ------------------------------------------ definitions
+ifndef::definitions[]
+include::definitions.txt[]
+endif::definitions[]
+:androidicon: Android icon:android[]
+:iosicon: http://www.apple.com/fr/ios/[iOS icon:apple[]]
+:bitlysiteurl: {website}
+:images: images
+
+//--------------------- dzslides
+ifdef::slides[]
+:dzslides-style: tomorrow
+//:dzslides-style: stormy, watermelon, tomorrow, truffle, statement, default
+:dzslides-transition: fade
+:dzslides-fonts: family=Yanone+Kaffeesatz:400,700,200,300&family=Cedarville+Cursive
+:dzslides-highlight: asciidoctor
+//:dzslides-highlight: monokai
+:source-highlighter: highlightjs
+:dzslides-status:
+:topic: .topic
+:intro: .topic.intro
+:statement: .topic.statement
+:incremental: .incremental
+:source: .topic.source
+:linkcss:
+endif::slides[]
+
+//--------------------- cours
+ifndef::slides[]
+:source-highlighter: highlight
+:topic:
+:intro:
+:statement:
+:incremental: %step
+:source:
+endif::slides[]
+
+= Base de la Conception Orientée Objet
+Jean-Michel Bruel - {localdate}
+
+// ------------------------------------------ wrap up
+:numbered:
+
+[{topic}]
+== Suivre les cours... icon:mobile[] icon:tablet[] icon:laptop[]
+
+{bitlysiteurl}
+
+
+// ------------------------------------------ plan
+:numbered:
+[{intro}]
+== icon:book[] Au programme aujourd'hui
+
+ifdef::slides[== Plan]
+
+[{incremental}]
+- Retour sur les classes
+- Diagrammes de séquences
+- Modèle / Vue / Contrôleur
+
+// ------------------------------------------ wrap up
+:numbered!:
+[{intro}]
+== Diagramme de classe : *subtilités*
+
+[{topic}]
+=== Liens entre classes
+
+image::UMLSyntaxe.svg[width=50%]
+
+[{topic}]
+=== Liens entre classes
+
+image::UMLSyntaxe2.svg[width=80%]
+
+
+[{intro}]
+=== Opérations, Paquetages et Java
+
+[{topic}]
+=== Opérations
+
+Un ensemble d'opérations définit le comportement de l’objet (ex : `setVitesse(valeur)`),
+c’est à dire son interface.
+
+image:voiture.png["Exemple de classe avec opération",width="20%"]
+
+image:encapsulation.png["Opérations et objet",width="40%"]
+
+[{topic}]
+=== Génération de code
+
+Voici quelques exemples de diagramme de classes et du code java associé.
+
+[{topic}]
+=== Classe
+
+image:catalogue.png["Une classe",width="40%"]
+
+[source,java]
+-------------------------------------------
+package Catalogue;
+import java.util.Date;
+
+public class Catalogue {
+	private String nom;
+	private Date dateCreation;
+
+	public Catalogue() {
+		...
+	}
+
+	public Livre chercherLivre(String isbn) {
+		...
+	}
+}
+-------------------------------------------
+
+[{topic}]
+=== Généralisation
+
+image:personne.png["Généralisation",width="40%"]
+
+[{topic}]
+=== Généralisation
+
+[source,java]
+-------------------------------------------
+public abstract class Personne {
+	private String nom;
+	private String prenom;
+	protected Date dateNaissance;
+	private static int ageMajorite = 18;
+	public abstract int calculerDureePret() {... }
+	public static void setAgeMajorite (int aMaj) {... }
+}
+
+public class Adherent extends Personne {
+	private int iD;
+
+	public Adherent() { ... }
+	public int getAge() { ... }
+	public int calculerDureePret() { ... }
+}
+-------------------------------------------
+
+[{topic}]
+=== Associations
+
+image:association.png["Associations",width="40%"]
+
+[source,java]
+-------------------------------------------
+public class A1 {
+	private B1 leB1;
+}
+public class A2 {
+	private B2 lesB2[ ];
+}
+public class A3 {
+	private List lesB3 = new ArrayList();
+}
+-------------------------------------------
+
+[{topic}]
+=== Dépendance
+
+image:dependances.png["Dépendance",width="50%"]
+
+[source,java]
+-------------------------------------------
+package Bibliotheque;
+import Catalogue;
+
+public class Bibliotheque {
+	private Catalogue leCatalogue;
+	...
+}
+-------------------------------------------
+
+[{topic}]
+=== Equivalences entre diagrammes de classes
+
+image:equiv.png["Equivalences",width="90%"]
+
+[{topic}]
+=== Classe Association
+
+image:assoc.png["Classe Association",width="40%"]
+
+[source,java]
+-------------------------------------------
+public class Emploi {
+	private String titre
+	private Double salaire;
+	private Employe salarie;
+	private Societe employeur;
+	...
+}
+-------------------------------------------
+
+[{intro}]
+== Back to UML
+
+[{topic}]
+== Le Diagramme de Séquence
+
+image:fowl3.png["Conception 'centralisée'",width="45%"]
+image:fowl4.png["Conception 'objet'",width="45%"]
+
+[{topic}]
+=== Généralités
+
+[{incremental}]
+* Modélise les interactions entre objets
+* Séquencement dans le temps
+* Échange de messages
+* Spécifie les scénarios des cas d'études
+* Éléments :
+** participants
+** lignes de vie
+** barres d'activation
+** messages
+** blocs (`loop`, `alt`, `opt`, ...)
+
+[{topic}]
+=== Généralités
+
+image:seq1.png["Diagramme de séquence",width="40%"]
+image:seq2.png["Eléments de notation",width="40%"]
+
+[WARNING]
+=====================================================================
+Les lignes de vie représentent des objets et non des classes
+=====================================================================
+
+[{topic}]
+=== Exemple
+
+image:seq3.png["Exemple de diagramme de séquence",width="60%"]
+
+[{topic}]
+== Notions avancées
+
+* Instructions itératives et conditionnelles
+* Mieux vaut utiliser un diagramme d'activité
+* Cadres d'interaction
+** `loop` (boucle)
+** `alt` (alternative)
+** `opt` (optionel)
+** `par` (parallèle)
+** `region` (région critique - un seul thread à la fois)
+
+[{topic}]
+=== Exemple
+
+image:fowl1.png["Un algorithme",width="30%"]
+image:fowl2.png["Sa modélisation",width="60%"]
+
+[{topic}]
+=== Exemple de conceptions
+
+image:fowl3.png["Conception 'centralisée'",width="80%"]
+
+[{topic}]
+=== Exemple de conceptions (suite)
+
+image:fowl4.png["Conception 'objet'",width="80%"]
+
+[{topic}]
+=== Diagramme de séquence système (DSS)
+
+Bien que non présent dans UML, il est courant de trouver un diagramme de séquence particulier, le
+*diagramme de séquence système* ou *DSS*, où on ne représente qu'un seul objet : le système en cours de développement lui-même.
+
+image:dssexp1.png["Exemple de DSS",width="40%"]
+
+[{topic}]
+=== Lien entre UC, DSS et DS
+
+La décomposition hiérarchique permet de réaliser une description "_TOP-DOWN_" du système à réaliser.
+
+On fait un Diagramme de Séquence Système pour chaque UC (issu du Diagramme d’UC) pour déterminer les échanges d’informations entre l’acteur et le système.
+
+Ensuite on fait un Diagramme de Séquence (DS) pour décrire comment les objets composants le système (issus du Diagramme de Classes) collaborent pour réaliser le traitement demandé.
+
+[{topic}]
+=== Exemple
+
+image:ucexp1.png["Diagramme d'UC",width="70%"]
+
+[{topic}]
+=== Exemple
+
+image:dssexp1.png["Le DSS correspondant",width="70%"]
+
+[{topic}]
+=== Exemple
+
+image:dsexp1.png["Le DS correspondant",width="100%"]
+
+
+// ------------------------------------------
+[{intro}]
+== Modèle / Vue / Contrôleur
+
+// ------------------------------------------
+[{topic}]
+ifdef::slides[== Cas classique d'organisation des classes]
+
+image::mvc-exp1-ds.png[width=100%]
+
+// ------------------------------------------
+[{topic}]
+ifdef::slides[== Caractéristique]
+
+image::mvc-exp1-ds-mvc.png[width=90%]
+
+// ------------------------------------------
+[{topic}]
+ifdef::slides[== MVC : un patron d'architecture]
+
+image::mvc.png[width=90%]
+
+// ------------------------------------------
+[{topic}]
+ifdef::slides[== MVC (exemple)]
+
+image::mvc-exp1-uc.png[width=90%]
+
+// ------------------------------------------
+[{topic}]
+ifdef::slides[== MVC (DSS pour l'UC 1)]
+
+image::mvc-exp1-dss.png[width=60%,align=center]
+
+// ------------------------------------------
+[{topic}]
+ifdef::slides[== MVC (architecure du code)]
+
+image::mvc-exp1-ds.png[width=90%]
+
+// ------------------------------------------
+[{topic}]
+ifdef::slides[== MVC (mise en oeuvre)]
+
+image::mvc-exp1-ds-mvc.png[width=90%]
+
+// ------------------------------------------
+[{topic}]
+ifdef::slides[== MVC (diag. des classes participantes)]
+
+image::mvc-dcp.png[width=90%]
+
+// ------------------------------------------
+[{topic}]
+ifdef::slides[== MVC (Model)]
+
+image::mvc-exp1-cd.png[width=90%]
+image::mvc-exp1-ds-mvc.png[width=50%]
+
+// ------------------------------------------
+[{topic}]
+ifdef::slides[== MVC (View)]
+
+image::mvc-exp1-vue.png[width=90%]
+image::mvc-exp1-ds-mvc.png[width=50%]
+
+// ------------------------------------------
+[{topic}]
+ifdef::slides[== MVC (Controler)]
+
+image::mvc-exp1-cc.png[width=90%]
+image::mvc-exp1-ds-mvc.png[width=50%]
+
+// ------------------------------------------
+[{topic}]
+ifdef::slides[== MVC (suite)]
+
+image::mvc-zoo.png[width=100%]
+
+[{topic}]
+== Ready for a quizz?
+
+image::icons/tuxteacher.png[]
+
+[{topic}]
+== Ready for a quizz?
+
+//----------------------------- Question ------------------
+[icon="tuxteacher.png"]
+.*QUESTION*
+[WARNING]
+====
+
+- Connectez-vous sur : http://www.socrative.com/ (*student login*)
+- Ou téléchargez l'application pour étudiant image:socrative2.png[width=10%]
+- Choisissez la room *44918d67*
+====
+
+image::socrative1.png[width=50%,link=http://www.socrative.com/]
+
