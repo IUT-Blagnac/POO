@@ -1,0 +1,410 @@
+// ------------------------------------------
+//  Created by Jean-Michel Bruel on 2012-10-19.
+//  Copyright (c) 2019 IRIT/U. Toulouse. All rights reserved.
+// ------------------------------------------
+:title: Conception Orientée Objet
+// ------------------------------------------
+:Author: jean-michel.bruel@univ-tlse2.fr
+:Author Initials: JMB
+//:Email: jean-michel.bruel@univ-tlse2.fr
+:Revision: 1.20
+:localdate: {sys: date +%d/%m/%Y}
+:Date: {localdate}
+:startdate: 2012-10-19
+:imagesdir: images
+:icons: font
+:toc: left
+:base: http://jmbruel.github.io/teachingMaterials/
+:website: http://bit.ly/jmb-teaching
+:baseURL: http://github.com/jmbruel/teachingMaterials
+:graduation-icon: pass:[<i class="fa fa-graduation-cap"></i>]
+:cogs-icon: pass:[<i class="fa fa-cogs"></i>]
+:beginner: icon:star-o[]
+:advanced: icon:star-half-o[]
+:expert: icon:star[]
+:dollar: icon:dollar[]
+:giturl: http://git-scm.com/
+:git: link:{giturl}[icon:git[]]
+:us-icon: image:icons/usa.svg[width=20%]
+:fr-icon: image:icons/france.svg[width=20%]
+// ------------------------------------------ definitions
+ifndef::definitions[]
+include::definitions.txt[]
+endif::definitions[]
+:androidicon: Android icon:android[]
+:iosicon: http://www.apple.com/fr/ios/[iOS icon:apple[]]
+:bitlysiteurl: {website}
+:images: images
+:slides:
+
+//--------------------- dzslides
+ifdef::slides[]
+:dzslides-style: tomorrow
+//:dzslides-style: stormy, watermelon, tomorrow, truffle, statement, default
+:dzslides-transition: fade
+:dzslides-fonts: family=Yanone+Kaffeesatz:400,700,200,300&family=Cedarville+Cursive
+:dzslides-highlight: asciidoctor
+//:dzslides-highlight: monokai
+:source-highlighter: highlightjs
+:dzslides-status:
+:topic: .topic
+:intro: .topic.intro
+:statement: .topic.statement
+:incremental: .incremental
+:source: .topic.source
+:linkcss:
+endif::slides[]
+
+//--------------------- cours
+ifndef::slides[]
+:source-highlighter: highlight
+:topic:
+:intro:
+:statement:
+:incremental: %step
+:source:
+endif::slides[]
+
+= Base de la Conception Orientée Objet
+Jean-Michel Bruel - {localdate}
+
+// ------------------------------------------ wrap up
+:numbered!:
+
+[{topic}]
+== Suivre les cours... icon:mobile[] icon:tablet[] icon:laptop[]
+
+{bitlysiteurl}
+
+
+// ------------------------------------------ plan
+[{intro}]
+== icon:book[] Au programme aujourd'hui
+
+ifdef::slides[== Plan]
+
+[{incremental}]
+- Retour sur les diagrammes de séquences
+- Diagrame des Cas d'Utilisation
+- Modèle / Vue / Contrôleur
+
+
+[{topic}]
+== Le Diagramme de Séquence
+
+image:fowl3.png["Conception 'centralisée'",width="45%"]
+image:fowl4.png["Conception 'objet'",width="45%"]
+
+[{topic}]
+=== Généralités
+
+[{incremental}]
+* Modélise les interactions entre objets
+* Séquencement dans le temps
+* Échange de messages
+* Spécifie les scénarios des cas d'études
+* Éléments :
+** participants
+** lignes de vie
+** barres d'activation
+** messages
+** blocs (`loop`, `alt`, `opt`, ...)
+
+[{topic}]
+=== Généralités
+
+image:seq1.png["Diagramme de séquence",width="40%"]
+image:seq2.png["Eléments de notation",width="40%"]
+
+[WARNING]
+=====================================================================
+Les lignes de vie représentent des objets et non des classes
+=====================================================================
+
+[{topic}]
+=== Exemple
+
+image:seq3.png["Exemple de diagramme de séquence",width="60%"]
+
+[{topic}]
+=== Notions avancées
+
+* Instructions itératives et conditionnelles
+* Mieux vaut utiliser un diagramme d'activité
+* Cadres d'interaction
+** `loop` (boucle)
+** `alt` (alternative)
+** `opt` (optionel)
+** `par` (parallèle)
+** `region` (région critique - un seul thread à la fois)
+
+[{topic}]
+=== Exemple
+
+image:fowl1.png["Un algorithme",width="30%"]
+image:fowl2.png["Sa modélisation",width="60%"]
+
+[{topic}]
+=== Exemple de conceptions
+
+image:fowl3.png["Conception 'centralisée'",width="80%"]
+
+[{topic}]
+=== Exemple de conceptions (suite)
+
+image:fowl4.png["Conception 'objet'",width="80%"]
+
+[{topic}]
+=== Diagramme de séquence système (DSS)
+
+Bien que non présent dans UML, il est courant de trouver un diagramme de séquence particulier, le
+*diagramme de séquence système* ou *DSS*, où on ne représente qu'un seul objet : le système en cours de développement lui-même.
+
+image:dssexp1.png["Exemple de DSS",width="40%"]
+
+[[UC]]
+== Diagramme des Cas d'Utilisation
+
+image:uc2.png["Exemple de Diagramme d'UC",width="70%"]
+
+=== Diagramme des Cas d'Utilisation
+
+Le *Diagramme des Cas d'Utilisation* est un modèle UML permettant de représenter :
+
+- les *UC* (_Use Case_ ou Cas d’Utilisation)
+- les *acteurs* (principaux et secondaires)
+- les *relations* entre acteurs et UC
+
+[NOTE]
+=====================================================================
+On notera simplement +UC+ pour signifier "diagramme des UC"
+=====================================================================
+
+=== Définition et concepts
+
+- Cas d'utilisation (UC)
+- Acteur
+- Relations entre UC
+
+[{topic}]
+=== Cas d'Utilisation
+
+[[uc]]
+Un cas d'utilisation (_Use Case_ ou UC en abrégé) représente un ensemble de *scénarios* que le système doit exécuter pour produire un résultat observable par un <<acteur,*acteur*>>.
+
+
+=== Exemple d'UC
+
+Retrait par carte bancaire
+
+*Scénario principal*::
+	L'UC démarre lorsque le Guichet Automatique Bancaire (GAB) demande au client son numéro confidentiel après l’introduction de sa CB. Le client
+	entre son code et valide son entrée. Le GAB contrôle la validité du code. Si le code est valide, le GAB autorise
+	le retrait et l’UC se termine.
+*Scénario alternatif n°1 *::
+	Le client peut à tout instant annuler l'opération. La carte est éjectée et l'UC se termine.
+*Exemple de codification de l'UC*::
+	UC01 ou RetraitCB (pour Retrait par carte bleue)
+
+=== Précisions
+
+Un cas d'utilisation peut être précisé par :
+
+- une description textuelle
+- un ou des diagrammes UML (séquence, activité)
+
+[NOTE]
+=====================================================================
+Dans les outils, cette "précision" se manifeste par le fait que l'on "attache"
+généralement un diagramme de séquence à un cas d'utilisation (clic droit sur un UC -> nouveau +seq+).
+=====================================================================
+
+=== Acteur
+
+[[acteur]]
+Un acteur peut être une personne, un ensemble de personnes, un logiciel, un processus qui interagit avec un ou plusieurs <<uc,UC>>.
+
+On peut trouver plusieurs types d'acteurs :
+
+* extérieurs au système (cf. +actor+ <<ucdiag,Diagramme d'UC ci-après>>)
+** les acteurs principaux (= acteurs internes du MOT de Merise)
+** les acteurs secondaires (= acteurs externes du MOT de Merise)
+** les administrateurs (ils gèrent le système : données, sécurité, droits d'accès, utilisateurs...)
+* types d'acteurs prédéfinis dans UML :
+** +<<metaclass>>+
+** +<<utility>>+
+** +<<process>>+
+** +<<thread>>+
+** +<<powertype>>+
+
+=== Relations entre UC
+
+Extension (+<<extend>>+)::
+	Indique que l’UC source est *éventuellement* exécutée en complément de l’UC destination (cas particulier, erreur...)
+Inclusion (+<<include>>+)::
+	Indique qu’un UC est inclus *obligatoirement* dans un autre UC (notion de sous-programme par exemple)
+Généralisation::
+	Relation entre un UC général et un autre plus spécialisé qui hérite de ses caractéristiques et en rajoute
+
+ifdef::slides[=== !]
+
+[[ucdiag]]
+.Notation dans le diagramme d'UC
+image:UC.png["Diagramme d'UC"]
+
+[TIP]
+=====================================================================
+On n'utilise généralement `include` que dans le cas où le sous-cas d'utilisation est
+inclut dans plusieurs UC. Si ce n'est pas le cas, il est généralement englobé dans l'UC.
+=====================================================================
+
+=== Pour construire un UC (de manière générale)
+
+. identifier les acteurs
+. identifier les cas d'utilisation
+. structurer en _packages_
+. ajouter les relations
+. finaliser les diagrammes de cas d'utilisation
+
+La suite logique est de décrire chaque UC par un diagramme de séquence système (cf. section suivante).
+
+=== Exemples complets
+
+
+=== Service comptable
+
+[[ucexp]]
+.Exemple de diagramme d'UC
+image:UC.png["Exemple de Diagramme d'UC",width="80%"]
+
+=== Gestion des notes
+
+[[ucexp2]]
+.Autre exemple de diagramme d'UC
+image:uc2.png["Exemple de Diagramme d'UC",width="70%"]
+
+[{topic}]
+=== Lien entre UC, DSS et DS
+
+La décomposition hiérarchique permet de réaliser une description "_TOP-DOWN_" du système à réaliser.
+
+On fait un Diagramme de Séquence Système pour chaque UC (issu du Diagramme d’UC) pour déterminer les échanges d’informations entre l’acteur et le système.
+
+Ensuite on fait un Diagramme de Séquence (DS) pour décrire comment les objets composants le système (issus du Diagramme de Classes) collaborent pour réaliser le traitement demandé.
+
+[{topic}]
+=== Exemple
+
+image:ucexp1.png["Diagramme d'UC",width="70%"]
+
+[{topic}]
+=== Exemple
+
+image:dssexp1.png["Le DSS correspondant",width="70%"]
+
+[{topic}]
+=== Exemple
+
+image:dsexp1.png["Le DS correspondant",width="100%"]
+
+
+// ------------------------------------------
+[{intro}]
+== Modèle / Vue / Contrôleur
+
+// ------------------------------------------
+[{topic}]
+ifdef::slides[=== Cas classique d'organisation des classes]
+
+image::mvc-exp1-ds.png[width=100%]
+
+// ------------------------------------------
+[{topic}]
+ifdef::slides[=== Caractéristique]
+
+image::mvc-exp1-ds-mvc.png[width=90%]
+
+// ------------------------------------------
+[{topic}]
+ifdef::slides[=== MVC : un patron d'architecture]
+
+image::mvc.png[width=90%]
+
+// ------------------------------------------
+[{topic}]
+ifdef::slides[=== MVC (exemple)]
+
+image::mvc-exp1-uc.png[width=90%]
+
+// ------------------------------------------
+[{topic}]
+ifdef::slides[=== MVC (DSS pour l'UC 1)]
+
+image::mvc-exp1-dss.png[width=60%,align=center]
+
+// ------------------------------------------
+[{topic}]
+ifdef::slides[=== MVC (architecure du code)]
+
+image::mvc-exp1-ds.png[width=90%]
+
+// ------------------------------------------
+[{topic}]
+ifdef::slides[=== MVC (mise en oeuvre)]
+
+image::mvc-exp1-ds-mvc.png[width=90%]
+
+// ------------------------------------------
+[{topic}]
+ifdef::slides[=== MVC (diag. des classes participantes)]
+
+image::mvc-dcp.png[width=90%]
+
+// ------------------------------------------
+[{topic}]
+ifdef::slides[=== MVC (Model)]
+
+image::mvc-exp1-cd.png[width=90%]
+image::mvc-exp1-ds-mvc.png[width=50%]
+
+// ------------------------------------------
+[{topic}]
+ifdef::slides[=== MVC (View)]
+
+image::mvc-exp1-vue.png[width=90%]
+image::mvc-exp1-ds-mvc.png[width=50%]
+
+// ------------------------------------------
+[{topic}]
+ifdef::slides[=== MVC (Controler)]
+
+image::mvc-exp1-cc.png[width=90%]
+image::mvc-exp1-ds-mvc.png[width=50%]
+
+// ------------------------------------------
+[{topic}]
+ifdef::slides[=== MVC (suite)]
+
+image::mvc-zoo.png[width=100%]
+
+[{topic}]
+== Ready for a quizz?
+
+image::icons/tuxteacher.png[]
+
+[{topic}]
+== Ready for a quizz?
+
+//----------------------------- Question ------------------
+[icon="tuxteacher.png"]
+.*QUESTION*
+[WARNING]
+====
+
+- Connectez-vous sur : http://www.socrative.com/ (*student login*)
+- Ou téléchargez l'application pour étudiant image:socrative2.png[width=10%]
+- Choisissez la room *44918d67*
+====
+
+image::socrative1.png[width=50%,link=http://www.socrative.com/]
+

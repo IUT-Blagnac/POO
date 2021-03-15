@@ -68,7 +68,7 @@ endif::slides[]
 Jean-Michel Bruel - {localdate}
 
 // ------------------------------------------ wrap up
-:numbered:
+:numbered!:
 
 [{topic}]
 == Suivre les cours... icon:mobile[] icon:tablet[] icon:laptop[]
@@ -77,7 +77,6 @@ Jean-Michel Bruel - {localdate}
 
 
 // ------------------------------------------ plan
-:numbered:
 [{intro}]
 == icon:book[] Au programme aujourd'hui
 
@@ -89,7 +88,6 @@ ifdef::slides[== Plan]
 - Modèle / Vue / Contrôleur
 
 // ------------------------------------------ wrap up
-:numbered!:
 [{intro}]
 == Diagramme de classe : *subtilités*
 

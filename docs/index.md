@@ -16,6 +16,7 @@ NOTE: # dans le tableau suivant désigne le numéro de semaine calendaire)
 | 9 | Cours         | DC Avancé            | N/A                | N/A                       | Concepts avancés des diagrammes de classes (DC)  |
 | 10| Cours         | [Diagramme de séquence](cours3.html)           | N/A | N/A                       | Classes, méthodes et Diagrammes de Séquences |
 | 10| TD            | [TD3.html](TD3.html) | [TD3.pdf](TD3.pdf) | N/A                       | Diagrammes de classes (suite)      |
+| 11| Cours         | [Diagramme des UC](cours4.html)           | N/A | N/A                       | Diagrammes des Cas d'Utilisation et MVC |
 |:-:|:-------------:|:--------------------:|:------------------:|:-------------------------:|------------------------------------|
 
 
