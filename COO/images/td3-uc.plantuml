@@ -12,7 +12,7 @@ usecase d as "Déclarer une \n demande de stage"
 actor Responsable
 actor Entreprise 
 
-'r -[hidden]-> d
+r -[hidden]-> d
 
 Responsable -> r
 Entreprise -> d

@@ -12,11 +12,12 @@ NOTE: # dans le tableau suivant désigne le numéro de semaine calendaire)
 | 4 | Cours         | [Introduction](bcoo.html)           | N/A | N/A                       | Introduction aux classes et diagrammes de classes (DC)  |
 |   | TD            | [TD0.html](TD0.html) | [TD0.pdf](TD0.pdf) | [TD0-prof.html](TD0.html) | Initiation aux modèles de classes  |
 | 5-6 | TD          | [TD1.html](TD1.html) | [TD1.pdf](TD1.pdf) | [TD1-prof.html](TD1.html) | Premiers diagrammes de classes UML |
-| 7-8 | TD          | [TD2.html](TD2.html) | [TD2.pdf](TD2.pdf) | N/A                       | Diagrammes de classes UML évolués  |
+| 7-8 | TD          | [TD2.html](TD2.html) | [TD2.pdf](TD2.pdf) | [TD2-prof.html](TD2.html)                      | Diagrammes de classes UML évolués  |
 | 9 | Cours         | DC Avancé            | N/A                | N/A                       | Concepts avancés des diagrammes de classes (DC)  |
 | 10| Cours         | [Diagramme de séquence](cours3.html)           | N/A | N/A                       | Classes, méthodes et Diagrammes de Séquences |
-| 10| TD            | [TD3.html](TD3.html) | [TD3.pdf](TD3.pdf) | N/A                       | Diagrammes de classes (suite)      |
+| 10-11 | TD            | [TD3.html](TD3.html) | [TD3.pdf](TD3.pdf) | [TD3-prof.html](TD3.html)                       | Diagrammes de classes (suite)      |
 | 11| Cours         | [Diagramme des UC](cours4.html)           | N/A | N/A                       | Diagrammes des Cas d'Utilisation et MVC |
+| 12 | TD            | [TD4.html](TD4.html) | [TD4.pdf](TD4.pdf) | N/A                       | Diagrammes de Cas d'Utilisation   |
 |:-:|:-------------:|:--------------------:|:------------------:|:-------------------------:|------------------------------------|
 
 

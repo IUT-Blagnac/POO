@@ -1,0 +1,69 @@
+@startuml TD3.1
+
+' definitions
+' -----------
+hide circle
+hide empty methods
+hide empty attributes
+
+class Stage {
+    lieu
+    dateDebut
+    dateFin
+    nomTuteurEntreprise
+'    nomTuteurEnseignant
+    theme
+'    note
+}
+
+class Entreprise {
+    nom
+    adresse
+    siegeSocial
+}
+
+Stage "*" -- "1" Entreprise
+
+class Promotion {
+    nom
+}
+
+Stage - "1" Promotion
+
+class Etudiant {
+    numINE
+    nom
+    prenom
+    moyenneGenerale
+    noteStage
+}
+
+class GroupeTP {
+    nom
+}
+
+
+class GroupeTD {
+    nom
+}
+Etudiant - "1" GroupeTP
+
+GroupeTP - "1" GroupeTD
+
+GroupeTD -- "1" Promotion
+
+class Enseignant {
+        nom
+        prenom
+        specialite
+}
+
+'Stage -- "0..1" Tuteur
+
+'Tuteur -|> Enseignant
+
+Stage -- "0..1\ntuteur" Enseignant
+
+Stage "0..1" - "0..1" Etudiant
+
+@enduml
