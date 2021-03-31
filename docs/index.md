@@ -15,7 +15,7 @@ NOTE: # dans le tableau suivant désigne le numéro de semaine calendaire)
 | 10| Cours         | [Diagramme de séquence](cours3.html)           | N/A | N/A                       | Classes, méthodes et Diagrammes de Séquences |
 | 10-11 | TD            | [TD3.html](TD3.html) | [TD3.pdf](TD3.pdf) | [TD3.html](TD3-prof.html)                       | Diagrammes de classes (suite)      |
 | 11| Cours         | [Diagramme des UC](cours4.html)           | N/A | N/A                  | Diagrammes des Cas d'Utilisation et MVC |
-| 12 | TD            | [TD4.html](TD4.html) | [TD4.pdf](TD4.pdf) | [TD3.html](TD3-prof.html) | Diagrammes de Cas d'Utilisation   |
+| 12 | TD            | [TD4.html](TD4.html) | [TD4.pdf](TD4.pdf) | [TD3.html](TD4-prof.html) | Diagrammes de Cas d'Utilisation   |
 | 13| Cours         | [Approche Globale](cours5.html)           | N/A | N/A                  | Approche Gobale et liens entre diagrammes |
 | 13 | TD            | [TD5.html](TD5.html) | [TD5.pdf](TD5.pdf) | N/A                       | Diagrammes de Séquence   |
 |:-:|:-------------:|:--------------------:|:------------------:|:-------------------------:|------------------------------------|
