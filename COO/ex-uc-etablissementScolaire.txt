@@ -19,7 +19,7 @@ ifdef::prof[]
 
 === Correction
 
-image:ex-uc-etablissementScolaire.png[width="70%"]
+image::4.2.1.svg[width="70%"]
 
 endif::prof[] 
 

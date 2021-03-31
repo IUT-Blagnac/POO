@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="478px" preserveAspectRatio="none" style="width:1402px;height:478px;" version="1.1" viewBox="0 0 1402 478" width="1402px" zoomAndPan="magnify"><defs><filter height="300%" id="f73wkxj7os2m3" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[3d085c726c0913e2c8742359fb886877]
+cluster Gestion des Réservations--><rect fill="#FFFFFF" filter="url(#f73wkxj7os2m3)" height="331.5" style="stroke:#000000;stroke-width:1.5;" width="865" x="315.5" y="135"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="203" x="646.5" y="149.9951">Gestion des Réservations</text><ellipse cx="830.4494" cy="434.4061" fill="#FEFECE" filter="url(#f73wkxj7os2m3)" rx="88.9494" ry="23.9061" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="62" x="799.4494" y="427.704">Réserver</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="134" x="763.4494" y="444.0009">des salles de cours</text><ellipse cx="1063.6209" cy="434.7242" fill="#FEFECE" filter="url(#f73wkxj7os2m3)" rx="109.1209" ry="24.2242" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="62" x="1032.6209" y="427.2226">Réserver</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="173" x="977.1209" y="443.5195">du matériel pédagogique</text><ellipse cx="1125.3406" cy="187.0236" fill="#FEFECE" filter="url(#f73wkxj7os2m3)" rx="46.8406" ry="14.5236" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="62" x="1094.3406" y="191.6721">Réserver</text><ellipse cx="930.3717" cy="186.8743" fill="#FEFECE" filter="url(#f73wkxj7os2m3)" rx="112.3717" ry="24.8743" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="203" x="828.8717" y="191.5228">Consulter planning des salles</text><ellipse cx="670.4079" cy="186.7816" fill="#FEFECE" filter="url(#f73wkxj7os2m3)" rx="111.9079" ry="24.7816" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="202" x="569.4079" y="191.43">Consulter recapitulatif horaire</text><ellipse cx="423.5203" cy="186.8041" fill="#FEFECE" filter="url(#f73wkxj7os2m3)" rx="99.5203" ry="22.3041" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="175" x="336.0203" y="191.4525">Editer recapitulatif horaire</text><!--MD5=[16b15d6cd6ee62b11a1c3dc9200ccdf6]
+entity Enseignant--><ellipse cx="249.5" cy="156" fill="#FEFECE" filter="url(#f73wkxj7os2m3)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><path d="M249.5,164 L249.5,191 M236.5,172 L262.5,172 M249.5,191 L236.5,206 M249.5,191 L262.5,206 " fill="none" filter="url(#f73wkxj7os2m3)" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="78" x="210.5" y="224.4951">Enseignant</text><!--MD5=[edc533c5f7a30fc8847fe4f0987386ef]
+entity EnseignantResponsable--><ellipse cx="90.5" cy="156" fill="#FEFECE" filter="url(#f73wkxj7os2m3)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><path d="M90.5,164 L90.5,191 M77.5,172 L103.5,172 M90.5,191 L77.5,206 M90.5,191 L103.5,206 " fill="none" filter="url(#f73wkxj7os2m3)" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="169" x="6" y="224.4951">EnseignantResponsable</text><!--MD5=[e8ef53871a935dc9c7bb89678d8a5eb1]
+entity Etudiant--><ellipse cx="930.5" cy="14" fill="#FEFECE" filter="url(#f73wkxj7os2m3)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><path d="M930.5,22 L930.5,49 M917.5,30 L943.5,30 M930.5,49 L917.5,64 M930.5,49 L943.5,64 " fill="none" filter="url(#f73wkxj7os2m3)" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="57" x="902" y="82.4951">Etudiant</text><ellipse cx="1289.3822" cy="327.0764" fill="#FEFECE" filter="url(#f73wkxj7os2m3)" rx="100.8822" ry="22.5764" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="178" x="1200.3822" y="331.7249">Examen de la disponibilité</text><!--MD5=[47f2be2b769db0895f35ce01b641aa95]
+link EnseignantResponsable to Enseignant--><path d="M175.2793,187 C180.3039,187 185.3285,187 190.3531,187 " fill="none" id="EnseignantResponsable-to-Enseignant" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="190.3602,179.9999,210.3602,187,190.3601,193.9999,190.3602,179.9999" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[2a466e8ba22e3db85c1e83143d865650]
+link Enseignant to r--><path d="M278.4227,146.3096 C290.9456,132.1092 306.8993,117.8348 325,110.25 C398.5791,79.4181 968.7561,81.0553 1043,110.25 C1072.6196,121.8972 1097.9125,149.7392 1112.4149,168.4872 " fill="none" id="Enseignant-to-r" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="1115.5174,172.574,1113.2614,162.987,1112.4941,168.5916,1106.8895,167.8243,1115.5174,172.574" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[acadc9fc008a89f0978ed94a4e2bf597]
+link r to d--><path d="M1141.5236,200.6787 C1168.8637,224.0178 1224.9289,271.8783 1259.6568,301.5241 " fill="none" id="r-to-d" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="1263.7827,305.0462,1259.5346,296.1606,1259.9798,301.7999,1254.3405,302.2452,1263.7827,305.0462" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="61" x="1227.5" y="270.5669">«include»</text><!--MD5=[5d3a19aeb5bdac38ef423ace8a94573b]
+reverse link r to rs--><path d="M1093.6588,213.7142 C1035.3583,262.6274 912.4363,365.7569 857.7406,411.6456 " fill="none" id="r-backto-rs" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="1089.3984,208.1513,1109.2193,200.6592,1098.3967,218.8766,1089.3984,208.1513" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[1e81e6a0cfa08c80dfd8312e7fdc8465]
+reverse link r to rmp--><path d="M1116.8624,221.4806 C1104.1156,272.3652 1080.5856,366.2953 1069.5329,410.4169 " fill="none" id="r-backto-rmp" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="1110.1571,219.4406,1121.8073,201.7411,1123.7375,222.8426,1110.1571,219.4406" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[5a8642960d2c9581587e08048add5f36]
+link Enseignant to Consulter planning des salles--><path d="M278.4227,146.3096 C290.9456,132.1092 306.8993,117.8348 325,110.25 C418.8697,70.9157 684.1368,86.0677 783,110.25 C824.6398,120.4352 867.6033,144.6297 896.3434,163.1532 " fill="none" id="Enseignant-Consulter planning des salles" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[a0e6d2602ce6524029375de05c78e0ee]
+link Etudiant to Consulter planning des salles--><path d="M930.5,85.6915 C930.5,110.2779 930.5,140.8336 930.5,161.9223 " fill="none" id="Etudiant-Consulter planning des salles" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[923dfd1dbf47d248c3f4eea8cdb1a887]
+link Enseignant to Consulter recapitulatif horaire--><path d="M278.4227,146.3096 C290.9456,132.1092 306.8993,117.8348 325,110.25 C406.1625,76.2404 437.52,89.3413 523,110.25 C564.6398,120.4352 607.6033,144.6297 636.3434,163.1532 " fill="none" id="Enseignant-Consulter recapitulatif horaire" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[bd89e6dc8f7c3e0fd3026347a5021b2a]
+link EnseignantResponsable to Editer recapitulatif horaire--><path d="M139.6723,146.4093 C160.1229,132.0335 184.9213,117.6099 210,110.25 C243.6903,100.3628 255.0624,101.2483 289,110.25 C329.019,120.8648 369.5627,146.4827 395.5178,165.2119 " fill="none" id="EnseignantResponsable-Editer recapitulatif horaire" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[7b07f933ff844ea58a6e4e52d58c7170]
+@startuml
+'- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+' TD 4 2.2
+' JMB 2021
+'- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+' Le planning des salles peut quant à lui être consulté par tout le monde (enseignants et étudiants). Par contre, le récapitulatif horaire par enseignant (calculé à partir du planning des salles) ne peut être consulté que par les enseignants. Enfin, il existe pour chaque formation un enseignant responsable qui seul peut éditer le récapitulatif horaire pour l’ensemble de la formation.
+
+actor Enseignant
+EnseignantResponsable -|> Enseignant
+
+actor Etudiant
+
+usecase d as "Examen de la disponibilité"
+
+rectangle "Gestion des Réservations" {
+usecase rs as (Réserver \ndes salles de cours)
+usecase rmp as (Réserver \n du matériel pédagogique)
+usecase r as (Réserver)
+
+Enseignant -> r
+'Enseignant -> d
+
+r ..> d : <<include>>
+
+r <|- - rs
+r <|- - rmp
+
+Enseignant - (Consulter planning des salles)
+Etudiant - - (Consulter planning des salles)
+Enseignant - (Consulter recapitulatif horaire)
+EnseignantResponsable - (Editer recapitulatif horaire)
+
+
+}
+@enduml
+
+@startuml
+
+
+
+actor Enseignant
+EnseignantResponsable -|> Enseignant
+
+actor Etudiant
+
+usecase d as "Examen de la disponibilité"
+
+rectangle "Gestion des Réservations" {
+usecase rs as (Réserver \ndes salles de cours)
+usecase rmp as (Réserver \n du matériel pédagogique)
+usecase r as (Réserver)
+
+Enseignant -> r
+
+r ..> d : <<include>>
+
+r <|- - rs
+r <|- - rmp
+
+Enseignant - (Consulter planning des salles)
+Etudiant - - (Consulter planning des salles)
+Enseignant - (Consulter recapitulatif horaire)
+EnseignantResponsable - (Editer recapitulatif horaire)
+
+
+}
+@enduml
+
+PlantUML version 1.2020.22(Sun Dec 06 09:36:27 UTC 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

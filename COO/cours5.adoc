@@ -4,9 +4,6 @@
 // ------------------------------------------
 //:title: Base de la *Conception* OO
 // ------------------------------------------
-:doctype: article
-:description:
-:keywords:
 :Author: jean-michel.bruel@univ-tlse2.fr
 :Author Initials: JMB
 //:Email: jean-michel.bruel@univ-tlse2.fr
@@ -14,9 +11,14 @@
 :localdate: {sys: date +%d/%m/%Y}
 :Date: {localdate}
 :startdate: 2012-10-19
-
+:slides:
+:revealjsdir: reveal.js
+:revealjs_slideNumber: true
+:revealjs_theme: blood
+//beige, black, blood, league, moon, night, serif, simple, sky, solarized, white
+:linkcss!:
+:icons: font
 include::definitions.txt[]
-
 //--------------------- dzslides
 ifdef::slides[]
 :dzslides-style: tomorrow
@@ -32,9 +34,7 @@ ifdef::slides[]
 :statement: .topic.statement
 :incremental: .incremental
 :source: .topic.source
-:linkcss:
 endif::slides[]
-
 //--------------------- cours
 ifndef::slides[]
 :source-highlighter: highlight
@@ -43,35 +43,35 @@ ifndef::slides[]
 :statement:
 :incremental: %step
 :source:
+:nummbered!:
 endif::slides[]
-
-
 // ------------------------------------------ definitions
 ifndef::definitions[]
 include::../definitions.txt[]
 endif::definitions[]
 :androidicon: Android icon:android[]
 :iosicon: http://www.apple.com/fr/ios/[iOS icon:apple[]]
-
 :slidesurl: http://jmbhome.heroku.com/talks
 :images: images
 :imagesdir: images
-
-= *BCOO*
+= BCOO
 Jean-Michel Bruel - {localdate}
 
 // ------------------------------------------ plan
-:numbered:
 [{intro}]
 == icon:book[] Au programme aujourd'hui
 
 ifdef::slides[== Plan]
 
 [{incremental}]
+- Démarche globale
 - Modèle / Vue / Contrôleur
 - Outil de dessin de maquettes
 - Génération de code Java depuis UML
 - Diagrammes UML et outils
+
+// ------------------------------------------
+include::mobilisation.asc[]
 
 // ------------------------------------------
 [{intro}]
@@ -81,7 +81,7 @@ ifdef::slides[== Plan]
 [{topic}]
 ifdef::slides[== Cas classique d'organisation des classes]
 
-image::mvc-exp1-ds.png[width=100%]
+image::mvc-exp1-ds.png[width=80%]
 
 // ------------------------------------------
 [{topic}]
@@ -93,7 +93,7 @@ image::mvc-exp1-ds-mvc.png[width=90%]
 [{topic}]
 ifdef::slides[== MVC : un patron d'architecture]
 
-image::mvc.png[width=90%]
+image::mvc.png[width=70%]
 
 // ------------------------------------------
 [{topic}]
@@ -105,7 +105,7 @@ image::mvc-exp1-uc.png[width=90%]
 [{topic}]
 ifdef::slides[== MVC (DSS pour l'UC 1)]
 
-image::mvc-exp1-dss.png[width=60%,align=center]
+image::mvc-exp1-dss.png[width=50%,align=center]
 
 // ------------------------------------------
 [{topic}]
@@ -123,7 +123,7 @@ image::mvc-exp1-ds-mvc.png[width=90%]
 [{topic}]
 ifdef::slides[== MVC (diag. des classes participantes)]
 
-image::mvc-dcp.png[width=90%]
+image::mvc-dcp.png[width=60%]
 
 // ------------------------------------------
 [{topic}]
@@ -156,8 +156,12 @@ image::mvc-zoo.png[width=100%]
 [{intro}]
 == Outil de dessin de maquettes
 
+- Balsamiq
+- Figma
+- ...
+
 [{topic}]
-== Outils
+== Balsamiq
 
 https://iutblagnac.mybalsamiq.com/projects/voismabalade
 
@@ -168,7 +172,11 @@ image::balsamiq.png[width=90%]
 
 // ------------------------------------------
 [{topic}]
-== Démo Balsamiq
+
+== Figma
+
+https://www.figma.com/ui-design-tool/
+
 
 // ------------------------------------------
 [{intro}]
