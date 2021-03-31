@@ -48,7 +48,7 @@ pattern/%.png: pattern/%.plantuml
 
 %.html: %.$(EXT) $(DEP)
 	@echo '==> Compiling asciidoc files with Asciidoctor to generate HTML'
-	$(DOCTOR) -a toc2 -b html5 -a numbered -a eleve -a linkcss! -r asciidoctor-diagram $<
+	$(DOCTOR) -a toc2 -b html5 -a numbered -a eleve -a linkcss! -a slides! -r asciidoctor-diagram $<
 
 %.full.html: %.$(EXT) $(DEP)
 	@echo '==> Compiling asciidoc files with Asciidoctor to generate HTML'
