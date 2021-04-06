@@ -1,0 +1,86 @@
+@startuml
+
+hide circle
+hide empty methods
+
+'------ Classes Métiers
+
+class Qualification {
+  code
+  libelle
+  tauxHoraire
+}
+
+class Artisan {
+  SIRET
+  nom
+  adresse
+  tph
+  majAvancement(date,duree,Tache,Chantier)
+
+}
+
+class Tache {
+  code
+  designation
+  majAvancement(date,duree,Artisan,Chantier)
+}
+
+class Chantier {
+  nomProprio
+  adresseProprio
+  adresseChantier
+  telProprio
+  dateOuverture
+  dateFermeture
+  
+  estTermine()
+  cloturer(Date)
+  cloturer()
+  'SetDateFermeture(Date)
+  majAvancement(date,duree,Artisan,Tache)
+  getDureeConstruction()
+}
+
+class Modele {
+  code
+  designation
+  prixVenteM
+  prixRevientM
+  dureeConstructionM
+  majConstructionM()
+}
+
+'------ Classes Associations
+
+class Realiser {
+  date
+  duree
+  setDate()
+  setDuree()
+  majAvancement(date,duree)
+  getDuree()
+}
+
+class Executer {
+  ordre
+  dureeMoy
+}
+
+'------ Associations
+
+Realiser "*" -up- "1" Artisan
+Realiser "*" -down- "1" Chantier
+Realiser "*" -left- "1" Tache
+Tache "*" -up- "1" Qualification
+Qualification "1" - "*" Artisan
+Modele "0..*" - "1..*" Tache
+Modele "1" -down- "*" Chantier
+
+(Tache, Modele) .. Executer
+
+'Main -left-> "*" Artisan
+'Main - "*" Chantier
+'Main - "*" Modele
+
+@enduml
