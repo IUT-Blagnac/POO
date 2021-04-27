@@ -1,0 +1,28 @@
+@startuml
+
+
+actor a as " "
+participant c as ":Chantier" 
+participant jmb as "jmb:Artisan"
+participant q as "q:Qualif"
+
+a -> c : getPayeArtisan(jmb)
+activate c
+
+c -> jmb : q : getQualif()
+
+c -> q : tauxH getTauxH()
+participant real as "real : Realiser"
+
+loop ForEach real
+
+    c -> real : a = getArtisan()
+    opt a == jmb
+        c -> real : d = getDuree()
+        c -> c : duree += d
+    end 
+end
+
+a <-- c : duree*tauxH
+
+@enduml

@@ -19,6 +19,8 @@ NOTE: # dans le tableau suivant désigne le numéro de semaine calendaire)
 | 13| Cours         | [Approche Globale](cours5.html)           |  |                   | Approche Gobale et liens entre diagrammes |
 | 13 | TD            | [TD5.html](TD5.html) | [TD5.pdf](TD5.pdf) |  [TD5.html](TD5-prof.html) | Diagrammes de Séquence   |
 | 14 | TD            | [TD6.html](TD6.html) | [TD6.pdf](TD6.pdf) |                        | Méthodes / Code Java / Diagrammes de Séquence   |
+| 17 | TD            | [TD7.html](TD7.html) | [TD7.pdf](TD7.pdf) |                        | Exercice complet                   |
+| 17| Cours         | Le MVC (par Thibault Goubin)           |  |                   | Exemple complet et concret |
 |:-:|:-------------:|:--------------------:|:------------------:|:-------------------------:|------------------------------------|
 
 
