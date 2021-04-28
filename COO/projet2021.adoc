@@ -1,0 +1,266 @@
+// ------------------------------------------
+//  Created by Jean-Michel Bruel on 2018-04-30.
+//  Copyright (c) 2018 IRIT/U. Toulouse. All rights reserved.
+// ------------------------------------------
+:title: *Projet* BCOO 2020
+// ------------------------------------------
+:doctype: article
+:description:
+:keywords:
+:Author: jean-michel.bruel@univ-tlse2.fr
+:Author Initials: JMB
+//:Email: jean-michel.bruel@univ-tlse2.fr
+:Revision: 1.0
+:localdate: {sys: date +%d/%m/%Y}
+:Date: {localdate}
+:startdate: 2012-10-19
+:icons: font
+:imagesdir: images
+
+include::definitions.txt[]
+
+//--------------------- dzslides
+ifdef::slides[]
+:dzslides-style: tomorrow
+//:dzslides-style: stormy, watermelon, tomorrow, truffle, statement, default
+:dzslides-transition: fade
+:dzslides-fonts: family=Yanone+Kaffeesatz:400,700,200,300&family=Cedarville+Cursive
+:dzslides-highlight: asciidoctor
+//:dzslides-highlight: monokai
+:source-highlighter: highlightjs
+:dzslides-status:
+:topic: .topic
+:intro: .topic.intro
+:statement: .topic.statement
+:incremental: .incremental
+:source: .topic.source
+:linkcss:
+endif::slides[]
+
+//--------------------- cours
+ifndef::slides[]
+:source-highlighter: highlight
+:topic:
+:intro:
+:statement:
+:incremental: %step
+:source:
+endif::slides[]
+
+
+// ------------------------------------------ definitions
+ifndef::definitions[]
+include::../definitions.txt[]
+endif::definitions[]
+:androidicon: Android icon:android[]
+:iosicon: http://www.apple.com/fr/ios/[iOS icon:apple[]]
+:elevate: https://www.elevateapp.com/[Elevate]
+:slidesurl: http://jmbhome.heroku.com/talks
+:images: images
+
+= *Projet* BCOO 2020
+Jean-Michel Bruel - {localdate}
+
+// ------------------------------------------ plan
+:numbered:
+[{intro}]
+== icon:book[] Au *programme* aujourd'hui
+
+ifdef::slides[== Plan]
+
+[{incremental}]
+- Questions sur les TD ?
+- Suite du semestre
+- Les outils
+- Git
+- GitHub Classroom en groupe
+
+// ------------------------------------------ plan
+:numbered:
+[{intro}]
+== icon:book[] Fonctionnement en mode *projet*
+
+ifdef::slides[:leveloffset: -1]
+
+[{topic}]
+=== icon:map-signs[] Déroulement de la fin du semestre
+
+[{incremental}]
+- Semaines "spéciales" IHM & PTut [detail]#(semaine ??)#
+- Outils pour le projet [detail]#(1 ou 2 semaines 17 & 18)#
+- Rétro-Ingénierie [detail]#(2 semaines 19 & 2O)#
+- Conception [detail]#(3 semaines 21, 22 & 23)#
+
+ifdef::slides[:leveloffset: 0]
+
+// ------------------------------------------ Outils
+[{intro}]
+== Outils
+
+ifdef::slides[:leveloffset: -1]
+
+[{topic}]
+=== GitHub
+
+image::github/screenshot.png[width=100%]
+
+https://github.com
+
+[{topic}]
+=== Git
+
+image::gitflow.png[width=70%,align="center"]
+
+[{topic}]
+=== Outils UML
+
+image::plantUML.png[width=90%,align="center"]
+
+[{topic}]
+=== Documentation
+
+image::asciidoc.png[width=100%]
+
+[{topic}]
+=== SNI (exemples)
+
+image::../../IHM/Chiens-SNI.png[width=100%]
+
+ifdef::slides[=== SNI (exemples)]
+
+image::../../IHM/FFF-SNI.png[width=100%]
+
+ifdef::slides[=== SNI (exemples)]
+
+image::../../IHM/TourOperator-SNI.png[width=100%]
+
+ifdef::slides[:leveloffset: 0]
+
+// ------------------------------------------ Rétro
+:numbered:
+[{intro}]
+== Rétro-ingénierie
+
+ifdef::slides[:leveloffset: -1]
+
+[{topic}]
+=== Contexte
+
+Un premier projet noté va consister, pour votre groupe, à faire la modélisation d'un programme existant dont vous n'avez pas les sources.
+
+ifdef::slides[=== Contexte (suite)]
+
+Imaginez un concurrent (appelons-le JMB pour faire simple) qui souhaite développer le même type d'application mais réservé à ses étudiants (disons du DUT Info de Blagnac).
+
+ifdef::slides[=== Contexte (suite)]
+
+Il souhaite donc pouvoir obtenir un dossier de conception qu'il pourrait utiliser comme cahier des charge à des futurs développeurs après l'avoir adapté à ses besoins.
+
+ifdef::slides[=== Contexte (suite)]
+
+L'application en question vous la connaissez bien : {discord} !
+
+[{topic}]
+=== Attendus
+
+Vous devrez donc réaliser :
+
+[{incremental}]
+- Des maquettes d'écran
+- Un diagramme des cas d'utilisation
+- Un diagramme de séquence système (au moins) pour l'un des _use case_
+- Un diagramme des classe probables de l'application
+
+ifdef::slides[=== Contexte (suite)]
+
+Vous utiliserez votre projet GitLab pour travailler en groupe, vous répartir les tâches et versionner votre rapport de conception.
+
+ifdef::slides[=== Contexte (suite)]
+
+Vous devrez rendre votre dossier de conception sous la forme d'un document HTML généré par Asciidoc. 
+Il devra se trouver dans un répertoire `/retro/doc/` et s'appeler `index.html`.
+
+ifdef::slides[=== Contexte (suite)]
+
+La date (prévisionnelle) de rendu pour ce 1er projet est le *vendredi 22 mai* à minuit.
+
+ifdef::slides[=== Contexte (suite)]
+
+ifdef::slides[:leveloffset: 0]
+
+// ------------------------------------------ Analyse & Conception
+:numbered:
+[{intro}]
+== Analyse et Conception
+
+ifdef::slides[:leveloffset: -1]
+
+[{topic}]
+=== Contexte
+
+Ce deuxième projet noté va consister, pour votre groupe, à faire la modélisation d'un programme futur dont vous n'avez pas à développer le code, mais dont vous avez à analyser les besoins et concevoir l'architecture de l'application à développer (comme si le codage allait être sous-traité).
+
+ifdef::slides[=== Contexte (suite)]
+
+Le client de ce projet est le département informatique, qui sera représenté par votre encadrant de TP (vous pouvez aussi poser des questions au client via le forum `#faq-client` du groupe discord BCOO).
+
+ifdef::slides[=== Contexte (suite)]
+
+Le département informatique souhaite que les étudiants connaissent mieux leurs enseignants et vacataires.
+Il souhaite donc se doter d'une application qui présente simplement (_Cover Flow_ par exemple) les enseignants, comme on feuillète un catalogue.
+
+ifdef::slides[=== Contexte (suite)]
+
+La liste des fonctionnalités attendues est donné ci-dessous :
+
+[TIP]
+Toutes ces fonctionnalités ne pourront peut-être pas être traitées dans le temps imparti.
+Vous pourrez reprendre ce tableau dans votre rendu de projet pour lister les fonctionnalités traitées. 
+
+[align="left",cols="1,1,10a",width="90%"]
+|======================
+| # | Prioritéfootnote:[**M**ust (obligatoire), **S**hould (souhait fort, mais pas vital), **C**ould (optionnel)] | Fonctionnalité attendue
+| 1 | M | Pouvoir parcourir simplement toutes les "fiches" présentant les personnes qui enseignent au DUT Informatique et à la Licence Pro APSIO.
+| 2 | M | Les fiches devront à minima contenir le nom, prénom, initiales, (surnom éventuellement), une photo (ou avatar), un descriptif succinct, la liste des formation (DUT/LP) et modules (M2104-BCOO par exemple) où il ou elle intervient.
+| 3 | S | On devra pouvoir filtrer les fiches par formation et/ou par module.
+| 4 | S | Les personnes pourront accéder à leur fiche pour en modifier les renseignements principaux (pas les modules enseignés par exemple).
+| 5 | S | L'application devra avoir une interface de paramétrage pour que les secrétariats ou les responsables d'années puisse définir quel personne enseigne dans quel module pour l'année en cours.
+| 6 | C | Un maximum d'information seront "clickables" (dans une fiche, clicker sur le nom d'un module permettra d'accéder aux pages moodle de ce module par exemple, ou clicker sur le nom du laboratoire d'un enseignant-chercheur ouvrira les pages web de ce laboratoire, ...).
+| 7 | C | L'application doit être fluide et rapide à manipuler.
+|======================
+
+ifdef::slides[=== Contexte (suite)]
+
+Quelques informations métiers à prendre en compte :
+
+- On distinguera les enseignants (qui viennent généralement du secondaire et qui ne sont généralement pas associé à un laboratoire de recherche) et les enseignants-chercheurs (qui sont nécessairement liés à un laboratoire de recherche). Ceci pour que dans la présentation, un onglet ou un encart concerne ses activités de recherche s'il s'agit d'un enseignant-chercheur.
+- On distinguera également l'appartenance au département informatique (la fiche étant renseignée par notre secrétaire). Pour les autres (appelés vacataires), ils renseigneront eux-même leur fiche.
+
+[{topic}]
+=== Attendus
+
+Vous devrez donc réaliser :
+
+- Un diagramme (au moins) des cas d'utilisation qui liste les grands types de fonctionalités attendues ainsi que les différents acteurs
+- Des maquettes d'écran correspondant à la future application (n'hésitez pas à interroger votre client très tôt pour avoir son aval)
+- Un diagramme de classe (au moins) qui permet de se rendre compte des classes métiers (importantes) qu'il faudra développer, leur liens entre elles, ainsi éventuellement que la structure de votre (futur) code.
+- Un diagramme de séquence (au moins) pour l'une des fonctionalités attendues qui permettra d'en détailler l'algorithme.
+- Un SNI (facultatif et donc uniquement bonus) qui permet d'expliquer comment vous lieé vos classes et vos maquettes d'écran.
+- Uniquement si vous avez le temps (facultatif et donc uniquement bonus) vous pouvez proposer une application minimaliste (java ou web) correspondant à votre architecture.
+
+ifdef::slides[=== Contexte (suite)]
+
+Vous utiliserez votre projet GitLab pour travailler en groupe, vous répartir les tâches et versionner votre rapport de conception.
+
+ifdef::slides[=== Contexte (suite)]
+
+Vous devrez rendre votre dossier de conception sous la forme d'un document HTML généré par Asciidoc. 
+Il devra se trouver dans un répertoire `/analyse/doc/` et s'appeler `index.html`.
+
+ifdef::slides[=== Contexte (suite)]
+
+La date (non négociable) de rendu pour ce 1er projet est le *dimanche 21 juin* à minuit.
+
+ifdef::slides[:leveloffset: 0]
+
+
