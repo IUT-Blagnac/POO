@@ -2,7 +2,7 @@
 //  Created by Jean-Michel Bruel on 2018-04-30.
 //  Copyright (c) 2018 IRIT/U. Toulouse. All rights reserved.
 // ------------------------------------------
-:title: *Projet* BCOO 2020
+:title: Projet BCOO 2021
 // ------------------------------------------
 :doctype: article
 :description:
@@ -243,7 +243,7 @@ Vous devrez rendre votre dossier de conception via le `README.adoc` ou `README.m
 
 ifdef::slides[=== Contexte (suite)]
 
-La date (non négociable) de rendu pour ce 1er projet est le *dimanche 21 juin* à minuit.
+La date (non négociable) de rendu pour ce 1er projet est le *dimanche 25 juin* à minuit.
 
 ifdef::slides[:leveloffset: 0]
 

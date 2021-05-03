@@ -1,0 +1,99 @@
+@startuml butgraph
+'------------------------------------
+' Macros & definitions
+'-----------------------------------
+'Colors => see http://plantuml.com/color
+'skinparam monochrome true
+'skinparam monochrome reverse
+'skinparam handwritten true
+!define BLUE Skyblue
+!define YELLOW Lightyellow
+!define GREEN Lightgreen
+
+skinparam defaultTextAlignment center
+
+skinparam storage {
+  BackgroundColor YELLOW
+
+}
+
+skinparam node {
+  BackgroundColor BLUE
+}
+
+skinparam rectangle {
+  BackgroundColor GREEN
+  BorderColor Black
+}
+
+skinparam arrow {
+    Color<<apc>> Black
+}
+
+
+' Usefull functions
+'-----------------------------------
+!define ressource(id,label) storage label <<Ressource>> as id
+!define sae(id,label) node label <<SAÉ>> as id
+
+
+'----------- Compétences
+
+package Competence1 {
+rectangle "APC11 : Implementer des conceptions simples" as APC11 
+rectangle "APC12 : Elaborer des conceptions simples" as APC12
+rectangle "APC13 : Faire des essais et evaluer leurs resultats en regard des specifications" as APC13
+rectangle "APC14 : Developper des interfaces utilisateur" as APC14
+}
+
+package Competence2 {
+rectangle "APC21 : Analyser un problème avec méthode" as APC21 
+rectangle "APC22 : Comparer des algo pour des pb classiques" as APC22
+rectangle "APC23 : Experimentaion de la notion de compilation" as APC23
+}
+
+package Competence5 {
+rectangle "APC51 : Apprehender les besoins du client et de l'utilisateur" as APC51 
+rectangle "APC52 : Mettre en place des outils de gestion de projet" as APC52
+}
+
+'----------- Ressources
+
+'ressource(iap, "DEV11IAP")
+'ressource(sda,"SDA")
+
+storage "DEV 1.1\nIAP\n48(24)" as iap
+storage "DEV 1.2\nSDA\n54(30)" as sda
+storage "DEV 1.3\nCDIN\n23(18)" as cdin
+
+'----------- SAÉs
+
+node "SAE 1.1" as sae11 
+'sae11 -down-> APC11 
+'sae11 -down-> APC12
+'sae11 -down-> APC13
+'sae11 -down-> APC14 
+sae11 --> Competence1
+
+node "SAE 1.2" as sae12 
+sae12 --> Competence2
+
+node "SAE 1.5" as sae15 
+sae15 --> Competence5
+
+node "SAE 1.6" as sae16 
+
+'----------- Graphe
+title Info v.0.1
+
+cdin --> sae16
+cdin --> sae15
+cdin --> sae11
+iap --> sae11 : APC1/3 2.0 (1.0)
+iap --> sae12
+sda --> sae11 
+sda --> sae12
+iap --> sda
+
+sae16 -[hidden]> sae15
+@enduml
