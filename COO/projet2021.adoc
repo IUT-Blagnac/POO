@@ -16,6 +16,7 @@
 :startdate: 2012-10-19
 :icons: font
 :imagesdir: images
+:slides:
 
 include::definitions.txt[]
 
@@ -32,7 +33,7 @@ ifdef::slides[]
 :topic: .topic
 :intro: .topic.intro
 :statement: .topic.statement
-:incremental: .incremental
+:incremental: %step
 :source: .topic.source
 :linkcss:
 endif::slides[]
@@ -58,7 +59,7 @@ endif::definitions[]
 :slidesurl: http://jmbhome.heroku.com/talks
 :images: images
 
-= *Projet* BCOO 2020
+= Projet BCOO 2021
 Jean-Michel Bruel - {localdate}
 
 // ------------------------------------------ plan
@@ -66,21 +67,16 @@ Jean-Michel Bruel - {localdate}
 [{intro}]
 == icon:map-signs[] Au *programme* aujourd'hui
 
-ifdef::slides[== Plan]
-
 [{incremental}]
-- Questions sur les TD ?
 - Suite du semestre
 - Les outils
 - Git
-- GitHub Classroom en groupe
+- Questions sur les TD ?
 
 // ------------------------------------------ plan
 :numbered:
 [{intro}]
 == icon:book[] Fonctionnement en mode *projet*
-
-ifdef::slides[:leveloffset: -1]
 
 [{topic}]
 === Déroulement de la fin du semestre
@@ -90,13 +86,9 @@ ifdef::slides[:leveloffset: -1]
 - Rétro-Ingénierie [detail]#(2 semaines 19 & 2O)#
 - Conception [detail]#(3 semaines 22, 23, 24 & 25)#
 
-ifdef::slides[:leveloffset: 0]
-
 // ------------------------------------------ Outils
 [{intro}]
 == icon:wrench[] Outils
-
-ifdef::slides[:leveloffset: -1]
 
 [{topic}]
 === icon:github[] GitHub
@@ -120,14 +112,10 @@ image::plantUML.png[width=90%,align="center"]
 
 image::asciidoc.png[width=100%]
 
-ifdef::slides[:leveloffset: 0]
-
 // ------------------------------------------ Rétro
 :numbered:
 [{intro}]
 == icon:search[] Rétro-ingénierie
-
-ifdef::slides[:leveloffset: -1]
 
 [{topic}]
 === Contexte
@@ -169,16 +157,10 @@ ifdef::slides[=== Contexte (suite)]
 
 La date (prévisionnelle) de rendu pour ce 1er projet est le *vendredi 21 mai* à minuit.
 
-ifdef::slides[=== Contexte (suite)]
-
-ifdef::slides[:leveloffset: 0]
-
 // ------------------------------------------ Analyse & Conception
 :numbered:
 [{intro}]
 == icon:users[] Analyse et Conception
-
-ifdef::slides[:leveloffset: -1]
 
 [{topic}]
 === Contexte
@@ -204,7 +186,8 @@ Vous pourrez reprendre ce tableau dans votre rendu de projet pour lister les fon
 
 [align="left",cols="1,1,10a",width="90%"]
 |======================
-| # | Prioritéfootnote:[**M**ust (obligatoire), **S**hould (souhait fort, mais pas vital), **C**ould (optionnel)] | Fonctionnalité attendue
+ifndef::slides[| # | Prioritéfootnote:[**M**ust (obligatoire), **S**hould (souhait fort, mais pas vital), **C**ould (optionnel)] | Fonctionnalité attendue]
+ifdef::slides[| # | Priorité | Fonctionnalité attendue]
 | 1 | M | Pouvoir parcourir simplement toutes les "fiches" présentant les personnes qui enseignent au DUT Informatique et à la Licence Pro APSIO.
 | 2 | M | Les fiches devront à minima contenir le nom, prénom, initiales, (surnom éventuellement), une photo (ou avatar), un descriptif succinct, la liste des formation (DUT/LP) et modules (M2104-BCOO par exemple) où il ou elle intervient.
 | 3 | S | On devra pouvoir filtrer les fiches par formation et/ou par module.
