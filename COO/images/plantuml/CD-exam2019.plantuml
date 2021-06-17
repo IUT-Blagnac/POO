@@ -1,0 +1,12 @@
+@startuml
+
+' definitions
+' -----------
+hide circle
+hide empty methods
+hide empty attributes
+
+class fi as "FormInscription"
+'class InscriptionControl as IconIEMandatoryColor
+
+@enduml
