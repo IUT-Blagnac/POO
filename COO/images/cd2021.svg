@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="235px" preserveAspectRatio="none" style="width:309px;height:235px;background:#FFFFFF;" version="1.1" viewBox="0 0 309 235" width="309px" zoomAndPan="magnify"><defs><filter height="300%" id="fdi6i3i114e3c" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[4337fef93a4164fb5e17f09a2ace23d6]
+class Personne--><rect codeLine="8" fill="#FEFECE" filter="url(#fdi6i3i114e3c)" height="70.998" id="Personne" style="stroke:#A80036;stroke-width:1.5;" width="59" x="7" y="7"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="53" x="10" y="23.6016">Personne</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="65" y1="31.1328" y2="31.1328"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="42" x="13" y="45.7676">numero</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="24" x="13" y="58.7227">nom</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="42" x="13" y="71.6777">adresse</text><!--MD5=[9a2897d96cfcc917fe91044b2ccff0ad]
+class Employe--><rect codeLine="14" fill="#FEFECE" filter="url(#fdi6i3i114e3c)" height="58.043" id="Employe" style="stroke:#A80036;stroke-width:1.5;" width="65" x="101" y="13.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="49" x="109" y="30.1016">Employe</text><line style="stroke:#A80036;stroke-width:1.5;" x1="102" x2="165" y1="37.6328" y2="37.6328"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="35" x="107" y="52.2676">salaire</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="53" x="107" y="65.2227">numINSEE</text><!--MD5=[ecebb445cf11bf2e34d75e8f05665b95]
+class CompteBancaire--><rect codeLine="19" fill="#FEFECE" filter="url(#fdi6i3i114e3c)" height="70.998" id="CompteBancaire" style="stroke:#A80036;stroke-width:1.5;" width="100" x="195.5" y="144.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="94" x="198.5" y="161.1016">CompteBancaire</text><line style="stroke:#A80036;stroke-width:1.5;" x1="196.5" x2="294.5" y1="168.6328" y2="168.6328"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="42" x="201.5" y="183.2676">numero</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="29" x="201.5" y="196.2227">solde</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="201.5" y="209.1777">dateOuverture</text><!--MD5=[aac899e22da5850fb9a0006f3766a31d]
+class Banque--><rect codeLine="25" fill="#FEFECE" filter="url(#fdi6i3i114e3c)" height="70.998" id="Banque" style="stroke:#A80036;stroke-width:1.5;" width="54" x="210.5" y="7"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="43" x="216" y="23.6016">Banque</text><line style="stroke:#A80036;stroke-width:1.5;" x1="211.5" x2="263.5" y1="31.1328" y2="31.1328"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="42" x="216.5" y="45.7676">numero</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="35" x="216.5" y="58.7227">capital</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="42" x="216.5" y="71.6777">adresse</text><!--MD5=[314a8c294e3ac2c158f324c285abcfce]
+class Agence--><rect codeLine="31" fill="#FEFECE" filter="url(#fdi6i3i114e3c)" height="83.9531" id="Agence" style="stroke:#A80036;stroke-width:1.5;" width="54" x="106.5" y="138"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="42" x="112.5" y="154.6016">Agence</text><line style="stroke:#A80036;stroke-width:1.5;" x1="107.5" x2="159.5" y1="162.1328" y2="162.1328"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="42" x="112.5" y="176.7676">numero</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="24" x="112.5" y="189.7227">nom</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="42" x="112.5" y="202.6777">adresse</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="21" x="112.5" y="215.6328">ville</text><!--MD5=[e1586385aae6b3751ecf53eb8cef6181]
+link Employe to Agence--><path codeLine="38" d="M133.5,71.58 C133.5,90.72 133.5,116.4 133.5,137.84 " fill="none" id="Employe-Agence" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="126.8438" y="92.1795">*</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="24" x="107.5125" y="127.213">0..1</text><!--MD5=[229b32185d4ad1747202133aca2a157d]
+reverse link Personne to Employe--><path codeLine="39" d="M86.16,42.5 C91.05,42.5 95.94,42.5 100.83,42.5 " fill="none" id="Personne-backto-Employe" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="86.05,49.5,66.05,42.5,86.05,35.5,86.05,49.5" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[98e902bfda1a338d24a39d09338f99cc]
+link Banque to Agence--><path codeLine="40" d="M203.6849,87.5603 C203.6849,87.5603 179.86,118.6 168.85,132.94 " fill="none" id="Banque-Agence" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="160.69,143.58,169.3422,138.8748,163.7338,139.6132,162.9954,134.0048,160.69,143.58" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="163.7338" x2="168.6" y1="139.6132" y2="133.26"/><polygon fill="#A80036" points="210.99,78.04,204.164,80.3651,203.6849,87.5603,210.5109,85.2352,210.99,78.04" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="194.4091" y="83.5386">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="168.4262" y="129.9397">*</text><!--MD5=[964fe9dbc192024f1c2b6a965f05fd3e]
+link Banque to CompteBancaire--><path codeLine="41" d="M239.54,78.04 C240.73,98.27 242.24,123.75 243.44,144.05 " fill="none" id="Banque-CompteBancaire" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="236.5071" y="133.6361">*</text><!--MD5=[cddcba833d5f0d1520c00c2512d46715]
+link Agence to CompteBancaire--><path codeLine="42" d="M160.62,180 C170.51,180 180.39,180 190.27,180 " fill="none" id="Agence-to-CompteBancaire" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="195.44,180,186.44,176,190.44,180,186.44,184,195.44,180" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[8bad8eb82670bd58e4328cabaf72e4bf]
+@startuml cd2021
+
+hide circle
+hide empty members
+hide methods
+hide footbox
+
+
+class Personne{
+    numero
+    nom
+    adresse
+}
+
+class Employe{
+    salaire
+    numINSEE
+}
+
+class CompteBancaire{
+    numero
+    solde
+    dateOuverture
+}
+
+class Banque{
+    numero
+    capital
+    adresse
+}
+
+class Agence{
+    numero
+    nom
+    adresse
+    ville
+}
+
+Employe "*"- -"0..1" Agence
+Personne <|- Employe
+Banque "1"*- ->"*" Agence
+Banque - -"*" CompteBancaire
+Agence .> CompteBancaire
+@enduml
+
+PlantUML version 1.2021.7(Sun May 23 14:40:07 CEST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: fr
+Country: FR
+--></g></svg>

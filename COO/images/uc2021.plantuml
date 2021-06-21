@@ -1,0 +1,22 @@
+@startuml uc2021
+
+hide circle
+hide empty members
+hide methods
+hide footbox
+
+
+
+
+Actor Visiteur
+Actor Client
+Visiteur -|> (Naviguer)
+Client -|> (Acheter)
+Client --|> Visiteur
+(Acheter) -> (Payer)
+(Acheter) ..> (login) : <<extend>>
+(Acheter) -> (Réserver) : <<include>>
+(Payer) -[hidden]-> (Réserver)
+(Payer) <.. (CB) : <<extend>>
+(Payer) <.. (PayPal) : <<extend>>
+@enduml

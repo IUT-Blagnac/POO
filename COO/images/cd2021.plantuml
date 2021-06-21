@@ -1,0 +1,44 @@
+@startuml cd2021
+
+hide circle
+hide empty members
+hide methods
+hide footbox
+
+
+class Personne{
+    numero
+    nom
+    adresse
+}
+
+class Employe{
+    salaire
+    numINSEE
+}
+
+class CompteBancaire{
+    numero
+    solde
+    dateOuverture
+}
+
+class Banque{
+    numero
+    capital
+    adresse
+}
+
+class Agence{
+    numero
+    nom
+    adresse
+    ville
+}
+
+Employe "*"--"0..1" Agence
+Personne <|- Employe
+Banque "1"*-->"*" Agence
+Banque --"*" CompteBancaire
+Agence .> CompteBancaire
+@enduml

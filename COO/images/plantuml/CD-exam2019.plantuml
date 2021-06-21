@@ -1,4 +1,4 @@
-@startuml
+@startuml CD-exam2019
 
 ' definitions
 ' -----------
@@ -7,6 +7,32 @@ hide empty methods
 hide empty attributes
 
 class fi as "FormInscription"
-'class InscriptionControl as IconIEMandatoryColor
+class ic as "InscriptionControl"
+class fe as "FicheEtudiant"
+class cat as "Catalogue"
+class c as "Cours"
 
+class fi {
+    login(FicheEtudiant)`
+    choisir(Cours,Catalogue)
+}
+
+class ic  {
+    login(FicheEtudiant)
+}
+
+class cat {
+    chercherCours(Cours)
+}
+
+fi ..> FicheEtudiant
+fi ..> Cours
+fi ..> Catalogue
+ic ..> FicheEtudiant
+
+cat --> "(*)" c
+
+c --> fe
+
+fi -> ic
 @enduml

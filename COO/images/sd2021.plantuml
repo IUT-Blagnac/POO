@@ -1,0 +1,29 @@
+@startuml sd2021
+
+hide circle
+hide empty members
+hide methods
+hide footbox
+
+
+
+
+actor ":Etudiant"
+":Etudiant" -> ":FormInscription" : login(e)
+":FormInscription" -> ":InscriptionCtrl" : login(e)
+":InscriptionCtrl" -> "e:FicheEtudiant" : getInfo()
+"e:FicheEtudiant" --> ":InscriptionCtrl"
+":InscriptionCtrl" --> ":FormInscription" : OK
+":Etudiant" -> ":FormInscription" : choisir(math,c)
+":FormInscription" -> ":InscriptionCtrl" : choisir(math,c)
+":InscriptionCtrl" -> "c:Catalogue" : GetInfo(math)
+"c:Catalogue" --> ":InscriptionCtrl"
+'":InscriptionCtrl" --> ":FormInscription"
+":FormInscription" -> ":InscriptionCtrl" : Ajouter(math,c)
+":InscriptionCtrl" -> "c:Catalogue" : chercherCours(math)
+"c:Catalogue" --> ":InscriptionCtrl"
+":InscriptionCtrl" -> "math:Cours" : inscrire(e)
+"math:Cours" --> ":InscriptionCtrl"
+":InscriptionCtrl" --> ":FormInscription" : OK
+
+@enduml

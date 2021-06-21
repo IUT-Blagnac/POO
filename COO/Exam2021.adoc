@@ -1,0 +1,348 @@
+// ------------------------------------------
+//  Created by Jean-Michel Bruel.
+//  Copyright (c) 2019 IRIT/U. Toulouse. All rights reserved.
+// ------------------------------------------
+:title: Examen M2104-BCOO 2021
+// ------------------------------------------
+:doctype: article
+:description:
+:keywords:
+:Author: 24 juin 2021 -- Jean-Michel Bruel
+:Author Initials: JMB
+:Email: jean-michel.bruel@univ-tlse2.fr
+:Revision: 1.3
+//:localdate: {sys: date +%d/%m/%Y}
+:localdate: 24 juin 2021
+//:Date: {localdate}
+:Date: 24 juin 2021
+:startdate: 2012-10-19
+:correction!:
+:icons: font
+
+include::definitions.txt[]
+
+//----------- dck.js --------------
+// swiss, neon beamer
+:deckjs_theme: web-2.0
+
+//fade, horizontal-slide, vertical-slide
+:deckjs_transition: horizontal-slide
+
+//:pygments:
+//:pygments_style: native
+:scrollable:
+//:linkcss:
+
+:slidesurl: http://jmbhome.heroku.com/talks
+:images: /Users/bruel/dev/images
+
+= {title}
+
+//---------------------------------
+ifndef::correction[]
+.NOM/Prénom
+----------------
+|
+|
+|
+|
+|
+|
+|
+|
+----------------
+endif::correction[]
+//---------------------------------
+
+.Barème prévisionnel
+[WARNING]
+=====
+1.1: 2 points; 1.2: 1 point; 2.1: 2 points; 3.1: 2 points; 3.2: 2 points; 3.3: 1 point; 3.4: 2 points; 3.5: 2 points; 4: 6 points
+=====
+
+:numbered:
+
+== Diagramme de séquence
+
+Soit le diagramme de séquence suivant :
+
+//.Diagramme de Séquence
+image::sd2021.svg[width="70%",scaledwidth="100%"]
+
+:numbered!:
+=== Q1
+
+Réalisez un diagramme de classe cohérent avec ce diagramme de séquence (avec méthodes).
+
+//---------------------------------
+ifndef::correction[]
+----------------
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+----------------
+endif::correction[]
+//---------------------------------
+
+ifdef::correction[]
+
+[TIP]
+=====
+.Diagramme de Classes
+image::CD.png[width="50%",scaledwidth="70%"]
+=====
+
+endif::correction[]
+
+=== Q2
+
+Ce diagramme de séquence respecte-t'il le paradigme MVC (justifiez votre réponse) ?
+
+//---------------------------------
+ifndef::correction[]
+----------------
+|
+|
+|
+|
+|
+|
+|
+----------------
+endif::correction[]
+//---------------------------------
+
+ifdef::correction[]
+[TIP]
+Oui car les classes de vue (comme `FormInscription`) ne communiquent pas avec les classes métiers (comme `Catalogue`).
+endif::correction[]
+
+
+:numbered:
+
+== Diagramme des Cas d'Utilisation
+
+Soit le diagramme de classes suivant :
+
+//.Diagramme des Cas d'Utilisation
+image::uc2021.svg[width="70%",scaledwidth="90%"]
+
+
+:numbered!:
+=== Q1
+
+Trouvez les 5 erreurs qui se sont glissées dans ce diagramme (entourez et numérotez sur la figure au besoin).
+
+//---------------------------------
+ifndef::correction[]
+----------------
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+----------------
+endif::correction[]
+//---------------------------------
+
+:numbered:
+
+== Diagramme de Classes
+
+Soit le diagramme de classes suivant :
+
+//.Diagramme de Classe
+image::cd2021.svg[width="40%",scaledwidth="70%"]
+
+:numbered!:
+
+=== Q1
+
+Indiquez, pour chaque classe de ce diagramme, combien son implémentation en Java possède d'attributs.
+
+//---------------------------------
+ifndef::correction[]
+----------------
+| Personne =>
+| Employe =>
+| Banque =>
+| Agence =>
+| CopmpteBancaire =>
+----------------
+endif::correction[]
+ifdef::correction[]
+----------------
+| Personne => 3
+| Employe => 3
+| Banque => 5
+| Agence => 5
+| CopmpteBancaire => 4
+----------------
+endif::correction[]
+//---------------------------------
+
+=== Q2
+
+Nommez les différentes relations présentes dans ce diagramme.
+
+//---------------------------------
+ifndef::correction[]
+----------------
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+----------------
+endif::correction[]
+//---------------------------------
+
+=== Q3
+
+Donnez un exemple correct de constructeur par défaut pour la classe `Banque`.
+
+//---------------------------------
+ifndef::correction[]
+----------------
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+----------------
+endif::correction[]
+//---------------------------------
+
+=== Q4
+
+Soit l'extrait de code suivant :
+
+[source,java]
+-----
+public class ActionListAgenceBancaire extends GenericAction {
+
+	private String title;
+	private List<Action> myMenu;
+	
+	public ActionListAgenceBancaire (String m, String c, String t) {
+		super (m, c);
+		this.title = t;
+		this.myMenu = new ArrayList<>();
+	}
+	
+	public boolean addAction(Action ac, int index) {
+		for (Action myAc : this.myMenu) {
+			if (ac == myAc.getParent()) {
+				return false;
+			}
+		}
+		this.myMenu.add(index, ac);
+		return true;
+	}
+}
+-----
+
+Réalisez un diagramme de classe le plus complet possible cohérent avec ce code.
+
+//---------------------------------
+ifndef::correction[]
+----------------
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+----------------
+endif::correction[]
+//---------------------------------
+
+
+=== Q5
+
+Réalisez un diagramme de séquence expliquant le fonctionnement de la méthode `addAction(...)` précédente.
+
+//---------------------------------
+ifndef::correction[]
+----------------
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+----------------
+endif::correction[]
+//---------------------------------
+
+
+:numbered:
+
+== QCM
+
+Réalisez le QCM joint sur la copie séparée.
+
+.Barème prévisionnel
+[WARNING]
+=====
+1.1: 2 points; 1.2: 1 point; 2.1: 2 points; 3.1: 2 points; 3.2: 2 points; 3.3: 1 point; 3.4: 2 points; 3.5: 2 points; 4: 6 points
+=====

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="249px" preserveAspectRatio="none" style="width:670px;height:249px;background:#FFFFFF;" version="1.1" viewBox="0 0 670 249" width="670px" zoomAndPan="magnify"><defs><filter height="300%" id="f1xyz6qg9p9llu" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[bdd6754a6858f1003b48474cbb8dbf7f]
+entity Visiteur--><ellipse cx="32" cy="172" fill="#FEFECE" filter="url(#f1xyz6qg9p9llu)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><path d="M32,180 L32,207 M19,188 L45,188 M32,207 L19,222 M32,207 L45,222 " fill="none" filter="url(#f1xyz6qg9p9llu)" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="52" x="6" y="241.0352">Visiteur</text><!--MD5=[0ba5ee7700168656dc1b457c6fe9fdac]
+entity Client--><ellipse cx="240" cy="14" fill="#FEFECE" filter="url(#f1xyz6qg9p9llu)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><path d="M240,22 L240,49 M227,30 L253,30 M240,49 L227,64 M240,49 L253,64 " fill="none" filter="url(#f1xyz6qg9p9llu)" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="40" x="220" y="83.0352">Client</text><ellipse cx="147.9584" cy="203.2357" fill="#FEFECE" filter="url(#f1xyz6qg9p9llu)" rx="54.9584" ry="14.7357" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="61" x="114.4584" y="207.2533">Naviguer</text><ellipse cx="352.0654" cy="45.1852" fill="#FEFECE" filter="url(#f1xyz6qg9p9llu)" rx="49.0654" ry="14.6852" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="53" x="323.384" y="49.0296">Acheter</text><ellipse cx="478.1482" cy="45.159" fill="#FEFECE" filter="url(#f1xyz6qg9p9llu)" rx="37.6482" ry="14.659" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="37" x="459.6482" y="48.45">Payer</text><ellipse cx="274.234" cy="203.159" fill="#FEFECE" filter="url(#f1xyz6qg9p9llu)" rx="36.234" ry="14.659" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="35" x="256.734" y="206.45">login</text><ellipse cx="400.9819" cy="203.2234" fill="#FEFECE" filter="url(#f1xyz6qg9p9llu)" rx="53.4819" ry="14.7234" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="59" x="368.4819" y="207.241">Réserver</text><ellipse cx="516.2132" cy="203.159" fill="#FEFECE" filter="url(#f1xyz6qg9p9llu)" rx="24.2132" ry="14.659" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="507.2132" y="206.45">CB</text><ellipse cx="616.8909" cy="203.159" fill="#FEFECE" filter="url(#f1xyz6qg9p9llu)" rx="41.8909" ry="14.659" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="43" x="595.3909" y="206.45">PayPal</text><!--MD5=[89e0b488bfa049996fc653620880fd2c]
+link Visiteur to Naviguer--><path d="M58.28,203 C63.16,203 68.04,203 72.92,203 " fill="none" id="Visiteur-to-Naviguer" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="72.98,196,92.98,203,72.98,210,72.98,196" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[135a21390c7b4a60953bc6a1a0b08a67]
+link Client to Acheter--><path d="M260.12,45 C267.69,45 275.25,45 282.81,45 " fill="none" id="Client-to-Acheter" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="282.83,38,302.83,45,282.83,52,282.83,38" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[6590071c099c9054e6338eee5b334540]
+link Client to Visiteur--><path d="M219.84,59.02 C188.14,79.76 125.08,122.09 75,162.5 C74.57,162.85 74.14,163.2 73.7,163.55 " fill="none" id="Client-to-Visiteur" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="78.08,169.02,58.37,176.8,68.93,158.43,78.08,169.02" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[5d52ae304c3cb3e26dfce333d732cdbf]
+link Acheter to Payer--><path d="M401.22,45 C412.49,45 423.76,45 435.03,45 " fill="none" id="Acheter-to-Payer" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="440.21,45,431.21,41,435.21,45,431.21,49,440.21,45" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[19b63a291829f6adb9711db820288356]
+link Acheter to login--><path d="M339.61,59.09 C327.67,72.36 309.85,93.95 299,115.5 C287.98,137.39 281.08,164.91 277.39,182.96 " fill="none" id="Acheter-to-login" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="276.34,188.24,282.0138,180.1897,277.3123,183.3355,274.1666,178.634,276.34,188.24" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="57" x="300" y="129.0684">«extend»</text><!--MD5=[57db14a99e479b33e65a9749503bcac4]
+link Acheter to Réserver--><path d="M353.92,59.72 C356.55,76.98 361.89,107.39 370,132.5 C375.79,150.42 384.74,169.92 391.53,183.69 " fill="none" id="Acheter-to-Réserver" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="393.93,188.5,393.4954,178.6607,391.6997,184.025,386.3354,182.2293,393.93,188.5" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="60" x="371" y="129.0684">«include»</text><!--MD5=[865b59ffe9c975864386310b6af8f347]
+link Payer to Réserver--><!--MD5=[0c1a85770b6d5e1d0669411f792f4328]
+reverse link Payer to CB--><path d="M482.57,64.76 C490.32,96.58 505.86,160.39 512.67,188.35 " fill="none" id="Payer-backto-CB" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="481.31,59.57,479.5585,69.2619,482.4958,64.4274,487.3303,67.3646,481.31,59.57" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="57" x="500" y="129.0684">«extend»</text><!--MD5=[b2592e27cee157e4e700430aa848b5b0]
+reverse link Payer to PayPal--><path d="M500.66,60.41 C519.67,73.26 546.72,93.41 566,115.5 C586.06,138.49 602.53,170.47 610.94,188.4 " fill="none" id="Payer-backto-PayPal" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="496.49,57.62,501.7597,65.9405,500.6503,60.3935,506.1973,59.2841,496.49,57.62" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="57" x="579" y="129.0684">«extend»</text><!--MD5=[64eedf846d8a7f8003e69a2e3f92e7f9]
+@startuml uc2021
+
+hide circle
+hide empty members
+hide methods
+hide footbox
+
+
+
+
+Actor Visiteur
+Actor Client
+Visiteur -|> (Naviguer)
+Client -|> (Acheter)
+Client - -|> Visiteur
+(Acheter) -> (Payer)
+(Acheter) ..> (login) : <<extend>>
+(Acheter) -> (Réserver) : <<include>>
+(Payer) -[hidden]-> (Réserver)
+(Payer) <.. (CB) : <<extend>>
+(Payer) <.. (PayPal) : <<extend>>
+@enduml
+
+PlantUML version 1.2021.7(Sun May 23 14:40:07 CEST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: fr
+Country: FR
+--></g></svg>

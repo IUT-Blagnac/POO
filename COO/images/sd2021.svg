@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="493px" preserveAspectRatio="none" style="width:712px;height:493px;background:#FFFFFF;" version="1.1" viewBox="0 0 712 493" width="712px" zoomAndPan="magnify"><defs><filter height="300%" id="f12ws62sdidyjc" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="38" x2="38" y1="88.4883" y2="486.9043"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="156" x2="156" y1="88.4883" y2="486.9043"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="292" x2="292" y1="88.4883" y2="486.9043"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="423" x2="423" y1="88.4883" y2="486.9043"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="544" x2="544" y1="88.4883" y2="486.9043"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="653" x2="653" y1="88.4883" y2="486.9043"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="61" x="5" y="85.5352">:Etudiant</text><ellipse cx="38.5" cy="15" fill="#FEFECE" filter="url(#f12ws62sdidyjc)" rx="8" ry="8" style="stroke:#A80036;stroke-width:2.0;"/><path d="M38.5,23 L38.5,50 M25.5,31 L51.5,31 M38.5,50 L25.5,65 M38.5,50 L51.5,65 " fill="none" filter="url(#f12ws62sdidyjc)" style="stroke:#A80036;stroke-width:2.0;"/><rect fill="#FEFECE" filter="url(#f12ws62sdidyjc)" height="30.4883" style="stroke:#A80036;stroke-width:1.5;" width="127" x="91" y="53"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="113" x="98" y="73.5352">:FormInscription</text><rect fill="#FEFECE" filter="url(#f12ws62sdidyjc)" height="30.4883" style="stroke:#A80036;stroke-width:1.5;" width="116" x="232" y="53"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="102" x="239" y="73.5352">:InscriptionCtrl</text><rect fill="#FEFECE" filter="url(#f12ws62sdidyjc)" height="30.4883" style="stroke:#A80036;stroke-width:1.5;" width="119" x="362" y="53"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="105" x="369" y="73.5352">e:FicheEtudiant</text><rect fill="#FEFECE" filter="url(#f12ws62sdidyjc)" height="30.4883" style="stroke:#A80036;stroke-width:1.5;" width="95" x="495" y="53"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="502" y="73.5352">c:Catalogue</text><rect fill="#FEFECE" filter="url(#f12ws62sdidyjc)" height="30.4883" style="stroke:#A80036;stroke-width:1.5;" width="94" x="604" y="53"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="80" x="611" y="73.5352">math:Cours</text><polygon fill="#A80036" points="144.5,115.7988,154.5,119.7988,144.5,123.7988,148.5,119.7988" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="38.5" x2="150.5" y1="119.7988" y2="119.7988"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="47" x="45.5" y="115.0566">login(e)</text><polygon fill="#A80036" points="280,145.1094,290,149.1094,280,153.1094,284,149.1094" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="156.5" x2="286" y1="149.1094" y2="149.1094"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="47" x="163.5" y="144.3672">login(e)</text><polygon fill="#A80036" points="411.5,174.4199,421.5,178.4199,411.5,182.4199,415.5,178.4199" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="292" x2="417.5" y1="178.4199" y2="178.4199"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="53" x="299" y="173.6777">getInfo()</text><polygon fill="#A80036" points="303,188.4199,293,192.4199,303,196.4199,299,192.4199" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="297" x2="422.5" y1="192.4199" y2="192.4199"/><polygon fill="#A80036" points="167.5,217.7305,157.5,221.7305,167.5,225.7305,163.5,221.7305" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="161.5" x2="291" y1="221.7305" y2="221.7305"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="18" x="173.5" y="216.9883">OK</text><polygon fill="#A80036" points="144.5,247.041,154.5,251.041,144.5,255.041,148.5,251.041" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="38.5" x2="150.5" y1="251.041" y2="251.041"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="94" x="45.5" y="246.2988">choisir(math,c)</text><polygon fill="#A80036" points="280,276.3516,290,280.3516,280,284.3516,284,280.3516" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="156.5" x2="286" y1="280.3516" y2="280.3516"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="94" x="163.5" y="275.6094">choisir(math,c)</text><polygon fill="#A80036" points="532.5,305.6621,542.5,309.6621,532.5,313.6621,536.5,309.6621" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="292" x2="538.5" y1="309.6621" y2="309.6621"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="86" x="299" y="304.9199">GetInfo(math)</text><polygon fill="#A80036" points="303,319.6621,293,323.6621,303,327.6621,299,323.6621" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="297" x2="543.5" y1="323.6621" y2="323.6621"/><polygon fill="#A80036" points="280,348.9727,290,352.9727,280,356.9727,284,352.9727" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="156.5" x2="286" y1="352.9727" y2="352.9727"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="97" x="163.5" y="348.2305">Ajouter(math,c)</text><polygon fill="#A80036" points="532.5,378.2832,542.5,382.2832,532.5,386.2832,536.5,382.2832" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="292" x2="538.5" y1="382.2832" y2="382.2832"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="131" x="299" y="377.541">chercherCours(math)</text><polygon fill="#A80036" points="303,392.2832,293,396.2832,303,400.2832,299,396.2832" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="297" x2="543.5" y1="396.2832" y2="396.2832"/><polygon fill="#A80036" points="641,421.5938,651,425.5938,641,429.5938,645,425.5938" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="292" x2="647" y1="425.5938" y2="425.5938"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="62" x="299" y="420.8516">inscrire(e)</text><polygon fill="#A80036" points="303,435.5938,293,439.5938,303,443.5938,299,439.5938" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="297" x2="652" y1="439.5938" y2="439.5938"/><polygon fill="#A80036" points="167.5,464.9043,157.5,468.9043,167.5,472.9043,163.5,468.9043" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="161.5" x2="291" y1="468.9043" y2="468.9043"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="18" x="173.5" y="464.1621">OK</text><!--MD5=[7c751b4ffd138d1d3e3ee041bc0d28c6]
+@startuml sd2021
+
+hide circle
+hide empty members
+hide methods
+hide footbox
+
+
+
+
+actor ":Etudiant"
+":Etudiant" -> ":FormInscription" : login(e)
+":FormInscription" -> ":InscriptionCtrl" : login(e)
+":InscriptionCtrl" -> "e:FicheEtudiant" : getInfo()
+"e:FicheEtudiant" - -> ":InscriptionCtrl"
+":InscriptionCtrl" - -> ":FormInscription" : OK
+":Etudiant" -> ":FormInscription" : choisir(math,c)
+":FormInscription" -> ":InscriptionCtrl" : choisir(math,c)
+":InscriptionCtrl" -> "c:Catalogue" : GetInfo(math)
+"c:Catalogue" - -> ":InscriptionCtrl"
+'":InscriptionCtrl" - -> ":FormInscription"
+":FormInscription" -> ":InscriptionCtrl" : Ajouter(math,c)
+":InscriptionCtrl" -> "c:Catalogue" : chercherCours(math)
+"c:Catalogue" - -> ":InscriptionCtrl"
+":InscriptionCtrl" -> "math:Cours" : inscrire(e)
+"math:Cours" - -> ":InscriptionCtrl"
+":InscriptionCtrl" - -> ":FormInscription" : OK
+
+@enduml
+
+@startuml sd2021
+
+hide circle
+hide empty members
+hide methods
+hide footbox
+
+
+
+
+actor ":Etudiant"
+":Etudiant" -> ":FormInscription" : login(e)
+":FormInscription" -> ":InscriptionCtrl" : login(e)
+":InscriptionCtrl" -> "e:FicheEtudiant" : getInfo()
+"e:FicheEtudiant" - -> ":InscriptionCtrl"
+":InscriptionCtrl" - -> ":FormInscription" : OK
+":Etudiant" -> ":FormInscription" : choisir(math,c)
+":FormInscription" -> ":InscriptionCtrl" : choisir(math,c)
+":InscriptionCtrl" -> "c:Catalogue" : GetInfo(math)
+"c:Catalogue" - -> ":InscriptionCtrl"
+":FormInscription" -> ":InscriptionCtrl" : Ajouter(math,c)
+":InscriptionCtrl" -> "c:Catalogue" : chercherCours(math)
+"c:Catalogue" - -> ":InscriptionCtrl"
+":InscriptionCtrl" -> "math:Cours" : inscrire(e)
+"math:Cours" - -> ":InscriptionCtrl"
+":InscriptionCtrl" - -> ":FormInscription" : OK
+
+@enduml
+
+PlantUML version 1.2021.7(Sun May 23 14:40:07 CEST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: fr
+Country: FR
+--></g></svg>
