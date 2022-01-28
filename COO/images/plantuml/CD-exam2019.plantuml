@@ -10,7 +10,7 @@ class fi as "FormInscription"
 class ic as "InscriptionControl"
 class fe as "FicheEtudiant"
 class cat as "Catalogue"
-class c as "Cours"
+class cours as "Cours"
 
 class fi {
     login(FicheEtudiant)`
@@ -25,14 +25,14 @@ class cat {
     chercherCours(Cours)
 }
 
-fi ..> FicheEtudiant
-fi ..> Cours
-fi ..> Catalogue
-ic ..> FicheEtudiant
+fi ..> fe
+fi ..> cours
+fi ..> cat
+ic ..> fe
 
-cat --> "(*)" c
+cat --> "*" cours
 
-c --> fe
+cours --> fe
 
 fi -> ic
 @enduml
