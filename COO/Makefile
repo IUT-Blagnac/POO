@@ -12,7 +12,7 @@ HIGHLIGHT=pygments
 DOCTOR=asciidoctor -a icons=font -a imagesdir=$(IMAGESDIR) -a source-highlighter=$(HIGHLIGHT) -a data-uri
 #BACKENDS=asciidoctor-deck.js
 #DECKJS=$(BACKENDS)/templates/haml/
-BACKENDS=../../asciidoctor-backends
+BACKENDS=../../../lib/asciidoctor-backends
 DECKJS=$(BACKENDS)/haml/
 #DECK=web-2.0
 DECK=swiss
@@ -24,7 +24,7 @@ OUTPUT=.
 DEP=
 SOURCEFILES = ./src/java/CodingDojo/src/*.java
 DOC = doc
-DZSLIDES=../../asciidoctor-backends/slim/dzslides
+DZSLIDES=../../../lib/asciidoctor-backends/slim/dzslides
 STYLE=../../slides/jmb.css
 ASCIIDOCTOR=asciidoctor -a icons=font -a iconsdir=$(ICONSDIR)  -a imagesdir=$(IMAGESDIR)
 SITE=../jmbruel.github.io/teaching
