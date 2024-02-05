@@ -1,0 +1,40 @@
+    class MonEntreprise {
+        ' public Map<String, String> clientsAdresses;
+        ' public Map<String, String> commandes;
+        ' public Map<String, Float> renumerations;
+        public void ajouterClient(String nom, String adresse) {...}
+        public void commander(Client, TypePizza) {...}
+
+
+    }
+
+    class Commande {
+        public assignerPizzaiolo(String nom);
+    }
+
+    Commande --- "0..1" Pizzaiolo
+
+    MonEntreprise -- "*" Client
+    MonEntreprise -- "*" Commande
+    MonEntreprise -- "*" Pizzaiolo
+
+    class Client {
+        nom
+    }
+
+    Client -- Adresse
+
+    class TypePizza
+
+    'enum TypePizza
+
+    class Pizza {
+        public void preparer();
+        public void cuire();
+    }
+
+    Pizza - "1" TypePizza
+
+    Class Pizzaiolo {
+        public float getRenumerationPizzaiolo();
+        }
