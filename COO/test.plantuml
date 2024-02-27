@@ -1,0 +1,8 @@
+@startuml
+hide methods
+hide circle
+
+class Personne {
+	nom
+}
+@enduml
