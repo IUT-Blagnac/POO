@@ -54,6 +54,15 @@ ifdef::slides[]
 :linkcss:
 endif::slides[]
 
+// Reveals
+:source-highlighter: highlight.js
+:revealjs_theme: simple
+// beige, black, league, night, serif, simple, sky, solarized, white
+:revealjs_controlsTutorial: true
+:revealjs_slideNumber: true
+:scrollable:
+:linkcss:
+
 //--------------------- cours
 ifndef::slides[]
 :source-highlighter: highlight
